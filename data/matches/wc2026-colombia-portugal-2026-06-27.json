@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "COL",
       "elo": 1660,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2913,
-      "draw": 0.2284,
-      "away": 0.4802
+      "home": 0.28,
+      "draw": 0.22,
+      "away": 0.5
     },
-    "confidence": 0.22030000000000002,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.82
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.28,
+          "draw": 0.22,
+          "away": 0.5
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "Portugal's recent form is superior with a weighted form of 2.01 compared to Colombia's 1.544.",
+          "Portugal has a higher goals for average (2.32) than Colombia (1.95), indicating a stronger attack.",
+          "Colombia's defense is slightly weaker, conceding more goals on average per match (1.227) compared to Portugal's 0.879."
+        ],
+        "risks": [
+          "Match is played at a neutral venue, removing home advantage.",
+          "Limited data due to no historical head-to-head matches between these teams."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Portugal's recent form is superior with a weighted form of 2.01 compared to Colombia's 1.544.; Portugal has a higher goals for average (2.32) than Colombia (1.95), indicating a stronger attack.; Colombia's defense is slightly weaker, conceding more goals on average per match (1.227) compared to Portugal's 0.879..",
     "inputHash": "sha256:390cf62e0336794c4feff67922decd03717181943f215fe0bb9b798ed5f75933"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "QAT",
       "elo": 1494,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1313,
-      "draw": 0.1698,
-      "away": 0.6989
+      "home": 0.15,
+      "draw": 0.18,
+      "away": 0.67
     },
-    "confidence": 0.5483499999999999,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,33 @@
         "away": 2.47
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.15,
+          "draw": 0.18,
+          "away": 0.67
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Switzerland has a significantly higher Elo rating (1655) compared to Qatar (1494).",
+          "Switzerland's recent form is stronger at 2.1 compared to Qatar's 1.2.",
+          "Qatar hasn't played a match in 194 days, which may affect their match readiness.",
+          "The match is played at a neutral venue, minimizing any potential host advantage."
+        ],
+        "risks": [
+          "Lack of head-to-head history makes predictions on direct matchup less certain.",
+          "Switzerland's clean sheet rate is slightly higher, but they still concede over 1 goal per match on average.",
+          "Qatar's goals for average is relatively close to their expected goals, which could indicate potential to score more."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Switzerland has a significantly higher Elo rating (1655) compared to Qatar (1494).; Switzerland's recent form is stronger at 2.1 compared to Qatar's 1.2.; Qatar hasn't played a match in 194 days, which may affect their match readiness..",
     "inputHash": "sha256:9984d802db8b28f570ae989736cfb65a2163675d875a3d8ef0793b0b8bacdc95"
   },
   "predictionHistory": []

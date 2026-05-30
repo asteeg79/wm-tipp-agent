@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "BEL",
       "elo": 1646,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3658,
-      "draw": 0.2462,
-      "away": 0.3879
+      "home": 0.32,
+      "draw": 0.3,
+      "away": 0.38
     },
-    "confidence": 0.08185000000000005,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.49
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.32,
+          "draw": 0.3,
+          "away": 0.38
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "Egypt has a slightly higher Elo rating than Belgium, suggesting a competitive edge.",
+          "Neutral venue negates any home advantage.",
+          "Both teams have similar recent form, with Egypt slightly better in weighted form.",
+          "Belgium has a higher average of goals scored but also concedes more than Egypt."
+        ],
+        "risks": [
+          "Both teams have not played against each other recently, adding unpredictability.",
+          "The result might heavily depend on tactical adaptability at a neutral venue."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Egypt has a slightly higher Elo rating than Belgium, suggesting a competitive edge.; Neutral venue negates any home advantage.; Both teams have similar recent form, with Egypt slightly better in weighted form..",
     "inputHash": "sha256:cd96beeea9a9029cfe083f8f07da305c8444f570ae54078231622438eaf56663"
   },
   "predictionHistory": []

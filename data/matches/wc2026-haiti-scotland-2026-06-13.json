@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "HAI",
       "elo": 1572,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.4783,
-      "draw": 0.2492,
-      "away": 0.2725
+      "home": 0.4,
+      "draw": 0.35,
+      "away": 0.25
     },
-    "confidence": 0.21745,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.14
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.4,
+          "draw": 0.35,
+          "away": 0.25
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Haiti has a slightly higher Elo rating and stronger weighted form.",
+          "Scotland has a better recent form, which slightly offsets their lower Elo rating.",
+          "Neutral venue reduces home advantage for Haiti.",
+          "Neither team has significant material news affecting player availability or morale."
+        ],
+        "risks": [
+          "Both teams have not played in the last 60 days, which might affect match sharpness.",
+          "No head-to-head match data to predict team interactions."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Haiti has a slightly higher Elo rating and stronger weighted form.; Scotland has a better recent form, which slightly offsets their lower Elo rating.; Neutral venue reduces home advantage for Haiti..",
     "inputHash": "sha256:4bdeeaf2b6f84493e78e1c2791a57063297eff2f889e5d2879a6c6cbc54ba46c"
   },
   "predictionHistory": []

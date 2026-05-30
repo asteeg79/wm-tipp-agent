@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "NED",
       "elo": 1715,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.4145,
-      "draw": 0.2556,
-      "away": 0.33
+      "home": 0.35,
+      "draw": 0.35,
+      "away": 0.3
     },
-    "confidence": 0.12174999999999998,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.27
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Netherlands' slightly higher Elo rating and offensive strength",
+          "Japan's better defensive record and clean sheet rate",
+          "Neutral venue minimizes home-field advantage",
+          "Similar recent form with both teams having had a break of 60 days"
+        ],
+        "risks": [
+          "Lack of head-to-head data introduces uncertainty",
+          "Both teams have not played in the past 60 days, affecting form continuity"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Netherlands' slightly higher Elo rating and offensive strength; Japan's better defensive record and clean sheet rate; Neutral venue minimizes home-field advantage.",
     "inputHash": "sha256:5c2efc15d724923967e1355a32730345c08038a9772087272da6c547732fe53b"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "KSA",
       "elo": 1538,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.2447,
-      "draw": 0.3008,
-      "away": 0.4545
+      "home": 0.25,
+      "draw": 0.3,
+      "away": 0.45
     },
-    "confidence": 0.18175000000000002,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.2
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.25,
+          "draw": 0.3,
+          "away": 0.45
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Uruguay hat einen höheren Elo-Wert (1583) im Vergleich zu Saudi-Arabien (1538), was auf eine stärkere Grundstärke hinweist.",
+          "Uruguay zeigt eine bessere aktuelle Form (1.6) gegenüber Saudi-Arabien (1.2).",
+          "Beide Teams haben eine ähnliche Anzahl an Toren für und gegen, aber Uruguay weist eine bessere Defensive auf (0.832 Gegentore pro Spiel).",
+          "Das Spiel findet auf neutralem Boden statt, sodass kein Team einen Heimvorteil genießt."
+        ],
+        "risks": [
+          "Fehlende Head-to-Head-Statistiken zwischen den beiden Teams schafft Unsicherheit über direkte Vergleiche.",
+          "Beide Teams haben keine großen Veränderungen in den letzten Neuigkeiten, daher könnte unvorhergesehene Aufstellung oder Taktik das Ergebnis beeinflussen."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Uruguay hat einen höheren Elo-Wert (1583) im Vergleich zu Saudi-Arabien (1538), was auf eine stärkere Grundstärke hinweist.; Uruguay zeigt eine bessere aktuelle Form (1.6) gegenüber Saudi-Arabien (1.2).; Beide Teams haben eine ähnliche Anzahl an Toren für und gegen, aber Uruguay weist eine bessere Defensive auf (0.832 Gegentore pro Spiel)..",
     "inputHash": "sha256:fa60538de35354208b4044dab6ca8dadd68ba5ba1ecdae166d24ed01e8e29af8"
   },
   "predictionHistory": []

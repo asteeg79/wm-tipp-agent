@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "TUN",
       "elo": 1645,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2302,
-      "draw": 0.2282,
-      "away": 0.5415
+      "home": 0.22,
+      "draw": 0.25,
+      "away": 0.53
     },
-    "confidence": 0.31224999999999997,
+    "confidence": 0.8,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,33 @@
         "away": 1.84
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.22,
+          "draw": 0.25,
+          "away": 0.53
+        },
+        "confidence": 0.8,
+        "keyFactors": [
+          "Netherlands has a higher Elo rating with 1715 compared to Tunisia's 1645.",
+          "Netherlands demonstrates better recent form with 2.4 compared to Tunisia's 1.7.",
+          "Netherlands scores more frequently with an average of 2.533 goals per match, higher than Tunisia's 1.647.",
+          "Both teams have not played a match for 60 days, indicating neutral recovery time.",
+          "The match takes place at a neutral venue."
+        ],
+        "risks": [
+          "Tunisia has a slightly better defensive record with a goals against average of 0.752 and a clean sheet rate of 0.5.",
+          "The absence of head-to-head data adds uncertainty to the prediction."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Netherlands has a higher Elo rating with 1715 compared to Tunisia's 1645.; Netherlands demonstrates better recent form with 2.4 compared to Tunisia's 1.7.; Netherlands scores more frequently with an average of 2.533 goals per match, higher than Tunisia's 1.647..",
     "inputHash": "sha256:219a7eb91a87b4d717a2d719a2eefaf1399457ca591e88231e39f72e9c48503e"
   },
   "predictionHistory": []

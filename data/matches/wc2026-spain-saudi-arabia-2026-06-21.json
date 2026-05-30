@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "ESP",
       "elo": 1809,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 3,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8728,
-      "draw": 0.0917,
-      "away": 0.0355
+      "home": 0.87,
+      "draw": 0.09,
+      "away": 0.04
     },
-    "confidence": 0.8092,
+    "confidence": 0.92,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 0.51
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 3,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.87,
+          "draw": 0.09,
+          "away": 0.04
+        },
+        "confidence": 0.92,
+        "keyFactors": [
+          "Spain has significantly higher Elo rating than Saudi Arabia.",
+          "Spain's recent form is superior with an average of 2.4 compared to Saudi Arabia's 1.2.",
+          "Spain's goal-scoring rate is much higher with 2.675 goals per match.",
+          "Match is at a neutral venue, removing potential home advantage complications."
+        ],
+        "risks": [
+          "Both teams have had a 60-day gap since their last match, which could affect match fitness.",
+          "No prior head-to-head data to directly compare performances against each other."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Spain has significantly higher Elo rating than Saudi Arabia.; Spain's recent form is superior with an average of 2.4 compared to Saudi Arabia's 1.2.; Spain's goal-scoring rate is much higher with 2.675 goals per match..",
     "inputHash": "sha256:ec509b8fada034da56e728c17093fb8182c068bc91adc832cbe4099d631b75f7"
   },
   "predictionHistory": []

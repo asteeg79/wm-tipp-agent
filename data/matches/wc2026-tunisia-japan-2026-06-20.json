@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "TUN",
       "elo": 1645,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 0,
       "away": 1
     },
     "probabilities": {
-      "home": 0.2485,
-      "draw": 0.2767,
-      "away": 0.4748
+      "home": 0.24,
+      "draw": 0.28,
+      "away": 0.48
     },
-    "confidence": 0.2122,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,31 @@
         "away": 1.36
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 0,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.24,
+          "draw": 0.28,
+          "away": 0.48
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Japan has a higher Elo rating",
+          "Japan's weighted form and recent form are stronger",
+          "Japan has a better defensive record with lower goals against and higher clean sheet rate"
+        ],
+        "risks": [
+          "Both teams have not played each other before, which adds unpredictability",
+          "Neutral venue may mitigate some advantages"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Japan has a higher Elo rating; Japan's weighted form and recent form are stronger; Japan has a better defensive record with lower goals against and higher clean sheet rate.",
     "inputHash": "sha256:68f4d6bffa53ba3392397020d5687c6dababbe971109dc5b41286f1365a81273"
   },
   "predictionHistory": []

@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "KOR",
       "elo": 1646,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3492,
-      "draw": 0.2477,
-      "away": 0.4031
+      "home": 0.35,
+      "draw": 0.3,
+      "away": 0.35
     },
-    "confidence": 0.10465000000000003,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,32 @@
         "away": 1.51
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "South Korea's higher recent form score (1.9) compared to Czech Republic's (1.6)",
+          "South Korea's higher clean sheet rate of 41.4%",
+          "Czech Republic's higher average goals scored per match (1.957)",
+          "Neutral venue reduces typical home advantage"
+        ],
+        "risks": [
+          "No historical head-to-head matches for reference",
+          "Czech Republic's stronger offensive statistics could tip the balance"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: South Korea's higher recent form score (1.9) compared to Czech Republic's (1.6); South Korea's higher clean sheet rate of 41.4%; Czech Republic's higher average goals scored per match (1.957).",
     "inputHash": "sha256:e9e0ed3bff5c78fb776f2c0b107ac0887395828b9da45276d348f04843144a01"
   },
   "predictionHistory": []

@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "CZE",
       "elo": 1588,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.2851,
-      "draw": 0.2567,
-      "away": 0.4581
+      "home": 0.27,
+      "draw": 0.25,
+      "away": 0.48
     },
-    "confidence": 0.18715,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,31 @@
         "away": 1.5
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.27,
+          "draw": 0.25,
+          "away": 0.48
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Mexico has a higher Elo rating than Czech Republic.",
+          "Mexico's superior recent defensive record with higher clean sheet rate.",
+          "Match takes place at a high altitude (2240m), potentially benefitting Mexico due to host advantage and acclimatization."
+        ],
+        "risks": [
+          "Czech Republic's higher goals for average could lead to unpredictability.",
+          "Form advantage of Czech Republic, reflected in the slightly higher recent form score."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Mexico has a higher Elo rating than Czech Republic.; Mexico's superior recent defensive record with higher clean sheet rate.; Match takes place at a high altitude (2240m), potentially benefitting Mexico due to host advantage and acclimatization..",
     "inputHash": "sha256:1e5f8d538a28ad1be9474c38036e14fb92f15fef75d49bd97487f835b8424ba2"
   },
   "predictionHistory": []

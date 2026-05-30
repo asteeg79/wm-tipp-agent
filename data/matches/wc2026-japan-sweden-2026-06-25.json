@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "JPN",
       "elo": 1712,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6688,
-      "draw": 0.1916,
-      "away": 0.1396
+      "home": 0.6,
+      "draw": 0.2,
+      "away": 0.2
     },
-    "confidence": 0.5031999999999999,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 0.87
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.6,
+          "draw": 0.2,
+          "away": 0.2
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Japan's higher Elo rating",
+          "Japan's superior recent form and clean sheet rate",
+          "Neutral venue, no host advantage",
+          "Sweden's higher goals conceded average"
+        ],
+        "risks": [
+          "Potential underestimation of Sweden's attack, given their goals for average",
+          "Both teams have not played each other (lack of H2H data)"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Japan's higher Elo rating; Japan's superior recent form and clean sheet rate; Neutral venue, no host advantage.",
     "inputHash": "sha256:e0060c07568253c425c615242375470147985eba5ff2d59b89a84a95a8dfdc3a"
   },
   "predictionHistory": []

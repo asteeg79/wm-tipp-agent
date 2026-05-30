@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "ESP",
       "elo": 1809,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 2,
-      "away": 0
+      "home": 3,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.7288,
-      "draw": 0.1627,
-      "away": 0.1085
+      "home": 0.75,
+      "draw": 0.15,
+      "away": 0.1
     },
-    "confidence": 0.5932,
+    "confidence": 0.85,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 0.84
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 3,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.75,
+          "draw": 0.15,
+          "away": 0.1
+        },
+        "confidence": 0.85,
+        "keyFactors": [
+          "Spain has higher Elo rating and strong recent form.",
+          "Cape Verde hasn't played for 229 days which could affect performance.",
+          "Neutral venue reduces potential home advantage for Spain."
+        ],
+        "risks": [
+          "Lack of head-to-head data introduces uncertainty.",
+          "Both teams have similar clean sheet rates, indicating defensive capabilities."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Spain has higher Elo rating and strong recent form.; Cape Verde hasn't played for 229 days which could affect performance.; Neutral venue reduces potential home advantage for Spain..",
     "inputHash": "sha256:33072cc474d115a4efb968ab0d8d708103b6489cfcce3023d2fcc399509b2f5f"
   },
   "predictionHistory": []

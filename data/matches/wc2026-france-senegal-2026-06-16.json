@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "FRA",
       "elo": 1736,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.303,
-      "draw": 0.233,
-      "away": 0.4639
+      "home": 0.35,
+      "draw": 0.3,
+      "away": 0.35
     },
-    "confidence": 0.19584999999999997,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.75
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "Both teams have similar recent form and long-term weighted form.",
+          "Neutral venue negates any potential home advantage.",
+          "Similar average goals for both teams, pointing to a balanced match."
+        ],
+        "risks": [
+          "No head-to-head history between the teams introduces uncertainty.",
+          "Both teams have a good clean sheet rate, potentially leading to fewer goals."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Both teams have similar recent form and long-term weighted form.; Neutral venue negates any potential home advantage.; Similar average goals for both teams, pointing to a balanced match..",
     "inputHash": "sha256:c51b9505977f4a8f6b86dc1c2b97976a980edf1a9684880c25d2ab5add88dd87"
   },
   "predictionHistory": []

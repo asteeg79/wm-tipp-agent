@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "IRQ",
       "elo": 1614,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.152,
-      "draw": 0.1998,
-      "away": 0.6482
+      "home": 0.18,
+      "draw": 0.22,
+      "away": 0.6
     },
-    "confidence": 0.4723,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 2.09
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.18,
+          "draw": 0.22,
+          "away": 0.6
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Norway has a higher Elo rating (1708 vs 1614) indicating overall team strength.",
+          "Norway's recent form is slightly better (2.3 vs 1.8).",
+          "Norway's higher goals for average (2.777 vs 1.28) suggests a stronger attacking capability.",
+          "Neutral venue diminishes any home advantage for Iraq."
+        ],
+        "risks": [
+          "Both teams have similar clean sheet rates, could suggest defensive capabilities on both sides.",
+          "No head-to-head history creating uncertainty in how teams could match up tactically."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Norway has a higher Elo rating (1708 vs 1614) indicating overall team strength.; Norway's recent form is slightly better (2.3 vs 1.8).; Norway's higher goals for average (2.777 vs 1.28) suggests a stronger attacking capability..",
     "inputHash": "sha256:d9619e03ff980f9971fd570ee45c89c1663097b76b916c7d6a1cc8679b16a7cc"
   },
   "predictionHistory": []

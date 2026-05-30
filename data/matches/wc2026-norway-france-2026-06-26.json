@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "NOR",
       "elo": 1708,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4147,
-      "draw": 0.2249,
-      "away": 0.3603
+      "home": 0.35,
+      "draw": 0.3,
+      "away": 0.35
     },
-    "confidence": 0.12205000000000003,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.65
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "France has a slightly higher Elo rating and better recent form.",
+          "Norway has a higher goalsForAvg and better defensive stats (goalsAgainstAvg, cleanSheetRate).",
+          "Neutral venue negates any home advantage.",
+          "No head-to-head history, introducing an element of unpredictability."
+        ],
+        "risks": [
+          "Uncertainty due to lack of head-to-head history.",
+          "Both teams' recent forms are strong and similar, making the match highly competitive."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: France has a slightly higher Elo rating and better recent form.; Norway has a higher goalsForAvg and better defensive stats (goalsAgainstAvg, cleanSheetRate).; Neutral venue negates any home advantage..",
     "inputHash": "sha256:c82a7adf87f542dd2789d2aec1479e6f85fadbfca2ea0f1d80312387fb00a419"
   },
   "predictionHistory": []

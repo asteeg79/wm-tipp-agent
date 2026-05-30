@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "EGY",
       "elo": 1737,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3824,
-      "draw": 0.2664,
-      "away": 0.3512
+      "home": 0.35,
+      "draw": 0.3,
+      "away": 0.35
     },
-    "confidence": 0.07360000000000004,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.25
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Egypt has a higher recent form and defensive strength with a lower goals against average.",
+          "Iran has a stronger attacking record with a higher goals for average.",
+          "Teams are playing at a neutral venue with no home or host advantage."
+        ],
+        "risks": [
+          "No head-to-head history between the teams adds uncertainty.",
+          "Both teams have the same days since last match, so form freshness may affect performance."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Egypt has a higher recent form and defensive strength with a lower goals against average.; Iran has a stronger attacking record with a higher goals for average.; Teams are playing at a neutral venue with no home or host advantage..",
     "inputHash": "sha256:da22ec1f035b86de8b5b1c3bb2c7d944749c5734b928b11907d1b87709674291"
   },
   "predictionHistory": []

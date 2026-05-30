@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "SUI",
       "elo": 1655,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3637,
-      "draw": 0.2715,
-      "away": 0.3648
+      "home": 0.35,
+      "draw": 0.3,
+      "away": 0.35
     },
-    "confidence": 0.04720000000000004,
+    "confidence": 0.6,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.24
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Both teams have similar Elo ratings and their recent forms do not significantly deviate.",
+          "Switzerland has a higher goals for average, but Canada has a better defensive record with a higher clean sheet rate.",
+          "The match is at a neutral venue with Canada's host advantage slightly mitigated by neutrality."
+        ],
+        "risks": [
+          "No direct head-to-head history between the teams.",
+          "Performance can be influenced by the neutral venue and psychological aspects of playing in a World Cup."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Both teams have similar Elo ratings and their recent forms do not significantly deviate.; Switzerland has a higher goals for average, but Canada has a better defensive record with a higher clean sheet rate.; The match is at a neutral venue with Canada's host advantage slightly mitigated by neutrality..",
     "inputHash": "sha256:a5bae3b7cad5a41ba16f19b5c26e3895ff4025df4cb948925303673ea48aea3e"
   },
   "predictionHistory": []

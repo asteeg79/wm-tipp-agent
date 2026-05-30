@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "USA",
       "elo": 1594,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4522,
-      "draw": 0.2438,
-      "away": 0.3039
+      "home": 0.487,
+      "draw": 0.233,
+      "away": 0.28
     },
-    "confidence": 0.1783,
+    "confidence": 0.72,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.28
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.487,
+          "draw": 0.233,
+          "away": 0.28
+        },
+        "confidence": 0.72,
+        "keyFactors": [
+          "USA has host advantage as World Cup host despite neutral venue",
+          "USA's recent form is strong with a 1.6 average",
+          "Australia has not played for 193 days, potential rustiness",
+          "USA won the previous head-to-head match"
+        ],
+        "risks": [
+          "Australia has a higher Elo rating than the USA",
+          "Australia's defense is stronger with a higher clean sheet rate"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: USA has host advantage as World Cup host despite neutral venue; USA's recent form is strong with a 1.6 average; Australia has not played for 193 days, potential rustiness.",
     "inputHash": "sha256:bff88df57ff4a5153af7a48bb14bb7184ecff7b8335a6afe7d774dbe02d12d9e"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "GER",
       "elo": 1698,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.351,
-      "draw": 0.2354,
-      "away": 0.4136
+      "home": 0.33,
+      "draw": 0.3,
+      "away": 0.37
     },
-    "confidence": 0.12040000000000005,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,30 @@
         "away": 1.65
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.33,
+          "draw": 0.3,
+          "away": 0.37
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Both teams have similar recent form and stats",
+          "Neutral venue, no home advantage"
+        ],
+        "risks": [
+          "No historical head-to-head meetings to assess mental or strategic advantages",
+          "Small differences in elo ratings and form create potential uncertainty"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Both teams have similar recent form and stats; Neutral venue, no home advantage.",
     "inputHash": "sha256:a066c01bda595b091b8da098a00102888ae8745410bf3aee8b949371e2d1af46"
   },
   "predictionHistory": []

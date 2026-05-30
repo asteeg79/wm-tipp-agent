@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "FRA",
       "elo": 1736,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.609,
-      "draw": 0.2171,
-      "away": 0.1739
+      "home": 0.57,
+      "draw": 0.22,
+      "away": 0.21
     },
-    "confidence": 0.4135,
+    "confidence": 0.85,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 0.92
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.5700000000000001,
+          "draw": 0.22000000000000003,
+          "away": 0.21000000000000002
+        },
+        "confidence": 0.85,
+        "keyFactors": [
+          "France has a slightly higher recent form than Iraq",
+          "Higher Elo rating for France",
+          "France's goals-for average is significantly higher",
+          "Neutral venue minimizes any home advantage"
+        ],
+        "risks": [
+          "No head-to-head record exists, introducing unpredictability",
+          "Both teams have relatively recent match experience (days since last match)"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: France has a slightly higher recent form than Iraq; Higher Elo rating for France; France's goals-for average is significantly higher.",
     "inputHash": "sha256:ab42377203587ffdbba9050d8dadbb71bb1ffb931063a621a24825c02e6100b1"
   },
   "predictionHistory": []

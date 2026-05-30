@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "ENG",
       "elo": 1719,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4799,
-      "draw": 0.239,
-      "away": 0.2811
+      "home": 0.4,
+      "draw": 0.32,
+      "away": 0.28
     },
-    "confidence": 0.21985,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.24
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.4,
+          "draw": 0.32,
+          "away": 0.28
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "Both teams have strong recent form.",
+          "Neutral venue reduces home advantage for England.",
+          "Both teams have high goals for average."
+        ],
+        "risks": [
+          "No head-to-head history to predict specific match dynamics.",
+          "Similar levels of recent team form and Elo ratings."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Both teams have strong recent form.; Neutral venue reduces home advantage for England.; Both teams have high goals for average..",
     "inputHash": "sha256:a152e6cec373d80b2f88610b40a54fcfdb89fd0e7d73fe115fb20f3a0f64406c"
   },
   "predictionHistory": []

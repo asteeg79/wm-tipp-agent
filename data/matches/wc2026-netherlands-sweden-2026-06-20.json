@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "NED",
       "elo": 1715,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.723,
-      "draw": 0.1544,
-      "away": 0.1226
+      "home": 0.68,
+      "draw": 0.16,
+      "away": 0.16
     },
-    "confidence": 0.5844999999999999,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.06
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.16,
+          "away": 0.16
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Netherlands have higher Elo rating and better recent form",
+          "Sweden's defensive vulnerabilities with goals against avg over 1.6",
+          "Netherlands strong offensive form with goals for avg over 2.5"
+        ],
+        "risks": [
+          "Neutral venue may reduce home advantage for Netherlands",
+          "Both teams have not played for 60 days, which can affect match fitness"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Netherlands have higher Elo rating and better recent form; Sweden's defensive vulnerabilities with goals against avg over 1.6; Netherlands strong offensive form with goals for avg over 2.5.",
     "inputHash": "sha256:47f697a4474bac4a6ef22e91f3ad9ed92cf10293a58b6f14a5cc39a5a095990e"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "ARG",
       "elo": 1749,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4694,
-      "draw": 0.2341,
-      "away": 0.2965
+      "home": 0.52,
+      "draw": 0.23,
+      "away": 0.25
     },
-    "confidence": 0.20409999999999998,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.34
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.52,
+          "draw": 0.23,
+          "away": 0.25
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Argentina has a higher Elo rating than Austria.",
+          "Argentina shows strong defensive form with a clean sheet rate of 63%.",
+          "Both teams' recent forms are equal, but Argentina has slightly better weighted form.",
+          "Neutral venue, no team has a home advantage."
+        ],
+        "risks": [
+          "Both teams have not played each other recently, introducing unknown variables.",
+          "Austria's goal-scoring rate is comparable to Argentina's."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Argentina has a higher Elo rating than Austria.; Argentina shows strong defensive form with a clean sheet rate of 63%.; Both teams' recent forms are equal, but Argentina has slightly better weighted form..",
     "inputHash": "sha256:8ca0abece8794bf8e3df718552332d40c586c2b5104550af2f6aaddd558d04a0"
   },
   "predictionHistory": []

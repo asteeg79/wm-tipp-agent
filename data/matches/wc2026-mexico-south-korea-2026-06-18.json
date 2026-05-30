@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "MEX",
       "elo": 1647,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.536,
-      "draw": 0.25,
-      "away": 0.214
+      "home": 0.4,
+      "draw": 0.35,
+      "away": 0.25
     },
-    "confidence": 0.30400000000000005,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,32 @@
         "away": 0.91
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.4,
+          "draw": 0.35,
+          "away": 0.25
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Mexico has a slight home advantage due to the altitude and partial host advantage with Spanish language influence.",
+          "South Korea has shown slightly better recent form than Mexico (1.9 vs 1.4).",
+          "Head-to-head result was even, with a draw in their last encounter.",
+          "Neutral venue nullifies full home advantage but favors Mexico's experience with altitude."
+        ],
+        "risks": [
+          "Both teams show inconsistencies in their goals against averages.",
+          "The match being played at a neutral venue can lead to unpredictable dynamics."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Mexico has a slight home advantage due to the altitude and partial host advantage with Spanish language influence.; South Korea has shown slightly better recent form than Mexico (1.9 vs 1.4).; Head-to-head result was even, with a draw in their last encounter..",
     "inputHash": "sha256:746f48b2063f021928389e6356f11a0a04e98779364201d1219b78b8a7caf5dd"
   },
   "predictionHistory": []

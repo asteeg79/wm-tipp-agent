@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "UZB",
       "elo": 1656,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.3571,
-      "draw": 0.2531,
-      "away": 0.3897
+      "home": 0.3,
+      "draw": 0.27,
+      "away": 0.43
     },
-    "confidence": 0.08455,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,33 @@
         "away": 1.43
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.3,
+          "draw": 0.27,
+          "away": 0.43
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Colombia has better recent form with a recentForm score of 1.8 compared to Uzbekistan's 1.6.",
+          "Colombia's offensive strength is higher with an average of 1.95 goals for per match.",
+          "Uzbekistan has not played in 124 days which could affect their match fitness.",
+          "The match is being played at a high altitude of 2240m, with no host advantage to either team."
+        ],
+        "risks": [
+          "Uzbekistan's strong defensive record with a clean sheet rate of 0.625 could make it difficult for Colombia to score.",
+          "Uzbekistan's weighted form is slightly higher than Colombia's, indicating they have performed well over a longer period.",
+          "The neutral venue may reduce the potential impact of away disadvantages for Colombia."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Colombia has better recent form with a recentForm score of 1.8 compared to Uzbekistan's 1.6.; Colombia's offensive strength is higher with an average of 1.95 goals for per match.; Uzbekistan has not played in 124 days which could affect their match fitness..",
     "inputHash": "sha256:6ac1eca3e5e208b59c7fa7da5c32bd314c252aad95b4332ec628266233f3d116"
   },
   "predictionHistory": []

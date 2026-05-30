@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "NZL",
       "elo": 1625,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 3
     },
     "probabilities": {
-      "home": 0.2894,
-      "draw": 0.2129,
-      "away": 0.4977
+      "home": 0.22,
+      "draw": 0.2,
+      "away": 0.58
     },
-    "confidence": 0.24654999999999996,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 2.05
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 3
+        },
+        "probabilities": {
+          "home": 0.22,
+          "draw": 0.2,
+          "away": 0.58
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Belgium has a higher recent form with a score of 2.2 compared to New Zealand's 1.9.",
+          "Belgium's goals for average (2.914) is significantly higher than New Zealand's (2.122).",
+          "New Zealand has not played in 193 days, which might affect their match readiness.",
+          "Belgium played more matches recently providing better match sharpness."
+        ],
+        "risks": [
+          "The match is played at a neutral venue, eliminating home advantage.",
+          "There is no historical Head-to-Head data between the two teams, increasing uncertainty."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Belgium has a higher recent form with a score of 2.2 compared to New Zealand's 1.9.; Belgium's goals for average (2.914) is significantly higher than New Zealand's (2.122).; New Zealand has not played in 193 days, which might affect their match readiness..",
     "inputHash": "sha256:9ce6e78efad7d2ef4e9b853e684c371a6bb6aac40a4f10789098a111199a68b8"
   },
   "predictionHistory": []

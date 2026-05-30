@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "SCO",
       "elo": 1523,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1472,
-      "draw": 0.2022,
-      "away": 0.6506
+      "home": 0.15,
+      "draw": 0.2,
+      "away": 0.65
     },
-    "confidence": 0.47589999999999993,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 2.05
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.15,
+          "draw": 0.2,
+          "away": 0.65
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Brazil has a higher Elo rating (1698) compared to Scotland (1523), indicating superior historical performance.",
+          "Brazil's recent form is slightly higher than Scotland's.",
+          "Brazil has a higher clean sheet rate and concedes fewer goals on average.",
+          "The match is at a neutral venue, nullifying any potential home advantage."
+        ],
+        "risks": [
+          "Scotland's recent performance has shown improvement with a weighted form of 1.6.",
+          "There is no head-to-head record, introducing uncertainty in matchup dynamics."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Brazil has a higher Elo rating (1698) compared to Scotland (1523), indicating superior historical performance.; Brazil's recent form is slightly higher than Scotland's.; Brazil has a higher clean sheet rate and concedes fewer goals on average..",
     "inputHash": "sha256:bcf7e3ebea23239cd3f085e11ee7a88566333289bb5900465ed803c692db8a44"
   },
   "predictionHistory": []

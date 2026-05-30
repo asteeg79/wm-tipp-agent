@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "COD",
       "elo": 1685,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.4202,
-      "draw": 0.2911,
-      "away": 0.2887
+      "home": 0.45,
+      "draw": 0.3,
+      "away": 0.25
     },
-    "confidence": 0.13030000000000003,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 0.95
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "DR Congo has better recent form and higher weighted form than Uzbekistan.",
+          "DR Congo has a strong defensive record with a higher clean sheet rate.",
+          "Both teams have not played against each other previously, eliminating direct historical advantage."
+        ],
+        "risks": [
+          "The match is played at a neutral venue, which can reduce the impact of DR Congo's form advantage.",
+          "Uzbekistan has not played recently, which could have resulted in tactical refreshment or player recovery."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: DR Congo has better recent form and higher weighted form than Uzbekistan.; DR Congo has a strong defensive record with a higher clean sheet rate.; Both teams have not played against each other previously, eliminating direct historical advantage..",
     "inputHash": "sha256:1d99118e7c693d989088c76f2685f574583cfbab8e0d69f035b40dd1381365a5"
   },
   "predictionHistory": []

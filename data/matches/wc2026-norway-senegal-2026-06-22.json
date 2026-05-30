@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "NOR",
       "elo": 1708,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3333,
-      "draw": 0.2297,
-      "away": 0.437
+      "home": 0.3,
+      "draw": 0.25,
+      "away": 0.45
     },
-    "confidence": 0.1555,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.76
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.3,
+          "draw": 0.25,
+          "away": 0.45
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Senegal has a higher Elo rating than Norway (1780 vs 1708).",
+          "Senegal's recent form is slightly better than Norway's (2.5 vs 2.3).",
+          "Senegal has a better clean sheet rate (0.647) compared to Norway (0.455)."
+        ],
+        "risks": [
+          "Both teams have not played against each other before, adding uncertainty.",
+          "Norway's higher goals for average (2.777) could surprise."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Senegal has a higher Elo rating than Norway (1780 vs 1708).; Senegal's recent form is slightly better than Norway's (2.5 vs 2.3).; Senegal has a better clean sheet rate (0.647) compared to Norway (0.455)..",
     "inputHash": "sha256:b6428480c89e99fcc704e1522edeb8ece68d2cfee3eb04742ba8eba372685b88"
   },
   "predictionHistory": []

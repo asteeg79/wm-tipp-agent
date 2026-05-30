@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "IRN",
       "elo": 1690,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4876,
-      "draw": 0.2271,
-      "away": 0.2853
+      "home": 0.52,
+      "draw": 0.23,
+      "away": 0.25
     },
-    "confidence": 0.23139999999999997,
+    "confidence": 0.73,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,33 @@
         "away": 1.37
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.52,
+          "draw": 0.23,
+          "away": 0.25
+        },
+        "confidence": 0.73,
+        "keyFactors": [
+          "Iran's higher Elo rating (1690 vs 1625)",
+          "Iran's stronger average goals for compared to goals against (2.271 vs 0.908)",
+          "Neutral venue with no location advantage for either team",
+          "Iran's slightly better weighted form over a larger sample size of matches"
+        ],
+        "risks": [
+          "Long break for New Zealand which might affect form",
+          "Both teams have not faced each other before, adding uncertainty",
+          "Neutral venue limits any potential home advantage for Iran"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Iran's higher Elo rating (1690 vs 1625); Iran's stronger average goals for compared to goals against (2.271 vs 0.908); Neutral venue with no location advantage for either team.",
     "inputHash": "sha256:eda7f28525fe5eb604fea40ceb664bd328c5b169b9d18dab49e21131e29f7461"
   },
   "predictionHistory": []

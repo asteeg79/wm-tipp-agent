@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "SEN",
       "elo": 1780,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6822,
-      "draw": 0.1961,
-      "away": 0.1217
+      "home": 0.65,
+      "draw": 0.22,
+      "away": 0.13
     },
-    "confidence": 0.5233,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 0.73
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.65,
+          "draw": 0.22,
+          "away": 0.13
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Senegal shows stronger recent form with a rating of 2.5 compared to Iraq's 1.8.",
+          "Senegal's defense is robust, evident in their clean sheet rate of 0.647.",
+          "Neutral venue, no host advantage."
+        ],
+        "risks": [
+          "No historical data for head-to-head, leading to uncertainty in direct comparisons.",
+          "Both teams have not played in the last 60 days, affecting current form assessment."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Senegal shows stronger recent form with a rating of 2.5 compared to Iraq's 1.8.; Senegal's defense is robust, evident in their clean sheet rate of 0.647.; Neutral venue, no host advantage..",
     "inputHash": "sha256:a17d2fcb4f58df4f4925c545f0690fccfb2ad187e48f316622e554067622131a"
   },
   "predictionHistory": []

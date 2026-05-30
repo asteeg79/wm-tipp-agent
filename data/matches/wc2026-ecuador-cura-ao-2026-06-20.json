@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "ECU",
       "elo": 1655,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.219,
-      "draw": 0.2835,
-      "away": 0.4975
+      "home": 0.3,
+      "draw": 0.4,
+      "away": 0.3
     },
-    "confidence": 0.24625,
+    "confidence": 0.6,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,34 @@
         "away": 1.33
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.3,
+          "draw": 0.4,
+          "away": 0.3
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Ecuador's slightly higher Elo rating and competitive form.",
+          "Ecuador's good defensive record with 0.528 goals against average.",
+          "Curaçao's higher recent offensive output with 2.199 goals for average.",
+          "No head-to-head history to lean on for direct comparisons.",
+          "Neutral venue levels the playing field; no home advantage."
+        ],
+        "risks": [
+          "Curaçao's longer time without a match could mean their current form is not accurately represented.",
+          "Impact of a neutral venue on both teams' performance.",
+          "Predictive models based on historical data might be less reliable due to lack of head-to-head data and neutral venue conditions."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Ecuador's slightly higher Elo rating and competitive form.; Ecuador's good defensive record with 0.528 goals against average.; Curaçao's higher recent offensive output with 2.199 goals for average..",
     "inputHash": "sha256:faa9dac558b7054429297ba00f6eb7140d6b61da5654c536d0a951f8f3748f68"
   },
   "predictionHistory": []

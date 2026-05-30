@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "CAN",
       "elo": 1627,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.7313,
-      "draw": 0.1696,
-      "away": 0.0991
+      "home": 0.68,
+      "draw": 0.17,
+      "away": 0.15
     },
-    "confidence": 0.5969499999999999,
+    "confidence": 0.85,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 0.71
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.17,
+          "away": 0.15
+        },
+        "confidence": 0.85,
+        "keyFactors": [
+          "Canada has a slightly better recent form compared to Qatar.",
+          "Qatar has not played a match in 194 days, which might affect their match fitness.",
+          "The match is at a neutral venue but with a host advantage context for Canada.",
+          "Canada has a strong defensive record with a high clean sheet rate."
+        ],
+        "risks": [
+          "No prior head-to-head results to gauge relative performance.",
+          "Canada's offensive output is not substantially higher than Qatar's, which could allow Qatar to challenge more effectively."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Canada has a slightly better recent form compared to Qatar.; Qatar has not played a match in 194 days, which might affect their match fitness.; The match is at a neutral venue but with a host advantage context for Canada..",
     "inputHash": "sha256:4cd9a0048cd9c3dded1982749be2680c30ae218b15c9b1668203e2f45ab27c28"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "NZL",
       "elo": 1625,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.261,
-      "draw": 0.2548,
-      "away": 0.4842
+      "home": 0.24,
+      "draw": 0.25,
+      "away": 0.51
     },
-    "confidence": 0.22630000000000003,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.54
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.24,
+          "draw": 0.25,
+          "away": 0.51
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Egypt has a higher elo rating.",
+          "Egypt has played more matches recently, indicating potentially better match fitness.",
+          "Egypt's recent form is slightly better than New Zealand's.",
+          "Neutral venue nullifies home advantage for New Zealand."
+        ],
+        "risks": [
+          "New Zealand has not played a match in over 6 months, making their form uncertain.",
+          "No head-to-head history makes direct comparison difficult."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Egypt has a higher elo rating.; Egypt has played more matches recently, indicating potentially better match fitness.; Egypt's recent form is slightly better than New Zealand's..",
     "inputHash": "sha256:53d4aa95d66d4e6dbd1a1f0afc5d5f7331783f9087389d3d48ddd1ea1187b176"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "PAN",
       "elo": 1600,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1719,
-      "draw": 0.2259,
-      "away": 0.6022
+      "home": 0.18,
+      "draw": 0.22,
+      "away": 0.6
     },
-    "confidence": 0.40329999999999994,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.82
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.18,
+          "draw": 0.22,
+          "away": 0.6
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "England's higher Elo rating and better recent form",
+          "Panama's tendency to concede goals",
+          "Both teams have equal rest period of 60 days",
+          "Neutral venue removes any home advantage"
+        ],
+        "risks": [
+          "No head-to-head data available",
+          "Neutral venue can reduce performance predictability"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: England's higher Elo rating and better recent form; Panama's tendency to concede goals; Both teams have equal rest period of 60 days.",
     "inputHash": "sha256:9ff0f49eefbf5e79dfbc02dbc94b5221a644d4aa41c5cae81baf23b8c2447c45"
   },
   "predictionHistory": []

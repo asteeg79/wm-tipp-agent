@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "USA",
       "elo": 1594,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.5388,
-      "draw": 0.2344,
-      "away": 0.2268
+      "home": 0.55,
+      "draw": 0.23,
+      "away": 0.22
     },
-    "confidence": 0.3081999999999999,
+    "confidence": 0.68,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,31 @@
         "away": 1.06
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.55,
+          "draw": 0.23,
+          "away": 0.22
+        },
+        "confidence": 0.68,
+        "keyFactors": [
+          "USA has a slightly higher Elo rating and better recent form compared to Paraguay.",
+          "The USA will have a host advantage, even though the match is at a neutral venue.",
+          "USA has scored more goals on average than Paraguay in their recent matches."
+        ],
+        "risks": [
+          "Despite having lower goals for average, Paraguay has a better clean sheet rate than the USA.",
+          "Neutral venue may reduce the home advantage impact for the USA."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: USA has a slightly higher Elo rating and better recent form compared to Paraguay.; The USA will have a host advantage, even though the match is at a neutral venue.; USA has scored more goals on average than Paraguay in their recent matches..",
     "inputHash": "sha256:6c5f3a67e09271b757887d74a59af6c86334148dbdc953c821b12474bd3cec5f"
   },
   "predictionHistory": []

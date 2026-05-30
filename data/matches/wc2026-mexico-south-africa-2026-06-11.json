@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "MEX",
       "elo": 1647,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 1,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.4951,
-      "draw": 0.2628,
-      "away": 0.242
+      "home": 0.35,
+      "draw": 0.4,
+      "away": 0.25
     },
-    "confidence": 0.24264999999999998,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,32 @@
         "away": 0.95
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35,
+          "draw": 0.4,
+          "away": 0.25
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "No head-to-head data available between the teams",
+          "Mexico playing on a neutral venue but at high altitude favoring Mexico slightly",
+          "Both teams in similar recent form with Mexico slightly lower",
+          "South Africa has a higher goals for average recently"
+        ],
+        "risks": [
+          "Mexico's host advantage due to high altitude might be underestimated",
+          "Form of the teams has been very close, increasing uncertainty"
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: No head-to-head data available between the teams; Mexico playing on a neutral venue but at high altitude favoring Mexico slightly; Both teams in similar recent form with Mexico slightly lower.",
     "inputHash": "sha256:6c65df7c2b8af82b3ab2ba534aa317827bb329b311989518fcdb88dc8729b171"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "TUR",
       "elo": 1661,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4686,
-      "draw": 0.2299,
-      "away": 0.3015
+      "home": 0.5,
+      "draw": 0.21,
+      "away": 0.29
     },
-    "confidence": 0.20290000000000002,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,32 @@
         "away": 1.4
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.5,
+          "draw": 0.21,
+          "away": 0.29
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Turkey has a higher elo rating and stronger recent form compared to USA.",
+          "Turkey's goal-scoring average is higher than USA's, and they have a better clean sheet rate.",
+          "Recent head-to-head result favors Turkey, who won their only recent encounter.",
+          "USA has host advantage, but the match is at a neutral venue, reducing this factor."
+        ],
+        "risks": [
+          "USA's potential host advantage, despite the neutral venue.",
+          "Both teams have not played for 60 days, affecting match readiness."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Turkey has a higher elo rating and stronger recent form compared to USA.; Turkey's goal-scoring average is higher than USA's, and they have a better clean sheet rate.; Recent head-to-head result favors Turkey, who won their only recent encounter..",
     "inputHash": "sha256:1047245ae6df6d76881ce1c4640f3684baacae45ac98845644f147fe06f91bc0"
   },
   "predictionHistory": []

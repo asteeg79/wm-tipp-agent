@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "COL",
       "elo": 1660,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3182,
-      "draw": 0.2655,
-      "away": 0.4163
+      "home": 0.35,
+      "draw": 0.3,
+      "away": 0.35
     },
-    "confidence": 0.12445000000000002,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,33 @@
         "away": 1.38
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "DR Congo has a higher Elo rating.",
+          "Recent form of DR Congo is better than Colombia's.",
+          "DR Congo's defensive record is stronger with a lower goals against average.",
+          "Neutral venue minimizes any home advantage."
+        ],
+        "risks": [
+          "Colombia has shown stronger attacking potential, with a higher goals for average.",
+          "Both teams have similar clean sheet rates, suggesting a tight match.",
+          "Altitude could impact teams' performances differently, as both teams are unused to this venue."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: DR Congo has a higher Elo rating.; Recent form of DR Congo is better than Colombia's.; DR Congo's defensive record is stronger with a lower goals against average..",
     "inputHash": "sha256:db54f6d16f1d98c56b9b24a33b215cb0948a10a74cdcfa889dd2f8113e3fdb79"
   },
   "predictionHistory": []

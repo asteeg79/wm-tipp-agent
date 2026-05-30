@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "home": {
       "teamId": "URU",
       "elo": 1583,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:01:43.207Z",
+    "generatedAt": "2026-05-30T18:08:46.452Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.2486,
-      "draw": 0.2876,
-      "away": 0.4637
+      "home": 0.35,
+      "draw": 0.35,
+      "away": 0.3
     },
-    "confidence": 0.19555,
+    "confidence": 0.6,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,6 +73,33 @@
         "away": 1.28
       }
     },
+    "models": {
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Uruguay has better recent form with a form rating of 1.6 compared to Cape Verde's 2.1.",
+          "Cape Verde has not played a match in the last 229 days, which might affect their match sharpness.",
+          "Uruguay has a better defensive record with a higher clean sheet rate of 51.7%.",
+          "Cape Verde has a higher goal-scoring rate with an average of 1.673 goals per game."
+        ],
+        "risks": [
+          "Cape Verde's longer break could result in either rustiness or a fresh and well-prepared team.",
+          "Neutral venue negates any potential home advantage.",
+          "Lack of historical head-to-head data introduces uncertainty."
+        ]
+      }
+    },
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Uruguay has better recent form with a form rating of 1.6 compared to Cape Verde's 2.1.; Cape Verde has not played a match in the last 229 days, which might affect their match sharpness.; Uruguay has a better defensive record with a higher clean sheet rate of 51.7%..",
     "inputHash": "sha256:ed53dfd6e5801342628c114db06013757d55c8adce4b23e26c8de139d9074bf2"
   },
   "predictionHistory": []
