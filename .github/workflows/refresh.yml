@@ -1,7 +1,7 @@
 name: Data Refresh (Pipeline)
 
-# Phase 0: Platzhalter — nur manuell auslösbar. Der Turnier-Cron-Zeitplan
-# (Abschnitt 10.2) und der Commit-&-Push-Schritt folgen in Phase 1 / Phase 6.
+# Phase 1: manuell auslösbar; führt die Pipeline aus und committet /data.
+# Der Turnier-Cron-Zeitplan (Abschnitt 10.2) folgt in Phase 6.
 on:
   workflow_dispatch:
 
@@ -30,6 +30,16 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # Inkrementeller Roh-Cache der Pipeline über Läufe hinweg erhalten
+      # (Historie unveränderlich → schont das API-Rate-Limit).
+      - name: Restore pipeline cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline/cache
+          key: pipeline-cache-${{ github.run_id }}
+          restore-keys: |
+            pipeline-cache-
+
       - name: Run pipeline
         run: pnpm --filter @wm/pipeline start
         env:
@@ -39,4 +49,15 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
 
-      # Commit/Push von /data folgt in Phase 1, sobald die Pipeline Daten schreibt.
+      # Geänderte /data committen & pushen → triggert deploy.yml.
+      - name: Commit & push data
+        run: |
+          git config user.name "wm-tipp-bot"
+          git config user.email "actions@github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "Keine Datenänderungen — nichts zu committen."
+          else
+            git commit -m "data: refresh $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git push
+          fi

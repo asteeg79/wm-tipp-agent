@@ -1,29 +1,54 @@
 /**
  * Einstiegspunkt der Daten- & Prognose-Pipeline.
- *
- * Ablauf (siehe Abschnitt 10.1 der Spezifikation) — wird in den Phasen 1–6
- * schrittweise mit echter Logik gefüllt. In Phase 0 nur ein Gerüst, das
- * sauber startet und stoppt.
+ * Ablauf siehe Abschnitt 10.1 der Spezifikation — wird phasenweise gefüllt.
  */
-
+import { join } from "node:path";
 import { config } from "../config.js";
+import { buildData } from "./buildData.js";
+import { repoRoot } from "./io/paths.js";
+import { ApiFootballProvider } from "./sources/apiFootball.js";
+
+/** Lädt lokal die Root-.env (in CI kommen die Werte direkt aus dem Env). */
+function loadDotenvIfPresent(): void {
+  try {
+    process.loadEnvFile(join(repoRoot, ".env"));
+  } catch {
+    // keine .env vorhanden (z. B. in GitHub Actions) → ignorieren
+  }
+}
 
 async function main(): Promise<void> {
+  loadDotenvIfPresent();
   console.log("[pipeline] WM-Tipp-Assistent 2026 — Pipeline-Lauf gestartet");
-  console.log("[pipeline] Konfiguration geladen:", {
-    decayHalfLifeDays: config.decayHalfLifeDays,
-    opponentHighlightWeight: config.opponentHighlightWeight,
-    formWindow: config.formWindow,
-    models: config.models,
+  console.log(
+    `[pipeline] Wettbewerb: league=${config.worldCup.leagueId} season=${config.worldCup.season}`,
+  );
+
+  const apiKey = process.env.API_FOOTBALL_KEY ?? "";
+  if (!apiKey) {
+    console.error(
+      "[pipeline] API_FOOTBALL_KEY fehlt. In .env eintragen (lokal) bzw. als Secret (CI).",
+    );
+    process.exitCode = 1;
+    return;
+  }
+
+  const provider = new ApiFootballProvider(apiKey);
+
+  // Phase 1: Struktur + Historie → index.json + teams/*.json
+  const stats = await buildData(provider);
+
+  console.log("[pipeline] Phase 1 abgeschlossen:");
+  console.table({
+    Teams_gesamt: stats.teamsTotal,
+    Teams_geschrieben: stats.teamsWritten,
+    Teams_offen: stats.teamsSkipped,
+    Spiele_geladen: stats.fixturesLoaded,
+    API_Requests: stats.requestsUsed,
+    Budget_erschoepft: stats.budgetExhausted,
   });
 
-  // TODO Phase 1: Fixtures/Teams laden → index.json + teams/*.json
-  // TODO Phase 3: News (RSS) holen, filtern, taggen
-  // TODO Phase 4: Feature-Engine (Form, Zeit-Decay, Elo, Poisson, H2H)
-  // TODO Phase 5: KI-Ensemble (Claude + ChatGPT) + Reconciliation
-  // TODO Phase 6: actualResult + Accuracy-Metriken
-
-  console.log("[pipeline] Phase 0: noch keine Datenlogik. Lauf beendet.");
+  // TODO Phase 3: News (RSS) · Phase 4: Feature-Engine · Phase 5: KI-Ensemble
 }
 
 main().catch((err) => {

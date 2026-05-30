@@ -33,6 +33,28 @@ export interface PipelineConfig {
   maxConcurrentRequests: number;
   /** Free-Tier-Schutz: max. Fußball-API-Requests pro Lauf. */
   maxFootballRequestsPerRun: number;
+  /** WM-Wettbewerb (nichts hartcodieren — hier zentral). */
+  worldCup: {
+    /** API-Football League-ID (World Cup = 1). */
+    leagueId: number;
+    /** Saison (Jahr). Default 2026; per Env WM_SEASON überschreibbar (Test). */
+    season: number;
+  };
+  /** API-Football-Provider-Einstellungen. */
+  apiFootball: {
+    baseUrl: string;
+    /** Max. Versuche bei 429/5xx. */
+    maxRetries: number;
+    /** Basis-Wartezeit (ms) für exponentielles Backoff. */
+    backoffBaseMs: number;
+  };
+}
+
+/** Saison aus Env (Testläufe gegen Free-zugängliche Saisons), sonst Default. */
+function resolveSeason(defaultSeason: number): number {
+  const env = process.env.WM_SEASON;
+  if (env && /^\d{4}$/.test(env)) return Number(env);
+  return defaultSeason;
 }
 
 export const config: PipelineConfig = {
@@ -52,4 +74,13 @@ export const config: PipelineConfig = {
   },
   maxConcurrentRequests: 4,
   maxFootballRequestsPerRun: 90,
+  worldCup: {
+    leagueId: 1,
+    season: resolveSeason(2026),
+  },
+  apiFootball: {
+    baseUrl: "https://v3.football.api-sports.io",
+    maxRetries: 4,
+    backoffBaseMs: 1500,
+  },
 };

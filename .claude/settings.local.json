@@ -17,7 +17,32 @@
       "Bash(corepack enable *)",
       "Bash(corepack prepare *)",
       "Bash(npm install *)",
-      "Bash(git -c user.name=\"WM Tipp Agent\" -c user.email=\"asteeg79@gmail.com\" commit --amend --no-edit)"
+      "Bash(git -c user.name=\"WM Tipp Agent\" -c user.email=\"asteeg79@gmail.com\" commit --amend --no-edit)",
+      "Bash(cp -n .env.example .env)",
+      "Bash(sed -i '' 's|^API_FOOTBALL_KEY=.*|API_FOOTBALL_KEY=6bc54b7ae0e5b26c0dd84a8919eee1f4|' .env)",
+      "Bash(git check-ignore *)",
+      "Bash(curl -s --max-time 25 -H \"x-apisports-key: 6bc54b7ae0e5b26c0dd84a8919eee1f4\" \"https://v3.football.api-sports.io/status\" -o /tmp/apf_status.json)",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('/tmp/apf_status.json'\\)\\);print\\(json.dumps\\(d.get\\('response',d\\),indent=2\\)[:1200]\\)\")",
+      "Bash(curl -s --max-time 25 -H 'x-apisports-key: __TRACKED_VAR__' __TRACKED_VAR__/leagues?id=1 -o /tmp/apf_league.json)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s --max-time 25 -H 'x-apisports-key: __TRACKED_VAR__' '__TRACKED_VAR__/teams?league=1&season=2026' -o /tmp/apf_teams.json)",
+      "Bash(curl -s --max-time 25 -H 'x-apisports-key: __TRACKED_VAR__' '__TRACKED_VAR__/standings?league=1&season=2026' -o /tmp/apf_standings.json)",
+      "Bash(curl -s --max-time 25 -H 'x-apisports-key: __TRACKED_VAR__' '__TRACKED_VAR__/teams?league=1&season=2022' -o /tmp/apf_t22.json)",
+      "Bash(curl -s --max-time 25 -H 'x-apisports-key: __TRACKED_VAR__' '__TRACKED_VAR__/fixtures?team=25&season=2024' -o /tmp/apf_hist.json)",
+      "Bash(curl -s --max-time 25 -H 'x-apisports-key: __TRACKED_VAR__' __TRACKED_VAR__/status -o /tmp/apf_s2.json)",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('/tmp/apf_s2.json'\\)\\);print\\(d['response']['requests']\\)\")",
+      "Bash(curl -s --max-time 20 -i \"https://fifa.balldontlie.io/v1/teams\")",
+      "Bash(curl -s --max-time 20 -I \"https://www.balldontlie.io/\")",
+      "WebFetch(domain:docs.balldontlie.io)",
+      "WebSearch",
+      "WebFetch(domain:www.balldontlie.io)",
+      "WebFetch(domain:fifa.balldontlie.io)",
+      "WebFetch(domain:www.football-data.org)",
+      "WebFetch(domain:docs.football-data.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:nba.balldontlie.io)",
+      "Bash(curl -s --max-time 12 -o /dev/null -w '%{http_code}' https://fifa.balldontlie.io/__TRACKED_VAR__)",
+      "Bash(git -c 'user.name=WM Tipp Agent' -c user.email=asteeg79@gmail.com commit -m ' *)"
     ]
   }
 }
