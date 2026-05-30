@@ -2,6 +2,8 @@
  * Zentrale Pipeline-Konfiguration.
  * Alle Modell-/Mathe-Parameter sind hier gebündelt, damit sie später per
  * Backtest tunebar sind (Abschnitt 11.3 / 20.3 der Spezifikation).
+ *
+ * Datenquelle: ausschließlich **openfootball** (gemeinfrei, kein API-Key).
  */
 
 export interface PipelineConfig {
@@ -29,28 +31,25 @@ export interface PipelineConfig {
     /** Mittelwert konfidenz-gewichten? */
     confidenceWeighted: boolean;
   };
-  /** Rate-Limit: max. parallele API-Requests. */
-  maxConcurrentRequests: number;
-  /** Free-Tier-Schutz: max. Fußball-API-Requests pro Lauf. */
-  maxFootballRequestsPerRun: number;
-  /** WM-Wettbewerb (nichts hartcodieren — hier zentral). */
-  worldCup: {
-    /** API-Football League-ID (World Cup = 1). */
-    leagueId: number;
-    /** Saison (Jahr). Default 2026; per Env WM_SEASON überschreibbar (Test). */
+  /** openfootball-Provider (gemeinfrei, kein Key). */
+  openFootball: {
+    /** Raw-Basis-URL des worldcup.json-Repos (Struktur/Spielplan). */
+    worldCupBaseUrl: string;
+    /** Raw-Basis-URL des internationals-Repos (Historie). */
+    internationalsBaseUrl: string;
+    /** WM-Jahr (2018/2022/2026). */
     season: number;
   };
-  /** API-Football-Provider-Einstellungen. */
-  apiFootball: {
-    baseUrl: string;
-    /** Max. Versuche bei 429/5xx. */
-    maxRetries: number;
-    /** Basis-Wartezeit (ms) für exponentielles Backoff. */
-    backoffBaseMs: number;
+  /** Provider-Auswahl. */
+  providers: {
+    /** Quelle für Teams/Gruppen/Spielplan. */
+    tournament: "openfootball";
+    /** Quelle für Länderspiel-Historie (Form/H2H). */
+    history: "openfootball" | "none";
   };
 }
 
-/** Saison aus Env (Testläufe gegen Free-zugängliche Saisons), sonst Default. */
+/** Saison aus Env (Testläufe gegen andere WM-Jahre), sonst Default. */
 function resolveSeason(defaultSeason: number): number {
   const env = process.env.WM_SEASON;
   if (env && /^\d{4}$/.test(env)) return Number(env);
@@ -72,15 +71,15 @@ export const config: PipelineConfig = {
   ensemble: {
     confidenceWeighted: true,
   },
-  maxConcurrentRequests: 4,
-  maxFootballRequestsPerRun: 90,
-  worldCup: {
-    leagueId: 1,
+  openFootball: {
+    worldCupBaseUrl:
+      "https://raw.githubusercontent.com/openfootball/worldcup.json/master",
+    internationalsBaseUrl:
+      "https://raw.githubusercontent.com/openfootball/internationals/master",
     season: resolveSeason(2026),
   },
-  apiFootball: {
-    baseUrl: "https://v3.football.api-sports.io",
-    maxRetries: 4,
-    backoffBaseMs: 1500,
+  providers: {
+    tournament: "openfootball",
+    history: "openfootball",
   },
 };

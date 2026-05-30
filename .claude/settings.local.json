@@ -42,7 +42,22 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:nba.balldontlie.io)",
       "Bash(curl -s --max-time 12 -o /dev/null -w '%{http_code}' https://fifa.balldontlie.io/__TRACKED_VAR__)",
-      "Bash(git -c 'user.name=WM Tipp Agent' -c user.email=asteeg79@gmail.com commit -m ' *)"
+      "Bash(git -c 'user.name=WM Tipp Agent' -c user.email=asteeg79@gmail.com commit -m ' *)",
+      "Bash(curl -s --max-time 25 \"https://api.github.com/repos/openfootball/worldcup.json/contents/\")",
+      "Bash(curl -s --max-time 25 \"https://api.github.com/repos/openfootball/worldcup/contents/\")",
+      "Bash(curl -s --max-time 25 \"https://api.github.com/orgs/openfootball/repos?per_page=100\")",
+      "Bash(gh auth *)",
+      "Bash(command -v gh)",
+      "Bash(gh api *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(rm -rf of_wcjson of_europe of_worldcup)",
+      "Bash(git clone *)",
+      "Bash(curl -s --max-time 25 -H \"x-apisports-key: 6bc54b7ae0e5b26c0dd84a8919eee1f4\" \"https://v3.football.api-sports.io/teams?search=mexico\" -o apf_search.json)",
+      "Bash(curl -s --max-time 20 -H \"x-apisports-key: 6bc54b7ae0e5b26c0dd84a8919eee1f4\" \"https://v3.football.api-sports.io/status\")",
+      "Bash(python3 -c \"import json,sys;print\\(json.load\\(sys.stdin\\)['response']['requests']\\)\")",
+      "Bash(python3 -c 'import json,sys *)",
+      "Bash(rm -f pipeline/src/sources/apiFootball.ts)",
+      "Bash(grep -rniE \"apifootball|api_football|api-football|api-sports\" pipeline/src pipeline/config.ts app/src shared/src)"
     ]
   }
 }

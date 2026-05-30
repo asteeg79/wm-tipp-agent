@@ -31,7 +31,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       # Inkrementeller Roh-Cache der Pipeline über Läufe hinweg erhalten
-      # (Historie unveränderlich → schont das API-Rate-Limit).
+      # (Historie unveränderlich → schont Bandbreite).
       - name: Restore pipeline cache
         uses: actions/cache@v4
         with:
@@ -40,14 +40,14 @@ jobs:
           restore-keys: |
             pipeline-cache-
 
+      # openfootball benötigt KEINEN Key. ANTHROPIC/OPENAI erst ab Phase 5
+      # (KI-Ensemble); ODDS/BALLDONTLIE optional.
       - name: Run pipeline
         run: pnpm --filter @wm/pipeline start
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
 
       # Geänderte /data committen & pushen → triggert deploy.yml.
       - name: Commit & push data

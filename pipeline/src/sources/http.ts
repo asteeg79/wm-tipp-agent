@@ -15,6 +15,50 @@ const sleep = (ms: number): Promise<void> =>
   new Promise((r) => setTimeout(r, ms));
 
 /**
+ * Holt eine Textressource. Gibt bei 404 `null` zurück (für optionale Dateien),
+ * wiederholt bei 429/5xx mit Backoff.
+ */
+export async function fetchText(
+  url: string,
+  opts: FetchJsonOptions,
+): Promise<string | null> {
+  const { headers, maxRetries, backoffBaseMs, timeoutMs = 25_000 } = opts;
+  let lastErr: unknown;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, {
+        headers: headers ?? {},
+        signal: controller.signal,
+      });
+      if (res.status === 404) return null;
+      if (res.status === 429 || res.status >= 500) {
+        const wait = backoffBaseMs * 2 ** attempt + Math.random() * 250;
+        lastErr = new Error(`HTTP ${res.status} für ${url}`);
+        if (attempt < maxRetries) {
+          await sleep(wait);
+          continue;
+        }
+        throw lastErr;
+      }
+      if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
+      return await res.text();
+    } catch (err) {
+      lastErr = err;
+      if (attempt < maxRetries) {
+        await sleep(backoffBaseMs * 2 ** attempt + Math.random() * 250);
+        continue;
+      }
+      throw lastErr;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  throw lastErr ?? new Error(`fetchText fehlgeschlagen: ${url}`);
+}
+
+/**
  * Holt JSON von `url`. Wiederholt bei 429 und 5xx mit exponentiellem Backoff
  * (+Jitter). Wirft bei endgültigem Fehlschlag.
  */

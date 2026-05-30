@@ -1,54 +1,56 @@
 /**
  * Einstiegspunkt der Daten- & Prognose-Pipeline.
- * Ablauf siehe Abschnitt 10.1 der Spezifikation — wird phasenweise gefüllt.
+ * Datenquelle: ausschließlich openfootball (gemeinfrei, kein API-Key).
+ *   Struktur/Spielplan: worldcup.json · Historie: internationals (Football.TXT)
  */
-import { join } from "node:path";
 import { config } from "../config.js";
 import { buildData } from "./buildData.js";
-import { repoRoot } from "./io/paths.js";
-import { ApiFootballProvider } from "./sources/apiFootball.js";
+import { OpenFootballProvider } from "./sources/openFootball.js";
+import { OpenFootballHistoryProvider } from "./sources/openFootballHistory.js";
+import {
+  noHistoryProvider,
+  type HistoryProvider,
+  type TournamentProvider,
+} from "./sources/types.js";
 
-/** Lädt lokal die Root-.env (in CI kommen die Werte direkt aus dem Env). */
-function loadDotenvIfPresent(): void {
-  try {
-    process.loadEnvFile(join(repoRoot, ".env"));
-  } catch {
-    // keine .env vorhanden (z. B. in GitHub Actions) → ignorieren
+function makeTournamentProvider(): TournamentProvider {
+  switch (config.providers.tournament) {
+    case "openfootball":
+      return new OpenFootballProvider();
+    default:
+      throw new Error(
+        `Tournament-Provider '${config.providers.tournament}' nicht unterstützt`,
+      );
   }
 }
 
+function makeHistoryProvider(): HistoryProvider {
+  return config.providers.history === "openfootball"
+    ? new OpenFootballHistoryProvider()
+    : noHistoryProvider;
+}
+
 async function main(): Promise<void> {
-  loadDotenvIfPresent();
   console.log("[pipeline] WM-Tipp-Assistent 2026 — Pipeline-Lauf gestartet");
   console.log(
-    `[pipeline] Wettbewerb: league=${config.worldCup.leagueId} season=${config.worldCup.season}`,
+    `[pipeline] Provider: tournament=${config.providers.tournament} history=${config.providers.history} (openfootball, kein Key)`,
   );
 
-  const apiKey = process.env.API_FOOTBALL_KEY ?? "";
-  if (!apiKey) {
-    console.error(
-      "[pipeline] API_FOOTBALL_KEY fehlt. In .env eintragen (lokal) bzw. als Secret (CI).",
-    );
-    process.exitCode = 1;
-    return;
-  }
+  const tournamentProvider = makeTournamentProvider();
+  const historyProvider = makeHistoryProvider();
 
-  const provider = new ApiFootballProvider(apiKey);
+  const stats = await buildData(tournamentProvider, historyProvider);
 
-  // Phase 1: Struktur + Historie → index.json + teams/*.json
-  const stats = await buildData(provider);
-
-  console.log("[pipeline] Phase 1 abgeschlossen:");
+  console.log("[pipeline] Phase 1 (openfootball-only) abgeschlossen:");
   console.table({
     Teams_gesamt: stats.teamsTotal,
     Teams_geschrieben: stats.teamsWritten,
-    Teams_offen: stats.teamsSkipped,
-    Spiele_geladen: stats.fixturesLoaded,
-    API_Requests: stats.requestsUsed,
-    Budget_erschoepft: stats.budgetExhausted,
+    Teams_fehlgeschlagen: stats.teamsFailed,
+    Matches_geschrieben: stats.matchesWritten,
+    Historie_Spiele: stats.historyLoaded,
   });
 
-  // TODO Phase 3: News (RSS) · Phase 4: Feature-Engine · Phase 5: KI-Ensemble
+  // TODO Phase 3: News · Phase 4: Feature-Engine · Phase 5: KI-Ensemble
 }
 
 main().catch((err) => {

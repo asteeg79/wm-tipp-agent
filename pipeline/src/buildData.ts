@@ -1,38 +1,38 @@
 /**
- * Phase-1-Orchestrierung: Struktur + 2-Jahres-Historie laden und als
- * index.json + teams/<id>.json schreiben (zod-validiert, inkrementell,
- * rate-limit-/budget-bewusst).
+ * Phase-1-Orchestrierung (Hybrid): Struktur/Spielplan aus dem
+ * TournamentProvider (openfootball) + Historie aus dem HistoryProvider
+ * (API-Football). Schreibt index.json, teams/<id>.json und matches/<id>.json
+ * (zod-validiert, inkrementell, budget-bewusst).
  */
 import {
   IndexFile,
+  Match,
   Team,
   type NewsItem,
   type PotentialOpponent,
+  type ScoreLine,
+  type Stage,
   type TeamResult,
   type TeamSummary,
 } from "@wm/shared";
 import { config } from "../config.js";
 import { writeJson } from "./io/json.js";
-import { indexPath, teamPath } from "./io/paths.js";
-import {
-  readProgress,
-  writeProgress,
-  type Progress,
-} from "./io/cache.js";
-import {
-  BudgetExhaustedError,
-  getRequestCount,
-} from "./sources/apiFootball.js";
-import type { DataProvider, NormalizedFixture } from "./sources/types.js";
+import { indexPath, matchPath, teamPath } from "./io/paths.js";
+import { readProgress, writeProgress, type Progress } from "./io/cache.js";
+import type {
+  HistoryMatch,
+  HistoryProvider,
+  NormalizedFixture,
+  TournamentProvider,
+} from "./sources/types.js";
 import { computeH2h, deriveOpponentSets } from "./features/opponents.js";
 
 export interface BuildStats {
   teamsTotal: number;
   teamsWritten: number;
-  teamsSkipped: number;
-  fixturesLoaded: number;
-  requestsUsed: number;
-  budgetExhausted: boolean;
+  teamsFailed: number;
+  matchesWritten: number;
+  historyLoaded: number;
 }
 
 /** Saisons für die N-Jahres-Historie (eindeutige Jahre im Zeitfenster). */
@@ -53,51 +53,50 @@ function historySeasons(now: Date, years: number): number[] {
   return seasons;
 }
 
-/** Wandelt die Fixtures eines Teams in TeamResult[] (Team-Perspektive) um. */
+/** Wandelt die Historie eines Teams in TeamResult[] um. */
 function toTeamResults(
-  teamId: string,
-  fixtures: NormalizedFixture[],
+  history: HistoryMatch[],
   potentialIds: Set<string>,
 ): TeamResult[] {
-  return fixtures.map((fx) => {
-    const home = fx.homeTeamId === teamId;
-    const opponentId = home ? fx.awayTeamId : fx.homeTeamId;
-    const opponentName = home ? fx.awayTeamName : fx.homeTeamName;
-    return {
-      matchId: fx.matchId,
-      date: fx.date,
-      competition: fx.competition,
-      home,
-      opponentId,
-      opponentName,
-      goalsFor: home ? fx.goalsHome : fx.goalsAway,
-      goalsAgainst: home ? fx.goalsAway : fx.goalsHome,
-      venue: fx.neutral ? "neutral" : home ? "home" : "away",
-      isVsPotentialWcOpponent: potentialIds.has(opponentId),
-    };
-  });
+  return history.map((m) => ({
+    matchId: m.matchId,
+    date: m.date,
+    competition: m.competition,
+    home: m.home,
+    opponentId: m.opponentId,
+    opponentName: m.opponentName,
+    goalsFor: m.goalsFor,
+    goalsAgainst: m.goalsAgainst,
+    venue: m.neutral ? "neutral" : m.home ? "home" : "away",
+    isVsPotentialWcOpponent: potentialIds.has(m.opponentId),
+  }));
 }
 
-export async function buildData(provider: DataProvider): Promise<BuildStats> {
+export async function buildData(
+  tournamentProvider: TournamentProvider,
+  historyProvider: HistoryProvider,
+): Promise<BuildStats> {
   const now = new Date();
   const nowIso = now.toISOString();
 
-  // 1) Turnierstruktur laden + index.json schreiben.
+  // 1) Turnierstruktur → index.json
   const { tournament, groups, teams, rankByTeamId } =
-    await provider.getTournament();
-
-  const index: IndexFile = {
+    await tournamentProvider.getTournament();
+  await writeJson(indexPath, IndexFile, {
     tournament,
     lastUpdated: nowIso,
     groups,
     teams,
-  };
-  await writeJson(indexPath, IndexFile, index);
+  });
 
-  // 2) Mögliche Gegner ableiten.
+  // 2) Mögliche Gegner ableiten
   const opponentSets = deriveOpponentSets(teams, groups, rankByTeamId);
 
-  // 3) Historie inkrementell laden (budget-/progress-bewusst).
+  // 3) Spielplan → matches/<id>.json (skeletal, ohne Prognose)
+  const schedule = await tournamentProvider.getSchedule();
+  const matchesWritten = await writeMatches(schedule);
+
+  // 4) Historie inkrementell laden (budget-/progress-bewusst)
   const seasons = historySeasons(now, config.historyYears);
   const progress = await readProgress();
   const maxTeams = process.env.WM_MAX_TEAMS
@@ -107,45 +106,69 @@ export async function buildData(provider: DataProvider): Promise<BuildStats> {
   const stats: BuildStats = {
     teamsTotal: teams.length,
     teamsWritten: 0,
-    teamsSkipped: 0,
-    fixturesLoaded: 0,
-    requestsUsed: 0,
-    budgetExhausted: false,
+    teamsFailed: 0,
+    matchesWritten,
+    historyLoaded: 0,
   };
 
   for (const team of teams) {
     if (stats.teamsWritten >= maxTeams) break;
     try {
-      const fixtures = await provider.getTeamFixtures(team.id, seasons);
-      stats.fixturesLoaded += fixtures.length;
+      const history = await historyProvider.getTeamHistory(team, seasons);
+      stats.historyLoaded += history.length;
 
       const refs = opponentSets.get(team.id) ?? [];
       const potentialIds = new Set(refs.map((r) => r.teamId));
-      const results = toTeamResults(team.id, fixtures, potentialIds);
-
+      const results = toTeamResults(history, potentialIds);
       const potentialOpponents: PotentialOpponent[] = refs.map((r) => ({
         teamId: r.teamId,
         stage: r.stage,
-        h2hSummary: computeH2h(team.id, r.teamId, fixtures),
+        h2hSummary: computeH2h(r.teamId, history),
       }));
 
-      await writeJson(teamPath(team.id), Team, buildTeam(team, nowIso, results, potentialOpponents));
+      await writeJson(
+        teamPath(team.id),
+        Team,
+        buildTeam(team, nowIso, results, potentialOpponents),
+      );
       progress.teamsBackfilled[team.id] = nowIso;
       stats.teamsWritten++;
     } catch (err) {
-      if (err instanceof BudgetExhaustedError) {
-        stats.budgetExhausted = true;
-        console.warn(`[pipeline] ${err.message} — Lauf wird fortgesetzt (Rest folgt nächster Lauf).`);
-        break;
-      }
-      throw err;
+      // Fehlertoleranz: ein Team-Fehler bricht den Lauf nicht ab.
+      stats.teamsFailed++;
+      console.warn(`[pipeline] Team ${team.id} übersprungen:`, err);
     }
   }
 
   await persistProgress(progress);
-  stats.teamsSkipped = stats.teamsTotal - stats.teamsWritten;
-  stats.requestsUsed = getRequestCount();
   return stats;
+}
+
+/** Schreibt den Spielplan als skeletale Match-Dokumente. */
+async function writeMatches(schedule: NormalizedFixture[]): Promise<number> {
+  let count = 0;
+  for (const fx of schedule) {
+    const stage: Stage = fx.stage ?? "group";
+    const actualResult: ScoreLine | null =
+      fx.finished && fx.goalsHome !== null && fx.goalsAway !== null
+        ? { home: fx.goalsHome, away: fx.goalsAway }
+        : null;
+    const match: Match = {
+      id: fx.matchId,
+      date: fx.dateTime ?? `${fx.date}T00:00:00Z`,
+      stage,
+      homeTeamId: fx.homeTeamId,
+      awayTeamId: fx.awayTeamId,
+      venue: { city: fx.ground ?? "TBD", neutral: fx.neutral },
+      status: fx.finished ? "finished" : "scheduled",
+      actualResult,
+      predictionHistory: [],
+    };
+    if (fx.groupId) match.groupId = fx.groupId;
+    await writeJson(matchPath(fx.matchId), Match, match);
+    count++;
+  }
+  return count;
 }
 
 /** Baut das Team-Dokument; optionale Felder werden bewusst weggelassen. */
