@@ -23,6 +23,8 @@ export interface NormalizedFixture {
   awayTeamName: string;
   /** Spielort (Stadt/Stadion), falls bekannt. */
   ground?: string;
+  /** Höhe des Spielorts in Metern, falls bekannt (z. B. Mexico City). */
+  altitude?: number;
   goalsHome: number | null;
   goalsAway: number | null;
   neutral: boolean;

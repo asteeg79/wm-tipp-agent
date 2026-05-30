@@ -122,7 +122,11 @@ export class OpenFootballProvider implements TournamentProvider {
       const stage = roundToStage(m.round, !!m.group);
       if (stage) fixture.stage = stage;
       if (m.group) fixture.groupId = normalizeGroupId(m.group);
-      if (m.ground) fixture.ground = m.ground;
+      if (m.ground) {
+        fixture.ground = m.ground;
+        const alt = cityAltitude(m.ground);
+        if (alt !== null) fixture.altitude = alt;
+      }
       const dt = toIsoDateTime(m.date, m.time);
       if (dt) fixture.dateTime = dt;
       out.push(fixture);
@@ -142,6 +146,16 @@ function buildTeamSummary(name: string, groupId: string): TeamSummary {
   if (info) base.logo = flagUrl(info.iso2);
   else console.warn(`[openfootball] unbekanntes Land (kein Flag/Code): ${name}`);
   return base;
+}
+
+/** Höhe (m) bekannter WM-2026-Spielorte; null wenn unbekannt/Meereshöhe. */
+function cityAltitude(ground: string): number | null {
+  const g = ground.toLowerCase();
+  if (g.includes("mexico city")) return 2240;
+  if (g.includes("guadalajara") || g.includes("zapopan")) return 1566;
+  if (g.includes("denver")) return 1609;
+  if (g.includes("monterrey")) return 540;
+  return null;
 }
 
 /** KO-Platzhalter wie "W101", "1A", "2B", "3rd A/B/C/D" erkennen. */

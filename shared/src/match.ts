@@ -73,11 +73,52 @@ export const PredictionHistoryEntry = z.object({
 });
 export type PredictionHistoryEntry = z.infer<typeof PredictionHistoryEntry>;
 
-/** Feature-Bundle: deterministischer Input für die KI (Phase 4 füllt dies). */
+/** Deterministische Form-/Stärke-Features eines Teams für eine Partie. */
+export const TeamFeatures = z.object({
+  teamId: z.string(),
+  elo: z.number(),
+  /** Zeit-decay-gewichtete Form (Punkte/Spiel, 0..3). */
+  weightedForm: z.number(),
+  /** Form der letzten N Spiele (Punkte/Spiel, 0..3). */
+  recentForm: z.number(),
+  /** Gewichteter Schnitt erzielter/kassierter Tore. */
+  goalsForAvg: z.number(),
+  goalsAgainstAvg: z.number(),
+  cleanSheetRate: z.number().min(0).max(1),
+  /** Anzahl Spiele in der Historie (Datengrundlage). */
+  matchesCount: z.number().int().min(0),
+  /** Tage seit dem letzten Spiel (Erholung), falls bekannt. */
+  daysSinceLastMatch: z.number().int().nullable().default(null),
+});
+export type TeamFeatures = z.infer<typeof TeamFeatures>;
+
+/** Kontextfaktoren der Partie (deterministisch ableitbar). */
+export const MatchContext = z.object({
+  neutralVenue: z.boolean(),
+  altitude: z.number().nullable().default(null),
+  /** "home" wenn ein Team Gastgeber ist (USA/CAN/MEX), sonst null. */
+  hostAdvantageTeamId: z.string().nullable().default(null),
+});
+export type MatchContext = z.infer<typeof MatchContext>;
+
+/**
+ * Feature-Bundle: deterministischer Input für die KI (Abschnitt 9.4 / 11).
+ * Strukturiert, damit App und LLMs typsicher darauf zugreifen.
+ */
 export const FeatureBundle = z.object({
-  /** Frei strukturierte, deterministisch erzeugte Features beider Teams. */
   generatedAt: IsoDateTime,
-  data: z.record(z.unknown()),
+  home: TeamFeatures,
+  away: TeamFeatures,
+  /** H2H aus Sicht des Heimteams. */
+  h2h: z.object({
+    played: z.number().int().min(0),
+    homeWins: z.number().int().min(0),
+    draws: z.number().int().min(0),
+    awayWins: z.number().int().min(0),
+    homeGoals: z.number().int().min(0),
+    awayGoals: z.number().int().min(0),
+  }),
+  context: MatchContext,
 });
 export type FeatureBundle = z.infer<typeof FeatureBundle>;
 

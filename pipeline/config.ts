@@ -17,6 +17,24 @@ export interface PipelineConfig {
   historyYears: number;
   /** Home-Field-Advantage in Elo-Punkten (Gastgeber). */
   homeFieldAdvantageElo: number;
+  /** Elo-Parameter (World-Football-Elo-Logik). */
+  elo: {
+    /** Start-Rating für alle Teams. */
+    initial: number;
+    /** K-Faktor (Update-Geschwindigkeit). */
+    k: number;
+    /** Tor-Differenz-Multiplikator aktivieren. */
+    goalDifferenceFactor: boolean;
+  };
+  /** Poisson-Baseline-Parameter. */
+  poisson: {
+    /** Liga-Durchschnitt Tore pro Team und Spiel (Skalierung). */
+    leagueAvgGoals: number;
+    /** Max. Tore pro Team in der Score-Matrix. */
+    maxGoals: number;
+    /** Wie stark die Elo-Differenz die erwarteten Tore beeinflusst. */
+    eloToGoalsScale: number;
+  };
   /** Re-Trigger-Milestones in Stunden vor Anpfiff. */
   reTriggerMilestonesHours: number[];
   /** Max. Anzahl gespeicherter News-Items pro Team. */
@@ -62,6 +80,16 @@ export const config: PipelineConfig = {
   formWindow: 10,
   historyYears: 2,
   homeFieldAdvantageElo: 65,
+  elo: {
+    initial: 1500,
+    k: 40,
+    goalDifferenceFactor: true,
+  },
+  poisson: {
+    leagueAvgGoals: 1.35,
+    maxGoals: 8,
+    eloToGoalsScale: 0.0016,
+  },
   reTriggerMilestonesHours: [72, 24, 3],
   maxNewsPerTeam: 20,
   models: {
