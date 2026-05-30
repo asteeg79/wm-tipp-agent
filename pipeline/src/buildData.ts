@@ -41,6 +41,9 @@ import {
 } from "./features/elo.js";
 import { runEngine, featureHash } from "./features/engine.js";
 import { computeForm, recencyWeight as recencyWeightFor } from "./features/form.js";
+import { makeEnsemble, type Ensemble } from "./predict/index.js";
+import { decideRetrigger } from "./predict/retrigger.js";
+import { readJsonOptional } from "./io/json.js";
 
 export interface BuildStats {
   teamsTotal: number;
@@ -49,11 +52,15 @@ export interface BuildStats {
   matchesWritten: number;
   historyLoaded: number;
   newsLoaded: number;
+  aiEvaluated: number;
+  aiSkipped: number;
 }
 
 export interface BuildOptions {
   /** News (RSS) holen und in teams/*.json schreiben. */
   withNews: boolean;
+  /** KI-Ensemble für anstehende Partien ausführen (Phase 5). */
+  withAi: boolean;
 }
 
 /** Saisons für die N-Jahres-Historie (eindeutige Jahre im Zeitfenster). */
@@ -96,7 +103,7 @@ function toTeamResults(
 export async function buildData(
   tournamentProvider: TournamentProvider,
   historyProvider: HistoryProvider,
-  options: BuildOptions = { withNews: true },
+  options: BuildOptions = { withNews: true, withAi: true },
 ): Promise<BuildStats> {
   const now = new Date();
   const nowIso = now.toISOString();
@@ -131,11 +138,16 @@ export async function buildData(
     matchesWritten: 0,
     historyLoaded: 0,
     newsLoaded: 0,
+    aiEvaluated: 0,
+    aiSkipped: 0,
   };
 
   // 4) Historie aller Teams sammeln (für globale Elo-Berechnung).
   const historyByTeam = new Map<string, HistoryMatch[]>();
   const resultsByTeam = new Map<string, TeamResult[]>();
+  const newsByTeam = new Map<string, NewsItem[]>();
+  const nameById = new Map<string, string>();
+  for (const t of teams) nameById.set(t.id, t.name);
   const limitedTeams = Number.isFinite(maxTeams)
     ? teams.slice(0, maxTeams)
     : teams;
@@ -182,6 +194,7 @@ export async function buildData(
           console.warn(`[pipeline] News für ${team.id} fehlgeschlagen:`, err);
         }
       }
+      newsByTeam.set(team.id, news);
 
       await writeJson(
         teamPath(team.id),
@@ -196,31 +209,73 @@ export async function buildData(
     }
   }
 
-  // 7) Matches mit Engine (Feature-Bundle + Baseline) schreiben.
-  stats.matchesWritten = await writeMatches(schedule, resultsByTeam, eloOf, now);
+  // 7) Matches mit Engine (Feature-Bundle + Baseline) + optional KI-Ensemble.
+  const ensemble = options.withAi ? makeEnsemble() : null;
+  if (ensemble && !ensemble.active) {
+    console.warn(
+      "[pipeline] Kein KI-Key gesetzt → nur Baseline (graceful degradation).",
+    );
+  } else if (ensemble) {
+    console.log(`[pipeline] KI-Ensemble aktiv: ${ensemble.modelIds.join(", ")}`);
+  }
+
+  const matchResult = await writeMatches(schedule, {
+    resultsByTeam,
+    newsByTeam,
+    nameById,
+    eloOf,
+    now,
+    ensemble: ensemble && ensemble.active ? ensemble : null,
+  });
+  stats.matchesWritten = matchResult.written;
+  stats.aiEvaluated = matchResult.aiEvaluated;
+  stats.aiSkipped = matchResult.aiSkipped;
 
   await persistProgress(progress);
   return stats;
 }
 
+interface WriteMatchesCtx {
+  resultsByTeam: Map<string, TeamResult[]>;
+  newsByTeam: Map<string, NewsItem[]>;
+  nameById: Map<string, string>;
+  eloOf: (id: string) => number;
+  now: Date;
+  ensemble: Ensemble | null;
+}
+
+interface WriteMatchesResult {
+  written: number;
+  aiEvaluated: number;
+  aiSkipped: number;
+}
+
 /**
- * Schreibt die Match-Dokumente. Für anstehende Partien mit bekannten Teams
- * wird das deterministische Feature-Bundle + Baseline (Phase 4) berechnet und
- * eine baseline-only Prediction (ohne KI) gesetzt; inputHash für Re-Trigger.
+ * Schreibt die Match-Dokumente. Für anstehende Partien mit bekannter Historie:
+ * Feature-Bundle + Baseline (Phase 4); falls KI-Ensemble aktiv und Re-Trigger
+ * greift, wird der KI-Tipp berechnet (alter Tipp → predictionHistory).
+ * Inkrementell: bestehende matches/*.json werden gelesen, um Re-Trigger und
+ * Historie zu bewahren.
  */
 async function writeMatches(
   schedule: NormalizedFixture[],
-  resultsByTeam: Map<string, TeamResult[]>,
-  eloOf: (id: string) => number,
-  now: Date,
-): Promise<number> {
-  let count = 0;
+  ctx: WriteMatchesCtx,
+): Promise<WriteMatchesResult> {
+  const { resultsByTeam, newsByTeam, nameById, eloOf, now, ensemble } = ctx;
+  let written = 0;
+  let aiEvaluated = 0;
+  let aiSkipped = 0;
+
   for (const fx of schedule) {
     const stage: Stage = fx.stage ?? "group";
     const actualResult: ScoreLine | null =
       fx.finished && fx.goalsHome !== null && fx.goalsAway !== null
         ? { home: fx.goalsHome, away: fx.goalsAway }
         : null;
+
+    // Bestehendes Match laden (für Re-Trigger + predictionHistory).
+    const prev = await readJsonOptional<Match>(matchPath(fx.matchId), Match);
+
     const match: Match = {
       id: fx.matchId,
       date: fx.dateTime ?? `${fx.date}T00:00:00Z`,
@@ -234,13 +289,13 @@ async function writeMatches(
       },
       status: fx.finished ? "finished" : "scheduled",
       actualResult,
-      predictionHistory: [],
+      predictionHistory: prev?.predictionHistory ?? [],
     };
     if (fx.groupId) match.groupId = fx.groupId;
 
-    // Engine nur für anstehende Partien mit verfügbarer Historie beider Teams.
     const homeResults = resultsByTeam.get(fx.homeTeamId);
     const awayResults = resultsByTeam.get(fx.awayTeamId);
+
     if (!fx.finished && homeResults && awayResults) {
       const { featureBundle, baseline, mostLikelyScore } = runEngine(
         {
@@ -254,21 +309,74 @@ async function writeMatches(
         now,
       );
       match.featureBundle = featureBundle;
-      // Baseline-only Prediction (Phase 5 ersetzt sie durch das KI-Ensemble).
-      match.prediction = {
+      const inputHash = featureHash(featureBundle);
+
+      // Baseline-Prediction als Default.
+      const baselinePrediction = {
         generatedAt: now.toISOString(),
         predictedScore: mostLikelyScore,
         probabilities: baseline.probabilities,
         confidence: baselineConfidence(baseline.probabilities),
         baseline,
-        inputHash: featureHash(featureBundle),
+        inputHash,
       };
+
+      const homeNews = newsByTeam.get(fx.homeTeamId) ?? [];
+      const awayNews = newsByTeam.get(fx.awayTeamId) ?? [];
+
+      if (ensemble) {
+        const decision = decideRetrigger(
+          prev ?? match,
+          inputHash,
+          homeNews,
+          awayNews,
+          now,
+        );
+        if (decision.shouldEvaluate) {
+          try {
+            const aiPred = await ensemble.evaluate({
+              homeName: nameById.get(fx.homeTeamId) ?? fx.homeTeamId,
+              awayName: nameById.get(fx.awayTeamId) ?? fx.awayTeamId,
+              featureBundle,
+              baseline,
+              homeNews,
+              awayNews,
+              inputHash,
+              now,
+            });
+            // Alten KI-Tipp in die Historie schieben.
+            if (prev?.prediction?.models) {
+              match.predictionHistory = [
+                ...match.predictionHistory,
+                {
+                  generatedAt: prev.prediction.generatedAt,
+                  predictedScore: prev.prediction.predictedScore,
+                  probabilities: prev.prediction.probabilities,
+                  confidence: prev.prediction.confidence,
+                },
+              ];
+            }
+            match.prediction = aiPred;
+            aiEvaluated++;
+          } catch (err) {
+            console.warn(`[predict] ${fx.matchId} KI fehlgeschlagen:`, err);
+            match.prediction = prev?.prediction ?? baselinePrediction;
+            aiSkipped++;
+          }
+        } else {
+          // Unverändert → vorhandenen Tipp behalten, sonst Baseline.
+          match.prediction = prev?.prediction ?? baselinePrediction;
+          aiSkipped++;
+        }
+      } else {
+        match.prediction = baselinePrediction;
+      }
     }
 
     await writeJson(matchPath(fx.matchId), Match, match);
-    count++;
+    written++;
   }
-  return count;
+  return { written, aiEvaluated, aiSkipped };
 }
 
 /** Grobes Konfidenzmaß aus der Verteilung (max-Wahrscheinlichkeit, skaliert). */

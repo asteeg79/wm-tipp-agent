@@ -20,6 +20,9 @@ export function MatchPage() {
   const fb = match.featureBundle;
   const home = teams.get(match.homeTeamId);
   const away = teams.get(match.awayTeamId);
+  const models = pred?.models;
+  const hasAi = !!models && (!!models.claude || !!models.chatgpt);
+  const lowAgreement = pred?.agreement !== undefined && pred.agreement < 0.7;
 
   return (
     <div className="space-y-4">
@@ -59,12 +62,21 @@ export function MatchPage() {
         </div>
       </div>
 
-      {/* Prognose (Baseline) */}
+      {/* Prognose */}
       {pred ? (
         <div className="space-y-4 rounded-xl border border-slate-800 bg-slate-900/40 p-4">
-          <div className="flex items-center justify-between">
-            <h3 className="font-semibold">{t("match.baselineTip")}</h3>
-            <ConfidenceBadge value={pred.confidence} />
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="font-semibold">
+              {hasAi ? t("match.aiTip") : t("match.baselineTip")}
+            </h3>
+            <div className="flex items-center gap-2">
+              {lowAgreement && (
+                <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-amber-300 ring-1 ring-inset ring-amber-500/30">
+                  ⚠ {t("match.modelsDisagree")}
+                </span>
+              )}
+              <ConfidenceBadge value={pred.confidence} />
+            </div>
           </div>
 
           <div>
@@ -74,8 +86,45 @@ export function MatchPage() {
             <ProbabilityBar p={pred.probabilities} />
           </div>
 
+          {/* Warum dieser Tipp (keyFactors/risks) */}
+          {hasAi && <WhySection models={models!} />}
+
+          {/* Modell-Vergleich Claude vs. ChatGPT */}
+          {hasAi && (
+            <div className="border-t border-slate-800 pt-3">
+              <div className="mb-2 text-xs uppercase tracking-wide text-slate-500">
+                {t("match.modelComparison")}
+                {pred.agreement !== undefined && (
+                  <span className="ml-2 normal-case text-slate-400">
+                    {t("match.agreement")}: {Math.round(pred.agreement * 100)}%
+                  </span>
+                )}
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <ModelCol label="Claude" m={models!.claude} />
+                <ModelCol label="ChatGPT" m={models!.chatgpt} />
+              </div>
+            </div>
+          )}
+
+          {/* Baseline vs. KI + erwartete Tore */}
           {pred.baseline && (
-            <div className="text-sm text-slate-400">
+            <div className="border-t border-slate-800 pt-3 text-sm text-slate-400">
+              {hasAi && (
+                <div className="mb-1 text-xs uppercase tracking-wide text-slate-500">
+                  {t("match.baselineVsAi")}
+                </div>
+              )}
+              {hasAi && (
+                <div className="mb-2">
+                  <span className="text-slate-500">Baseline:</span>{" "}
+                  <span className="font-mono text-slate-300">
+                    {pct(pred.baseline.probabilities.home)} /{" "}
+                    {pct(pred.baseline.probabilities.draw)} /{" "}
+                    {pct(pred.baseline.probabilities.away)}
+                  </span>
+                </div>
+              )}
               {t("match.expectedGoals")}:{" "}
               <span className="font-mono text-slate-200">
                 {pred.baseline.expectedGoals.home.toFixed(2)} :{" "}
@@ -84,6 +133,7 @@ export function MatchPage() {
             </div>
           )}
 
+          {/* Faktoren (Elo/Form) */}
           {fb && (
             <div className="grid grid-cols-2 gap-3 border-t border-slate-800 pt-3 text-sm">
               <FeatureCol label={home?.name ?? match.homeTeamId} f={fb.home} />
@@ -91,8 +141,28 @@ export function MatchPage() {
             </div>
           )}
 
+          {/* Tipp-Timeline */}
+          {match.predictionHistory.length > 0 && (
+            <div className="border-t border-slate-800 pt-3">
+              <div className="mb-2 text-xs uppercase tracking-wide text-slate-500">
+                {t("match.timeline")}
+              </div>
+              <ul className="space-y-1 text-sm">
+                {[...match.predictionHistory].reverse().map((h, i) => (
+                  <li key={i} className="flex justify-between text-slate-400">
+                    <span>{formatKickoff(h.generatedAt)}</span>
+                    <span className="font-mono">
+                      {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
+                      {Math.round(h.confidence * 100)}%
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <p className="border-t border-slate-800 pt-3 text-xs text-slate-500">
-            {t("match.baselineNote")}
+            {pred.rationale ?? t("match.baselineNote")}
           </p>
         </div>
       ) : (
@@ -100,6 +170,81 @@ export function MatchPage() {
           {t("match.predictionSoon")}
         </div>
       )}
+    </div>
+  );
+}
+
+const pct = (x: number): string => `${Math.round(x * 100)}%`;
+
+function WhySection({
+  models,
+}: {
+  models: NonNullable<import("@wm/shared").Match["prediction"]>["models"];
+}) {
+  const { t } = useTranslation();
+  const factors = new Set<string>();
+  const risks = new Set<string>();
+  for (const m of [models?.claude, models?.chatgpt]) {
+    m?.keyFactors.forEach((f) => factors.add(f));
+    m?.risks.forEach((r) => risks.add(r));
+  }
+  if (factors.size === 0 && risks.size === 0) return null;
+  return (
+    <div className="border-t border-slate-800 pt-3">
+      <div className="mb-2 text-xs uppercase tracking-wide text-slate-500">
+        {t("match.whyTitle")}
+      </div>
+      {factors.size > 0 && (
+        <div className="mb-2">
+          <div className="text-xs font-medium text-emerald-400">
+            {t("match.keyFactors")}
+          </div>
+          <ul className="ml-4 list-disc text-sm text-slate-300">
+            {[...factors].slice(0, 5).map((f, i) => (
+              <li key={i}>{f}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {risks.size > 0 && (
+        <div>
+          <div className="text-xs font-medium text-amber-400">
+            {t("match.risks")}
+          </div>
+          <ul className="ml-4 list-disc text-sm text-slate-300">
+            {[...risks].slice(0, 4).map((rk, i) => (
+              <li key={i}>{rk}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ModelCol({
+  label,
+  m,
+}: {
+  label: string;
+  m: import("@wm/shared").ModelPrediction | undefined;
+}) {
+  if (!m)
+    return (
+      <div className="rounded-md bg-slate-900/60 p-2 text-slate-600">
+        {label}: –
+      </div>
+    );
+  return (
+    <div className="rounded-md bg-slate-900/60 p-2">
+      <div className="font-medium">{label}</div>
+      <div className="mt-1 font-mono text-slate-300">
+        {m.predictedScore.home}:{m.predictedScore.away}
+      </div>
+      <div className="text-xs text-slate-500">
+        {pct(m.probabilities.home)} / {pct(m.probabilities.draw)} /{" "}
+        {pct(m.probabilities.away)} · {pct(m.confidence)}
+      </div>
     </div>
   );
 }

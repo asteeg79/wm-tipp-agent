@@ -7,10 +7,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import type { z } from "zod";
 
+// Schemas mit .default() haben abweichende Input-/Output-Typen → Input unknown.
+type Schema<T> = z.ZodType<T, z.ZodTypeDef, unknown>;
+
 /** Liest und validiert eine JSON-Datei gegen ein Schema. */
 export async function readJson<T>(
   path: string,
-  schema: z.ZodType<T>,
+  schema: Schema<T>,
 ): Promise<T> {
   const raw = await readFile(path, "utf8");
   return schema.parse(JSON.parse(raw));
@@ -19,7 +22,7 @@ export async function readJson<T>(
 /** Liest und validiert, gibt null zurück, falls Datei fehlt. */
 export async function readJsonOptional<T>(
   path: string,
-  schema: z.ZodType<T>,
+  schema: Schema<T>,
 ): Promise<T | null> {
   try {
     return await readJson(path, schema);
@@ -32,7 +35,7 @@ export async function readJsonOptional<T>(
 /** Validiert gegen das Schema und schreibt hübsch formatiert. */
 export async function writeJson<T>(
   path: string,
-  schema: z.ZodType<T>,
+  schema: Schema<T>,
   value: T,
 ): Promise<void> {
   const validated = schema.parse(value);
