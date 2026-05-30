@@ -1,0 +1,21 @@
+{
+  "name": "wm-tipp-agent",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "pnpm --filter app dev",
+    "build": "pnpm --filter app build",
+    "pipeline": "pnpm --filter pipeline start",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint"
+  },
+  "workspaces": [
+    "app",
+    "pipeline",
+    "shared"
+  ],
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  }
+}

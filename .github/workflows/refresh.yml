@@ -1,0 +1,42 @@
+name: Data Refresh (Pipeline)
+
+# Phase 0: Platzhalter — nur manuell auslösbar. Der Turnier-Cron-Zeitplan
+# (Abschnitt 10.2) und der Commit-&-Push-Schritt folgen in Phase 1 / Phase 6.
+on:
+  workflow_dispatch:
+
+# Läufe dürfen sich nicht überlappen (idempotente Pipeline).
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Run pipeline
+        run: pnpm --filter @wm/pipeline start
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+
+      # Commit/Push von /data folgt in Phase 1, sobald die Pipeline Daten schreibt.
