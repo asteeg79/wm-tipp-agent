@@ -22,12 +22,24 @@ export function Layout() {
           <h1 className="mr-2 text-base font-semibold tracking-tight">
             {t("appTitle")}
           </h1>
-          <nav className="flex gap-1">
+          <nav className="flex flex-wrap gap-1">
             <NavLink to="/" end className={navClass}>
               {t("nav.overview")}
             </NavLink>
             <NavLink to="/groups" className={navClass}>
               {t("nav.groups")}
+            </NavLink>
+            <NavLink to="/bracket" className={navClass}>
+              {t("nav.bracket")}
+            </NavLink>
+            <NavLink to="/compare" className={navClass}>
+              {t("nav.compare")}
+            </NavLink>
+            <NavLink to="/accuracy" className={navClass}>
+              {t("nav.accuracy")}
+            </NavLink>
+            <NavLink to="/play" className={navClass}>
+              {t("nav.play")}
             </NavLink>
           </nav>
           {index?.lastUpdated && (
