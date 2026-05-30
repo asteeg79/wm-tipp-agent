@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "NOR",
       "elo": 1708,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3043,
-      "draw": 0.2413,
-      "away": 0.4543
+      "home": 0.3041,
+      "draw": 0.2417,
+      "away": 0.4541
     },
-    "confidence": 0.6308,
+    "confidence": 0.6953,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,19 @@
           "draw": 0.23,
           "away": 0.46
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Senegal mit höherem Elo (1780 vs 1708) und stärkerer gewichteter Form (2.441 vs 2.019)",
-          "Senegal defensiv stabiler: Gegentore-Schnitt 0.614 und Clean-Sheet-Rate 64.7% gegenüber Norwegens 0.814 und 45.5%",
-          "Senegal mit breiterer Datenbasis (34 Spiele) und solider jüngster Form (2.5)",
-          "Norwegen mit starker Offensive (2.777 Tore/Spiel), kann auf neutralem Boden gefährlich sein"
+          "Senegal mit höherem Elo (1780 vs. 1708) und stärkerer gewichteter Form (2.441 vs. 2.019)",
+          "Senegal defensiv stabiler: cleanSheetRate 0.647 und nur 0.614 Gegentore pro Spiel",
+          "Norwegen offensiv gefährlich (2.777 Tore/Spiel), aber defensiv anfälliger (0.814 Gegentore, CS 0.455)",
+          "Neutraler Spielort ohne Heimvorteil für Norwegen",
+          "Senegal mit größerer Stichprobe (34 Spiele) und konstanter Top-Form (recentForm 2.5)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit über direkten Vergleich",
-          "Neutraler Spielort nimmt Norwegen einen potenziellen Heimvorteil",
-          "Norwegens hohe Torproduktion könnte ein knappes Ergebnis kippen",
-          "60 Tage seit letztem Spiel beider Teams: Spielrhythmus schwer einzuschätzen"
+          "Keine H2H-Daten vorhanden, erhöhte Unsicherheit",
+          "Material-News betreffen USMNT/Chris Richards und sind für dieses Spiel irrelevant",
+          "Norwegens hohe Offensivproduktion kann ausgeglichene Senegal-Defensive überwinden",
+          "60 Tage seit letztem Spiel bei beiden Teams – mögliche Rhythmusprobleme"
         ]
       },
       "chatgpt": {
@@ -108,21 +109,35 @@
           "draw": 0.25,
           "away": 0.45
         },
-        "confidence": 0.72,
+        "confidence": 0.82,
         "keyFactors": [
-          "Senegal has a higher Elo rating compared to Norway, indicating a stronger team strength.",
-          "Senegal has a better defensive record with a higher clean sheet percentage of 0.647 compared to Norway's 0.455.",
-          "Both teams have had equally recent match activity (60 days since last match), balancing match fitness concerns."
+          "Senegal has a higher Elo rating and better recent form than Norway.",
+          "Senegal has a higher clean sheet rate, indicating a strong defense.",
+          "Neutral venue negates any home advantage."
         ],
         "risks": [
-          "The neutral venue minimizes any home advantage that could have skewed the baseline probabilities.",
-          "No significant injuries or news events affecting team composition for either team."
+          "Norway's strong offensive form with a high goals average.",
+          "Potential impact of Chris Richards injury on Senegal's defensive structure."
         ]
       }
     },
     "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal mit höherem Elo (1780 vs 1708) und stärkerer gewichteter Form (2.441 vs 2.019); Senegal defensiv stabiler: Gegentore-Schnitt 0.614 und Clean-Sheet-Rate 64.7% gegenüber Norwegens 0.814 und 45.5%; Senegal mit breiterer Datenbasis (34 Spiele) und solider jüngster Form (2.5).",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal mit höherem Elo (1780 vs. 1708) und stärkerer gewichteter Form (2.441 vs. 2.019); Senegal defensiv stabiler: cleanSheetRate 0.647 und nur 0.614 Gegentore pro Spiel; Norwegen offensiv gefährlich (2.777 Tore/Spiel), aber defensiv anfälliger (0.814 Gegentore, CS 0.455).",
     "inputHash": "sha256:b6428480c89e99fcc704e1522edeb8ece68d2cfee3eb04742ba8eba372685b88"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3043,
+        "draw": 0.2413,
+        "away": 0.4543
+      },
+      "confidence": 0.6308
+    }
+  ]
 }

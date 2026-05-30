@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "POR",
       "elo": 1677,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3881,
-      "draw": 0.3119,
-      "away": 0.3
+      "home": 0.3712,
+      "draw": 0.349,
+      "away": 0.2797
     },
-    "confidence": 0.6305,
+    "confidence": 0.5424,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,27 +76,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.44,
-          "draw": 0.26,
-          "away": 0.3
+          "home": 0.4,
+          "draw": 0.28,
+          "away": 0.32
         },
-        "confidence": 0.55,
+        "confidence": 0.48,
         "keyFactors": [
-          "Portugal mit hoher Offensivproduktion (goalsForAvg 2.32) und starker weighted Form (2.01)",
-          "DR Congo defensiv sehr stabil (goalsAgainstAvg 0.482, cleanSheetRate 0.545), was den erwarteten Heim-Output dämpft",
-          "Beide Teams nahezu gleichwertig im Elo (POR 1677 vs COD 1685), DR Congo leicht höher",
-          "Neutraler Spielort ohne Heimvorteil für Portugal",
-          "Beide Teams mit identischer Pause (60 Tage), kein Frische-Vorteil"
+          "Nahezu identisches Elo (POR 1677 vs COD 1685), neutraler Spielort eliminiert Heimvorteil",
+          "DR Kongo mit exzellenter Defensive (GA 0.48, Clean-Sheet-Rate 54.5%) und leicht besserer gewichteter Form (2.23 vs 2.01)",
+          "Portugal offensiv stärker (GF 2.32) aber defensiv anfälliger (GA 0.88, Clean-Sheet nur 32%)",
+          "Baseline überschätzt leicht den Heimbonus, da Venue neutral ist"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher Stilvergleich unsicher",
-          "Starke COD-Defensive könnte ein Remis oder knappes Ergebnis begünstigen",
-          "Lange Pause (60 Tage) kann Rhythmusverlust und schwer kalkulierbare Form bedeuten",
-          "Fehlende News zu Kader/Verletzungen erhöht Unsicherheit"
+          "Keine H2H-Daten vorhanden, Vergleich basiert nur auf Form/Elo",
+          "Materialnews zu Portugal überwiegend Ronaldo-2030-Spekulation ohne direkten Spielbezug; mögliche Kaderunsicherheit nicht quantifizierbar",
+          "Portugals Offensivklasse kann Spiel kippen, wenn Kongos Defensivkompaktheit bricht",
+          "Lange Pause (60 Tage) auf beiden Seiten erschwert Formbewertung"
         ]
       },
       "chatgpt": {
@@ -106,24 +105,38 @@
         },
         "probabilities": {
           "home": 0.35,
-          "draw": 0.35,
-          "away": 0.3
+          "draw": 0.4,
+          "away": 0.25
         },
-        "confidence": 0.75,
+        "confidence": 0.65,
         "keyFactors": [
-          "DR Congo's slightly better weighted and recent form compared to Portugal.",
-          "Neutral venue eliminates home advantage.",
-          "Both teams have high Elo ratings and similar recent performances."
+          "DR Congo's recent form and high clean sheet rate.",
+          "Neutral venue eliminating home advantage for Portugal.",
+          "Portugal's focus in the media on Ronaldo's future instead of current competition."
         ],
         "risks": [
-          "Lack of historical head-to-head data introduces unpredictability.",
-          "Both teams have not played a match in the last 60 days, potentially affecting match sharpness."
+          "Portugal's higher goal-scoring potential and recent strong form.",
+          "Possible underestimation of Portugal's capabilities due to news focus."
         ]
       }
     },
-    "agreement": 0.94,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit hoher Offensivproduktion (goalsForAvg 2.32) und starker weighted Form (2.01); DR Congo defensiv sehr stabil (goalsAgainstAvg 0.482, cleanSheetRate 0.545), was den erwarteten Heim-Output dämpft; Beide Teams nahezu gleichwertig im Elo (POR 1677 vs COD 1685), DR Congo leicht höher.",
+    "agreement": 0.92,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Nahezu identisches Elo (POR 1677 vs COD 1685), neutraler Spielort eliminiert Heimvorteil; DR Kongo mit exzellenter Defensive (GA 0.48, Clean-Sheet-Rate 54.5%) und leicht besserer gewichteter Form (2.23 vs 2.01); Portugal offensiv stärker (GF 2.32) aber defensiv anfälliger (GA 0.88, Clean-Sheet nur 32%).",
     "inputHash": "sha256:79652ffcbf919d3abc72d23635eab1f3f27a4d62888bc4e081f0ff60ba35b5ef"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3881,
+        "draw": 0.3119,
+        "away": 0.3
+      },
+      "confidence": 0.6305
+    }
+  ]
 }

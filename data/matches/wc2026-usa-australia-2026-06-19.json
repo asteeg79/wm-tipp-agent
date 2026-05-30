@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "USA",
       "elo": 1594,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4295,
-      "draw": 0.2764,
-      "away": 0.2941
+      "home": 0.4427,
+      "draw": 0.2728,
+      "away": 0.2845
     },
-    "confidence": 0.6261,
+    "confidence": 0.6272,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,21 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.465,
-          "draw": 0.248,
-          "away": 0.287
+          "home": 0.47,
+          "draw": 0.24,
+          "away": 0.29
         },
         "confidence": 0.58,
         "keyFactors": [
-          "USA mit Host-Advantage trotz neutralem Venue und besserer aktueller Form (recentForm 1.6, weightedForm 1.517)",
-          "Australia mit langer Wettkampfpause (193 Tage ohne Spiel), was Rhythmus und Spielschärfe beeinträchtigen kann",
-          "USA mit höherem Torpotenzial (goalsForAvg 1.668 vs 1.257), Baseline-xG 1.62 stützt Heimvorteil",
-          "H2H knapp zugunsten USA (1 Spiel, 2:1-Sieg)"
+          "USA als Co-Gastgeber profitiert vom Heimvorteil (hostAdvantageTeamId USA) trotz formal neutralem Venue",
+          "USA mit höherer Offensivproduktion (goalsForAvg 1.67 vs 1.26) und besserer aktueller Wettkampfrhythmik (60 vs 193 Tage seit letztem Spiel)",
+          "Australien defensiv solider (cleanSheetRate 0.54, goalsAgainstAvg 1.08), was knappe Ergebnisse begünstigt",
+          "Einziges H2H ging an USA (2:1), stützt leichte Favoritenrolle der Gastgeber",
+          "Elo nahezu ausgeglichen (USA 1594 vs AUS 1617), daher kein klarer Außenseiter"
         ],
         "risks": [
-          "Australia defensiv deutlich stabiler (cleanSheetRate 0.542 vs 0.235, goalsAgainstAvg 1.08), kann Spiel offen halten",
-          "Australia hat leicht höheres Elo (1617 vs 1594), Baseline könnte Heimstärke überschätzen",
-          "Lange Pause Australiens könnte ebenso Erholung/Frische bedeuten statt nur Rhythmusverlust",
+          "Verletzungsunsicherheit bei Chris Richards könnte US-Defensive schwächen und Gegentore begünstigen",
+          "Australiens lange Pause (193 Tage) erschwert Formeinschätzung – könnte frisch oder unterspielt sein",
+          "Australiens starke Defensivwerte könnten ein Unentschieden wahrscheinlicher machen als getippt",
           "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
         ]
       },
@@ -104,26 +105,41 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
+          "home": 0.42,
           "draw": 0.3,
-          "away": 0.3
+          "away": 0.28
         },
         "confidence": 0.7,
         "keyFactors": [
-          "USA has a host advantage, but the match is at a neutral venue.",
-          "Recent form of both teams is strong: USA (1.6) and Australia (1.7).",
-          "Australia has a better clean sheet rate (0.542) compared to USA (0.235).",
-          "USA and Australia have good recent offensive performances, but Australia is superior defensively."
+          "USA has home advantage even at neutral venue.",
+          "Australia has higher clean sheet rate.",
+          "USA recent form is slightly lower than Australia.",
+          "Chris Richards' injury might impact USA defense."
         ],
         "risks": [
-          "USA's recent match history indicates defensive vulnerability.",
-          "Australia's long match hiatus (193 days since last match) could impact performance."
+          "Australia has not played for 193 days, which could impact form.",
+          "USA's recent match form is inconsistent.",
+          "The match is at a neutral venue, reducing typical home advantage."
         ]
       }
     },
-    "agreement": 0.9567,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Host-Advantage trotz neutralem Venue und besserer aktueller Form (recentForm 1.6, weightedForm 1.517); Australia mit langer Wettkampfpause (193 Tage ohne Spiel), was Rhythmus und Spielschärfe beeinträchtigen kann; USA mit höherem Torpotenzial (goalsForAvg 1.668 vs 1.257), Baseline-xG 1.62 stützt Heimvorteil.",
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA als Co-Gastgeber profitiert vom Heimvorteil (hostAdvantageTeamId USA) trotz formal neutralem Venue; USA mit höherer Offensivproduktion (goalsForAvg 1.67 vs 1.26) und besserer aktueller Wettkampfrhythmik (60 vs 193 Tage seit letztem Spiel); Australien defensiv solider (cleanSheetRate 0.54, goalsAgainstAvg 1.08), was knappe Ergebnisse begünstigt.",
     "inputHash": "sha256:bff88df57ff4a5153af7a48bb14bb7184ecff7b8335a6afe7d774dbe02d12d9e"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4295,
+        "draw": 0.2764,
+        "away": 0.2941
+      },
+      "confidence": 0.6261
+    }
+  ]
 }

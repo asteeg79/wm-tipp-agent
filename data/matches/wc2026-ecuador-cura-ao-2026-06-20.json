@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "ECU",
       "elo": 1655,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
-      "home": 1,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.2909,
-      "draw": 0.3545,
-      "away": 0.3545
+      "home": 0.3413,
+      "draw": 0.3283,
+      "away": 0.3304
     },
-    "confidence": 0.5317,
+    "confidence": 0.5616,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,21 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.33,
           "draw": 0.3,
-          "away": 0.36
+          "away": 0.37
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Ecuador zeigt eine sehr stabile Defensive (Gegentore 0.53/Spiel, Clean-Sheet-Rate 52%), was Curaçaos starke Offensive (2.2 Tore/Spiel) bremsen dürfte",
-          "Curaçao hat die bessere gewichtete Form (1.857 vs 1.477) und deutlich höhere Torproduktion, was das Spiel offen hält",
-          "Neutraler Spielort entfernt jeglichen Heimvorteil, daher faires Kräfteverhältnis bei nahezu gleichem Elo (1655 vs 1640)",
-          "Die Baseline unterschätzt Ecuadors defensive Solidität und überschätzt Curaçaos erwartete Tore gegen eine kompakte Abwehr"
+          "Curaçao zeigt starke gewichtete Form (1.857) und hohe Offensivproduktion (2.199 Tore/Spiel), was die Baseline-Auswärtsfavoritenrolle stützt",
+          "Ecuador defensiv sehr solide: niedrige Gegentore (0.528) und hohe Clean-Sheet-Rate (0.519), was Curaçaos Offensive ausbremsen kann",
+          "Beide Elo-Werte fast identisch (ECU 1655 vs CUW 1640), Spiel auf neutralem Platz – ausgeglichener als die Baseline suggeriert"
         ],
         "risks": [
-          "Curaçaos lange Spielpause (193 Tage ohne Match) erschwert die Formeinschätzung erheblich",
-          "Ecuadors geringe Offensivproduktion (0.9 Tore/Spiel) könnte zu wenigen Toren führen und das Spiel kippen",
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit bei der Paarungseinschätzung",
-          "Ecuadors Pause von 60 Tagen kann Rhythmus beeinträchtigen"
+          "Curaçao seit 193 Tagen ohne Spiel – Wettkampfrhythmus unklar, mögliche Rostigkeit",
+          "Negative News bei Curaçao: Verletzungsausfall (Gilmour) und jüngste Platzverweis-Niederlage (1:4) deuten auf Disziplin-/Kaderprobleme hin",
+          "Kein H2H-Datenpunkt und kleine Stichprobe (CUW nur 20 Spiele) erhöhen Prognoseunsicherheit",
+          "Ecuadors geringe Offensivkraft (0.9 Tore/Spiel) kann zu torarmem Spiel führen"
         ]
       },
       "chatgpt": {
@@ -104,26 +103,39 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.4,
-          "away": 0.35
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
         },
-        "confidence": 0.6,
+        "confidence": 0.65,
         "keyFactors": [
-          "Ecuador hat eine etwas stärkere Elo-Wertung als Curaçao.",
-          "Curaçao hat eine bessere récente Form als Ecuador.",
-          "Spiel findet auf neutralem Boden statt, kein Heimvorteil.",
-          "Keine direkten Begegnungen in der Vergangenheit."
+          "Curaçao hat das letzte Spiel mit einem Platzverweis und einer Verletzung beendet.",
+          "Curaçao hat seit 193 Tagen keine Spiele gespielt, möglicherweise mangelt es ihnen an Fitness.",
+          "Ecuador hat kürzlich eine stabilere Defensive mit einer hohen Quote an 'Zu-Null'-Spielen."
         ],
         "risks": [
-          "Lange Spielpause für Curaçao, was sich auf ihre Form auswirken könnte.",
-          "Unbekannte Einflüsse durch den neutralen Spielort."
+          "Curaçaos Angriffsstärke und hohe Torquote pro Spiel könnten eine Gefahr für Ecuador darstellen.",
+          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil von Ecuador eliminieren könnte."
         ]
       }
     },
-    "agreement": 0.9333,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador zeigt eine sehr stabile Defensive (Gegentore 0.53/Spiel, Clean-Sheet-Rate 52%), was Curaçaos starke Offensive (2.2 Tore/Spiel) bremsen dürfte; Curaçao hat die bessere gewichtete Form (1.857 vs 1.477) und deutlich höhere Torproduktion, was das Spiel offen hält; Neutraler Spielort entfernt jeglichen Heimvorteil, daher faires Kräfteverhältnis bei nahezu gleichem Elo (1655 vs 1640).",
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Curaçao zeigt starke gewichtete Form (1.857) und hohe Offensivproduktion (2.199 Tore/Spiel), was die Baseline-Auswärtsfavoritenrolle stützt; Ecuador defensiv sehr solide: niedrige Gegentore (0.528) und hohe Clean-Sheet-Rate (0.519), was Curaçaos Offensive ausbremsen kann; Beide Elo-Werte fast identisch (ECU 1655 vs CUW 1640), Spiel auf neutralem Platz – ausgeglichener als die Baseline suggeriert.",
     "inputHash": "sha256:faa9dac558b7054429297ba00f6eb7140d6b61da5654c536d0a951f8f3748f68"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.2909,
+        "draw": 0.3545,
+        "away": 0.3545
+      },
+      "confidence": 0.5317
+    }
+  ]
 }

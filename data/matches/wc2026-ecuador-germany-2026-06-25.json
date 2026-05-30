@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "ECU",
       "elo": 1655,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2282,
-      "draw": 0.2218,
-      "away": 0.55
+      "home": 0.22,
+      "draw": 0.25,
+      "away": 0.53
     },
-    "confidence": 0.6539,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
+          "home": 0.22,
           "draw": 0.25,
-          "away": 0.55
+          "away": 0.53
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "Deutschland mit deutlich stärkerer gewichteter Form (2.37 vs 1.48) und Offensivstärke (2.57 Tore/Spiel)",
-          "Ecuadors defensive Solidität (0.53 Gegentore/Spiel, 51.9% Clean Sheets) kann das Ergebnis eng halten",
-          "Elo-Vorteil Deutschland (1698 vs 1655) bestätigt leichten, aber nicht überwältigenden Klassenunterschied",
-          "Neutraler Spielort eliminiert Heimvorteil für Ecuador"
+          "Deutschland mit deutlich stärkerer gewichteter Form (2.37 vs 1.48) und höherer Offensivproduktion (2.57 Tore/Spiel)",
+          "Elo-Vorteil Deutschland (1698 vs 1655) untermauert Favoritenrolle",
+          "Ecuador defensiv robust: niedriger Gegentorschnitt (0.53) und hohe Clean-Sheet-Rate (0.52) können das Ergebnis enger halten",
+          "Neutraler Spielort, kein Heimvorteil für Ecuador"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, erhöht die Unsicherheit der Einschätzung",
-          "Ecuadors niedrige Gegentorquote könnte Deutschlands erwartete Tore reduzieren",
-          "Lange Pause beider Teams (60/61 Tage) kann Form und Rhythmus unvorhersehbar machen",
-          "Keine aktuellen News zu Verletzungen/Sperren verfügbar"
+          "Ecuadors starke Defensive könnte Deutschlands xG drücken und ein Remis ermöglichen",
+          "Deutschland mit höherer Gegentor-Rate (1.11) und niedriger Clean-Sheet-Quote anfällig für Konter",
+          "Die einzige News (Davies-Verletzung) betrifft Kanada, nicht dieses Spiel – keine direkte Relevanz",
+          "Lange Pause beider Teams (~60 Tage) erschwert Formeinschätzung"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,39 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.2,
-          "away": 0.55
+          "home": 0.22,
+          "draw": 0.25,
+          "away": 0.53
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Germany's higher recent Elo rating and superior goal-scoring form.",
-          "Ecuador's strong defense with a clean sheet rate of 51.9%.",
-          "Neutral venue negates any home advantage."
+          "Germany's higher Elo rating and stronger offensive recent form.",
+          "Ecuador's strong defensive record with a high clean sheet rate.",
+          "Neutral venue reduces traditional home advantage."
         ],
         "risks": [
-          "Unknown head-to-head history between the teams introduces uncertainty.",
-          "Form of both teams could be impacted by the 60+ days since last match."
+          "Lack of head-to-head history adds uncertainty.",
+          "Potential for unexpected performances in neutral venue."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit deutlich stärkerer gewichteter Form (2.37 vs 1.48) und Offensivstärke (2.57 Tore/Spiel); Ecuadors defensive Solidität (0.53 Gegentore/Spiel, 51.9% Clean Sheets) kann das Ergebnis eng halten; Elo-Vorteil Deutschland (1698 vs 1655) bestätigt leichten, aber nicht überwältigenden Klassenunterschied.",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit deutlich stärkerer gewichteter Form (2.37 vs 1.48) und höherer Offensivproduktion (2.57 Tore/Spiel); Elo-Vorteil Deutschland (1698 vs 1655) untermauert Favoritenrolle; Ecuador defensiv robust: niedriger Gegentorschnitt (0.53) und hohe Clean-Sheet-Rate (0.52) können das Ergebnis enger halten.",
     "inputHash": "sha256:61a464f4b5a6af234a2e3c7ee4a23c742aab307ed79f8869162ee82d2f05390f"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2282,
+        "draw": 0.2218,
+        "away": 0.55
+      },
+      "confidence": 0.6539
+    }
+  ]
 }

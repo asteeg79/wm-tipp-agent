@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "MEX",
       "elo": 1647,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4772,
-      "draw": 0.2883,
-      "away": 0.2345
+      "home": 0.4506,
+      "draw": 0.3148,
+      "away": 0.2346
     },
-    "confidence": 0.6251,
+    "confidence": 0.6048,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -87,16 +87,17 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Mexico mit höherem Elo (1647 vs 1610) und Heim-/Gastgebervorteil als Co-Ausrichter",
-          "Höhenlage 2240m begünstigt das an Altitude gewohnte Mexiko spürbar",
-          "Mexiko defensiv stabiler: niedrigere Gegentore (0.797) und höhere Clean-Sheet-Rate (0.588 vs 0.484)",
-          "Bessere gewichtete Form Mexikos (1.754 vs 1.59)"
+          "Mexico mit höherem Elo (1647 vs 1610) und besserer gewichteter Form (1.754 vs 1.590)",
+          "Host-Advantage für Mexico und Heimspiel-Kontext trotz neutralem Venue laut Daten",
+          "Höhenlage (2240 m) begünstigt Mexico, das an Höhe gewöhnt ist und Südafrika belasten kann",
+          "Mexico defensiv stabiler (cleanSheetRate 0.588, GegentoreØ 0.797 vs 1.009)",
+          "Südafrika offensiv leicht stärker (ToreØ 1.556), kann für Gegentor sorgen"
         ],
         "risks": [
-          "Südafrika offensiv torgefährlicher (goalsForAvg 1.556 vs 1.273), kann Spiele offen halten",
-          "Keine H2H-Daten vorhanden, erhöht Prognoseunsicherheit",
-          "Lange Pause (60 Tage seit letztem Spiel) bei beiden Teams kann Anfangsrhythmus stören",
-          "Südafrikas recentForm (1.5) leicht über Mexikos recentForm (1.4)"
+          "Keine H2H-Daten verfügbar – erhöhte Unsicherheit",
+          "Südafrikas recentForm (1.5) leicht über Mexicos (1.4) deutet auf aktuelle Stärke hin",
+          "Lange Pause beider Teams (60 Tage) kann Rhythmus beeinträchtigen",
+          "Materielle News liefern kaum belastbare Hinweise (teils irrelevant)"
         ]
       },
       "chatgpt": {
@@ -105,25 +106,42 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.32,
+          "home": 0.4,
+          "draw": 0.37,
           "away": 0.23
         },
-        "confidence": 0.7,
+        "confidence": 0.68,
         "keyFactors": [
-          "Both teams have similar recent forms with Mexico slightly lower.",
-          "The match is at a neutral venue, however, the altitude might favor Mexico as the host continent advantage.",
-          "There is no head-to-head history between the teams."
+          "Mexico's higher altitude might disadvantage both teams but Mexico's familiarity could help.",
+          "Both teams have not played each other recently, making head-to-head analysis irrelevant.",
+          "South Africa's recent form is slightly better than Mexico's.",
+          "Neutral venue minimizes any significant host advantage despite Mexico listed as host.",
+          "Mexico's recent morale boost from World Cup preparations."
         ],
         "risks": [
-          "The altitude could negatively impact South Africa's performance more than expected.",
-          "No material news suggests potential for unexpected line-up or tactical surprises."
+          "South Africa's potential competitive edge as noted by the coach could be underestimated.",
+          "Mexico's recent form is slightly below their weighted form, indicating potential unpredictability.",
+          "Suspensions or morale effects from South Africa could alter team performance unexpectedly."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit höherem Elo (1647 vs 1610) und Heim-/Gastgebervorteil als Co-Ausrichter; Höhenlage 2240m begünstigt das an Altitude gewohnte Mexiko spürbar; Mexiko defensiv stabiler: niedrigere Gegentore (0.797) und höhere Clean-Sheet-Rate (0.588 vs 0.484).",
+    "agreement": 0.92,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit höherem Elo (1647 vs 1610) und besserer gewichteter Form (1.754 vs 1.590); Host-Advantage für Mexico und Heimspiel-Kontext trotz neutralem Venue laut Daten; Höhenlage (2240 m) begünstigt Mexico, das an Höhe gewöhnt ist und Südafrika belasten kann.",
     "inputHash": "sha256:6c65df7c2b8af82b3ab2ba534aa317827bb329b311989518fcdb88dc8729b171"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4772,
+        "draw": 0.2883,
+        "away": 0.2345
+      },
+      "confidence": 0.6251
+    }
+  ]
 }

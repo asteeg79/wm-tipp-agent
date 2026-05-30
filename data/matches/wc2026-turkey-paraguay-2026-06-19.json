@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "TUR",
       "elo": 1661,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5565,
-      "draw": 0.2435,
-      "away": 0.2
+      "home": 0.5864,
+      "draw": 0.2291,
+      "away": 0.1845
     },
-    "confidence": 0.6617,
+    "confidence": 0.6782,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,21 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.565,
-          "draw": 0.235,
-          "away": 0.2
+          "home": 0.57,
+          "draw": 0.24,
+          "away": 0.19
         },
-        "confidence": 0.58,
+        "confidence": 0.62,
         "keyFactors": [
-          "Türkei mit deutlich stärkerer gewichteter Form (2.27 vs 1.419) und höherem Elo (1661 vs 1558)",
-          "Türkei mit besserer Offensive (xGFor 1.94 vs 0.98) und positivem Torverhältnis",
-          "Paraguay defensiv solide (Clean-Sheet-Rate 0.435), kann Spiel eng gestalten"
+          "Turkey klar stärker in der gewichteten Form (2.27 vs 1.419) und im Elo (1661 vs 1558)",
+          "Höhere Offensivproduktion der Türkei (1.94 Tore/Spiel) gegenüber Paraguays schwacher Offensive (0.98)",
+          "Paraguay defensiv solide (Clean-Sheet-Rate 0.435), kann aber wenig nach vorne anbieten",
+          "Baseline (xG 1.77:0.90) deckt sich mit dem Formbild und wird bestätigt"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Türkei den Heimvorteil, leicht zugunsten Paraguay angepasst",
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
-          "Paraguays niedrige Gegentorquote könnte Türkeis Torausbeute drücken und Remis begünstigen",
-          "60 Tage seit letztem Spiel bei beiden Teams – Rhythmusfragen möglich"
+          "Neutraler Spielort nimmt der Türkei den Heimvorteil und kann das Spiel ausgeglichener machen",
+          "Paraguays defensive Stabilität könnte ein knappes oder torarmes Remis begünstigen",
+          "Keine H2H-Daten vorhanden, Unsicherheit über Stilmatchup",
+          "60 Tage seit letztem Spiel beider Teams – Rhythmusverlust schwer einzuschätzen"
         ]
       },
       "chatgpt": {
@@ -103,28 +104,39 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
-          "away": 0.2
+          "home": 0.6,
+          "draw": 0.22,
+          "away": 0.18
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Turkey has higher elo rating (1661) compared to Paraguay (1558).",
-          "Turkey's recent form (2.2) and weighted form (2.27) are better than Paraguay's (recent form 1.4 and weighted form 1.419).",
-          "Turkey has a higher goals-for average (1.937) compared to Paraguay (0.984).",
-          "Neutral venue minimizes home advantage, impacting Turkey's expected dominance.",
-          "Both teams have had 60 days since their last match, neutralizing recent activity advantage."
+          "Turkey's higher Elo rating and better weighted form.",
+          "Turkey's stronger offensive capabilities with an average of 1.937 goals per match.",
+          "Turkey's potential advantage from possessing young and exciting talents as highlighted in recent news."
         ],
         "risks": [
-          "Paraguay's clean sheet rate (0.435) is significantly better than Turkey's (0.296), indicating a stronger defense which may limit Turkey's ability to break through.",
-          "Neck-to-neck defensive goals-against averages (Turkey 1.14, Paraguay 1.059) suggest potential for defensive stability in Paraguay.",
-          "No head-to-head history, adding uncertainty to probable outcomes."
+          "Neutral venue reduces potential home advantage.",
+          "Paraguay's relatively strong defensive performance with a higher clean sheet rate."
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit deutlich stärkerer gewichteter Form (2.27 vs 1.419) und höherem Elo (1661 vs 1558); Türkei mit besserer Offensive (xGFor 1.94 vs 0.98) und positivem Torverhältnis; Paraguay defensiv solide (Clean-Sheet-Rate 0.435), kann Spiel eng gestalten.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Turkey klar stärker in der gewichteten Form (2.27 vs 1.419) und im Elo (1661 vs 1558); Höhere Offensivproduktion der Türkei (1.94 Tore/Spiel) gegenüber Paraguays schwacher Offensive (0.98); Paraguay defensiv solide (Clean-Sheet-Rate 0.435), kann aber wenig nach vorne anbieten.",
     "inputHash": "sha256:28b0855dad3cb9f8c17034f7257dc6ace42b3758426af572ee38bb4f13549ac3"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5565,
+        "draw": 0.2435,
+        "away": 0.2
+      },
+      "confidence": 0.6617
+    }
+  ]
 }

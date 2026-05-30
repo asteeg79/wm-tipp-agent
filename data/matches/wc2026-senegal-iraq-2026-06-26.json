@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "SEN",
       "elo": 1780,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6776,
-      "draw": 0.1941,
-      "away": 0.1283
+      "home": 0.6545,
+      "draw": 0.2109,
+      "away": 0.1345
     },
-    "confidence": 0.7178,
+    "confidence": 0.6804,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,45 +84,59 @@
           "draw": 0.2,
           "away": 0.14
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Senegal mit deutlich höherem Elo (1780 vs 1614) und stärkerer gewichteter Form (2.44 vs 2.01)",
-          "Sehr starke Senegal-Defensive: nur 0.61 Gegentore/Spiel und 64.7% Clean-Sheet-Rate",
-          "Senegal mit höherem Offensiv-Output (2.32 Tore/Spiel) gegenüber Iraks 1.28",
-          "Neutraler Spielort ohne Heimvorteil für eine der Mannschaften"
+          "Senegal mit klar höherem Elo (1780 vs. 1614) und stärkerer gewichteter Form (2.44 vs. 2.01)",
+          "Senegals defensive Stabilität: nur 0.61 Gegentore/Spiel und 64.7% Clean-Sheet-Rate",
+          "Senegals Offensive deutlich produktiver (2.32 vs. 1.28 Tore/Spiel)",
+          "News betreffen primär einen USMNT-Gegner und nicht direkt die senegalesische Aufstellung – kein klarer Schwächungseffekt"
         ],
         "risks": [
-          "Keine H2H-Historie verfügbar, Begegnung schwer einzuschätzen",
-          "Lange Pause (60 Tage) für beide Teams kann Form und Rhythmus beeinträchtigen",
-          "Iraks solide Form (recentForm 1.8) kann bei kompakter Defensive für Überraschung sorgen",
-          "Geringere Stichprobe Iraks (24 Spiele) erhöht Unsicherheit der Kennzahlen"
+          "Keine H2H-Daten verfügbar – Stilvergleich unsicher",
+          "Neutraler Spielort entzieht Senegal jeden Heimvorteil",
+          "Iraks solide Defensive (0.82 Gegentore) könnte das Spiel eng halten",
+          "60 Tage seit letztem Spiel für beide – mögliche Rhythmusprobleme"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.6900000000000001,
-          "draw": 0.19000000000000003,
-          "away": 0.12000000000000001
+          "home": 0.65,
+          "draw": 0.22,
+          "away": 0.13
         },
-        "confidence": 0.85,
+        "confidence": 0.75,
         "keyFactors": [
-          "Senegal hat eine stärkere Form als Irak, basierend auf den letzten Spielen.",
-          "Senegals Torverhältnis (2.319 zu 0.614) deutet auf eine stärkere Offensive und solide Defensive im Vergleich zu Irak hin.",
-          "Neutrale Spielstätte neutralisiert Heimvorteil, aber gibt Senegal immer noch den Vorteil durch bessere Form und Elo-Wert."
+          "Senegal's recent strong form with a high goals for average and low goals against average",
+          "Neutral venue mitigates any home field advantage",
+          "Absence of major negative news for Iraq"
         ],
         "risks": [
-          "Beide Mannschaften hatten eine längere Spielpause (60 Tage), was den Spielfluss beider Teams beeinträchtigen könnte.",
-          "Fehlen von aktuellen verletztungs- oder formbedingten Nachrichten erhöht die Unsicherheit."
+          "Potential impact on Senegal's preparation due to missing players in pre-tournament phases",
+          "Both teams have not faced each other before, introducing an element of unpredictability"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal mit deutlich höherem Elo (1780 vs 1614) und stärkerer gewichteter Form (2.44 vs 2.01); Sehr starke Senegal-Defensive: nur 0.61 Gegentore/Spiel und 64.7% Clean-Sheet-Rate; Senegal mit höherem Offensiv-Output (2.32 Tore/Spiel) gegenüber Iraks 1.28.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal mit klar höherem Elo (1780 vs. 1614) und stärkerer gewichteter Form (2.44 vs. 2.01); Senegals defensive Stabilität: nur 0.61 Gegentore/Spiel und 64.7% Clean-Sheet-Rate; Senegals Offensive deutlich produktiver (2.32 vs. 1.28 Tore/Spiel).",
     "inputHash": "sha256:a17d2fcb4f58df4f4925c545f0690fccfb2ad187e48f316622e554067622131a"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6776,
+        "draw": 0.1941,
+        "away": 0.1283
+      },
+      "confidence": 0.7178
+    }
+  ]
 }

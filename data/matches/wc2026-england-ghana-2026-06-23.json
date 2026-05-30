@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "ENG",
       "elo": 1719,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7181,
-      "draw": 0.1819,
-      "away": 0.1
+      "home": 0.7034,
+      "draw": 0.1653,
+      "away": 0.1313
     },
-    "confidence": 0.7647,
+    "confidence": 0.6933,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.74,
+          "home": 0.73,
           "draw": 0.16,
-          "away": 0.1
+          "away": 0.11
         },
-        "confidence": 0.7,
+        "confidence": 0.66,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprong England (1719 vs 1521, ~198 Punkte)",
-          "Starke englische Defensive: nur 0.522 Gegentore/Spiel, 55% Clean-Sheet-Rate",
-          "Bessere gewichtete und aktuelle Form Englands (2.03 / 2.2 vs 1.19 / 1.6)",
-          "Ghana defensiv anfällig (1.557 Gegentore/Spiel, nur 32% Clean Sheets), aber offensiv torgefährlich (1.466 Tore/Spiel)"
+          "Deutlicher Elo-Vorsprung England (1719 vs 1521) und klar bessere gewichtete Form (2.03 vs 1.19)",
+          "Englands starke Defensive: Gegentorschnitt 0.52 und Clean-Sheet-Rate 55%",
+          "Ghana defensiv anfällig (Gegentorschnitt 1.56, Clean-Sheet-Rate nur 32%)",
+          "Englands höhere recentForm (2.2) bestätigt aktuelle Stabilität"
         ],
         "risks": [
-          "Neutraler Spielort nimmt England den Heimvorteil und kann das Resultat etwas angleichen",
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit im direkten Vergleich",
-          "Ghanas solide Offensivwerte erhöhen die Chance auf ein Gegentor und reduzieren ein klares Clean-Sheet-Szenario",
-          "Lange Pause (60/61 Tage) beider Teams kann zu Rhythmusproblemen führen"
+          "Ghana mit ordentlicher Offensive (goalsForAvg 1.47) kann auf neutralem Platz treffen",
+          "Keine H2H-Daten verfügbar - keine direkten Vergleichswerte",
+          "60+ Tage seit letztem Spiel beider Teams: Rhythmus/Form schwer einzuschätzen",
+          "Unruhe-Signale im Umfeld (Coach-/Vereinsnews) könnten England leicht belasten"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,41 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.7000000000000001,
-          "draw": 0.20000000000000004,
-          "away": 0.10000000000000002
+          "home": 0.68,
+          "draw": 0.17,
+          "away": 0.15
         },
-        "confidence": 0.85,
+        "confidence": 0.75,
         "keyFactors": [
-          "England's superior recent form and overall team strength",
-          "Ghana's generally lower performance in international matches recently",
-          "Neutral venue minimizes potential location advantage"
+          "England's higher elo rating indicating superior team strength.",
+          "England's strong recent form with a weighted form of 2.2.",
+          "Ghana's relatively weaker recent form with a weighted form of 1.6.",
+          "Neutral venue reduces traditional home advantage."
         ],
         "risks": [
-          "The absence of previous head-to-head encounters introduces uncertainty",
-          "The 60+ days gap since the last competitive match for both teams, potentially affecting match fitness"
+          "Recent coaching change in England could impact team stability.",
+          "Otto Addo's involvement may boost Ghana's strategic approach.",
+          "Neutral venue may impact both teams differently than expected."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprong England (1719 vs 1521, ~198 Punkte); Starke englische Defensive: nur 0.522 Gegentore/Spiel, 55% Clean-Sheet-Rate; Bessere gewichtete und aktuelle Form Englands (2.03 / 2.2 vs 1.19 / 1.6).",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung England (1719 vs 1521) und klar bessere gewichtete Form (2.03 vs 1.19); Englands starke Defensive: Gegentorschnitt 0.52 und Clean-Sheet-Rate 55%; Ghana defensiv anfällig (Gegentorschnitt 1.56, Clean-Sheet-Rate nur 32%).",
     "inputHash": "sha256:afbda3aa6f11f664671fd2b7fda812a30e02fdc5e01281dc6e035b9194f42623"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7181,
+        "draw": 0.1819,
+        "away": 0.1
+      },
+      "confidence": 0.7647
+    }
+  ]
 }

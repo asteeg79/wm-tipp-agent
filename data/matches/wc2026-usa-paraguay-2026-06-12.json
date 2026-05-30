@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "USA",
       "elo": 1594,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5364,
-      "draw": 0.2345,
-      "away": 0.2291
+      "home": 0.55,
+      "draw": 0.23,
+      "away": 0.22
     },
-    "confidence": 0.6336,
+    "confidence": 0.675,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.24,
-          "away": 0.24
+          "home": 0.55,
+          "draw": 0.23,
+          "away": 0.22
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "USA mit Heimvorteil als Gastgeber (hostAdvantageTeamId), trotz formal neutralem Spielort",
-          "USA höhere Elo (1594 vs 1558) und bessere gewichtete Form (1.52 vs 1.42)",
-          "USA deutlich offensivstärker (goalsForAvg 1.67 vs 0.98)",
-          "Einziges H2H-Duell ging 2:1 an die USA"
+          "USA höherer Elo (1594 vs 1558) und besserer xG-Vorsprung (1.76 vs 1.06)",
+          "Gastgeberbonus für USA trotz neutralem Venue (hostAdvantageTeamId USA)",
+          "Bessere gewichtete und jüngste Form der USA (1.517/1.6 vs 1.419/1.4)",
+          "USA mit deutlich höherer Torgefahr (goalsForAvg 1.668 vs 0.984)",
+          "Einziges H2H ging an USA (2:1)"
         ],
         "risks": [
-          "Paraguay defensiv stabil (cleanSheetRate 0.435 vs 0.235), kann Spiel eng halten",
-          "USA mit anfälliger Abwehr (goalsAgainstAvg 1.64) – Konteranfälligkeit",
-          "60 Tage seit letztem Spiel für beide – mögliche Rhythmusprobleme",
-          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
+          "Paraguay defensiv stabil (cleanSheetRate 0.435 vs 0.235) – kann Spiel eng halten",
+          "Verletzungsunsicherheit USA-Verteidiger Chris Richards vor dem Turnier",
+          "Schwache USA-Defensive (goalsAgainstAvg 1.639) erhöht Gegentorrisiko",
+          "Kleine H2H-Stichprobe (nur 1 Spiel) wenig aussagekräftig"
         ]
       },
       "chatgpt": {
@@ -108,22 +109,36 @@
           "draw": 0.23,
           "away": 0.22
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "USA has a slightly higher Elo rating than Paraguay.",
-          "USA's recent form is slightly better than Paraguay's.",
-          "USA has an advantage of being the host nation, even though the venue is neutral.",
-          "Head-to-head result favored USA in their previous encounter."
+          "USA's slight higher elo rating and superior weighted and recent form",
+          "USA has historical edge from the only recent head-to-head match",
+          "USA playing at a neutral venue but with host advantage context",
+          "Paraguay's stronger clean sheet rate suggests potential defensive resilience"
         ],
         "risks": [
-          "Both teams have not played in the last 60 days, which could affect form.",
-          "Paraguay's higher clean sheet rate could help them defensively."
+          "Uncertainty over Chris Richards' injury could affect USA's defense",
+          "Neutral venue might reduce the potential home field advantage"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heimvorteil als Gastgeber (hostAdvantageTeamId), trotz formal neutralem Spielort; USA höhere Elo (1594 vs 1558) und bessere gewichtete Form (1.52 vs 1.42); USA deutlich offensivstärker (goalsForAvg 1.67 vs 0.98).",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA höherer Elo (1594 vs 1558) und besserer xG-Vorsprung (1.76 vs 1.06); Gastgeberbonus für USA trotz neutralem Venue (hostAdvantageTeamId USA); Bessere gewichtete und jüngste Form der USA (1.517/1.6 vs 1.419/1.4).",
     "inputHash": "sha256:6c5f3a67e09271b757887d74a59af6c86334148dbdc953c821b12474bd3cec5f"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5364,
+        "draw": 0.2345,
+        "away": 0.2291
+      },
+      "confidence": 0.6336
+    }
+  ]
 }

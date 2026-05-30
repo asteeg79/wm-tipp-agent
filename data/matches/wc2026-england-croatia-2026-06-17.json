@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "ENG",
       "elo": 1719,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4323,
-      "draw": 0.2832,
-      "away": 0.2845
+      "home": 0.468,
+      "draw": 0.2424,
+      "away": 0.2896
     },
-    "confidence": 0.637,
+    "confidence": 0.5702,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,51 +80,65 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.46,
-          "draw": 0.25,
-          "away": 0.29
+          "home": 0.455,
+          "draw": 0.245,
+          "away": 0.3
         },
-        "confidence": 0.58,
+        "confidence": 0.55,
         "keyFactors": [
           "England mit überragender Defensive (0.52 Gegentore/Spiel, 55% Clean-Sheet-Rate) und höherem Elo (1719 vs 1662)",
-          "Kroatien zeigt starke Offensive (2.21 Tore/Spiel) und leicht bessere Form (recentForm 2.5 vs 2.2)",
-          "Neutraler Spielort eliminiert klassischen Heimvorteil, was die Partie ausgeglichener macht",
-          "Defensive Stabilität Englands dürfte Kroatiens Angriffsstärke teilweise neutralisieren"
+          "Kroatien mit leicht besserer gewichteter Form (2.10 vs 2.03) und starker Offensive (2.21 Tore/Spiel)",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil und verschiebt die Partie leicht in Richtung ausgeglichen",
+          "Kroatiens jüngste Form (recentForm 2.5) etwas besser als Englands (2.2), was die Away-Chance stützt"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit bei direkter Begegnung",
-          "Kroatiens schwächere Defensive (1.10 Gegentore, nur 35% Clean Sheets) könnte zu offenem Spiel führen",
-          "60 Tage Spielpause für beide Teams erschwert Einschätzung der aktuellen Tagesform",
-          "Knapper Elo-Abstand und Kroatiens leicht bessere Form könnten zum Unentschieden oder Auswärtssieg führen"
+          "News zu England betreffen primär Vereinsfußball (Liverpool/Slot) und haben fraglichen direkten Bezug zur Nationalmannschaft",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit in der Einschätzung",
+          "Kroatiens hohe Offensivwerte könnten Englands Defensivvorteil neutralisieren und das Spiel kippen",
+          "60 Tage seit letztem Match bei beiden Teams – Rhythmusverlust schwer einschätzbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.41,
-          "draw": 0.31,
+          "home": 0.48,
+          "draw": 0.24,
           "away": 0.28
         },
-        "confidence": 0.72,
+        "confidence": 0.6,
         "keyFactors": [
-          "Both teams have strong and recent positive form",
-          "Croatia's recent form and goal-scoring ability is slightly better",
-          "Neutral venue eliminates home advantage for England",
-          "No significant injuries or news affecting team performance"
+          "England has stronger defensive statistics with a higher clean sheet rate.",
+          "Both teams have had recent form boosts, but England's defensive consistency adds strength.",
+          "England's coach situation could impact their preparation and tactical approach.",
+          "Neutral venue mitigates home advantage for England, but their overall form remains strong."
         ],
         "risks": [
-          "Lack of head-to-head data between England and Croatia",
-          "Equal form may lead to unexpected shifts in in-match dynamics",
-          "Variability in England's ability to maintain clean sheets"
+          "Recent coach change for England might affect team dynamics and performance negatively.",
+          "Both teams have been out of action for 60 days, potential for rusty performance.",
+          "Croatia's higher average goals for could pose a significant threat."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit überragender Defensive (0.52 Gegentore/Spiel, 55% Clean-Sheet-Rate) und höherem Elo (1719 vs 1662); Kroatien zeigt starke Offensive (2.21 Tore/Spiel) und leicht bessere Form (recentForm 2.5 vs 2.2); Neutraler Spielort eliminiert klassischen Heimvorteil, was die Partie ausgeglichener macht.",
+    "agreement": 0.9833,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit überragender Defensive (0.52 Gegentore/Spiel, 55% Clean-Sheet-Rate) und höherem Elo (1719 vs 1662); Kroatien mit leicht besserer gewichteter Form (2.10 vs 2.03) und starker Offensive (2.21 Tore/Spiel); Neutraler Spielort eliminiert klassischen Heimvorteil und verschiebt die Partie leicht in Richtung ausgeglichen.",
     "inputHash": "sha256:a152e6cec373d80b2f88610b40a54fcfdb89fd0e7d73fe115fb20f3a0f64406c"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4323,
+        "draw": 0.2832,
+        "away": 0.2845
+      },
+      "confidence": 0.637
+    }
+  ]
 }

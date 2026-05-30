@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:22:41.258Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "home": {
       "teamId": "CPV",
       "elo": 1597,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-30T19:45:08.604Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5638,
-      "draw": 0.2454,
-      "away": 0.1908
+      "home": 0.4822,
+      "draw": 0.3049,
+      "away": 0.2129
     },
-    "confidence": 0.6435,
+    "confidence": 0.6295,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,63 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.58,
-          "draw": 0.24,
+          "home": 0.57,
+          "draw": 0.25,
           "away": 0.18
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Cape Verde mit deutlich besserer gewichteter und jüngster Form (wForm 1.98 vs 1.26, recent 2.1 vs 1.2)",
-          "Höhere Elo (1597 vs 1538) und bessere Offensive (1.67 vs 0.87 Tore/Spiel)",
-          "Cape Verde defensiv solider in Bezug auf erwartete Gegentore (0.84 vs 1.32 Gegentore/Spiel)",
-          "Neutraler Spielort, kein Heimvorteil für eine Seite – Baseline plausibel"
+          "Cape Verde mit deutlich besserer gewichteter Form (1.98 vs 1.26) und Aufwärtstrend (recentForm 2.1)",
+          "Höhere Elo für Cape Verde (1597 vs 1538) stützt die Baseline-Favoritenrolle",
+          "Bessere Offensive von Cape Verde (1.67 Tore/Spiel) gegen schwächere Saudi-Offensive (0.87)",
+          "Neutraler Spielort ohne Heimvorteil reduziert Verzerrung leicht"
         ],
         "risks": [
-          "Cape Verde 229 Tage ohne Spiel – Wettkampfrhythmus und Spielpraxis fraglich",
-          "Saudi-Arabien mit besserer Clean-Sheet-Rate (0.47 vs 0.44) und frischerer Spielpraxis (60 Tage)",
-          "Keine H2H-Daten vorhanden – erhöhte Unsicherheit",
-          "Keine aktuellen News zu Ausfällen/Personal verfügbar"
+          "Cape Verde seit 229 Tagen ohne Pflichtspiel – Spielrhythmus und Wettkampfhärte unklar",
+          "Saudi-Arabien mit höherer Clean-Sheet-Rate (0.47) und mehr Spielpraxis (60 Tage Pause) defensiv stabil",
+          "Keine H2H-Daten verfügbar – erhöhte Unsicherheit in der Einschätzung",
+          "Gelistete Away-News (Benitez/Neymar) sind nicht zur saudischen Mannschaft passend und somit irrelevant"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
-          "away": 0.2
+          "home": 0.41,
+          "draw": 0.35,
+          "away": 0.24
         },
-        "confidence": 0.7,
+        "confidence": 0.73,
         "keyFactors": [
-          "Cape Verde hat eine bessere Elo-Wertung und Form als Saudi-Arabien.",
-          "Cape Verde hatte längere Spielpause, könnte aber gut vorbereitet sein.",
-          "Neutraler Spielort, sodass kein Heimvorteil existiert."
+          "Cape Verde's higher recent form and weighted form compared to Saudi Arabia",
+          "Neutral venue reduces any home advantage Cape Verde might have",
+          "Saudi Arabia has played more matches recently, maintaining match fitness"
         ],
         "risks": [
-          "Längere Spielpause für Cape Verde könnte zu mangelndem Match-Rhythmus führen.",
-          "Saudi-Arabien hat kürzlich mehr Spielpraxis gesammelt."
+          "No head-to-head history between teams could introduce unpredictability",
+          "Any potential disruption from Saudi Arabia's coaching rumors"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit deutlich besserer gewichteter und jüngster Form (wForm 1.98 vs 1.26, recent 2.1 vs 1.2); Höhere Elo (1597 vs 1538) und bessere Offensive (1.67 vs 0.87 Tore/Spiel); Cape Verde defensiv solider in Bezug auf erwartete Gegentore (0.84 vs 1.32 Gegentore/Spiel).",
+    "agreement": 0.8933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit deutlich besserer gewichteter Form (1.98 vs 1.26) und Aufwärtstrend (recentForm 2.1); Höhere Elo für Cape Verde (1597 vs 1538) stützt die Baseline-Favoritenrolle; Bessere Offensive von Cape Verde (1.67 Tore/Spiel) gegen schwächere Saudi-Offensive (0.87).",
     "inputHash": "sha256:71c659aeb2d349450aa29990916c16ca77ef6cdff4683327820770a1c780d551"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5638,
+        "draw": 0.2454,
+        "away": 0.1908
+      },
+      "confidence": 0.6435
+    }
+  ]
 }
