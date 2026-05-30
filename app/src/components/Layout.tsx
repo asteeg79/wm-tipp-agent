@@ -1,21 +1,44 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useIndex } from "../lib/data.js";
+import { timeAgo } from "../lib/format.js";
 
 export function Layout() {
   const { t } = useTranslation();
+  const { data: index } = useIndex();
+
+  const navClass = ({ isActive }: { isActive: boolean }): string =>
+    `rounded-md px-3 py-1.5 text-sm font-medium ${
+      isActive
+        ? "bg-emerald-500/15 text-emerald-300"
+        : "text-slate-300 hover:bg-slate-800"
+    }`;
 
   return (
     <div className="flex min-h-full flex-col">
-      <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
+      <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-900/85 backdrop-blur">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-2 px-4 py-2.5">
           <span className="text-xl">⚽</span>
-          <h1 className="text-lg font-semibold tracking-tight">
+          <h1 className="mr-2 text-base font-semibold tracking-tight">
             {t("appTitle")}
           </h1>
+          <nav className="flex gap-1">
+            <NavLink to="/" end className={navClass}>
+              {t("nav.overview")}
+            </NavLink>
+            <NavLink to="/groups" className={navClass}>
+              {t("nav.groups")}
+            </NavLink>
+          </nav>
+          {index?.lastUpdated && (
+            <span className="ml-auto text-xs text-slate-500">
+              {t("updated", { time: timeAgo(index.lastUpdated) })}
+            </span>
+          )}
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-5">
         <Outlet />
       </main>
 

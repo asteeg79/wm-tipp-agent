@@ -7,9 +7,12 @@
 import {
   IndexFile,
   Match,
+  PredictionsIndex,
   Team,
+  type AccuracyAggregate,
   type NewsItem,
   type PotentialOpponent,
+  type PredictionIndexEntry,
   type ScoreLine,
   type Stage,
   type TeamResult,
@@ -17,7 +20,12 @@ import {
 } from "@wm/shared";
 import { config } from "../config.js";
 import { writeJson } from "./io/json.js";
-import { indexPath, matchPath, teamPath } from "./io/paths.js";
+import {
+  indexPath,
+  matchPath,
+  predictionsIndexPath,
+  teamPath,
+} from "./io/paths.js";
 import { readProgress, writeProgress, type Progress } from "./io/cache.js";
 import type {
   HistoryMatch,
@@ -92,9 +100,10 @@ export async function buildData(
   // 2) Mögliche Gegner ableiten
   const opponentSets = deriveOpponentSets(teams, groups, rankByTeamId);
 
-  // 3) Spielplan → matches/<id>.json (skeletal, ohne Prognose)
+  // 3) Spielplan → matches/<id>.json (skeletal) + predictions-index.json
   const schedule = await tournamentProvider.getSchedule();
   const matchesWritten = await writeMatches(schedule);
+  await writePredictionsIndex(schedule, nowIso);
 
   // 4) Historie inkrementell laden (budget-/progress-bewusst)
   const seasons = historySeasons(now, config.historyYears);
@@ -169,6 +178,43 @@ async function writeMatches(schedule: NormalizedFixture[]): Promise<number> {
     count++;
   }
   return count;
+}
+
+/** Schreibt predictions-index.json (leichte Match-Liste für die App). */
+async function writePredictionsIndex(
+  schedule: NormalizedFixture[],
+  nowIso: string,
+): Promise<void> {
+  const entries: PredictionIndexEntry[] = schedule
+    .map((fx) => {
+      const actualResult: ScoreLine | null =
+        fx.finished && fx.goalsHome !== null && fx.goalsAway !== null
+          ? { home: fx.goalsHome, away: fx.goalsAway }
+          : null;
+      return {
+        matchId: fx.matchId,
+        date: fx.dateTime ?? `${fx.date}T00:00:00Z`,
+        stage: fx.stage ?? "group",
+        homeTeamId: fx.homeTeamId,
+        awayTeamId: fx.awayTeamId,
+        actualResult,
+      } satisfies PredictionIndexEntry;
+    })
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const aggregate: AccuracyAggregate = {
+    finishedCount: entries.filter((e) => e.actualResult !== null).length,
+    exactScoreRate: null,
+    outcomeRate: null,
+    brierMean: null,
+    rpsMean: null,
+  };
+
+  await writeJson(predictionsIndexPath, PredictionsIndex, {
+    lastUpdated: nowIso,
+    aggregate,
+    entries,
+  });
 }
 
 /** Baut das Team-Dokument; optionale Felder werden bewusst weggelassen. */
