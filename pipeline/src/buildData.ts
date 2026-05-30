@@ -34,6 +34,7 @@ import type {
   TournamentProvider,
 } from "./sources/types.js";
 import { computeH2h, deriveOpponentSets } from "./features/opponents.js";
+import { NewsAggregator } from "./features/news.js";
 
 export interface BuildStats {
   teamsTotal: number;
@@ -41,6 +42,12 @@ export interface BuildStats {
   teamsFailed: number;
   matchesWritten: number;
   historyLoaded: number;
+  newsLoaded: number;
+}
+
+export interface BuildOptions {
+  /** News (RSS) holen und in teams/*.json schreiben. */
+  withNews: boolean;
 }
 
 /** Saisons für die N-Jahres-Historie (eindeutige Jahre im Zeitfenster). */
@@ -83,6 +90,7 @@ function toTeamResults(
 export async function buildData(
   tournamentProvider: TournamentProvider,
   historyProvider: HistoryProvider,
+  options: BuildOptions = { withNews: true },
 ): Promise<BuildStats> {
   const now = new Date();
   const nowIso = now.toISOString();
@@ -118,7 +126,10 @@ export async function buildData(
     teamsFailed: 0,
     matchesWritten,
     historyLoaded: 0,
+    newsLoaded: 0,
   };
+
+  const newsAggregator = options.withNews ? new NewsAggregator() : null;
 
   for (const team of teams) {
     if (stats.teamsWritten >= maxTeams) break;
@@ -135,10 +146,21 @@ export async function buildData(
         h2hSummary: computeH2h(r.teamId, history),
       }));
 
+      // News (fehlertolerant: News-Fehler darf Team nicht scheitern lassen).
+      let news: NewsItem[] = [];
+      if (newsAggregator) {
+        try {
+          news = await newsAggregator.forTeam(team);
+          stats.newsLoaded += news.length;
+        } catch (err) {
+          console.warn(`[pipeline] News für ${team.id} fehlgeschlagen:`, err);
+        }
+      }
+
       await writeJson(
         teamPath(team.id),
         Team,
-        buildTeam(team, nowIso, results, potentialOpponents),
+        buildTeam(team, nowIso, results, potentialOpponents, news),
       );
       progress.teamsBackfilled[team.id] = nowIso;
       stats.teamsWritten++;
@@ -223,8 +245,8 @@ function buildTeam(
   lastUpdated: string,
   results: TeamResult[],
   potentialOpponents: PotentialOpponent[],
+  news: NewsItem[],
 ): Team {
-  const emptyNews: NewsItem[] = [];
   const team: Team = {
     id: summary.id,
     name: summary.name,
@@ -233,7 +255,7 @@ function buildTeam(
     lastUpdated,
     results,
     potentialOpponents,
-    news: emptyNews,
+    news,
   };
   if (summary.logo) team.logo = summary.logo;
   return team;

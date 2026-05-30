@@ -41,13 +41,14 @@ async function main(): Promise<void> {
 
   const stats = await buildData(tournamentProvider, historyProvider);
 
-  console.log("[pipeline] Phase 1 (openfootball-only) abgeschlossen:");
+  console.log("[pipeline] Lauf abgeschlossen:");
   console.table({
     Teams_gesamt: stats.teamsTotal,
     Teams_geschrieben: stats.teamsWritten,
     Teams_fehlgeschlagen: stats.teamsFailed,
     Matches_geschrieben: stats.matchesWritten,
     Historie_Spiele: stats.historyLoaded,
+    News_Items: stats.newsLoaded,
   });
 
   // TODO Phase 3: News · Phase 4: Feature-Engine · Phase 5: KI-Ensemble
