@@ -9,7 +9,7 @@ import {
   Match,
   PredictionsIndex,
   Team,
-  type AccuracyAggregate,
+  type AccuracyEntry,
   type NewsItem,
   type PotentialOpponent,
   type PredictionIndexEntry,
@@ -44,6 +44,7 @@ import { computeForm, recencyWeight as recencyWeightFor } from "./features/form.
 import { makeEnsemble, type Ensemble } from "./predict/index.js";
 import { decideRetrigger } from "./predict/retrigger.js";
 import { readJsonOptional } from "./io/json.js";
+import { aggregateAccuracy, scoreMatch } from "./features/accuracy.js";
 
 export interface BuildStats {
   teamsTotal: number;
@@ -54,6 +55,7 @@ export interface BuildStats {
   newsLoaded: number;
   aiEvaluated: number;
   aiSkipped: number;
+  accuracyScored: number;
 }
 
 export interface BuildOptions {
@@ -123,7 +125,6 @@ export async function buildData(
 
   // 3) Spielplan laden (Match-Dateien werden nach der Engine geschrieben).
   const schedule = await tournamentProvider.getSchedule();
-  await writePredictionsIndex(schedule, nowIso);
 
   const seasons = historySeasons(now, config.historyYears);
   const progress = await readProgress();
@@ -140,6 +141,7 @@ export async function buildData(
     newsLoaded: 0,
     aiEvaluated: 0,
     aiSkipped: 0,
+    accuracyScored: 0,
   };
 
   // 4) Historie aller Teams sammeln (für globale Elo-Berechnung).
@@ -231,6 +233,9 @@ export async function buildData(
   stats.aiEvaluated = matchResult.aiEvaluated;
   stats.aiSkipped = matchResult.aiSkipped;
 
+  // 8) predictions-index.json inkl. Accuracy nach Spielende.
+  stats.accuracyScored = await writePredictionsIndex(matchResult.matches, nowIso);
+
   await persistProgress(progress);
   return stats;
 }
@@ -248,6 +253,8 @@ interface WriteMatchesResult {
   written: number;
   aiEvaluated: number;
   aiSkipped: number;
+  /** Alle geschriebenen Matches (für predictions-index + Accuracy). */
+  matches: Match[];
 }
 
 /**
@@ -265,6 +272,7 @@ async function writeMatches(
   let written = 0;
   let aiEvaluated = 0;
   let aiSkipped = 0;
+  const matches: Match[] = [];
 
   for (const fx of schedule) {
     const stage: Stage = fx.stage ?? "group";
@@ -273,7 +281,7 @@ async function writeMatches(
         ? { home: fx.goalsHome, away: fx.goalsAway }
         : null;
 
-    // Bestehendes Match laden (für Re-Trigger + predictionHistory).
+    // Bestehendes Match laden (für Re-Trigger + predictionHistory + Tipp).
     const prev = await readJsonOptional<Match>(matchPath(fx.matchId), Match);
 
     const match: Match = {
@@ -371,12 +379,17 @@ async function writeMatches(
       } else {
         match.prediction = baselinePrediction;
       }
+    } else if (fx.finished && prev?.prediction) {
+      // Beendete Partie: letzten Tipp bewahren (für Accuracy + Anzeige).
+      match.prediction = prev.prediction;
+      if (prev.featureBundle) match.featureBundle = prev.featureBundle;
     }
 
     await writeJson(matchPath(fx.matchId), Match, match);
+    matches.push(match);
     written++;
   }
-  return { written, aiEvaluated, aiSkipped };
+  return { written, aiEvaluated, aiSkipped, matches };
 }
 
 /** Grobes Konfidenzmaß aus der Verteilung (max-Wahrscheinlichkeit, skaliert). */
@@ -390,41 +403,58 @@ function baselineConfidence(p: {
   return Math.max(0, Math.min(1, (max - 1 / 3) / (1 - 1 / 3)));
 }
 
-/** Schreibt predictions-index.json (leichte Match-Liste für die App). */
+/**
+ * Schreibt predictions-index.json (leichte Match-Liste für die App) inkl.
+ * Accuracy je beendeter Partie (Brier/RPS/Trefferquoten) + Aggregate.
+ * Gibt die Anzahl bewerteter (beendeter) Partien zurück.
+ */
 async function writePredictionsIndex(
-  schedule: NormalizedFixture[],
+  matches: Match[],
   nowIso: string,
-): Promise<void> {
-  const entries: PredictionIndexEntry[] = schedule
-    .map((fx) => {
-      const actualResult: ScoreLine | null =
-        fx.finished && fx.goalsHome !== null && fx.goalsAway !== null
-          ? { home: fx.goalsHome, away: fx.goalsAway }
-          : null;
-      return {
-        matchId: fx.matchId,
-        date: fx.dateTime ?? `${fx.date}T00:00:00Z`,
-        stage: fx.stage ?? "group",
-        homeTeamId: fx.homeTeamId,
-        awayTeamId: fx.awayTeamId,
-        actualResult,
-      } satisfies PredictionIndexEntry;
+): Promise<number> {
+  const entries: PredictionIndexEntry[] = matches
+    .map((m) => {
+      const pred = m.prediction;
+      const entry: PredictionIndexEntry = {
+        matchId: m.id,
+        date: m.date,
+        stage: m.stage,
+        homeTeamId: m.homeTeamId,
+        awayTeamId: m.awayTeamId,
+        actualResult: m.actualResult,
+      };
+      if (pred) {
+        entry.predictedScore = pred.predictedScore;
+        entry.probabilities = pred.probabilities;
+        entry.confidence = pred.confidence;
+      }
+      // Accuracy nur für beendete Partien mit Tipp.
+      if (m.actualResult && pred) {
+        entry.accuracy = scoreMatch(
+          pred.predictedScore,
+          pred.probabilities,
+          m.actualResult,
+        );
+      }
+      return entry;
     })
     .sort((a, b) => a.date.localeCompare(b.date));
 
-  const aggregate: AccuracyAggregate = {
-    finishedCount: entries.filter((e) => e.actualResult !== null).length,
-    exactScoreRate: null,
-    outcomeRate: null,
-    brierMean: null,
-    rpsMean: null,
-  };
+  const aggregate = aggregateAccuracy(
+    entries.map((e) => {
+      const base: { accuracy?: AccuracyEntry; actualResult: ScoreLine | null } =
+        { actualResult: e.actualResult };
+      if (e.accuracy) base.accuracy = e.accuracy;
+      return base;
+    }),
+  );
 
   await writeJson(predictionsIndexPath, PredictionsIndex, {
     lastUpdated: nowIso,
     aggregate,
     entries,
   });
+  return aggregate.finishedCount;
 }
 
 /** Baut das Team-Dokument; optionale Felder werden bewusst weggelassen. */

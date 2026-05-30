@@ -94,6 +94,7 @@ async function main(): Promise<void> {
     News_Items: stats.newsLoaded,
     KI_bewertet: stats.aiEvaluated,
     KI_uebersprungen: stats.aiSkipped,
+    Accuracy_bewertet: stats.accuracyScored,
   });
 }
 
