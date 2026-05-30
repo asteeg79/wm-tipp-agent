@@ -3,6 +3,7 @@
  * Datenquelle: ausschließlich openfootball (gemeinfrei, kein API-Key).
  *   Struktur/Spielplan: worldcup.json · Historie: internationals (Football.TXT)
  */
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { config } from "../config.js";
 import { buildData } from "./buildData.js";
@@ -15,12 +16,35 @@ import {
   type TournamentProvider,
 } from "./sources/types.js";
 
-/** Lädt lokal die Root-.env (in CI kommen die Werte direkt aus dem Env). */
+/**
+ * Lädt lokal die Root-.env (in CI kommen die Werte direkt aus dem Env).
+ * WICHTIG: überschreibt vorhandene env-Variablen mit nicht-leerem .env-Wert —
+ * node:loadEnvFile tut das NICHT, und die Shell kann z. B. ANTHROPIC_API_KEY=""
+ * vorbelegen, was sonst den echten Key blockiert.
+ */
 function loadDotenvIfPresent(): void {
+  let raw: string;
   try {
-    process.loadEnvFile(join(repoRoot, ".env"));
+    raw = readFileSync(join(repoRoot, ".env"), "utf8");
   } catch {
-    // keine .env (z. B. GitHub Actions) → ignorieren
+    return; // keine .env (z. B. GitHub Actions) → Werte kommen direkt aus env
+  }
+  for (const line of raw.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const eq = trimmed.indexOf("=");
+    if (eq === -1) continue;
+    const key = trimmed.slice(0, eq).trim();
+    let value = trimmed.slice(eq + 1).trim();
+    // umschließende Quotes entfernen
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    // Nur setzen, wenn die .env einen nicht-leeren Wert liefert (Override).
+    if (value !== "") process.env[key] = value;
   }
 }
 

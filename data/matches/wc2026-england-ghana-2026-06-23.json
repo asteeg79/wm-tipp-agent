@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "ENG",
       "elo": 1719,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7,
-      "draw": 0.18,
-      "away": 0.12
+      "home": 0.7181,
+      "draw": 0.1819,
+      "away": 0.1
     },
-    "confidence": 0.85,
+    "confidence": 0.7647,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.74,
+          "draw": 0.16,
+          "away": 0.1
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Deutlicher Elo-Vorsprong England (1719 vs 1521, ~198 Punkte)",
+          "Starke englische Defensive: nur 0.522 Gegentore/Spiel, 55% Clean-Sheet-Rate",
+          "Bessere gewichtete und aktuelle Form Englands (2.03 / 2.2 vs 1.19 / 1.6)",
+          "Ghana defensiv anfällig (1.557 Gegentore/Spiel, nur 32% Clean Sheets), aber offensiv torgefährlich (1.466 Tore/Spiel)"
+        ],
+        "risks": [
+          "Neutraler Spielort nimmt England den Heimvorteil und kann das Resultat etwas angleichen",
+          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit im direkten Vergleich",
+          "Ghanas solide Offensivwerte erhöhen die Chance auf ein Gegentor und reduzieren ein klares Clean-Sheet-Szenario",
+          "Lange Pause (60/61 Tage) beider Teams kann zu Rhythmusproblemen führen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
@@ -81,23 +105,23 @@
         },
         "probabilities": {
           "home": 0.7000000000000001,
-          "draw": 0.18000000000000002,
-          "away": 0.12000000000000001
+          "draw": 0.20000000000000004,
+          "away": 0.10000000000000002
         },
         "confidence": 0.85,
         "keyFactors": [
-          "England's higher Elo rating and stronger form",
-          "Ghana's lower clean sheet rate compared to England",
-          "England's impressive goals against average"
+          "England's superior recent form and overall team strength",
+          "Ghana's generally lower performance in international matches recently",
+          "Neutral venue minimizes potential location advantage"
         ],
         "risks": [
-          "Neutral venue reducing home advantage",
-          "Ghana's potential to overperform in a high-stakes match"
+          "The absence of previous head-to-head encounters introduces uncertainty",
+          "The 60+ days gap since the last competitive match for both teams, potentially affecting match fitness"
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: England's higher Elo rating and stronger form; Ghana's lower clean sheet rate compared to England; England's impressive goals against average.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprong England (1719 vs 1521, ~198 Punkte); Starke englische Defensive: nur 0.522 Gegentore/Spiel, 55% Clean-Sheet-Rate; Bessere gewichtete und aktuelle Form Englands (2.03 / 2.2 vs 1.19 / 1.6).",
     "inputHash": "sha256:afbda3aa6f11f664671fd2b7fda812a30e02fdc5e01281dc6e035b9194f42623"
   },
   "predictionHistory": []

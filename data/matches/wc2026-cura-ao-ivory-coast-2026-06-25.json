@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "CUW",
       "elo": 1640,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.25,
-      "draw": 0.24,
-      "away": 0.51
+      "home": 0.2761,
+      "draw": 0.2439,
+      "away": 0.48
     },
-    "confidence": 0.7,
+    "confidence": 0.6977,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,30 +74,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.27,
+          "draw": 0.25,
+          "away": 0.48
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Ivory Coast hat den höheren Elo-Wert (1723 vs. 1640) und die bessere gewichtete Form (2.267 vs. 1.857)",
+          "Beide Teams defensiv stark mit niedrigen Gegentorschnitten (~0.6) und ähnlichen Clean-Sheet-Raten (~0.55)",
+          "Curaçaos starke Offensive (2.199 Tore/Spiel) und gute Defensive sprechen für ein knappes Spiel",
+          "Neutraler Spielort eliminiert Heimvorteil, was die Baseline-Tendenz zugunsten Ivory Coast stützt"
+        ],
+        "risks": [
+          "Curaçao seit 193 Tagen ohne Pflichtspiel - mögliche Wettkampfrhythmus-Defizite, schwer einzuschätzen",
+          "Kein Head-to-Head vorhanden, daher keine direkte Vergleichsbasis",
+          "Beide Teams stark in der Defensive - reales Ergebnis könnte torärmer ausfallen (z.B. 0:1 oder 1:1)",
+          "Curaçaos hoher Torschnitt könnte zu Überraschung führen, wenn Form aktuell gehalten wird"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
+          "home": 0.28,
           "draw": 0.24,
-          "away": 0.51
+          "away": 0.48
         },
-        "confidence": 0.7,
+        "confidence": 0.85,
         "keyFactors": [
-          "Ivory Coast hat eine höhere Elo-Bewertung als Curaçao.",
-          "Ivory Coast hat kürzlichere Matchpraxis mit 60 Tagen seit dem letzten Spiel im Vergleich zu 193 Tagen für Curaçao.",
-          "Ivory Coast zeigt eine stärkere gewichtete Form (2.267) im Vergleich zu Curaçao (1.857)."
+          "Ivory Coast's recent form is slightly better than Curaçao's.",
+          "Both teams have a similar clean sheet rate and defensive stats.",
+          "No head-to-head record exists, so no historical psychological advantage.",
+          "Neutral venue minimizes any potential geographical advantage."
         ],
         "risks": [
-          "Es gibt keine Head-to-Head-Daten zwischen den beiden Teams.",
-          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil neutralisiert."
+          "Curaçao's long period since last match may affect team cohesion and match fitness.",
+          "Both teams have good offensive averages which could lead to an unpredictable match."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Ivory Coast hat eine höhere Elo-Bewertung als Curaçao.; Ivory Coast hat kürzlichere Matchpraxis mit 60 Tagen seit dem letzten Spiel im Vergleich zu 193 Tagen für Curaçao.; Ivory Coast zeigt eine stärkere gewichtete Form (2.267) im Vergleich zu Curaçao (1.857)..",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ivory Coast hat den höheren Elo-Wert (1723 vs. 1640) und die bessere gewichtete Form (2.267 vs. 1.857); Beide Teams defensiv stark mit niedrigen Gegentorschnitten (~0.6) und ähnlichen Clean-Sheet-Raten (~0.55); Curaçaos starke Offensive (2.199 Tore/Spiel) und gute Defensive sprechen für ein knappes Spiel.",
     "inputHash": "sha256:5e443e906abed36ebb26c2d3a068f4f3825ee18b33a3461543d75bbcdb27bf9a"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "NED",
       "elo": 1715,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 1,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.35,
-      "away": 0.3
+      "home": 0.3857,
+      "draw": 0.287,
+      "away": 0.3273
     },
-    "confidence": 0.75,
+    "confidence": 0.6265,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.38,
+          "draw": 0.27,
+          "away": 0.35
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Nahezu identische Elo-Werte (NED 1715, JPN 1712) deuten auf eine sehr ausgeglichene Partie hin",
+          "Japan zeigt eine starke gewichtete Form (2.202) und herausragende Defensive (0.362 Gegentore/Spiel, 58,3% Clean Sheets)",
+          "Niederlande mit hoher Offensivkraft (2.533 Tore/Spiel) und ebenfalls solider Form (recentForm 2.4)",
+          "Neutraler Spielort eliminiert den Heimvorteil und schwächt die Baseline-Bevorzugung der Niederlande leicht ab"
+        ],
+        "risks": [
+          "Keine direkten H2H-Daten vorhanden, daher erhöhte Unsicherheit bei der Einschätzung",
+          "Beide Teams 60 Tage ohne Spiel - mögliche Rhythmusprobleme schwer kalkulierbar",
+          "Japans niedrige Gegentorquote könnte gegen die starke NED-Offensive überbewertet sein (Gegnerstärke unbekannt)",
+          "Keine aktuellen materialNews zu Verletzungen/Sperren - Kaderqualität nicht vollständig abgesichert"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.35,
-          "away": 0.3
+          "home": 0.39,
+          "draw": 0.3,
+          "away": 0.31
         },
-        "confidence": 0.75,
+        "confidence": 0.72,
         "keyFactors": [
-          "Netherlands' slightly higher Elo rating and offensive strength",
-          "Japan's better defensive record and clean sheet rate",
-          "Neutral venue minimizes home-field advantage",
-          "Similar recent form with both teams having had a break of 60 days"
+          "Both teams have similar Elo ratings with Netherlands slightly higher.",
+          "Netherlands have a strong recent form with higher scoring ability.",
+          "Japan has a significantly better defensive record and clean sheet rate.",
+          "Neutral venue with no team having a home advantage."
         ],
         "risks": [
-          "Lack of head-to-head data introduces uncertainty",
-          "Both teams have not played in the past 60 days, affecting form continuity"
+          "No historical head-to-head data to analyze potential matchup strategies.",
+          "Both teams have not played in a while which can affect performance unpredictably."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Netherlands' slightly higher Elo rating and offensive strength; Japan's better defensive record and clean sheet rate; Neutral venue minimizes home-field advantage.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Nahezu identische Elo-Werte (NED 1715, JPN 1712) deuten auf eine sehr ausgeglichene Partie hin; Japan zeigt eine starke gewichtete Form (2.202) und herausragende Defensive (0.362 Gegentore/Spiel, 58,3% Clean Sheets); Niederlande mit hoher Offensivkraft (2.533 Tore/Spiel) und ebenfalls solider Form (recentForm 2.4).",
     "inputHash": "sha256:5c2efc15d724923967e1355a32730345c08038a9772087272da6c547732fe53b"
   },
   "predictionHistory": []

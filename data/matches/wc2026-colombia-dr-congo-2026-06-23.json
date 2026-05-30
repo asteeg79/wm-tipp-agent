@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "COL",
       "elo": 1660,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.3,
-      "away": 0.35
+      "home": 0.3087,
+      "draw": 0.3196,
+      "away": 0.3717
     },
-    "confidence": 0.75,
+    "confidence": 0.5616,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,32 +75,56 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.32,
+          "draw": 0.28,
+          "away": 0.4
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "DR Congo zeigt bessere gewichtete Form (2.229 vs 1.544) und stärkere jüngste Form (2.3 vs 1.8)",
+          "DR Congo defensiv deutlich stabiler: nur 0.482 Gegentore/Spiel und 54,5% Clean-Sheet-Rate vs Kolumbien 1.227 und 39,3%",
+          "Kolumbien offensiv stärker (1.95 Tore/Spiel) gegenüber DR Congo (1.42)",
+          "Leichter Elo-Vorteil für DR Congo (1685 vs 1660)",
+          "Neutraler Spielort ohne Heimvorteil für Kolumbien"
+        ],
+        "risks": [
+          "Keine direkten H2H-Daten vorhanden, erhöht Unsicherheit",
+          "Lange Pause beider Teams (60-62 Tage) kann Rhythmus beeinträchtigen",
+          "Höhenlage (1566 m) als unklarer Faktor für beide Mannschaften",
+          "Keine aktuellen News zu Ausfällen oder Aufstellung verfügbar"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
+          "home": 0.30000000000000004,
+          "draw": 0.35000000000000003,
           "away": 0.35000000000000003
         },
-        "confidence": 0.75,
+        "confidence": 0.65,
         "keyFactors": [
-          "DR Congo has a higher Elo rating.",
-          "Recent form of DR Congo is better than Colombia's.",
-          "DR Congo's defensive record is stronger with a lower goals against average.",
-          "Neutral venue minimizes any home advantage."
+          "Weighted Form favours DR Congo with higher recent performance.",
+          "Colombia has higher goals for average but also higher goals conceded average.",
+          "Neutral venue with altitude could slightly impact both teams similarly.",
+          "No head-to-head history to draw from."
         ],
         "risks": [
-          "Colombia has shown stronger attacking potential, with a higher goals for average.",
-          "Both teams have similar clean sheet rates, suggesting a tight match.",
-          "Altitude could impact teams' performances differently, as both teams are unused to this venue."
+          "No significant news affecting team performance.",
+          "Both teams have relatively similar Elo ratings, adding uncertainty."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: DR Congo has a higher Elo rating.; Recent form of DR Congo is better than Colombia's.; DR Congo's defensive record is stronger with a lower goals against average..",
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo zeigt bessere gewichtete Form (2.229 vs 1.544) und stärkere jüngste Form (2.3 vs 1.8); DR Congo defensiv deutlich stabiler: nur 0.482 Gegentore/Spiel und 54,5% Clean-Sheet-Rate vs Kolumbien 1.227 und 39,3%; Kolumbien offensiv stärker (1.95 Tore/Spiel) gegenüber DR Congo (1.42).",
     "inputHash": "sha256:db54f6d16f1d98c56b9b24a33b215cb0948a10a74cdcfa889dd2f8113e3fdb79"
   },
   "predictionHistory": []

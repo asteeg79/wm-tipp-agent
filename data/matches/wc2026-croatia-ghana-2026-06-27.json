@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "CRO",
       "elo": 1662,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.62,
-      "draw": 0.22,
-      "away": 0.16
+      "home": 0.6542,
+      "draw": 0.1937,
+      "away": 0.1521
     },
-    "confidence": 0.78,
+    "confidence": 0.7313,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,30 +74,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.66,
+          "draw": 0.185,
+          "away": 0.155
+        },
+        "confidence": 0.62,
+        "keyFactors": [
+          "Deutlicher Elo-Vorsprung Kroatiens (1662 vs. 1521)",
+          "Bessere gewichtete und jüngste Form Kroatiens (weightedForm 2.10 vs. 1.19, recentForm 2.5 vs. 1.6)",
+          "Kroatien defensiv stabiler (1.10 Gegentore/Spiel vs. 1.56 bei Ghana)",
+          "Höhere Offensivproduktivität Kroatiens (2.21 Tore/Spiel vs. 1.47)"
+        ],
+        "risks": [
+          "Keine H2H-Daten verfügbar, erschwert Einschätzung der direkten Begegnung",
+          "Lange Pause seit letztem Spiel (60/61 Tage) kann Rhythmus beider Teams beeinträchtigen",
+          "Neutraler Spielort nimmt Kroatien möglichen Heimvorteil",
+          "Ghanas physische Spielweise und Kontertempo können bei Standardsituationen gefährlich werden"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.62,
-          "draw": 0.22,
-          "away": 0.16
+          "home": 0.65,
+          "draw": 0.2,
+          "away": 0.15
         },
-        "confidence": 0.78,
+        "confidence": 0.85,
         "keyFactors": [
-          "Croatia's stronger Elo rating compared to Ghana.",
-          "Croatia's superior recent form and higher goals for average.",
-          "Neutral venue with no host advantage."
+          "Croatia's slightly better form over the last two years compared to Ghana.",
+          "Croatia has higher recent form than Ghana.",
+          "No significant news affecting team performance for both teams.",
+          "Neutral venue that eliminates home/away advantage."
         ],
         "risks": [
-          "Both teams' match fitness may be uncertain with over 60 days since last game.",
-          "No historical head-to-head data to gauge match dynamics."
+          "No head-to-head data makes direct comparison difficult.",
+          "Both teams have a relatively high average of goals against, which could lead to unexpected results."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Croatia's stronger Elo rating compared to Ghana.; Croatia's superior recent form and higher goals for average.; Neutral venue with no host advantage..",
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Kroatiens (1662 vs. 1521); Bessere gewichtete und jüngste Form Kroatiens (weightedForm 2.10 vs. 1.19, recentForm 2.5 vs. 1.6); Kroatien defensiv stabiler (1.10 Gegentore/Spiel vs. 1.56 bei Ghana).",
     "inputHash": "sha256:c30fd67ea8194ea35e4a5579aafce68554529922ee881f50b18165a0c706df4e"
   },
   "predictionHistory": []

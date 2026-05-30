@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "TUR",
       "elo": 1661,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5,
-      "draw": 0.21,
-      "away": 0.29
+      "home": 0.4755,
+      "draw": 0.2323,
+      "away": 0.2923
     },
-    "confidence": 0.7,
+    "confidence": 0.6379,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,57 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.47,
+          "draw": 0.235,
+          "away": 0.295
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Turkey hat die deutlich bessere gewichtete Form (2.27 vs 1.517) und jüngere Form (2.2 vs 1.6)",
+          "Turkey mit höherem Elo (1661 vs 1594) und besserer Defensive (1.14 vs 1.639 Gegentore/Spiel)",
+          "Turkey erzielt mehr Tore pro Spiel (1.937 vs 1.668) bei höherer Clean-Sheet-Rate",
+          "Direktes Duell ging an Turkey (2:1)"
+        ],
+        "risks": [
+          "USA als Gastgeberland (hostAdvantageTeamId USA) könnte trotz neutralem Stadion von Heimstimmung profitieren",
+          "Geringe H2H-Stichprobe (nur 1 Spiel) liefert wenig belastbare Aussagekraft",
+          "USA mit mehr absolvierten Spielen (34) und solider Offensive kann das Ergebnis kippen",
+          "60 Tage ohne Spiel für beide Teams erhöht Unsicherheit bzgl. aktueller Tagesform"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.21,
+          "home": 0.48,
+          "draw": 0.23,
           "away": 0.29
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Turkey has a higher elo rating and stronger recent form compared to USA.",
-          "Turkey's goal-scoring average is higher than USA's, and they have a better clean sheet rate.",
-          "Recent head-to-head result favors Turkey, who won their only recent encounter.",
-          "USA has host advantage, but the match is at a neutral venue, reducing this factor."
+          "Turkey has a higher Elo rating than the USA.",
+          "Turkey's weighted form (2.27) is significantly better than USA's (1.517).",
+          "Turkey has a better goals against average (1.14) compared to USA (1.639).",
+          "Head-to-head shows Turkey's advantage with a previous win.",
+          "The match is at a neutral venue."
         ],
         "risks": [
-          "USA's potential host advantage, despite the neutral venue.",
-          "Both teams have not played for 60 days, affecting match readiness."
+          "The match being played on a neutral venue eliminates home advantage for Turkey.",
+          "USA has the host advantage contextually.",
+          "Both teams have not played a match in the last 60 days, which might affect form."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Turkey has a higher elo rating and stronger recent form compared to USA.; Turkey's goal-scoring average is higher than USA's, and they have a better clean sheet rate.; Recent head-to-head result favors Turkey, who won their only recent encounter..",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Turkey hat die deutlich bessere gewichtete Form (2.27 vs 1.517) und jüngere Form (2.2 vs 1.6); Turkey mit höherem Elo (1661 vs 1594) und besserer Defensive (1.14 vs 1.639 Gegentore/Spiel); Turkey erzielt mehr Tore pro Spiel (1.937 vs 1.668) bei höherer Clean-Sheet-Rate.",
     "inputHash": "sha256:1047245ae6df6d76881ce1c4640f3684baacae45ac98845644f147fe06f91bc0"
   },
   "predictionHistory": []

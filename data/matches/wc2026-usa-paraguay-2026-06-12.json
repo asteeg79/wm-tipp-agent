@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "USA",
       "elo": 1594,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.55,
-      "draw": 0.23,
-      "away": 0.22
+      "home": 0.5364,
+      "draw": 0.2345,
+      "away": 0.2291
     },
-    "confidence": 0.68,
+    "confidence": 0.6336,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.52,
+          "draw": 0.24,
+          "away": 0.24
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "USA mit Heimvorteil als Gastgeber (hostAdvantageTeamId), trotz formal neutralem Spielort",
+          "USA höhere Elo (1594 vs 1558) und bessere gewichtete Form (1.52 vs 1.42)",
+          "USA deutlich offensivstärker (goalsForAvg 1.67 vs 0.98)",
+          "Einziges H2H-Duell ging 2:1 an die USA"
+        ],
+        "risks": [
+          "Paraguay defensiv stabil (cleanSheetRate 0.435 vs 0.235), kann Spiel eng halten",
+          "USA mit anfälliger Abwehr (goalsAgainstAvg 1.64) – Konteranfälligkeit",
+          "60 Tage seit letztem Spiel für beide – mögliche Rhythmusprobleme",
+          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
@@ -84,20 +108,21 @@
           "draw": 0.23,
           "away": 0.22
         },
-        "confidence": 0.68,
+        "confidence": 0.7,
         "keyFactors": [
-          "USA has a slightly higher Elo rating and better recent form compared to Paraguay.",
-          "The USA will have a host advantage, even though the match is at a neutral venue.",
-          "USA has scored more goals on average than Paraguay in their recent matches."
+          "USA has a slightly higher Elo rating than Paraguay.",
+          "USA's recent form is slightly better than Paraguay's.",
+          "USA has an advantage of being the host nation, even though the venue is neutral.",
+          "Head-to-head result favored USA in their previous encounter."
         ],
         "risks": [
-          "Despite having lower goals for average, Paraguay has a better clean sheet rate than the USA.",
-          "Neutral venue may reduce the home advantage impact for the USA."
+          "Both teams have not played in the last 60 days, which could affect form.",
+          "Paraguay's higher clean sheet rate could help them defensively."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: USA has a slightly higher Elo rating and better recent form compared to Paraguay.; The USA will have a host advantage, even though the match is at a neutral venue.; USA has scored more goals on average than Paraguay in their recent matches..",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heimvorteil als Gastgeber (hostAdvantageTeamId), trotz formal neutralem Spielort; USA höhere Elo (1594 vs 1558) und bessere gewichtete Form (1.52 vs 1.42); USA deutlich offensivstärker (goalsForAvg 1.67 vs 0.98).",
     "inputHash": "sha256:6c5f3a67e09271b757887d74a59af6c86334148dbdc953c821b12474bd3cec5f"
   },
   "predictionHistory": []

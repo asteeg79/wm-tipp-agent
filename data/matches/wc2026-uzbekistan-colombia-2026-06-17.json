@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "UZB",
       "elo": 1656,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3,
-      "draw": 0.27,
-      "away": 0.43
+      "home": 0.3321,
+      "draw": 0.2563,
+      "away": 0.4117
     },
-    "confidence": 0.7,
+    "confidence": 0.596,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,32 +75,56 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.335,
+          "draw": 0.265,
+          "away": 0.4
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "Colombia mit höherer Offensivproduktivität (1.95 Tore/Spiel) und besserer aktueller Form (recentForm 1.8) als Usbekistan (1.6)",
+          "Usbekistan defensiv stark: niedrige Gegentore (0.89/Spiel) und hohe Clean-Sheet-Rate (62.5%) können Kolumbiens Angriff bremsen",
+          "Nahezu identische Elo-Werte (UZB 1656 vs COL 1660) deuten auf ein enges Spiel hin",
+          "Höhenlage (2240 m) auf neutralem Platz könnte beide gleichermaßen belasten, kein klarer Heimvorteil"
+        ],
+        "risks": [
+          "Lange Spielpause Usbekistans (124 Tage) erhöht Unsicherheit über aktuelle Form und Rhythmus",
+          "Keine H2H-Daten verfügbar, daher begrenzte direkte Vergleichsbasis",
+          "Kolumbiens schwächere Defensive (1.23 Gegentore, nur 39% Clean Sheets) könnte zu offenem Schlagabtausch führen",
+          "Keine materiellen News (Verletzungen/Sperren) berücksichtigt – mögliche Personalfaktoren unbekannt"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.27,
-          "away": 0.43
+          "home": 0.33,
+          "draw": 0.25,
+          "away": 0.42
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Colombia has better recent form with a recentForm score of 1.8 compared to Uzbekistan's 1.6.",
-          "Colombia's offensive strength is higher with an average of 1.95 goals for per match.",
-          "Uzbekistan has not played in 124 days which could affect their match fitness.",
-          "The match is being played at a high altitude of 2240m, with no host advantage to either team."
+          "Colombia hat eine etwas stärkere jüngste Form mit einem Wert von 1.8 verglichen mit Usbekistans 1.6.",
+          "Kolumbiens Angriff ist tendenziell effizienter mit einem Durchschnitt von 1.95 Toren pro Spiel.",
+          "Usbekistan hat jedoch eine starke Verteidigungsbilanz mit einer Gegentorquote von nur 0.893.",
+          "Neutraler Spielort auf 2240m Höhe, was beide Teams potenziell beeinflussen kann.",
+          "Kolumbien hat kürzlichere Spielpraxis mit nur 62 Tagen seit dem letzten Spiel."
         ],
         "risks": [
-          "Uzbekistan's strong defensive record with a clean sheet rate of 0.625 could make it difficult for Colombia to score.",
-          "Uzbekistan's weighted form is slightly higher than Colombia's, indicating they have performed well over a longer period.",
-          "The neutral venue may reduce the potential impact of away disadvantages for Colombia."
+          "Keine direkten head-to-head Begegnungen zwischen den Teams.",
+          "Höhenlage könnte den Spielfluss und die Leistung beider Teams unvorhersehbar beeinflussen."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Colombia has better recent form with a recentForm score of 1.8 compared to Uzbekistan's 1.6.; Colombia's offensive strength is higher with an average of 1.95 goals for per match.; Uzbekistan has not played in 124 days which could affect their match fitness..",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia mit höherer Offensivproduktivität (1.95 Tore/Spiel) und besserer aktueller Form (recentForm 1.8) als Usbekistan (1.6); Usbekistan defensiv stark: niedrige Gegentore (0.89/Spiel) und hohe Clean-Sheet-Rate (62.5%) können Kolumbiens Angriff bremsen; Nahezu identische Elo-Werte (UZB 1656 vs COL 1660) deuten auf ein enges Spiel hin.",
     "inputHash": "sha256:6ac1eca3e5e208b59c7fa7da5c32bd314c252aad95b4332ec628266233f3d116"
   },
   "predictionHistory": []

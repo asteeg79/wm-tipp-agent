@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "NZL",
       "elo": 1625,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 3
     },
     "probabilities": {
-      "home": 0.22,
-      "draw": 0.2,
-      "away": 0.58
+      "home": 0.2541,
+      "draw": 0.2041,
+      "away": 0.5419
     },
-    "confidence": 0.7,
+    "confidence": 0.7102,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,56 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.26,
+          "draw": 0.21,
+          "away": 0.53
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Belgien mit deutlich stärkerer gewichteter Form (1.908 vs 1.235) und höherer Offensivkraft (2.914 vs 2.122 Tore/Spiel)",
+          "Belgien leicht höheres Elo (1646 vs 1625) und mehr Wettbewerbspraxis (26 vs 16 Spiele)",
+          "Belgien deutlich frischer im Wettkampfrhythmus (60 vs 193 Tage seit letztem Spiel)",
+          "Neutraler Spielort eliminiert Heimvorteil für Neuseeland",
+          "Beide Teams defensiv ähnlich (Gegentore ~1.05), aber NZL höhere Clean-Sheet-Rate (0.563 vs 0.385)"
+        ],
+        "risks": [
+          "Neuseelands sehr starke jüngste Form (recentForm 1.9) könnte unterschätzt sein",
+          "193 Tage Spielpause bei NZL erschwert Formbewertung erheblich",
+          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit",
+          "Belgiens niedrige Clean-Sheet-Rate eröffnet NZL Torchancen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 3
         },
         "probabilities": {
-          "home": 0.22,
+          "home": 0.25,
           "draw": 0.2,
-          "away": 0.58
+          "away": 0.55
         },
-        "confidence": 0.7,
+        "confidence": 0.85,
         "keyFactors": [
-          "Belgium has a higher recent form with a score of 2.2 compared to New Zealand's 1.9.",
-          "Belgium's goals for average (2.914) is significantly higher than New Zealand's (2.122).",
-          "New Zealand has not played in 193 days, which might affect their match readiness.",
-          "Belgium played more matches recently providing better match sharpness."
+          "Belgium's higher weighted form and recent form compared to New Zealand.",
+          "Belgium's higher goals for average, indicating a potent attack.",
+          "New Zealand's long period of inactivity with 193 days since the last match.",
+          "Neutral venue, no host advantage for either team."
         ],
         "risks": [
-          "The match is played at a neutral venue, eliminating home advantage.",
-          "There is no historical Head-to-Head data between the two teams, increasing uncertainty."
+          "New Zealand's above-average clean sheet rate could disrupt Belgium's scoring potential.",
+          "Lack of head-to-head history between the teams introduces uncertainty."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Belgium has a higher recent form with a score of 2.2 compared to New Zealand's 1.9.; Belgium's goals for average (2.914) is significantly higher than New Zealand's (2.122).; New Zealand has not played in 193 days, which might affect their match readiness..",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit deutlich stärkerer gewichteter Form (1.908 vs 1.235) und höherer Offensivkraft (2.914 vs 2.122 Tore/Spiel); Belgien leicht höheres Elo (1646 vs 1625) und mehr Wettbewerbspraxis (26 vs 16 Spiele); Belgien deutlich frischer im Wettkampfrhythmus (60 vs 193 Tage seit letztem Spiel).",
     "inputHash": "sha256:9ce6e78efad7d2ef4e9b853e684c371a6bb6aac40a4f10789098a111199a68b8"
   },
   "predictionHistory": []

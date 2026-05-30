@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "NOR",
       "elo": 1708,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.3,
-      "away": 0.35
+      "home": 0.3521,
+      "draw": 0.2221,
+      "away": 0.4258
     },
-    "confidence": 0.65,
+    "confidence": 0.598,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,55 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.355,
+          "draw": 0.225,
+          "away": 0.42
         },
-        "confidence": 0.65,
+        "confidence": 0.5,
         "keyFactors": [
-          "France has a slightly higher Elo rating and better recent form.",
-          "Norway has a higher goalsForAvg and better defensive stats (goalsAgainstAvg, cleanSheetRate).",
-          "Neutral venue negates any home advantage.",
-          "No head-to-head history, introducing an element of unpredictability."
+          "Frankreich hat höheren Elo (1736 vs 1708) und stärkere gewichtete Form (2.43 vs 2.019)",
+          "Frankreichs aktuelle Form (2.5) leicht über Norwegen (2.3), beide in starker Verfassung",
+          "Neutraler Spielort entfernt den von der Baseline implizit angesetzten Heimvorteil für Norwegen",
+          "Norwegen mit beeindruckender Offensive (2.78 Tore/Spiel) und solider Defensive (0.81 Gegentore)",
+          "Beide Teams mit ähnlicher Clean-Sheet-Rate (~0.46), defensiv stabil"
         ],
         "risks": [
-          "Uncertainty due to lack of head-to-head history.",
-          "Both teams' recent forms are strong and similar, making the match highly competitive."
+          "Keine H2H-Daten vorhanden, erschwert direkte Einschätzung",
+          "Norwegens hohe Torquote könnte das knappe Ergebnis kippen, besonders bei Top-Stürmer-Form",
+          "Lange Pause beider Teams (60/62 Tage) kann Spielrhythmus und Frühform beeinträchtigen",
+          "Fehlende aktuelle News zu Verletzungen/Sperren erhöht Unsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.35,
+          "draw": 0.22,
+          "away": 0.43
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "France has a slightly higher Elo rating and recent form advantage.",
+          "Norway has a strong offensive average, but France's defense is also resilient.",
+          "Neutral venue may lessen any potential home advantage for Norway."
+        ],
+        "risks": [
+          "Lack of head-to-head history introduces uncertainty in predicting outcomes.",
+          "Both teams have comparable clean sheet rates, which could affect the predictability of goals."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: France has a slightly higher Elo rating and better recent form.; Norway has a higher goalsForAvg and better defensive stats (goalsAgainstAvg, cleanSheetRate).; Neutral venue negates any home advantage..",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich hat höheren Elo (1736 vs 1708) und stärkere gewichtete Form (2.43 vs 2.019); Frankreichs aktuelle Form (2.5) leicht über Norwegen (2.3), beide in starker Verfassung; Neutraler Spielort entfernt den von der Baseline implizit angesetzten Heimvorteil für Norwegen.",
     "inputHash": "sha256:c82a7adf87f542dd2789d2aec1479e6f85fadbfca2ea0f1d80312387fb00a419"
   },
   "predictionHistory": []

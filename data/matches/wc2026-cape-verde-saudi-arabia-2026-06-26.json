@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "CPV",
       "elo": 1597,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.55,
-      "draw": 0.25,
-      "away": 0.2
+      "home": 0.5638,
+      "draw": 0.2454,
+      "away": 0.1908
     },
-    "confidence": 0.65,
+    "confidence": 0.6435,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.58,
+          "draw": 0.24,
+          "away": 0.18
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Cape Verde mit deutlich besserer gewichteter und jüngster Form (wForm 1.98 vs 1.26, recent 2.1 vs 1.2)",
+          "Höhere Elo (1597 vs 1538) und bessere Offensive (1.67 vs 0.87 Tore/Spiel)",
+          "Cape Verde defensiv solider in Bezug auf erwartete Gegentore (0.84 vs 1.32 Gegentore/Spiel)",
+          "Neutraler Spielort, kein Heimvorteil für eine Seite – Baseline plausibel"
+        ],
+        "risks": [
+          "Cape Verde 229 Tage ohne Spiel – Wettkampfrhythmus und Spielpraxis fraglich",
+          "Saudi-Arabien mit besserer Clean-Sheet-Rate (0.47 vs 0.44) und frischerer Spielpraxis (60 Tage)",
+          "Keine H2H-Daten vorhanden – erhöhte Unsicherheit",
+          "Keine aktuellen News zu Ausfällen/Personal verfügbar"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
@@ -84,20 +108,20 @@
           "draw": 0.25,
           "away": 0.2
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Cape Verde's higher recent form and goal-scoring ability",
-          "Saudi Arabia's higher experience with more matches played recently",
-          "Neutral venue reduces the impact of any home advantage"
+          "Cape Verde hat eine bessere Elo-Wertung und Form als Saudi-Arabien.",
+          "Cape Verde hatte längere Spielpause, könnte aber gut vorbereitet sein.",
+          "Neutraler Spielort, sodass kein Heimvorteil existiert."
         ],
         "risks": [
-          "Cape Verde's long break since last competitive match",
-          "Saudi Arabia's ability to keep clean sheets could alter match dynamics"
+          "Längere Spielpause für Cape Verde könnte zu mangelndem Match-Rhythmus führen.",
+          "Saudi-Arabien hat kürzlich mehr Spielpraxis gesammelt."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Cape Verde's higher recent form and goal-scoring ability; Saudi Arabia's higher experience with more matches played recently; Neutral venue reduces the impact of any home advantage.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit deutlich besserer gewichteter und jüngster Form (wForm 1.98 vs 1.26, recent 2.1 vs 1.2); Höhere Elo (1597 vs 1538) und bessere Offensive (1.67 vs 0.87 Tore/Spiel); Cape Verde defensiv solider in Bezug auf erwartete Gegentore (0.84 vs 1.32 Gegentore/Spiel).",
     "inputHash": "sha256:71c659aeb2d349450aa29990916c16ca77ef6cdff4683327820770a1c780d551"
   },
   "predictionHistory": []

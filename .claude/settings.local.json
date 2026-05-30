@@ -59,7 +59,10 @@
       "Bash(rm -f pipeline/src/sources/apiFootball.ts)",
       "Bash(grep -rniE \"apifootball|api_football|api-football|api-sports\" pipeline/src pipeline/config.ts app/src shared/src)",
       "Bash(echo \"COMMIT_EXIT=$?\")",
-      "Bash(echo \"COMMIT=$?\")"
+      "Bash(echo \"COMMIT=$?\")",
+      "Bash(node -e 'process.loadEnvFile\\(\"./.env\"\\); for \\(const k of [\"ANTHROPIC_API_KEY\",\"OPENAI_API_KEY\",\"ODDS_API_KEY\",\"BALLDONTLIE_API_KEY\",\"VITE_REPO_NAME\"]\\) console.log\\(k, \"=>\", \\(process.env[k]||\"\\(leer\\)\"\\).length\\);')",
+      "Bash(node -e 'console.log\\(\"ANTHROPIC pre-load:\", JSON.stringify\\(process.env.ANTHROPIC_API_KEY\\)\\);')",
+      "Bash(node -e ' *)"
     ]
   }
 }

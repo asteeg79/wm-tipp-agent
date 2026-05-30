@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "SUI",
       "elo": 1655,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.3,
-      "away": 0.35
+      "home": 0.3455,
+      "draw": 0.2909,
+      "away": 0.3636
     },
-    "confidence": 0.6,
+    "confidence": 0.5445,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.34,
+          "draw": 0.28,
+          "away": 0.38
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "Switzerland mit besserer aktueller Form (recentForm 2.1 vs 1.7) und höherer Offensivproduktion (2.02 Tore/Spiel)",
+          "Canada defensiv stärker: niedrigere Gegentorquote (0.61) und höhere Clean-Sheet-Rate (0.54)",
+          "Canada als Co-Gastgeber mit Heimvorteilsfaktor trotz neutralem Venue",
+          "Sehr ausgeglichene Elo-Werte (1655 vs 1627) und nahezu identische weightedForm"
+        ],
+        "risks": [
+          "Keine H2H-Daten vorhanden, erschwert Einschätzung",
+          "60 Tage seit letztem Spiel beider Teams – mögliche Rhythmusverluste",
+          "Keine aktuellen Verletzungs-/Kadernews verfügbar",
+          "Canadas starke Defensive könnte Schweizer Offensive neutralisieren und Ergebnis kippen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
@@ -86,18 +110,19 @@
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Both teams have similar Elo ratings and their recent forms do not significantly deviate.",
-          "Switzerland has a higher goals for average, but Canada has a better defensive record with a higher clean sheet rate.",
-          "The match is at a neutral venue with Canada's host advantage slightly mitigated by neutrality."
+          "Both teams have similar Elo ratings and recent form.",
+          "The match is at a neutral venue, reducing potential home advantage.",
+          "Canada has a higher clean sheet rate, indicating stronger defense."
         ],
         "risks": [
-          "No direct head-to-head history between the teams.",
-          "Performance can be influenced by the neutral venue and psychological aspects of playing in a World Cup."
+          "No historical head-to-head data is available.",
+          "Both teams have had a long break (60 days since last match), introducing uncertainty.",
+          "Switzerland has a higher recent form rating, potentially indicating better current momentum."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Both teams have similar Elo ratings and their recent forms do not significantly deviate.; Switzerland has a higher goals for average, but Canada has a better defensive record with a higher clean sheet rate.; The match is at a neutral venue with Canada's host advantage slightly mitigated by neutrality..",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit besserer aktueller Form (recentForm 2.1 vs 1.7) und höherer Offensivproduktion (2.02 Tore/Spiel); Canada defensiv stärker: niedrigere Gegentorquote (0.61) und höhere Clean-Sheet-Rate (0.54); Canada als Co-Gastgeber mit Heimvorteilsfaktor trotz neutralem Venue.",
     "inputHash": "sha256:a5bae3b7cad5a41ba16f19b5c26e3895ff4025df4cb948925303673ea48aea3e"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "HAI",
       "elo": 1572,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4,
-      "draw": 0.35,
-      "away": 0.25
+      "home": 0.395,
+      "draw": 0.3201,
+      "away": 0.285
     },
-    "confidence": 0.7,
+    "confidence": 0.5207,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,54 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.42,
+          "draw": 0.27,
+          "away": 0.31
+        },
+        "confidence": 0.4,
+        "keyFactors": [
+          "Haiti hat höheres Elo (1572 vs 1523) und bessere gewichtete Form (1.488 vs 1.301)",
+          "Haiti defensiv stabiler: niedrigerer Gegentorschnitt (1.092 vs 1.281) und höhere Clean-Sheet-Rate (0.409 vs 0.28)",
+          "Scotland mit besserer aktueller Tagesform (recentForm 1.6 vs 1.3), was die Haiti-Favoritenrolle leicht relativiert",
+          "Neutraler Spielort entzieht Haiti den nominellen Heimvorteil aus der Baseline"
+        ],
+        "risks": [
+          "Keine H2H-Daten vorhanden, daher hohe Unsicherheit im direkten Vergleich",
+          "Kein nominaler Heimvorteil trotz Heim-Labeling der Baseline (neutrales Stadion)",
+          "Lange Pause beider Teams (60 Tage) kann Rhythmus und Form-Aktualität verzerren",
+          "Scotlands stärkere recentForm könnte einen Aufwärtstrend signalisieren, der über die gewichtete Form hinausgeht"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
+          "home": 0.38,
           "draw": 0.35,
-          "away": 0.25
+          "away": 0.27
         },
-        "confidence": 0.7,
+        "confidence": 0.67,
         "keyFactors": [
-          "Haiti has a slightly higher Elo rating and stronger weighted form.",
-          "Scotland has a better recent form, which slightly offsets their lower Elo rating.",
-          "Neutral venue reduces home advantage for Haiti.",
-          "Neither team has significant material news affecting player availability or morale."
+          "Haiti's slightly better elo rating and weighted form.",
+          "Haiti's higher clean sheet rate compared to Scotland.",
+          "Scotland's better recent form indicating potential improvement."
         ],
         "risks": [
-          "Both teams have not played in the last 60 days, which might affect match sharpness.",
-          "No head-to-head match data to predict team interactions."
+          "Scotland's recent form is higher than their overall weighted form, suggesting potential for better performance.",
+          "Haiti's long period since last match could affect match sharpness."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Haiti has a slightly higher Elo rating and stronger weighted form.; Scotland has a better recent form, which slightly offsets their lower Elo rating.; Neutral venue reduces home advantage for Haiti..",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Haiti hat höheres Elo (1572 vs 1523) und bessere gewichtete Form (1.488 vs 1.301); Haiti defensiv stabiler: niedrigerer Gegentorschnitt (1.092 vs 1.281) und höhere Clean-Sheet-Rate (0.409 vs 0.28); Scotland mit besserer aktueller Tagesform (recentForm 1.6 vs 1.3), was die Haiti-Favoritenrolle leicht relativiert.",
     "inputHash": "sha256:4bdeeaf2b6f84493e78e1c2791a57063297eff2f889e5d2879a6c6cbc54ba46c"
   },
   "predictionHistory": []

@@ -4,20 +4,27 @@
  */
 import { z } from "zod";
 
-export const LlmPrediction = z.object({
-  predictedScore: z.object({
-    home: z.number().int().min(0).max(15),
-    away: z.number().int().min(0).max(15),
-  }),
-  probabilities: z.object({
-    home: z.number().min(0).max(1),
-    draw: z.number().min(0).max(1),
-    away: z.number().min(0).max(1),
-  }),
-  confidence: z.number().min(0).max(1),
-  keyFactors: z.array(z.string()).min(1).max(6),
-  risks: z.array(z.string()).min(1).max(4),
-});
+export const LlmPrediction = z
+  .object({
+    predictedScore: z.object({
+      home: z.number().int().min(0).max(15),
+      away: z.number().int().min(0).max(15),
+    }),
+    probabilities: z.object({
+      home: z.number().min(0).max(1),
+      draw: z.number().min(0).max(1),
+      away: z.number().min(0).max(1),
+    }),
+    confidence: z.number().min(0).max(1),
+    // Obergrenzen tolerant: LLMs überschreiten sie gern leicht → später kürzen.
+    keyFactors: z.array(z.string()).min(1),
+    risks: z.array(z.string()).min(1),
+  })
+  .transform((p) => ({
+    ...p,
+    keyFactors: p.keyFactors.slice(0, 6),
+    risks: p.risks.slice(0, 4),
+  }));
 export type LlmPrediction = z.infer<typeof LlmPrediction>;
 
 /** Renormiert die Wahrscheinlichkeiten robust auf Summe 1. */

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "COL",
       "elo": 1660,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.28,
-      "draw": 0.22,
-      "away": 0.5
+      "home": 0.2755,
+      "draw": 0.2409,
+      "away": 0.4836
     },
-    "confidence": 0.65,
+    "confidence": 0.6336,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.27,
+          "draw": 0.23,
+          "away": 0.5
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Portugal mit besserer gewichteter Form (2.01 vs. 1.544) und stärkerer aktueller Form (2.1 vs. 1.8)",
+          "Portugal defensiv deutlich stabiler: nur 0.879 Gegentore/Spiel gegenüber 1.227 bei Kolumbien",
+          "Portugal mit höherem Elo (1677 vs. 1660) und stärkerer Offensive (2.32 vs. 1.95 Tore/Spiel)",
+          "Neutraler Spielort eliminiert einen möglichen Heimvorteil für Kolumbien"
+        ],
+        "risks": [
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit bei der direkten Einschätzung",
+          "Kolumbien zeigt solide Offensive (1.95 Tore/Spiel) und kann bei guter Tagesform überraschen",
+          "Lange Spielpause beider Teams (60-62 Tage) erschwert Formprognose",
+          "Geringe Clean-Sheet-Rate Portugals (0.321) lässt Gegentore wahrscheinlich erscheinen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
@@ -81,23 +105,24 @@
         },
         "probabilities": {
           "home": 0.28,
-          "draw": 0.22,
-          "away": 0.5
+          "draw": 0.25,
+          "away": 0.47
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Portugal's recent form is superior with a weighted form of 2.01 compared to Colombia's 1.544.",
-          "Portugal has a higher goals for average (2.32) than Colombia (1.95), indicating a stronger attack.",
-          "Colombia's defense is slightly weaker, conceding more goals on average per match (1.227) compared to Portugal's 0.879."
+          "Portugal has a higher Elo rating and better recent form compared to Colombia.",
+          "Portugal's average goals scored per match is higher than Colombia's.",
+          "Both teams have not played each other before, which slightly increases uncertainty.",
+          "The match is being played at a neutral venue, removing potential home advantage."
         ],
         "risks": [
-          "Match is played at a neutral venue, removing home advantage.",
-          "Limited data due to no historical head-to-head matches between these teams."
+          "Colombia's recent form suggests they could perform better than their baseline probability indicates.",
+          "The absence of head-to-head data means match dynamics are less predictable."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Portugal's recent form is superior with a weighted form of 2.01 compared to Colombia's 1.544.; Portugal has a higher goals for average (2.32) than Colombia (1.95), indicating a stronger attack.; Colombia's defense is slightly weaker, conceding more goals on average per match (1.227) compared to Portugal's 0.879..",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit besserer gewichteter Form (2.01 vs. 1.544) und stärkerer aktueller Form (2.1 vs. 1.8); Portugal defensiv deutlich stabiler: nur 0.879 Gegentore/Spiel gegenüber 1.227 bei Kolumbien; Portugal mit höherem Elo (1677 vs. 1660) und stärkerer Offensive (2.32 vs. 1.95 Tore/Spiel).",
     "inputHash": "sha256:390cf62e0336794c4feff67922decd03717181943f215fe0bb9b798ed5f75933"
   },
   "predictionHistory": []

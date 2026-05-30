@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "POR",
       "elo": 1677,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.36,
-      "draw": 0.32,
-      "away": 0.32
+      "home": 0.3881,
+      "draw": 0.3119,
+      "away": 0.3
     },
-    "confidence": 0.82,
+    "confidence": 0.6305,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,32 +74,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.44,
+          "draw": 0.26,
+          "away": 0.3
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Portugal mit hoher Offensivproduktion (goalsForAvg 2.32) und starker weighted Form (2.01)",
+          "DR Congo defensiv sehr stabil (goalsAgainstAvg 0.482, cleanSheetRate 0.545), was den erwarteten Heim-Output dämpft",
+          "Beide Teams nahezu gleichwertig im Elo (POR 1677 vs COD 1685), DR Congo leicht höher",
+          "Neutraler Spielort ohne Heimvorteil für Portugal",
+          "Beide Teams mit identischer Pause (60 Tage), kein Frische-Vorteil"
+        ],
+        "risks": [
+          "Keine H2H-Daten vorhanden, daher Stilvergleich unsicher",
+          "Starke COD-Defensive könnte ein Remis oder knappes Ergebnis begünstigen",
+          "Lange Pause (60 Tage) kann Rhythmusverlust und schwer kalkulierbare Form bedeuten",
+          "Fehlende News zu Kader/Verletzungen erhöht Unsicherheit"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.36,
-          "draw": 0.32,
-          "away": 0.32
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
         },
-        "confidence": 0.82,
+        "confidence": 0.75,
         "keyFactors": [
-          "Both teams have similar Elo ratings with DR Congo slightly ahead at 1685.",
-          "DR Congo has a slightly better weighted and recent form compared to Portugal.",
-          "Both teams have not played against each other before, adding uncertainty to the prediction.",
-          "Neutral venue may benefit both teams equally, reducing home advantage for Portugal."
+          "DR Congo's slightly better weighted and recent form compared to Portugal.",
+          "Neutral venue eliminates home advantage.",
+          "Both teams have high Elo ratings and similar recent performances."
         ],
         "risks": [
-          "Differences in recent opponents and match conditions might not be fully accounted for.",
-          "Neutral ground factor can lead to unpredictable performances as teams adapt.",
-          "The absence of significant news or injuries means unexpected events could have unforeseen impacts."
+          "Lack of historical head-to-head data introduces unpredictability.",
+          "Both teams have not played a match in the last 60 days, potentially affecting match sharpness."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Both teams have similar Elo ratings with DR Congo slightly ahead at 1685.; DR Congo has a slightly better weighted and recent form compared to Portugal.; Both teams have not played against each other before, adding uncertainty to the prediction..",
+    "agreement": 0.94,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit hoher Offensivproduktion (goalsForAvg 2.32) und starker weighted Form (2.01); DR Congo defensiv sehr stabil (goalsAgainstAvg 0.482, cleanSheetRate 0.545), was den erwarteten Heim-Output dämpft; Beide Teams nahezu gleichwertig im Elo (POR 1677 vs COD 1685), DR Congo leicht höher.",
     "inputHash": "sha256:79652ffcbf919d3abc72d23635eab1f3f27a4d62888bc4e081f0ff60ba35b5ef"
   },
   "predictionHistory": []

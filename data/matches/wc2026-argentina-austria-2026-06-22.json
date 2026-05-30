@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "ARG",
       "elo": 1749,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.52,
-      "draw": 0.23,
-      "away": 0.25
+      "home": 0.5,
+      "draw": 0.2356,
+      "away": 0.2644
     },
-    "confidence": 0.75,
+    "confidence": 0.6728,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.5,
+          "draw": 0.23,
+          "away": 0.27
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Argentinien mit höherem Elo (1749 vs 1688) und stärkerer gewichteter Form (2.55 vs 2.28)",
+          "Deutlich bessere Defensive Argentiniens: 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 0.65 und 30.8% bei Österreich",
+          "Beide Teams offensiv stark (ARG 2.52, AUT 2.56 Tore/Spiel), aber Argentiniens Abwehr stabilisiert das Ergebnis",
+          "Neutraler Spielort entfernt klassischen Heimvorteil, daher leichte Annäherung der Wahrscheinlichkeiten"
+        ],
+        "risks": [
+          "Österreichs hohe Offensivproduktion kann gegen jede Defensive treffen",
+          "Keine H2H-Historie verfügbar, erhöht Prognoseunsicherheit",
+          "60 Tage seit letztem Spiel für beide Teams: möglicher Rhythmusmangel schwer kalkulierbar",
+          "Identische jüngste Form (recentForm 2.5) lässt enges Spiel möglich erscheinen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.23,
-          "away": 0.25
+          "home": 0.5,
+          "draw": 0.24,
+          "away": 0.26
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Argentina has a higher Elo rating than Austria.",
-          "Argentina shows strong defensive form with a clean sheet rate of 63%.",
-          "Both teams' recent forms are equal, but Argentina has slightly better weighted form.",
-          "Neutral venue, no team has a home advantage."
+          "Argentina's higher Elo rating compared to Austria.",
+          "Argentina's superior defensive record with a 0.399 goals against average and a higher clean sheet rate.",
+          "Both teams have a similar recent form, but Argentina has an overall better weighted form.",
+          "Neutral venue minimizes any home advantage."
         ],
         "risks": [
-          "Both teams have not played each other recently, introducing unknown variables.",
-          "Austria's goal-scoring rate is comparable to Argentina's."
+          "Austria's attacking record is comparable to Argentina's, with a slightly higher goals for average.",
+          "The absence of head-to-head data introduces uncertainty regarding the teams' direct matchup."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Argentina has a higher Elo rating than Austria.; Argentina shows strong defensive form with a clean sheet rate of 63%.; Both teams' recent forms are equal, but Argentina has slightly better weighted form..",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit höherem Elo (1749 vs 1688) und stärkerer gewichteter Form (2.55 vs 2.28); Deutlich bessere Defensive Argentiniens: 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 0.65 und 30.8% bei Österreich; Beide Teams offensiv stark (ARG 2.52, AUT 2.56 Tore/Spiel), aber Argentiniens Abwehr stabilisiert das Ergebnis.",
     "inputHash": "sha256:8ca0abece8794bf8e3df718552332d40c586c2b5104550af2f6aaddd558d04a0"
   },
   "predictionHistory": []

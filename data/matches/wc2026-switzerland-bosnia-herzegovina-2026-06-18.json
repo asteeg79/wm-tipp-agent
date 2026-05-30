@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "SUI",
       "elo": 1655,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.59,
-      "draw": 0.21,
-      "away": 0.2
+      "home": 0.5677,
+      "draw": 0.2177,
+      "away": 0.2146
     },
-    "confidence": 0.82,
+    "confidence": 0.6478,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,30 +74,53 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.5650000000000001,
+          "draw": 0.21500000000000002,
+          "away": 0.22000000000000003
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Switzerland mit deutlich höherem Elo (1655 vs 1519) und besserer gewichteter Form (1.638 vs 1.445)",
+          "Schweizer Defensive stabiler: niedrigerer Gegentorschnitt (1.094 vs 1.272) und höhere Clean-Sheet-Rate (0.37 vs 0.19)",
+          "Höhere Offensivproduktivität der Schweiz (2.021 vs 1.738 Tore pro Spiel) und starke recentForm (2.1)"
+        ],
+        "risks": [
+          "Neutraler Spielort nimmt der Schweiz den Heimvorteil, leichte Abwertung gegenüber Baseline gerechtfertigt",
+          "Bosnien mit solider Offensive (1.738 Tore/Spiel) und schwacher Schweizer Clean-Sheet-Rate kann jederzeit treffen",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit bei der direkten Einschätzung",
+          "Lange Pause (60 Tage) beider Teams kann Rhythmus beeinflussen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.59,
-          "draw": 0.21,
-          "away": 0.2
+          "home": 0.5700000000000001,
+          "draw": 0.22000000000000003,
+          "away": 0.21000000000000002
         },
-        "confidence": 0.82,
+        "confidence": 0.7,
         "keyFactors": [
-          "Switzerland's superior recent form with a rating of 2.1 against Bosnia's 1.6",
-          "Switzerland's stronger overall defensive record with a clean sheet rate of 0.37",
-          "Higher Elo rating for Switzerland at 1655 compared to Bosnia's 1519"
+          "Switzerland's superior recent form and higher Elo rating",
+          "Neutral venue reducing typical home advantage",
+          "Switzerland's higher clean sheet rate suggests stronger defense"
         ],
         "risks": [
-          "First meeting between the two teams, leading to unpredictability",
-          "Neutral venue which could mitigate any potential home advantage for Switzerland"
+          "Both teams have had a 60-day break potentially affecting match fitness",
+          "No head-to-head history, making comparative analysis difficult"
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Switzerland's superior recent form with a rating of 2.1 against Bosnia's 1.6; Switzerland's stronger overall defensive record with a clean sheet rate of 0.37; Higher Elo rating for Switzerland at 1655 compared to Bosnia's 1519.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit deutlich höherem Elo (1655 vs 1519) und besserer gewichteter Form (1.638 vs 1.445); Schweizer Defensive stabiler: niedrigerer Gegentorschnitt (1.094 vs 1.272) und höhere Clean-Sheet-Rate (0.37 vs 0.19); Höhere Offensivproduktivität der Schweiz (2.021 vs 1.738 Tore pro Spiel) und starke recentForm (2.1).",
     "inputHash": "sha256:ad1a52b510dc356575851f43d5c2c8ea712da3da618b2afda996f4c4934bf2c9"
   },
   "predictionHistory": []

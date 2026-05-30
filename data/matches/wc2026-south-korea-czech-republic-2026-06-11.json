@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "KOR",
       "elo": 1646,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.3,
-      "away": 0.35
+      "home": 0.3298,
+      "draw": 0.2559,
+      "away": 0.4143
     },
-    "confidence": 0.75,
+    "confidence": 0.5279,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,31 +75,55 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.345,
+          "draw": 0.265,
+          "away": 0.39
         },
-        "confidence": 0.75,
+        "confidence": 0.42,
         "keyFactors": [
-          "South Korea's higher recent form score (1.9) compared to Czech Republic's (1.6)",
-          "South Korea's higher clean sheet rate of 41.4%",
-          "Czech Republic's higher average goals scored per match (1.957)",
-          "Neutral venue reduces typical home advantage"
+          "South Korea hat den höheren Elo-Wert (1646 vs. 1588) und bessere zuletzt aufsteigende Form (recentForm 1.9 vs. 1.6).",
+          "Tschechien überzeugt offensiv (goalsForAvg 1.957) und defensiv solide (goalsAgainstAvg 1.189), was die Baseline-Favoritenrolle stützt.",
+          "Neutraler Spielort ohne Heimvorteil für beide Teams, daher kein klarer Standortbonus für Südkorea.",
+          "Südkorea mit höherer Clean-Sheet-Rate (0.414 vs. 0.32) und ausgeglichener Defensive."
         ],
         "risks": [
-          "No historical head-to-head matches for reference",
-          "Czech Republic's stronger offensive statistics could tip the balance"
+          "Keine Head-to-Head-Daten vorhanden, daher hohe Unsicherheit über Stilduell.",
+          "Höhenlage (1566 m) könnte beide Teams unterschiedlich beeinflussen, Effekt schwer einzuschätzen.",
+          "60 Tage seit letztem Spiel bei beiden Teams – mögliche Rhythmusverluste und unklare aktuelle Fitness.",
+          "Keine aktuellen News zu Verletzungen/Sperren verfügbar, mögliche kurzfristige Kaderänderungen unberücksichtigt."
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.32,
+          "draw": 0.25,
+          "away": 0.43
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "South Korea shows slightly better recent form but not significantly better.",
+          "Czech Republic has a higher average goals scored and a better weighted form slightly.",
+          "The venue is neutral, negating any home advantage."
+        ],
+        "risks": [
+          "Both teams have not played a match in the past 60 days, affecting recent form interpretation.",
+          "Altitude may impact player performance differently, although both teams have no known difficulties at altitude.",
+          "No head-to-head data available to assess historical matchups."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: South Korea's higher recent form score (1.9) compared to Czech Republic's (1.6); South Korea's higher clean sheet rate of 41.4%; Czech Republic's higher average goals scored per match (1.957).",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Korea hat den höheren Elo-Wert (1646 vs. 1588) und bessere zuletzt aufsteigende Form (recentForm 1.9 vs. 1.6).; Tschechien überzeugt offensiv (goalsForAvg 1.957) und defensiv solide (goalsAgainstAvg 1.189), was die Baseline-Favoritenrolle stützt.; Neutraler Spielort ohne Heimvorteil für beide Teams, daher kein klarer Standortbonus für Südkorea..",
     "inputHash": "sha256:e9e0ed3bff5c78fb776f2c0b107ac0887395828b9da45276d348f04843144a01"
   },
   "predictionHistory": []

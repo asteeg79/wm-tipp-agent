@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "PAN",
       "elo": 1600,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.25,
-      "draw": 0.23,
-      "away": 0.52
+      "home": 0.2264,
+      "draw": 0.2336,
+      "away": 0.54
     },
-    "confidence": 0.7,
+    "confidence": 0.6965,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,30 +74,54 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.235,
+          "draw": 0.225,
+          "away": 0.54
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Kroatien mit stärkerer gewichteter Form (2.10 vs 1.79) und deutlich besserer jüngster Form (2.5 vs 1.7)",
+          "Höhere Offensivpower Kroatiens (2.21 Tore/Spiel) gegenüber Panama (1.54)",
+          "Elo-Vorteil Kroatiens (1662 vs 1600) und höhere Clean-Sheet-Rate (0.348 vs 0.303)",
+          "Neutraler Spielort eliminiert Heimvorteil Panamas"
+        ],
+        "risks": [
+          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit",
+          "Panamas solide Defensive (1.01 Gegentore/Spiel) könnte Kroatien das Toreschießen erschweren",
+          "Geringere Stichprobengröße Kroatiens (23 Spiele) macht Formwerte volatiler",
+          "Lange Pause beider Teams (60 Tage) kann Rhythmus beeinträchtigen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.23,
-          "away": 0.52
+          "home": 0.22,
+          "draw": 0.24,
+          "away": 0.54
         },
-        "confidence": 0.7,
+        "confidence": 0.8,
         "keyFactors": [
-          "Panama's lower Elo and recent form compared to Croatia",
-          "Croatia's stronger attacking average and recent form",
-          "Neutral venue diminishes home advantage for Panama"
+          "Croatia's higher Elo rating at 1662 compared to Panama's 1600",
+          "Croatia's superior recent form with a 2.5 rating versus Panama's 1.7",
+          "Croatia's higher goals scored average of 2.205 compared to Panama's 1.542"
         ],
         "risks": [
-          "No head-to-head history between Panama and Croatia",
-          "Both teams have not played in the last 60 days, potentially affecting form"
+          "The match is at a neutral venue, removing home advantage",
+          "No significant recent news affecting team performance"
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Panama's lower Elo and recent form compared to Croatia; Croatia's stronger attacking average and recent form; Neutral venue diminishes home advantage for Panama.",
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien mit stärkerer gewichteter Form (2.10 vs 1.79) und deutlich besserer jüngster Form (2.5 vs 1.7); Höhere Offensivpower Kroatiens (2.21 Tore/Spiel) gegenüber Panama (1.54); Elo-Vorteil Kroatiens (1662 vs 1600) und höhere Clean-Sheet-Rate (0.348 vs 0.303).",
     "inputHash": "sha256:7aeb140a2e886c3a9bea118de779b982f42bfa39f840f34f7363f41bf8f46436"
   },
   "predictionHistory": []

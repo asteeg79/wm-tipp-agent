@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "CZE",
       "elo": 1588,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.27,
-      "draw": 0.25,
-      "away": 0.48
+      "home": 0.288,
+      "draw": 0.318,
+      "away": 0.394
     },
-    "confidence": 0.7,
+    "confidence": 0.6021,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,30 +75,56 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
           "home": 0.27,
-          "draw": 0.25,
-          "away": 0.48
+          "draw": 0.27,
+          "away": 0.46
         },
-        "confidence": 0.7,
+        "confidence": 0.5,
         "keyFactors": [
-          "Mexico has a higher Elo rating than Czech Republic.",
-          "Mexico's superior recent defensive record with higher clean sheet rate.",
-          "Match takes place at a high altitude (2240m), potentially benefitting Mexico due to host advantage and acclimatization."
+          "Mexico hat höheres Elo (1647 vs 1588) und bessere Defensive (0.797 Gegentore/Spiel, 58.8% Clean Sheets)",
+          "Mexico profitiert vom Heimvorteil als Co-Gastgeber trotz neutralem Venue",
+          "Höhenlage von 2240m begünstigt das an Altitude gewöhnte Mexiko deutlich",
+          "Tschechien hat zwar höhere Offensivwerte (1.957 Tore/Spiel), aber schwächere Defensive (1.189 Gegentore)",
+          "Beide Teams mit ähnlich starker gewichteter Form (1.674 vs 1.754)"
         ],
         "risks": [
-          "Czech Republic's higher goals for average could lead to unpredictability.",
-          "Form advantage of Czech Republic, reflected in the slightly higher recent form score."
+          "Keine direkte H2H-Historie verfügbar, erschwert Einschätzung",
+          "Tschechiens starke Offensive könnte Mexikos Defensive vor Probleme stellen",
+          "Mexikos jüngere Form (recentForm 1.4) leicht abfallend gegenüber Tschechien (1.6)",
+          "Lange Pause (60 Tage) für beide Teams erhöht Unsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.30000000000000004,
+          "draw": 0.35000000000000003,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Mexiko hat einen leicht höheren Elo-Wert, was auf eine stärkere allgemeine Leistung hinweist.",
+          "Mexikos Form ist leicht besser, aber Tschechien hat einen höheren Torvolldurchschnitt.",
+          "Neutrale Spielstätte und Höhenlage könnten Tschechien benachteiligen, aber Mexikos Vorteil ist nicht so hoch aufgrund des neutralen Ortes.",
+          "Kein Head-to-Head-Daten verfügbar, was die Vorhersage leicht unsicher macht."
+        ],
+        "risks": [
+          "Keine Verletzungs- oder Aufstellungsnachrichten verfügbar, die den aktuellen Teambesetzung beeinflussen könnten.",
+          "Spiel auf neutralem Gelände beseitigt den Heimvorteil, obwohl die Höhenlage für Mexiko von Vorteil sein könnte."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Mexico has a higher Elo rating than Czech Republic.; Mexico's superior recent defensive record with higher clean sheet rate.; Match takes place at a high altitude (2240m), potentially benefitting Mexico due to host advantage and acclimatization..",
+    "agreement": 0.9267,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico hat höheres Elo (1647 vs 1588) und bessere Defensive (0.797 Gegentore/Spiel, 58.8% Clean Sheets); Mexico profitiert vom Heimvorteil als Co-Gastgeber trotz neutralem Venue; Höhenlage von 2240m begünstigt das an Altitude gewöhnte Mexiko deutlich.",
     "inputHash": "sha256:1e5f8d538a28ad1be9474c38036e14fb92f15fef75d49bd97487f835b8424ba2"
   },
   "predictionHistory": []

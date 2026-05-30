@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "BEL",
       "elo": 1646,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.32,
-      "draw": 0.3,
-      "away": 0.38
+      "home": 0.3313,
+      "draw": 0.2939,
+      "away": 0.3748
     },
-    "confidence": 0.65,
+    "confidence": 0.5597,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,55 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
           "home": 0.32,
-          "draw": 0.3,
-          "away": 0.38
+          "draw": 0.26,
+          "away": 0.42
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "Ägypten hat höheres Elo (1737 vs. 1646) und bessere gewichtete Form (2.133 vs. 1.908)",
+          "Ägyptens defensive Stärke: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate",
+          "Belgien torgefährlicher in der Offensive (2.914 Tore/Spiel), aber anfälliger in der Abwehr (1.054 Gegentore/Spiel)",
+          "Neutraler Spielort ohne Heimvorteil für Belgien"
+        ],
+        "risks": [
+          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
+          "Belgiens hohe Offensivproduktion könnte Ägyptens Defensive durchbrechen",
+          "60 Tage seit letztem Spiel beider Teams – mögliche Rhythmusverluste schwer einzuschätzen",
+          "Ägyptens geringer goalsForAvg (1.523) könnte enge Spiele bedeuten"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.34,
+          "draw": 0.32,
+          "away": 0.34
         },
         "confidence": 0.65,
         "keyFactors": [
-          "Egypt has a slightly higher Elo rating than Belgium, suggesting a competitive edge.",
-          "Neutral venue negates any home advantage.",
-          "Both teams have similar recent form, with Egypt slightly better in weighted form.",
-          "Belgium has a higher average of goals scored but also concedes more than Egypt."
+          "Both teams have similar recent form with Egypt slightly better weighted form.",
+          "Belgium's attack is stronger than Egypt's, but Egypt's defense is significantly stronger.",
+          "Neutral venue diminishes any advantage for either team.",
+          "No head-to-head history to influence prediction."
         ],
         "risks": [
-          "Both teams have not played against each other recently, adding unpredictability.",
-          "The result might heavily depend on tactical adaptability at a neutral venue."
+          "Elo ratings slightly favor Egypt despite Belgium's stronger attack; potential for unexpected outcomes.",
+          "Form fluctuation due to 60 days since last match for both teams."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Egypt has a slightly higher Elo rating than Belgium, suggesting a competitive edge.; Neutral venue negates any home advantage.; Both teams have similar recent form, with Egypt slightly better in weighted form..",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ägypten hat höheres Elo (1737 vs. 1646) und bessere gewichtete Form (2.133 vs. 1.908); Ägyptens defensive Stärke: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate; Belgien torgefährlicher in der Offensive (2.914 Tore/Spiel), aber anfälliger in der Abwehr (1.054 Gegentore/Spiel).",
     "inputHash": "sha256:cd96beeea9a9029cfe083f8f07da305c8444f570ae54078231622438eaf56663"
   },
   "predictionHistory": []

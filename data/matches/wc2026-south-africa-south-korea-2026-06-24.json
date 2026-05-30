@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "RSA",
       "elo": 1610,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 1,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.32,
-      "draw": 0.35,
-      "away": 0.33
+      "home": 0.3522,
+      "draw": 0.3004,
+      "away": 0.3474
     },
-    "confidence": 0.7,
+    "confidence": 0.5664,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,31 +75,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.355,
+          "draw": 0.275,
+          "away": 0.37
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "South Korea hat höheres Elo (1646 vs 1610) und stärkere jüngste Form (recentForm 1.9 vs 1.5)",
+          "South Africa mit besserer Defensive: niedrigerer Gegentorschnitt (1.01 vs 1.35) und höhere Clean-Sheet-Rate (0.484 vs 0.414)",
+          "Neutraler Spielort eliminiert den in der Baseline implizierten Heimvorteil, was Südkorea relativ stärkt",
+          "South Africa mit leicht höherem Torschnitt (1.56 vs 1.34), aber gewichtete Form beider Teams nahezu identisch (1.59 vs 1.61)"
+        ],
+        "risks": [
+          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit",
+          "Keine materiellen News zu Verletzungen/Sperren – mögliche unberücksichtigte Faktoren",
+          "Beide Teams 60 Tage ohne Spiel: Rhythmus- und Fitnesslage schwer einschätzbar",
+          "Defensivstärke Südafrikas könnte das offensiv variablere Südkorea ausbremsen und zu engem Spiel führen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.35,
+          "home": 0.35,
+          "draw": 0.32,
           "away": 0.33
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "South Korea has a slightly higher Elo rating than South Africa.",
-          "Both teams have no recent head-to-head matches, making it hard to derive a direct historical advantage.",
-          "South Korea shows better recent form (1.9) compared to South Africa's 1.5.",
-          "The match is played at a neutral venue, negating any home advantage."
+          "Both teams have not played each other before.",
+          "South Korea has a slightly higher Elo rating.",
+          "South Africa's recent form is slightly lower than South Korea's.",
+          "Neutral venue with no host advantage."
         ],
         "risks": [
-          "Both teams have been inactive for 60 days, making recent form assessments less reliable.",
-          "Relatively close Elo ratings and weighted form suggest high uncertainty in predicting a winner."
+          "Both teams have been inactive for 60 days which might affect performance.",
+          "Similar offensive and defensive stats which may lead to unpredictable dynamics."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: South Korea has a slightly higher Elo rating than South Africa.; Both teams have no recent head-to-head matches, making it hard to derive a direct historical advantage.; South Korea shows better recent form (1.9) compared to South Africa's 1.5..",
+    "agreement": 0.97,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Korea hat höheres Elo (1646 vs 1610) und stärkere jüngste Form (recentForm 1.9 vs 1.5); South Africa mit besserer Defensive: niedrigerer Gegentorschnitt (1.01 vs 1.35) und höhere Clean-Sheet-Rate (0.484 vs 0.414); Neutraler Spielort eliminiert den in der Baseline implizierten Heimvorteil, was Südkorea relativ stärkt.",
     "inputHash": "sha256:bc17398fcefbfbb1e29da7d4d5c52077a45020dd3e44838c1548bc713cb84749"
   },
   "predictionHistory": []

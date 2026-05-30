@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "IRN",
       "elo": 1690,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.52,
+      "home": 0.5045,
       "draw": 0.23,
-      "away": 0.25
+      "away": 0.2655
     },
-    "confidence": 0.73,
+    "confidence": 0.6379,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,32 +74,55 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.51,
+          "draw": 0.23,
+          "away": 0.26
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Iran hat höheres Elo (1690 vs 1625) und stärkere gewichtete Form (1.81 vs 1.24)",
+          "Iran mit besserer Offensive (2.27 Tore/Spiel) und solider Defensive (0.91 Gegentore, 46% Clean Sheets)",
+          "Neuseeland mit langer Wettkampfpause (193 Tage seit letztem Spiel) - mögliche Rhythmusprobleme",
+          "Neutraler Spielort ohne Heimvorteil, leichter struktureller Vorteil für Iran"
+        ],
+        "risks": [
+          "Keine direkten H2H-Daten vorhanden, hohe Unsicherheit über Stilvergleich",
+          "Beide Teams identische jüngste Form (recentForm 1.9), Neuseeland könnte unterschätzt werden",
+          "Neuseelands hohe Clean-Sheet-Rate (56%) kann Irans Offensive bremsen",
+          "Lange Pause Neuseelands kann auch als Erholungsvorteil wirken (kleine Stichprobe: nur 16 Spiele)"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
+          "home": 0.5,
           "draw": 0.23,
-          "away": 0.25
+          "away": 0.27
         },
-        "confidence": 0.73,
+        "confidence": 0.7,
         "keyFactors": [
-          "Iran's higher Elo rating (1690 vs 1625)",
-          "Iran's stronger average goals for compared to goals against (2.271 vs 0.908)",
-          "Neutral venue with no location advantage for either team",
-          "Iran's slightly better weighted form over a larger sample size of matches"
+          "Iran has a higher elo rating and better weighted form over the last two years.",
+          "Iran averages more goals scored per match compared to New Zealand.",
+          "New Zealand has not played a match in 193 days, potentially affecting match sharpness.",
+          "The match is played at a neutral venue, removing any home advantage."
         ],
         "risks": [
-          "Long break for New Zealand which might affect form",
-          "Both teams have not faced each other before, adding uncertainty",
-          "Neutral venue limits any potential home advantage for Iran"
+          "Both teams have an identical recent form of 1.9, suggesting New Zealand could perform better than their weighted form indicates.",
+          "Iran has not played a match in 60 days, which might impact their rhythm slightly."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Iran's higher Elo rating (1690 vs 1625); Iran's stronger average goals for compared to goals against (2.271 vs 0.908); Neutral venue with no location advantage for either team.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Iran hat höheres Elo (1690 vs 1625) und stärkere gewichtete Form (1.81 vs 1.24); Iran mit besserer Offensive (2.27 Tore/Spiel) und solider Defensive (0.91 Gegentore, 46% Clean Sheets); Neuseeland mit langer Wettkampfpause (193 Tage seit letztem Spiel) - mögliche Rhythmusprobleme.",
     "inputHash": "sha256:eda7f28525fe5eb604fea40ceb664bd328c5b169b9d18dab49e21131e29f7461"
   },
   "predictionHistory": []

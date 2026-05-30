@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "COD",
       "elo": 1685,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.45,
+      "home": 0.4105,
       "draw": 0.3,
-      "away": 0.25
+      "away": 0.2895
     },
-    "confidence": 0.7,
+    "confidence": 0.6244,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,30 +74,56 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.44,
+          "draw": 0.3,
+          "away": 0.26
+        },
+        "confidence": 0.52,
+        "keyFactors": [
+          "DR Congo mit klar besserer gewichteter und jüngster Form (2.23 / 2.3 vs. 1.71 / 1.6)",
+          "Defensive Stärke der DR Congo: niedriger Gegentorschnitt (0.48) und höhere Clean-Sheet-Quote relativ zur Offensive der Gegner",
+          "Leichter Elo-Vorteil DR Congo (1685 vs. 1656)",
+          "Uzbekistan defensiv solide (Clean-Sheet-Rate 0.625), aber mit höherem Gegentorschnitt (0.89)",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil"
+        ],
+        "risks": [
+          "Sehr lange Pause bei Uzbekistan (124 Tage) – Form schwer einzuschätzen, möglicher Wettbewerbsrückstand oder erholte Frische",
+          "Keinerlei Head-to-Head-Daten verfügbar, geringe direkte Vergleichbarkeit",
+          "Pause von 60 Tagen auch bei DR Congo könnte Rhythmus beeinträchtigen",
+          "Knappe Differenz in Elo/Form lässt enges Spiel und Remis-Risiko realistisch erscheinen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.45,
+          "home": 0.39,
           "draw": 0.3,
-          "away": 0.25
+          "away": 0.31
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "DR Congo has better recent form and higher weighted form than Uzbekistan.",
-          "DR Congo has a strong defensive record with a higher clean sheet rate.",
-          "Both teams have not played against each other previously, eliminating direct historical advantage."
+          "DR Congo has a slightly better recent form than Uzbekistan.",
+          "DR Congo's stronger defense with lower goals against average compared to Uzbekistan.",
+          "Uzbekistan has not played as recently as DR Congo, with a gap of 124 days between matches for Uzbekistan."
         ],
         "risks": [
-          "The match is played at a neutral venue, which can reduce the impact of DR Congo's form advantage.",
-          "Uzbekistan has not played recently, which could have resulted in tactical refreshment or player recovery."
+          "Both teams have not faced each other previously, increasing uncertainty.",
+          "Neutral venue makes home advantage negligible.",
+          "Both teams have a good clean sheet rate, suggesting potential defensive setups."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: DR Congo has better recent form and higher weighted form than Uzbekistan.; DR Congo has a strong defensive record with a higher clean sheet rate.; Both teams have not played against each other previously, eliminating direct historical advantage..",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo mit klar besserer gewichteter und jüngster Form (2.23 / 2.3 vs. 1.71 / 1.6); Defensive Stärke der DR Congo: niedriger Gegentorschnitt (0.48) und höhere Clean-Sheet-Quote relativ zur Offensive der Gegner; Leichter Elo-Vorteil DR Congo (1685 vs. 1656).",
     "inputHash": "sha256:1d99118e7c693d989088c76f2685f574583cfbab8e0d69f035b40dd1381365a5"
   },
   "predictionHistory": []

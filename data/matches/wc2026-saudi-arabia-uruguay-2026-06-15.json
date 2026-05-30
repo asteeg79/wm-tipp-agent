@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "KSA",
       "elo": 1538,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 0,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.25,
+      "home": 0.2243,
       "draw": 0.3,
-      "away": 0.45
+      "away": 0.4757
     },
-    "confidence": 0.7,
+    "confidence": 0.6977,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,31 +74,54 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
-          "home": 1,
-          "away": 2
+          "home": 0,
+          "away": 1
         },
         "probabilities": {
-          "home": 0.25,
+          "home": 0.23,
           "draw": 0.3,
-          "away": 0.45
+          "away": 0.47
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Uruguay hat einen höheren Elo-Wert (1583) im Vergleich zu Saudi-Arabien (1538), was auf eine stärkere Grundstärke hinweist.",
-          "Uruguay zeigt eine bessere aktuelle Form (1.6) gegenüber Saudi-Arabien (1.2).",
-          "Beide Teams haben eine ähnliche Anzahl an Toren für und gegen, aber Uruguay weist eine bessere Defensive auf (0.832 Gegentore pro Spiel).",
-          "Das Spiel findet auf neutralem Boden statt, sodass kein Team einen Heimvorteil genießt."
+          "Uruguay mit höherem Elo (1583 vs 1538) und besserer gewichteter Form (1.397 vs 1.259)",
+          "Uruguay defensiv deutlich stabiler: GegentoreAvg 0.832 vs 1.315, Clean-Sheet-Rate 0.517 vs 0.471",
+          "Bessere jüngste Form Uruguays (recentForm 1.6 vs 1.2)",
+          "Neutraler Spielort ohne Heimvorteil für Saudi-Arabien"
         ],
         "risks": [
-          "Fehlende Head-to-Head-Statistiken zwischen den beiden Teams schafft Unsicherheit über direkte Vergleiche.",
-          "Beide Teams haben keine großen Veränderungen in den letzten Neuigkeiten, daher könnte unvorhergesehene Aufstellung oder Taktik das Ergebnis beeinflussen."
+          "Keine H2H-Historie als Referenz vorhanden",
+          "Beide Teams 60 Tage ohne Spiel – möglicher Rhythmusverlust schwer einzuschätzen",
+          "Niedrige erwartete Tore beider Seiten erhöhen Unentschieden- und Zufallsrisiko",
+          "Saudi-Arabiens Offensive (0.874 ToreAvg) kann durch Standards/Tagesform überraschen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 0,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.22,
+          "draw": 0.3,
+          "away": 0.48
+        },
+        "confidence": 0.8,
+        "keyFactors": [
+          "Uruguay has a higher Elo rating than Saudi Arabia.",
+          "Uruguay's recent form (1.6) is better than Saudi Arabia's (1.2).",
+          "Uruguay has a better defensive record with lower goals against average and higher clean sheet rate."
+        ],
+        "risks": [
+          "Match is being played at a neutral venue, which can reduce the impact of Elo ratings.",
+          "No direct head-to-head history which adds uncertainty."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Uruguay hat einen höheren Elo-Wert (1583) im Vergleich zu Saudi-Arabien (1538), was auf eine stärkere Grundstärke hinweist.; Uruguay zeigt eine bessere aktuelle Form (1.6) gegenüber Saudi-Arabien (1.2).; Beide Teams haben eine ähnliche Anzahl an Toren für und gegen, aber Uruguay weist eine bessere Defensive auf (0.832 Gegentore pro Spiel)..",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay mit höherem Elo (1583 vs 1538) und besserer gewichteter Form (1.397 vs 1.259); Uruguay defensiv deutlich stabiler: GegentoreAvg 0.832 vs 1.315, Clean-Sheet-Rate 0.517 vs 0.471; Bessere jüngste Form Uruguays (recentForm 1.6 vs 1.2).",
     "inputHash": "sha256:fa60538de35354208b4044dab6ca8dadd68ba5ba1ecdae166d24ed01e8e29af8"
   },
   "predictionHistory": []

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "ARG",
       "elo": 1749,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.48,
-      "draw": 0.22,
-      "away": 0.3
+      "home": 0.4669,
+      "draw": 0.24,
+      "away": 0.2931
     },
-    "confidence": 0.7,
+    "confidence": 0.6584,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.45,
+          "draw": 0.24,
+          "away": 0.31
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Argentinien mit minimal höherem Elo (1749 vs. 1746), aber deutlich besserer Defensive (Gegentore-Schnitt 0.399 vs. 0.55, Clean-Sheet-Rate 0.63 vs. 0.516)",
+          "Stärkere gewichtete Form Argentiniens (2.553 vs. 2.384) rechtfertigt leichte Anhebung der Heimwahrscheinlichkeit über die Baseline",
+          "Beide Teams offensiv stark (Tore-Schnitt 2.521 bzw. 2.335), aber Argentiniens Balance aus Offensive und Defensive gibt den Ausschlag",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil, daher nur moderate Korrektur"
+        ],
+        "risks": [
+          "Keine direkte H2H-Historie vorhanden, erhöht die Prognoseunsicherheit",
+          "Beide Teams 60 Tage ohne Spiel – mögliche Rhythmusprobleme schwer einschätzbar",
+          "Algeriens hoher Offensiv-Output könnte bei Argentiniens seltenen Defensivfehlern zu Toren führen",
+          "Sehr enge Elo-Werte machen ein Remis oder Auswärtssieg realistisch"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
@@ -81,23 +105,24 @@
         },
         "probabilities": {
           "home": 0.48,
-          "draw": 0.22,
-          "away": 0.3
+          "draw": 0.24,
+          "away": 0.28
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Argentina's slightly higher elo rating and offensive strength",
-          "Argentina's higher clean sheet rate",
-          "Neutral venue reduces typical home advantage"
+          "Argentina's marginally better Elo rating and form",
+          "Strong defensive record with a higher clean sheet rate",
+          "Neutral venue reducing typical advantage configurations"
         ],
         "risks": [
-          "Both teams have identical recent form",
-          "Algeria's strong offensive record might pose a challenge"
+          "No head-to-head historical data",
+          "Both teams having similar recent form and performance metrics",
+          "60 days since last match for both teams leading to possible unpredictability"
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Argentina's slightly higher elo rating and offensive strength; Argentina's higher clean sheet rate; Neutral venue reduces typical home advantage.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit minimal höherem Elo (1749 vs. 1746), aber deutlich besserer Defensive (Gegentore-Schnitt 0.399 vs. 0.55, Clean-Sheet-Rate 0.63 vs. 0.516); Stärkere gewichtete Form Argentiniens (2.553 vs. 2.384) rechtfertigt leichte Anhebung der Heimwahrscheinlichkeit über die Baseline; Beide Teams offensiv stark (Tore-Schnitt 2.521 bzw. 2.335), aber Argentiniens Balance aus Offensive und Defensive gibt den Ausschlag.",
     "inputHash": "sha256:c97f8a641fbadb9e3886647a1efed760fa925d8e821ad8a3adb0e3595aa1d175"
   },
   "predictionHistory": []

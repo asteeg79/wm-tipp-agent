@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "EGY",
       "elo": 1737,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.3,
-      "away": 0.35
+      "home": 0.3705,
+      "draw": 0.2936,
+      "away": 0.3359
     },
-    "confidence": 0.75,
+    "confidence": 0.6244,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,30 +74,54 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.4,
+          "draw": 0.27,
+          "away": 0.33
+        },
+        "confidence": 0.52,
+        "keyFactors": [
+          "Egypt mit höherem Elo (1737 vs 1690) und sehr stabiler Defensive (GA 0.41, Clean-Sheet-Rate 57%)",
+          "Egypt leicht bessere gewichtete Form (2.133 vs 1.814)",
+          "Iran offensiv stärker (GF 2.27 vs 1.52), aber defensiv anfälliger (GA 0.91, Clean-Sheet 46%)",
+          "Neutraler Spielort ohne Heimvorteil – Baseline-Vorteil für Egypt stützt sich rein auf Stärke/Form"
+        ],
+        "risks": [
+          "Keine H2H-Daten vorhanden – hohe Unsicherheit im direkten Vergleich",
+          "Lange Pause beider Teams (60 Tage) kann Anfangsrhythmus beeinträchtigen",
+          "Irans starke Offensive kann Egypts solide Defensive trotzdem knacken",
+          "Keine aktuellen materiellen News – mögliche Ausfälle/Form nicht berücksichtigt"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.31,
+          "away": 0.34
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Egypt has a higher recent form and defensive strength with a lower goals against average.",
-          "Iran has a stronger attacking record with a higher goals for average.",
-          "Teams are playing at a neutral venue with no home or host advantage."
+          "Egypt's higher recent form and defensive stability with a low goals against average.",
+          "Iran's strong offensive average with higher goals for per match.",
+          "Neutral venue, minimizing home advantage."
         ],
         "risks": [
-          "No head-to-head history between the teams adds uncertainty.",
-          "Both teams have the same days since last match, so form freshness may affect performance."
+          "No head-to-head data for direct comparison.",
+          "Both teams have not played for 60 days; unclear impact on match fitness."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Egypt has a higher recent form and defensive strength with a lower goals against average.; Iran has a stronger attacking record with a higher goals for average.; Teams are playing at a neutral venue with no home or host advantage..",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit höherem Elo (1737 vs 1690) und sehr stabiler Defensive (GA 0.41, Clean-Sheet-Rate 57%); Egypt leicht bessere gewichtete Form (2.133 vs 1.814); Iran offensiv stärker (GF 2.27 vs 1.52), aber defensiv anfälliger (GA 0.91, Clean-Sheet 46%).",
     "inputHash": "sha256:da22ec1f035b86de8b5b1c3bb2c7d944749c5734b928b11907d1b87709674291"
   },
   "predictionHistory": []

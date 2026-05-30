@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "CZE",
       "elo": 1588,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
       "home": 0.35,
-      "draw": 0.3,
-      "away": 0.35
+      "draw": 0.2888,
+      "away": 0.3613
     },
-    "confidence": 0.7,
+    "confidence": 0.594,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,6 +74,30 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35,
+          "draw": 0.27,
+          "away": 0.38
+        },
+        "confidence": 0.45,
+        "keyFactors": [
+          "South Africa hat leicht höheres Elo (1610 vs. 1588) und die stabilere Defensive (GA 1.01, Clean-Sheet-Rate 48.4%).",
+          "Tschechien zeigt etwas bessere Offensive (GF 1.96) und leicht stärkere gewichtete Form (1.674 vs. 1.59).",
+          "Neutraler Spielort eliminiert Heimvorteil für Tschechien, was die Baseline-Heimtendenz abschwächt.",
+          "Beide Teams ausgeglichen in Form und Erwartungstoren (xG 1.43 vs. 1.42), Partie sehr eng."
+        ],
+        "risks": [
+          "Keine H2H-Daten vorhanden, daher hohe Unsicherheit im direkten Vergleich.",
+          "60 Tage seit letztem Spiel bei beiden Teams – Rhythmus und Aktualität der Form schwer einzuschätzen.",
+          "Keine materiellen News zu Verletzungen/Sperren, mögliche Aufstellungsfaktoren unbekannt.",
+          "Geringe Elo-Differenz macht das Ergebnis hochgradig zufallsanfällig."
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
@@ -84,23 +108,21 @@
           "draw": 0.30000000000000004,
           "away": 0.35000000000000003
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Very similar ELO ratings: Czech Republic (1588), South Africa (1610)",
-          "Both teams have balanced recent and weighted form scores",
-          "Neutral venue reduces potential home advantage",
-          "No head-to-head history to suggest dominance by either team",
-          "Czech Republic slightly better in goals for average, but South Africa stronger defensively with higher clean sheet rate"
+          "Both teams have similar Elo ratings, indicating closely matched strength.",
+          "Neutral venue implies no home advantage for Czech Republic.",
+          "Similar recent forms with slight edge toward Czech Republic in attack.",
+          "South Africa has a better defensive record with a higher clean sheet rate."
         ],
         "risks": [
-          "Potential impact of players' form after 60 days since last match",
-          "Unpredictability due to lack of head-to-head match experience",
-          "Neutral location could affect team performance unpredictably"
+          "Lack of head-to-head data as both teams haven't played against each other.",
+          "Both teams have not played for 60 days, making current form slightly uncertain."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Very similar ELO ratings: Czech Republic (1588), South Africa (1610); Both teams have balanced recent and weighted form scores; Neutral venue reduces potential home advantage.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Africa hat leicht höheres Elo (1610 vs. 1588) und die stabilere Defensive (GA 1.01, Clean-Sheet-Rate 48.4%).; Tschechien zeigt etwas bessere Offensive (GF 1.96) und leicht stärkere gewichtete Form (1.674 vs. 1.59).; Neutraler Spielort eliminiert Heimvorteil für Tschechien, was die Baseline-Heimtendenz abschwächt..",
     "inputHash": "sha256:5d19ac9a2693a8e65e9ce7c9199f0506034d8e04ef7faee04a45b01d47d36c00"
   },
   "predictionHistory": []

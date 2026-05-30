@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "home": {
       "teamId": "SCO",
       "elo": 1523,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:08:46.452Z",
+    "generatedAt": "2026-05-30T18:39:04.761Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.15,
-      "draw": 0.2,
-      "away": 0.65
+      "home": 0.1782,
+      "draw": 0.2282,
+      "away": 0.5937
     },
-    "confidence": 0.75,
+    "confidence": 0.6863,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,7 +74,7 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
           "home": 1,
           "away": 2
@@ -84,21 +84,46 @@
           "draw": 0.2,
           "away": 0.65
         },
-        "confidence": 0.75,
+        "confidence": 0.62,
         "keyFactors": [
-          "Brazil has a higher Elo rating (1698) compared to Scotland (1523), indicating superior historical performance.",
-          "Brazil's recent form is slightly higher than Scotland's.",
-          "Brazil has a higher clean sheet rate and concedes fewer goals on average.",
-          "The match is at a neutral venue, nullifying any potential home advantage."
+          "Deutlicher Elo-Vorsprung Brasiliens (1698 vs. 1523) untermauert die klare Favoritenrolle",
+          "Brasilien mit besserer gewichteter Form (1.791 vs. 1.301) und höherer Offensivproduktion (1.814 Tore/Spiel)",
+          "Brasiliens solide Defensive (0.892 Gegentore/Spiel, 40% Clean Sheets) erschwert schottische Treffer",
+          "Schottlands jüngste Form (recentForm 1.6) ist leicht über dem gewichteten Schnitt, was etwas Widerstand andeutet",
+          "Neutraler Spielort entzieht Schottland den Heimvorteil und stützt die Baseline"
         ],
         "risks": [
-          "Scotland's recent performance has shown improvement with a weighted form of 1.6.",
-          "There is no head-to-head record, introducing uncertainty in matchup dynamics."
+          "Keine H2H-Daten vorhanden, daher fehlt historische Kalibrierung des Matchups",
+          "60 Tage seit letztem Spiel für beide Teams - Spielrhythmus und Formstand schwer einschätzbar",
+          "Keine aktuellen News zu Verletzungen/Sperren, mögliche Kaderveränderungen unberücksichtigt",
+          "Schottlands ansteigende recentForm könnte ein knapperes Ergebnis oder Punktgewinn ermöglichen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.2,
+          "draw": 0.25,
+          "away": 0.55
+        },
+        "confidence": 0.8,
+        "keyFactors": [
+          "Brazil's higher Elo rating and strong recent form.",
+          "Scotland's good recent form and goals scoring average.",
+          "Neutral venue with no home advantage.",
+          "No significant injuries or news affecting team performance."
+        ],
+        "risks": [
+          "Scotland's ability to perform above expectations.",
+          "Unplayed head-to-head history - lack of historical performance data against each other."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Brazil has a higher Elo rating (1698) compared to Scotland (1523), indicating superior historical performance.; Brazil's recent form is slightly higher than Scotland's.; Brazil has a higher clean sheet rate and concedes fewer goals on average..",
+    "agreement": 0.9333,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Brasiliens (1698 vs. 1523) untermauert die klare Favoritenrolle; Brasilien mit besserer gewichteter Form (1.791 vs. 1.301) und höherer Offensivproduktion (1.814 Tore/Spiel); Brasiliens solide Defensive (0.892 Gegentore/Spiel, 40% Clean Sheets) erschwert schottische Treffer.",
     "inputHash": "sha256:bcf7e3ebea23239cd3f085e11ee7a88566333289bb5900465ed803c692db8a44"
   },
   "predictionHistory": []
