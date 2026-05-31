@@ -13,6 +13,7 @@ import type { TeamResult } from "@wm/shared";
 import { config, type PipelineConfig } from "../../config.js";
 import { computeForm } from "../features/form.js";
 import { expectedScore } from "../features/elo.js";
+import { ELO_SEED } from "../features/eloSeed.js";
 import { estimateLambdas, poissonBaseline } from "../features/poisson.js";
 import { scoreMatch, aggregateAccuracy } from "../features/accuracy.js";
 import type { BacktestGame } from "../sources/openFootballHistory.js";
@@ -25,6 +26,8 @@ export interface BacktestParams {
   eloK: number;
   eloInitial: number;
   eloToGoalsScale: number;
+  /** FIFA-Seed als Elo-Startwert nutzen (statt überall eloInitial). */
+  useSeed: boolean;
 }
 
 export function paramsFromConfig(c: PipelineConfig): BacktestParams {
@@ -35,6 +38,7 @@ export function paramsFromConfig(c: PipelineConfig): BacktestParams {
     eloK: c.elo.k,
     eloInitial: c.elo.initial,
     eloToGoalsScale: c.poisson.eloToGoalsScale,
+    useSeed: true,
   };
 }
 
@@ -109,7 +113,9 @@ export function runBacktest(
   try {
     const elo = new Map<string, number>();
     const history = new Map<string, BacktestGame[]>();
-    const getElo = (id: string): number => elo.get(id) ?? params.eloInitial;
+    const seedOf = (id: string): number =>
+      params.useSeed ? (ELO_SEED[id] ?? params.eloInitial) : params.eloInitial;
+    const getElo = (id: string): number => elo.get(id) ?? seedOf(id);
     const push = (id: string, g: BacktestGame): void => {
       if (!history.has(id)) history.set(id, []);
       history.get(id)!.push(g);

@@ -33,6 +33,25 @@ async function main(): Promise<void> {
   const base = paramsFromConfig(config);
 
   // Sweep: H × eloToGoalsScale. Sweep abschaltbar via WM_BACKTEST_SWEEP=0.
+  // Direkter A/B-Vergleich: FIFA-Seed an vs. aus (sonst Default-Parameter).
+  const withSeed = runBacktest(games, { ...base, useSeed: true });
+  const noSeed = runBacktest(games, { ...base, useSeed: false });
+  console.log("\n[backtest] FIFA-Seed-Vergleich (Default-Parameter):");
+  console.table({
+    "mit Seed": {
+      "1X2%": pct(withSeed.outcomeRate),
+      exact: pct(withSeed.exactScoreRate),
+      Brier: num(withSeed.brierMean),
+      RPS: num(withSeed.rpsMean),
+    },
+    "ohne Seed": {
+      "1X2%": pct(noSeed.outcomeRate),
+      exact: pct(noSeed.exactScoreRate),
+      Brier: num(noSeed.brierMean),
+      RPS: num(noSeed.rpsMean),
+    },
+  });
+
   const sweep = process.env.WM_BACKTEST_SWEEP !== "0";
   const candidates: BacktestParams[] = sweep
     ? crossProduct(base, {

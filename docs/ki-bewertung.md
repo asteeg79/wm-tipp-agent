@@ -43,6 +43,13 @@ Erzeugt in `pipeline/src/features/`, bevor ein LLM aufgerufen wird:
 
 - **Elo-Rating** (`elo.ts`): aus allen Länderspielen der letzten 2 Jahre,
   chronologisch.
+  - **Startwert (Seed):** Da nur ~2 Jahre Historie geladen werden und Elo nur
+    *relativ zum Gegner* wertet, würde ein Start bei 1500 für alle die echte
+    Spielklasse verfehlen (ein Team mit vielen Siegen gegen schwache Gegner
+    erreichte sonst fast Top-Niveau). Deshalb startet jedes Team mit einem
+    **FIFA-Ranking-Seed** (`eloSeed.ts`, Näherung aus der FIFA-Weltrangliste);
+    die 2-Jahres-Historie justiert von dort. Per Backtest belegt: Seed senkt
+    den RPS (0,1900 vs. 0,1943 ohne Seed).
   - Erwartung `E_home = 1 / (1 + 10^((Elo_away − Elo_home)/400))`
   - Update nach jedem Spiel `Elo' = Elo + K · G · (Ergebnis − E)`, K = 40,
     G = Tordifferenz-Multiplikator (1 / 1,5 / höher bei klaren Siegen).

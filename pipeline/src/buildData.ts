@@ -39,6 +39,7 @@ import {
   computeEloRatings,
   gamesFromHistories,
 } from "./features/elo.js";
+import { ELO_SEED } from "./features/eloSeed.js";
 import { runEngine, featureHash } from "./features/engine.js";
 import { computeForm, recencyWeight as recencyWeightFor } from "./features/form.js";
 import { makeEnsemble, type Ensemble } from "./predict/index.js";
@@ -169,10 +170,11 @@ export async function buildData(
     }
   }
 
-  // 5) Globale Elo-Ratings aus der gesamten Historie.
+  // 5) Globale Elo-Ratings aus der gesamten Historie (FIFA-Seed als Startwert).
   const eloRatings = computeEloRatings(gamesFromHistories(historyByTeam));
+  // Fallback für Teams ganz ohne Historie: Seed, sonst config.elo.initial.
   const eloOf = (id: string): number =>
-    eloRatings.get(id) ?? config.elo.initial;
+    eloRatings.get(id) ?? ELO_SEED[id] ?? config.elo.initial;
 
   // 6) Teams schreiben (inkl. Form + News).
   const newsAggregator = options.withNews ? new NewsAggregator() : null;

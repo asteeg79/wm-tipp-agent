@@ -9,6 +9,7 @@
  */
 import { config } from "../../config.js";
 import type { HistoryMatch } from "../sources/types.js";
+import { ELO_SEED } from "./eloSeed.js";
 
 /** Ein chronologisch sortierbares Spiel mit beiden kanonischen IDs. */
 export interface EloGame {
@@ -38,11 +39,18 @@ export function expectedScore(ratingA: number, ratingB: number): number {
  * Spielt alle Spiele chronologisch durch und liefert die finalen Ratings.
  * HFA wird hier NICHT eingerechnet (neutrale Bewertung der Teamstärke); der
  * Heimvorteil kommt erst in der Poisson-Baseline für die konkrete Partie dazu.
+ *
+ * @param seed  Start-Elo je Team (FIFA-Code → Wert). Default: ELO_SEED.
+ *              Leeres Objekt {} → alle Teams starten bei config.elo.initial
+ *              (so kann der Backtest mit/ohne Seed vergleichen).
  */
-export function computeEloRatings(games: EloGame[]): Map<string, number> {
+export function computeEloRatings(
+  games: EloGame[],
+  seed: Record<string, number> = ELO_SEED,
+): Map<string, number> {
   const ratings = new Map<string, number>();
   const get = (id: string): number =>
-    ratings.get(id) ?? config.elo.initial;
+    ratings.get(id) ?? seed[id] ?? config.elo.initial;
 
   const sorted = [...games].sort((a, b) => a.date.localeCompare(b.date));
   for (const g of sorted) {
