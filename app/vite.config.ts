@@ -2,9 +2,17 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-// GitHub-Pages-Base-Path: /<repo-name>/. Über Env überschreibbar.
+// Base-Path:
+//  - Vercel (und lokal): "/" (App läuft an der Domain-Root).
+//  - GitHub Pages: "/<repo-name>/" (Unterpfad) → via VITE_BASE oder
+//    VITE_REPO_NAME im Pages-Workflow gesetzt.
+// VITE_BASE hat immer Vorrang; sonst Pages-Logik nur ohne VERCEL.
 const repoName = process.env.VITE_REPO_NAME ?? "wm-tipp-agent";
-const base = process.env.NODE_ENV === "production" ? `/${repoName}/` : "/";
+const base =
+  process.env.VITE_BASE ??
+  (process.env.NODE_ENV === "production" && !process.env.VERCEL
+    ? `/${repoName}/`
+    : "/");
 
 export default defineConfig({
   base,

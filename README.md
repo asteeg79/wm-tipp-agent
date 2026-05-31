@@ -59,7 +59,30 @@ Auf GitHub unter **Settings → Secrets and variables → Actions** hinterlegen
 | `ODDS_API_KEY` | The Odds API (Value-vs-Markt) | optional |
 | `BALLDONTLIE_API_KEY` | BALLDONTLIE FIFA WC API | optional |
 
-## GitHub Pages aktivieren
+## Hosting auf Vercel (empfohlen — gratis auch für private Repos)
+
+Vercel hostet die statische PWA und funktioniert — anders als GitHub Pages —
+auch bei privaten Repos kostenlos. Die App läuft dann an der Domain-Root (`/`).
+
+**Einrichtung (einmalig, Git-Integration):**
+
+1. Im **Vercel-Dashboard** das Projekt öffnen (`prj_0jd7RqxzDnCKP3UjGbl6cAL43MqP`).
+2. **Settings → Git → Connect Git Repository** → `asteeg79/wm-tipp-agent`
+   (Branch `main`) verbinden.
+3. Build-Settings kommen aus [`vercel.json`](vercel.json) im Repo-Root
+   (Install/Build-Command, Output `app/dist`, SPA-Rewrites). Nichts manuell
+   einzustellen.
+4. Deploy auslösen. Danach deployt Vercel **automatisch bei jedem Push** auf
+   `main` — auch bei den Bot-Commits der Daten-Pipeline (`refresh.yml`), d. h.
+   neue Tipps gehen ohne Zutun live.
+
+> Der Build kopiert `/data` via [`scripts/stage-data.mjs`](scripts/stage-data.mjs)
+> nach `app/public/data`, sodass die App `/data/*.json` vom selben Origin lädt.
+> Vercel setzt automatisch `VERCEL=1` → der Vite-`base` ist dort `/`.
+> KI-Keys werden für das Hosting **nicht** benötigt (die App liest nur fertige
+> JSONs; die Keys leben ausschließlich in den GitHub-Actions-Secrets).
+
+## GitHub Pages (Alternative)
 
 > **Wichtig:** GitHub Pages ist bei **privaten** Repos nur mit einem
 > Bezahl-Plan (Pro/Team) verfügbar. Dieses Repo ist privat → der Pages-Deploy
