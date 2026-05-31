@@ -88,7 +88,9 @@ export const config: PipelineConfig = {
   poisson: {
     leagueAvgGoals: 1.35,
     maxGoals: 8,
-    eloToGoalsScale: 0.0016,
+    // Per Backtest getunt (2126 Länderspiele, Walk-Forward): 0.001 minimiert
+    // RPS (0.1943 vs. 0.1953 bei 0.0016). `pnpm --filter @wm/pipeline backtest`.
+    eloToGoalsScale: 0.001,
   },
   reTriggerMilestonesHours: [72, 24, 3],
   maxNewsPerTeam: 20,

@@ -125,4 +125,42 @@ export class OpenFootballHistoryProvider implements HistoryProvider {
     const byId = new Map(out.map((x) => [x.matchId, x]));
     return [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
   }
+
+  /**
+   * Liefert ALLE geladenen Länderspiele als sicht-neutrale Spiele
+   * (für Backtest/Elo). Chronologisch sortiert, dedupliziert.
+   */
+  async getAllGames(seasons: number[]): Promise<BacktestGame[]> {
+    const pool = await this.loadPool(seasons);
+    const byId = new Map<string, BacktestGame>();
+    for (const m of pool) {
+      const id = `of-${m.date}-${teamSlug(m.teamA)}-${teamSlug(m.teamB)}`;
+      if (byId.has(id)) continue;
+      byId.set(id, {
+        matchId: id,
+        date: m.date,
+        competition: m.competition,
+        homeId: m.idA,
+        awayId: m.idB,
+        homeName: m.teamA,
+        awayName: m.teamB,
+        goalsHome: m.scoreA,
+        goalsAway: m.scoreB,
+      });
+    }
+    return [...byId.values()].sort((a, b) => a.date.localeCompare(b.date));
+  }
+}
+
+/** Ein historisches Länderspiel in Heim/Auswärts-Sicht (für Backtest). */
+export interface BacktestGame {
+  matchId: string;
+  date: string;
+  competition: string;
+  homeId: string;
+  awayId: string;
+  homeName: string;
+  awayName: string;
+  goalsHome: number;
+  goalsAway: number;
 }

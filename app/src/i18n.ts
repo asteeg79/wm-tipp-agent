@@ -136,6 +136,15 @@ const resources = {
         updateBody: "Es liegt ein aktualisierter Stand vor.",
         updateButton: "Jetzt aktualisieren",
       },
+      fav: {
+        add: "Zu Favoriten",
+        favorite: "Favorit",
+        notifyEnable: "Anpfiff-Erinnerung aktivieren",
+        notifyOn: "Erinnerungen aktiv",
+        notifyDenied: "Benachrichtigungen blockiert (im Browser erlauben)",
+        notifyHint:
+          "Lokale Erinnerung ~1 h vor Anpfiff für Favoriten-Teams — funktioniert, solange die App geöffnet ist.",
+      },
     },
   },
   en: {
@@ -270,6 +279,15 @@ const resources = {
         updateTitle: "New version available",
         updateBody: "An updated build is ready.",
         updateButton: "Update now",
+      },
+      fav: {
+        add: "Add to favorites",
+        favorite: "Favorite",
+        notifyEnable: "Enable kickoff reminder",
+        notifyOn: "Reminders on",
+        notifyDenied: "Notifications blocked (allow in browser)",
+        notifyHint:
+          "Local reminder ~1h before kickoff for favorite teams — works while the app is open.",
       },
     },
   },

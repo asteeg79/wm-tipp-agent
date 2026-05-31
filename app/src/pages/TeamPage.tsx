@@ -6,6 +6,8 @@ import { FormChart } from "../components/FormChart.js";
 import { ResultsList } from "../components/ResultsList.js";
 import { H2HBoxes } from "../components/H2HBoxes.js";
 import { NewsList } from "../components/NewsList.js";
+import { FavoriteToggle } from "../components/FavoriteToggle.js";
+import { useFavorites } from "../lib/FavoritesContext.js";
 
 function Section({
   title,
@@ -27,6 +29,7 @@ export function TeamPage() {
   const { t } = useTranslation();
   const { data: team, isLoading, isError } = useTeam(teamId);
   const teams = useTeamsMap();
+  const { isFavorite, toggle } = useFavorites();
 
   if (isLoading) return <p className="text-slate-400">{t("loading")}</p>;
   if (isError || !team) return <p className="text-red-400">{t("error")}</p>;
@@ -37,12 +40,16 @@ export function TeamPage() {
         {team.logo && (
           <img src={team.logo} alt="" className="h-8 w-auto rounded-sm" />
         )}
-        <div>
+        <div className="flex-1">
           <h2 className="text-2xl font-bold">{team.name}</h2>
           <p className="text-sm text-slate-500">
             {team.code} · {t("team.group")} {team.groupId}
           </p>
         </div>
+        <FavoriteToggle
+          isFavorite={isFavorite(team.id)}
+          onToggle={() => toggle(team.id)}
+        />
       </header>
 
       <Section title={t("team.form")}>

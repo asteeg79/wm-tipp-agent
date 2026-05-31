@@ -1,14 +1,19 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useIndex } from "../lib/data.js";
+import { useIndex, useTeamsMap } from "../lib/data.js";
 import { timeAgo } from "../lib/format.js";
 import { useVersion, formatVersion } from "../lib/useVersion.js";
 import { UpdateBanner } from "./UpdateBanner.js";
+import { useFavorites } from "../lib/FavoritesContext.js";
+import { useFavoriteAlerts } from "../lib/useFavoriteAlerts.js";
 
 export function Layout() {
   const { t } = useTranslation();
   const { data: index } = useIndex();
   const v = useVersion();
+  const { favorites } = useFavorites();
+  const teams = useTeamsMap();
+  useFavoriteAlerts(favorites, teams);
 
   const navClass = ({ isActive }: { isActive: boolean }): string =>
     `rounded-md px-3 py-1.5 text-sm font-medium ${
