@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "BRA",
       "elo": 1698,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.892,
       "cleanSheetRate": 0.4,
       "matchesCount": 25,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "MAR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.274,
       "cleanSheetRate": 0.706,
       "matchesCount": 34,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2177,
-      "draw": 0.2723,
-      "away": 0.51
+      "home": 0.24,
+      "draw": 0.315,
+      "away": 0.445
     },
-    "confidence": 0.6218,
+    "confidence": 0.542,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,49 +81,50 @@
         },
         "probabilities": {
           "home": 0.18,
-          "draw": 0.24,
-          "away": 0.58
+          "draw": 0.23,
+          "away": 0.59
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Marokko mit deutlich höherer Elo (1839 vs 1698) und überragender gewichteter Form (2.585 vs 1.791)",
-          "Marokkos defensive Stärke ist klar überlegen: nur 0.274 Gegentore pro Spiel und 70.6% Clean-Sheet-Rate gegenüber 0.892 und 40% bei Brasilien",
-          "Marokko erzielt im Schnitt mehr Tore (2.011 vs 1.814) und kombiniert Offensive mit Defensivstabilität",
-          "Neutraler Spielort eliminiert einen möglichen Heimvorteil Brasiliens",
-          "Baseline (Elo+Poisson) sieht Marokko mit 60.7% klar vorn, was durch Form und Kontext gestützt wird"
+          "Morocco mit deutlich höherem Elo (1839 vs 1698) und überragender gewichteter Form (2.585 vs 1.791)",
+          "Marokkos extrem stabile Defensive: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
+          "Marokko offensiv leicht stärker (2.011 vs 1.814 Tore/Spiel) bei besserer aktueller Form (recentForm 2.4 vs 1.7)",
+          "Neutraler Spielort ohne Heimvorteil für Brasilien"
         ],
         "risks": [
-          "Neymar-Verletzungssituation bei Brasilien unklar; Ancelotti betont Teamleistung statt Einzelstars, was Brasiliens Offensivpotenzial mindert",
-          "Keine direkte H2H-Historie vorhanden, daher erhöhte Unsicherheit im Direktvergleich",
-          "60 Tage seit letztem Spiel bei beiden Teams – möglicher Rhythmusverlust schwer einschätzbar",
-          "Brasiliens individuelle Klasse kann trotz schwächerer Form einzelne Spiele kippen"
+          "Neymar-Unsicherheit bei Brasilien (Verletzung/Fitness) könnte Offensivpotenzial schwächen oder bei Einsatz aufwerten",
+          "Keine direkte H2H-Historie, daher höhere Unsicherheit in der Einschätzung",
+          "Lange Pause beider Teams (61 Tage) kann Rhythmus und Form beeinträchtigen",
+          "Brasiliens individuelle Klasse kann trotz schlechterer Form Spiele kippen lassen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.3,
-          "away": 0.45
+          "home": 0.3,
+          "draw": 0.4,
+          "away": 0.3
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Morocco has significantly higher Elo rating than Brazil.",
-          "Morocco's recent form is better than Brazil's.",
-          "Brazil has a lower clean sheet rate and is conceding more goals on average."
+          "Brazil's Neymar is confirmed to participate despite injury concerns, which might influence their attacking performance.",
+          "Morocco's recent and weighted form is stronger than Brazil's, indicating their current competitive edge.",
+          "Morocco's defense has been very strong, with a high clean sheet rate, suggesting they can contain Brazil's attack.",
+          "The match is at a neutral venue, which negates any home advantage."
         ],
         "risks": [
-          "Neymar's fitness is uncertain, which may impact Brazil's effectiveness.",
-          "The match is on neutral ground, which can mitigate Morocco's advantage."
+          "Neymar's true fitness level is uncertain, and his performance could vary widely.",
+          "Lack of head-to-head history between the teams makes predictions less certain.",
+          "Potential for Brazil to perform better than recent form due to their historical World Cup strength."
         ]
       }
     },
-    "agreement": 0.9133,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko mit deutlich höherer Elo (1839 vs 1698) und überragender gewichteter Form (2.585 vs 1.791); Marokkos defensive Stärke ist klar überlegen: nur 0.274 Gegentore pro Spiel und 70.6% Clean-Sheet-Rate gegenüber 0.892 und 40% bei Brasilien; Marokko erzielt im Schnitt mehr Tore (2.011 vs 1.814) und kombiniert Offensive mit Defensivstabilität.",
-    "inputHash": "sha256:62a7b4eb9155631475fc87d4aa38d135b6e509e1796b37f762fbc63d78fd7787"
+    "agreement": 0.8067,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Morocco mit deutlich höherem Elo (1839 vs 1698) und überragender gewichteter Form (2.585 vs 1.791); Marokkos extrem stabile Defensive: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokko offensiv leicht stärker (2.011 vs 1.814 Tore/Spiel) bei besserer aktueller Form (recentForm 2.4 vs 1.7).",
+    "inputHash": "sha256:dbe84415c137d3950b1a2b32a8caa9dcaaf6a3fb843e38b2579e10bec28cd78f"
   },
   "predictionHistory": [
     {
@@ -138,6 +139,19 @@
         "away": 0.4278
       },
       "confidence": 0.5389
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2177,
+        "draw": 0.2723,
+        "away": 0.51
+      },
+      "confidence": 0.6218
     }
   ]
 }

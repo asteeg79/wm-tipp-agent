@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "SUI",
       "elo": 1655,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.094,
       "cleanSheetRate": 0.37,
       "matchesCount": 27,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "BIH",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.272,
       "cleanSheetRate": 0.19,
       "matchesCount": 21,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.57,
-      "draw": 0.2209,
-      "away": 0.2091
+      "home": 0.5589,
+      "draw": 0.2367,
+      "away": 0.2044
     },
-    "confidence": 0.6556,
+    "confidence": 0.6683,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,21 +81,20 @@
         },
         "probabilities": {
           "home": 0.5700000000000001,
-          "draw": 0.21000000000000002,
-          "away": 0.22000000000000003
+          "draw": 0.22000000000000003,
+          "away": 0.21000000000000002
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Switzerland mit deutlich höherem Elo (1655 vs 1519) und besserer gewichteter Form (1.638 vs 1.445)",
-          "Starke jüngste Form der Schweiz (recentForm 2.1) untermauert die Favoritenrolle",
-          "Schweiz defensiv stabiler: höhere Clean-Sheet-Rate (0.37 vs 0.19) und weniger Gegentore pro Spiel (1.094 vs 1.272)",
-          "Bosnien zeigt offensives Potenzial (goalsForAvg 1.738), was ein Gegentor wahrscheinlich macht"
+          "Switzerland mit deutlich höherem Elo (1655 vs. 1519) und stärkerer gewichteter Form (1.638 vs. 1.445)",
+          "Schweizer Offensive (2.02 Tore/Spiel) und solidere Defensive (1.09 Gegentore, 37% Clean Sheets) gegenüber schwächerer BIH-Defensive (1.27 Gegentore, nur 19% Clean Sheets)",
+          "Sehr gute jüngste Form der Schweiz (recentForm 2.1) untermauert die Favoritenrolle"
         ],
         "risks": [
-          "Neutraler Spielort nimmt der Schweiz den klassischen Heimvorteil",
-          "Beide Teams 60 Tage ohne Spiel – mögliche Rhythmusverluste schwer einzuschätzen",
-          "Keine direkten H2H-Daten verfügbar, daher erhöhte Unsicherheit",
-          "Bosniens Offensivkraft kann die schwankende Defensive der Schweiz (CS-Rate nur 0.37) bestrafen"
+          "Neutraler Spielort entzieht der Schweiz den Heimvorteil und kann die Favoritenwahrscheinlichkeit leicht drücken",
+          "Bosnien bringt durchaus Offensivpotenzial mit (1.74 Tore/Spiel) und kann bei Standardsituationen gefährlich werden",
+          "Lange Pause (61 Tage seit letztem Spiel) bei beiden Teams erschwert die Formeinschätzung",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -104,25 +103,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.57,
-          "draw": 0.23,
+          "home": 0.55,
+          "draw": 0.25,
           "away": 0.2
         },
-        "confidence": 0.72,
+        "confidence": 0.75,
         "keyFactors": [
-          "Switzerland's superior Elo rating (1655 vs 1519)",
-          "Switzerland's stronger recent form (2.1 vs 1.6)",
-          "Neutral venue; no home advantage"
+          "Switzerland has a slightly better form compared to Bosnia & Herzegovina.",
+          "Switzerland's higher Elo rating of 1655 indicates greater strength relative to Bosnia & Herzegovina's 1519.",
+          "Neutral venue minimizes any potential home advantage.",
+          "No significant head-to-head data to influence prediction."
         ],
         "risks": [
-          "Switzerland's injury concern not directly affecting the team",
-          "No historical head-to-head data for context"
+          "Injuries in the Swiss team could affect performance.",
+          "Switzerland's clean sheet rate is moderate, indicating susceptibility to conceding goals.",
+          "Bosnia & Herzegovina's recent form is competitive and may pose challenges."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit deutlich höherem Elo (1655 vs 1519) und besserer gewichteter Form (1.638 vs 1.445); Starke jüngste Form der Schweiz (recentForm 2.1) untermauert die Favoritenrolle; Schweiz defensiv stabiler: höhere Clean-Sheet-Rate (0.37 vs 0.19) und weniger Gegentore pro Spiel (1.094 vs 1.272).",
-    "inputHash": "sha256:ad1a52b510dc356575851f43d5c2c8ea712da3da618b2afda996f4c4934bf2c9"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit deutlich höherem Elo (1655 vs. 1519) und stärkerer gewichteter Form (1.638 vs. 1.445); Schweizer Offensive (2.02 Tore/Spiel) und solidere Defensive (1.09 Gegentore, 37% Clean Sheets) gegenüber schwächerer BIH-Defensive (1.27 Gegentore, nur 19% Clean Sheets); Sehr gute jüngste Form der Schweiz (recentForm 2.1) untermauert die Favoritenrolle.",
+    "inputHash": "sha256:0a83e051620967bfee991deadabc7114f0bb5bbf5b1c24d9e7097ca3e413b232"
   },
   "predictionHistory": [
     {
@@ -137,6 +138,19 @@
         "away": 0.2146
       },
       "confidence": 0.6478
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.57,
+        "draw": 0.2209,
+        "away": 0.2091
+      },
+      "confidence": 0.6556
     }
   ]
 }

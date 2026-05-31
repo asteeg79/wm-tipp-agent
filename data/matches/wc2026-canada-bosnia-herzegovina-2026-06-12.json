@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "CAN",
       "elo": 1627,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.606,
       "cleanSheetRate": 0.536,
       "matchesCount": 28,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "BIH",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.272,
       "cleanSheetRate": 0.19,
       "matchesCount": 21,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6067,
-      "draw": 0.22,
-      "away": 0.1733
+      "home": 0.5113,
+      "draw": 0.2887,
+      "away": 0.2
     },
-    "confidence": 0.6683,
+    "confidence": 0.5884,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,47 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.59,
+          "home": 0.58,
           "draw": 0.22,
-          "away": 0.19
+          "away": 0.2
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Canada deutlich höheres Elo (1627 vs. 1519) und besserer gewichteter Form-Wert",
-          "Host-Advantage für Canada trotz neutralem Venue (WM auf Heimkontinent)",
-          "Solide Defensive Canadas (Gegentorschnitt 0.61, Clean-Sheet-Rate 0.54)",
-          "Coach signalisiert 'bestes Squad' inkl. Rückkehr von Davies – positive Moral"
+          "Canada deutlich höheres Elo (1627 vs 1519) und Gastgebervorteil trotz neutralem Venue (hostAdvantageTeamId CAN)",
+          "Canada defensiv stark: GegentoreSchnitt nur 0.606 und Clean-Sheet-Rate 53.6% gegen schwache BIH-Defensive (1.272 Gegentore, 19% Clean Sheets)",
+          "Canada bessere gewichtete Form (1.623 vs 1.445) und solide jüngste Form (1.7)"
         ],
         "risks": [
-          "Davies trotz Verletzungssorgen nominiert – Fitness/Einsatzrisiko unklar",
-          "Bosniens hohe Offensivwerte (1.74 Tore/Spiel) können Canadas Abwehr fordern",
-          "Keine H2H-Daten verfügbar – höhere Unsicherheit",
-          "60 Tage ohne Spiel bei beiden Teams – Rhythmusverlust möglich"
+          "BIH offensiv gefährlich (1.738 Tore/Spiel), kann gegen jede Defensive treffen – Away-Wahrscheinlichkeit leicht angehoben",
+          "Mehrere Verletzungsmeldungen bei Canada (Bombito, Flores) könnten Kaderqualität schwächen",
+          "Kein H2H-Vergleich verfügbar, lange Pause (61 Tage) erhöht Unsicherheit zur Spielform beider Teams"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.62,
-          "draw": 0.22,
-          "away": 0.16
+          "home": 0.45,
+          "draw": 0.35,
+          "away": 0.2
         },
-        "confidence": 0.75,
+        "confidence": 0.65,
         "keyFactors": [
-          "Canada has a higher Elo rating and stronger recent form compared to Bosnia & Herzegovina.",
-          "Canada has a home advantage despite the venue being neutral due to being the host nation.",
-          "Canada's defensive stats are better, with a higher clean sheet rate."
+          "Canada has key injuries impacting their squad depth",
+          "Canada playing at a neutral venue with no home advantage offset",
+          "Bosnia & Herzegovina's scoring capability slightly higher than Canada's defense"
         ],
         "risks": [
-          "Canada's reliance on Alphonso Davies may be risky due to injury concerns.",
-          "Bosnia & Herzegovina has a higher average of goals scored, which could pose a threat."
+          "Canada's recent competitive form is strong despite injuries",
+          "Bosnia & Herzegovina's weak clean sheet rate"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Canada deutlich höheres Elo (1627 vs. 1519) und besserer gewichteter Form-Wert; Host-Advantage für Canada trotz neutralem Venue (WM auf Heimkontinent); Solide Defensive Canadas (Gegentorschnitt 0.61, Clean-Sheet-Rate 0.54).",
-    "inputHash": "sha256:12508123ed39b9e6278a59f4ed01b6f65762d41653b05144088b32a88de2265e"
+    "agreement": 0.9133,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Canada deutlich höheres Elo (1627 vs 1519) und Gastgebervorteil trotz neutralem Venue (hostAdvantageTeamId CAN); Canada defensiv stark: GegentoreSchnitt nur 0.606 und Clean-Sheet-Rate 53.6% gegen schwache BIH-Defensive (1.272 Gegentore, 19% Clean Sheets); Canada bessere gewichtete Form (1.623 vs 1.445) und solide jüngste Form (1.7).",
+    "inputHash": "sha256:e887d9368c6e3ffa46d10fefaf9ac772253403b957192898e0664bb660c1b218"
   },
   "predictionHistory": [
     {
@@ -137,6 +135,19 @@
         "away": 0.2
       },
       "confidence": 0.64
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6067,
+        "draw": 0.22,
+        "away": 0.1733
+      },
+      "confidence": 0.6683
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "QAT",
       "elo": 1494,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.802,
       "cleanSheetRate": 0.25,
       "matchesCount": 28,
-      "daysSinceLastMatch": 194
+      "daysSinceLastMatch": 195
     },
     "away": {
       "teamId": "SUI",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.094,
       "cleanSheetRate": 0.37,
       "matchesCount": 27,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1458,
-      "draw": 0.18,
-      "away": 0.6742
+      "home": 0.14,
+      "draw": 0.175,
+      "away": 0.685
     },
-    "confidence": 0.7325,
+    "confidence": 0.693,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,50 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.14,
-          "draw": 0.18,
-          "away": 0.68
+          "home": 0.13,
+          "draw": 0.17,
+          "away": 0.7
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung der Schweiz (1655 vs. 1494) untermauert Favoritenrolle",
-          "Bessere gewichtete und jüngste Form der Schweiz (weightedForm 1.638 / recentForm 2.1 vs. 1.292 / 1.2)",
-          "Schweiz defensiv stabiler (goalsAgainstAvg 1.094, cleanSheetRate 0.37) gegenüber Qatars 1.802 / 0.25",
-          "Neutraler Spielort eliminiert möglichen Heimvorteil Qatars"
+          "Switzerland deutlich höhere Elo (1655 vs 1494) und stärkere gewichtete Form (1.64 vs 1.29)",
+          "Schweiz mit besserer recent Form (2.1 vs 1.2) und stabilerer Defensive (GA 1.09, CleanSheet 37%)",
+          "Qatar defensiv anfällig (GA 1.80, CleanSheet nur 25%), Tordifferenz spricht für Schweiz",
+          "Neutraler Spielort entfernt jeglichen Heimvorteil für Qatar"
         ],
         "risks": [
-          "Qatar hatte sehr lange Pause (194 Tage) – Spielrhythmus und Form schwer einzuschätzen",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit",
-          "Materielle News betreffen kaum die direkten Akteure; verfügbare News mit geringer Relevanz für dieses Spiel",
-          "Qatars Offensivpotenzial (goalsForAvg 1.459) könnte bei schwächerer Schweizer Tagesform für eine Überraschung sorgen"
+          "Qatar lange Spielpause (195 Tage) erschwert Formeinschätzung – Überraschungspotenzial in beide Richtungen",
+          "Materielle News betreffen nicht direkt diese Teams (Messi/Argentinien, Schweden/Holm) und sind kaum relevant",
+          "Kein H2H vorhanden, daher höhere Unsicherheit bei der Einordnung",
+          "Schweizer Unterschätzung des Außenseiters könnte zu engerem Spiel führen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 3
         },
         "probabilities": {
           "home": 0.15,
           "draw": 0.18,
           "away": 0.67
         },
-        "confidence": 0.85,
+        "confidence": 0.7,
         "keyFactors": [
-          "Switzerland has a higher Elo rating and stronger recent form.",
-          "Qatar has not played a match in over six months, potentially impacting match fitness.",
-          "Switzerland has a higher clean sheet rate and goals for average."
+          "Switzerland has a significantly higher Elo rating compared to Qatar.",
+          "Switzerland's recent form is stronger than Qatar's.",
+          "Qatar has not played a match in 195 days, while Switzerland played more recently.",
+          "No direct head-to-head history between the teams."
         ],
         "risks": [
-          "Match is played at a neutral venue, which can reduce the usual advantages.",
-          "Lack of head-to-head history introduces some uncertainty in predictions."
+          "Neutral venue could mitigate some advantage.",
+          "Variability due to lack of recent competitive matches for Qatar."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1655 vs. 1494) untermauert Favoritenrolle; Bessere gewichtete und jüngste Form der Schweiz (weightedForm 1.638 / recentForm 2.1 vs. 1.292 / 1.2); Schweiz defensiv stabiler (goalsAgainstAvg 1.094, cleanSheetRate 0.37) gegenüber Qatars 1.802 / 0.25.",
-    "inputHash": "sha256:9984d802db8b28f570ae989736cfb65a2163675d875a3d8ef0793b0b8bacdc95"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland deutlich höhere Elo (1655 vs 1494) und stärkere gewichtete Form (1.64 vs 1.29); Schweiz mit besserer recent Form (2.1 vs 1.2) und stabilerer Defensive (GA 1.09, CleanSheet 37%); Qatar defensiv anfällig (GA 1.80, CleanSheet nur 25%), Tordifferenz spricht für Schweiz.",
+    "inputHash": "sha256:64ae77718376c303f06b79e08e6bd3e79a6f69586136901e4218c6e6019ff946"
   },
   "predictionHistory": [
     {
@@ -137,6 +138,19 @@
         "away": 0.6735
       },
       "confidence": 0.649
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1458,
+        "draw": 0.18,
+        "away": 0.6742
+      },
+      "confidence": 0.7325
     }
   ]
 }

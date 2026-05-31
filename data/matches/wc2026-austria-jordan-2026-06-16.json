@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "AUT",
       "elo": 1688,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.646,
       "cleanSheetRate": 0.308,
       "matchesCount": 26,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "JOR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.541,
       "cleanSheetRate": 0.361,
       "matchesCount": 36,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 3,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7456,
-      "draw": 0.15,
-      "away": 0.1044
+      "home": 0.764,
+      "draw": 0.1407,
+      "away": 0.0953
     },
-    "confidence": 0.7076,
+    "confidence": 0.7425,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 3,
           "away": 1
         },
         "probabilities": {
-          "home": 0.74,
-          "draw": 0.15,
-          "away": 0.11
+          "home": 0.78,
+          "draw": 0.13,
+          "away": 0.09
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Österreichs (1688 vs 1508, +180 Punkte)",
-          "Starke gewichtete Form Österreichs (2.284) gegenüber Jordanien (1.07)",
-          "Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei stabiler Defensive (0.65 Gegentore)",
-          "Schwache Defensivbilanz Jordaniens (1.54 Gegentore/Spiel) erhöht Trefferchancen"
+          "Deutlicher Elo-Vorsprung Austria (1688 vs. 1508) untermauert Favoritenrolle",
+          "Starke gewichtete Form Austria (2.284) gegenüber Jordan (1.07)",
+          "Austria mit hoher Offensivproduktion (2.56 Tore/Spiel) und solider Defensive (0.65 Gegentore/Spiel)",
+          "Jordan defensiv anfällig (1.54 Gegentore/Spiel), bietet Räume für österreichische Angriffe"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, daher keine direkte Vergleichsbasis",
-          "Neutraler Spielort nimmt Österreich den Heimvorteil",
-          "Jordanien zeigt mit 0.361 eine ordentliche Clean-Sheet-Rate und könnte defensiv kompakt stehen",
-          "Lange Pause (60 Tage) seit dem letzten Spiel kann Rhythmus beider Teams beeinträchtigen"
+          "Keine H2H-Daten verfügbar – Stilfragen schwer einzuschätzen",
+          "Neutraler Spielort eliminiert Heimvorteil, leicht zugunsten Jordan",
+          "Jordan mit ordentlicher Clean-Sheet-Rate (0.361) könnte kompakt verteidigen und das Ergebnis enger halten",
+          "Lange Pause beider Teams (61 Tage) könnte zu Rhythmusmangel führen"
         ]
       },
       "chatgpt": {
@@ -110,19 +110,33 @@
         },
         "confidence": 0.8,
         "keyFactors": [
-          "Austria's higher Elo rating compared to Jordan.",
-          "Austria's better recent form and offensive statistics.",
-          "Neutral venue negates any potential home advantage."
+          "Austria has strong recent form with high goals for average.",
+          "Austria's recent average goals conceded is low.",
+          "Neutral venue minimizes any potential geographical advantage."
         ],
         "risks": [
-          "Jordan's ability to occasionally keep clean sheets.",
-          "Both teams have not played in the last 60 days, which may affect form and sharpness."
+          "No head-to-head data between the teams introduces uncertainty.",
+          "Jordan's injury news does not directly affect their World Cup squad."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Österreichs (1688 vs 1508, +180 Punkte); Starke gewichtete Form Österreichs (2.284) gegenüber Jordanien (1.07); Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei stabiler Defensive (0.65 Gegentore).",
-    "inputHash": "sha256:bc5f2e847ef8c5b2363f1d90c8c8c02ed101dd341da9d5099da40187e600cb1d"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Austria (1688 vs. 1508) untermauert Favoritenrolle; Starke gewichtete Form Austria (2.284) gegenüber Jordan (1.07); Austria mit hoher Offensivproduktion (2.56 Tore/Spiel) und solider Defensive (0.65 Gegentore/Spiel).",
+    "inputHash": "sha256:e559e27a08bfb42d4bcaba877dd4f78b0a569119e16bf605a2a5a8c2b4aac573"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7456,
+        "draw": 0.15,
+        "away": 0.1044
+      },
+      "confidence": 0.7076
+    }
+  ]
 }

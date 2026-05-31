@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "SUI",
       "elo": 1655,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.094,
       "cleanSheetRate": 0.37,
       "matchesCount": 27,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "CAN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.606,
       "cleanSheetRate": 0.536,
       "matchesCount": 28,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3174,
-      "draw": 0.28,
-      "away": 0.4026
+      "home": 0.35,
+      "draw": 0.2915,
+      "away": 0.3585
     },
-    "confidence": 0.5673,
+    "confidence": 0.6059,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,51 +80,50 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.35,
           "draw": 0.28,
-          "away": 0.38
+          "away": 0.37
         },
-        "confidence": 0.5,
+        "confidence": 0.52,
         "keyFactors": [
-          "Kanada profitiert vom Heimvorteil (Gastgeber, hostAdvantageTeamId CAN) trotz neutralem Venue-Flag",
-          "Kanada defensiv stark: nur 0.61 Gegentore/Spiel und 53.6% Clean-Sheet-Rate gegen 1.09 bzw. 37% der Schweiz",
-          "Schweiz offensiv gefährlicher (2.02 erzielte Tore/Spiel) und bessere recentForm (2.1 vs 1.7)",
-          "Kanada bringt nach Trainerangaben 'bestes Kader' mit Davies und Verstärkungen, hohe Moral",
-          "Sehr ausgeglichene Elo-Werte (1655 vs 1627) und weightedForm fast identisch"
+          "Switzerland mit starker jüngster Form (recentForm 2.1) und hoher Offensivproduktion (2.02 Tore/Spiel)",
+          "Canada defensiv sehr stabil (0.61 Gegentore/Spiel, 53.6% Clean-Sheet-Rate), was die Schweizer Offensive bremsen kann",
+          "Gastgebervorteil liegt bei Canada (Co-Host), trotz formal neutralem Spielort",
+          "Sehr ausgeglichene Elo-Werte (1655 vs 1627) und nahezu identische gewichtete Form"
         ],
         "risks": [
-          "Fitness von Alphonso Davies ungeklärt – Ausfall würde Kanadas Offensive schwächen",
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit",
-          "Lange Pause (60 Tage) für beide Teams erschwert Formeinschätzung",
-          "Sweden-News bei Heimteam irrelevant/fehlerhaft zugeordnet, keine echte Schweiz-Info verfügbar"
+          "Verletzung von Flores schwächt Canadas Kader, Ausmaß unklar",
+          "Keine H2H-Historie verfügbar – höhere Prognoseunsicherheit",
+          "61 Tage seit letztem Spiel bei beiden Teams – Rhythmus schwer einzuschätzen",
+          "Schweizer News (Holm/Sweden) scheinen falsch zugeordnet und nicht relevant"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.28,
-          "away": 0.42
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Canada's squad includes key player Alphonso Davies despite injury concerns",
-          "High clean sheet rate of Canada at 53.6%",
-          "Neutral venue reduces home advantage for Switzerland",
-          "Recent form favors Switzerland slightly, but Canada is motivated by World Cup on home soil"
+          "Switzerland has slightly higher Elo rating.",
+          "Both teams have similar recent form with Switzerland having a slightly better recent form.",
+          "Canada's defensive record is strong as demonstrated by a higher clean sheet rate.",
+          "The match is at a neutral venue, reducing potential home advantage."
         ],
         "risks": [
-          "Alphonso Davies' fitness and impact despite being included in the squad",
-          "Uncertain impact of neutral venue on match dynamics with no historical head-to-head results"
+          "Canada has multiple injury concerns, which might impact performance negatively.",
+          "No historical head-to-head data, creating uncertainty in expectations."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada profitiert vom Heimvorteil (Gastgeber, hostAdvantageTeamId CAN) trotz neutralem Venue-Flag; Kanada defensiv stark: nur 0.61 Gegentore/Spiel und 53.6% Clean-Sheet-Rate gegen 1.09 bzw. 37% der Schweiz; Schweiz offensiv gefährlicher (2.02 erzielte Tore/Spiel) und bessere recentForm (2.1 vs 1.7).",
-    "inputHash": "sha256:a5bae3b7cad5a41ba16f19b5c26e3895ff4025df4cb948925303673ea48aea3e"
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit starker jüngster Form (recentForm 2.1) und hoher Offensivproduktion (2.02 Tore/Spiel); Canada defensiv sehr stabil (0.61 Gegentore/Spiel, 53.6% Clean-Sheet-Rate), was die Schweizer Offensive bremsen kann; Gastgebervorteil liegt bei Canada (Co-Host), trotz formal neutralem Spielort.",
+    "inputHash": "sha256:c19d4ca525ee36c08239d01435afafa326117b7c2fb452e071d33176b4f3d231"
   },
   "predictionHistory": [
     {
@@ -139,6 +138,19 @@
         "away": 0.3636
       },
       "confidence": 0.5445
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3174,
+        "draw": 0.28,
+        "away": 0.4026
+      },
+      "confidence": 0.5673
     }
   ]
 }

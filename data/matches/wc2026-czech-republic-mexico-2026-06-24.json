@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "CZE",
       "elo": 1588,
@@ -23,7 +23,7 @@
       "goalsAgainstAvg": 1.189,
       "cleanSheetRate": 0.32,
       "matchesCount": 25,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "MEX",
@@ -34,7 +34,7 @@
       "goalsAgainstAvg": 0.797,
       "cleanSheetRate": 0.588,
       "matchesCount": 34,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.27,
-      "draw": 0.2582,
-      "away": 0.4718
+      "home": 0.2588,
+      "draw": 0.2588,
+      "away": 0.4824
     },
-    "confidence": 0.6059,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -85,18 +85,18 @@
           "draw": 0.27,
           "away": 0.46
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Mexico hat das höhere Elo (1647 vs. 1588) und die bessere defensive Bilanz (Gegentore 0.80 vs. 1.19, Clean-Sheet-Rate 0.59 vs. 0.32).",
-          "Höhenlage von 2240 m und Heim-/Gastgebervorteil sprechen für Mexico und können die Tschechen konditionell belasten.",
-          "Tschechien ist offensiv stärker (Tore 1.96 vs. 1.27) und hat leicht bessere recentForm (1.6 vs. 1.4), was Chancen auf eigene Treffer bietet.",
-          "Beide Teams 60 Tage ohne Spiel – Rhythmusverlust auf beiden Seiten neutralisiert sich weitgehend."
+          "Mexico höheres Elo (1647 vs 1588) und stärkere Defensive (GA 0.80, Clean-Sheet-Rate 58.8%)",
+          "Heimvorteil/Host-Advantage für Mexico trott formal neutralem Spielort sowie hohe Spielorte (2240m Höhe) begünstigen die akklimatisierten Mexikaner",
+          "Tschechien mit besserer Offensive (GF 1.96) und solider gewichteter Form (1.674), aber schwächerer Abwehr (GA 1.19)",
+          "Beide Teams seit 61 Tagen ohne Pflichtspiel – ähnliche Wettkampfrhythmus-Situation"
         ],
         "risks": [
-          "Kein Head-to-Head vorhanden – erhöhte Unsicherheit bei der direkten Einschätzung.",
-          "Höhenanpassung schwer quantifizierbar, könnte Effekt über- oder unterschätzen.",
-          "Keine konkreten Kaderausfälle gemeldet; die einzige Mexico-News ist irrelevant (betrifft Kanada).",
-          "Tschechiens starke Offensive könnte Mexicos solide Defensive stärker testen als von der Baseline angenommen."
+          "Keine H2H-Daten vorhanden, erhöht Prognoseunsicherheit",
+          "Höhe von 2240m könnte Tschechiens Spielweise stärker beeinträchtigen als modelliert",
+          "Mexikos jüngste Form (recentForm 1.4) leicht rückläufig gegenüber gewichteter Form",
+          "Keine aktuellen News zu Verletzungen/Sperren – mögliche unberücksichtigte Faktoren"
         ]
       },
       "chatgpt": {
@@ -105,26 +105,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.27,
+          "home": 0.25,
           "draw": 0.25,
-          "away": 0.48
+          "away": 0.5
         },
-        "confidence": 0.72,
+        "confidence": 0.7,
         "keyFactors": [
-          "Mexico has higher Elo rating (1647 vs 1588).",
-          "Mexico's clean sheet rate is significantly better (0.588 vs 0.32).",
-          "Game is played at high altitude (2240m), potentially favoring Mexico.",
-          "Some motivational news for Mexico regarding players being selected for Canada suggests morale boost."
+          "Mexico has a higher Elo rating and better weighted form.",
+          "The match is at a high altitude neutral venue, which might favor Mexico.",
+          "Mexico has a significantly higher clean sheet rate."
         ],
         "risks": [
-          "Both teams have not played a match in the last 60 days, creating uncertainty about current form.",
-          "No head-to-head historical data available, adding unpredictability."
+          "Recent form of Mexico is slightly lower than the home team.",
+          "Lack of head-to-head data introduces uncertainty."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico hat das höhere Elo (1647 vs. 1588) und die bessere defensive Bilanz (Gegentore 0.80 vs. 1.19, Clean-Sheet-Rate 0.59 vs. 0.32).; Höhenlage von 2240 m und Heim-/Gastgebervorteil sprechen für Mexico und können die Tschechen konditionell belasten.; Tschechien ist offensiv stärker (Tore 1.96 vs. 1.27) und hat leicht bessere recentForm (1.6 vs. 1.4), was Chancen auf eigene Treffer bietet..",
-    "inputHash": "sha256:1e5f8d538a28ad1be9474c38036e14fb92f15fef75d49bd97487f835b8424ba2"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico höheres Elo (1647 vs 1588) und stärkere Defensive (GA 0.80, Clean-Sheet-Rate 58.8%); Heimvorteil/Host-Advantage für Mexico trott formal neutralem Spielort sowie hohe Spielorte (2240m Höhe) begünstigen die akklimatisierten Mexikaner; Tschechien mit besserer Offensive (GF 1.96) und solider gewichteter Form (1.674), aber schwächerer Abwehr (GA 1.19).",
+    "inputHash": "sha256:1177c90f595e74f6c17920282a119c68d3ff9ddad7bc1de713e15b8de38156ad"
   },
   "predictionHistory": [
     {
@@ -139,6 +138,19 @@
         "away": 0.394
       },
       "confidence": 0.6021
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.27,
+        "draw": 0.2582,
+        "away": 0.4718
+      },
+      "confidence": 0.6059
     }
   ]
 }

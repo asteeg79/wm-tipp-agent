@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "NED",
       "elo": 1715,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.859,
       "cleanSheetRate": 0.393,
       "matchesCount": 28,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "SWE",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.638,
       "cleanSheetRate": 0.217,
       "matchesCount": 23,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 3,
       "away": 1
     },
     "probabilities": {
-      "home": 0.75,
-      "draw": 0.14,
-      "away": 0.11
+      "home": 0.7546,
+      "draw": 0.1454,
+      "away": 0.1
     },
-    "confidence": 0.775,
+    "confidence": 0.7575,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.75,
+          "home": 0.76,
           "draw": 0.14,
-          "away": 0.11
+          "away": 0.1
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung der Niederlande (1715 vs. 1549) bestätigt klare Favoritenrolle",
-          "Bessere gewichtete und aktuelle Form der Niederlande (2.095/2.4 vs. 1.639/1.4)",
-          "Starke Offensive (2.53 Tore/Spiel) und solide Defensive (0.86 Gegentore) der Niederlande gegenüber anfälliger schwedischer Abwehr (1.64 Gegentore)",
-          "Mehrere defensive Ausfälle bei Schweden (verletzter Juventus-Verteidiger, Holm) schwächen die ohnehin instabile Abwehr (Clean-Sheet-Rate nur 0.217)"
+          "Deutlicher Elo-Vorsteil der Niederlande (1715 vs 1549) und stärkere gewichtete Form (2.10 vs 1.64)",
+          "Hohe Offensivkraft NED (2.53 Tore/Spiel) gegen anfällige schwedische Abwehr (1.64 Gegentore/Spiel, nur 0.22 Clean-Sheet-Rate)",
+          "Mehrere zentrale Ausfälle bei Schweden: verletzungsbedingter Wegfall von Kulusevski, Holm und einem Juventus-Verteidiger schwächen Offensive und Defensive",
+          "Neutraler Spielort eliminiert echten Heimvorteil, ändert aber wenig an der Qualitätsdifferenz"
         ],
         "risks": [
-          "Lange Pause beider Teams (60 Tage seit letztem Spiel) erhöht Unsicherheit über Spielrhythmus",
-          "Neutraler Spielort nimmt den Niederlanden den Heimvorteil",
-          "Keine H2H-Daten verfügbar, daher kein direkter Vergleichswert",
-          "Unklare Verletzungslage um Kulusevski (Update ausstehend) könnte schwedische Offensive zusätzlich beeinflussen"
+          "Lange Pause beider Teams (61 Tage ohne Spiel) erhöht Unsicherheit über Tagesform",
+          "Keine H2H-Daten verfügbar, daher fehlende direkte Vergleichsbasis",
+          "Schweden kann trotz Ausfällen kompakt verteidigen und auf Konter lauern, was ein knapperes Ergebnis ermöglicht",
+          "Frühes Gegentor könnte den NED-Favoritenstatus unter Druck setzen"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,24 @@
         },
         "probabilities": {
           "home": 0.75,
-          "draw": 0.14,
-          "away": 0.11
+          "draw": 0.15,
+          "away": 0.1
         },
-        "confidence": 0.85,
+        "confidence": 0.82,
         "keyFactors": [
-          "Netherlands has superior recent form with a higher weighted form (2.095 vs 1.639) and better recent results.",
-          "Netherlands' strong Elo rating advantage (1715 vs 1549) points to a significant edge.",
-          "Sweden has critical player injuries affecting their squad depth and defensive capabilities."
+          "The Netherlands' recent form is strong with a weighted form of 2.4.",
+          "Sweden is missing key players due to injuries, including important defensive players.",
+          "Netherlands has a higher Elo rating reflecting their stronger team on paper."
         ],
         "risks": [
-          "The match being held at a neutral venue might reduce the home advantage for Netherlands.",
-          "Days since last match are equal for both teams, which might affect match fitness comparably."
+          "Neutral venue might negate traditional home advantage.",
+          "Unpredictability due to lack of direct head-to-head history between the teams."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Niederlande (1715 vs. 1549) bestätigt klare Favoritenrolle; Bessere gewichtete und aktuelle Form der Niederlande (2.095/2.4 vs. 1.639/1.4); Starke Offensive (2.53 Tore/Spiel) und solide Defensive (0.86 Gegentore) der Niederlande gegenüber anfälliger schwedischer Abwehr (1.64 Gegentore).",
-    "inputHash": "sha256:47f697a4474bac4a6ef22e91f3ad9ed92cf10293a58b6f14a5cc39a5a095990e"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsteil der Niederlande (1715 vs 1549) und stärkere gewichtete Form (2.10 vs 1.64); Hohe Offensivkraft NED (2.53 Tore/Spiel) gegen anfällige schwedische Abwehr (1.64 Gegentore/Spiel, nur 0.22 Clean-Sheet-Rate); Mehrere zentrale Ausfälle bei Schweden: verletzungsbedingter Wegfall von Kulusevski, Holm und einem Juventus-Verteidiger schwächen Offensive und Defensive.",
+    "inputHash": "sha256:9e2fa8aa7855fda5a1663f9a3a9c49e856c6d002c2148988bd814a1b0c47d3cd"
   },
   "predictionHistory": [
     {
@@ -137,6 +137,19 @@
         "away": 0.13
       },
       "confidence": 0.725
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.75,
+        "draw": 0.14,
+        "away": 0.11
+      },
+      "confidence": 0.775
     }
   ]
 }

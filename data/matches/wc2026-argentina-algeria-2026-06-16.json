@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "ARG",
       "elo": 1749,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.399,
       "cleanSheetRate": 0.63,
       "matchesCount": 27,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "ALG",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.55,
       "cleanSheetRate": 0.516,
       "matchesCount": 31,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4491,
-      "draw": 0.2486,
-      "away": 0.3023
+      "home": 0.4778,
+      "draw": 0.2458,
+      "away": 0.2763
     },
-    "confidence": 0.6489,
+    "confidence": 0.6376,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.448,
-          "draw": 0.247,
-          "away": 0.305
+          "home": 0.452,
+          "draw": 0.241,
+          "away": 0.307
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Argentina mit hoher gewichteter Form (2.55) und überlegener Defensive: nur 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate",
-          "Starke Offensive Argentiniens mit 2.52 erzielten Toren pro Spiel, leicht über Algerien (2.34)",
-          "Elo nahezu ausgeglichen (1749 vs. 1746), aber Argentiniens defensive Stabilität verschiebt die Wahrscheinlichkeit zugunsten der Heimseite",
-          "Algerien defensiv anfälliger (0.55 Gegentore/Spiel, 51.6% Clean-Sheet-Rate)"
+          "Argentinien mit minimal höherem Elo (1749 vs 1746), aber deutlich besserer Defensive (Gegentore 0.40 vs 0.55, Clean-Sheet-Rate 0.63 vs 0.52)",
+          "Höhere gewichtete Form für Argentinien (2.553 vs 2.384) bei identischer recentForm (2.5)",
+          "Stärkere Offensivwerte Argentiniens (2.52 Tore/Spiel) gegenüber Algerien (2.34)",
+          "Neutraler Spielort ohne Heimvorteil reduziert Bias zugunsten Argentiniens leicht"
         ],
         "risks": [
-          "Verletzungssorgen bei Argentinien: WM-Stürmer mit Oberschenkelproblem könnte die Offensivstärke schwächen",
-          "Neutraler Spielort ohne Heimvorteil reduziert die Argentinien-Tendenz leicht",
-          "Kein direkter Vergleich (H2H = 0), daher höhere Unsicherheit in der Einschätzung",
-          "Beide Teams 60 Tage ohne Spiel – mögliche Rhythmusdefizite schwer kalkulierbar"
+          "Sehr enger Elo-Abstand – Spiel kann kippen, Algerien offensiv ebenfalls gefährlich",
+          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
+          "Lange Pause (61 Tage) für beide Teams kann Rhythmus beeinträchtigen",
+          "Keine aktuellen News zu Ausfällen/Form – Kaderzustand unbekannt"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
+          "home": 0.5,
           "draw": 0.25,
-          "away": 0.3
+          "away": 0.25
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Argentina has a slightly higher Elo rating and better goal statistics.",
-          "Argentina's high clean sheet rate of 63%.",
-          "Argentina and Algeria have identical recent forms (2.5)."
+          "Argentina's strong offensive record with an average of 2.521 goals per match.",
+          "Argentina's higher clean sheet rate of 0.63 indicates a solid defense.",
+          "Neutral venue removes any potential home advantage.",
+          "Similar recent form and Elo ratings for both teams."
         ],
         "risks": [
-          "Argentina has an injury to a key player, affecting team performance.",
-          "The match is at a neutral venue, giving neither team a home advantage."
+          "No head-to-head data.",
+          "Possible equal recent form as both teams have the same recent form rating."
         ]
       }
     },
-    "agreement": 0.9967,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentina mit hoher gewichteter Form (2.55) und überlegener Defensive: nur 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate; Starke Offensive Argentiniens mit 2.52 erzielten Toren pro Spiel, leicht über Algerien (2.34); Elo nahezu ausgeglichen (1749 vs. 1746), aber Argentiniens defensive Stabilität verschiebt die Wahrscheinlichkeit zugunsten der Heimseite.",
-    "inputHash": "sha256:c97f8a641fbadb9e3886647a1efed760fa925d8e821ad8a3adb0e3595aa1d175"
+    "agreement": 0.962,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit minimal höherem Elo (1749 vs 1746), aber deutlich besserer Defensive (Gegentore 0.40 vs 0.55, Clean-Sheet-Rate 0.63 vs 0.52); Höhere gewichtete Form für Argentinien (2.553 vs 2.384) bei identischer recentForm (2.5); Stärkere Offensivwerte Argentiniens (2.52 Tore/Spiel) gegenüber Algerien (2.34).",
+    "inputHash": "sha256:1ffaec2aad2d569df3e6e1285bff80abc860188e27adcfacad0d8f6a66a5c8f0"
   },
   "predictionHistory": [
     {
@@ -137,6 +138,19 @@
         "away": 0.2931
       },
       "confidence": 0.6584
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4491,
+        "draw": 0.2486,
+        "away": 0.3023
+      },
+      "confidence": 0.6489
     }
   ]
 }

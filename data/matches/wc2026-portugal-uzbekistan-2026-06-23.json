@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "POR",
       "elo": 1677,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.879,
       "cleanSheetRate": 0.321,
       "matchesCount": 28,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "UZB",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.893,
       "cleanSheetRate": 0.625,
       "matchesCount": 24,
-      "daysSinceLastMatch": 124
+      "daysSinceLastMatch": 125
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5289,
-      "draw": 0.2311,
-      "away": 0.24
+      "home": 0.5177,
+      "draw": 0.2477,
+      "away": 0.2346
     },
-    "confidence": 0.6694,
+    "confidence": 0.6478,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Portugal mit stärkerer gewichteter Form (2.01 vs 1.71) und höherer Offensivkraft (2.32 vs 1.51 Tore/Spiel)",
-          "Portugal-Elo leicht höher (1677 vs 1656), bestätigt Favoritenrolle der Baseline",
-          "Usbekistan defensiv stabil (Clean-Sheet-Rate 0.625), kann das Ergebnis eng halten",
-          "Neutraler Spielort eliminiert Heimvorteil – rechtfertigt nur moderate Korrektur nach oben für Portugal"
+          "Portugal mit stärkerer gewichteter Form (2.01 vs 1.71) und deutlich höherer Offensivproduktion (2.32 vs 1.51 Tore/Spiel)",
+          "Höheres Elo (1677 vs 1656) plus aktuell guter Defensivwert (0.88 Gegentore/Spiel) untermauern Favoritenrolle",
+          "Uzbekistan defensiv robust (Clean-Sheet-Rate 0.625), was ein knappes statt hohes Ergebnis nahelegt",
+          "Kontext: neutraler Spielort nivelliert klassischen Heimvorteil leicht"
         ],
         "risks": [
-          "Usbekistan seit 124 Tagen ohne Spiel – Form schwer einschätzbar, hohe Unsicherheit",
-          "Keine H2H-Daten vorhanden, daher fehlt direkter Vergleichswert",
-          "Materialnews zu Portugal betreffen v.a. Ronaldo/2030 und sind für dieses Spiel kaum relevant",
-          "Defensiv kompakte Spielweise Usbekistans könnte Portugals erwartete Tore drücken"
+          "Mögliche Verletzungssorge um Schlüsselspieler (Ronaldo) laut News könnte Offensivkraft schwächen",
+          "Uzbekistan mit 125 Tagen ohne Spiel – Form schwer einzuschätzen, Spielrhythmus unklar",
+          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit bei der Einordnung",
+          "Hohe Clean-Sheet-Quote der Gäste erhöht Risiko eines Unentschiedens"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.54,
-          "draw": 0.22,
-          "away": 0.24
+          "home": 0.52,
+          "draw": 0.25,
+          "away": 0.23
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Portugal has a slightly higher Elo rating and better recent form.",
-          "Portugal averages more goals per match and has a strong offensive presence.",
-          "Portugal's key player Cristiano Ronaldo is supported by coach for long-term participation."
+          "Portugal has a slight advantage in Elo rating.",
+          "Portugal has a better recent form compared to Uzbekistan.",
+          "Portugal's higher average goals scored per match.",
+          "The match is being played at a neutral venue."
         ],
         "risks": [
-          "The match is at a neutral venue, reducing home advantage for Portugal.",
-          "Uzbekistan's strong defensive record with a high clean sheet rate."
+          "Potential injury concerns for Portugal involving key player Cristiano Ronaldo.",
+          "Uzbekistan's strong clean sheet rate."
         ]
       }
     },
-    "agreement": 0.9833,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit stärkerer gewichteter Form (2.01 vs 1.71) und höherer Offensivkraft (2.32 vs 1.51 Tore/Spiel); Portugal-Elo leicht höher (1677 vs 1656), bestätigt Favoritenrolle der Baseline; Usbekistan defensiv stabil (Clean-Sheet-Rate 0.625), kann das Ergebnis eng halten.",
-    "inputHash": "sha256:9788c7c160116d16123d608e536076ca59bb0813dae3ee51b31887dd10c80e27"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit stärkerer gewichteter Form (2.01 vs 1.71) und deutlich höherer Offensivproduktion (2.32 vs 1.51 Tore/Spiel); Höheres Elo (1677 vs 1656) plus aktuell guter Defensivwert (0.88 Gegentore/Spiel) untermauern Favoritenrolle; Uzbekistan defensiv robust (Clean-Sheet-Rate 0.625), was ein knappes statt hohes Ergebnis nahelegt.",
+    "inputHash": "sha256:8ba1908262ac68e4aa9a6468c91f21b56e3b9973be51d6c29c68dfc9232882ca"
   },
   "predictionHistory": [
     {
@@ -137,6 +138,19 @@
         "away": 0.2436
       },
       "confidence": 0.6766
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5289,
+        "draw": 0.2311,
+        "away": 0.24
+      },
+      "confidence": 0.6694
     }
   ]
 }

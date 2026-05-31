@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "BEL",
       "elo": 1646,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.054,
       "cleanSheetRate": 0.385,
       "matchesCount": 26,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "IRN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.908,
       "cleanSheetRate": 0.462,
       "matchesCount": 26,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,15 +50,15 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4375,
-      "draw": 0.2375,
-      "away": 0.325
+      "home": 0.4363,
+      "draw": 0.2363,
+      "away": 0.3275
     },
     "confidence": 0.588,
     "baseline": {
@@ -84,18 +84,18 @@
           "draw": 0.22,
           "away": 0.36
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Belgiens starke Offensive (goalsForAvg 2.91) und bessere gewichtete Form (1.908 vs 1.814)",
-          "Belgiens hohe recentForm (2.2) deutet auf aktuell gute Verfassung hin",
-          "Iran defensiv solide (cleanSheetRate 0.462, goalsAgainstAvg 0.908), kann Spiel offen halten",
-          "Iran mit höherem Elo (1690 vs 1646), was Belgien-Favoritenrolle relativiert"
+          "Belgiens starke Offensive (2.91 Tore/Spiel) und sehr gute jüngste Form (recentForm 2.2)",
+          "Belgiens leicht höhere gewichtete Form (1.908 vs 1.814) trotz niedrigerer Elo",
+          "Iran defensiv stabiler (cleanSheetRate 0.462, 0.91 Gegentore/Spiel), aber Belgien überlegen im Angriff",
+          "Neutraler Spielort ohne Heimvorteil für beide Teams"
         ],
         "risks": [
-          "Neutraler Spielort ohne Heimvorteil reduziert Belgiens Bonus",
-          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit",
-          "Lange Pause (60 Tage) bei beiden Teams kann Rhythmus beeinträchtigen",
-          "Iran defensivstark genug, um knappes Ergebnis oder Remis zu erzwingen"
+          "Iran hat höhere Elo (1690 vs 1646) und kompakte Defensive – kann das Spiel eng halten",
+          "Keine H2H-Daten verfügbar, hohe Unsicherheit in der direkten Einschätzung",
+          "Lange Pause beider Teams (61 Tage) kann Rhythmus und Frühform beeinflussen",
+          "Material-News der Away-Seite ohne sportliche Relevanz (kein verwertbarer Effekt)"
         ]
       },
       "chatgpt": {
@@ -108,21 +108,36 @@
           "draw": 0.25,
           "away": 0.3
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Belgium's higher goals for average",
-          "Iran's slightly better clean sheet rate",
-          "Belgium's stronger current form"
+          "Belgium's recent form is slightly better with 2.2 compared to Iran's 1.9.",
+          "Belgium has a higher goal-scoring average of 2.914 compared to Iran's 2.271.",
+          "Neutral venue removes home advantage, which is important given Iran's higher elo."
         ],
         "risks": [
-          "No direct head-to-head history for comparison",
-          "Neutral venue could balance team strengths"
+          "Iran's clean sheet rate is better at 0.462, indicating potential defensive resilience.",
+          "No H2H data introduces uncertainty in direct matchup dynamics.",
+          "Contextual morale factors could positively influence Iran's performance."
         ]
       }
     },
     "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgiens starke Offensive (goalsForAvg 2.91) und bessere gewichtete Form (1.908 vs 1.814); Belgiens hohe recentForm (2.2) deutet auf aktuell gute Verfassung hin; Iran defensiv solide (cleanSheetRate 0.462, goalsAgainstAvg 0.908), kann Spiel offen halten.",
-    "inputHash": "sha256:df2ce483b9fbe956936162d3fb8af25535fbdec2b3353cc4b04ae469d0a5b02a"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgiens starke Offensive (2.91 Tore/Spiel) und sehr gute jüngste Form (recentForm 2.2); Belgiens leicht höhere gewichtete Form (1.908 vs 1.814) trotz niedrigerer Elo; Iran defensiv stabiler (cleanSheetRate 0.462, 0.91 Gegentore/Spiel), aber Belgien überlegen im Angriff.",
+    "inputHash": "sha256:d3d8ecc46fe657d5575cc54efd198c5caab5bc6913384d1ace8bf6b1781043d5"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4375,
+        "draw": 0.2375,
+        "away": 0.325
+      },
+      "confidence": 0.588
+    }
+  ]
 }

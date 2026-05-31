@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "PAN",
       "elo": 1600,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.012,
       "cleanSheetRate": 0.303,
       "matchesCount": 33,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "ENG",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.522,
       "cleanSheetRate": 0.552,
       "matchesCount": 29,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1719,
-      "draw": 0.2206,
-      "away": 0.6074
+      "home": 0.15,
+      "draw": 0.22,
+      "away": 0.63
     },
-    "confidence": 0.6862,
+    "confidence": 0.755,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,54 +76,52 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
-          "away": 2
-        },
-        "probabilities": {
-          "home": 0.14,
-          "draw": 0.21,
-          "away": 0.65
-        },
-        "confidence": 0.66,
-        "keyFactors": [
-          "England klar stärker in Elo (1719 vs 1600) und gewichteter Form (2.032 vs 1.793)",
-          "Englands defensive Stabilität: nur 0.522 Gegentore/Spiel und 55,2% Clean-Sheet-Rate",
-          "Englands offensive Wucht (1.994 Tore/Spiel) gegenüber soliden, aber schwächeren Panama-Werten",
-          "Neutraler Spielort eliminiert Panamas Heimvorteil",
-          "Baseline (Elo+Poisson) stützt klare England-Favoritenrolle (60% Auswärtssieg)"
-        ],
-        "risks": [
-          "Mediale Unruhe im englischen/Liverpool-Umfeld (Trainerthemen, Verletzungen) könnte Kaderstimmung belasten",
-          "Panama in solider Form (recentForm 1.7) und defensiv brauchbar (1.012 Gegentore/Spiel) – könnte überraschen",
-          "Lange Pause (60 Tage seit letztem Spiel) für beide Teams erschwert Formeinschätzung",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit im genauen Ergebnis"
-        ]
-      },
-      "chatgpt": {
-        "predictedScore": {
           "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
-          "draw": 0.23,
-          "away": 0.57
+          "home": 0.15,
+          "draw": 0.22,
+          "away": 0.63
         },
-        "confidence": 0.75,
+        "confidence": 0.66,
         "keyFactors": [
-          "England hat eine höhere Elo-Wertung und überlegene Form im Vergleich zu Panama.",
-          "Panama hat keine relevanten H2H-Daten gegen England, was Bewertung erschwert.",
-          "Englands Torverhältnis und Clean-Sheet-Rate ist bedeutend besser als das von Panama."
+          "England deutlich höhere Elo (1719 vs 1600) und stärkere gewichtete Form (2.03 vs 1.79)",
+          "Defensive Überlegenheit Englands: nur 0.52 Gegentore/Spiel und 55% Clean-Sheet-Rate gegen Panamas 0.30",
+          "England mit höherer Offensivproduktion (1.99 Tore/Spiel vs 1.54)",
+          "Neutraler Spielort ohne Heimvorteil für Panama"
         ],
         "risks": [
-          "Neutraler Spielort neutralisiert Home-Away-Vorteile.",
-          "Englands Trainerwechsel könnte zu Unsicherheiten und Anpassungsproblemen führen."
+          "Lange Pause beider Teams (61 Tage) könnte Rhythmus beeinträchtigen",
+          "Unruhe im englischen Umfeld (Trainerthemen/Tuchel-Druck) als potenzieller Störfaktor",
+          "Panama defensiv solide (1.01 Gegentore/Spiel) und kann tief stehend Punkte stehlen",
+          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 0,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.15,
+          "draw": 0.22,
+          "away": 0.63
+        },
+        "confidence": 0.85,
+        "keyFactors": [
+          "England's higher Elo rating and stronger recent form compared to Panama.",
+          "England has a superior goals for and against average over the last matches.",
+          "Neutral venue negating any home advantage."
+        ],
+        "risks": [
+          "Potential disruptions within the England team due to recent coaching changes."
         ]
       }
     },
-    "agreement": 0.9467,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England klar stärker in Elo (1719 vs 1600) und gewichteter Form (2.032 vs 1.793); Englands defensive Stabilität: nur 0.522 Gegentore/Spiel und 55,2% Clean-Sheet-Rate; Englands offensive Wucht (1.994 Tore/Spiel) gegenüber soliden, aber schwächeren Panama-Werten.",
-    "inputHash": "sha256:9ff0f49eefbf5e79dfbc02dbc94b5221a644d4aa41c5cae81baf23b8c2447c45"
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England deutlich höhere Elo (1719 vs 1600) und stärkere gewichtete Form (2.03 vs 1.79); Defensive Überlegenheit Englands: nur 0.52 Gegentore/Spiel und 55% Clean-Sheet-Rate gegen Panamas 0.30; England mit höherer Offensivproduktion (1.99 Tore/Spiel vs 1.54).",
+    "inputHash": "sha256:134d2a13b599a22f3bea776b2ee8b8e5fa653eb21547b72b36635fbaa4a9a67c"
   },
   "predictionHistory": [
     {
@@ -138,6 +136,19 @@
         "away": 0.6169
       },
       "confidence": 0.7252
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1719,
+        "draw": 0.2206,
+        "away": 0.6074
+      },
+      "confidence": 0.6862
     }
   ]
 }

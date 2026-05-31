@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "CZE",
       "elo": 1588,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.189,
       "cleanSheetRate": 0.32,
       "matchesCount": 25,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "RSA",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.009,
       "cleanSheetRate": 0.484,
       "matchesCount": 31,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3583,
-      "draw": 0.2748,
-      "away": 0.367
+      "home": 0.3673,
+      "draw": 0.2891,
+      "away": 0.3436
     },
-    "confidence": 0.5712,
+    "confidence": 0.5445,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.355,
-          "draw": 0.265,
-          "away": 0.38
+          "home": 0.38,
+          "draw": 0.27,
+          "away": 0.35
         },
         "confidence": 0.4,
         "keyFactors": [
-          "South Africa mit leicht höherem Elo (1610 vs 1588) und neutralem Spielort, kein Heimvorteil für Tschechien",
-          "Bessere Defensive von RSA: niedrigerer GegentoreSchnitt (1.009) und deutlich höhere Clean-Sheet-Rate (0.484 vs 0.32)",
-          "Tschechien offensiv etwas stärker (GoalsForAvg 1.957 vs 1.556) und mit minimal besserer gewichteter Form (1.674 vs 1.59)",
-          "Beide Teams seit 60 Tagen ohne Spiel, ähnliche Ausgangslage und Spielrhythmus"
+          "Sehr ausgeglichene Baseline (Elo 1588 vs 1610, xG 1.43 vs 1.42) deutet auf enges Spiel hin",
+          "Tschechien mit stärkerer offensiver Form (goalsForAvg 1.96, weightedForm 1.674)",
+          "Südafrika defensiv solider (cleanSheetRate 0.484, goalsAgainstAvg 1.009)",
+          "Neutraler Spielort ohne Heimvorteil",
+          "News zur südafrikanischen Visa-Krise könnte Vorbereitung und Moral beeinträchtigen"
         ],
         "risks": [
-          "Keine direkte H2H-Historie, hohe Unsicherheit bei der Einschätzung",
-          "Materielle News liefern keine belastbaren sportlichen Hinweise (kein klarer Ausfall/Sperre)",
-          "Sehr ausgeglichene Baseline – Ergebnis kann durch Tagesform leicht kippen",
-          "Lange Pause könnte Rhythmusprobleme bei einem der Teams verursachen"
+          "Keine H2H-Daten verfügbar – erhöhte Unsicherheit",
+          "Lange Pause beider Teams (61 Tage) erschwert Formeinschätzung",
+          "Auswirkung der Visa-Krise auf Südafrika schwer quantifizierbar",
+          "Beide Teams nahezu gleichstark – Ergebnis sehr offen"
         ]
       },
       "chatgpt": {
@@ -105,24 +106,23 @@
         },
         "probabilities": {
           "home": 0.36,
-          "draw": 0.28,
-          "away": 0.36
+          "draw": 0.3,
+          "away": 0.34
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Neutral venue reduces home advantage",
-          "South Africa's slightly better Elo rating",
-          "Recent forms of both teams are relatively similar"
+          "Czech Republic's slightly better recent form",
+          "South Africa's higher Elo rating",
+          "Neutral venue with no host advantage"
         ],
         "risks": [
-          "No direct head-to-head history for reference",
-          "Potential underestimation of South Africa's defensive capabilities due to clean sheet rate"
+          "South Africa's visa crisis and potential impact on team morale and preparation"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Africa mit leicht höherem Elo (1610 vs 1588) und neutralem Spielort, kein Heimvorteil für Tschechien; Bessere Defensive von RSA: niedrigerer GegentoreSchnitt (1.009) und deutlich höhere Clean-Sheet-Rate (0.484 vs 0.32); Tschechien offensiv etwas stärker (GoalsForAvg 1.957 vs 1.556) und mit minimal besserer gewichteter Form (1.674 vs 1.59).",
-    "inputHash": "sha256:5d19ac9a2693a8e65e9ce7c9199f0506034d8e04ef7faee04a45b01d47d36c00"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr ausgeglichene Baseline (Elo 1588 vs 1610, xG 1.43 vs 1.42) deutet auf enges Spiel hin; Tschechien mit stärkerer offensiver Form (goalsForAvg 1.96, weightedForm 1.674); Südafrika defensiv solider (cleanSheetRate 0.484, goalsAgainstAvg 1.009).",
+    "inputHash": "sha256:20300d0f3c30db214387049c3cf67760bbb0d9deace520ae7e4bb81d693044aa"
   },
   "predictionHistory": [
     {
@@ -137,6 +137,19 @@
         "away": 0.3613
       },
       "confidence": 0.594
+    },
+    {
+      "generatedAt": "2026-05-30T19:45:08.604Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3583,
+        "draw": 0.2748,
+        "away": 0.367
+      },
+      "confidence": 0.5712
     }
   ]
 }

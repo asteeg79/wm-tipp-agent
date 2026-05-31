@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-30T19:45:08.604Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "home": {
       "teamId": "URU",
       "elo": 1583,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.832,
       "cleanSheetRate": 0.517,
       "matchesCount": 29,
-      "daysSinceLastMatch": 60
+      "daysSinceLastMatch": 61
     },
     "away": {
       "teamId": "CPV",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.838,
       "cleanSheetRate": 0.435,
       "matchesCount": 23,
-      "daysSinceLastMatch": 229
+      "daysSinceLastMatch": 230
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-30T18:39:04.761Z",
+    "generatedAt": "2026-05-31T11:33:33.085Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3144,
-      "draw": 0.3605,
-      "away": 0.3251
+      "home": 0.3427,
+      "draw": 0.3918,
+      "away": 0.2655
     },
-    "confidence": 0.5636,
+    "confidence": 0.517,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,21 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.33,
           "draw": 0.29,
-          "away": 0.37
+          "away": 0.38
         },
-        "confidence": 0.42,
+        "confidence": 0.4,
         "keyFactors": [
-          "Cape Verde mit besserer gewichteter Form (1.977 vs 1.397) und höherem Torschnitt (1.673 vs 0.91)",
-          "Uruguay defensiv stabiler: Clean-Sheet-Rate 0.517 und niedrigerer Gegentorschnitt (0.832)",
-          "Neutraler Spielort eliminiert echten Heimvorteil, Baseline-Heimwert daher leicht überbewertet",
-          "Uruguay mit höherer individueller Qualität und Turniererfahrung trotz niedrigerer Elo",
-          "Kein Head-to-Head verfügbar, daher Bewertung rein auf Form/Kontext gestützt"
+          "Cape Verde mit leicht höherem Elo (1597 vs 1583) und deutlich stärkerer gewichteter Form (1.977 vs 1.397) sowie höherer Offensivproduktion (1.673 Tore/Spiel)",
+          "Uruguay zeigt bessere Defensivstabilität (Clean-Sheet-Rate 0.517, nur 0.832 Gegentore/Spiel) und solide jüngste Form (recentForm 1.6)",
+          "Neutraler Spielort ohne Heimvorteil für Uruguay relativiert den nominellen Heimstatus"
         ],
         "risks": [
-          "Cape Verde extrem lange Pause (229 Tage) – Spielrhythmus und Fitness schwer einzuschätzen",
-          "Uruguay 60 Tage ohne Spiel, mögliche Einrostung",
-          "Geringe Datenbasis bei Cape Verde (23 Spiele) erhöht Unsicherheit",
-          "Baseline favorisiert Cape Verde deutlich (0.46), Korrektur Richtung Ausgeglichenheit könnte zu konservativ sein"
+          "Cape Verde mit 230 Tagen ohne Spiel – mögliche Spielrhythmus- und Matchfitness-Defizite nicht in Baseline abgebildet",
+          "Kein Head-to-Head vorhanden, daher höhere Unsicherheit in der Einschätzung",
+          "Uruguays geringe Offensivausbeute (0.91 Tore/Spiel) könnte gegen kompakte Defensive zu wenig sein",
+          "Baseline favorisiert klar Cape Verde, doch lange Spielpause rechtfertigt Korrektur zugunsten Uruguays"
         ]
       },
       "chatgpt": {
@@ -105,25 +103,41 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.4,
-          "away": 0.3
+          "home": 0.35,
+          "draw": 0.45,
+          "away": 0.2
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Uruguay's recent form is slightly weaker than Cape Verde, but they haven't played in 60 days compared to 229 days for Cape Verde.",
-          "Cape Verde has a higher recent weighted form and goals for average, indicating stronger recent performances.",
-          "Neutral venue negates any home advantage."
+          "Uruguay has not played a match in 61 days, which could impact their match rhythm negatively compared to Cape Verde with 230 days.",
+          "Cape Verde has a slightly higher Elo rating and better recent form (2.1 vs 1.6) which generally increases their competitiveness.",
+          "Neutral venue with no team having host advantage levels the playing field for both teams.",
+          "Cape Verde's higher goals scored average (1.673) compared to Uruguay's (0.91) suggests potential for scoring despite days since last match."
         ],
         "risks": [
-          "No head-to-head data increases uncertainty.",
-          "Cape Verde's long break since last match could lead to unpredictable performance."
+          "Both teams have not faced each other before, creating uncertainty in direct competitive dynamics.",
+          "Uruguay's solid defensive record with a clean sheet rate of 51.7% could counteract Cape Verde's offensive capabilities.",
+          "The lack of material news and injuries means unexpected team changes could affect the game unpredictably."
         ]
       }
     },
-    "agreement": 0.9267,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit besserer gewichteter Form (1.977 vs 1.397) und höherem Torschnitt (1.673 vs 0.91); Uruguay defensiv stabiler: Clean-Sheet-Rate 0.517 und niedrigerer Gegentorschnitt (0.832); Neutraler Spielort eliminiert echten Heimvorteil, Baseline-Heimwert daher leicht überbewertet.",
-    "inputHash": "sha256:ed53dfd6e5801342628c114db06013757d55c8adce4b23e26c8de139d9074bf2"
+    "agreement": 0.88,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit leicht höherem Elo (1597 vs 1583) und deutlich stärkerer gewichteter Form (1.977 vs 1.397) sowie höherer Offensivproduktion (1.673 Tore/Spiel); Uruguay zeigt bessere Defensivstabilität (Clean-Sheet-Rate 0.517, nur 0.832 Gegentore/Spiel) und solide jüngste Form (recentForm 1.6); Neutraler Spielort ohne Heimvorteil für Uruguay relativiert den nominellen Heimstatus.",
+    "inputHash": "sha256:d6b77e80bff201be4a2ed30bd04d45e6b28316f6b6b4c1ee4f5405be17ec5d0f"
   },
-  "predictionHistory": []
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-05-30T18:39:04.761Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3144,
+        "draw": 0.3605,
+        "away": 0.3251
+      },
+      "confidence": 0.5636
+    }
+  ]
 }
