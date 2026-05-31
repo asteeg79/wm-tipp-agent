@@ -50,6 +50,9 @@ jobs:
           mkdir -p app/public/data
           if [ -d data ]; then cp -r data/* app/public/data/ 2>/dev/null || true; fi
 
+      - name: Generate version
+        run: node scripts/gen-version.mjs
+
       - name: Build app
         run: pnpm --filter @wm/app build
         env:

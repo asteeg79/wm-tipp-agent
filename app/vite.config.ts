@@ -1,6 +1,24 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
+
+// Version aus public/version.json lesen (gen-version.mjs schreibt sie im Build
+// VOR vite build). So kennt das App-Bundle exakt seinen eigenen Build-Stand.
+function readBuildVersion(): { version: number; commit: string } {
+  try {
+    const p = fileURLToPath(new URL("./public/version.json", import.meta.url));
+    const j = JSON.parse(readFileSync(p, "utf8")) as {
+      version?: number;
+      commit?: string;
+    };
+    return { version: j.version ?? 0, commit: j.commit ?? "dev" };
+  } catch {
+    return { version: 0, commit: "dev" };
+  }
+}
+const buildVersion = readBuildVersion();
 
 // Base-Path:
 //  - Vercel (und lokal): "/" (App läuft an der Domain-Root).
@@ -16,6 +34,11 @@ const base =
 
 export default defineConfig({
   base,
+  // Build-Version als Konstanten ins Bundle einbacken (für Versionsvergleich).
+  define: {
+    __APP_VERSION__: JSON.stringify(buildVersion.version),
+    __APP_COMMIT__: JSON.stringify(buildVersion.commit),
+  },
   plugins: [
     react(),
     VitePWA({
@@ -53,7 +76,9 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,ico,woff2}"],
-        // JSON-Daten: StaleWhileRevalidate → offline letzter Stand verfügbar.
+        // version.json nie precachen — der Update-Check braucht den frischen
+        // Server-Stand.
+        globIgnores: ["**/version.json"],
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.includes("/data/"),
@@ -65,6 +90,11 @@ export default defineConfig({
                 maxAgeSeconds: 60 * 60 * 24 * 7,
               },
             },
+          },
+          {
+            // version.json immer frisch vom Netz (für Versionsvergleich).
+            urlPattern: ({ url }) => url.pathname.endsWith("/version.json"),
+            handler: "NetworkOnly",
           },
         ],
       },

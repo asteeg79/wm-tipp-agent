@@ -130,6 +130,12 @@ const resources = {
         noUpcoming: "Keine offenen Partien zum Tippen.",
       },
       disclaimer: "Keine Wett- oder Finanzberatung. Tipps ohne Gewähr.",
+      version: {
+        label: "Version",
+        updateTitle: "Neue Version verfügbar",
+        updateBody: "Es liegt ein aktualisierter Stand vor.",
+        updateButton: "Jetzt aktualisieren",
+      },
     },
   },
   en: {
@@ -259,6 +265,12 @@ const resources = {
         noUpcoming: "No open matches to predict.",
       },
       disclaimer: "Not betting or financial advice. Predictions without warranty.",
+      version: {
+        label: "Version",
+        updateTitle: "New version available",
+        updateBody: "An updated build is ready.",
+        updateButton: "Update now",
+      },
     },
   },
 };

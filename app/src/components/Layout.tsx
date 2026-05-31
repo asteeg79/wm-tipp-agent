@@ -2,10 +2,13 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useIndex } from "../lib/data.js";
 import { timeAgo } from "../lib/format.js";
+import { useVersion } from "../lib/useVersion.js";
+import { UpdateBanner } from "./UpdateBanner.js";
 
 export function Layout() {
   const { t } = useTranslation();
   const { data: index } = useIndex();
+  const v = useVersion();
 
   const navClass = ({ isActive }: { isActive: boolean }): string =>
     `rounded-md px-3 py-1.5 text-sm font-medium ${
@@ -16,6 +19,7 @@ export function Layout() {
 
   return (
     <div className="flex min-h-full flex-col">
+      <UpdateBanner v={v} />
       <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-900/85 backdrop-blur">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-2 px-4 py-2.5">
           <span className="text-xl">⚽</span>
@@ -55,7 +59,10 @@ export function Layout() {
       </main>
 
       <footer className="border-t border-slate-800 px-4 py-4 text-center text-xs text-slate-500">
-        {t("disclaimer")}
+        <div>{t("disclaimer")}</div>
+        <div className="mt-1 font-mono text-[10px] text-slate-600">
+          {t("version.label")} {v.current.version} · {v.current.commit}
+        </div>
       </footer>
     </div>
   );
