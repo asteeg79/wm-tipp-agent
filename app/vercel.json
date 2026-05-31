@@ -2,8 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "node scripts/stage-data.mjs && pnpm --filter @wm/app build",
-  "outputDirectory": "app/dist",
+  "buildCommand": "node ../scripts/stage-data.mjs && pnpm --filter @wm/app build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/((?!data/|assets/|icons/|.*\\.).*)",
