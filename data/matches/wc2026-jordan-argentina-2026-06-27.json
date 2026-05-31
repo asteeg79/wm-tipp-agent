@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "JOR",
-      "elo": 1508,
+      "elo": 1529,
       "weightedForm": 1.07,
       "recentForm": 0.9,
       "goalsForAvg": 1.616,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "ARG",
-      "elo": 1749,
+      "elo": 1905,
       "weightedForm": 2.553,
       "recentForm": 2.5,
       "goalsForAvg": 2.521,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 0,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0477,
+      "home": 0.045,
       "draw": 0.0977,
-      "away": 0.8546
+      "away": 0.8573
     },
-    "confidence": 0.8372,
+    "confidence": 0.8486,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.0566,
-        "draw": 0.1114,
-        "away": 0.832
+        "home": 0.0585,
+        "draw": 0.1138,
+        "away": 0.8278
       },
       "expectedGoals": {
         "home": 0.69,
-        "away": 2.99
+        "away": 2.96
       }
     },
     "models": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.78,
         "keyFactors": [
-          "Argentinien deutlich höheres Elo (1749 vs. 1508) und überragende gewichtete Form (2.55 vs. 1.07)",
-          "Sehr starke Defensive Argentiniens: nur 0.40 Gegentore/Spiel, Clean-Sheet-Rate 63%",
-          "Hohe Offensivproduktion Argentiniens (2.52 Tore/Spiel) gegen anfällige jordanische Abwehr (1.54 Gegentore/Spiel)",
-          "Neutraler Spielort ohne Heimvorteil für Jordanien"
+          "Großer Elo-Unterschied (1905 vs. 1529) zugunsten Argentiniens",
+          "Argentinien mit exzellenter gewichteter Form (2.553) und nahezu makelloser Defensive (0.399 Gegentore/Spiel, 63% Zu-Null)",
+          "Jordaniens schwächere Form (1.07) und durchschnittliche Defensive (1.541 Gegentore/Spiel)",
+          "Neutraler Spielort eliminiert jeglichen Heimvorteil für Jordanien"
         ],
         "risks": [
-          "Lange Pause beider Teams (61 Tage) kann frühe Spielrhythmus-Probleme verursachen",
-          "Jordanien ist defensiv ordentlich organisiert und könnte tief stehen, was das Torverhältnis drücken kann",
-          "Mögliche Rotation Argentiniens bei klarer Favoritenrolle kann Ergebnis knapper machen",
-          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit bei der Spielcharakteristik"
+          "Keine H2H-Daten verfügbar, daher kein direkter Vergleichswert",
+          "Beide Teams 61 Tage ohne Spiel – mögliche Rhythmusprobleme schwer einschätzbar",
+          "Argentinien könnte bei klarer Überlegenheit rotieren und die Intensität senken",
+          "Jordanien kann defensiv kompakt stehen und das Ergebnis knapper halten als erwartet"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 3
         },
         "probabilities": {
-          "home": 0.05,
+          "home": 0.045,
           "draw": 0.1,
-          "away": 0.85
+          "away": 0.855
         },
-        "confidence": 0.9,
+        "confidence": 0.92,
         "keyFactors": [
-          "Argentina's significantly higher Elo rating and recent strong form.",
-          "No head-to-head history favors Argentina due to their global ranking.",
-          "Argentina's high clean sheet rate against Jordan's moderate scoring ability."
+          "Argentina's superior Elo rating of 1905 compared to Jordan's 1529 indicates a strong advantage.",
+          "Argentina's recent form is significantly stronger with a rating of 2.5 compared to Jordan's 0.9.",
+          "Argentina has a high clean sheet rate of 0.63 and low goals against average of 0.399.",
+          "Argentina scores more on average (2.521) compared to Jordan (1.616)."
         ],
         "risks": [
-          "Neutral venue minimizes typical home advantage",
-          "Possible variance due to unpredictability of World Cup context"
+          "Both teams have not played in 61 days which can impact match rhythm.",
+          "Neutral venue may reduce some advantage for Argentina."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich höheres Elo (1749 vs. 1508) und überragende gewichtete Form (2.55 vs. 1.07); Sehr starke Defensive Argentiniens: nur 0.40 Gegentore/Spiel, Clean-Sheet-Rate 63%; Hohe Offensivproduktion Argentiniens (2.52 Tore/Spiel) gegen anfällige jordanische Abwehr (1.54 Gegentore/Spiel).",
-    "inputHash": "sha256:41dd7e7b6c54a7134baf674947a6d115c4769eb871918cf9cc22c164a3d5c36c"
+    "agreement": 0.9967,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1905 vs. 1529) zugunsten Argentiniens; Argentinien mit exzellenter gewichteter Form (2.553) und nahezu makelloser Defensive (0.399 Gegentore/Spiel, 63% Zu-Null); Jordaniens schwächere Form (1.07) und durchschnittliche Defensive (1.541 Gegentore/Spiel).",
+    "inputHash": "sha256:32c2904762ed261d57bbff8253f9411626e0be5b9112c54eec897cd2eca3ec6e"
   },
   "predictionHistory": [
     {
@@ -150,6 +151,19 @@
         "away": 0.8215
       },
       "confidence": 0.8028
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0477,
+        "draw": 0.0977,
+        "away": 0.8546
+      },
+      "confidence": 0.8372
     }
   ]
 }

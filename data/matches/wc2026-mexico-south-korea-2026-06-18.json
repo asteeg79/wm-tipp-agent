@@ -13,10 +13,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "MEX",
-      "elo": 1647,
+      "elo": 1729,
       "weightedForm": 1.754,
       "recentForm": 1.4,
       "goalsForAvg": 1.273,
@@ -27,7 +27,7 @@
     },
     "away": {
       "teamId": "KOR",
-      "elo": 1646,
+      "elo": 1702,
       "weightedForm": 1.61,
       "recentForm": 1.9,
       "goalsForAvg": 1.336,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.483,
-      "draw": 0.2764,
-      "away": 0.2406
+      "home": 0.4718,
+      "draw": 0.2782,
+      "away": 0.25
     },
-    "confidence": 0.6007,
+    "confidence": 0.6539,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.536,
-        "draw": 0.25,
-        "away": 0.214
+        "home": 0.5273,
+        "draw": 0.2523,
+        "away": 0.2204
       },
       "expectedGoals": {
-        "home": 1.6,
-        "away": 0.91
+        "home": 1.58,
+        "away": 0.92
       }
     },
     "models": {
@@ -81,22 +81,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
+          "home": 0.5,
           "draw": 0.25,
-          "away": 0.23
+          "away": 0.25
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Mexiko genießt als Co-Gastgeber Heimvorteil trotz neutralem Venue (hostAdvantageTeamId MEX)",
-          "Höhenlage von 1566m kann konditionell zugunsten des heimatgewohnten Mexiko wirken",
-          "Mexiko defensiv stabiler: höhere Clean-Sheet-Rate (0.588 vs 0.414) und weniger Gegentore (0.797 vs 1.348)",
-          "Südkoreas starke jüngste Form (recentForm 1.9) hält die Partie offen und stützt die Baseline-Tendenz nicht zu stark zu korrigieren"
+          "Mexiko genießt als Co-Gastgeber Heimvorteil und spielt faktisch auf eigenem Terrain (hostAdvantageTeamId MEX).",
+          "Höhenlage von 1566m begünstigt das an solche Bedingungen gewöhnte Mexiko, kann Südkorea konditionell belasten.",
+          "Mexiko hat die bessere Defensivbilanz (GegentoreAvg 0.80, Clean-Sheet-Rate 0.59 vs. KOR 1.35/0.41).",
+          "Höhere gewichtete Form Mexikos (1.754 vs. 1.610) stützt leichten Favoritenstatus.",
+          "Baseline (Elo+Poisson) sieht Mexiko klar vorn (52.7% vs. 22.0%)."
         ],
         "risks": [
-          "Verletzung von Jo Yu-min könnte Südkoreas Defensive schwächen, Auswirkung aber unsicher",
-          "Sehr dünne H2H-Datenbasis (nur 1 Spiel, 2:2-Remis) erschwert Einschätzung",
-          "Lange Pause (61 Tage ohne Spiel) für beide Teams birgt Rhythmus-Unsicherheit",
-          "Südkoreas gute aktuelle Form könnte Mexikos Heimvorteil teilweise neutralisieren"
+          "Südkoreas starke jüngste Form (recentForm 1.9 vs. 1.4) deutet auf aufsteigenden Trend hin und rechtfertigt leichte Aufwertung der Auswärtschance.",
+          "Schwache südkoreanische Defensive trifft auf nur durchschnittliche Offensive Mexikos (1.27 ToreAvg) - Tore beider Seiten möglich.",
+          "Lange Pause (61 Tage seit letztem Spiel) bei beiden erschwert Formprognose.",
+          "Geringe H2H-Basis (nur 1 Spiel, 2:2) liefert kaum belastbare Hinweise."
         ]
       },
       "chatgpt": {
@@ -109,23 +110,22 @@
           "draw": 0.3,
           "away": 0.25
         },
-        "confidence": 0.65,
+        "confidence": 0.75,
         "keyFactors": [
-          "Recent form of South Korea is slightly better with a rating of 1.9 compared to Mexico's 1.4.",
-          "Mexico has a host advantage as the World Cup is hosted in North America, which could subtly boost their performance.",
-          "Altitudes may not significantly affect either team due to the neutral venue, but slight preference for Mexico might be possible.",
-          "No major injury issues for Mexico while South Korea is missing Jo Yu-min due to an injury, potentially affecting their defense."
+          "Mexico's recent form is slightly lower than South Korea's.",
+          "Neutral venue diminishes Mexico's potential home advantage.",
+          "High altitude could affect South Korean players more adversely.",
+          "Elo ratings of both teams are relatively close."
         ],
         "risks": [
-          "Small sample size for head-to-head with only one match played, which ended in a draw.",
-          "Both teams have similar ELO ratings and relatively balanced statistics in goals scored and conceded.",
-          "Unpredictable neutral venue dynamics in a World Cup setting."
+          "Both teams have not played against each other frequently, limited head-to-head data.",
+          "Match fitness could be variable with 61 days since their last match for both teams."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko genießt als Co-Gastgeber Heimvorteil trotz neutralem Venue (hostAdvantageTeamId MEX); Höhenlage von 1566m kann konditionell zugunsten des heimatgewohnten Mexiko wirken; Mexiko defensiv stabiler: höhere Clean-Sheet-Rate (0.588 vs 0.414) und weniger Gegentore (0.797 vs 1.348).",
-    "inputHash": "sha256:6b3f750276255e68f50e7b3ff0a58da3c3713e7f219afc977ce454a9dd46dbab"
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko genießt als Co-Gastgeber Heimvorteil und spielt faktisch auf eigenem Terrain (hostAdvantageTeamId MEX).; Höhenlage von 1566m begünstigt das an solche Bedingungen gewöhnte Mexiko, kann Südkorea konditionell belasten.; Mexiko hat die bessere Defensivbilanz (GegentoreAvg 0.80, Clean-Sheet-Rate 0.59 vs. KOR 1.35/0.41)..",
+    "inputHash": "sha256:55673cc16c69904db9f3e3b5b175750cf42a797bdb1a8da955095f071c409623"
   },
   "predictionHistory": [
     {
@@ -153,6 +153,19 @@
         "away": 0.2141
       },
       "confidence": 0.5945
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.483,
+        "draw": 0.2764,
+        "away": 0.2406
+      },
+      "confidence": 0.6007
     }
   ]
 }

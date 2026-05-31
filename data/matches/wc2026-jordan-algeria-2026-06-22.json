@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "JOR",
-      "elo": 1508,
+      "elo": 1529,
       "weightedForm": 1.07,
       "recentForm": 0.9,
       "goalsForAvg": 1.616,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "ALG",
-      "elo": 1746,
+      "elo": 1767,
       "weightedForm": 2.384,
       "recentForm": 2.5,
       "goalsForAvg": 2.335,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 1,
       "away": 3
     },
     "probabilities": {
-      "home": 0.091,
-      "draw": 0.15,
-      "away": 0.759
+      "home": 0.1225,
+      "draw": 0.1771,
+      "away": 0.7004
     },
-    "confidence": 0.7698,
+    "confidence": 0.7562,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.07,
-        "draw": 0.126,
-        "away": 0.8039
+        "home": 0.1104,
+        "draw": 0.1638,
+        "away": 0.7258
       },
       "expectedGoals": {
-        "home": 0.74,
-        "away": 2.84
+        "home": 0.85,
+        "away": 2.46
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.08,
+          "home": 0.09,
           "draw": 0.15,
-          "away": 0.77
+          "away": 0.76
         },
-        "confidence": 0.7,
+        "confidence": 0.72,
         "keyFactors": [
-          "Algerien deutlich stärker in Elo (1746 vs 1508) und Form (gewichtet 2.38 vs 1.07)",
-          "Algeriens Defensive sehr stabil: 0.55 Gegentore/Spiel und 51.6% Clean-Sheet-Rate",
-          "Jordaniens Abwehr anfällig (1.54 Gegentore/Spiel, nur 36% Clean Sheets)",
-          "Algerien torgefährlich (2.34 Tore/Spiel) gegen schwächere Defensive"
+          "Großer Elo-Unterschied (1529 vs 1767) zugunsten Algeriens",
+          "Algerien in starker Form (weightedForm 2.38, recentForm 2.5) und defensiv stabil (goalsAgainstAvg 0.55, cleanSheetRate 0.52)",
+          "Algeriens hohe Offensivleistung (goalsForAvg 2.34) trifft auf Jordans anfällige Defensive (goalsAgainstAvg 1.54)",
+          "Neutraler Spielort eliminiert Heimvorteil für Jordan"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Jordanien jeglichen Heimvorteil, aber auch keine Belastung für Algerien",
-          "Keine H2H-Daten vorhanden, Unsicherheit bei direktem Vergleich",
-          "Lange Pause (61 Tage) bei beiden Teams kann Form/Rhythmus beeinträchtigen",
-          "Jordanien kann durch kompakte Defensive ein knappes Ergebnis erzwingen"
+          "Kein H2H vorhanden, daher keine direkten Vergleichswerte",
+          "Beide Teams 61 Tage ohne Spiel – mögliche Rhythmusprobleme",
+          "Jordans solide Offensive (goalsForAvg 1.62) könnte für ein Tor reichen",
+          "Die genannte News (Schottland/Fletcher) ist für diese Partie irrelevant und liefert keinen Mehrwert"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,27 @@
           "away": 3
         },
         "probabilities": {
-          "home": 0.1,
-          "draw": 0.15,
-          "away": 0.75
+          "home": 0.15,
+          "draw": 0.2,
+          "away": 0.65
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Algeria's significantly higher Elo rating and form advantage",
-          "Algeria's stronger offensive and defensive averages",
-          "Jordan's slightly lower recent form despite fairly consistent performance"
+          "Algeria has a higher Elo rating (1767) compared to Jordan (1529), indicating a stronger team overall.",
+          "Algeria's recent form is superior (2.5) compared to Jordan's (0.9).",
+          "Algeria's goals for average (2.335) is significantly higher than Jordan's (1.616).",
+          "The clean sheet rate is better for Algeria (0.516) compared to Jordan (0.361).",
+          "Match is played at a neutral venue, eliminating home advantage."
         ],
         "risks": [
-          "Neutral venue may slightly mitigate any advantage",
-          "Jordan's potential to perform better than expected based on recent performance"
+          "There is no prior head-to-head history between the teams, adding uncertainty.",
+          "Jordan's competitive nature could surprise, as underdogs may perform unexpectedly in international tournaments."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Algerien deutlich stärker in Elo (1746 vs 1508) und Form (gewichtet 2.38 vs 1.07); Algeriens Defensive sehr stabil: 0.55 Gegentore/Spiel und 51.6% Clean-Sheet-Rate; Jordaniens Abwehr anfällig (1.54 Gegentore/Spiel, nur 36% Clean Sheets).",
-    "inputHash": "sha256:bf5796716d364309d2614bc3ba766df12dd6c3ef7f4515aaa82e4a49d331bfa9"
+    "agreement": 0.9267,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1529 vs 1767) zugunsten Algeriens; Algerien in starker Form (weightedForm 2.38, recentForm 2.5) und defensiv stabil (goalsAgainstAvg 0.55, cleanSheetRate 0.52); Algeriens hohe Offensivleistung (goalsForAvg 2.34) trifft auf Jordans anfällige Defensive (goalsAgainstAvg 1.54).",
+    "inputHash": "sha256:c23f044d521c28f65b0f86168307561b6d32a8f885e6d7e9dc413a7bfc6f29fc"
   },
   "predictionHistory": [
     {
@@ -137,6 +139,19 @@
         "away": 0.7635
       },
       "confidence": 0.7672
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.091,
+        "draw": 0.15,
+        "away": 0.759
+      },
+      "confidence": 0.7698
     }
   ]
 }

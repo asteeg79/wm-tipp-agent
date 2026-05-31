@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "FRA",
-      "elo": 1736,
+      "elo": 1904,
       "weightedForm": 2.43,
       "recentForm": 2.5,
       "goalsForAvg": 2.338,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "SEN",
-      "elo": 1780,
+      "elo": 1828,
       "weightedForm": 2.441,
       "recentForm": 2.5,
       "goalsForAvg": 2.319,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.312,
-      "draw": 0.318,
-      "away": 0.37
+      "home": 0.398,
+      "draw": 0.2488,
+      "away": 0.3532
     },
-    "confidence": 0.6031,
+    "confidence": 0.6146,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.303,
-        "draw": 0.233,
-        "away": 0.4639
+        "home": 0.3977,
+        "draw": 0.2381,
+        "away": 0.3642
       },
       "expectedGoals": {
-        "home": 1.38,
-        "away": 1.75
+        "home": 1.59,
+        "away": 1.51
       }
     },
     "models": {
@@ -80,50 +80,50 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.315,
-          "draw": 0.255,
-          "away": 0.43
+          "home": 0.37,
+          "draw": 0.26,
+          "away": 0.37
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Senegal mit höherem Elo (1780 vs 1736) und stärkerer Defensive (0.614 Gegentore/Spiel, 64.7% Clean Sheets) als France",
-          "Beide Teams in starker Form (weightedForm ~2.44), nahezu gleichauf offensiv (FRA 2.34 / SEN 2.32 Tore/Spiel)",
-          "Neutraler Spielort eliminiert Heimvorteil und stützt die leichte Senegal-Tendenz der Baseline",
-          "Frankreichs deutlich schwächere Defensive (0.947 Gegentore, nur 46.4% Clean Sheets) begünstigt Senegal-Treffer"
+          "Senegal zeigt defensiv überlegene Werte (0.61 Gegentore/Spiel, 64.7% Clean-Sheet-Rate) gegenüber Frankreich (0.95 Gegentore, 46.4%), was die Baseline-Heimtendenz relativiert.",
+          "Beide Teams nahezu identische gewichtete Form (FRA 2.43, SEN 2.44) und identische jüngste Form (je 2.5) deuten auf ein ausgeglichenes Duell hin.",
+          "Neutraler Spielort eliminiert den klassischen Heimvorteil, daher Reduktion der Home-Wahrscheinlichkeit zugunsten Senegals.",
+          "Frankreichs höherer Elo (1904 vs. 1828) und leicht stärkere Offensive (2.34 vs. 2.32 Tore) bleiben ein moderater Vorteil."
         ],
         "risks": [
-          "PSG-Verletzungssorgen (Mbappé-Alarm, Dembélé früh ausgewechselt) könnten Frankreichs Offensive schwächen",
-          "Senegal-relevante News betreffen primär den USMNT-Gegner Richards, nicht Senegal selbst – geringe Aussagekraft",
-          "Kein H2H-Datensatz vorhanden, daher höhere Unsicherheit in der direkten Einschätzung",
-          "Lange Pause beider Teams (~60 Tage) kann Rhythmus und Spielfluss beeinträchtigen"
+          "Keine Head-to-Head-Daten vorhanden, daher fehlt direkte Vergleichsbasis.",
+          "Die News zu Frankreich (Riots) betreffen das Umfeld, nicht direkt den Kader; sportliche Auswirkung unsicher.",
+          "Lange Spielpause bei beiden Teams (61-63 Tage) erhöht Unsicherheit über aktuelle Spielfrische.",
+          "Senegals starke Defensive könnte ein torarmes Spiel mit Remis-Tendenz begünstigen."
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.31,
-          "draw": 0.36,
-          "away": 0.33
+          "home": 0.42,
+          "draw": 0.24,
+          "away": 0.34
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Senegal has a slightly higher Elo rating compared to France.",
-          "Both teams have very similar recent forms with strong defensive records.",
-          "Neutral venue diminishes potential home advantage for France.",
-          "Injury concerns on both sides, but France has multiple key player injuries."
+          "France has a slightly higher Elo rating than Senegal, indicating a marginally stronger team overall.",
+          "Both teams have similar recent form, with the same weighted form performance.",
+          "France has a slightly higher average goals scored per match compared to Senegal.",
+          "The match is at a neutral venue, reducing location-based advantages."
         ],
         "risks": [
-          "Impact of recent injuries on France's key players, such as Ousmane Dembele.",
-          "France's potential to underperform due to disrupted team morale from off-field issues."
+          "France is dealing with off-field disturbances due to recent riots, which might affect team focus.",
+          "Senegal has a higher clean sheet rate, which could make it difficult for France to score."
         ]
       }
     },
-    "agreement": 0.93,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal mit höherem Elo (1780 vs 1736) und stärkerer Defensive (0.614 Gegentore/Spiel, 64.7% Clean Sheets) als France; Beide Teams in starker Form (weightedForm ~2.44), nahezu gleichauf offensiv (FRA 2.34 / SEN 2.32 Tore/Spiel); Neutraler Spielort eliminiert Heimvorteil und stützt die leichte Senegal-Tendenz der Baseline.",
-    "inputHash": "sha256:67cdad7eed5d9966c539930594b8381aacfff517c356181e8afa22a23d884deb"
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal zeigt defensiv überlegene Werte (0.61 Gegentore/Spiel, 64.7% Clean-Sheet-Rate) gegenüber Frankreich (0.95 Gegentore, 46.4%), was die Baseline-Heimtendenz relativiert.; Beide Teams nahezu identische gewichtete Form (FRA 2.43, SEN 2.44) und identische jüngste Form (je 2.5) deuten auf ein ausgeglichenes Duell hin.; Neutraler Spielort eliminiert den klassischen Heimvorteil, daher Reduktion der Home-Wahrscheinlichkeit zugunsten Senegals..",
+    "inputHash": "sha256:cbbf0b984a9a4b6b5e7a10096cc230d438ca37c38ae4c27d2d3ed8f38003ac2b"
   },
   "predictionHistory": [
     {
@@ -151,6 +151,19 @@
         "away": 0.3652
       },
       "confidence": 0.5462
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.312,
+        "draw": 0.318,
+        "away": 0.37
+      },
+      "confidence": 0.6031
     }
   ]
 }

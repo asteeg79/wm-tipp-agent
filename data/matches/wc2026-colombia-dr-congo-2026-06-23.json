@@ -13,10 +13,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "COL",
-      "elo": 1660,
+      "elo": 1775,
       "weightedForm": 1.544,
       "recentForm": 1.8,
       "goalsForAvg": 1.95,
@@ -27,7 +27,7 @@
     },
     "away": {
       "teamId": "COD",
-      "elo": 1685,
+      "elo": 1705,
       "weightedForm": 2.229,
       "recentForm": 2.3,
       "goalsForAvg": 1.42,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.333,
-      "draw": 0.2915,
-      "away": 0.3756
+      "home": 0.3545,
+      "draw": 0.3227,
+      "away": 0.3227
     },
-    "confidence": 0.5978,
+    "confidence": 0.539,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3182,
-        "draw": 0.2655,
-        "away": 0.4163
+        "home": 0.3825,
+        "draw": 0.2675,
+        "away": 0.35
       },
       "expectedGoals": {
-        "home": 1.17,
-        "away": 1.38
+        "home": 1.3,
+        "away": 1.23
       }
     },
     "models": {
@@ -81,23 +81,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.31,
-          "draw": 0.28,
-          "away": 0.41
+          "home": 0.36000000000000004,
+          "draw": 0.29000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.52,
+        "confidence": 0.5,
         "keyFactors": [
-          "DR Congo zeigt stärkere gewichtete Form (2.229 vs 1.544) und bessere jüngste Form (2.3 vs 1.8)",
-          "Defensiv ist DR Congo deutlich stabiler: nur 0.482 Gegentore/Spiel und 54,5% Clean-Sheet-Rate gegenüber Kolumbiens 1.227 bzw. 39,3%",
-          "DR Congo hat den höheren Elo-Wert (1685 vs 1660), was die Baseline-Tendenz pro Away stützt",
-          "Kolumbien ist offensiv produktiver (1.95 Tore/Spiel vs 1.42), kann auf neutralem Platz Druck erzeugen",
-          "Neutraler Spielort eliminiert klassischen Heimvorteil und stützt die ausgeglichene/Away-lastige Baseline"
+          "DR Congo zeigt deutlich stärkere gewichtete Form (2.229 vs 1.544) und Recent Form (2.3 vs 1.8)",
+          "DR Congo defensiv extrem stabil: nur 0.482 Gegentore/Spiel und 54.5% Clean-Sheet-Rate",
+          "Colombia mit höherem Elo (1775 vs 1705) und größerer Offensivpower (1.95 Tore/Spiel)",
+          "Neutraler Spielort ohne Heimvorteil für Colombia, dadurch Baseline-Heimbonus reduziert",
+          "Höhenlage (1566m) könnte beide Teams gleichermaßen beeinflussen"
         ],
         "risks": [
-          "Verletzungssorge in Kolumbien (eine Personalie) könnte Aufstellung/Stabilität beeinträchtigen",
-          "Keine direkte H2H-Historie vorhanden, daher höhere Unsicherheit",
-          "Die gemeldete Away-News bezieht sich auf Schweden, nicht auf DR Congo – Datenrauschen, Relevanz unklar",
-          "Höhenlage (1566 m) könnte konditionelle Auswirkungen haben, die schwer zu quantifizieren sind"
+          "Ebola-Krise stoppte das WM-Trainingslager der DR Congo – möglicher Vorbereitungsnachteil und Moralfaktor",
+          "Verletzungssorge bei Colombia vor dem Turnier könnte Schlüsselspieler betreffen",
+          "Keine H2H-Daten vorhanden, erhöht Unsicherheit der Einschätzung",
+          "Lange Pause beider Teams (über 60 Tage) erschwert Formprognose"
         ]
       },
       "chatgpt": {
@@ -106,27 +106,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "DR Congo has higher Elo rating.",
-          "Colombia's recent form is improving with goals for average higher than expected goals.",
-          "Neutral venue diminishes potential home advantage for Colombia.",
-          "Both teams have injuries affecting their squads."
+          "DR Congo's recent form is slightly better",
+          "Colombia has a higher goal-scoring average",
+          "Neutral venue may not significantly favor either team",
+          "DR Congo shows better defensive stats with a higher clean sheet rate"
         ],
         "risks": [
-          "Colombia's potential underperformance due to injury.",
-          "DR Congo's recent stronger form and low goals against average.",
-          "First competitive match between the teams, no historical data."
+          "Colombia injury concern could impact performance",
+          "Ebola crisis affecting DR Congo's preparation and morale",
+          "No prior head-to-head matches to gauge team dynamics"
         ]
       }
     },
     "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo zeigt stärkere gewichtete Form (2.229 vs 1.544) und bessere jüngste Form (2.3 vs 1.8); Defensiv ist DR Congo deutlich stabiler: nur 0.482 Gegentore/Spiel und 54,5% Clean-Sheet-Rate gegenüber Kolumbiens 1.227 bzw. 39,3%; DR Congo hat den höheren Elo-Wert (1685 vs 1660), was die Baseline-Tendenz pro Away stützt.",
-    "inputHash": "sha256:c87dbc804aa526e777bc874b540310ce13808d54cb31a53f47ca1e794e2d7fe9"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo zeigt deutlich stärkere gewichtete Form (2.229 vs 1.544) und Recent Form (2.3 vs 1.8); DR Congo defensiv extrem stabil: nur 0.482 Gegentore/Spiel und 54.5% Clean-Sheet-Rate; Colombia mit höherem Elo (1775 vs 1705) und größerer Offensivpower (1.95 Tore/Spiel).",
+    "inputHash": "sha256:9d8f699450d6f5c56732df94875fc3042c57568995efc2d07efbf44e6fa630c2"
   },
   "predictionHistory": [
     {
@@ -154,6 +154,19 @@
         "away": 0.3761
       },
       "confidence": 0.5635
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.333,
+        "draw": 0.2915,
+        "away": 0.3756
+      },
+      "confidence": 0.5978
     }
   ]
 }

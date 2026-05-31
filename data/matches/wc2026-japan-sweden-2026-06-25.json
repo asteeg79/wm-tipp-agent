@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "JPN",
-      "elo": 1712,
+      "elo": 1768,
       "weightedForm": 2.202,
       "recentForm": 2,
       "goalsForAvg": 1.694,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "SWE",
-      "elo": 1549,
+      "elo": 1599,
       "weightedForm": 1.639,
       "recentForm": 1.4,
       "goalsForAvg": 1.91,
@@ -50,79 +50,80 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.6729,
-      "draw": 0.2071,
-      "away": 0.12
+      "home": 0.6716,
+      "draw": 0.19,
+      "away": 0.1384
     },
-    "confidence": 0.708,
+    "confidence": 0.7301,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.6688,
-        "draw": 0.1916,
-        "away": 0.1396
+        "home": 0.6095,
+        "draw": 0.2132,
+        "away": 0.1773
       },
       "expectedGoals": {
-        "home": 2.16,
-        "away": 0.87
+        "home": 1.97,
+        "away": 0.96
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.7000000000000001,
-          "draw": 0.18000000000000002,
-          "away": 0.12000000000000001
+          "home": 0.66,
+          "draw": 0.19,
+          "away": 0.15
         },
-        "confidence": 0.66,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Japans (1712 vs. 1549) und starke gewichtete Form (2.20 vs. 1.64)",
-          "Japans herausragende Defensive: nur 0.36 Gegentore/Spiel, 58% Zu-Null-Rate",
-          "Schwedens anfällige Abwehr (1.64 Gegentore/Spiel, nur 22% Zu-Null) gegen schnelles japanisches Offensivspiel",
-          "Mehrere verletzungsbedingte Ausfälle bei Schweden, darunter Kulusevski und Defensivpersonal (Juventus-Verteidiger, Holm) – schwächt beide Mannschaftsteile"
+          "Japan deutlich höhere Elo (1768 vs 1599) und stärkere gewichtete Form (2.20 vs 1.64)",
+          "Japan defensiv sehr stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate",
+          "Schweden defensiv anfällig (1.64 Gegentore/Spiel, nur 22% Clean Sheets) und durch mehrere Ausfälle in der Abwehr geschwächt (Juventus-Verteidiger, Holm)",
+          "Verletzungsbedingter Ausfall von Kulusevski schwächt Schwedens Offensive/Kreativität",
+          "Beide Teams gleich lange Pause (61 Tage), kein Frische-Vorteil"
         ],
         "risks": [
-          "Neutraler Spielort ohne Heimvorteil für Japan",
-          "Lange Pause (61 Tage) bei beiden Teams – Rhythmusverlust möglich",
-          "Schweden besitzt trotzdem ordentliche Offensivwerte (1.91 Tore/Spiel), kann kontern",
-          "Kein H2H-Datenmaterial verfügbar – höhere Modellunsicherheit"
+          "Schwedens überraschend hoher Offensivschnitt (1.91 Tore/Spiel) könnte trotz Personalsorgen für Gegentore sorgen",
+          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit",
+          "Neutraler Spielort nimmt Japan einen möglichen Heimvorteil",
+          "Aufgebotsänderungen (Johansson nachnominiert) könnten Schwedens Defensive teilweise kompensieren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.23,
-          "away": 0.12
+          "home": 0.68,
+          "draw": 0.19,
+          "away": 0.13
         },
-        "confidence": 0.78,
+        "confidence": 0.85,
         "keyFactors": [
-          "Japan's strong form and high country ELO rating.",
-          "Sweden missing key players due to injuries, especially affecting their defence.",
-          "Neutral venue minimizing home advantage but giving Japan a slight edge."
+          "Japan's superior recent form and defensive record",
+          "Sweden's critical injuries in defense and to key player Kulusevski",
+          "Lack of head-to-head history to favor Sweden"
         ],
         "risks": [
-          "Potential underestimation of Sweden's attacking capabilities despite injuries.",
-          "Unpredictability of tournament play at a neutral venue."
+          "Neutral venue potentially reducing Japan's calculated advantage",
+          "Sweden's higher goal-scoring average despite defensive issues"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Japans (1712 vs. 1549) und starke gewichtete Form (2.20 vs. 1.64); Japans herausragende Defensive: nur 0.36 Gegentore/Spiel, 58% Zu-Null-Rate; Schwedens anfällige Abwehr (1.64 Gegentore/Spiel, nur 22% Zu-Null) gegen schnelles japanisches Offensivspiel.",
-    "inputHash": "sha256:b17e85211247089b8f8daeb18b79be5e8fb1448e1282dbf21bb03d0ed01047ca"
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan deutlich höhere Elo (1768 vs 1599) und stärkere gewichtete Form (2.20 vs 1.64); Japan defensiv sehr stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate; Schweden defensiv anfällig (1.64 Gegentore/Spiel, nur 22% Clean Sheets) und durch mehrere Ausfälle in der Abwehr geschwächt (Juventus-Verteidiger, Holm).",
+    "inputHash": "sha256:476ac0ff19b63ac0ae2102e305616638823ef0e4a1d8bd4f79915261aa2433db"
   },
   "predictionHistory": [
     {
@@ -150,6 +151,19 @@
         "away": 0.1255
       },
       "confidence": 0.6736
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6729,
+        "draw": 0.2071,
+        "away": 0.12
+      },
+      "confidence": 0.708
     }
   ]
 }

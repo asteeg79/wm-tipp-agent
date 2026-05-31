@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "GER",
-      "elo": 1698,
+      "elo": 1822,
       "weightedForm": 2.371,
       "recentForm": 2.1,
       "goalsForAvg": 2.574,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "CIV",
-      "elo": 1723,
+      "elo": 1753,
       "weightedForm": 2.267,
       "recentForm": 2.2,
       "goalsForAvg": 2.068,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3605,
-      "draw": 0.271,
-      "away": 0.3686
+      "home": 0.4451,
+      "draw": 0.25,
+      "away": 0.3049
     },
-    "confidence": 0.6344,
+    "confidence": 0.588,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.351,
-        "draw": 0.2354,
-        "away": 0.4136
+        "home": 0.4255,
+        "draw": 0.2348,
+        "away": 0.3398
       },
       "expectedGoals": {
-        "home": 1.51,
-        "away": 1.65
+        "home": 1.68,
+        "away": 1.48
       }
     },
     "models": {
@@ -80,51 +80,50 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.402,
-          "draw": 0.245,
-          "away": 0.353
+          "home": 0.44,
+          "draw": 0.25,
+          "away": 0.31
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Germany mit stärkerer Offensive (goalsForAvg 2.57 vs 2.07) und besserer gewichteter Form (2.371 vs 2.267)",
-          "Ivory Coast defensiv stabiler (goalsAgainstAvg 0.56, cleanSheetRate 0.55), was knappes Ergebnis begünstigt",
-          "Neutraler Spielort ohne Heimvorteil, daher leichte Aufwertung von Germanys Offensivpotenzial gerechtfertigt",
-          "Beide Teams ähnlich lange Pause (ca. 61-62 Tage), keine Asymmetrie bei Frische"
+          "Germany mit höherem Elo (1822 vs 1753) und stärkerer gewichteter Form (2.371 vs 2.267)",
+          "Germany erzielt mehr Tore (2.574 vs 2.068 pro Spiel) und ist offensiv durchschlagskräftiger",
+          "Ivory Coast defensiv sehr stabil (Gegentorschnitt 0.558, Clean-Sheet-Rate 0.545) – könnte deutsche Offensive ausbremsen",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil, leicht zugunsten von CIV justiert"
         ],
         "risks": [
-          "Ivory Coast hat höheres Elo (1723 vs 1698) und könnte mit kompakter Defensive den Favoritenstatus rechtfertigen",
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit der Einschätzung",
-          "Lange Spielpause beider Teams kann zu unvorhersehbarer Anfangsform führen",
-          "Baseline favorisiert Ivory Coast (away 0.41) – Korrektur basiert primär auf Form-/Offensivwerten, nicht auf Elo"
+          "Keine H2H-Daten verfügbar – Bewertung allein auf Form und Elo basierend",
+          "Starke ivorische Defensive kann Spiel eng halten und Unentschieden/Konter ermöglichen",
+          "Lange Pause beider Teams (ca. 61-62 Tage) erhöht Unsicherheit über Tagesform",
+          "Keine aktuellen News zu Ausfällen/Aufstellungen vorhanden"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.33,
-          "draw": 0.29,
-          "away": 0.38
+          "home": 0.45,
+          "draw": 0.25,
+          "away": 0.3
         },
-        "confidence": 0.75,
+        "confidence": 0.6,
         "keyFactors": [
-          "Germany has a strong offensive record with an average of 2.574 goals per match.",
-          "Ivory Coast has a better recent defensive record with a clean sheet rate of 0.545.",
-          "Recent forms are similar - slight edge to Germany in offensive metrics.",
-          "Neutral venue eliminates home advantage factor."
+          "Germany's higher ELO score indicating a stronger team on paper.",
+          "Germany's higher goals for average compared to Ivory Coast.",
+          "Ivory Coast's strong defensive record with a higher clean sheet rate."
         ],
         "risks": [
-          "Ivory Coast's higher Elo rating suggests potential strength.",
-          "No head-to-head data makes direct comparison uncertain.",
-          "Both teams have not played for over 60 days, possible impact on match rhythm."
+          "Recent form of both teams is relatively similar.",
+          "Neutral venue reduces home advantage impact.",
+          "No direct head-to-head history to derive matchup-specific insights."
         ]
       }
     },
-    "agreement": 0.952,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit stärkerer Offensive (goalsForAvg 2.57 vs 2.07) und besserer gewichteter Form (2.371 vs 2.267); Ivory Coast defensiv stabiler (goalsAgainstAvg 0.56, cleanSheetRate 0.55), was knappes Ergebnis begünstigt; Neutraler Spielort ohne Heimvorteil, daher leichte Aufwertung von Germanys Offensivpotenzial gerechtfertigt.",
-    "inputHash": "sha256:16bba4cd01c12bf6162462bb126685d19b7987edff4db2150521d172887f557f"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit höherem Elo (1822 vs 1753) und stärkerer gewichteter Form (2.371 vs 2.267); Germany erzielt mehr Tore (2.574 vs 2.068 pro Spiel) und ist offensiv durchschlagskräftiger; Ivory Coast defensiv sehr stabil (Gegentorschnitt 0.558, Clean-Sheet-Rate 0.545) – könnte deutsche Offensive ausbremsen.",
+    "inputHash": "sha256:bd41892ba81ec1b234cc4480c1af60cbae185cf54f4cd6c03f5c4c7c8e6d409c"
   },
   "predictionHistory": [
     {
@@ -152,6 +151,19 @@
         "away": 0.3989
       },
       "confidence": 0.6149
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3605,
+        "draw": 0.271,
+        "away": 0.3686
+      },
+      "confidence": 0.6344
     }
   ]
 }

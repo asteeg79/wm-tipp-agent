@@ -13,10 +13,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "KOR",
-      "elo": 1646,
+      "elo": 1702,
       "weightedForm": 1.61,
       "recentForm": 1.9,
       "goalsForAvg": 1.336,
@@ -27,7 +27,7 @@
     },
     "away": {
       "teamId": "CZE",
-      "elo": 1588,
+      "elo": 1646,
       "weightedForm": 1.674,
       "recentForm": 1.6,
       "goalsForAvg": 1.957,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3379,
-      "draw": 0.2865,
-      "away": 0.3756
+      "home": 0.324,
+      "draw": 0.276,
+      "away": 0.4
     },
-    "confidence": 0.5733,
+    "confidence": 0.6177,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3492,
-        "draw": 0.2477,
-        "away": 0.4031
+        "home": 0.3262,
+        "draw": 0.2461,
+        "away": 0.4277
       },
       "expectedGoals": {
-        "home": 1.39,
-        "away": 1.51
+        "home": 1.33,
+        "away": 1.56
       }
     },
     "models": {
@@ -81,22 +81,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.335,
+          "home": 0.345,
           "draw": 0.255,
-          "away": 0.41
+          "away": 0.4
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Czech Republic mit stärkerem Torpotenzial (goalsForAvg 1.96) und besserer Defensivbilanz (goalsAgainstAvg 1.19), was den leichten Elo-Rückstand kompensiert",
-          "South Korea zeigt bessere jüngste Form (recentForm 1.9 vs 1.6) und höhere Clean-Sheet-Rate (0.41 vs 0.32)",
-          "Neutraler Spielort ohne Heimvorteil für Südkorea, was die Baseline-Tendenz pro Tschechien stützt",
-          "Beide Teams 61 Tage ohne Spiel – ähnliche Rhythmusverhältnisse, kein Vorteil"
+          "Czech Republic mit höherem Torpotenzial (goalsForAvg 1.96 vs 1.34) und stabilerer Defensive (goalsAgainstAvg 1.19)",
+          "South Korea höher eingestuft im Elo (1702 vs 1646), was die Baseline-Awaytendenz leicht relativiert",
+          "South Korea mit besserer aktueller Form (recentForm 1.9 vs 1.6) und höherer Clean-Sheet-Rate (0.41 vs 0.32)",
+          "Neutraler Spielort ohne Heimvorteil für beide Teams"
         ],
         "risks": [
-          "Verletzung von Jo Yu-min könnte Südkoreas Abwehr schwächen und tschechische Offensive begünstigen",
-          "Keine H2H-Daten verfügbar – erhöhte Unsicherheit in der Einschätzung",
-          "Höhenlage (1566m) als unkalkulierbarer Faktor für beide Mannschaften",
-          "Knapper Elo-Abstand und ausgeglichene Formwerte machen das Ergebnis sehr offen"
+          "Keine Head-to-Head-Daten vorhanden, erschwert direkte Einschätzung",
+          "Höhenlage (1566 m) könnte beide Teams unvorhersehbar beeinflussen",
+          "Lange Pause (61 Tage) seit letztem Spiel für beide Teams erhöht Formunsicherheit",
+          "Knappe Wahrscheinlichkeitsverteilung – Spiel ist sehr offen"
         ]
       },
       "chatgpt": {
@@ -105,26 +105,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
-          "draw": 0.31,
-          "away": 0.35
+          "home": 0.31,
+          "draw": 0.29,
+          "away": 0.4
         },
-        "confidence": 0.67,
+        "confidence": 0.75,
         "keyFactors": [
-          "South Korea has a slightly higher Elo rating than Czech Republic.",
-          "Czech Republic has a better average goals scored rate.",
-          "Neutral venue with high altitude could affect both teams.",
-          "Injury to South Korea's Jo Yu-min may impact their defensive stability."
+          "South Korea has a slightly higher elo rating than Czech Republic",
+          "Both teams have equal rest with 61 days since last match",
+          "Match is at a neutral venue with no home advantage",
+          "High altitude could affect Czech Republic more as they are less accustomed"
         ],
         "risks": [
-          "No head-to-head history between the teams introduces uncertainty.",
-          "Effects of high altitude on teams not accustomed to such conditions."
+          "No recent head-to-head data to assess team matchups",
+          "Changes in team strategies or tactics unaccounted for in provided data"
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Czech Republic mit stärkerem Torpotenzial (goalsForAvg 1.96) und besserer Defensivbilanz (goalsAgainstAvg 1.19), was den leichten Elo-Rückstand kompensiert; South Korea zeigt bessere jüngste Form (recentForm 1.9 vs 1.6) und höhere Clean-Sheet-Rate (0.41 vs 0.32); Neutraler Spielort ohne Heimvorteil für Südkorea, was die Baseline-Tendenz pro Tschechien stützt.",
-    "inputHash": "sha256:ccd49818edded557c05ffc03bc6d29074975c2b8cd37d55834d7b8d87728f464"
+    "agreement": 0.9767,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Czech Republic mit höherem Torpotenzial (goalsForAvg 1.96 vs 1.34) und stabilerer Defensive (goalsAgainstAvg 1.19); South Korea höher eingestuft im Elo (1702 vs 1646), was die Baseline-Awaytendenz leicht relativiert; South Korea mit besserer aktueller Form (recentForm 1.9 vs 1.6) und höherer Clean-Sheet-Rate (0.41 vs 0.32).",
+    "inputHash": "sha256:b4893a9ad6d6f2434203eb385d90bf278f5f45414b35271083a8a68d8d535ace"
   },
   "predictionHistory": [
     {
@@ -152,6 +152,19 @@
         "away": 0.3874
       },
       "confidence": 0.5664
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3379,
+        "draw": 0.2865,
+        "away": 0.3756
+      },
+      "confidence": 0.5733
     }
   ]
 }

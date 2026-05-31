@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "USA",
-      "elo": 1594,
+      "elo": 1676,
       "weightedForm": 1.517,
       "recentForm": 1.6,
       "goalsForAvg": 1.668,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "AUS",
-      "elo": 1617,
+      "elo": 1666,
       "weightedForm": 1.464,
       "recentForm": 1.7,
       "goalsForAvg": 1.257,
@@ -50,52 +50,52 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.47,
-      "draw": 0.25,
-      "away": 0.28
+      "home": 0.4629,
+      "draw": 0.2528,
+      "away": 0.2843
     },
-    "confidence": 0.6,
+    "confidence": 0.5772,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4522,
-        "draw": 0.2438,
-        "away": 0.3039
+        "home": 0.4569,
+        "draw": 0.2432,
+        "away": 0.2998
       },
       "expectedGoals": {
-        "home": 1.62,
+        "home": 1.63,
         "away": 1.28
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.25,
-          "away": 0.28
+          "home": 0.44,
+          "draw": 0.27,
+          "away": 0.29
         },
-        "confidence": 0.55,
+        "confidence": 0.5,
         "keyFactors": [
-          "USA als Co-Gastgeber profitiert vom Heimvorteil (hostAdvantageTeamId=USA) trotz formal neutralem Venue",
-          "USA mit besserer aktueller Spielpraxis (61 Tage Pause) gegenüber Australien (194 Tage ohne Spiel)",
-          "USA leicht bessere gewichtete Form (1.517 vs 1.464) und höhere Offensivproduktion (1.668 vs 1.257 Tore/Spiel)",
-          "Einziges H2H ging an USA (2:1), passt zum Baseline-Erwartungswert"
+          "USA leicht höheres Elo (1676 vs 1666) und Heim-/Gastgebervorteil als Co-Ausrichter trotz neutralem Venue",
+          "USA mit besserer Form-Datenbasis (34 Spiele) und höherer weightedForm (1.517 vs 1.464)",
+          "Australien defensiv deutlich stabiler: cleanSheetRate 0.542 und nur 1.08 Gegentore/Spiel dämpfen USA-Offensive",
+          "Australiens jüngste Form (recentForm 1.7) leicht besser als USA (1.6), deutet auf enges Spiel hin"
         ],
         "risks": [
-          "Australien defensiv deutlich stärker (cleanSheetRate 0.542 vs 0.235, nur 1.08 Gegentore/Spiel) – kann Spiel niedrig halten",
-          "Australien höherer Elo (1617 vs 1594) und leicht bessere recentForm (1.7 vs 1.6)",
-          "Lange Spielpause Australiens (194 Tage) erschwert Formeinschätzung – Datenbasis unsicher",
-          "Geringe H2H-Stichprobe (nur 1 Spiel) und kleine Matchzahl Australiens (24) limitieren Aussagekraft"
+          "Australien seit 194 Tagen ohne Pflichtspiel – Spielrhythmus und Matchfitness unklar, hohe Unsicherheit",
+          "Nur 1 H2H-Spiel als Referenz, statistisch wenig aussagekräftig",
+          "Gemeldete News (Iran-Suspension) wirkt irrelevant/fehlzugeordnet und liefert keinen verwertbaren Kontext",
+          "Geringe USA-cleanSheetRate (0.235) erhöht Risiko eines Gegentors trotz Favoritenrolle"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.25,
+          "home": 0.48,
+          "draw": 0.24,
           "away": 0.28
         },
-        "confidence": 0.65,
+        "confidence": 0.67,
         "keyFactors": [
-          "USA spielt auf neutralem Boden, jedoch mit leichtem Heimvorteil als Gastgeberland",
-          "Australien hat deutlich länger kein Länderspiel bestritten",
-          "USA hat die direkten Vergleichsbegegnungen bisher gewonnen"
+          "USA has moderate host advantage despite neutral venue.",
+          "Recent form is slightly better for Australia, but USA has played more recently.",
+          "USA's recent home head-to-head win over Australia.",
+          "Higher clean sheet rate for Australia but USA's slightly better attack might exploit neutral conditions."
         ],
         "risks": [
-          "USA's laut Form anfällige Verteidigung könnte das Spiel beeinflussen",
-          "Mögliche Leistungssteigerung von Australien aufgrund längerer Ruhephase"
+          "Australia's good recent form and longer rest period could be beneficial.",
+          "No significant news impacting either team, so unexpected events not accounted for."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA als Co-Gastgeber profitiert vom Heimvorteil (hostAdvantageTeamId=USA) trotz formal neutralem Venue; USA mit besserer aktueller Spielpraxis (61 Tage Pause) gegenüber Australien (194 Tage ohne Spiel); USA leicht bessere gewichtete Form (1.517 vs 1.464) und höhere Offensivproduktion (1.668 vs 1.257 Tore/Spiel).",
-    "inputHash": "sha256:13c07b2f8c314d3d1fd54d585712036f1a7a0454ff4b474398e135e898c3f37c"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA leicht höheres Elo (1676 vs 1666) und Heim-/Gastgebervorteil als Co-Ausrichter trotz neutralem Venue; USA mit besserer Form-Datenbasis (34 Spiele) und höherer weightedForm (1.517 vs 1.464); Australien defensiv deutlich stabiler: cleanSheetRate 0.542 und nur 1.08 Gegentore/Spiel dämpfen USA-Offensive.",
+    "inputHash": "sha256:e53d4774113467a467793eb8e8b0c6215986f15ccd4b10d265cfaa699a9a2920"
   },
   "predictionHistory": [
     {
@@ -150,6 +151,19 @@
         "away": 0.2845
       },
       "confidence": 0.6272
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.47,
+        "draw": 0.25,
+        "away": 0.28
+      },
+      "confidence": 0.6
     }
   ]
 }

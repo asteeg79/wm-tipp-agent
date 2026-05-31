@@ -13,10 +13,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "SWE",
-      "elo": 1549,
+      "elo": 1599,
       "weightedForm": 1.639,
       "recentForm": 1.4,
       "goalsForAvg": 1.91,
@@ -27,7 +27,7 @@
     },
     "away": {
       "teamId": "TUN",
-      "elo": 1645,
+      "elo": 1672,
       "weightedForm": 1.895,
       "recentForm": 1.7,
       "goalsForAvg": 1.647,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2218,
-      "draw": 0.22,
-      "away": 0.5582
+      "home": 0.2406,
+      "draw": 0.2406,
+      "away": 0.5188
     },
-    "confidence": 0.6468,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2238,
-        "draw": 0.2217,
-        "away": 0.5545
+        "home": 0.2678,
+        "draw": 0.2337,
+        "away": 0.4985
       },
       "expectedGoals": {
-        "home": 1.14,
-        "away": 1.92
+        "home": 1.24,
+        "away": 1.77
       }
     },
     "models": {
@@ -81,23 +81,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.19,
-          "draw": 0.22,
-          "away": 0.59
+          "home": 0.23,
+          "draw": 0.23,
+          "away": 0.54
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Tunesien deutlich höhere Elo (1645 vs 1549) und bessere gewichtete Form (1.895 vs 1.639)",
-          "Sehr starke tunesische Defensive: GegentoreSchnitt 0.752 und Clean-Sheet-Rate 50% vs Schwedens 0.217",
-          "Mehrere wichtige Verletzungsausfälle bei Schweden (Kulusevski, Holm, Juventus-Verteidiger) schwächen Offensive und Abwehr",
-          "Neutraler Spielort entzieht Schweden möglichen Heimvorteil",
-          "Baseline favorisiert Tunesien bereits klar; News verstärken diese Tendenz leicht"
+          "Tunisia mit höherem Elo (1672 vs 1599) und klar besserer gewichteter Form (1.895 vs 1.639)",
+          "Tunesische Defensive deutlich stärker: nur 0.752 Gegentore/Spiel und 50% Zu-Null-Rate gegenüber Schwedens 1.638 bzw. 21.7%",
+          "Mehrere gewichtige Verletzungsausfälle bei Schweden (Kulusevski, Holm sowie ein Juventus-Außenverteidiger), die offensive und defensive Stabilität schwächen",
+          "Neutraler Spielort ohne Heimvorteil für Schweden"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, hohe Unsicherheit über direkte Begegnung",
-          "Höhe (540 m) und lange Spielpause (61 Tage) können Form beider Teams beeinflussen",
-          "Schwedens Offensivwert (goalsForAvg 1.91) zeigt Torgefahr trotz Ausfällen",
-          "Mögliche unbekannte Aufstellungs- oder Formänderungen kurz vor Turnierbeginn"
+          "Schweden hat höheren Offensivschnitt (1.91 Tore/Spiel) und kann bei Standards gefährlich werden",
+          "61 Tage seit letztem Spiel für beide Teams – Spielrhythmus und Form schwer einzuschätzen",
+          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit",
+          "Kurzfristige Aufstellungs- oder Verletzungsänderungen könnten das Bild verschieben"
         ]
       },
       "chatgpt": {
@@ -107,24 +106,25 @@
         },
         "probabilities": {
           "home": 0.25,
-          "draw": 0.22,
-          "away": 0.53
+          "draw": 0.25,
+          "away": 0.5
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Tunisia has a higher Elo rating than Sweden, indicating overall better performance.",
-          "Sweden has several key injuries, including Dejan Kulusevski and a Juventus full-back, impacting defensive and offensive capabilities.",
-          "Tunisia's higher recent form and clean sheet rate suggests a strong defensive line."
+          "Tunisia has a higher Elo rating than Sweden.",
+          "Tunisia has superior recent form and a better clean sheet rate.",
+          "Sweden is missing key players due to injuries, including important defenders.",
+          "The match is played at a neutral venue, negating any home advantage."
         ],
         "risks": [
-          "The match is at a neutral venue, which may impact both teams equally.",
-          "Sweden's ability to score 1.91 goals on average shows potential if Tunisia's defense falters."
+          "Sweden's attacking average is higher than Tunisia's.",
+          "Unexpected performances or strategies could alter the game's outcome."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tunesien deutlich höhere Elo (1645 vs 1549) und bessere gewichtete Form (1.895 vs 1.639); Sehr starke tunesische Defensive: GegentoreSchnitt 0.752 und Clean-Sheet-Rate 50% vs Schwedens 0.217; Mehrere wichtige Verletzungsausfälle bei Schweden (Kulusevski, Holm, Juventus-Verteidiger) schwächen Offensive und Abwehr.",
-    "inputHash": "sha256:29ae478112f662b9d0555f546a60805687c1813d5168e2b60899bf5bf1d13a51"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tunisia mit höherem Elo (1672 vs 1599) und klar besserer gewichteter Form (1.895 vs 1.639); Tunesische Defensive deutlich stärker: nur 0.752 Gegentore/Spiel und 50% Zu-Null-Rate gegenüber Schwedens 1.638 bzw. 21.7%; Mehrere gewichtige Verletzungsausfälle bei Schweden (Kulusevski, Holm sowie ein Juventus-Außenverteidiger), die offensive und defensive Stabilität schwächen.",
+    "inputHash": "sha256:a5c4344c180c51e5100b6e6579d6388f3709e60f1db570f6950adfb32267fb7f"
   },
   "predictionHistory": [
     {
@@ -152,6 +152,19 @@
         "away": 0.5636
       },
       "confidence": 0.6782
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2218,
+        "draw": 0.22,
+        "away": 0.5582
+      },
+      "confidence": 0.6468
     }
   ]
 }

@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "CAN",
-      "elo": 1627,
+      "elo": 1696,
       "weightedForm": 1.623,
       "recentForm": 1.7,
       "goalsForAvg": 1.242,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "QAT",
-      "elo": 1494,
+      "elo": 1509,
       "weightedForm": 1.292,
       "recentForm": 1.2,
       "goalsForAvg": 1.459,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7289,
-      "draw": 0.1642,
-      "away": 0.1069
+      "home": 0.6946,
+      "draw": 0.1827,
+      "away": 0.1227
     },
-    "confidence": 0.7228,
+    "confidence": 0.6958,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.7313,
-        "draw": 0.1696,
-        "away": 0.0991
+        "home": 0.6935,
+        "draw": 0.187,
+        "away": 0.1194
       },
       "expectedGoals": {
-        "home": 2.3,
-        "away": 0.71
+        "home": 2.15,
+        "away": 0.76
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.7,
-          "draw": 0.17,
-          "away": 0.13
+          "home": 0.66,
+          "draw": 0.2,
+          "away": 0.14
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Klarer Elo-Vorsprung Kanadas (1627 vs 1494) und Co-Gastgeber-Status mit Heimvorteil trotz neutralem Spielort",
-          "Bessere defensive Stabilität Kanadas (GA 0.61, Clean-Sheet-Rate 0.54) gegenüber anfälliger Qatar-Abwehr (GA 1.80, Clean-Sheet-Rate 0.25)",
-          "Höhere gewichtete Form Kanadas (1.62 vs 1.29) und stärkere Recent Form (1.7 vs 1.2)",
-          "Qatars offensive Werte (GF 1.46) deuten auf Torgefahr trotz schwacher Defensive hin"
+          "Canada deutlich höheres Elo (1696 vs 1509) und bessere gewichtete Form (1.623 vs 1.292)",
+          "Canada defensiv stark: goalsAgainstAvg 0.606 und cleanSheetRate 0.536",
+          "Qatar defensiv anfällig (goalsAgainstAvg 1.802, cleanSheetRate 0.25), was Canadas Torchancen begünstigt",
+          "Gastgeber-Vorteil/Kontext spricht für Canada (hostAdvantageTeamId CAN)"
         ],
         "risks": [
-          "Verletzungssorgen bei Kanada (Flores, Bombito) könnten die Stabilität beeinträchtigen",
-          "Qatar mit 195 Tagen Spielpause – Spielrhythmus und Form schwer einschätzbar",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit",
-          "Kanadas lange Pause (61 Tage) und mögliche Aufstellungsfragen erhöhen Varianz"
+          "Flores-Verletzung schwächt Canadas Offensivpotenzial leicht (Baseline xG leicht reduziert)",
+          "Qatar mit ordentlicher Offensive (goalsForAvg 1.459) kann treffen, Unentschieden-Wahrscheinlichkeit leicht erhöht",
+          "Qatar 195 Tage ohne Spiel – Spielrhythmus schwer einschätzbar, hohe Unsicherheit",
+          "Canada 61 Tage Pause könnte zu Startschwierigkeiten führen"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,27 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.16,
-          "away": 0.09
+          "home": 0.72,
+          "draw": 0.17,
+          "away": 0.11
         },
-        "confidence": 0.85,
+        "confidence": 0.82,
         "keyFactors": [
-          "Canada's higher Elo rating and strong recent form",
-          "Canada's advantage from host factor despite neutral venue",
-          "Canada's superior defensive record with a higher clean sheet rate"
+          "Canada's superior elo rating (1696 vs 1509)",
+          "Canada's better recent form and clean sheet rate",
+          "Neutral venue reduces Qatar's playing comfort",
+          "Canada has host advantage",
+          "Canada's generally solid defensive record"
         ],
         "risks": [
-          "Canada's key player injuries could affect team performance",
-          "Lack of head-to-head data introduces uncertainty",
-          "Potential underestimation of Qatar due to lack of historical context"
+          "Canada missing key player Marcelo Flores due to injury",
+          "Longer rest period for Qatar might lead to a fresher team"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Kanadas (1627 vs 1494) und Co-Gastgeber-Status mit Heimvorteil trotz neutralem Spielort; Bessere defensive Stabilität Kanadas (GA 0.61, Clean-Sheet-Rate 0.54) gegenüber anfälliger Qatar-Abwehr (GA 1.80, Clean-Sheet-Rate 0.25); Höhere gewichtete Form Kanadas (1.62 vs 1.29) und stärkere Recent Form (1.7 vs 1.2).",
-    "inputHash": "sha256:8a4c79e5dfe53d9b16d704a1e596d91226f2186bd2f9ec0fd9ea1be3c4eda062"
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Canada deutlich höheres Elo (1696 vs 1509) und bessere gewichtete Form (1.623 vs 1.292); Canada defensiv stark: goalsAgainstAvg 0.606 und cleanSheetRate 0.536; Qatar defensiv anfällig (goalsAgainstAvg 1.802, cleanSheetRate 0.25), was Canadas Torchancen begünstigt.",
+    "inputHash": "sha256:1a3cbb99502826967347209519095de2b660e7ede2ebe763ee76db5b0b07a6c7"
   },
   "predictionHistory": [
     {
@@ -151,6 +152,19 @@
         "away": 0.1317
       },
       "confidence": 0.7202
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7289,
+        "draw": 0.1642,
+        "away": 0.1069
+      },
+      "confidence": 0.7228
     }
   ]
 }

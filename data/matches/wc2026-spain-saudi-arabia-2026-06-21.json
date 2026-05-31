@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "ESP",
-      "elo": 1809,
+      "elo": 1974,
       "weightedForm": 2.327,
       "recentForm": 2.4,
       "goalsForAvg": 2.675,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "KSA",
-      "elo": 1538,
+      "elo": 1572,
       "weightedForm": 1.259,
       "recentForm": 1.2,
       "goalsForAvg": 0.874,
@@ -50,80 +50,79 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 3,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.8748,
-      "draw": 0.0876,
-      "away": 0.0376
+      "home": 0.85,
+      "draw": 0.1,
+      "away": 0.05
     },
-    "confidence": 0.8223,
+    "confidence": 0.825,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.8728,
-        "draw": 0.0917,
-        "away": 0.0355
+        "home": 0.8609,
+        "draw": 0.0992,
+        "away": 0.0399
       },
       "expectedGoals": {
-        "home": 3.08,
-        "away": 0.51
+        "home": 2.98,
+        "away": 0.53
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 3,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.88,
-          "draw": 0.085,
-          "away": 0.035
+          "home": 0.85,
+          "draw": 0.1,
+          "away": 0.05
         },
-        "confidence": 0.8,
+        "confidence": 0.74,
         "keyFactors": [
-          "Großer Elo-Unterschied (1809 vs 1538) spricht klar für Spanien",
-          "Spanien mit starker gewichteter Form (2.33) und Torschnitt 2.68 pro Spiel",
-          "Saudi-Arabien defensiv anfällig (1.32 Gegentore/Spiel) und offensiv schwach (0.87 Tore/Spiel)",
-          "Spaniens solide Defensive (0.70 Gegentore, 48% Zu-Null-Rate) limitiert KSA-Chancen"
+          "Erhebliche Elo-Differenz (1974 vs. 1572) zugunsten Spaniens",
+          "Spaniens starke gewichtete Form (2.327) und hohe Offensivproduktion (2.675 Tore/Spiel)",
+          "Saudi-Arabiens schwache Defensivbilanz (1.315 Gegentore/Spiel) und niedrige Form (1.259)",
+          "Neutraler Spielort eliminiert Heimvorteil, ändert aber das klare Klassengefälle kaum"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Spanien einen möglichen Heimvorteil",
-          "61 Tage ohne Spiel könnten anfänglichen Rhythmus beider Teams beeinträchtigen",
-          "Mitgelieferte News scheinen teils irrelevant/fehlerhaft zugeordnet, geringe Aussagekraft",
-          "Bei einem tief stehenden KSA-Block könnte Spanien an Effizienzproblemen scheitern"
+          "Verletzungssorge um Lamine Yamal (Hamstring) könnte Spaniens Offensive schwächen",
+          "61 Tage seit letztem Spiel beider Teams – mögliche Rhythmus-/Form-Unsicherheit",
+          "Keine H2H-Daten verfügbar, daher höhere Modellunsicherheit",
+          "Saudi-Arabiens solide Clean-Sheet-Rate (0.471) könnte ein knapperes Ergebnis ermöglichen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.87,
-          "draw": 0.09,
-          "away": 0.04
+          "home": 0.85,
+          "draw": 0.1,
+          "away": 0.05
         },
-        "confidence": 0.85,
+        "confidence": 0.91,
         "keyFactors": [
-          "Spain's current form is strong with an Elo rating of 1809 and a high recent form score.",
-          "Saudi Arabia's Elo rating is significantly lower at 1538, showing a gap in team strength.",
-          "Spain has a high goals-for average and solid defensive stats, pointing to a strong performance likelihood.",
-          "The match is held at a neutral venue, negating any home advantage."
+          "Spain's high recent and weighted form.",
+          "Significant Elo rating difference between Spain and Saudi Arabia.",
+          "Strong average goals for Spain (2.675) vs. weak defensive record of Saudi Arabia (1.315 goals against avg)."
         ],
         "risks": [
-          "There are no direct head-to-head statistics available as Spain and Saudi Arabia have not played against each other recently.",
-          "Material injury news not directly affecting Spain, but uncertainty due to under-reported factors could be possible."
+          "Potential impact of key player Lamine Yamal's injury concerns.",
+          "Venue is neutral; no home advantage for Spain."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1809 vs 1538) spricht klar für Spanien; Spanien mit starker gewichteter Form (2.33) und Torschnitt 2.68 pro Spiel; Saudi-Arabien defensiv anfällig (1.32 Gegentore/Spiel) und offensiv schwach (0.87 Tore/Spiel).",
-    "inputHash": "sha256:91cb4d3f2371e56d35f22ad5d5cac39d85a5a52074b31db222e5a3f066eaabcf"
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Erhebliche Elo-Differenz (1974 vs. 1572) zugunsten Spaniens; Spaniens starke gewichtete Form (2.327) und hohe Offensivproduktion (2.675 Tore/Spiel); Saudi-Arabiens schwache Defensivbilanz (1.315 Gegentore/Spiel) und niedrige Form (1.259).",
+    "inputHash": "sha256:68772140a61a4c2ede58dbdaa984607b1cf0204106f34fe53bae54974d00561d"
   },
   "predictionHistory": [
     {
@@ -151,6 +150,19 @@
         "away": 0.0454
       },
       "confidence": 0.8344
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8748,
+        "draw": 0.0876,
+        "away": 0.0376
+      },
+      "confidence": 0.8223
     }
   ]
 }

@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "EGY",
-      "elo": 1737,
+      "elo": 1770,
       "weightedForm": 2.133,
       "recentForm": 2.1,
       "goalsForAvg": 1.523,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "IRN",
-      "elo": 1690,
+      "elo": 1730,
       "weightedForm": 1.814,
       "recentForm": 1.9,
       "goalsForAvg": 2.271,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3833,
-      "draw": 0.2756,
-      "away": 0.3411
+      "home": 0.3634,
+      "draw": 0.2911,
+      "away": 0.3455
     },
-    "confidence": 0.5791,
+    "confidence": 0.5544,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3824,
-        "draw": 0.2664,
-        "away": 0.3512
+        "home": 0.3611,
+        "draw": 0.2666,
+        "away": 0.3723
       },
       "expectedGoals": {
-        "home": 1.31,
-        "away": 1.25
+        "home": 1.27,
+        "away": 1.29
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.27,
-          "away": 0.33
+          "home": 0.38,
+          "draw": 0.28,
+          "away": 0.34
         },
-        "confidence": 0.52,
+        "confidence": 0.5,
         "keyFactors": [
-          "Egypt mit exzellenter Defensive: nur 0.41 Gegentore/Spiel und 57% Clean-Sheet-Rate",
-          "Egypt mit leicht stärkerer gewichteter Form (2.13 vs 1.81) und höherem Elo (1737 vs 1690)",
-          "Iran offensiv gefährlicher (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore/Spiel)",
-          "Neutraler Spielort ohne Heimvorteil für beide Teams"
+          "Egypt mit hoher gewichteter Form (2.13) und sehr starker Defensive (Gegentore 0.41/Spiel, Clean-Sheet-Rate 57%)",
+          "Iran offensivstark (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore, 46% Clean Sheets)",
+          "Elo-Vorteil leicht bei Egypt (1770 vs 1730), neutraler Spielort hebt Heimvorteil auf",
+          "Egypts Abwehrstabilität spricht für leichte Korrektur zugunsten Egypt gegenüber der Baseline"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit",
-          "Lange Spielpause (61 Tage) bei beiden Teams kann Rhythmus und Frühform beeinträchtigen",
-          "Irans hohe Offensivproduktion könnte Egypts Defensive trotz starker Werte durchbrechen",
-          "Keine materiellen News mit direktem sportlichem Einfluss (z.B. Verletzungen) verfügbar"
+          "Keine H2H-Daten vorhanden, hohe Unsicherheit über direktes Kräfteverhältnis",
+          "Lange Pause (61 Tage) bei beiden Teams kann Rhythmus und Form beeinträchtigen",
+          "Irans Offensivpotenzial könnte Egypts Defensive trotz Stabilität durchbrechen",
+          "Keine marktbasierten Quoten zur Validierung verfügbar"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.37,
-          "draw": 0.28,
-          "away": 0.35
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.65,
+        "confidence": 0.62,
         "keyFactors": [
-          "Similar recent forms with Egypt having slightly better defense metrics.",
-          "Egypt has a higher Elo rating indicating slightly superior strength.",
-          "Neutral venue makes the home advantage nonexistent."
+          "Both teams have not played against each other before, making historical analysis difficult.",
+          "Egypt's recent defensive form is strong with a low goals against average and high clean sheet rate.",
+          "Iran has a potent offense with a high goals for average.",
+          "The match is played at a neutral venue, eliminating home advantage.",
+          "Both teams have not played in approximately the same period (61 days), so they are equally rested."
         ],
         "risks": [
-          "Iran's higher average goals scored can pose a threat to Egypt's defense.",
-          "No recent head-to-head history, introducing uncertainty.",
-          "Morale possibly boosted by Iran-related news, adding variability."
+          "The impact of Iran's previous suspension on team morale and dynamics.",
+          "Unpredictability due to the lack of head-to-head historical data."
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit exzellenter Defensive: nur 0.41 Gegentore/Spiel und 57% Clean-Sheet-Rate; Egypt mit leicht stärkerer gewichteter Form (2.13 vs 1.81) und höherem Elo (1737 vs 1690); Iran offensiv gefährlicher (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore/Spiel).",
-    "inputHash": "sha256:1d558f6ff579173ac3e1cda37fb3894312737a2cb4f0c94b8c8cd9d65eaab4ef"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit hoher gewichteter Form (2.13) und sehr starker Defensive (Gegentore 0.41/Spiel, Clean-Sheet-Rate 57%); Iran offensivstark (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore, 46% Clean Sheets); Elo-Vorteil leicht bei Egypt (1770 vs 1730), neutraler Spielort hebt Heimvorteil auf.",
+    "inputHash": "sha256:c0d37de93f2f3ebb33ec8ce2e06cdf2554bc4e02d5ec0db95604b2e101fd3e0e"
   },
   "predictionHistory": [
     {
@@ -138,6 +139,19 @@
         "away": 0.3359
       },
       "confidence": 0.6244
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3833,
+        "draw": 0.2756,
+        "away": 0.3411
+      },
+      "confidence": 0.5791
     }
   ]
 }

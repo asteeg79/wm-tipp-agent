@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "HAI",
-      "elo": 1572,
+      "elo": 1576,
       "weightedForm": 1.488,
       "recentForm": 1.3,
       "goalsForAvg": 1.657,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "SCO",
-      "elo": 1523,
+      "elo": 1586,
       "weightedForm": 1.301,
       "recentForm": 1.6,
       "goalsForAvg": 1.367,
@@ -50,79 +50,80 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4722,
-      "draw": 0.25,
-      "away": 0.2778
+      "home": 0.3927,
+      "draw": 0.2873,
+      "away": 0.32
     },
-    "confidence": 0.5753,
+    "confidence": 0.5841,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4783,
-        "draw": 0.2492,
-        "away": 0.2725
+        "home": 0.4206,
+        "draw": 0.2567,
+        "away": 0.3227
       },
       "expectedGoals": {
-        "home": 1.59,
-        "away": 1.14
+        "home": 1.45,
+        "away": 1.24
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.25,
-          "away": 0.25
+          "home": 0.41,
+          "draw": 0.27,
+          "away": 0.32
         },
-        "confidence": 0.52,
+        "confidence": 0.5,
         "keyFactors": [
-          "Haiti hat höhere Elo (1572 vs 1523) und bessere gewichtete Form (1.488 vs 1.301)",
-          "Haiti defensiv stabiler: weniger Gegentore (1.092 vs 1.281) und höhere Clean-Sheet-Quote (0.409 vs 0.28)",
-          "Schottland verliert Schlüsselspieler Billy Gilmour (Knieverletzung) für die WM, was das zentrale Mittelfeld schwächt",
-          "Neutraler Spielort eliminiert echten Heimvorteil, was Haitis nominellen Vorteil leicht relativiert"
+          "Haiti mit besserer gewichteter Form (1.49 vs 1.30) und solider Defensive (GA 1.09, Clean-Sheet-Rate 0.41)",
+          "Scotland verliert Schlüsselspieler Billy Gilmour im Mittelfeld durch Knieverletzung, Ersatz ist unerfahrener Teenager Tyler Fletcher",
+          "Scotland mit besserer jüngster Form (recentForm 1.6) trotz schwächerer langfristiger Werte",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil, Elo nahezu ausgeglichen (1576 vs 1586)"
         ],
         "risks": [
-          "Schottlands aktuelle Tagesform (recentForm 1.6) ist besser als die Haitis (1.3) – kurzfristiger Aufwärtstrend möglich",
-          "Keine H2H-Daten vorhanden, daher hohe Unsicherheit über das direkte Kräfteverhältnis",
-          "Lange Spielpause (61 Tage) auf beiden Seiten erschwert Formeinschätzung",
-          "Gilmour-Ersatz (Fletcher/Man-Utd-Spieler) könnte die Lücke besser schließen als erwartet"
+          "Keinerlei Head-to-Head-Daten verfügbar, hohe Unsicherheit über Spielstil-Matchup",
+          "Lange Pause (61 Tage) bei beiden Teams kann Form und Rhythmus verzerren",
+          "Gilmour-Ausfall könnte durch taktische Anpassung kompensiert werden, Effekt schwer quantifizierbar",
+          "Scotlands schwache Clean-Sheet-Rate (0.28) macht offenes Spiel mit mehr Toren möglich"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.25,
-          "away": 0.3
+          "home": 0.38,
+          "draw": 0.3,
+          "away": 0.32
         },
-        "confidence": 0.65,
+        "confidence": 0.68,
         "keyFactors": [
-          "Haiti has a higher Elo rating and better weighted form than Scotland.",
-          "Scotland is missing key player Billy Gilmour due to injury.",
-          "Haiti has a higher clean sheet rate and a slightly higher goals for average."
+          "Both teams have similar Elo ratings and balanced strengths.",
+          "Haiti has slightly better average goals scored and clean sheet rate.",
+          "Scotland's key player Billy Gilmour is injured and replaced by a less experienced player.",
+          "Neutral venue removes home advantage."
         ],
         "risks": [
-          "Neutral venue, reducing the home advantage for Haiti.",
-          "Recent form for Scotland slightly better, suggesting potential underestimation."
+          "Despite being a neutral venue, any unforeseen altitude or climate effects could impact the teams differently.",
+          "The impact of Billy Gilmour's absence might vary depending on the performance of the replacement."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Haiti hat höhere Elo (1572 vs 1523) und bessere gewichtete Form (1.488 vs 1.301); Haiti defensiv stabiler: weniger Gegentore (1.092 vs 1.281) und höhere Clean-Sheet-Quote (0.409 vs 0.28); Schottland verliert Schlüsselspieler Billy Gilmour (Knieverletzung) für die WM, was das zentrale Mittelfeld schwächt.",
-    "inputHash": "sha256:8495fbc7fcf4ce5276b595aaf2bee9f942f3833556174bd02d4d5c73fd9949b4"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Haiti mit besserer gewichteter Form (1.49 vs 1.30) und solider Defensive (GA 1.09, Clean-Sheet-Rate 0.41); Scotland verliert Schlüsselspieler Billy Gilmour im Mittelfeld durch Knieverletzung, Ersatz ist unerfahrener Teenager Tyler Fletcher; Scotland mit besserer jüngster Form (recentForm 1.6) trotz schwächerer langfristiger Werte.",
+    "inputHash": "sha256:5fa37d3a974900680e50d349184163409f32faf006675beae7751e92a93c74c0"
   },
   "predictionHistory": [
     {
@@ -150,6 +151,19 @@
         "away": 0.24
       },
       "confidence": 0.6628
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4722,
+        "draw": 0.25,
+        "away": 0.2778
+      },
+      "confidence": 0.5753
     }
   ]
 }

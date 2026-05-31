@@ -12,10 +12,10 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "home": {
       "teamId": "ARG",
-      "elo": 1749,
+      "elo": 1905,
       "weightedForm": 2.553,
       "recentForm": 2.5,
       "goalsForAvg": 2.521,
@@ -26,7 +26,7 @@
     },
     "away": {
       "teamId": "AUT",
-      "elo": 1688,
+      "elo": 1748,
       "weightedForm": 2.284,
       "recentForm": 2.5,
       "goalsForAvg": 2.558,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T11:33:33.085Z",
+    "generatedAt": "2026-05-31T19:40:16.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5,
-      "draw": 0.2413,
-      "away": 0.2587
+      "home": 0.54,
+      "draw": 0.22,
+      "away": 0.24
     },
-    "confidence": 0.6606,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4694,
-        "draw": 0.2341,
-        "away": 0.2965
+        "home": 0.5123,
+        "draw": 0.2271,
+        "away": 0.2606
       },
       "expectedGoals": {
-        "home": 1.74,
-        "away": 1.34
+        "home": 1.85,
+        "away": 1.26
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.23,
-          "away": 0.27
+          "home": 0.54,
+          "draw": 0.22,
+          "away": 0.24
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "Argentinien mit höherem Elo (1749 vs 1688) und stärkerer gewichteter Form (2.55 vs 2.28)",
-          "Deutlich bessere Defensive Argentiniens: 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 0.65 und nur 30.8% bei Österreich",
-          "Beide Teams offensiv stark (ARG 2.52, AUT 2.56 Tore/Spiel), aber Argentiniens Abwehrstabilität gibt den Ausschlag",
-          "Neutraler Spielort ohne Heimvorteil, daher leichte Aufwertung der Baseline-Heimwahrscheinlichkeit nur moderat"
+          "Argentinien mit deutlich höherem Elo (1905 vs 1748) und starker gewichteter Form (2.55)",
+          "Sehr defensivstark: nur 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate",
+          "Österreich offensiv ähnlich produktiv (2.56 Tore/Spiel), aber defensiv anfälliger (0.65 Gegentore, nur 31% Clean Sheets)",
+          "Beide Teams gleich gut erholt (61 Tage seit letztem Spiel), neutraler Spielort hebt Heimvorteil auf"
         ],
         "risks": [
-          "Österreichs starke Offensive (2.56 Tore/Spiel) kann auch eine gute Abwehr knacken",
-          "Keine H2H-Historie vorhanden, erschwert die Einschätzung",
-          "Lange Pause (61 Tage seit letztem Spiel) bei beiden Teams kann Rhythmus und Form beeinflussen",
-          "Recent Form beider Teams identisch (2.5), aktuelle Tagesform schwer vorhersehbar"
+          "Keine direkte H2H-Historie, daher erhöhte Unsicherheit",
+          "Österreichs starke Offensive kann bei einem Patzer der argentinischen Abwehr punkten",
+          "Lange Spielpause (61 Tage) kann zu Rhythmusproblemen führen",
+          "Keine aktuellen materiellen News (Verletzungen/Sperren) verfügbar"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.25,
-          "away": 0.25
+          "home": 0.54,
+          "draw": 0.22,
+          "away": 0.24
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Argentina's higher clean sheet rate (0.63) compared to Austria's (0.308)",
-          "Argentina's higher Elo rating (1749) indicating stronger overall performance",
-          "Similar recent forms for both teams but Argentina has been more defensively solid"
+          "Argentina's higher Elo rating of 1905 compared to Austria's 1748.",
+          "Argentina's strong defensive record with a clean sheet rate of 63%.",
+          "Neutral venue impact lessens any home advantage.",
+          "Similar recent form and days since last match for both teams suggest no immediate advantage in terms of match readiness."
         ],
         "risks": [
-          "Both teams have not played against each other before, unknown head-to-head dynamics",
-          "Neutral venue might reduce Argentina's relative advantage"
+          "No head-to-head data, introducing uncertainty.",
+          "Both teams' recent form identical, which could suggest Austria poses a challenge despite lower Elo."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit höherem Elo (1749 vs 1688) und stärkerer gewichteter Form (2.55 vs 2.28); Deutlich bessere Defensive Argentiniens: 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 0.65 und nur 30.8% bei Österreich; Beide Teams offensiv stark (ARG 2.52, AUT 2.56 Tore/Spiel), aber Argentiniens Abwehrstabilität gibt den Ausschlag.",
-    "inputHash": "sha256:e92d5442cb61b79f4967ff1838ccd32f9026ece07188c44d75e5ec89513a4984"
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit deutlich höherem Elo (1905 vs 1748) und starker gewichteter Form (2.55); Sehr defensivstark: nur 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate; Österreich offensiv ähnlich produktiv (2.56 Tore/Spiel), aber defensiv anfälliger (0.65 Gegentore, nur 31% Clean Sheets).",
+    "inputHash": "sha256:fc4dea569d79754effbc74f1af9bb0ef74619f58e25b43a637c164df5296677a"
   },
   "predictionHistory": [
     {
@@ -150,6 +151,19 @@
         "away": 0.2745
       },
       "confidence": 0.6804
+    },
+    {
+      "generatedAt": "2026-05-31T11:33:33.085Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5,
+        "draw": 0.2413,
+        "away": 0.2587
+      },
+      "confidence": 0.6606
     }
   ]
 }
