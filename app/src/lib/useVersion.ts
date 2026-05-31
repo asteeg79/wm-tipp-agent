@@ -19,6 +19,13 @@ export const APP_VERSION: number =
 export const APP_COMMIT: string =
   typeof __APP_COMMIT__ === "string" ? __APP_COMMIT__ : "dev";
 
+/** Versions-Zahl YYYYMMDDHHMM → lesbar "2026-05-31 13:31". */
+export function formatVersion(v: number): string {
+  const s = String(v);
+  if (s.length !== 12) return s; // Fallback (z. B. 0 im Dev)
+  return `${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 8)} ${s.slice(8, 10)}:${s.slice(10, 12)}`;
+}
+
 interface ServerVersion {
   version: number;
   commit: string;

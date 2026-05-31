@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import type { VersionState } from "../lib/useVersion.js";
+import { formatVersion, type VersionState } from "../lib/useVersion.js";
 
 /** Schmales Banner oben, wenn ein neuer Deploy vorliegt. Mit Update-Button. */
 export function UpdateBanner({ v }: { v: VersionState }) {
@@ -17,7 +17,7 @@ export function UpdateBanner({ v }: { v: VersionState }) {
             {t("version.updateBody")}
             {v.latest && (
               <span className="ml-1 font-mono text-xs text-emerald-100/50">
-                v{v.latest.version} · {v.latest.commit}
+                {formatVersion(v.latest.version)} · {v.latest.commit}
               </span>
             )}
           </span>

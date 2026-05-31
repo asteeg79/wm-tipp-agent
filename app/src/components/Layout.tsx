@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useIndex } from "../lib/data.js";
 import { timeAgo } from "../lib/format.js";
-import { useVersion } from "../lib/useVersion.js";
+import { useVersion, formatVersion } from "../lib/useVersion.js";
 import { UpdateBanner } from "./UpdateBanner.js";
 
 export function Layout() {
@@ -61,7 +61,8 @@ export function Layout() {
       <footer className="border-t border-slate-800 px-4 py-4 text-center text-xs text-slate-500">
         <div>{t("disclaimer")}</div>
         <div className="mt-1 font-mono text-[10px] text-slate-600">
-          {t("version.label")} {v.current.version} · {v.current.commit}
+          {t("version.label")} {formatVersion(v.current.version)} ·{" "}
+          {v.current.commit}
         </div>
       </footer>
     </div>
