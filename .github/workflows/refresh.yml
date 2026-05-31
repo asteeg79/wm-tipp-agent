@@ -27,9 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # pnpm-Version stammt aus package.json#packageManager (kein version:-Feld,
+      # sonst "Multiple versions of pnpm specified").
       - uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
       - uses: actions/setup-node@v4
         with:
