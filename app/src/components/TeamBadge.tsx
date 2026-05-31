@@ -7,23 +7,37 @@ interface Props {
   fallbackId?: string;
   size?: "sm" | "md";
   link?: boolean;
+  /** "right" stellt die Flagge rechts vom Namen (für Heim-Seite in Listen). */
+  align?: "left" | "right";
 }
 
-export function TeamBadge({ team, fallbackId, size = "md", link = true }: Props) {
+export function TeamBadge({
+  team,
+  fallbackId,
+  size = "md",
+  link = true,
+  align = "left",
+}: Props) {
   const label = team?.name ?? fallbackId ?? "?";
   const flagH = size === "sm" ? "h-3.5" : "h-4";
+  const flag = team?.logo ? (
+    <img
+      src={team.logo}
+      alt=""
+      className={`${flagH} w-auto shrink-0 rounded-[2px] object-cover`}
+      loading="lazy"
+    />
+  ) : (
+    <span className={`${flagH} w-5 shrink-0 rounded-[2px] bg-slate-700`} />
+  );
+
   const content = (
-    <span className="inline-flex items-center gap-2">
-      {team?.logo ? (
-        <img
-          src={team.logo}
-          alt=""
-          className={`${flagH} w-auto rounded-[2px] object-cover`}
-          loading="lazy"
-        />
-      ) : (
-        <span className={`${flagH} w-5 rounded-[2px] bg-slate-700`} />
-      )}
+    <span
+      className={`flex min-w-0 items-center gap-2 ${
+        align === "right" ? "flex-row-reverse" : ""
+      }`}
+    >
+      {flag}
       <span className="truncate">{label}</span>
     </span>
   );
@@ -32,11 +46,11 @@ export function TeamBadge({ team, fallbackId, size = "md", link = true }: Props)
     return (
       <Link
         to={`/team/${team.id}`}
-        className="text-slate-100 hover:text-emerald-400"
+        className="min-w-0 text-slate-100 hover:text-emerald-400"
       >
         {content}
       </Link>
     );
   }
-  return <span className="text-slate-300">{content}</span>;
+  return <span className="min-w-0 text-slate-300">{content}</span>;
 }

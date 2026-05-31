@@ -24,9 +24,12 @@ export function MatchRow({ entry, teams }: Props) {
         {formatKickoff(entry.date)}
       </div>
       <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
-        <span className="min-w-0 truncate text-right">
-          <TeamBadge team={home} fallbackId={entry.homeTeamId} link={false} />
-        </span>
+        <TeamBadge
+          team={home}
+          fallbackId={entry.homeTeamId}
+          link={false}
+          align="right"
+        />
       </div>
       <div className="shrink-0 px-2 text-center font-mono text-sm">
         {r ? (
@@ -38,9 +41,7 @@ export function MatchRow({ entry, teams }: Props) {
         )}
       </div>
       <div className="flex min-w-0 flex-1 items-center gap-2">
-        <span className="min-w-0 truncate">
-          <TeamBadge team={away} fallbackId={entry.awayTeamId} link={false} />
-        </span>
+        <TeamBadge team={away} fallbackId={entry.awayTeamId} link={false} />
       </div>
       <div className="hidden w-16 shrink-0 text-right text-xs text-slate-600 sm:block">
         {r ? t("match.finished") : t("overview.tipSoon")}
