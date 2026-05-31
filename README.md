@@ -61,19 +61,33 @@ Auf GitHub unter **Settings → Secrets and variables → Actions** hinterlegen
 
 ## GitHub Pages aktivieren
 
-1. Repo zu GitHub pushen (Branch `main`).
-2. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Beim nächsten Push auf `main` baut `deploy.yml` die App und deployt sie.
-   Die Seite erscheint unter `https://<user>.github.io/<repo-name>/`.
+> **Wichtig:** GitHub Pages ist bei **privaten** Repos nur mit einem
+> Bezahl-Plan (Pro/Team) verfügbar. Dieses Repo ist privat → der Pages-Deploy
+> ist deshalb deaktiviert (`deploy.yml` nur per `workflow_dispatch`).
+
+**Um die App live zu hosten, eine der beiden Optionen:**
+
+- **Repo öffentlich machen** (Pages dann gratis): in `deploy.yml` den
+  `push`-Trigger wieder einkommentieren und in `configure-pages`
+  `enablement: true` setzen. ⚠️ Vorher den alten `API_FOOTBALL_KEY`
+  (in der Git-Historie) im api-sports.io-Dashboard deaktivieren.
+- **GitHub Pro** für das private Repo, dann analog Pages aktivieren.
+
+Danach: **Settings → Pages → Source: GitHub Actions** (bzw. automatisch via
+`enablement: true`). Die Seite erscheint unter
+`https://<user>.github.io/<repo-name>/`.
 
 > Der Vite-`base`-Path und der Router-Basename werden automatisch auf
 > `/<repo-name>/` gesetzt (über `VITE_REPO_NAME`, im Deploy-Workflow aus dem
-> Repo-Namen). Lokal läuft die App unter `/`.
+> Repo-Namen). Lokal läuft die App unter `/` (`pnpm dev`).
 
-## Pipeline manuell auf GitHub starten
+## Pipeline auf GitHub starten
 
-**Actions → „Data Refresh (Pipeline)" → Run workflow** (`workflow_dispatch`).
-Der automatische Cron-Zeitplan folgt in Phase 6.
+**Actions → „Data Refresh (Pipeline)" → Run workflow** (`workflow_dispatch`)
+oder automatisch per Cron (täglich 04:00 UTC, im Turnierfenster Juni/Juli
+alle 3 h). Die Pipeline committet aktualisierte `/data` ins Repo. Benötigt die
+Secrets `ANTHROPIC_API_KEY` + `OPENAI_API_KEY` (für das KI-Ensemble; ohne sie
+läuft sie graceful nur mit der Baseline).
 
 ## Phasenplan
 
