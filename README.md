@@ -10,18 +10,24 @@ Faktoren und werden von einem **KI-Ensemble (Claude + ChatGPT)** bewertet.
 
 ## Architektur
 
-Statische PWA auf **GitHub Pages**, „Backend" via **GitHub Actions**:
+Statische PWA (gehostet auf **Vercel**), „Backend" via **GitHub Actions**:
 
-- **`/pipeline`** (Node/TS) — holt Daten (API-Football), News (RSS), rechnet
-  Features, ruft Claude + ChatGPT, schreibt `/data/*.json`, committet ins Repo.
+- **`/pipeline`** (Node/TS) — holt Daten (openfootball, kein Key), News (RSS),
+  rechnet Features, ruft Claude + ChatGPT, schreibt `/data/*.json`, committet
+  ins Repo.
 - **`/app`** (React PWA, Vite) — lädt nur statische JSON-Dateien. Kein API-Key,
-  kein externer Fetch im Browser.
+  kein externer Fetch im Browser (außer Flaggen-CDN).
 - **`/shared`** — gemeinsame **zod-Schemas** für Pipeline (schreibt) und App
   (liest) → garantierte Konsistenz.
 - **`/data`** — generierte, von der Pipeline committete JSONs.
 
-Alle Schlüssel-Nutzung passiert **ausschließlich** in Actions. API-Keys liegen
-nur als GitHub Secrets vor und kommen nie ins Frontend-Bundle.
+Alle KI-Schlüssel-Nutzung passiert **ausschließlich** in Actions. Die Keys
+liegen nur als GitHub Secrets vor und kommen nie ins Frontend-Bundle.
+
+> **Wie kommt der Tipp zustande?** Die gesamte Bewertungsberechnung
+> (Elo + Poisson-Baseline → KI-Ensemble Claude + ChatGPT → Reconciliation) und
+> der Fundort der Prompts sind in [`docs/ki-bewertung.md`](docs/ki-bewertung.md)
+> ausführlich beschrieben.
 
 ## Voraussetzungen
 
