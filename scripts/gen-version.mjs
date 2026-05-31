@@ -27,7 +27,12 @@ const fullSha =
   process.env.VERCEL_GIT_COMMIT_SHA || sh("git rev-parse HEAD") || "unknown";
 const commit = fullSha.slice(0, 7);
 
-// Fortlaufende Nummer: Commit-Anzahl (best effort; Fallback 0 bei shallow clone).
+// Fortlaufende Nummer = Gesamt-Commit-Anzahl (monoton steigend).
+// Vercel klont shallow (Tiefe 1) → Historie ggf. nachladen, damit die Zahl
+// dem echten Repo-Stand entspricht.
+if (sh("git rev-parse --is-shallow-repository") === "true") {
+  sh("git fetch --unshallow --quiet");
+}
 const countRaw = sh("git rev-list --count HEAD");
 const version = countRaw && /^\d+$/.test(countRaw) ? Number(countRaw) : 0;
 
