@@ -12,19 +12,26 @@ on:
         description: "news | predict | full"
         required: true
         type: string
+    secrets:
+      ANTHROPIC_API_KEY:
+        required: false
+      OPENAI_API_KEY:
+        required: false
+      ODDS_API_KEY:
+        required: false
 
 # Alle Pipeline-Läufe teilen sich eine Concurrency-Group → kein Überlappen,
 # keine konkurrierenden /data-Commits.
-concurrency:
-  group: data-pipeline
-  cancel-in-progress: false
-
-permissions:
-  contents: write
-
 jobs:
   run:
     runs-on: ubuntu-latest
+    # Concurrency + Rechte auf Job-Ebene (robuster bei reusable workflows als
+    # auf Top-Level).
+    permissions:
+      contents: write
+    concurrency:
+      group: data-pipeline
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
 
