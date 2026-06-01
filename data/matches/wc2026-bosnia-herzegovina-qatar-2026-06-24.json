@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "BIH",
       "elo": 1575,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5435,
-      "draw": 0.2222,
-      "away": 0.2344
+      "home": 0.5377,
+      "draw": 0.2223,
+      "away": 0.24
     },
-    "confidence": 0.6617,
+    "confidence": 0.6389,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Bosnien hat höheres Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).",
-          "Bosnien erzielt im Schnitt mehr Tore (1.738 vs 1.459) und kassiert deutlich weniger (1.272 vs 1.802).",
-          "Katars schwache Defensive (1.802 Gegentore/Spiel) spielt der offensiven Stärke Bosniens in die Karten.",
-          "Sehr lange Spielpause bei Katar (196 Tage) deutet auf Wettkampfrhythmus-Defizit hin."
+          "Bosnia & Herzegovina hat den höheren Elo-Wert (1575 vs 1509) sowie bessere gewichtete und jüngere Form (1.445/1.6 vs 1.292/1.2).",
+          "Bosniens Offensive ist stärker (1.738 Tore/Spiel) und die Defensive deutlich solider (1.272 Gegentore vs Katars 1.802).",
+          "Katar hat eine sehr lange Pause (196 Tage ohne Spiel), was Wettbewerbsrhythmus und Spielpraxis beeinträchtigen kann.",
+          "Neutraler Spielort relativiert den klassischen Heimvorteil, was die Baseline leicht zugunsten Katars dämpft."
         ],
         "risks": [
-          "Neutraler Spielort nimmt Bosnien den Heimvorteil und macht das Spiel offener.",
-          "Keine direkte H2H-Historie erschwert eine belastbare Einschätzung.",
-          "Bosniens niedrige Clean-Sheet-Rate (0.19) lässt eigene Gegentore wahrscheinlich erscheinen.",
-          "Katar hat höhere Clean-Sheet-Rate (0.25) und könnte mit kompakter Defensive ein Remis erzwingen."
+          "Keine H2H-Daten vorhanden – Stilfragen und gegenseitige Anpassung schwer einzuschätzen.",
+          "Katars hohe Clean-Sheet-Rate (0.25) deutet auf Phasen defensiver Stabilität, die ein engeres Spiel erzwingen könnten.",
+          "Bosniens niedrige Clean-Sheet-Rate (0.19) birgt Gegentorrisiko und macht ein Remis oder Überraschung Katars möglich.",
+          "Materielle News liefern kaum konkrete Personal-/Verletzungsinfos, daher hohe Unsicherheit bei Aufstellungen."
         ]
       },
       "chatgpt": {
@@ -104,25 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.54,
           "draw": 0.22,
-          "away": 0.23
+          "away": 0.24
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Bosnia & Herzegovina has higher recent form compared to Qatar.",
-          "Qatar has not played in the last 196 days, which may affect their match sharpness.",
-          "Neutral venue minimizes home advantage factors; Elo difference slightly favors Bosnia & Herzegovina.",
-          "Bosnia & Herzegovina's higher average goals for and lower goals against suggest a more balanced attack and defense."
+          "Bosnia & Herzegovina has better recent form and higher Elo rating",
+          "Bosnia & Herzegovina has been more active, with only 62 days since their last match compared to Qatar's 196 days",
+          "Qatar's higher goals against average indicates a weaker defense"
         ],
         "risks": [
-          "Lack of head-to-head history between the two teams introduces uncertainty.",
-          "Material news for Qatar's coach could indicate potential strategic changes or morale impact."
+          "Neutral venue reduces home advantage",
+          "No head-to-head history between the teams",
+          "Qatar's potential to pull an unexpected performance, given their previous World Cup experience"
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnien hat höheres Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).; Bosnien erzielt im Schnitt mehr Tore (1.738 vs 1.459) und kassiert deutlich weniger (1.272 vs 1.802).; Katars schwache Defensive (1.802 Gegentore/Spiel) spielt der offensiven Stärke Bosniens in die Karten..",
+    "agreement": 0.9967,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnia & Herzegovina hat den höheren Elo-Wert (1575 vs 1509) sowie bessere gewichtete und jüngere Form (1.445/1.6 vs 1.292/1.2).; Bosniens Offensive ist stärker (1.738 Tore/Spiel) und die Defensive deutlich solider (1.272 Gegentore vs Katars 1.802).; Katar hat eine sehr lange Pause (196 Tage ohne Spiel), was Wettbewerbsrhythmus und Spielpraxis beeinträchtigen kann..",
     "inputHash": "sha256:45551963e4dcce46fd0dd423b3504de6cf8562600ef9e90bae697a40315b9955"
   },
   "predictionHistory": [
@@ -177,6 +177,19 @@
         "away": 0.2447
       },
       "confidence": 0.6379
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5435,
+        "draw": 0.2222,
+        "away": 0.2344
+      },
+      "confidence": 0.6617
     }
   ]
 }

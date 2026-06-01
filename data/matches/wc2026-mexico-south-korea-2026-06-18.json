@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5533,
-      "draw": 0.2422,
-      "away": 0.2044
+      "home": 0.4736,
+      "draw": 0.2764,
+      "away": 0.25
     },
-    "confidence": 0.6716,
+    "confidence": 0.6048,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,48 +81,49 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.545,
-          "draw": 0.245,
-          "away": 0.21
+          "home": 0.5,
+          "draw": 0.25,
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Mexico mit höherem Elo (1729 vs 1702), besserer Defensive (GA 0.797 vs 1.348) und hoher Clean-Sheet-Rate (58.8%)",
-          "Host-Advantage für Mexico trotz formal neutralem Venue plus Höhenfaktor (1566m) als Vorteil",
-          "Verletzungsausfall des südkoreanischen Abwehrspielers Cho Yu-min schwächt eine ohnehin anfällige Defensive (CS-Rate nur 41.4%)",
-          "Südkoreas gute jüngste Form (recentForm 1.9) hält Auswärtschancen offen"
+          "Mexico mit leicht höherem Elo (1729 vs 1702) und stärkerer gewichteter Form (1.754 vs 1.61)",
+          "Gastgebervorteil für Mexico trotz neutralem Venue (hostAdvantageTeamId MEX) sowie Höhenvorteil (1566 m)",
+          "Mexico defensiv stabiler: niedrigere Gegentor-Quote (0.797 vs 1.348) und höhere Clean-Sheet-Rate (0.588 vs 0.414)",
+          "Südkorea mit besserer jüngster Form (recentForm 1.9 vs 1.4) und leicht höherem Torschnitt (1.336 vs 1.273)"
         ],
         "risks": [
-          "Beide Teams 62 Tage ohne Spiel – Rhythmusrisiko und Unsicherheit über Form",
-          "H2H-Stichprobe minimal (1 Spiel, 2:2) und wenig aussagekräftig",
-          "Koreas Offensive (GF 1.336) kann das Mexiko-Tor treffen, Remis bleibt realistisch",
-          "Ersatzspieler Cho Wi-je könnte Ausfall teils kompensieren"
+          "Südkoreas anfällige Defensive trifft auf gute Offensive – kann zu offenem Spiel führen",
+          "Einziges H2H endete 2:2, kein klarer historischer Favorit",
+          "Lange Pause (62 Tage ohne Spiel) auf beiden Seiten erschwert Formprognose",
+          "Begrenzte aktuelle News (nur Squad-Guide für Korea) reduzieren Informationsbasis"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
-          "draw": 0.24,
-          "away": 0.2
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.75,
+        "confidence": 0.65,
         "keyFactors": [
-          "Mexico has a slight host advantage despite neutral venue due to altitude familiarity.",
-          "South Korea faces significant injury issues, notably the absence of defender Cho Yu-min.",
-          "Mexico's overall stronger defensive record and clean sheet rate are advantageous."
+          "Mexico's altitude experience may neutralize the effects of the neutral venue.",
+          "South Korea's recent form is better than Mexico's.",
+          "Both teams have had significant breaks since their last matches.",
+          "The head-to-head suggests a draw with both teams scoring."
         ],
         "risks": [
-          "Both teams have a long period since their last match, which could affect performance unpredictably.",
-          "High altitude might also impact players not acclimatized to such conditions, especially South Korea."
+          "South Korea's managerial situation could impact team performance.",
+          "Altitude effects might still benefit Mexico slightly, despite the neutral venue."
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit höherem Elo (1729 vs 1702), besserer Defensive (GA 0.797 vs 1.348) und hoher Clean-Sheet-Rate (58.8%); Host-Advantage für Mexico trotz formal neutralem Venue plus Höhenfaktor (1566m) als Vorteil; Verletzungsausfall des südkoreanischen Abwehrspielers Cho Yu-min schwächt eine ohnehin anfällige Defensive (CS-Rate nur 41.4%).",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit leicht höherem Elo (1729 vs 1702) und stärkerer gewichteter Form (1.754 vs 1.61); Gastgebervorteil für Mexico trotz neutralem Venue (hostAdvantageTeamId MEX) sowie Höhenvorteil (1566 m); Mexico defensiv stabiler: niedrigere Gegentor-Quote (0.797 vs 1.348) und höhere Clean-Sheet-Rate (0.588 vs 0.414).",
     "inputHash": "sha256:541e8e0327f20b9ab88b961e332e7de33e97caaa8e3c284bfef31e4f7475bdae"
   },
   "predictionHistory": [
@@ -177,6 +178,19 @@
         "away": 0.25
       },
       "confidence": 0.6539
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5533,
+        "draw": 0.2422,
+        "away": 0.2044
+      },
+      "confidence": 0.6716
     }
   ]
 }

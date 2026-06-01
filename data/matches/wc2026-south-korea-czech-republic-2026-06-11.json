@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "KOR",
       "elo": 1702,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3046,
-      "draw": 0.2477,
-      "away": 0.4477
+      "home": 0.3072,
+      "draw": 0.2508,
+      "away": 0.442
     },
-    "confidence": 0.6478,
+    "confidence": 0.6208,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.31,
-          "draw": 0.245,
-          "away": 0.445
+          "home": 0.318,
+          "draw": 0.252,
+          "away": 0.43
         },
-        "confidence": 0.6,
+        "confidence": 0.5,
         "keyFactors": [
-          "Tschechien mit besserer gewichteter Form (1.674 vs 1.61) und deutlich stärkerer Offensive (goalsForAvg 1.957 vs 1.336)",
-          "Tschechische Defensive solider (goalsAgainstAvg 1.189 vs 1.348), was die Baseline-Auswärtspräferenz stützt",
-          "Verletzungsausfall von Abwehrspieler Cho Yu-min schwächt Koreas Defensive zusätzlich",
-          "Neutraler Spielort ohne Heimvorteil für Südkorea trotz Heim-Nominalstatus"
+          "Czech Republic mit höherem Offensivwert (goalsForAvg 1.96 vs 1.34) und besserer Defensive (goalsAgainstAvg 1.19 vs 1.35)",
+          "Baseline favorisiert leicht Tschechien (Away 0.4277), gestützt durch xG-Vorteil 1.56 vs 1.33",
+          "Neutraler Spielort ohne Heimvorteil für Südkorea relativiert nominellen Heimstatus",
+          "Südkorea mit besserer jüngster Form (recentForm 1.9 vs 1.6), was die Lücke leicht verkleinert"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit",
-          "Südkoreas recentForm (1.9) ist besser als die der Tschechen (1.6) und könnte Aufwärtstrend signalisieren",
-          "Höhenlage (1566 m) könnte beide Teams unvorhersehbar beeinflussen",
-          "62 Tage seit letztem Spiel beider Teams – Rhythmus und Spielfitness schwer einzuschätzen"
+          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit",
+          "Höhenlage (1566 m) könnte Spielverlauf unvorhersehbar beeinflussen",
+          "Lange Pause seit letztem Spiel (62 Tage) für beide Teams kann Form verzerren",
+          "Geringe materielle News-Lage erschwert Berücksichtigung aktueller Kaderfaktoren"
         ]
       },
       "chatgpt": {
@@ -109,20 +109,21 @@
           "draw": 0.25,
           "away": 0.45
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "South Korea's key defender Cho Yu-min ruled out with injury.",
-          "Czech Republic's higher recent goals-for average of 1.957.",
-          "Neutral venue with no host advantage."
+          "South Korea has a better recent form but lower weighted form compared to the Czech Republic.",
+          "Czech Republic has a higher scoring average (1.957 goals for avg) compared to South Korea (1.336 goals for avg).",
+          "No significant head-to-head data to influence the prediction.",
+          "Neutral venue with altitude may affect both teams equally."
         ],
         "risks": [
-          "South Korea's strong recent form despite injuries.",
-          "Altitude might affect performance unpredictably."
+          "South Korea's coach change and strategic potential can impact performance.",
+          "The equal number of days since the last match keeps both teams at a relatively equal physical rest state."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tschechien mit besserer gewichteter Form (1.674 vs 1.61) und deutlich stärkerer Offensive (goalsForAvg 1.957 vs 1.336); Tschechische Defensive solider (goalsAgainstAvg 1.189 vs 1.348), was die Baseline-Auswärtspräferenz stützt; Verletzungsausfall von Abwehrspieler Cho Yu-min schwächt Koreas Defensive zusätzlich.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Czech Republic mit höherem Offensivwert (goalsForAvg 1.96 vs 1.34) und besserer Defensive (goalsAgainstAvg 1.19 vs 1.35); Baseline favorisiert leicht Tschechien (Away 0.4277), gestützt durch xG-Vorteil 1.56 vs 1.33; Neutraler Spielort ohne Heimvorteil für Südkorea relativiert nominellen Heimstatus.",
     "inputHash": "sha256:ce1cac182ac5cadb3c0701b478c30e3ce49001c872a31c47e5956a97708d1adb"
   },
   "predictionHistory": [
@@ -177,6 +178,19 @@
         "away": 0.4
       },
       "confidence": 0.6177
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3046,
+        "draw": 0.2477,
+        "away": 0.4477
+      },
+      "confidence": 0.6478
     }
   ]
 }

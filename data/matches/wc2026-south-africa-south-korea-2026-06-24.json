@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "RSA",
       "elo": 1627,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.3582,
-      "draw": 0.2877,
-      "away": 0.3541
+      "home": 0.3408,
+      "draw": 0.3025,
+      "away": 0.3567
     },
-    "confidence": 0.5445,
+    "confidence": 0.584,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,23 +81,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.37,
+          "home": 0.33,
           "draw": 0.27,
-          "away": 0.36
+          "away": 0.4
         },
-        "confidence": 0.45,
+        "confidence": 0.55,
         "keyFactors": [
-          "South Korea höhere Elo (1702 vs 1627) und stärkere jüngste Form (recentForm 1.9 vs 1.5)",
-          "South Africa defensiv stabil: niedriger Gegentorschnitt (1.009) und hohe Clean-Sheet-Rate (0.484)",
-          "Neutraler Spielort ohne Heimvorteil, leichte Höhenlage (540m) marginal relevant",
-          "Verletzungsausfall von Cho Yu-min schwächt die koreanische Abwehr",
-          "Kein H2H-Verlauf vorhanden, begrenzte Trennschärfe"
+          "South Korea hat höhere Elo (1702 vs 1627) und bessere jüngste Form (recentForm 1.9 vs 1.5)",
+          "Neutraler Spielort entzieht South Africa den Heimvorteil, den die Baseline teils implizierte",
+          "South Africa defensiv stabiler (goalsAgainstAvg 1.009, cleanSheetRate 0.484) als South Korea (1.348, 0.414)",
+          "Beide Teams nach 62 Tagen Pause ohne klaren Rhythmusvorteil"
         ],
         "risks": [
-          "Ausfall Cho Yu-min könnte koreanische Defensive stärker destabilisieren als angenommen",
-          "62 Tage seit letztem Spiel beider Teams – Form schwer einzuschätzen",
-          "Südkoreas höhere Offensivklasse kann das ausgeglichene Bild kippen",
-          "Fehlende Marktdaten erhöhen Unsicherheit der Wahrscheinlichkeiten"
+          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit",
+          "Materielle News rein generisch, keine konkreten Verletzungs-/Sperreninfos",
+          "Defensive Stärke Südafrikas könnte engeres Spiel als erwartet erzwingen",
+          "Höhe von 540m vernachlässigbar, aber Anpassungsfähigkeit unklar"
         ]
       },
       "chatgpt": {
@@ -106,25 +105,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.33,
+          "away": 0.32
         },
         "confidence": 0.65,
         "keyFactors": [
-          "South Korea's defender Cho Yu-min is ruled out due to injury, weakening their defense.",
-          "Both teams have similar recent forms, with South Korea slightly better.",
-          "The match is at a neutral venue, neutralizing any home advantage.",
-          "No historical head-to-head data contributing to predictions."
+          "Both teams have similar recent form with South Korea having a slight advantage in recent form.",
+          "The match is played at a neutral venue with no altitude or host advantage.",
+          "No head-to-head history influencing dynamics.",
+          "Both teams have similar average goals scored and conceded per match."
         ],
         "risks": [
-          "The absence of Cho Yu-min might be mitigated by other tactical changes by South Korea.",
-          "Neutral venue might make it difficult to predict team performance accurately."
+          "Unpredictability of World Cup group stages.",
+          "Potential impact of tactical decisions by new coaches for both teams."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Korea höhere Elo (1702 vs 1627) und stärkere jüngste Form (recentForm 1.9 vs 1.5); South Africa defensiv stabil: niedriger Gegentorschnitt (1.009) und hohe Clean-Sheet-Rate (0.484); Neutraler Spielort ohne Heimvorteil, leichte Höhenlage (540m) marginal relevant.",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Korea hat höhere Elo (1702 vs 1627) und bessere jüngste Form (recentForm 1.9 vs 1.5); Neutraler Spielort entzieht South Africa den Heimvorteil, den die Baseline teils implizierte; South Africa defensiv stabiler (goalsAgainstAvg 1.009, cleanSheetRate 0.484) als South Korea (1.348, 0.414).",
     "inputHash": "sha256:7f017bbfcf683624d454ed1aaae7461cd2faf7696d45d1d23126ca5f40b747c9"
   },
   "predictionHistory": [
@@ -179,6 +178,19 @@
         "away": 0.3667
       },
       "confidence": 0.592
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3582,
+        "draw": 0.2877,
+        "away": 0.3541
+      },
+      "confidence": 0.5445
     }
   ]
 }

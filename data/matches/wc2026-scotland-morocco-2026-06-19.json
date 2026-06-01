@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "SCO",
       "elo": 1586,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.0887,
-      "draw": 0.1523,
-      "away": 0.759
+      "home": 0.091,
+      "draw": 0.1545,
+      "away": 0.7545
     },
-    "confidence": 0.7685,
+    "confidence": 0.7698,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.075,
-          "draw": 0.155,
-          "away": 0.77
+          "home": 0.08,
+          "draw": 0.16,
+          "away": 0.76
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Großer Elo-Unterschied (1586 vs. 1892) klar zugunsten Marokkos",
-          "Marokkos überragende Defensive: 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
-          "Marokkos starke Form (gewichtet 2.585, jüngst 2.4) gegenüber Schottlands schwacher Bilanz (1.301)",
-          "Verletzungsbedingter Ausfall von Schlüsselspieler Billy Gilmour schwächt Schottlands Mittelfeld zusätzlich"
+          "Klare Elo-Differenz zugunsten Marokkos (1892 vs. 1586)",
+          "Marokko mit überragender Defensive: nur 0.27 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
+          "Marokko in stärkerer Form (weightedForm 2.59 vs. 1.30, recentForm 2.4 vs. 1.6)",
+          "Neutraler Spielort eliminiert Heimvorteil für Schottland",
+          "Schottland verliert mit Billy Gilmour einen zentralen Mittelfeldspieler durch Knieverletzung"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, daher direkte Vergleichswerte fehlen",
-          "Neutraler Spielort nimmt Schottland keinen Heimvorteil, könnte aber Marokkos Auswärtsbelastung mildern",
-          "62 Tage seit letztem Spiel beider Teams – mögliche Rhythmusprobleme schwer einzuschätzen",
-          "Tyler Fletcher als junger Ersatz könnte überraschen, ist aber unerprobt"
+          "Keine H2H-Daten vorhanden, daher direkter Vergleich unsicher",
+          "Schottlands jüngste Form (recentForm 1.6) leicht über dem gewichteten Schnitt – mögliche Aufwärtstendenz",
+          "Lange Pause (62 Tage) für beide Teams kann zu unberechenbarer Anfangsphase führen",
+          "Marokkos hoher Defensivwert könnte bei einem frühen Gegentor oder Turnierdruck schwanken"
         ]
       },
       "chatgpt": {
@@ -110,18 +111,19 @@
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Morocco's strong recent form with a weighted form of 2.585",
-          "High clean sheet rate of Morocco at 70.6%",
-          "Scotland missing key player Billy Gilmour due to injury"
+          "Morocco's superior current form and Elo rating",
+          "Scotland missing key midfielder Billy Gilmour",
+          "Morocco's strong defensive record with a high clean sheet rate",
+          "Neutral venue eliminates home advantage for Scotland"
         ],
         "risks": [
-          "Neutral venue could slightly reduce Morocco's advantage",
-          "Lack of head-to-head data introduces uncertainty"
+          "Potential unknown impact of neutral venue",
+          "Effect of Scotland's long break since last match"
         ]
       }
     },
-    "agreement": 0.9833,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1586 vs. 1892) klar zugunsten Marokkos; Marokkos überragende Defensive: 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokkos starke Form (gewichtet 2.585, jüngst 2.4) gegenüber Schottlands schwacher Bilanz (1.301).",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klare Elo-Differenz zugunsten Marokkos (1892 vs. 1586); Marokko mit überragender Defensive: nur 0.27 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokko in stärkerer Form (weightedForm 2.59 vs. 1.30, recentForm 2.4 vs. 1.6).",
     "inputHash": "sha256:9b2af787e4ce807991205f94cee9d49e4b180b9b2ef80e805580879c39d7b7fc"
   },
   "predictionHistory": [
@@ -176,6 +178,19 @@
         "away": 0.729
       },
       "confidence": 0.7105
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.0887,
+        "draw": 0.1523,
+        "away": 0.759
+      },
+      "confidence": 0.7685
     }
   ]
 }

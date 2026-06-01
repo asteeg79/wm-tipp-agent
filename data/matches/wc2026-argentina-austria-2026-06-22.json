@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "ARG",
       "elo": 1905,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5369,
+      "home": 0.5432,
       "draw": 0.2177,
-      "away": 0.2454
+      "away": 0.2391
     },
-    "confidence": 0.6467,
+    "confidence": 0.6357,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.545,
+          "home": 0.535,
           "draw": 0.215,
-          "away": 0.24
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Argentinien mit höherem Elo (1905 vs. 1748) und stärkerer gewichteter Form (2.55 vs. 2.28)",
-          "Deutlich bessere Defensive Argentiniens (0.40 Gegentore/Spiel, 63% Clean Sheets) gegenüber Österreich (0.65, 31%)",
-          "Beide Teams offensiv stark (ARG 2.52, AUT 2.56 Tore/Spiel), aber ARG kombiniert dies mit besserer Abwehr",
-          "Neutraler Spielort hebt klassischen Heimvorteil auf, was die Baseline leicht relativiert"
+          "Deutlicher Elo-Vorsprung Argentiniens (1905 vs. 1748) und stärkere gewichtete Form (2.553 vs. 2.284)",
+          "Argentiniens herausragende Defensive: nur 0.399 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 30.8% bei Österreich",
+          "Beide Teams mit identisch starker jüngster Form (recentForm 2.5), was Österreichs Offensive (2.558 Tore/Spiel) gefährlich macht",
+          "Neutraler Spielort eliminiert Heimvorteil, leichte Reduktion der Heim-Wahrscheinlichkeit gerechtfertigt"
         ],
         "risks": [
-          "Österreichs starke Offensive (2.56 Tore/Spiel) kann jede Defensive vor Probleme stellen",
-          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit im direkten Vergleich",
-          "Lange Pause beider Teams (62 Tage) kann Rhythmus und Frühform beeinträchtigen",
-          "Identische jüngste Form (recentForm 2.5) deutet auf ausgeglichene aktuelle Tagesform hin"
+          "Verletzungsmeldung zu 7 argentinischen Stars (Umfang/Bedeutung unklar) könnte Defensiv- oder Offensivstärke schwächen",
+          "Österreichs hohe Torquote (2.558/Spiel) kann bei Argentiniens kleinsten Defensivfehlern zu Toren führen",
+          "Kein H2H-Datenmaterial vorhanden, daher erhöhte Unsicherheit in der Einschätzung",
+          "62 Tage seit letztem Spiel für beide Teams – mögliche Anlaufschwierigkeiten und Rhythmusprobleme"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.53,
+          "home": 0.55,
           "draw": 0.22,
-          "away": 0.25
+          "away": 0.23
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Argentina has a higher Elo rating compared to Austria.",
-          "Argentina has a higher clean sheet rate (0.63) than Austria (0.308).",
-          "Argentina and Austria both have recent good form with recentForm of 2.5.",
-          "The match is played at a neutral venue, so no home advantage for either team."
+          "Argentina's higher Elo rating and historical performance indicate a stronger team.",
+          "Argentina's recent injury updates; potential effect on team performance."
         ],
         "risks": [
-          "Austria's average goals for (2.558) is slightly higher than Argentina's (2.521), which could pose a threat."
+          "Neutral venue could reduce home advantage for Argentina.",
+          "Potential impact of injuries on Argentina's star players."
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit höherem Elo (1905 vs. 1748) und stärkerer gewichteter Form (2.55 vs. 2.28); Deutlich bessere Defensive Argentiniens (0.40 Gegentore/Spiel, 63% Clean Sheets) gegenüber Österreich (0.65, 31%); Beide Teams offensiv stark (ARG 2.52, AUT 2.56 Tore/Spiel), aber ARG kombiniert dies mit besserer Abwehr.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Argentiniens (1905 vs. 1748) und stärkere gewichtete Form (2.553 vs. 2.284); Argentiniens herausragende Defensive: nur 0.399 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 30.8% bei Österreich; Beide Teams mit identisch starker jüngster Form (recentForm 2.5), was Österreichs Offensive (2.558 Tore/Spiel) gefährlich macht.",
     "inputHash": "sha256:dc05f65704102787b25d09906c5acf790fa7840d80c5651876f34fc3dea609da"
   },
   "predictionHistory": [
@@ -176,6 +175,19 @@
         "away": 0.24
       },
       "confidence": 0.65
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5369,
+        "draw": 0.2177,
+        "away": 0.2454
+      },
+      "confidence": 0.6467
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "PAR",
       "elo": 1644,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.318,
-      "draw": 0.308,
-      "away": 0.374
+      "home": 0.3043,
+      "draw": 0.3283,
+      "away": 0.3674
     },
-    "confidence": 0.4983,
+    "confidence": 0.5654,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.315,
-          "draw": 0.305,
-          "away": 0.38
+          "home": 0.31,
+          "draw": 0.3,
+          "away": 0.39
         },
-        "confidence": 0.4,
+        "confidence": 0.5,
         "keyFactors": [
-          "Australia leicht höhere Elo (1666 vs 1644) und bessere recentForm (1.7 vs 1.4)",
-          "Australia mit stärkerer Offensive (goalsForAvg 1.257) und höherer CleanSheet-Rate (0.542)",
+          "Australien mit leicht höherem Elo (1666 vs 1644) und besserer jüngster Form (recentForm 1.7 vs 1.4)",
+          "Australien defensiv stärker: höhere Clean-Sheet-Rate (0.542) und besserer Torschnitt (1.257 vs 0.984)",
           "Neutraler Spielort eliminiert Heimvorteil für Paraguay",
-          "Beide Teams defensiv solide, niedrige erwartete Torzahl"
+          "Baseline favorisiert Australien knapp, durch Formvorsprung gestützt"
         ],
         "risks": [
-          "Australia 195 Tage ohne Spiel – Spielrhythmus und Wettkampfhärte fraglich",
-          "Keine direkte H2H-Historie als Referenz",
-          "Materielle News enthalten keine verwertbaren kader-/verletzungsrelevanten Informationen",
-          "Geringe Differenz der Kennzahlen macht das Ergebnis sehr offen"
+          "Australien lange Spielpause (195 Tage ohne Match) – mögliche Rhythmusprobleme",
+          "Kein direkter Head-to-Head verfügbar, erhöhte Unsicherheit",
+          "Paraguay 62 Tage Pause, ebenfalls nicht im vollen Wettkampfrhythmus",
+          "Geringe Wahrscheinlichkeitsabstände – Spiel sehr ausgeglichen, Unentschieden realistisch"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.31,
-          "away": 0.37
+          "home": 0.30000000000000004,
+          "draw": 0.35000000000000003,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.6,
+        "confidence": 0.65,
         "keyFactors": [
-          "Both teams have similar Elo ratings, with Australia slightly higher but not decisive.",
-          "Australia has been more successful in recent form with a higher form rating.",
-          "Paraguay has a higher frequency of clean sheets, which indicates a potentially solid defense.",
-          "The match is played at a neutral venue, which negates home advantage."
+          "Australia's better recent form with a 1.7 score compared to Paraguay's 1.4.",
+          "Paraguay has more recent match experience, last played 62 days ago versus Australia's 195 days.",
+          "Neutral venue mitigates home advantage, leading to more balanced odds."
         ],
         "risks": [
-          "Paraguay's coach change and its impact on team performance are uncertain.",
-          "Australia hasn't played a match for the last 195 days, which could affect match fitness."
+          "Australia's substantial gap since last competitive match could affect performance.",
+          "No head-to-head history provides uncertainty in team matchups."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Australia leicht höhere Elo (1666 vs 1644) und bessere recentForm (1.7 vs 1.4); Australia mit stärkerer Offensive (goalsForAvg 1.257) und höherer CleanSheet-Rate (0.542); Neutraler Spielort eliminiert Heimvorteil für Paraguay.",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Australien mit leicht höherem Elo (1666 vs 1644) und besserer jüngster Form (recentForm 1.7 vs 1.4); Australien defensiv stärker: höhere Clean-Sheet-Rate (0.542) und besserer Torschnitt (1.257 vs 0.984); Neutraler Spielort eliminiert Heimvorteil für Paraguay.",
     "inputHash": "sha256:ad42d8fee93905bd8d22d1691b94c5b8ec54a322445aab8724acb42f68856e38"
   },
   "predictionHistory": [
@@ -177,6 +176,19 @@
         "away": 0.3629
       },
       "confidence": 0.5546
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.318,
+        "draw": 0.308,
+        "away": 0.374
+      },
+      "confidence": 0.4983
     }
   ]
 }

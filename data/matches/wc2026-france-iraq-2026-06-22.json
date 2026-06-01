@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "FRA",
       "elo": 1904,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.6378,
-      "draw": 0.2056,
-      "away": 0.1567
+      "home": 0.6628,
+      "draw": 0.1886,
+      "away": 0.1486
     },
-    "confidence": 0.666,
+    "confidence": 0.7104,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,47 +80,48 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.66,
+          "home": 0.64,
           "draw": 0.2,
-          "away": 0.14
+          "away": 0.16
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Klarer Elo-Vorsprung Frankreichs (1904 vs 1630, +274 Punkte)",
-          "Frankreichs starke Offensivform (gewichtete Form 2.43, 2.34 Tore/Spiel)",
-          "Solide Defensive beider Teams (Gegentore ~0.95 bzw. 0.82, ähnliche Clean-Sheet-Raten)",
-          "Iraks ordentliche Form (gewichtete Form 2.01) macht ein zu hohes Frankreich-Ergebnis unwahrscheinlich"
+          "Deutlicher Elo-Vorsprung Frankreichs (1904 vs. 1630)",
+          "Starke gewichtete Form Frankreichs (2.43) und hohe Torquote (2.34 pro Spiel)",
+          "Solide Defensive beider Teams, aber Frankreich offensiv klar überlegen",
+          "Iraks ordentliche Defensivwerte (0.82 Gegentore, 45.8% Clean Sheets) könnten das Ergebnis enger gestalten"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar – kein direkter Vergleichswert",
-          "Neutraler Spielort eliminiert den Heimvorteil Frankreichs",
-          "Lange Spielpause beider Teams (62-64 Tage) erschwert Formprognose",
-          "Iraks kompakte Defensive könnte das Ergebnis enger als erwartet halten"
+          "Mögliche Verletzung/Fehlen von Mbappe laut News würde Frankreichs Offensive schwächen",
+          "Neutraler Spielort nimmt Frankreich Heimvorteil",
+          "Lange Pause beider Teams (über 60 Tage) kann Rhythmus und Form beeinflussen",
+          "Kein H2H vorhanden, taktische Anpassung Iraks schwer einzuschätzen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.62,
-          "draw": 0.21,
-          "away": 0.17
+          "home": 0.68,
+          "draw": 0.18,
+          "away": 0.14
         },
-        "confidence": 0.75,
+        "confidence": 0.82,
         "keyFactors": [
-          "France's superior Elo rating and recent form metrics",
-          "Neutral venue reduces home advantage",
-          "France's higher average goals scored per game"
+          "France's higher Elo rating and better weighted form",
+          "France's higher average goals for and similar defensive strength",
+          "Neutral venue reduces potential for host advantage"
         ],
         "risks": [
-          "Social unrest in France could potentially impact team focus"
+          "Potential injury concerns for key French player Kylian Mbappe",
+          "France's days since last match could impact match readiness"
         ]
       }
     },
     "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Frankreichs (1904 vs 1630, +274 Punkte); Frankreichs starke Offensivform (gewichtete Form 2.43, 2.34 Tore/Spiel); Solide Defensive beider Teams (Gegentore ~0.95 bzw. 0.82, ähnliche Clean-Sheet-Raten).",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Frankreichs (1904 vs. 1630); Starke gewichtete Form Frankreichs (2.43) und hohe Torquote (2.34 pro Spiel); Solide Defensive beider Teams, aber Frankreich offensiv klar überlegen.",
     "inputHash": "sha256:6b4fe8486c1bddc563a76f864a908b805393aeaab0e9f5baeaf99bb412c1ebe4"
   },
   "predictionHistory": [
@@ -175,6 +176,19 @@
         "away": 0.1475
       },
       "confidence": 0.7005
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6378,
+        "draw": 0.2056,
+        "away": 0.1567
+      },
+      "confidence": 0.666
     }
   ]
 }

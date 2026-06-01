@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "SUI",
       "elo": 1746,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3826,
-      "draw": 0.3132,
-      "away": 0.3042
+      "home": 0.36,
+      "draw": 0.3091,
+      "away": 0.3309
     },
-    "confidence": 0.6117,
+    "confidence": 0.5445,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,20 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.29,
-          "away": 0.31
+          "home": 0.36000000000000004,
+          "draw": 0.29000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.52,
+        "confidence": 0.4,
         "keyFactors": [
-          "Switzerland mit höherem Elo (1746 vs 1696) und sehr starker recentForm (2.1) sowie hoher Offensivproduktion (2.02 Tore/Spiel).",
-          "Canada defensiv sehr solide: niedriger Gegentorschnitt (0.61) und hohe Clean-Sheet-Rate (0.536), was Schweizer Offensive abfedern kann.",
-          "Marcelo Flores fällt bei Canada mit ACL-Verletzung aus – Schwächung der kreativen Optionen, leichter Vorteil für die Schweiz.",
-          "Gastgeber-Bonus liegt nominell bei Canada (hostAdvantageTeamId CAN), trotz neutralem Venue möglicher Unterstützungseffekt.",
-          "Baseline-xG nahezu ausgeglichen (1.29 zu 1.19), enge Partie zu erwarten."
+          "Schweiz mit leicht höherem Elo (1746 vs 1696) und besserer Offensivproduktion (2.02 Tore/Spiel) und sehr starker jüngster Form (recentForm 2.1).",
+          "Kanada defensiv extrem stabil: niedrigster Gegentorschnitt (0.61) und hohe Clean-Sheet-Rate (0.54), was die offensive Effizienz der Schweiz dämpft.",
+          "Gastgebervorteil liegt bei Kanada (hostAdvantageTeamId CAN), trotz formal neutralem Spielort, was die Heimüberlegenheit der Schweiz neutralisiert."
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden – höhere Unsicherheit bei der Einschätzung.",
-          "Lange Pause (62 Tage) für beide Teams kann Form und Spielrhythmus verzerren.",
-          "Canadas starke Defensive könnte das Spiel torarm halten und Remis-Wahrscheinlichkeit erhöhen.",
-          "Verletzungsmeldungen bei der Schweiz beziehen sich auf Schweden – Relevanz unklar, mögliche Datenfehlzuordnung."
+          "Verletzungssorgen bei Kanada (Marcelo Flores) könnten die Offensive schwächen und die Prognose verschieben.",
+          "Lange Pause beider Teams (62 Tage seit letztem Spiel) erhöht Unsicherheit über aktuelle Spielform.",
+          "Keine H2H-Daten vorhanden, daher beruht die Einschätzung allein auf Form- und Kontextwerten."
         ]
       },
       "chatgpt": {
@@ -105,27 +102,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.37,
-          "draw": 0.33,
-          "away": 0.3
+          "home": 0.36,
+          "draw": 0.32,
+          "away": 0.32
         },
-        "confidence": 0.72,
+        "confidence": 0.7,
         "keyFactors": [
-          "Both teams have similar recent form and overall form.",
-          "Canada has a better clean sheet rate at 53.6% compared to Switzerland's 37%.",
-          "Canada is missing a key player, Marcelo Flores, due to injury.",
-          "The match is at a neutral venue, nullifying any home advantage.",
-          "No head-to-head history to inform past outcomes between these teams."
+          "Both teams have not played many recent matches, with 62 days since their last games, indicating potential rustiness.",
+          "Canada's strong defensive record with a high clean sheet rate of 0.536.",
+          "Switzerland's recent form is slightly better than Canada's, at 2.1 versus 1.7.",
+          "Neutral venue which neutralizes any potential home advantage."
         ],
         "risks": [
-          "Switzerland has a higher goals for average (2.021) compared to Canada (1.242), which might indicate higher scoring potential.",
-          "Performance might vary due to missing players, especially for Canada.",
-          "Uncertainty about the match context factors like altitude which might affect teams differently."
+          "Canada is the host country, potentially offering them some morale boost despite neutral venue.",
+          "Canada has some injury concerns that could affect their performance.",
+          "No head-to-head data, introducing uncertainty in matchup dynamics."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit höherem Elo (1746 vs 1696) und sehr starker recentForm (2.1) sowie hoher Offensivproduktion (2.02 Tore/Spiel).; Canada defensiv sehr solide: niedriger Gegentorschnitt (0.61) und hohe Clean-Sheet-Rate (0.536), was Schweizer Offensive abfedern kann.; Marcelo Flores fällt bei Canada mit ACL-Verletzung aus – Schwächung der kreativen Optionen, leichter Vorteil für die Schweiz..",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit leicht höherem Elo (1746 vs 1696) und besserer Offensivproduktion (2.02 Tore/Spiel) und sehr starker jüngster Form (recentForm 2.1).; Kanada defensiv extrem stabil: niedrigster Gegentorschnitt (0.61) und hohe Clean-Sheet-Rate (0.54), was die offensive Effizienz der Schweiz dämpft.; Gastgebervorteil liegt bei Kanada (hostAdvantageTeamId CAN), trotz formal neutralem Spielort, was die Heimüberlegenheit der Schweiz neutralisiert..",
     "inputHash": "sha256:532b0b2a8fe6ff602966fd17d62a21606732a4aa0469de61677d9e3ca395bb77"
   },
   "predictionHistory": [
@@ -180,6 +176,19 @@
         "away": 0.33
       },
       "confidence": 0.5544
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3826,
+        "draw": 0.3132,
+        "away": 0.3042
+      },
+      "confidence": 0.6117
     }
   ]
 }

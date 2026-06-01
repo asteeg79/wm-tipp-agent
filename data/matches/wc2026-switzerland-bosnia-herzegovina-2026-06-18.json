@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "SUI",
       "elo": 1746,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.56,
+      "home": 0.5656,
       "draw": 0.22,
-      "away": 0.22
+      "away": 0.2144
     },
-    "confidence": 0.7,
+    "confidence": 0.6728,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.22,
           "away": 0.22
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Deutlicher Elo-Vorteil der Schweiz (1746 vs 1575)",
-          "Bessere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs 1.6)",
-          "Stärkere Offensive (2.02 vs 1.74 Tore/Spiel) und Defensive (1.09 vs 1.27 Gegentore) der Schweiz",
-          "Höhere Clean-Sheet-Rate der Schweiz (0.37 vs 0.19)"
+          "Deutlicher Elo-Vorsprich der Schweiz (1746 vs. 1575)",
+          "Bessere gewichtete und aktuelle Form der Schweiz (recentForm 2.1 vs. 1.6)",
+          "Stärkere Defensive der Schweiz (Gegentor-Schnitt 1.09 vs. 1.27, Clean-Sheet-Rate 0.37 vs. 0.19)",
+          "Höherer Torschnitt der Schweiz (2.02 vs. 1.74) bei solider Offensive Bosniens"
         ],
         "risks": [
-          "Neutraler Spielort nimmt der Schweiz den Heimvorteil",
-          "Keine H2H-Daten verfügbar, schwer einzuschätzen",
-          "Bosnien mit ordentlicher Offensive kann jederzeit treffen",
-          "Lange Pause (62 Tage) für beide Teams erhöht Unsicherheit"
+          "Neutraler Spielort eliminiert klassischen Heimvorteil der Schweiz",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit",
+          "Bosniens Offensive (1.74 Tore/Spiel) kann jederzeit für Treffer sorgen",
+          "Lange Pause (62 Tage ohne Spiel) erhöht Unsicherheit über die Tagesform beider Teams"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
-          "draw": 0.22,
-          "away": 0.22
+          "home": 0.5700000000000001,
+          "draw": 0.22000000000000003,
+          "away": 0.21000000000000002
         },
-        "confidence": 0.78,
+        "confidence": 0.75,
         "keyFactors": [
-          "Switzerland's recent form is stronger compared to Bosnia & Herzegovina",
-          "Switzerland's higher Elo rating indicates a stronger team overall",
-          "Switzerland has a better clean sheet rate than Bosnia & Herzegovina"
+          "Switzerland has a higher weighted form and recent form compared to Bosnia & Herzegovina.",
+          "Switzerland's goal-scoring average is higher than Bosnia & Herzegovina, and they have a better clean sheet rate.",
+          "The match is at a neutral venue, neutralizing any home advantage effects."
         ],
         "risks": [
-          "The match is at a neutral venue, reducing home advantage",
-          "Both teams have had similar rest periods, potentially normalizing fitness levels"
+          "Injury news affecting Sweden does not impact Switzerland directly, but suggests the potential for undisclosed issues in squad preparation.",
+          "Bosnia & Herzegovina has a slightly better average of days since last match, indicating comparable preparedness levels.",
+          "Both teams have equal rest days since their last match which neutralizes match readiness."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Schweiz (1746 vs 1575); Bessere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs 1.6); Stärkere Offensive (2.02 vs 1.74 Tore/Spiel) und Defensive (1.09 vs 1.27 Gegentore) der Schweiz.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprich der Schweiz (1746 vs. 1575); Bessere gewichtete und aktuelle Form der Schweiz (recentForm 2.1 vs. 1.6); Stärkere Defensive der Schweiz (Gegentor-Schnitt 1.09 vs. 1.27, Clean-Sheet-Rate 0.37 vs. 0.19).",
     "inputHash": "sha256:1981a67fb80177c42a16bf985e182f43896c71f0b09994345ce77dfa640a04cb"
   },
   "predictionHistory": [
@@ -176,6 +177,19 @@
         "away": 0.2411
       },
       "confidence": 0.666
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.56,
+        "draw": 0.22,
+        "away": 0.22
+      },
+      "confidence": 0.7
     }
   ]
 }

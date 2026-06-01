@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "ARG",
       "elo": 1905,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.55,
-      "draw": 0.22,
+      "home": 0.5457,
+      "draw": 0.2243,
       "away": 0.23
     },
-    "confidence": 0.675,
+    "confidence": 0.6777,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.22,
+          "home": 0.54,
+          "draw": 0.23,
           "away": 0.23
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Argentinien mit deutlich höherem Elo (1905 vs 1767) und besserer gewichteter Form (2.55 vs 2.38)",
-          "Argentinische Defensive überragend: nur 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate",
-          "Beide Teams in starker Form (recentForm jeweils 2.5), aber Argentinien offensiv (2.52 Tore/Spiel) und defensiv überlegen",
-          "Neutraler Spielort eliminiert Heimvorteil, beide gleich lange Pause (62 Tage)"
+          "Deutlicher Elo-Vorsprung Argentiniens (1905 vs. 1767)",
+          "Argentiniens starke Defensive: nur 0.399 Gegentore/Spiel und 63% Clean-Sheet-Rate",
+          "Beide Teams in sehr guter Form (weightedForm 2.55 vs. 2.38, recentForm jeweils 2.5)",
+          "Argentinien mit höherer Offensivproduktion (2.521 Tore/Spiel) als Algerien (2.335)"
         ],
         "risks": [
-          "Keine H2H-Historie vorhanden, daher erhöhte Unsicherheit im direkten Vergleich",
-          "Algerien offensiv stark (2.34 Tore/Spiel) und kann bei Standards gefährlich werden",
-          "Lange Pause von 62 Tagen kann Rhythmus beider Teams beeinträchtigen",
-          "Keine aktuellen News zu Ausfällen/Verletzungen verfügbar"
+          "Verletzungsmeldung zu 7 argentinischen Stars könnte Aufstellung und Stärke schwächen",
+          "Algerien ist offensiv stark und kann auf neutralem Boden überraschen",
+          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit",
+          "Lange Pause (62 Tage seit letztem Spiel) bei beiden Teams kann Rhythmus beeinflussen"
         ]
       },
       "chatgpt": {
@@ -108,20 +108,20 @@
           "draw": 0.22,
           "away": 0.23
         },
-        "confidence": 0.75,
+        "confidence": 0.78,
         "keyFactors": [
-          "Argentina has a significantly higher Elo rating.",
-          "Both teams have the same recent form, but Argentina's overall performances and stats suggest stronger capabilities.",
-          "Argentina's defensive record is stronger with a lower goals against average and higher clean sheet rate."
+          "Argentina's higher Elo rating and better historical performance",
+          "Argentina's superior clean sheet rate and defensive record",
+          "No head-to-head history to influence negatively"
         ],
         "risks": [
-          "Both teams have not played against each other before, adding unpredictability.",
-          "Neutral venue reduces typical home advantage."
+          "Potential impact of Argentina's injuries on the starting lineup",
+          "Algeria's recent competitive form may provide a challenge"
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit deutlich höherem Elo (1905 vs 1767) und besserer gewichteter Form (2.55 vs 2.38); Argentinische Defensive überragend: nur 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate; Beide Teams in starker Form (recentForm jeweils 2.5), aber Argentinien offensiv (2.52 Tore/Spiel) und defensiv überlegen.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Argentiniens (1905 vs. 1767); Argentiniens starke Defensive: nur 0.399 Gegentore/Spiel und 63% Clean-Sheet-Rate; Beide Teams in sehr guter Form (weightedForm 2.55 vs. 2.38, recentForm jeweils 2.5).",
     "inputHash": "sha256:cc1ed7085e31139456a42f89ee24176dc75b6b7c940732014074301f4ea044a5"
   },
   "predictionHistory": [
@@ -176,6 +176,19 @@
         "away": 0.2357
       },
       "confidence": 0.6877
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.55,
+        "draw": 0.22,
+        "away": 0.23
+      },
+      "confidence": 0.675
     }
   ]
 }

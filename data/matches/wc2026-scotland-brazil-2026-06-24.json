@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "home": {
       "teamId": "SCO",
       "elo": 1586,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T09:13:04.314Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1619,
-      "draw": 0.2045,
-      "away": 0.6336
+      "home": 0.1506,
+      "draw": 0.2047,
+      "away": 0.6447
     },
-    "confidence": 0.6759,
+    "confidence": 0.6556,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorteil Brasiliens (1844 vs. 1586) und stärkere gewichtete Form (1.791 vs. 1.301)",
-          "Brasilien defensiv stabiler: 0.892 Gegentore/Spiel und 40% Clean-Sheet-Rate gegenüber Schottland (1.281 / 28%)",
-          "Neutraler Spielort entfernt den Heimvorteil Schottlands",
-          "Ausfall von Billy Gilmour schwächt das schottische Mittelfeld und Aufbauspiel"
+          "Brazil deutlich höheres Elo (1844 vs. 1586) und bessere gewichtete Form (1.791 vs. 1.301)",
+          "Brazil mit stärkerer Offensive (1.814 Tore/Spiel) und Defensive (0.892 Gegentore, 40% Zu-Null-Rate)",
+          "Scotland zeigt zuletzt leicht ansteigende Form (recentForm 1.6) und ordentliche Heimtorbilanz, kann aber selten zu Null spielen (28%)",
+          "Neutraler Spielort nimmt Scotland einen potenziellen Heimvorteil"
         ],
         "risks": [
-          "Schottlands solide jüngste Form (recentForm 1.6) könnte für defensiven Widerstand sorgen",
-          "Unklare Neymar-Personalie könnte Brasiliens Offensivstruktur beeinflussen",
-          "Keine H2H-Daten vorhanden, daher höhere Modellunsicherheit",
-          "Lange Pause beider Teams (62 Tage) kann Rhythmus und Frühform beeinträchtigen"
+          "Verletzungsbedingter Ausfall von Schlüsselspieler Billy Gilmour schwächt Scotlands Mittelfeld zusätzlich",
+          "Kein direkter H2H-Verlauf vorhanden – Einschätzung beruht rein auf Form-/Kontextdaten",
+          "Lange Pause beider Teams (62 Tage) kann zu Rhythmusproblemen und Überraschungen führen",
+          "Scotland kann bei kompakter Defensive ein knappes Ergebnis erzwingen und ein Remis riskieren"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,26 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.18,
+          "home": 0.16,
           "draw": 0.2,
-          "away": 0.62
+          "away": 0.64
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Brazil's superior Elo rating and recent form advantage",
-          "Scotland missing key midfielder Billy Gilmour due to injury",
-          "Neutral venue reduces home advantage"
+          "Brazil's higher Elo rating and weighted form advantage",
+          "Scotland's squad missing influential player Billy Gilmour",
+          "Neutral venue reducing typical home advantage",
+          "Brazil's recent consistent goal-scoring and defensive record"
         ],
         "risks": [
-          "Potential recovery of Neymar boosting Brazil's attack",
-          "Scotland's form slightly better than their weighted form suggests"
+          "Possible adaptability of Scotland without Gilmour",
+          "Unpredictability due to neutral venue",
+          "Scotland's potential for surprising performance given recent form"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil Brasiliens (1844 vs. 1586) und stärkere gewichtete Form (1.791 vs. 1.301); Brasilien defensiv stabiler: 0.892 Gegentore/Spiel und 40% Clean-Sheet-Rate gegenüber Schottland (1.281 / 28%); Neutraler Spielort entfernt den Heimvorteil Schottlands.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brazil deutlich höheres Elo (1844 vs. 1586) und bessere gewichtete Form (1.791 vs. 1.301); Brazil mit stärkerer Offensive (1.814 Tore/Spiel) und Defensive (0.892 Gegentore, 40% Zu-Null-Rate); Scotland zeigt zuletzt leicht ansteigende Form (recentForm 1.6) und ordentliche Heimtorbilanz, kann aber selten zu Null spielen (28%).",
     "inputHash": "sha256:44ddad60170ef37c5e8abe9684db257b9eccca1a0e63ac3f14f00bd59491e60b"
   },
   "predictionHistory": [
@@ -176,6 +178,19 @@
         "away": 0.6136
       },
       "confidence": 0.6782
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1619,
+        "draw": 0.2045,
+        "away": 0.6336
+      },
+      "confidence": 0.6759
     }
   ]
 }
