@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "ENG",
       "elo": 1829,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.421,
-      "draw": 0.277,
-      "away": 0.302
+      "home": 0.4192,
+      "draw": 0.2776,
+      "away": 0.3032
     },
-    "confidence": 0.6082,
+    "confidence": 0.6133,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,50 +80,49 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.452,
-          "draw": 0.243,
-          "away": 0.305
+          "home": 0.448,
+          "draw": 0.244,
+          "away": 0.308
         },
         "confidence": 0.5,
         "keyFactors": [
-          "England mit klar besserer Defensive (gegen 0.52 Tore/Spiel, 55% Clean Sheets) vs. Kroatiens anfälligere Abwehr (1.10 Gegentore, nur 35% Clean Sheets)",
-          "Kroatien offensiv leicht stärker (recentForm 2.5, 2.21 Tore/Spiel), was Konstanz im Tipp begrenzt",
-          "Neutraler Spielort hebt klassischen Heimvorteil auf, daher keine Anhebung über Baseline hinaus",
-          "Beide Teams mit 62 Tagen Pause gleich gut erholt, kein Vorteil"
+          "England mit klar besserer Defensive (xGA 0.52, Clean-Sheet-Rate 55%) gegenüber Kroatien (xGA 1.10, Clean-Sheet-Rate 35%)",
+          "Höherer Elo-Wert für England (1829 vs. 1778) stützt leichten Favoritenstatus",
+          "Kroatien mit etwas stärkerer gewichteter Form (2.10 vs. 2.03) und Offensive (2.21 Tore/Spiel), was die Partie offen hält",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil – Baseline bleibt weitgehend valide"
         ],
         "risks": [
-          "Kein H2H-Datensatz verfügbar, erhöht Unsicherheit",
-          "Kroatiens hohe Offensivform kann Englands Defensivvorteil neutralisieren",
-          "Tuchel-Tests/Personalfragen vor der WM könnten Englands Stabilität beeinträchtigen",
-          "Lange Spielpause (62 Tage) kann Rhythmus beider Teams stören"
+          "Verletzungssorgen bei England (Williamson, mögliche Ausfälle) könnten die starke Defensive schwächen",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit bei der direkten Einschätzung",
+          "Lange Pause (62 Tage) für beide Teams kann Rhythmus und Frühform beeinträchtigen",
+          "Kroatiens hohe Offensivproduktion kann Englands Defensive vor Probleme stellen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
-          "away": 2
+          "home": 1,
+          "away": 1
         },
         "probabilities": {
           "home": 0.4,
           "draw": 0.3,
           "away": 0.3
         },
-        "confidence": 0.74,
+        "confidence": 0.75,
         "keyFactors": [
-          "Both teams have strong recent forms with England at 2.2 and Croatia at 2.5.",
-          "England's coach Thomas Tuchel is highly experienced and might have strategic impact.",
-          "England's low goals against average (0.522) suggests strong defense.",
-          "Croatia's higher goals for average (2.205) indicates a potent attack."
+          "England's high Elo rating and strong defensive statistics",
+          "Croatia's recent form showing improvement, outscoring England on average",
+          "Neutral venue negating home advantage for England"
         ],
         "risks": [
-          "Match being played at a neutral venue reduces home advantage.",
-          "England's head coach transition might lead to unpredictable tactical changes.",
-          "Both teams have not faced each other recently, adding uncertainty."
+          "England captain Leah Williamson's injury may impact team performance",
+          "Lack of recent head-to-head matches for comparative analysis",
+          "Thomas Tuchel's first World Cup with England introduces uncertainty"
         ]
       }
     },
-    "agreement": 0.962,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit klar besserer Defensive (gegen 0.52 Tore/Spiel, 55% Clean Sheets) vs. Kroatiens anfälligere Abwehr (1.10 Gegentore, nur 35% Clean Sheets); Kroatien offensiv leicht stärker (recentForm 2.5, 2.21 Tore/Spiel), was Konstanz im Tipp begrenzt; Neutraler Spielort hebt klassischen Heimvorteil auf, daher keine Anhebung über Baseline hinaus.",
+    "agreement": 0.9627,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit klar besserer Defensive (xGA 0.52, Clean-Sheet-Rate 55%) gegenüber Kroatien (xGA 1.10, Clean-Sheet-Rate 35%); Höherer Elo-Wert für England (1829 vs. 1778) stützt leichten Favoritenstatus; Kroatien mit etwas stärkerer gewichteter Form (2.10 vs. 2.03) und Offensive (2.21 Tore/Spiel), was die Partie offen hält.",
     "inputHash": "sha256:7712335af59a001034b98b41a644c2a420b6fd50cdf3766d66fe1c802cc124b4"
   },
   "predictionHistory": [
@@ -191,6 +190,19 @@
         "away": 0.3127
       },
       "confidence": 0.6392
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.421,
+        "draw": 0.277,
+        "away": 0.302
+      },
+      "confidence": 0.6082
     }
   ]
 }

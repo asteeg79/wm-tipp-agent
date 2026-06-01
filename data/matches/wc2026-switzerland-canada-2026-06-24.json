@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "SUI",
       "elo": 1746,
@@ -50,15 +50,15 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.36,
-      "draw": 0.3091,
-      "away": 0.3309
+      "home": 0.3636,
+      "draw": 0.2955,
+      "away": 0.3409
     },
     "confidence": 0.5445,
     "baseline": {
@@ -80,20 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.36000000000000004,
-          "draw": 0.29000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.38,
+          "draw": 0.29,
+          "away": 0.33
         },
-        "confidence": 0.4,
+        "confidence": 0.5,
         "keyFactors": [
-          "Schweiz mit leicht höherem Elo (1746 vs 1696) und besserer Offensivproduktion (2.02 Tore/Spiel) und sehr starker jüngster Form (recentForm 2.1).",
-          "Kanada defensiv extrem stabil: niedrigster Gegentorschnitt (0.61) und hohe Clean-Sheet-Rate (0.54), was die offensive Effizienz der Schweiz dämpft.",
-          "Gastgebervorteil liegt bei Kanada (hostAdvantageTeamId CAN), trotz formal neutralem Spielort, was die Heimüberlegenheit der Schweiz neutralisiert."
+          "Schweiz mit besserer aktueller Form (recentForm 2.1 vs 1.7) und höherer Offensivkraft (goalsForAvg 2.02 vs 1.24)",
+          "Kanada defensiv stark: niedrigste Gegentorquote (0.61) und hohe Clean-Sheet-Rate (0.54), was schweizerische Tore begrenzen kann",
+          "Höhere Elo der Schweiz (1746 vs 1696) stützt leichten Favoritenstatus der Baseline",
+          "Verletzung von Marcelo Flores schwächt Kanadas Offensivoptionen vor dem Turnier"
         ],
         "risks": [
-          "Verletzungssorgen bei Kanada (Marcelo Flores) könnten die Offensive schwächen und die Prognose verschieben.",
-          "Lange Pause beider Teams (62 Tage seit letztem Spiel) erhöht Unsicherheit über aktuelle Spielform.",
-          "Keine H2H-Daten vorhanden, daher beruht die Einschätzung allein auf Form- und Kontextwerten."
+          "Gastgebervorteil Kanadas (hostAdvantageTeamId CAN) trotz neutralem Veranstaltungsort könnte Kanada zusätzlich pushen",
+          "Keine H2H-Daten vorhanden, erhöht Unsicherheit der Einschätzung",
+          "62 Tage seit letztem Spiel beider Teams – Form schwer einzuschätzen, Rhythmusverlust möglich",
+          "Kanadas starke Defensive kann ein torarmes, enges Spiel mit Remis-Tendenz erzeugen"
         ]
       },
       "chatgpt": {
@@ -102,26 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.36,
-          "draw": 0.32,
-          "away": 0.32
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Both teams have not played many recent matches, with 62 days since their last games, indicating potential rustiness.",
-          "Canada's strong defensive record with a high clean sheet rate of 0.536.",
-          "Switzerland's recent form is slightly better than Canada's, at 2.1 versus 1.7.",
-          "Neutral venue which neutralizes any potential home advantage."
+          "Switzerland's slightly higher recent form compared to Canada.",
+          "Canada's strong defensive record with a high clean sheet rate.",
+          "Neutral venue reduces home advantage for Switzerland.",
+          "Injury concerns affecting Canada's squad depth."
         ],
         "risks": [
-          "Canada is the host country, potentially offering them some morale boost despite neutral venue.",
-          "Canada has some injury concerns that could affect their performance.",
-          "No head-to-head data, introducing uncertainty in matchup dynamics."
+          "Unclear impact of Marcelo Flores' injury on Canada's overall performance.",
+          "Lack of head-to-head matchup data makes predictions uncertain."
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit leicht höherem Elo (1746 vs 1696) und besserer Offensivproduktion (2.02 Tore/Spiel) und sehr starker jüngster Form (recentForm 2.1).; Kanada defensiv extrem stabil: niedrigster Gegentorschnitt (0.61) und hohe Clean-Sheet-Rate (0.54), was die offensive Effizienz der Schweiz dämpft.; Gastgebervorteil liegt bei Kanada (hostAdvantageTeamId CAN), trotz formal neutralem Spielort, was die Heimüberlegenheit der Schweiz neutralisiert..",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit besserer aktueller Form (recentForm 2.1 vs 1.7) und höherer Offensivkraft (goalsForAvg 2.02 vs 1.24); Kanada defensiv stark: niedrigste Gegentorquote (0.61) und hohe Clean-Sheet-Rate (0.54), was schweizerische Tore begrenzen kann; Höhere Elo der Schweiz (1746 vs 1696) stützt leichten Favoritenstatus der Baseline.",
     "inputHash": "sha256:532b0b2a8fe6ff602966fd17d62a21606732a4aa0469de61677d9e3ca395bb77"
   },
   "predictionHistory": [
@@ -189,6 +190,19 @@
         "away": 0.3042
       },
       "confidence": 0.6117
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.36,
+        "draw": 0.3091,
+        "away": 0.3309
+      },
+      "confidence": 0.5445
     }
   ]
 }

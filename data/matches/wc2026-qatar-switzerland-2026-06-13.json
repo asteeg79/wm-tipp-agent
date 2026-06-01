@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 1,
       "away": 3
     },
     "probabilities": {
-      "home": 0.1401,
-      "draw": 0.1751,
-      "away": 0.6848
+      "home": 0.1242,
+      "draw": 0.1758,
+      "away": 0.7
     },
-    "confidence": 0.6831,
+    "confidence": 0.7325,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,19 +84,18 @@
           "draw": 0.17,
           "away": 0.7
         },
-        "confidence": 0.68,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509)",
-          "Bessere gewichtete und aktuelle Form der Schweiz (recentForm 2.1 vs. 1.2)",
-          "Schweiz defensiv stabiler: niedrigerer Gegentorschnitt (1.09 vs. 1.80) und höhere Clean-Sheet-Rate (0.37 vs. 0.25)",
-          "Schweiz offensiv effizienter (goalsForAvg 2.02 vs. 1.46)",
-          "Neutraler Spielort entzieht Qatar einen möglichen Heimvorteil"
+          "Switzerland deutlich höhere Elo (1746 vs. 1509) und bessere gewichtete Form (1.638 vs. 1.292)",
+          "Schweiz mit starker Defensive (GA 1.094, Clean-Sheet-Rate 0.37) gegen anfällige Qatar-Abwehr (GA 1.802)",
+          "Schweiz höhere Offensivproduktion (GF 2.021) und bessere jüngste Form (recentForm 2.1)",
+          "Neutraler Spielort eliminiert möglichen Heimvorteil für Qatar"
         ],
         "risks": [
-          "Qatar 196 Tage ohne Pflichtspiel – Wettkampfrhythmus der Schweiz schwer einzuschätzen, aber auch hohe Unsicherheit über Qatars aktuellen Zustand",
-          "Keine Head-to-Head-Daten verfügbar",
-          "Defensive Schwächen Qatars könnten zu höherem Schweizer Sieg führen (Underdog-Überraschung weniger wahrscheinlich)",
-          "Material-News liefern kaum konkrete kaderrelevante Hinweise für beide Teams"
+          "Qatar hat 196 Tage seit letztem Spiel – Spielrhythmus und Formstand schwer einzuschätzen",
+          "Kein Head-to-Head verfügbar, daher keine direkte Vergleichsbasis",
+          "Lange Pause könnte sowohl negative (Rhythmus) als auch positive (Erholung/Vorbereitung) Effekte haben",
+          "Begrenzte materielle News, mögliche Kaderveränderungen nicht vollständig erfasst"
         ]
       },
       "chatgpt": {
@@ -105,25 +104,25 @@
           "away": 3
         },
         "probabilities": {
-          "home": 0.15,
+          "home": 0.12,
           "draw": 0.18,
-          "away": 0.67
+          "away": 0.7
         },
-        "confidence": 0.7,
+        "confidence": 0.85,
         "keyFactors": [
-          "Switzerland has significantly higher Elo rating compared to Qatar.",
-          "Switzerland's recent form (2.1) is better than Qatar's (1.2).",
-          "Switzerland has played more recently (62 days ago) which suggests better match fitness.",
-          "Neutral venue negates home advantage for Qatar."
+          "Switzerland has a higher Elo rating with 1746 compared to Qatar's 1509.",
+          "Switzerland's recent form is better with 2.1 compared to Qatar's 1.2.",
+          "Switzerland plays more matches recently, with 62 days since their last match compared to Qatar's 196 days.",
+          "Historic performance data shows Switzerland's stronger average goals for, at 2.021, compared to Qatar's 1.459."
         ],
         "risks": [
-          "Qatar's recent match inactivity might lead to unexpected performance.",
-          "Injury news might affect team stability for Switzerland."
+          "No head-to-head history between Qatar and Switzerland.",
+          "Neutral venue may reduce typical home advantage Qatar might possess."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509); Bessere gewichtete und aktuelle Form der Schweiz (recentForm 2.1 vs. 1.2); Schweiz defensiv stabiler: niedrigerer Gegentorschnitt (1.09 vs. 1.80) und höhere Clean-Sheet-Rate (0.37 vs. 0.25).",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland deutlich höhere Elo (1746 vs. 1509) und bessere gewichtete Form (1.638 vs. 1.292); Schweiz mit starker Defensive (GA 1.094, Clean-Sheet-Rate 0.37) gegen anfällige Qatar-Abwehr (GA 1.802); Schweiz höhere Offensivproduktion (GF 2.021) und bessere jüngste Form (recentForm 2.1).",
     "inputHash": "sha256:3da5bf3d3ea52c48378b1914b3e3b0eaff027328fcb09adc128c5e5fdbb80e8a"
   },
   "predictionHistory": [
@@ -191,6 +190,19 @@
         "away": 0.6718
       },
       "confidence": 0.6982
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.1401,
+        "draw": 0.1751,
+        "away": 0.6848
+      },
+      "confidence": 0.6831
     }
   ]
 }

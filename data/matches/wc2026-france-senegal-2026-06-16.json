@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "FRA",
       "elo": 1904,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3542,
-      "draw": 0.2875,
-      "away": 0.3583
+      "home": 0.3681,
+      "draw": 0.268,
+      "away": 0.3639
     },
-    "confidence": 0.594,
+    "confidence": 0.5531,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.36,
-          "draw": 0.27,
-          "away": 0.37
+          "home": 0.365,
+          "draw": 0.248,
+          "away": 0.387
         },
-        "confidence": 0.5,
+        "confidence": 0.42,
         "keyFactors": [
-          "Senegal zeigt defensiv deutlich stabilere Werte (GegentoreSchnitt 0.61 vs. 0.95, Clean-Sheet-Rate 0.65 vs. 0.46)",
-          "Beide Teams in nahezu identischer, starker Form (weightedForm 2.43 vs. 2.44, recentForm jeweils 2.5)",
-          "Neutraler Spielort eliminiert Heimvorteil und nivelliert die Begegnung weiter",
-          "Frankreich hat höheres Elo (1904 vs. 1828) und leicht höhere Offensivkraft"
+          "Senegal zeigt herausragende Defensivwerte (cleanSheetRate 0.647, nur 0.614 Gegentore/Spiel) und beste gewichtete Form (2.441) leicht über Frankreich (2.43)",
+          "Frankreich höher eingestuft (Elo 1904 vs 1828) und mit starker Offensive (2.338 Tore/Spiel), aber defensiv anfälliger (0.947 Gegentore, cleanSheetRate nur 0.464)",
+          "Neutraler Spielort ohne Heimvorteil reduziert den nominellen Heimbonus von Frankreich",
+          "Beide Teams in starker Verfassung mit recentForm 2.5 und ausreichender Erholungszeit (~60+ Tage)"
         ],
         "risks": [
-          "Mögliche Verletzung von Mbappé (PSG-Verletzungssorge) könnte Frankreichs Offensive schwächen",
-          "Kein H2H-Datensatz vorhanden, erschwert direkte Einschätzung",
-          "Lange Spielpause beider Teams (62-64 Tage) erhöht Unsicherheit über aktuelle Spielfrische",
-          "Senegals starke Defensive könnte ein torarmes, knappes Resultat begünstigen"
+          "Verletzungssorgen bei Frankreich (Saliba-Ausfall, Mbappe-Scare) könnten Abwehr und Offensive deutlich schwächen und das Ergebnis Richtung Senegal verschieben",
+          "Kein H2H-Datensatz vorhanden, daher erhöhte Unsicherheit in der Einschätzung",
+          "Tatsächlicher Kaderstatus und Fitness am Spieltag (besonders Mbappe) ist ungewiss",
+          "Enge Form-/Stärkewerte erlauben jedes Ergebnis; Tendenz zum Remis ist real"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.37,
+          "draw": 0.28,
+          "away": 0.35
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Both teams have similar weighted form (France: 2.43, Senegal: 2.441)",
-          "No head-to-head match history favors either team",
-          "Both teams have strong defensive records (France: 0.947, Senegal: 0.614 goals against avg)",
-          "Neutral venue means no home advantage"
+          "France has key injuries with William Saliba and potential issues with Kylian Mbappe.",
+          "Both teams have similar recent form and strong defensive records.",
+          "Neutral venue negates home advantage."
         ],
         "risks": [
-          "Potential injury to key player Kylian Mbappe for France impacts attacking potential",
-          "France's strong historical Elo suggests a slight edge despite injury news"
+          "Unexpected performances due to injury recoveries or tactical changes.",
+          "Potential influence of unknown physical conditions due to no recent matchup."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal zeigt defensiv deutlich stabilere Werte (GegentoreSchnitt 0.61 vs. 0.95, Clean-Sheet-Rate 0.65 vs. 0.46); Beide Teams in nahezu identischer, starker Form (weightedForm 2.43 vs. 2.44, recentForm jeweils 2.5); Neutraler Spielort eliminiert Heimvorteil und nivelliert die Begegnung weiter.",
+    "agreement": 0.9753,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal zeigt herausragende Defensivwerte (cleanSheetRate 0.647, nur 0.614 Gegentore/Spiel) und beste gewichtete Form (2.441) leicht über Frankreich (2.43); Frankreich höher eingestuft (Elo 1904 vs 1828) und mit starker Offensive (2.338 Tore/Spiel), aber defensiv anfälliger (0.947 Gegentore, cleanSheetRate nur 0.464); Neutraler Spielort ohne Heimvorteil reduziert den nominellen Heimbonus von Frankreich.",
     "inputHash": "sha256:fa75624eadc56e3e48c5e3624563ff8c4e02ff1dc4abd6b4c08dec9f744475b9"
   },
   "predictionHistory": [
@@ -190,6 +189,19 @@
         "away": 0.3412
       },
       "confidence": 0.6392
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3542,
+        "draw": 0.2875,
+        "away": 0.3583
+      },
+      "confidence": 0.594
     }
   ]
 }

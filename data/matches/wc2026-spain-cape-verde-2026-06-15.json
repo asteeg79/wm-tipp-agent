@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "ESP",
       "elo": 1974,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 3,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.7452,
-      "draw": 0.1483,
-      "away": 0.1066
+      "home": 0.7622,
+      "draw": 0.1467,
+      "away": 0.0911
     },
-    "confidence": 0.7105,
+    "confidence": 0.7548,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,51 +76,52 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 3,
           "away": 1
         },
         "probabilities": {
-          "home": 0.71,
-          "draw": 0.16,
-          "away": 0.13
+          "home": 0.74,
+          "draw": 0.155,
+          "away": 0.105
         },
-        "confidence": 0.6,
+        "confidence": 0.68,
         "keyFactors": [
-          "Klarer Elo-Vorsprung Spaniens (1974 vs 1608) und starke gewichtete Form (2.327 vs 1.977)",
-          "Spaniens hohe Offensivproduktion (2.675 Tore/Spiel) und solide Defensive (0.699 Gegentore, 48% Clean Sheets)",
-          "Cape Verde dennoch mit respektabler Offensivstatistik (1.673 Tore/Spiel), erhöht leichte Away-Chance gegenüber reiner Elo-Erwartung",
-          "Neutraler Spielort eliminiert Heimvorteil und nivelliert die Begegnung minimal"
+          "Deutlicher Elo-Vorsprung Spaniens (1974 vs. 1608) und stärkere gewichtete Form (2.327 vs. 1.977)",
+          "Hohe Offensivkraft Spaniens (2.675 Tore/Spiel) bei solider Defensive (0.699 Gegentore, 48% Zu-Null)",
+          "Cape Verde mit ordentlicher Offensive (1.673 Tore/Spiel), die ein Auswärtstor möglich macht",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil, ändert aber wenig am Klassenunterschied"
         ],
         "risks": [
-          "Yamal-Verletzungssorgen (Hamstring) könnten Spaniens Offensivpotenzial schwächen oder zu Schonung führen",
-          "Cape Verdes lange Spielpause (231 Tage seit letztem Match) erschwert Formeinschätzung – Match- oder Rostrisiko in beide Richtungen",
-          "Keine H2H-Historie, daher höhere Unsicherheit bei taktischer Einschätzung",
-          "Cape Verdes Defensive (0.838 Gegentore) ist anfällig, aber bei kompaktem Auftreten könnte Spanien an einer tiefen Abwehr scheitern"
+          "Cape Verde seit 231 Tagen ohne Pflichtspiel – Form schwer einzuschätzen, könnte rostig oder frisch sein",
+          "Spaniens Schlüsselspieler Yamal mit jüngstem Verletzungsschreck (Hamstring) – mögliche Einschränkung der Offensive",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit bei der Spielanlage",
+          "Die zu Spanien gelieferten News betreffen teils ein anderes (Frauen-)Team und Vereinsthemen, geringe Relevanz/Datenrauschen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.77,
+          "home": 0.78,
           "draw": 0.14,
-          "away": 0.09
+          "away": 0.08
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Spain's recent form is strong with a high goals-for average.",
-          "Cape Verde is playing after a long break of 231 days.",
-          "Match is at a neutral venue, negating home advantage."
+          "Spain's higher Elo rating and overall stronger form compared to Cape Verde",
+          "Cape Verde's longer period since last competitive match, which may affect match fitness",
+          "Spain's high average goals scored and solid defensive record"
         ],
         "risks": [
-          "Potential impact of injury concerns on Spain's key player Yamal."
+          "Potential impact of injuries on Spain's lineup, particularly regarding Yamal",
+          "Neutral venue reduces home advantage for Spain"
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Spaniens (1974 vs 1608) und starke gewichtete Form (2.327 vs 1.977); Spaniens hohe Offensivproduktion (2.675 Tore/Spiel) und solide Defensive (0.699 Gegentore, 48% Clean Sheets); Cape Verde dennoch mit respektabler Offensivstatistik (1.673 Tore/Spiel), erhöht leichte Away-Chance gegenüber reiner Elo-Erwartung.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Spaniens (1974 vs. 1608) und stärkere gewichtete Form (2.327 vs. 1.977); Hohe Offensivkraft Spaniens (2.675 Tore/Spiel) bei solider Defensive (0.699 Gegentore, 48% Zu-Null); Cape Verde mit ordentlicher Offensive (1.673 Tore/Spiel), die ein Auswärtstor möglich macht.",
     "inputHash": "sha256:8b232cd113e91b0ec17375875032e0950128b25f2d3037027cd997eda39fc4c3"
   },
   "predictionHistory": [
@@ -188,6 +189,19 @@
         "away": 0.1066
       },
       "confidence": 0.7153
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7452,
+        "draw": 0.1483,
+        "away": 0.1066
+      },
+      "confidence": 0.7105
     }
   ]
 }

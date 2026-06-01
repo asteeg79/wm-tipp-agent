@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "COD",
       "elo": 1705,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3722,
-      "draw": 0.3556,
-      "away": 0.2722
+      "home": 0.3792,
+      "draw": 0.3271,
+      "away": 0.2938
     },
-    "confidence": 0.5655,
+    "confidence": 0.59,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
+          "home": 0.39,
           "draw": 0.3,
-          "away": 0.3
+          "away": 0.31
         },
-        "confidence": 0.52,
+        "confidence": 0.55,
         "keyFactors": [
-          "DR Congo mit stärkerer gewichteter Form (2.23 vs 1.71) und sehr niedrigem Gegentorschnitt (0.48)",
-          "Höhere Elo (1705 vs 1676) und bessere recentForm (2.3 vs 1.6) sprechen leicht für DR Congo",
-          "Defensive Stabilität beider Teams: hohe Clean-Sheet-Raten (COD 0.55, UZB 0.63) deuten auf torarmes Spiel",
-          "Neutraler Spielort eliminiert echten Heimvorteil, bestätigt knappe Tendenz der Baseline"
+          "DR Congo mit stärkerer gewichteter Form (2.23 vs 1.71) und sehr solider Defensive (0.48 Gegentore/Spiel, 54.5% Clean Sheets)",
+          "Leichter Elo-Vorteil für DR Congo (1705 vs 1676)",
+          "Beide Teams defensiv stabil, Usbekistan mit höchster Clean-Sheet-Rate (62.5%) - tendenziell torarmes Spiel",
+          "Neutraler Spielort entzieht DR Congo den Heimvorteil"
         ],
         "risks": [
-          "Ebola-Krise stoppt DR Congos Trainingslager – mögliche Vorbereitungs- und Moralnachteile",
-          "Uzbekistan mit langer Pause (126 Tage seit letztem Spiel) – Rhythmusverlust schwer einzuschätzen",
-          "Keinerlei Head-to-Head-Daten verfügbar, erhöht Prognoseunsicherheit",
-          "Verletzungssorgen auf beiden Seiten könnten Kader und Leistungsfähigkeit beeinflussen"
+          "Ebola-Krise stoppte DR-Congo-Trainingslager - potenziell beeinträchtigte Vorbereitung und Moral",
+          "Usbekistan seit 126 Tagen ohne Pflichtspiel - Spielrhythmus und Wettkampfhärte fraglich",
+          "Keinerlei H2H-Daten verfügbar, erhöht Prognoseunsicherheit",
+          "Verletzungssorgen auf beiden Seiten, Aufstellungen unsicher"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.4,
-          "away": 0.25
+          "home": 0.37,
+          "draw": 0.35,
+          "away": 0.28
         },
         "confidence": 0.65,
         "keyFactors": [
-          "DR Congo's recent form is strong with high clean sheet rate.",
-          "Uzbekistan has not played for a longer period (126 days since last match).",
-          "The match is at a neutral venue, negating any home advantage."
+          "DR Congo's recent form is slightly better than Uzbekistan's, reflected in their higher weighted form.",
+          "DR Congo's average goals against is significantly lower, indicating a strong defense.",
+          "Uzbekistan has a higher clean sheet rate, which might balance out DR Congo's offensive advantage.",
+          "Neutral venue negates any home advantage."
         ],
         "risks": [
-          "DR Congo's training disrupted by Ebola crisis.",
-          "Uzbekistan's recent inactivity could have unknown effects."
+          "DR Congo's training disrupted due to Ebola crisis, potentially affecting team morale and preparation.",
+          "Longer period since Uzbekistan's last match could affect match fitness."
         ]
       }
     },
-    "agreement": 0.9333,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo mit stärkerer gewichteter Form (2.23 vs 1.71) und sehr niedrigem Gegentorschnitt (0.48); Höhere Elo (1705 vs 1676) und bessere recentForm (2.3 vs 1.6) sprechen leicht für DR Congo; Defensive Stabilität beider Teams: hohe Clean-Sheet-Raten (COD 0.55, UZB 0.63) deuten auf torarmes Spiel.",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo mit stärkerer gewichteter Form (2.23 vs 1.71) und sehr solider Defensive (0.48 Gegentore/Spiel, 54.5% Clean Sheets); Leichter Elo-Vorteil für DR Congo (1705 vs 1676); Beide Teams defensiv stabil, Usbekistan mit höchster Clean-Sheet-Rate (62.5%) - tendenziell torarmes Spiel.",
     "inputHash": "sha256:ba5c404e8b9d04ef10ac0a95afb9ce6a1037d5d40a522d736533bbbe04494e01"
   },
   "predictionHistory": [
@@ -189,6 +190,19 @@
         "away": 0.2925
       },
       "confidence": 0.592
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3722,
+        "draw": 0.3556,
+        "away": 0.2722
+      },
+      "confidence": 0.5655
     }
   ]
 }

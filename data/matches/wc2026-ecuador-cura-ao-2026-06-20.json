@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "ECU",
       "elo": 1747,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
-      "home": 2,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4349,
-      "draw": 0.2703,
-      "away": 0.2947
+      "home": 0.3462,
+      "draw": 0.3618,
+      "away": 0.292
     },
-    "confidence": 0.5585,
+    "confidence": 0.5298,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,44 +84,46 @@
           "draw": 0.3,
           "away": 0.36
         },
-        "confidence": 0.48,
+        "confidence": 0.42,
         "keyFactors": [
-          "Ecuador deutlich höheres Elo (1747 vs 1637) und sehr solide Defensive (GA 0.528, Clean-Sheet-Rate 51.9%)",
-          "Curaçao mit starker Offensive (GF 2.199) und besserer gewichteter Form (1.857 vs 1.477)",
-          "Aktuelle News belasten Curaçao: jüngste 1:4-Niederlage nach Platzverweis deutet auf Disziplin-/Stabilitätsprobleme hin",
-          "Curaçao seit 195 Tagen ohne Pflichtspiel – potenzieller Rhythmusverlust gegenüber Ecuadors 62 Tagen Pause"
+          "Ecuador defensiv sehr stabil (Gegentorschnitt 0.53, Clean-Sheet-Rate 0.52) und mit höherem Elo (1747 vs 1637)",
+          "Curaçao mit starker Offensivform (Torschnitt 2.20) und besserer gewichteter Form (1.86 vs 1.48)",
+          "Aktuelle Curaçao-News negativ: Platzverweis und 1:4-Niederlage, zudem Verletzungssorgen",
+          "Neutraler Spielort eliminiert klaren Heimvorteil für Ecuador"
         ],
         "risks": [
-          "Kein H2H vorhanden – hohe Unsicherheit über direkte Kräfteverhältnisse",
-          "Ecuadors niedrige Offensivproduktion (GF 0.9) könnte zu Toren-Engpass führen",
-          "Curaçaos hohe Offensivwerte könnten Ecuadors Defensive trotz Form überraschen",
-          "Gilmour-Verletzung betrifft Schottland, nicht direkt Curaçao – News teils kontextfremd, Datenlage unscharf"
+          "Curaçao lange ohne Pflichtspiel (195 Tage) – Spielrhythmus schwer einzuschätzen",
+          "Kein H2H vorhanden, daher hohe Unsicherheit",
+          "Ecuadors schwache Offensive (0.90 Tore/Spiel) könnte gegen kompakte Curaçao-Defensive (Clean-Sheet 0.55) Probleme bekommen",
+          "Disziplinprobleme (Rote Karte) bei Curaçao könnten sich wiederholen und das Bild verzerren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.25,
+          "home": 0.35,
+          "draw": 0.4,
           "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.68,
         "keyFactors": [
-          "Curaçao's key player Billy Gilmour is out due to injury.",
-          "Curaçao has not played in 195 days, potentially affecting match fitness.",
-          "Curaçao's recent match involved a red card, indicating potential disciplinary issues.",
-          "Ecuador's defensive strength with a high clean sheet rate."
+          "Ecuador has a better Elo rating than Curaçao.",
+          "Ecuador's consistent clean sheet rate of 51.9% may limit Curaçao's scoring opportunities.",
+          "Curaçao's longer time since last match may affect their match readiness.",
+          "Curaçao has recent injury and suspension issues affecting key players."
         ],
         "risks": [
-          "Curaçao's higher offensive average goals per game compared to Ecuador."
+          "Curaçao's higher weighted form indicates strong recent performances.",
+          "Neutral venue reduces any home advantage for Ecuador.",
+          "No head-to-head history; uncertainty in direct comparison."
         ]
       }
     },
-    "agreement": 0.8933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador deutlich höheres Elo (1747 vs 1637) und sehr solide Defensive (GA 0.528, Clean-Sheet-Rate 51.9%); Curaçao mit starker Offensive (GF 2.199) und besserer gewichteter Form (1.857 vs 1.477); Aktuelle News belasten Curaçao: jüngste 1:4-Niederlage nach Platzverweis deutet auf Disziplin-/Stabilitätsprobleme hin.",
+    "agreement": 0.9267,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador defensiv sehr stabil (Gegentorschnitt 0.53, Clean-Sheet-Rate 0.52) und mit höherem Elo (1747 vs 1637); Curaçao mit starker Offensivform (Torschnitt 2.20) und besserer gewichteter Form (1.86 vs 1.48); Aktuelle Curaçao-News negativ: Platzverweis und 1:4-Niederlage, zudem Verletzungssorgen.",
     "inputHash": "sha256:7a71833805716ce908df3d0a72a25fd8b36fc19c4bd2a1946303d559fffaa540"
   },
   "predictionHistory": [
@@ -189,6 +191,19 @@
         "away": 0.264
       },
       "confidence": 0.5812
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4349,
+        "draw": 0.2703,
+        "away": 0.2947
+      },
+      "confidence": 0.5585
     }
   ]
 }

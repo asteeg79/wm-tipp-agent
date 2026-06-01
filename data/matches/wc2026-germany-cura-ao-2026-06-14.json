@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
-      "home": 2,
-      "away": 0
+      "home": 3,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6497,
-      "draw": 0.1924,
-      "away": 0.1579
+      "home": 0.6503,
+      "draw": 0.1748,
+      "away": 0.1748
     },
-    "confidence": 0.6839,
+    "confidence": 0.696,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,48 +80,51 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.21,
-          "away": 0.24
+          "home": 0.5800000000000001,
+          "draw": 0.21000000000000002,
+          "away": 0.21000000000000002
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Germany deutlich höhere Elo (1822 vs 1637) und starke gewichtete Form (2.37) mit hoher Offensivproduktion (2.57 Tore/Spiel)",
-          "Curaçao zeigte zuletzt Schwäche: Platzverweis und 1:4-Klatsche, was die defensive Stabilität (cleanSheetRate 0.55) infrage stellt",
-          "Curaçaos lange Wettkampfpause (195 Tage seit letztem Match) erhöht Rhythmusrisiko, während Deutschland zumindest näher am Spielbetrieb ist (63 Tage)",
-          "Neutraler Spielort nimmt Germany zwar Heimvorteil, kompensiert aber nicht den klaren Klassenunterschied"
+          "Deutliches Elo-Übergewicht für Deutschland (1822 vs 1637) und starke gewichtete Form (2.37 vs 1.86)",
+          "Hohe Offensivproduktion Deutschlands (2.57 Tore/Spiel) bei solider Defensive (1.11 Gegentore)",
+          "Curaçao mit langer Spielpause (195 Tage ohne Match), was Rhythmus und Spielfitness beeinträchtigen kann",
+          "Aktuelle News: Curaçao verlor nach Platzverweis mit 1:4 gegen Schottland – Anzeichen für defensive Anfälligkeit unter Druck",
+          "Undavs Verletzung wird als unkritisch eingestuft, kein relevanter Ausfall für Deutschland"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit über stilistische Begegnung",
-          "Curaçao hat starke defensive Werte (goalsAgainstAvg 0.621, cleanSheetRate 0.55) und könnte tief stehen und kontern",
-          "Beide Teams längere Spielpausen (63 bzw. 195 Tage) erschweren Formprognose",
-          "Die negativen News betreffen teils Curaçao gegen Schottland, nicht zwingend übertragbar auf diese Partie"
+          "Curaçao zeigt defensiv eigentlich gute Werte (0.62 Gegentore, 55% Clean Sheets) – könnte Deutschland das Toreschießen erschweren",
+          "Neutraler Spielort eliminiert Heimvorteil Deutschlands",
+          "Lange Pause Curaçaos macht Formbewertung unsicher – aktuelle Leistungsfähigkeit schwer einzuschätzen",
+          "Keine H2H-Daten verfügbar, daher kein direkter Vergleichswert"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
-          "away": 0
+          "home": 3,
+          "away": 1
         },
         "probabilities": {
-          "home": 0.7200000000000001,
-          "draw": 0.18000000000000002,
-          "away": 0.10000000000000002
+          "home": 0.7,
+          "draw": 0.15,
+          "away": 0.15
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Germany has a significantly higher Elo rating than Curaçao.",
-          "Curaçao has multiple key injuries and a recent suspension affecting team depth.",
-          "Neutral venue reduces any potential advantage, favoring the stronger team on paper (Germany)."
+          "Germany has a significantly higher Elo rating",
+          "Germany's offensive strength with a high goals for average",
+          "Curaçao's recent suspension and multiple injuries",
+          "Curaçao's long layoff since last match (195 days)",
+          "Neutral venue reduces potential home advantage impact"
         ],
         "risks": [
-          "Germany has not played in 63 days, which might affect match sharpness.",
-          "Neutral venue, diminishing typical home advantage conditions."
+          "Germany's Deniz Undav injury may slightly affect team dynamics",
+          "Potential underestimation of Curaçao's defensive solidity given their clean sheet rate"
         ]
       }
     },
-    "agreement": 0.8867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany deutlich höhere Elo (1822 vs 1637) und starke gewichtete Form (2.37) mit hoher Offensivproduktion (2.57 Tore/Spiel); Curaçao zeigte zuletzt Schwäche: Platzverweis und 1:4-Klatsche, was die defensive Stabilität (cleanSheetRate 0.55) infrage stellt; Curaçaos lange Wettkampfpause (195 Tage seit letztem Match) erhöht Rhythmusrisiko, während Deutschland zumindest näher am Spielbetrieb ist (63 Tage).",
+    "agreement": 0.92,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliches Elo-Übergewicht für Deutschland (1822 vs 1637) und starke gewichtete Form (2.37 vs 1.86); Hohe Offensivproduktion Deutschlands (2.57 Tore/Spiel) bei solider Defensive (1.11 Gegentore); Curaçao mit langer Spielpause (195 Tage ohne Match), was Rhythmus und Spielfitness beeinträchtigen kann.",
     "inputHash": "sha256:29559d03e4db2d0f94c4c4c68d2e8a9f19ade073e1ba75ffe78404d16ddaad26"
   },
   "predictionHistory": [
@@ -189,6 +192,19 @@
         "away": 0.1886
       },
       "confidence": 0.6767
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6497,
+        "draw": 0.1924,
+        "away": 0.1579
+      },
+      "confidence": 0.6839
     }
   ]
 }

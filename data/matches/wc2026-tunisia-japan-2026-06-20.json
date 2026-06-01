@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "TUN",
       "elo": 1672,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2631,
-      "draw": 0.3131,
-      "away": 0.4238
+      "home": 0.2323,
+      "draw": 0.2677,
+      "away": 0.5
     },
-    "confidence": 0.6153,
+    "confidence": 0.6689,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,54 +77,53 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 2
         },
         "probabilities": {
-          "home": 0.22,
-          "draw": 0.27,
-          "away": 0.51
+          "home": 0.235,
+          "draw": 0.265,
+          "away": 0.5
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Japan mit deutlich höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.20 vs 1.90)",
-          "Defensive Überlegenheit Japans: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate",
-          "Neutraler Spielort eliminiert Heimvorteil für Tunesien",
-          "Japan in der jüngsten Form makellos (recentForm 2.0) und mit klarer Titel-Ambition laut News"
+          "Japan höher eingestuft (Elo 1768 vs 1672) und in stärkerer gewichteter Form (2.20 vs 1.90)",
+          "Japans defensive Stabilität herausragend: nur 0.36 Gegentore/Spiel und 58% Clean Sheets",
+          "Japan ehrgeiziges Turnierziel (Titel) und positiver Sendoff-Kontext stützen Favoritenrolle",
+          "Tunesien defensiv solide (0.75 Gegentore, 50% Clean Sheets), kann Ergebnis lange offen halten",
+          "Neutraler Spielort ohne Heimvorteil bestätigt Baseline-Tendenz pro Japan"
         ],
         "risks": [
-          "Tunesien defensiv solide (0.75 Gegentore/Spiel, 50% Clean Sheets) - kann Spiel eng halten",
-          "Kein H2H-Verlauf vorhanden, Unsicherheit über direkte Konstellation",
-          "Lange Pause beider Teams (62 Tage) erschwert Formprognose",
-          "Niedrige erwartete Tore (xG Japan 1.35) erhöhen Wahrscheinlichkeit eines knappen oder Unentschieden-Ergebnisses"
+          "Kein H2H-Datensatz vorhanden, erschwert direkte Einschätzung",
+          "Lange Pause beider Teams (62 Tage) kann Rhythmus und Frühform beeinträchtigen",
+          "Tunesiens gute Defensive könnte Japans Angriff neutralisieren und Remis-Wahrscheinlichkeit erhöhen",
+          "Höhenlage (540m) als kleiner Unsicherheitsfaktor"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.30000000000000004,
-          "draw": 0.35000000000000003,
-          "away": 0.35000000000000003
+          "home": 0.23,
+          "draw": 0.27,
+          "away": 0.5
         },
-        "confidence": 0.7,
+        "confidence": 0.72,
         "keyFactors": [
-          "Both teams have similar recent form, but Japan has a slightly higher Elo rating.",
-          "Clean sheet rate favors Japan with 58.3% versus Tunisia's 50%.",
-          "Neutral venue diminishes home field advantage.",
-          "No head-to-head data, indicating unpredictable dynamics."
+          "Japan's higher Elo rating.",
+          "Japan's better recent form and clean sheet rate.",
+          "Neutral venue reducing home advantage."
         ],
         "risks": [
-          "Potential impact of neutral venue.",
-          "Days since last match, both teams might be equally rested.",
-          "Initial matches in tournaments may have unpredictable outcomes."
+          "Both teams have equal rest period, potentially mitigating Japan's slight form advantage.",
+          "Neutral venue removes home advantage dynamics."
         ]
       }
     },
-    "agreement": 0.8933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan mit deutlich höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.20 vs 1.90); Defensive Überlegenheit Japans: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate; Neutraler Spielort eliminiert Heimvorteil für Tunesien.",
+    "agreement": 0.9967,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan höher eingestuft (Elo 1768 vs 1672) und in stärkerer gewichteter Form (2.20 vs 1.90); Japans defensive Stabilität herausragend: nur 0.36 Gegentore/Spiel und 58% Clean Sheets; Japan ehrgeiziges Turnierziel (Titel) und positiver Sendoff-Kontext stützen Favoritenrolle.",
     "inputHash": "sha256:6c37adeafacd1791f9582e96d38d91e5ca1f8dacd5b08d3189d374adb226dd54"
   },
   "predictionHistory": [
@@ -179,6 +178,19 @@
         "away": 0.5033
       },
       "confidence": 0.693
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2631,
+        "draw": 0.3131,
+        "away": 0.4238
+      },
+      "confidence": 0.6153
     }
   ]
 }

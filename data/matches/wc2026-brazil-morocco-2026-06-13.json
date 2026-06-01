@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2816,
-      "draw": 0.2968,
-      "away": 0.4216
+      "home": 0.271,
+      "draw": 0.2522,
+      "away": 0.4768
     },
-    "confidence": 0.5896,
+    "confidence": 0.6799,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,48 +80,51 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.24,
-          "draw": 0.25,
+          "home": 0.235,
+          "draw": 0.255,
           "away": 0.51
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Marokko mit klar besserer gewichteter Form (2.585 vs 1.791) und höherem Elo (1892 vs 1844)",
-          "Herausragende Defensive Marokkos: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
-          "Marokko erzielt im Schnitt mehr Tore (2.011 vs 1.814) und ist über mehr Spiele (34) konstant",
-          "Neutraler Spielort ohne Heimvorteil für Brasilien"
+          "Marokko mit höherem Elo (1892 vs 1844) und deutlich besserer gewichteter Form (2.585 vs 1.791)",
+          "Sehr starke marokkanische Defensive: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate über 34 Spiele",
+          "Größere Datenbasis und konstantere jüngste Form (recentForm 2.4) bei Marokko",
+          "Neutraler Spielort eliminiert Heimvorteil für Brasilien",
+          "Brasilien defensiv anfälliger (0.892 Gegentore, nur 40% Clean Sheets)"
         ],
         "risks": [
-          "Brasiliens individuelle Offensivqualität kann jede Defensive knacken; Baseline könnte Brasilien unterschätzen",
-          "Keine direkte H2H-Historie verfügbar, erhöht Unsicherheit",
-          "Lange Pause beider Teams (62 Tage) erschwert Formprognose",
-          "Gemeldete News (Gilmour/Schottland, Panama-Trainer) ohne direkte Relevanz für diese Partie"
+          "Keine H2H-Daten verfügbar, daher historisch keine direkte Vergleichsbasis",
+          "Brasiliens individuelle Offensivqualität (1.814 Tore/Spiel) kann auch gegen starke Defensiven zuschlagen",
+          "Keine konkreten verletzungsbedingten News zu Schlüsselspielern beider Teams (Gilmour-Meldung betrifft Schottland, nicht relevant)",
+          "62 Tage seit letztem Spiel bei beiden Teams – mögliche Rhythmusprobleme schwer einschätzbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.34,
-          "away": 0.34
+          "home": 0.3,
+          "draw": 0.25,
+          "away": 0.45
         },
-        "confidence": 0.65,
+        "confidence": 0.77,
         "keyFactors": [
-          "Morocco has a higher Elo rating compared to Brazil.",
-          "Morocco's recent form and defensive record are superior to Brazil's.",
-          "Neutral venue eliminates home advantage."
+          "Morocco's higher Elo rating.",
+          "Morocco's superior weighted and recent form.",
+          "Morocco's strong defensive record with a clean sheet rate of 0.706.",
+          "Neutral venue reducing traditional 'home advantage' for Brazil."
         ],
         "risks": [
-          "Brazil's historical World Cup performance and attacking potential.",
-          "Injury news about a non-participating country has no material impact."
+          "Brazil's strong offensive record of 1.814 goals per match.",
+          "The possibility of Morocco being affected by the knee injury news impacting team morale.",
+          "Brazil's historical reputation in World Cups which is not reflected in recent forms."
         ]
       }
     },
-    "agreement": 0.8867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko mit klar besserer gewichteter Form (2.585 vs 1.791) und höherem Elo (1892 vs 1844); Herausragende Defensive Marokkos: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokko erzielt im Schnitt mehr Tore (2.011 vs 1.814) und ist über mehr Spiele (34) konstant.",
+    "agreement": 0.9567,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko mit höherem Elo (1892 vs 1844) und deutlich besserer gewichteter Form (2.585 vs 1.791); Sehr starke marokkanische Defensive: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate über 34 Spiele; Größere Datenbasis und konstantere jüngste Form (recentForm 2.4) bei Marokko.",
     "inputHash": "sha256:aa7a2570c66a02f6bf178c9852fdb0a578f1374200a0ec40f2140123df49e376"
   },
   "predictionHistory": [
@@ -189,6 +192,19 @@
         "away": 0.3756
       },
       "confidence": 0.6368
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2816,
+        "draw": 0.2968,
+        "away": 0.4216
+      },
+      "confidence": 0.5896
     }
   ]
 }

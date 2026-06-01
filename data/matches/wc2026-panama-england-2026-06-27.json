@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "PAN",
       "elo": 1642,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.15,
-      "draw": 0.2044,
-      "away": 0.6456
+      "home": 0.1706,
+      "draw": 0.22,
+      "away": 0.6094
     },
-    "confidence": 0.7525,
+    "confidence": 0.6556,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,54 +76,54 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.15,
-          "draw": 0.21,
-          "away": 0.64
+          "home": 0.16,
+          "draw": 0.22,
+          "away": 0.62
         },
-        "confidence": 0.66,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Englands (1829 vs. 1642) und stärkere gewichtete Form (2.032 vs. 1.793)",
-          "Englands defensive Stabilität: niedriger Gegentorschnitt (0.522) und hohe Clean-Sheet-Rate (0.552)",
-          "Englands höhere Offensivkraft (goalsForAvg 1.994 vs. 1.542) untermauert die Baseline-xG-Differenz",
-          "Neutraler Spielort entzieht Panama jeglichen Heimvorteil"
+          "England klar überlegen in Elo (1829 vs 1642) und gewichteter Form (2.032 vs 1.793)",
+          "Starke englische Defensive: 0.522 Gegentore/Spiel, Clean-Sheet-Rate 55,2%",
+          "England mit höherer Offensivproduktion (1.994 vs 1.542 Tore/Spiel)",
+          "Neutraler Spielort ohne Heimvorteil für Panama",
+          "Beide Teams gleich lange Pause (62 Tage), kein Frische-Vorteil"
         ],
         "risks": [
-          "Panama zeigt ordentliche Form (recentForm 1.7) und kann defensiv überraschen (goalsAgainstAvg 1.012)",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit in der direkten Einschätzung",
-          "Lange Pause beider Teams (62 Tage) kann Rhythmus und Spielfluss beeinträchtigen",
-          "Knock-out-/Turniercharakter kann zu defensiver, ergebnisorientierter Spielweise führen"
+          "Die Verletzungs-News (Williamson, Lauren James) betreffen die englische Frauen-Nationalmannschaft und sind für diese Partie irrelevant — daher nicht in die Bewertung einbezogen",
+          "Panama mit ordentlicher Form (recentForm 1.7) und solider Defensive (1.012 Gegentore) könnte ein Tor erzielen",
+          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
+          "Lange Spielpause beider Teams kann zu unrhythmischem Spielverlauf führen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.15,
-          "draw": 0.2,
-          "away": 0.65
+          "home": 0.18,
+          "draw": 0.22,
+          "away": 0.6
         },
-        "confidence": 0.85,
+        "confidence": 0.7,
         "keyFactors": [
-          "England hat einen höheren Elo-Wert als Panama.",
-          "Englands Form ist in den letzten Spielen besser als die von Panama.",
-          "England hat eine bessere Clean Sheet Rate als Panama.",
-          "Englands Coach Thomas Tuchel wird allgemein als taktisch versiert angesehen."
+          "England's higher Elo score and superior recent form.",
+          "Panama's average goals conceded per game is significantly higher than England's.",
+          "England's stronger clean sheet rate suggests better defensive capabilities."
         ],
         "risks": [
-          "Das Spiel findet auf neutralem Boden statt, was Heimvorteile neutralisiert.",
-          "Es gibt keine direkte Head-to-Head-Historie zwischen den beiden Teams.",
-          "Änderungen in der Taktik oder Strategie aufgrund neuer Coaching-Regeln könnten überraschend sein."
+          "Recent injuries in the England squad could affect team performance.",
+          "Neutral venue may reduce usual home or away advantages.",
+          "Lack of head-to-head history introduces additional uncertainty."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Englands (1829 vs. 1642) und stärkere gewichtete Form (2.032 vs. 1.793); Englands defensive Stabilität: niedriger Gegentorschnitt (0.522) und hohe Clean-Sheet-Rate (0.552); Englands höhere Offensivkraft (goalsForAvg 1.994 vs. 1.542) untermauert die Baseline-xG-Differenz.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England klar überlegen in Elo (1829 vs 1642) und gewichteter Form (2.032 vs 1.793); Starke englische Defensive: 0.522 Gegentore/Spiel, Clean-Sheet-Rate 55,2%; England mit höherer Offensivproduktion (1.994 vs 1.542 Tore/Spiel).",
     "inputHash": "sha256:5f33039e3d53ab090ee909ff4d2d04e5b115955e3160e9f58c6984c02985d7c1"
   },
   "predictionHistory": [
@@ -191,6 +191,19 @@
         "away": 0.6036
       },
       "confidence": 0.6782
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.15,
+        "draw": 0.2044,
+        "away": 0.6456
+      },
+      "confidence": 0.7525
     }
   ]
 }

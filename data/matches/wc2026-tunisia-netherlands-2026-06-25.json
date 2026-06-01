@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "TUN",
       "elo": 1672,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1953,
+      "home": 0.2077,
       "draw": 0.22,
-      "away": 0.5847
+      "away": 0.5723
     },
-    "confidence": 0.6578,
+    "confidence": 0.6834,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.19,
+          "home": 0.18,
           "draw": 0.22,
-          "away": 0.59
+          "away": 0.6
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Klarer Elo-Vorsprung der Niederlande (1825 vs. 1672) untermauert die Favoritenrolle",
-          "Niederlande mit deutlich stärkerer Offensive (goalsForAvg 2.53 vs. 1.65) und besserer aktueller Form (recentForm 2.4)",
-          "Tunesien defensiv solide (cleanSheetRate 0.50, nur 0.75 Gegentore/Spiel), kann Spiel eng gestalten",
-          "Neutraler Spielort ohne Heimvorteil für Tunesien"
+          "Klarer Elo-Vorsprung der Niederlande (1825 vs. 1672) untermauert Favoritenrolle",
+          "Niederlande mit stärkerer gewichteter und jüngster Form (2.095 / 2.4 vs. 1.895 / 1.7)",
+          "Hohe Offensivkraft der Niederlande (2.53 Tore/Spiel) gegen solide, aber unterlegene tunesische Defensive",
+          "Tunesiens hohe Clean-Sheet-Rate (0.5) und niedrige Gegentorquote (0.75) können das Ergebnis enger halten"
         ],
         "risks": [
-          "Schwache Defensivquote der Niederlande (cleanSheetRate 0.39) kann Tunesien Treffer ermöglichen",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit",
-          "62 Tage seit letztem Spiel beider Teams – Rhythmus und Spielfrische schwer einzuschätzen",
-          "Tunesiens kompakte Defensive könnte ein Unentschieden begünstigen"
+          "Neutraler Spielort nimmt beiden Teams Heimvorteil – Ergebnis schwerer kalkulierbar",
+          "Keinerlei H2H-Historie verfügbar, daher reine Modell-/Formbasis",
+          "Tunesiens defensive Stabilität könnte ein Unentschieden oder knappes Ergebnis ermöglichen",
+          "62 Tage seit letztem Spiel beider Teams – mögliche Rhythmus-/Fitnessunsicherheit"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,26 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
+          "home": 0.23,
           "draw": 0.22,
-          "away": 0.58
+          "away": 0.55
         },
-        "confidence": 0.7,
+        "confidence": 0.77,
         "keyFactors": [
-          "Netherlands has a higher Elo rating by 153 points.",
-          "Netherlands' recent form is stronger with a rating of 2.4 compared to Tunisia's 1.7.",
-          "Netherlands averages more goals scored per match (2.533) compared to Tunisia (1.647).",
-          "Both teams have not faced each other before, nullifying head-to-head influence.",
-          "Match is played in a neutral venue, negating home advantage."
+          "Netherlands has a higher Elo rating (1825 vs. 1672)",
+          "Netherlands' recent form is stronger (2.4 vs. 1.7)",
+          "Netherlands' higher goals for average (2.533 vs. 1.647)",
+          "Both teams have not played head-to-head before"
         ],
         "risks": [
-          "Tunisia's solid defense with a goals against average of 0.752 and clean sheet rate of 0.5.",
-          "Potential motivation boost for Tunisia following their coach's recent statement about World Cup targets."
+          "Neutral venue could minimize any potential home advantage impact",
+          "Tunisia's recent form has been relatively stable",
+          "Tunisia's good defensive record with a 0.5 clean sheet rate"
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung der Niederlande (1825 vs. 1672) untermauert die Favoritenrolle; Niederlande mit deutlich stärkerer Offensive (goalsForAvg 2.53 vs. 1.65) und besserer aktueller Form (recentForm 2.4); Tunesien defensiv solide (cleanSheetRate 0.50, nur 0.75 Gegentore/Spiel), kann Spiel eng gestalten.",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung der Niederlande (1825 vs. 1672) untermauert Favoritenrolle; Niederlande mit stärkerer gewichteter und jüngster Form (2.095 / 2.4 vs. 1.895 / 1.7); Hohe Offensivkraft der Niederlande (2.53 Tore/Spiel) gegen solide, aber unterlegene tunesische Defensive.",
     "inputHash": "sha256:176be26efb8d5f8979e908cd98ce059b058f9824bbec1b526aa0425a5570efd5"
   },
   "predictionHistory": [
@@ -178,6 +178,19 @@
         "away": 0.5883
       },
       "confidence": 0.7202
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1953,
+        "draw": 0.22,
+        "away": 0.5847
+      },
+      "confidence": 0.6578
     }
   ]
 }

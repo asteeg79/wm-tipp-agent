@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,7 +50,7 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
       "away": 1
@@ -86,17 +86,17 @@
         },
         "confidence": 0.55,
         "keyFactors": [
-          "USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419)",
-          "Gastgebervorteil USA trotz neutralem Spielort (hostAdvantageTeamId=USA) – breite Unterstützung erwartet",
-          "Höhere Offensivproduktion der USA (goalsForAvg 1.668 vs 0.984)",
-          "Einziges H2H-Duell ging an die USA (2:1)",
-          "Beide Teams gleich erholt (62 Tage seit letztem Spiel)"
+          "USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.52 vs 1.42)",
+          "Gastgebervorteil USA trotz formal neutralem Spielort (hostAdvantageTeamId USA)",
+          "Höhere Offensivproduktion der USA (1.67 erzielte Tore/Spiel vs 0.98 bei Paraguay)",
+          "Bisheriges H2H zugunsten der USA (2:1)",
+          "Beide Teams gleich ausgeruht (62 Tage seit letztem Spiel)"
         ],
         "risks": [
-          "Paraguay defensiv stabiler (cleanSheetRate 0.435 vs 0.235), kann Spiel eng halten",
-          "USA-Defensive anfällig (goalsAgainstAvg 1.639) – Konteranfälligkeit gegen kompakte Paraguayer",
-          "Geringe H2H-Datenbasis (nur 1 Spiel) reduziert Aussagekraft",
-          "Keine konkreten verletzungs-/kaderbezogenen News verfügbar, daher Unsicherheit bei Aufstellung"
+          "Paraguay defensiv stabiler (Clean-Sheet-Rate 0.44 vs 0.24) - kann Spiel eng halten",
+          "Schwache Defensive der USA (1.64 Gegentore/Spiel) anfällig für Konter",
+          "Nur 1 H2H-Spiel - geringe statistische Aussagekraft",
+          "Kleinere Datenbasis bei Paraguay (23 Spiele) erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -111,18 +111,18 @@
         },
         "confidence": 0.75,
         "keyFactors": [
-          "USA playing at a neutral venue but with host advantage context",
-          "USA's recent form is slightly better than Paraguay's",
-          "USA has a higher average goals scored rate compared to Paraguay"
+          "USA hat eine leicht höhere Elo-Zahl und spielt mit einem Host-Advantage im neutralen Venue, was bei einem Turnier oft einen Vorteil bietet.",
+          "Die USA haben eine bessere durchschnittliche Toreffizienz und -produktion über die letzten 34 Spiele, während Paraguay defensiv stärker ist, aber offensiv schwächer.",
+          "Head-to-Head historisch auf Basis eines Spiels entschieden, dass die USA gewinnen konnten."
         ],
         "risks": [
-          "Neither team has played a match in the last 62 days which could affect match sharpness",
-          "Paraguay's better clean sheet rate might neutralize USA's attack"
+          "Beide Teams haben seit 62 Tagen kein Spiel gespielt, was zu unvorhersehbaren Leistungsänderungen führen kann.",
+          "Paraguays höhere Clean-Sheet-Rate könnte ein Vorteil sein, falls die USA Schwierigkeiten haben, ihre Chancen zu nutzen."
         ]
       }
     },
     "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419); Gastgebervorteil USA trotz neutralem Spielort (hostAdvantageTeamId=USA) – breite Unterstützung erwartet; Höhere Offensivproduktion der USA (goalsForAvg 1.668 vs 0.984).",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.52 vs 1.42); Gastgebervorteil USA trotz formal neutralem Spielort (hostAdvantageTeamId USA); Höhere Offensivproduktion der USA (1.67 erzielte Tore/Spiel vs 0.98 bei Paraguay).",
     "inputHash": "sha256:916811b152a942d45054f833fbe421487e02b786a7e64f570afdde4b4a42e530"
   },
   "predictionHistory": [
@@ -190,6 +190,19 @@
         "away": 0.2414
       },
       "confidence": 0.6705
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5158,
+        "draw": 0.2385,
+        "away": 0.2458
+      },
+      "confidence": 0.6457
     }
   ]
 }

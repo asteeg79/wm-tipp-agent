@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4759,
-      "draw": 0.25,
-      "away": 0.2741
+      "home": 0.4713,
+      "draw": 0.2444,
+      "away": 0.2844
     },
-    "confidence": 0.6329,
+    "confidence": 0.6606,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
+          "home": 0.46,
           "draw": 0.25,
-          "away": 0.28
+          "away": 0.29
         },
-        "confidence": 0.52,
+        "confidence": 0.58,
         "keyFactors": [
-          "USA mit Host-Advantage (Co-Gastgeber) trotz neutralem Venue - leichter Schub",
-          "Höhere xG-Werte und stärkere Offensive der USA (goalsForAvg 1.67 vs. 1.26)",
-          "USA leicht besseres Elo (1676 vs. 1666) und positive H2H-Bilanz (1 Sieg, 2:1)",
-          "Aktuelle Recent-Form Australiens minimal besser (1.7 vs. 1.6), defensiv solide (CS-Rate 0.54)"
+          "USA mit leichtem Elo-Vorteil (1676 vs 1666) und Co-Gastgeber-Bonus, auch wenn neutrales Stadion angegeben ist",
+          "Höhere erwartete Torproduktion der USA (xG 1.63 vs 1.28) bei mehr Offensivvolumen (goalsForAvg 1.668 vs 1.257)",
+          "Australien defensiv stabiler (cleanSheetRate 0.542, goalsAgainstAvg 1.08) – kann das Spiel eng halten",
+          "Historischer H2H-Vorteil USA (1 Sieg, 2:1)"
         ],
         "risks": [
-          "Australien lange ohne Pflichtspiel (195 Tage) - Form schwer einzuschätzen, Match-Rhythmus fehlt",
-          "Sehr ausgeglichene Elo- und Form-Werte - Remis-Potenzial real",
-          "Defensive Stärke Australiens (hohe Clean-Sheet-Rate) könnte US-Offensive ausbremsen",
-          "Keine materiellen News mit klarem Einfluss verfügbar - geringe Differenzierung"
+          "Australien sehr lange ohne Spiel (195 Tage) – Spielrhythmus unsicher, Form schwer einschätzbar",
+          "USA defensiv anfällig (cleanSheetRate nur 0.235, goalsAgainstAvg 1.639) – Konter der Socceroos gefährlich",
+          "Australiens 'fearless'-Mentalität laut News könnte für eine Überraschung sorgen",
+          "Australiens starke recentForm (1.7) deutet auf positiven Trend trotz Pause"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,24 @@
         },
         "probabilities": {
           "home": 0.48,
-          "draw": 0.25,
-          "away": 0.27
+          "draw": 0.24,
+          "away": 0.28
         },
         "confidence": 0.75,
         "keyFactors": [
-          "USA hat einen leichten Heimvorteil, weil das Spiel in einem neutralen, aber im Gastgeberland liegenden Stadion stattfindet.",
-          "USA hat eine sehr geringe Anzahl von Tagen seit dem letzten Spiel, was bedeutet, dass sie möglicherweise besser im Rhythmus sind.",
-          "Australien hat insgesamt eine bessere Defensivstatistik mit einer höheren Clean-Sheet-Rate als die USA, aber deutlich längere Spielpause.",
-          "H2H-Ergebnis mit einem Sieg für die USA, was zumindest für ein psychologisches Momentum sprechen könnte."
+          "USA hat einen Heimvorteil, da die WM teilweise in der USA ausgetragen wird.",
+          "Australien hat eine längere spielfreie Zeit von 195 Tagen im Vergleich zu den USA mit 62 Tagen.",
+          "Die USA hat den direkten Vergleich mit einem Sieg abgeschlossen.",
+          "Australien hat jedoch eine starke Defensivbilanz mit einer höheren Clean-Sheet-Rate (0.542) im Vergleich zu den USA (0.235)."
         ],
         "risks": [
-          "Die kürzere Spielpause kann auch zu Erschöpfung führen, falls die Spieler der USA in den letzten Matches stark beansprucht wurden.",
-          "Australiens bessere defensive Form könnte dem Spiel eine niedrigere Torzahl geben als erwartet."
+          "Australiens kürzlich festgestellte starke Form (1.7) könnte unterschätzt werden.",
+          "Neutrale Spielstätte könnte den Heimvorteil der USA verringern."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Host-Advantage (Co-Gastgeber) trotz neutralem Venue - leichter Schub; Höhere xG-Werte und stärkere Offensive der USA (goalsForAvg 1.67 vs. 1.26); USA leicht besseres Elo (1676 vs. 1666) und positive H2H-Bilanz (1 Sieg, 2:1).",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit leichtem Elo-Vorteil (1676 vs 1666) und Co-Gastgeber-Bonus, auch wenn neutrales Stadion angegeben ist; Höhere erwartete Torproduktion der USA (xG 1.63 vs 1.28) bei mehr Offensivvolumen (goalsForAvg 1.668 vs 1.257); Australien defensiv stabiler (cleanSheetRate 0.542, goalsAgainstAvg 1.08) – kann das Spiel eng halten.",
     "inputHash": "sha256:31cb6a4642011d6db99a631a30f4d93ae277d7eeaa6ef1ab552042ec366de914"
   },
   "predictionHistory": [
@@ -190,6 +190,19 @@
         "away": 0.29
       },
       "confidence": 0.65
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4759,
+        "draw": 0.25,
+        "away": 0.2741
+      },
+      "confidence": 0.6329
     }
   ]
 }

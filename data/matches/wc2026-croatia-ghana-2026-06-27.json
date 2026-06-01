@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "CRO",
       "elo": 1778,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6633,
-      "draw": 0.1911,
-      "away": 0.1456
+      "home": 0.6337,
+      "draw": 0.2031,
+      "away": 0.1631
     },
-    "confidence": 0.6683,
+    "confidence": 0.7154,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.18,
           "away": 0.14
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
           "Deutlicher Elo-Vorsprung Kroatiens (1778 vs. 1548)",
-          "Bessere gewichtete Form Kroatiens (2.103 vs. 1.190) und starke jüngste Form (recentForm 2.5)",
-          "Höhere Offensivkraft Kroatiens (2.205 erzielte Tore/Spiel) bei solider Defensive (1.104 Gegentore)",
-          "Ghanas anfällige Abwehr (1.557 Gegentore/Spiel) begünstigt kroatische Treffer"
+          "Bessere gewichtete und aktuelle Form Kroatiens (2.10/2.5 vs. 1.19/1.6)",
+          "Höhere Offensivproduktion (xG 2.37) bei stabilerer Defensive (GA 1.10 vs. 1.56)",
+          "Ghana defensiv anfällig (mehr Gegentore als eigene Tore im Schnitt)"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Kroatien einen möglichen Heimvorteil",
-          "Lange Pause beider Teams (ca. 62-63 Tage) erschwert Formprognose",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "Ghana mit Offensivpotenzial (1.466 Tore/Spiel) kann für Treffer sorgen, niedrige kroatische Clean-Sheet-Rate (0.348)"
+          "Neutraler Spielort nimmt Kroatien Heimvorteil",
+          "Lange Pause beider Teams (62/63 Tage) erschwert Formeinschätzung",
+          "Keine H2H-Daten als Referenz vorhanden",
+          "Ghana mit individueller Offensivqualität kann jederzeit treffen (GF 1.47)"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
-          "away": 0.15
+          "home": 0.6,
+          "draw": 0.22,
+          "away": 0.18
         },
-        "confidence": 0.75,
+        "confidence": 0.85,
         "keyFactors": [
-          "Croatia's recent form is strong with a high weighted form score of 2.103",
-          "Croatia has a significant Elo rating advantage over Ghana (1778 vs 1548)",
-          "Ghana's recent form is weaker with a weighted form score of 1.19"
+          "Croatia has significantly higher Elo rating (1778 vs 1548)",
+          "Croatia's recent form is stronger (2.5 vs 1.6)",
+          "Neutral venue means no home advantage",
+          "Ghana's coach Tuchel dealing with England news, potential distraction"
         ],
         "risks": [
-          "The match is played at a neutral venue which could level the playing field",
-          "No head-to-head history between the two teams",
-          "Material news about Ghana is non-impactful on performance"
+          "No head-to-head data available",
+          "Both teams have been inactive for over 60 days, affecting form continuity"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Kroatiens (1778 vs. 1548); Bessere gewichtete Form Kroatiens (2.103 vs. 1.190) und starke jüngste Form (recentForm 2.5); Höhere Offensivkraft Kroatiens (2.205 erzielte Tore/Spiel) bei solider Defensive (1.104 Gegentore).",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Kroatiens (1778 vs. 1548); Bessere gewichtete und aktuelle Form Kroatiens (2.10/2.5 vs. 1.19/1.6); Höhere Offensivproduktion (xG 2.37) bei stabilerer Defensive (GA 1.10 vs. 1.56).",
     "inputHash": "sha256:0cb878abb2971195567a7dcd0c98016e8180c079224e1824a2cc6355aafe8506"
   },
   "predictionHistory": [
@@ -190,6 +190,19 @@
         "away": 0.15
       },
       "confidence": 0.693
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6633,
+        "draw": 0.1911,
+        "away": 0.1456
+      },
+      "confidence": 0.6683
     }
   ]
 }

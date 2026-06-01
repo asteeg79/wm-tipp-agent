@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "home": {
       "teamId": "JPN",
       "elo": 1768,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T11:37:47.843Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6477,
-      "draw": 0.2023,
-      "away": 0.15
+      "home": 0.6313,
+      "draw": 0.2077,
+      "away": 0.1609
     },
-    "confidence": 0.6839,
+    "confidence": 0.6793,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,42 +86,43 @@
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Japans (1768 vs. 1599) und stärkere gewichtete Form (2.20 vs. 1.64)",
-          "Sehr defensive Stabilität Japans: nur 0.36 Gegentore/Spiel und 58% Zu-Null-Quote gegenüber 1.64 Gegentoren/Spiel Schwedens",
-          "Schwedens defensive Schwäche durch Ausfall eines etablierten Juventus-Verteidigers weiter geschwächt (Verletzungssorgen in der Abwehr)",
-          "Positives Momentum und Titelambition Japans nach gewonnenem WM-Sendoff laut Trainer Moriyasu"
+          "Japan deutlich höher eingestuft (Elo 1768 vs. 1599) und bessere gewichtete Form (2.20 vs. 1.64)",
+          "Japans starke Defensive: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate",
+          "Schweden defensiv anfällig (1.64 Gegentore/Spiel, nur 22% Clean Sheets), zusätzlich geschwächt durch Ausfall eines wichtigen Juventus-Verteidigers",
+          "Verletzungsbedingter Ausfall von Holm reduziert Schwedens Offensivoptionen",
+          "Japan mit klarem Titelanspruch laut Trainer Moriyasu und positivem WM-Sendoff"
         ],
         "risks": [
-          "Schweden besitzt mit 1.91 Toren/Spiel offensive Durchschlagskraft und kann trotz Defensivproblemen treffen",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit über die direkte Dynamik",
-          "62 Tage seit dem letzten Spiel bei beiden Teams – mögliche Rhythmusprobleme zu Turnierbeginn",
-          "Neutraler Spielort eliminiert Heimvorteil, was die Baseline leicht zugunsten Japans überschätzen könnte"
+          "Schweden hat mit 1.91 Toren/Spiel offensives Potenzial und kann bei Standards gefährlich werden",
+          "Kein H2H-Verlauf vorhanden, daher erhöhte Unsicherheit in der Einschätzung",
+          "Neutraler Spielort ohne Heimvorteil für Japan",
+          "Lange Pause (62 Tage) für beide Teams könnte zu Rhythmusproblemen führen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
-          "away": 0.15
+          "home": 0.62,
+          "draw": 0.21,
+          "away": 0.17
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Japan's strong recent form and high ELO rating",
-          "Sweden's defensive issues due to injuries",
-          "Japan's positive team morale and goal to win title"
+          "Strong recent form and defensive record of Japan",
+          "Sweden's significant defensive injuries",
+          "Japan's high team morale with coach aiming for title"
         ],
         "risks": [
-          "Neutral venue might reduce Japan's advantage slightly",
-          "Sweden's capability to score goals, despite defensive weaknesses"
+          "Potential overconfidence from Japan's high stated goals",
+          "Both teams have not played in 62 days, unknown match sharpness"
         ]
       }
     },
-    "agreement": 0.9967,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Japans (1768 vs. 1599) und stärkere gewichtete Form (2.20 vs. 1.64); Sehr defensive Stabilität Japans: nur 0.36 Gegentore/Spiel und 58% Zu-Null-Quote gegenüber 1.64 Gegentoren/Spiel Schwedens; Schwedens defensive Schwäche durch Ausfall eines etablierten Juventus-Verteidigers weiter geschwächt (Verletzungssorgen in der Abwehr).",
+    "agreement": 0.9833,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan deutlich höher eingestuft (Elo 1768 vs. 1599) und bessere gewichtete Form (2.20 vs. 1.64); Japans starke Defensive: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate; Schweden defensiv anfällig (1.64 Gegentore/Spiel, nur 22% Clean Sheets), zusätzlich geschwächt durch Ausfall eines wichtigen Juventus-Verteidigers.",
     "inputHash": "sha256:aa043fd9aea277ad40a452721167824710868a83fe463b9b8a3dffa6273f81d8"
   },
   "predictionHistory": [
@@ -189,6 +190,19 @@
         "away": 0.1455
       },
       "confidence": 0.7276
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6477,
+        "draw": 0.2023,
+        "away": 0.15
+      },
+      "confidence": 0.6839
     }
   ]
 }
