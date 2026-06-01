@@ -1,0 +1,18 @@
+name: KI-Tipps stündlich (T-3h)
+
+# Stündlich, aber nur während des Turnierfensters (Juni/Juli). Läuft im
+# predict-Modus: das 72h-Fenster + die Re-Trigger-Logik (T-72h/T-24h/T-3h,
+# inputHash, materielle News) sorgen dafür, dass NUR fällige Partien neu
+# bewertet werden — insbesondere ~3 h vor Anpfiff. Unveränderte Partien
+# werden übersprungen (kein KI-Call) → minimale Kosten.
+on:
+  schedule:
+    - cron: "0 * * 6,7 *" # stündlich, nur Juni & Juli
+  workflow_dispatch:
+
+jobs:
+  predict:
+    uses: ./.github/workflows/pipeline-run.yml
+    with:
+      mode: predict
+    secrets: inherit

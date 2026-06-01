@@ -169,14 +169,21 @@ function textOf(v: unknown): string {
 }
 
 function stripHtml(s: string): string {
-  return s
-    .replace(/<[^>]*>/g, " ")
+  // Reihenfolge wichtig: ZUERST Entities dekodieren, DANN Tags entfernen.
+  // Google-News-Snippets enthalten escapte Tags (&lt;a href=…&gt;) — würde man
+  // erst strippen und dann dekodieren, blieben echte <a>-Tags als Text übrig.
+  const decoded = s
     .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&amp;/g, "&");
+  // Tags entfernen (zweimal, falls durch Dekodierung neue Tags entstanden sind).
+  return decoded
+    .replace(/<[^>]*>/g, " ")
+    .replace(/<[^>]*>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

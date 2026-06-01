@@ -48,6 +48,16 @@ function loadDotenvIfPresent(): void {
   }
 }
 
+type RunMode = "news" | "predict" | "full";
+
+/** Liest den Lauf-Modus aus --mode=<x> oder WM_MODE; Default "predict". */
+function resolveMode(): RunMode {
+  const arg = process.argv.find((a) => a.startsWith("--mode="));
+  const raw = (arg ? arg.split("=")[1] : process.env.WM_MODE)?.toLowerCase();
+  if (raw === "news" || raw === "predict" || raw === "full") return raw;
+  return "predict";
+}
+
 function makeTournamentProvider(): TournamentProvider {
   switch (config.providers.tournament) {
     case "openfootball":
@@ -75,13 +85,29 @@ async function main(): Promise<void> {
   const tournamentProvider = makeTournamentProvider();
   const historyProvider = makeHistoryProvider();
 
-  // Flags: WM_NO_NEWS=1 / WM_NO_AI=1 zum gezielten Überspringen (Tests).
+  // Modus steuert Kosten (KI-Calls) — via WM_MODE oder --mode=<...>:
+  //  - "news":    nur News + Struktur, KEINE KI (günstig, mehrmals täglich).
+  //  - "predict": News + KI, aber nur Partien im aiWindowHours-Fenster.
+  //  - "full":    News + KI ohne Fenster-Limit (alle Partien; teuer).
+  // Default: "predict".
+  const mode = resolveMode();
+  // KI-Fenster (Std.) konfigurierbar über WM_AI_WINDOW_HOURS, Default 72.
+  const windowEnv = Number(process.env.WM_AI_WINDOW_HOURS);
+  const aiWindowHours = Number.isFinite(windowEnv) && windowEnv > 0 ? windowEnv : 72;
+
+  // Test-Overrides bleiben erhalten.
   const withNews = process.env.WM_NO_NEWS !== "1";
-  const withAi = process.env.WM_NO_AI !== "1";
+  const withAi = mode !== "news" && process.env.WM_NO_AI !== "1";
+
+  console.log(
+    `[pipeline] Modus: ${mode}` +
+      (withAi ? ` (KI-Fenster: ${mode === "full" ? "alle" : aiWindowHours + "h"})` : " (ohne KI)"),
+  );
 
   const stats = await buildData(tournamentProvider, historyProvider, {
     withNews,
     withAi,
+    aiWindowHours: mode === "full" ? null : aiWindowHours,
   });
 
   console.log("[pipeline] Lauf abgeschlossen:");

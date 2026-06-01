@@ -1,0 +1,15 @@
+name: KI-Tipps täglich
+
+# Einmal täglich: KI bewertet/tippt alle Partien mit Anpfiff in den nächsten
+# 72 Stunden (predict-Modus, Fenster aus config/WM_AI_WINDOW_HOURS = 72).
+on:
+  schedule:
+    - cron: "0 5 * * *" # täglich 05:00 UTC
+  workflow_dispatch:
+
+jobs:
+  predict:
+    uses: ./.github/workflows/pipeline-run.yml
+    with:
+      mode: predict
+    secrets: inherit

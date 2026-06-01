@@ -64,6 +64,12 @@ export interface BuildOptions {
   withNews: boolean;
   /** KI-Ensemble für anstehende Partien ausführen (Phase 5). */
   withAi: boolean;
+  /**
+   * KI nur für Partien mit Anpfiff innerhalb dieses Fensters (Stunden ab jetzt)
+   * bewerten — Kostensteuerung. null/undefined = kein Fenster-Limit.
+   * Spiele außerhalb behalten ihren letzten Tipp (oder Baseline).
+   */
+  aiWindowHours?: number | null;
 }
 
 /** Saisons für die N-Jahres-Historie (eindeutige Jahre im Zeitfenster). */
@@ -230,6 +236,7 @@ export async function buildData(
     eloOf,
     now,
     ensemble: ensemble && ensemble.active ? ensemble : null,
+    aiWindowHours: options.aiWindowHours ?? null,
   });
   stats.matchesWritten = matchResult.written;
   stats.aiEvaluated = matchResult.aiEvaluated;
@@ -249,6 +256,8 @@ interface WriteMatchesCtx {
   eloOf: (id: string) => number;
   now: Date;
   ensemble: Ensemble | null;
+  /** KI nur für Partien ≤ diesem Anpfiff-Fenster (Std.); null = unbegrenzt. */
+  aiWindowHours: number | null;
 }
 
 interface WriteMatchesResult {
@@ -275,6 +284,7 @@ async function writeMatches(
   let aiEvaluated = 0;
   let aiSkipped = 0;
   const matches: Match[] = [];
+  const MS_PER_HOUR = 3_600_000;
 
   for (const fx of schedule) {
     const stage: Stage = fx.stage ?? "group";
@@ -334,7 +344,15 @@ async function writeMatches(
       const homeNews = newsByTeam.get(fx.homeTeamId) ?? [];
       const awayNews = newsByTeam.get(fx.awayTeamId) ?? [];
 
-      if (ensemble) {
+      // Kosten-Gate: KI nur für Partien im Anpfiff-Fenster (z. B. ≤72 h).
+      // Außerhalb → kein KI-Call, Tipp/Baseline bleibt unverändert.
+      const hoursUntilKickoff =
+        (new Date(match.date).getTime() - now.getTime()) / MS_PER_HOUR;
+      const inAiWindow =
+        ctx.aiWindowHours === null ||
+        (hoursUntilKickoff >= 0 && hoursUntilKickoff <= ctx.aiWindowHours);
+
+      if (ensemble && inAiWindow) {
         const decision = decideRetrigger(
           prev ?? match,
           inputHash,
@@ -379,7 +397,10 @@ async function writeMatches(
           aiSkipped++;
         }
       } else {
-        match.prediction = baselinePrediction;
+        // Kein Ensemble, außerhalb Anpfiff-Fenster oder kein Key:
+        // vorhandenen (KI-)Tipp behalten, sonst Baseline. Kein KI-Call.
+        match.prediction = prev?.prediction ?? baselinePrediction;
+        if (ensemble && !inAiWindow) aiSkipped++;
       }
     } else if (fx.finished && prev?.prediction) {
       // Beendete Partie: letzten Tipp bewahren (für Accuracy + Anzeige).

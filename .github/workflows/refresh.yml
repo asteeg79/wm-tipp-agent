@@ -1,83 +1,22 @@
-name: Data Refresh (Pipeline)
+name: Data Refresh (manuell)
 
-# Turnier-Zeitplan (Abschnitt 10.2):
-#  - Außerhalb des Turniers: 1×/Tag (04:00 UTC) — erfüllt "mind. täglich neue
-#    Ergebnisse prüfen".
-#  - Während des Turniers (11.06.–19.07.2026): alle 3 h, damit sich der Tipp
-#    über die T-72h/T-24h/T-3h-Milestones bis kurz vor Anpfiff verfeinert.
-#  Hinweis: GitHub-Cron ist "best effort" und kann sich verzögern → die
-#  Pipeline ist idempotent (Re-Trigger via inputHash/Milestone toleriert das).
+# Manueller Voll-Lauf: News + KI für ALLE Partien (mode wählbar, Default full).
+# Für den Normalbetrieb laufen automatisch: news.yml (alle 3 h),
+# predict-daily.yml (1×/Tag, 72h-Fenster), predict-hourly.yml (stündlich im
+# Turnierfenster, nur fällige T-3h-Partien).
 on:
-  schedule:
-    - cron: "0 4 * * *" # täglich 04:00 UTC (ganzjährig)
-    - cron: "0 */3 * 6,7 *" # Juni & Juli: alle 3 h (Turnierfenster)
   workflow_dispatch:
-
-# Läufe dürfen sich nicht überlappen (idempotente Pipeline).
-concurrency:
-  group: data-refresh
-  cancel-in-progress: false
-
-permissions:
-  contents: write
+    inputs:
+      mode:
+        description: "news | predict | full"
+        required: true
+        default: "full"
+        type: choice
+        options: [news, predict, full]
 
 jobs:
   refresh:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      # pnpm-Version stammt aus package.json#packageManager (kein version:-Feld,
-      # sonst "Multiple versions of pnpm specified").
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - run: pnpm install --frozen-lockfile
-
-      # Inkrementeller Roh-Cache der Pipeline über Läufe hinweg erhalten
-      # (Historie unveränderlich → schont Bandbreite & LLM-Re-Trigger).
-      - name: Restore pipeline cache
-        uses: actions/cache@v4
-        with:
-          path: pipeline/cache
-          key: pipeline-cache-${{ github.run_id }}
-          restore-keys: |
-            pipeline-cache-
-
-      # openfootball benötigt KEINEN Key. ANTHROPIC/OPENAI für das KI-Ensemble;
-      # fehlen sie, läuft die Pipeline graceful nur mit der Baseline.
-      # continue-on-error: ein Teilausfall soll den letzten gültigen /data-Stand
-      # nicht zerstören — der Commit-Schritt committet nur, was sich änderte.
-      - name: Run pipeline
-        id: pipeline
-        continue-on-error: true
-        run: pnpm --filter @wm/pipeline start
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-
-      # Geänderte /data committen & pushen → triggert deploy.yml.
-      - name: Commit & push data
-        run: |
-          git config user.name "wm-tipp-bot"
-          git config user.email "actions@github.com"
-          git add data
-          if git diff --staged --quiet; then
-            echo "Keine Datenänderungen — nichts zu committen."
-          else
-            git commit -m "data: refresh $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-            git push
-          fi
-
-      # Pipeline-Fehler nach dem Commit sichtbar machen (Lauf rot markieren),
-      # ohne den letzten gültigen Stand zu verlieren.
-      - name: Report pipeline failure
-        if: steps.pipeline.outcome == 'failure'
-        run: |
-          echo "::error::Pipeline endete mit Fehler — siehe Log. Letzter gültiger /data-Stand bleibt erhalten."
-          exit 1
+    uses: ./.github/workflows/pipeline-run.yml
+    with:
+      mode: ${{ inputs.mode }}
+    secrets: inherit

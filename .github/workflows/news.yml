@@ -1,0 +1,14 @@
+name: News Refresh
+
+# News für alle Teams + globale Feeds, alle 3 Stunden. KEINE KI → günstig.
+on:
+  schedule:
+    - cron: "0 */3 * * *" # alle 3 h
+  workflow_dispatch:
+
+jobs:
+  news:
+    uses: ./.github/workflows/pipeline-run.yml
+    with:
+      mode: news
+    secrets: inherit
