@@ -2,8 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark light;
+/*
+ * Semantisches Theme-Token-System (Sportschau-inspiriert).
+ * Werte sind RGB-Tripel (space-separated), damit Tailwind-Opacity-Modifier
+ * wie `bg-surface/40` über `rgb(var(--surface) / <alpha-value>)` funktionieren.
+ * .dark / .light auf <html> schaltet die Paletten um.
+ */
+:root,
+.light {
+  color-scheme: light;
+  --canvas: 244 245 247; /* heller Seitenhintergrund (#f4f5f7) */
+  --surface: 255 255 255; /* Karten/Boxen (weiß) */
+  --surface-2: 237 239 242; /* leicht abgesetzte Flächen */
+  --edge: 222 226 231; /* feine Linien/Border */
+  --edge-strong: 200 205 212; /* kräftigere Border/Inputs */
+  --fg: 24 28 35; /* Haupttext (fast schwarz) */
+  --fg-soft: 55 62 74; /* sekundärer Text */
+  --fg-muted: 92 101 115; /* gedämpfter Text */
+  --fg-faint: 124 133 148; /* sehr gedämpft */
+  /* Akzente — Textfarben auf getöntem Grund (im Light kräftiger) */
+  --pos: 21 128 61; /* grün (Treffer/Heim) */
+  --warn: 180 83 9; /* amber */
+  --neg: 185 28 28; /* rot */
+  --info: 29 78 216; /* blau */
+  --brand: 198 16 28; /* Sportschau-rot */
+}
+
+.dark {
+  color-scheme: dark;
+  --canvas: 8 12 20; /* sehr dunkles Marineblau (#080c14) */
+  --surface: 17 24 36; /* Karten */
+  --surface-2: 24 33 48;
+  --edge: 32 42 58;
+  --edge-strong: 48 60 80;
+  --fg: 237 241 247;
+  --fg-soft: 200 208 220;
+  --fg-muted: 148 160 178;
+  --fg-faint: 110 122 140;
+  --pos: 52 211 153; /* helleres Grün auf dunklem Grund */
+  --warn: 251 191 36;
+  --neg: 248 113 113;
+  --info: 56 189 248;
+  --brand: 248 113 113;
 }
 
 html,
@@ -13,5 +53,5 @@ body,
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply bg-canvas text-fg antialiased;
 }

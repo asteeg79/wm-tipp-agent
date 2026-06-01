@@ -16,7 +16,7 @@ export function ProbabilityBar({ p }: { p: Outcome1x2 }) {
           {p.home >= 0.12 ? pct(p.home) : ""}
         </div>
         <div
-          className="flex items-center justify-center bg-slate-600/80"
+          className="flex items-center justify-center bg-surface-2"
           style={{ width: pct(p.draw) }}
           title={`${t("match.draw")} ${pct(p.draw)}`}
         >
@@ -30,7 +30,7 @@ export function ProbabilityBar({ p }: { p: Outcome1x2 }) {
           {p.away >= 0.12 ? pct(p.away) : ""}
         </div>
       </div>
-      <div className="flex justify-between text-[11px] text-slate-500">
+      <div className="flex justify-between text-[11px] text-fg-faint">
         <span>{t("match.home")}</span>
         <span>{t("match.draw")}</span>
         <span>{t("match.away")}</span>

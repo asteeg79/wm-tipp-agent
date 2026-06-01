@@ -28,7 +28,7 @@ export function TeamBadge({
       loading="lazy"
     />
   ) : (
-    <span className={`${flagH} w-5 shrink-0 rounded-[2px] bg-slate-700`} />
+    <span className={`${flagH} w-5 shrink-0 rounded-[2px] bg-surface-2`} />
   );
 
   const content = (
@@ -46,11 +46,11 @@ export function TeamBadge({
     return (
       <Link
         to={`/team/${team.id}`}
-        className="min-w-0 text-slate-100 hover:text-emerald-400"
+        className="min-w-0 text-fg hover:text-pos"
       >
         {content}
       </Link>
     );
   }
-  return <span className="min-w-0 text-slate-300">{content}</span>;
+  return <span className="min-w-0 text-fg-soft">{content}</span>;
 }

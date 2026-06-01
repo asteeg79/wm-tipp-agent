@@ -4,6 +4,7 @@ import { useIndex, useTeamsMap } from "../lib/data.js";
 import { timeAgo } from "../lib/format.js";
 import { useVersion, formatVersion } from "../lib/useVersion.js";
 import { UpdateBanner } from "./UpdateBanner.js";
+import { ThemeToggle } from "./ThemeToggle.js";
 import { useFavorites } from "../lib/FavoritesContext.js";
 import { useFavoriteAlerts } from "../lib/useFavoriteAlerts.js";
 
@@ -16,21 +17,27 @@ export function Layout() {
   useFavoriteAlerts(favorites, teams);
 
   const navClass = ({ isActive }: { isActive: boolean }): string =>
-    `rounded-md px-3 py-1.5 text-sm font-medium ${
+    `rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
       isActive
-        ? "bg-emerald-500/15 text-emerald-300"
-        : "text-slate-300 hover:bg-slate-800"
+        ? "bg-brand/15 text-brand"
+        : "text-fg-soft hover:bg-surface-2"
     }`;
 
   return (
     <div className="flex min-h-full flex-col">
       <UpdateBanner v={v} />
-      <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-900/85 backdrop-blur">
+
+      {/* Sportschau-artige rote Markenleiste */}
+      <div className="h-1 bg-brand" />
+
+      <header className="sticky top-0 z-10 border-b border-edge bg-surface/90 backdrop-blur">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-2 px-4 py-2.5">
-          <span className="text-xl">⚽</span>
-          <h1 className="mr-2 text-base font-semibold tracking-tight">
-            {t("appTitle")}
-          </h1>
+          <NavLink to="/" className="mr-2 flex items-center gap-2">
+            <span className="text-xl">⚽</span>
+            <span className="text-base font-bold tracking-tight">
+              {t("appTitle")}
+            </span>
+          </NavLink>
           <nav className="flex flex-wrap gap-1">
             <NavLink to="/" end className={navClass}>
               {t("nav.overview")}
@@ -51,11 +58,14 @@ export function Layout() {
               {t("nav.play")}
             </NavLink>
           </nav>
-          {index?.lastUpdated && (
-            <span className="ml-auto text-xs text-slate-500">
-              {t("updated", { time: timeAgo(index.lastUpdated) })}
-            </span>
-          )}
+          <div className="ml-auto flex items-center gap-2">
+            {index?.lastUpdated && (
+              <span className="hidden text-xs text-fg-faint sm:inline">
+                {t("updated", { time: timeAgo(index.lastUpdated) })}
+              </span>
+            )}
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
@@ -63,11 +73,16 @@ export function Layout() {
         <Outlet />
       </main>
 
-      <footer className="border-t border-slate-800 px-4 py-4 text-center text-xs text-slate-500">
+      <footer className="border-t border-edge px-4 py-4 text-center text-xs text-fg-faint">
         <div>{t("disclaimer")}</div>
-        <div className="mt-1 font-mono text-[10px] text-slate-600">
-          {t("version.label")} {formatVersion(v.current.version)} ·{" "}
-          {v.current.commit}
+        <div className="mt-1 flex items-center justify-center gap-3 font-mono text-[10px]">
+          <span>
+            {t("version.label")} {formatVersion(v.current.version)} ·{" "}
+            {v.current.commit}
+          </span>
+          <NavLink to="/admin" className="hover:text-brand">
+            Admin
+          </NavLink>
         </div>
       </footer>
     </div>

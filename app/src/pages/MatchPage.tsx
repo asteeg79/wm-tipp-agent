@@ -12,8 +12,8 @@ export function MatchPage() {
   const { data: match, isLoading, isError } = useMatch(matchId);
   const teams = useTeamsMap();
 
-  if (isLoading) return <p className="text-slate-400">{t("loading")}</p>;
-  if (isError || !match) return <p className="text-red-400">{t("error")}</p>;
+  if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
+  if (isError || !match) return <p className="text-neg">{t("error")}</p>;
 
   const r = match.actualResult;
   const pred = match.prediction;
@@ -27,8 +27,8 @@ export function MatchPage() {
   return (
     <div className="space-y-4">
       {/* Kopf: Paarung + Ergebnis/Tipp */}
-      <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-5">
-        <div className="text-center text-xs text-slate-500">
+      <div className="rounded-xl border border-edge bg-surface/40 p-5">
+        <div className="text-center text-xs text-fg-faint">
           {formatKickoff(match.date)} ·{" "}
           {match.status === "finished"
             ? t("match.finished")
@@ -50,11 +50,11 @@ export function MatchPage() {
           </div>
         </div>
         {!r && pred && (
-          <div className="mt-1 text-center text-[11px] uppercase tracking-wide text-slate-500">
+          <div className="mt-1 text-center text-[11px] uppercase tracking-wide text-fg-faint">
             {t("match.tip")}
           </div>
         )}
-        <div className="mt-3 text-center text-xs text-slate-500">
+        <div className="mt-3 text-center text-xs text-fg-faint">
           {t("match.venue")}: {match.venue.city}
           {match.venue.altitude
             ? ` · ${t("match.altitude")} ${match.venue.altitude} m`
@@ -64,14 +64,14 @@ export function MatchPage() {
 
       {/* Prognose */}
       {pred ? (
-        <div className="space-y-4 rounded-xl border border-slate-800 bg-slate-900/40 p-4">
+        <div className="space-y-4 rounded-xl border border-edge bg-surface/40 p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="font-semibold">
               {hasAi ? t("match.aiTip") : t("match.baselineTip")}
             </h3>
             <div className="flex items-center gap-2">
               {lowAgreement && (
-                <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-amber-300 ring-1 ring-inset ring-amber-500/30">
+                <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-warn ring-1 ring-inset ring-amber-500/30">
                   ⚠ {t("match.modelsDisagree")}
                 </span>
               )}
@@ -80,7 +80,7 @@ export function MatchPage() {
           </div>
 
           <div>
-            <div className="mb-1 text-xs uppercase tracking-wide text-slate-500">
+            <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
               {t("match.probabilities")}
             </div>
             <ProbabilityBar p={pred.probabilities} />
@@ -91,11 +91,11 @@ export function MatchPage() {
 
           {/* Modell-Vergleich Claude vs. ChatGPT */}
           {hasAi && (
-            <div className="border-t border-slate-800 pt-3">
-              <div className="mb-2 text-xs uppercase tracking-wide text-slate-500">
+            <div className="border-t border-edge pt-3">
+              <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
                 {t("match.modelComparison")}
                 {pred.agreement !== undefined && (
-                  <span className="ml-2 normal-case text-slate-400">
+                  <span className="ml-2 normal-case text-fg-muted">
                     {t("match.agreement")}: {Math.round(pred.agreement * 100)}%
                   </span>
                 )}
@@ -109,16 +109,16 @@ export function MatchPage() {
 
           {/* Baseline vs. KI + erwartete Tore */}
           {pred.baseline && (
-            <div className="border-t border-slate-800 pt-3 text-sm text-slate-400">
+            <div className="border-t border-edge pt-3 text-sm text-fg-muted">
               {hasAi && (
-                <div className="mb-1 text-xs uppercase tracking-wide text-slate-500">
+                <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
                   {t("match.baselineVsAi")}
                 </div>
               )}
               {hasAi && (
                 <div className="mb-2">
-                  <span className="text-slate-500">Baseline:</span>{" "}
-                  <span className="font-mono text-slate-300">
+                  <span className="text-fg-faint">Baseline:</span>{" "}
+                  <span className="font-mono text-fg-soft">
                     {pct(pred.baseline.probabilities.home)} /{" "}
                     {pct(pred.baseline.probabilities.draw)} /{" "}
                     {pct(pred.baseline.probabilities.away)}
@@ -126,7 +126,7 @@ export function MatchPage() {
                 </div>
               )}
               {t("match.expectedGoals")}:{" "}
-              <span className="font-mono text-slate-200">
+              <span className="font-mono text-fg">
                 {pred.baseline.expectedGoals.home.toFixed(2)} :{" "}
                 {pred.baseline.expectedGoals.away.toFixed(2)}
               </span>
@@ -135,7 +135,7 @@ export function MatchPage() {
 
           {/* Faktoren (Elo/Form) */}
           {fb && (
-            <div className="grid grid-cols-2 gap-3 border-t border-slate-800 pt-3 text-sm">
+            <div className="grid grid-cols-2 gap-3 border-t border-edge pt-3 text-sm">
               <FeatureCol label={home?.name ?? match.homeTeamId} f={fb.home} />
               <FeatureCol label={away?.name ?? match.awayTeamId} f={fb.away} />
             </div>
@@ -143,13 +143,13 @@ export function MatchPage() {
 
           {/* Tipp-Timeline */}
           {match.predictionHistory.length > 0 && (
-            <div className="border-t border-slate-800 pt-3">
-              <div className="mb-2 text-xs uppercase tracking-wide text-slate-500">
+            <div className="border-t border-edge pt-3">
+              <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
                 {t("match.timeline")}
               </div>
               <ul className="space-y-1 text-sm">
                 {[...match.predictionHistory].reverse().map((h, i) => (
-                  <li key={i} className="flex justify-between text-slate-400">
+                  <li key={i} className="flex justify-between text-fg-muted">
                     <span>{formatKickoff(h.generatedAt)}</span>
                     <span className="font-mono">
                       {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
@@ -161,12 +161,12 @@ export function MatchPage() {
             </div>
           )}
 
-          <p className="border-t border-slate-800 pt-3 text-xs text-slate-500">
+          <p className="border-t border-edge pt-3 text-xs text-fg-faint">
             {pred.rationale ?? t("match.baselineNote")}
           </p>
         </div>
       ) : (
-        <div className="rounded-xl border border-dashed border-slate-700 bg-slate-900/30 p-4 text-sm text-slate-400">
+        <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-4 text-sm text-fg-muted">
           {t("match.predictionSoon")}
         </div>
       )}
@@ -190,16 +190,16 @@ function WhySection({
   }
   if (factors.size === 0 && risks.size === 0) return null;
   return (
-    <div className="border-t border-slate-800 pt-3">
-      <div className="mb-2 text-xs uppercase tracking-wide text-slate-500">
+    <div className="border-t border-edge pt-3">
+      <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
         {t("match.whyTitle")}
       </div>
       {factors.size > 0 && (
         <div className="mb-2">
-          <div className="text-xs font-medium text-emerald-400">
+          <div className="text-xs font-medium text-pos">
             {t("match.keyFactors")}
           </div>
-          <ul className="ml-4 list-disc text-sm text-slate-300">
+          <ul className="ml-4 list-disc text-sm text-fg-soft">
             {[...factors].slice(0, 5).map((f, i) => (
               <li key={i}>{f}</li>
             ))}
@@ -208,10 +208,10 @@ function WhySection({
       )}
       {risks.size > 0 && (
         <div>
-          <div className="text-xs font-medium text-amber-400">
+          <div className="text-xs font-medium text-warn">
             {t("match.risks")}
           </div>
-          <ul className="ml-4 list-disc text-sm text-slate-300">
+          <ul className="ml-4 list-disc text-sm text-fg-soft">
             {[...risks].slice(0, 4).map((rk, i) => (
               <li key={i}>{rk}</li>
             ))}
@@ -231,17 +231,17 @@ function ModelCol({
 }) {
   if (!m)
     return (
-      <div className="rounded-md bg-slate-900/60 p-2 text-slate-600">
+      <div className="rounded-md bg-surface/60 p-2 text-fg-faint">
         {label}: –
       </div>
     );
   return (
-    <div className="rounded-md bg-slate-900/60 p-2">
+    <div className="rounded-md bg-surface/60 p-2">
       <div className="font-medium">{label}</div>
-      <div className="mt-1 font-mono text-slate-300">
+      <div className="mt-1 font-mono text-fg-soft">
         {m.predictedScore.home}:{m.predictedScore.away}
       </div>
-      <div className="text-xs text-slate-500">
+      <div className="text-xs text-fg-faint">
         {pct(m.probabilities.home)} / {pct(m.probabilities.draw)} /{" "}
         {pct(m.probabilities.away)} · {pct(m.confidence)}
       </div>
@@ -260,11 +260,11 @@ function FeatureCol({
   return (
     <div>
       <div className="truncate font-medium">{label}</div>
-      <div className="mt-1 flex justify-between text-slate-400">
+      <div className="mt-1 flex justify-between text-fg-muted">
         <span>{t("match.elo")}</span>
         <span className="font-mono">{f.elo}</span>
       </div>
-      <div className="flex justify-between text-slate-400">
+      <div className="flex justify-between text-fg-muted">
         <span>{t("match.form")}</span>
         <span className="font-mono">{f.weightedForm.toFixed(2)}</span>
       </div>

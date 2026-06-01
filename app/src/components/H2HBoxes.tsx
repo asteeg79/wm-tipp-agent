@@ -18,15 +18,15 @@ export function H2HBoxes({ opponents, teams }: Props) {
         return (
           <div
             key={o.teamId}
-            className="rounded-lg border border-slate-800 bg-slate-900/40 p-3"
+            className="rounded-lg border border-edge bg-surface/40 p-3"
           >
             <div className="flex items-center justify-between gap-1 text-sm font-medium">
               <TeamBadge team={teams.get(o.teamId)} fallbackId={o.teamId} size="sm" />
             </div>
-            <div className="mt-1 text-[11px] uppercase tracking-wide text-slate-500">
+            <div className="mt-1 text-[11px] uppercase tracking-wide text-fg-faint">
               {o.stage === "group" ? t("team.stageGroup") : t("team.stageKo")}
             </div>
-            <div className="mt-2 flex justify-between text-xs text-slate-400">
+            <div className="mt-2 flex justify-between text-xs text-fg-muted">
               <span title={t("team.played")}>{h.played} {t("team.played")}</span>
               <span className="font-mono">
                 {h.w}/{h.d}/{h.l}

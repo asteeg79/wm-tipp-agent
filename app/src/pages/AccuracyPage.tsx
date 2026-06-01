@@ -8,8 +8,8 @@ export function AccuracyPage() {
   const { data, isLoading, isError } = usePredictionsIndex();
   const teams = useTeamsMap();
 
-  if (isLoading) return <p className="text-slate-400">{t("loading")}</p>;
-  if (isError || !data) return <p className="text-red-400">{t("error")}</p>;
+  if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
+  if (isError || !data) return <p className="text-neg">{t("error")}</p>;
 
   const agg = data.aggregate;
   const pct = (x: number | null): string =>
@@ -25,11 +25,11 @@ export function AccuracyPage() {
     <section className="space-y-4">
       <div>
         <h2 className="text-xl font-bold">{t("accuracy.title")}</h2>
-        <p className="mt-1 text-sm text-slate-400">{t("accuracy.intro")}</p>
+        <p className="mt-1 text-sm text-fg-muted">{t("accuracy.intro")}</p>
       </div>
 
       {agg.finishedCount === 0 ? (
-        <div className="rounded-xl border border-dashed border-slate-700 bg-slate-900/30 p-6 text-slate-400">
+        <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-6 text-fg-muted">
           {t("accuracy.none")}
         </div>
       ) : (
@@ -65,7 +65,7 @@ export function AccuracyPage() {
 
           <div>
             <h3 className="mb-2 font-semibold">{t("accuracy.recent")}</h3>
-            <ul className="divide-y divide-slate-800/70 rounded-xl border border-slate-800 bg-slate-900/40">
+            <ul className="divide-y divide-edge/70 rounded-xl border border-edge bg-surface/40">
               {finishedEntries.map((e) => {
                 const a = e.accuracy!;
                 return (
@@ -84,11 +84,11 @@ export function AccuracyPage() {
                     </span>
                     <span className="shrink-0">
                       {a.exactScoreHit ? (
-                        <span className="text-emerald-400" title={t("accuracy.exactRate")}>★</span>
+                        <span className="text-pos" title={t("accuracy.exactRate")}>★</span>
                       ) : a.outcomeHit ? (
-                        <span className="text-amber-400" title={t("accuracy.outcomeRate")}>✓</span>
+                        <span className="text-warn" title={t("accuracy.outcomeRate")}>✓</span>
                       ) : (
-                        <span className="text-red-400">✗</span>
+                        <span className="text-neg">✗</span>
                       )}
                     </span>
                   </li>

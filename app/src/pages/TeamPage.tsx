@@ -17,7 +17,7 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
+    <section className="rounded-xl border border-edge bg-surface/40 p-4">
       <h3 className="mb-3 font-semibold">{title}</h3>
       {children}
     </section>
@@ -31,8 +31,8 @@ export function TeamPage() {
   const teams = useTeamsMap();
   const { isFavorite, toggle } = useFavorites();
 
-  if (isLoading) return <p className="text-slate-400">{t("loading")}</p>;
-  if (isError || !team) return <p className="text-red-400">{t("error")}</p>;
+  if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
+  if (isError || !team) return <p className="text-neg">{t("error")}</p>;
 
   return (
     <div className="space-y-4">
@@ -42,7 +42,7 @@ export function TeamPage() {
         )}
         <div className="flex-1">
           <h2 className="text-2xl font-bold">{team.name}</h2>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-fg-faint">
             {team.code} · {t("team.group")} {team.groupId}
           </p>
         </div>

@@ -38,21 +38,21 @@ export function MatchCard({ entry, teams }: Props) {
   let hitBadge: { label: string; cls: string } | null = null;
   if (r && pred) {
     if (r.home === pred.home && r.away === pred.away)
-      hitBadge = { label: t("overview.exactHit"), cls: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30" };
+      hitBadge = { label: t("overview.exactHit"), cls: "bg-emerald-500/15 text-pos ring-emerald-500/30" };
     else if (sameTendency(r, pred))
-      hitBadge = { label: t("overview.hit"), cls: "bg-amber-500/15 text-amber-300 ring-amber-500/30" };
+      hitBadge = { label: t("overview.hit"), cls: "bg-amber-500/15 text-warn ring-amber-500/30" };
     else
-      hitBadge = { label: t("overview.miss"), cls: "bg-red-500/15 text-red-300 ring-red-500/30" };
+      hitBadge = { label: t("overview.miss"), cls: "bg-red-500/15 text-neg ring-red-500/30" };
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40">
+    <div className="overflow-hidden rounded-xl border border-edge bg-surface/40">
       {/* Kopf */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-slate-900/70"
+        className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-surface/70"
       >
-        <div className="w-24 shrink-0 text-xs text-slate-500">
+        <div className="w-24 shrink-0 text-xs text-fg-faint">
           {formatKickoff(entry.date)}
         </div>
         <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
@@ -62,26 +62,26 @@ export function MatchCard({ entry, teams }: Props) {
           {r ? (
             <span className="text-lg font-bold">{r.home}:{r.away}</span>
           ) : pred ? (
-            <span className="text-slate-300">{pred.home}:{pred.away}</span>
+            <span className="text-fg-soft">{pred.home}:{pred.away}</span>
           ) : (
-            <span className="text-slate-500">vs</span>
+            <span className="text-fg-faint">vs</span>
           )}
         </div>
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <TeamBadge team={away} fallbackId={entry.awayTeamId} link={false} />
         </div>
-        <span className="shrink-0 text-slate-500">{open ? "▾" : "▸"}</span>
+        <span className="shrink-0 text-fg-faint">{open ? "▾" : "▸"}</span>
       </button>
 
       {/* Kerninfo-Zeile unter dem Kopf */}
       <div className="flex flex-wrap items-center gap-2 px-4 pb-2 text-xs">
         {r && pred && (
-          <span className="text-slate-500">
+          <span className="text-fg-faint">
             {t("overview.tip")} {pred.home}:{pred.away}
           </span>
         )}
         {!r && pred && (
-          <span className="text-slate-500">{t("overview.tip")}</span>
+          <span className="text-fg-faint">{t("overview.tip")}</span>
         )}
         {entry.confidence !== undefined && (
           <ConfidenceBadge value={entry.confidence} />
@@ -91,7 +91,7 @@ export function MatchCard({ entry, teams }: Props) {
             {hitBadge.label}
           </span>
         )}
-        <span className="ml-auto text-slate-500">
+        <span className="ml-auto text-fg-faint">
           {open ? t("overview.collapse") : t("overview.expand")}
         </span>
       </div>
@@ -111,7 +111,7 @@ function MatchDetails({ entry, teams }: Props) {
 
   if (isLoading || !match)
     return (
-      <div className="border-t border-slate-800 px-4 py-3 text-sm text-slate-500">
+      <div className="border-t border-edge px-4 py-3 text-sm text-fg-faint">
         {t("overview.loadingDetails")}
       </div>
     );
@@ -131,62 +131,62 @@ function MatchDetails({ entry, teams }: Props) {
       .slice(0, 5);
 
   return (
-    <div className="space-y-3 border-t border-slate-800 px-4 py-3">
+    <div className="space-y-3 border-t border-edge px-4 py-3">
       {pred ? (
         <>
           {pred.probabilities && <ProbabilityBar p={pred.probabilities} />}
           {pred.baseline && (
-            <div className="text-xs text-slate-400">
+            <div className="text-xs text-fg-muted">
               {t("match.expectedGoals")}:{" "}
-              <span className="font-mono text-slate-200">
+              <span className="font-mono text-fg">
                 {pred.baseline.expectedGoals.home.toFixed(2)} :{" "}
                 {pred.baseline.expectedGoals.away.toFixed(2)}
               </span>
             </div>
           )}
           {pred.rationale && (
-            <p className="text-sm text-slate-300">{pred.rationale}</p>
+            <p className="text-sm text-fg-soft">{pred.rationale}</p>
           )}
           {/* keyFactors/risks aus den Modellen */}
           {pred.models && <WhyBlock models={pred.models} />}
           {fb && (
-            <div className="grid grid-cols-2 gap-3 border-t border-slate-800 pt-2 text-xs">
+            <div className="grid grid-cols-2 gap-3 border-t border-edge pt-2 text-xs">
               <FeatureMini label={homeName} f={fb.home} />
               <FeatureMini label={awayName} f={fb.away} />
             </div>
           )}
         </>
       ) : (
-        <p className="text-sm text-slate-500">{t("overview.tipSoon")}</p>
+        <p className="text-sm text-fg-faint">{t("overview.tipSoon")}</p>
       )}
 
       {/* News beider Teams */}
-      <div className="grid gap-3 border-t border-slate-800 pt-2 md:grid-cols-2">
+      <div className="grid gap-3 border-t border-edge pt-2 md:grid-cols-2">
         <div>
-          <h4 className="mb-1 text-xs font-semibold text-slate-400">
+          <h4 className="mb-1 text-xs font-semibold text-fg-muted">
             {t("overview.newsHome", { team: homeName })}
           </h4>
           {home && home.news.length > 0 ? (
             <NewsList news={pick(home.news)} />
           ) : (
-            <p className="text-xs text-slate-500">{t("overview.noNews")}</p>
+            <p className="text-xs text-fg-faint">{t("overview.noNews")}</p>
           )}
         </div>
         <div>
-          <h4 className="mb-1 text-xs font-semibold text-slate-400">
+          <h4 className="mb-1 text-xs font-semibold text-fg-muted">
             {t("overview.newsAway", { team: awayName })}
           </h4>
           {away && away.news.length > 0 ? (
             <NewsList news={pick(away.news)} />
           ) : (
-            <p className="text-xs text-slate-500">{t("overview.noNews")}</p>
+            <p className="text-xs text-fg-faint">{t("overview.noNews")}</p>
           )}
         </div>
       </div>
 
       <Link
         to={`/match/${entry.matchId}`}
-        className="inline-block text-xs text-emerald-400 hover:underline"
+        className="inline-block text-xs text-pos hover:underline"
       >
         {t("overview.details")} →
       </Link>
@@ -209,14 +209,14 @@ function WhyBlock({
   return (
     <div className="space-y-1 text-xs">
       {factors.size > 0 && (
-        <ul className="ml-4 list-disc text-emerald-300/90">
+        <ul className="ml-4 list-disc text-pos/90">
           {[...factors].slice(0, 4).map((f, i) => (
             <li key={i}>{f}</li>
           ))}
         </ul>
       )}
       {risks.size > 0 && (
-        <ul className="ml-4 list-disc text-amber-300/80">
+        <ul className="ml-4 list-disc text-warn/80">
           {[...risks].slice(0, 3).map((r, i) => (
             <li key={i}>{r}</li>
           ))}
@@ -234,7 +234,7 @@ function FeatureMini({
   f: { elo: number; weightedForm: number };
 }) {
   return (
-    <div className="flex items-center justify-between text-slate-400">
+    <div className="flex items-center justify-between text-fg-muted">
       <span className="truncate">{label}</span>
       <span className="font-mono">
         Elo {f.elo} · Form {f.weightedForm.toFixed(2)}

@@ -7,8 +7,8 @@ export function HomePage() {
   const { data, isLoading, isError } = usePredictionsIndex();
   const teams = useTeamsMap();
 
-  if (isLoading) return <p className="text-slate-400">{t("loading")}</p>;
-  if (isError || !data) return <p className="text-red-400">{t("error")}</p>;
+  if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
+  if (isError || !data) return <p className="text-neg">{t("error")}</p>;
 
   const now = Date.now();
   const byDateAsc = [...data.entries].sort((a, b) =>
@@ -33,16 +33,16 @@ export function HomePage() {
     <section className="space-y-6">
       <div>
         <h2 className="text-xl font-bold">{t("appTitle")}</h2>
-        <p className="mt-1 text-sm text-slate-400">{t("tagline")}</p>
+        <p className="mt-1 text-sm text-fg-muted">{t("tagline")}</p>
       </div>
 
       {/* Nächste Spiele */}
       <div className="space-y-2">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+        <h3 className="text-sm font-semibold uppercase tracking-wide text-fg-muted">
           {t("overview.upcoming")}
         </h3>
         {upcomingList.length === 0 ? (
-          <p className="text-slate-500">{t("overview.empty")}</p>
+          <p className="text-fg-faint">{t("overview.empty")}</p>
         ) : (
           upcomingList.map((e) => (
             <MatchCard key={e.matchId} entry={e} teams={teams} />
@@ -53,7 +53,7 @@ export function HomePage() {
       {/* Zuletzt gespielt — Ist-Ergebnis vs. KI-Tipp */}
       {recent.length > 0 && (
         <div className="space-y-2">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-fg-muted">
             {t("overview.recent")}
           </h3>
           {recent.map((e) => (

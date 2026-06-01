@@ -25,7 +25,7 @@ export function ComparePage() {
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full rounded-md border border-slate-700 bg-slate-900 px-2 py-1.5 text-sm"
+      className="w-full rounded-md border border-edge-strong bg-surface px-2 py-1.5 text-sm"
     >
       <option value="">{t("compare.pick")}</option>
       {sorted.map((tm) => (
@@ -45,12 +45,12 @@ export function ComparePage() {
       </div>
 
       {a && b && (
-        <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40">
+        <div className="overflow-hidden rounded-xl border border-edge bg-surface/40">
           <table className="w-full text-sm">
-            <thead className="bg-slate-900/60">
+            <thead className="bg-surface/60">
               <tr>
                 <th className="px-3 py-2 text-right font-semibold">{a.name}</th>
-                <th className="px-3 py-2 text-center text-xs uppercase tracking-wide text-slate-500"></th>
+                <th className="px-3 py-2 text-center text-xs uppercase tracking-wide text-fg-faint"></th>
                 <th className="px-3 py-2 text-left font-semibold">{b.name}</th>
               </tr>
             </thead>
@@ -134,13 +134,13 @@ function Row({
             : null
       : null;
   const cls = (side: "a" | "b"): string =>
-    better === side ? "font-semibold text-emerald-400" : "text-slate-300";
+    better === side ? "font-semibold text-pos" : "text-fg-soft";
   return (
-    <tr className="border-t border-slate-800/70">
+    <tr className="border-t border-edge/70">
       <td className={`px-3 py-1.5 text-right font-mono ${cls("a")}`}>
         {fmt(av, dec, pct)}
       </td>
-      <td className="px-3 py-1.5 text-center text-xs text-slate-500">{label}</td>
+      <td className="px-3 py-1.5 text-center text-xs text-fg-faint">{label}</td>
       <td className={`px-3 py-1.5 text-left font-mono ${cls("b")}`}>
         {fmt(bv, dec, pct)}
       </td>
@@ -153,10 +153,10 @@ function H2HRow({ a, b, label }: { a: Team; b: Team; label: string }): JSX.Eleme
   const h = a.potentialOpponents.find((o) => o.teamId === b.id)?.h2hSummary;
   const txt = h ? `${h.w}-${h.d}-${h.l} (${h.gf}:${h.ga})` : "–";
   return (
-    <tr className="border-t border-slate-800/70">
-      <td className="px-3 py-1.5 text-right font-mono text-slate-300">{txt}</td>
-      <td className="px-3 py-1.5 text-center text-xs text-slate-500">{label}</td>
-      <td className="px-3 py-1.5 text-left text-slate-600">—</td>
+    <tr className="border-t border-edge/70">
+      <td className="px-3 py-1.5 text-right font-mono text-fg-soft">{txt}</td>
+      <td className="px-3 py-1.5 text-center text-xs text-fg-faint">{label}</td>
+      <td className="px-3 py-1.5 text-left text-fg-faint">—</td>
     </tr>
   );
 }

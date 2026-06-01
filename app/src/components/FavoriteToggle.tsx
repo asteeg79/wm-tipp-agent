@@ -27,8 +27,8 @@ export function FavoriteToggle({ isFavorite, onToggle }: Props) {
       title={t("fav.add")}
       className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-sm font-medium ${
         isFavorite
-          ? "border-amber-500/40 bg-amber-500/15 text-amber-300"
-          : "border-slate-700 text-slate-300 hover:bg-slate-800"
+          ? "border-amber-500/40 bg-amber-500/15 text-warn"
+          : "border-edge-strong text-fg-soft hover:bg-surface-2"
       }`}
     >
       <span>{isFavorite ? "★" : "☆"}</span>

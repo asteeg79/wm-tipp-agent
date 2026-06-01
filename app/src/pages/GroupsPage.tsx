@@ -24,8 +24,8 @@ export function GroupsPage() {
     return m;
   }, [predIndex, teams]);
 
-  if (isLoading) return <p className="text-slate-400">{t("loading")}</p>;
-  if (isError || !index) return <p className="text-red-400">{t("error")}</p>;
+  if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
+  if (isError || !index) return <p className="text-neg">{t("error")}</p>;
 
   const sortedTeams = [...index.teams].sort((a, b) =>
     a.name.localeCompare(b.name),
@@ -41,7 +41,7 @@ export function GroupsPage() {
         <select
           value={teamFilter}
           onChange={(e) => setTeamFilter(e.target.value)}
-          className="rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-sm"
+          className="rounded-md border border-edge-strong bg-surface px-2 py-1 text-sm"
         >
           <option value="">{t("groups.all")}</option>
           {sortedTeams.map((tm) => (
@@ -68,7 +68,7 @@ export function GroupsPage() {
           return (
             <div
               key={g.id}
-              className="rounded-xl border border-slate-800 bg-slate-900/40 p-4"
+              className="rounded-xl border border-edge bg-surface/40 p-4"
             >
               <h3 className="mb-2 font-semibold">
                 {t("groups.group", { id: g.id })}
@@ -82,7 +82,7 @@ export function GroupsPage() {
               </ul>
               {matches.length > 0 && (
                 <div className="space-y-1">
-                  <div className="text-xs uppercase tracking-wide text-slate-500">
+                  <div className="text-xs uppercase tracking-wide text-fg-faint">
                     {t("groups.matches")}
                   </div>
                   {matches.map((e) => (

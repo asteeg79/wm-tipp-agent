@@ -23,7 +23,7 @@ export function BracketPage() {
     }
   }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (!ready) return <p className="text-slate-400">{t("loading")}</p>;
+  if (!ready) return <p className="text-fg-muted">{t("loading")}</p>;
 
   const run = (): void => {
     setRunning(true);
@@ -52,7 +52,7 @@ export function BracketPage() {
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h2 className="text-xl font-bold">{t("bracket.title")}</h2>
-          <p className="mt-1 text-sm text-slate-400">{t("bracket.intro")}</p>
+          <p className="mt-1 text-sm text-fg-muted">{t("bracket.intro")}</p>
         </div>
         <button
           onClick={run}
@@ -63,9 +63,9 @@ export function BracketPage() {
         </button>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40">
+      <div className="overflow-hidden rounded-xl border border-edge bg-surface/40">
         <table className="w-full text-sm">
-          <thead className="bg-slate-900/60 text-xs uppercase tracking-wide text-slate-500">
+          <thead className="bg-surface/60 text-xs uppercase tracking-wide text-fg-faint">
             <tr>
               <th className="px-3 py-2 text-left">Team</th>
               <th className="px-3 py-2 text-right">{t("bracket.groupWinner")}</th>
@@ -75,17 +75,17 @@ export function BracketPage() {
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r.id} className="border-t border-slate-800/70">
+              <tr key={r.id} className="border-t border-edge/70">
                 <td className="px-3 py-1.5">
                   <TeamBadge team={teams.get(r.id)} fallbackId={r.id} />
                 </td>
-                <td className="px-3 py-1.5 text-right font-mono text-slate-400">
+                <td className="px-3 py-1.5 text-right font-mono text-fg-muted">
                   {pct(r.groupWinner)}
                 </td>
-                <td className="px-3 py-1.5 text-right font-mono text-sky-300">
+                <td className="px-3 py-1.5 text-right font-mono text-info">
                   {pct(r.advance)}
                 </td>
-                <td className="px-3 py-1.5 text-right font-mono text-emerald-300">
+                <td className="px-3 py-1.5 text-right font-mono text-pos">
                   {pct(r.title)}
                 </td>
               </tr>
@@ -94,7 +94,7 @@ export function BracketPage() {
         </table>
       </div>
 
-      <p className="text-xs text-slate-500">
+      <p className="text-xs text-fg-faint">
         {t("bracket.runs")}: {RUNS.toLocaleString()} · {t("bracket.note")}
       </p>
     </section>
