@@ -3,12 +3,57 @@ name: News Refresh
 # News für alle Teams + globale Feeds, alle 3 Stunden. KEINE KI → günstig.
 on:
   schedule:
-    - cron: "0 */3 * * *" # alle 3 h
+    - cron: "0 */3 * * *"
   workflow_dispatch:
 
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
 jobs:
-  news:
-    uses: ./.github/workflows/pipeline-run.yml
-    with:
-      mode: news
-    secrets: inherit
+  run:
+    runs-on: ubuntu-latest
+    env:
+      WM_MODE: news
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Restore pipeline cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline/cache
+          key: pipeline-cache-${{ github.run_id }}
+          restore-keys: pipeline-cache-
+      - name: Run pipeline (news)
+        id: pipeline
+        continue-on-error: true
+        run: pnpm --filter @wm/pipeline start
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      - name: Commit & push data
+        run: |
+          git config user.name "wm-tipp-bot"
+          git config user.email "actions@github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "Keine Datenänderungen — nichts zu committen."
+          else
+            git commit -m "data: news $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git pull --rebase --autostash origin "${{ github.ref_name }}" || true
+            git push
+          fi
+      - name: Report pipeline failure
+        if: steps.pipeline.outcome == 'failure'
+        run: |
+          echo "::error::news-Pipeline endete mit Fehler — letzter gültiger /data-Stand bleibt erhalten."
+          exit 1
