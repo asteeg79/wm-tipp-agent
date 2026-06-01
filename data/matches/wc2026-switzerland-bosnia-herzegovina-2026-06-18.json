@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "SUI",
       "elo": 1746,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.094,
       "cleanSheetRate": 0.37,
       "matchesCount": 27,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "BIH",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.272,
       "cleanSheetRate": 0.19,
       "matchesCount": 21,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5611,
-      "draw": 0.1978,
-      "away": 0.2411
+      "home": 0.56,
+      "draw": 0.22,
+      "away": 0.22
     },
-    "confidence": 0.666,
+    "confidence": 0.7,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.56,
           "draw": 0.22,
-          "away": 0.23
+          "away": 0.22
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorteil der Schweiz (1746 vs 1575) untermauert die Favoritenrolle",
+          "Deutlicher Elo-Vorteil der Schweiz (1746 vs 1575)",
           "Bessere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs 1.6)",
-          "Stärkere Defensive der Schweiz (cleanSheetRate 0.37 vs 0.19, weniger Gegentore)",
-          "Höhere Offensivproduktion der Schweiz (goalsForAvg 2.02 vs 1.74)"
+          "Stärkere Offensive (2.02 vs 1.74 Tore/Spiel) und Defensive (1.09 vs 1.27 Gegentore) der Schweiz",
+          "Höhere Clean-Sheet-Rate der Schweiz (0.37 vs 0.19)"
         ],
         "risks": [
-          "Neutraler Spielort eliminiert klassischen Heimvorteil",
-          "Keine H2H-Daten verfügbar, daher Unsicherheit im direkten Vergleich",
-          "61 Tage seit letztem Spiel beider Teams – mögliche Rhythmusprobleme",
-          "Gemeldete News teils nicht eindeutig schweiz-relevant (Leeds/Schweden-Bezug), daher kaum verwertbarer Kaderimpact"
+          "Neutraler Spielort nimmt der Schweiz den Heimvorteil",
+          "Keine H2H-Daten verfügbar, schwer einzuschätzen",
+          "Bosnien mit ordentlicher Offensive kann jederzeit treffen",
+          "Lange Pause (62 Tage) für beide Teams erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -104,27 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.57,
-          "draw": 0.18,
-          "away": 0.25
+          "home": 0.56,
+          "draw": 0.22,
+          "away": 0.22
         },
-        "confidence": 0.75,
+        "confidence": 0.78,
         "keyFactors": [
-          "Switzerland's higher Elo rating",
-          "Switzerland's superior recent form",
-          "Switzerland's higher goals for average",
-          "No prior head-to-head data affecting predictions"
+          "Switzerland's recent form is stronger compared to Bosnia & Herzegovina",
+          "Switzerland's higher Elo rating indicates a stronger team overall",
+          "Switzerland has a better clean sheet rate than Bosnia & Herzegovina"
         ],
         "risks": [
-          "Injuries in the Swiss team impacting key players",
-          "Neutral venue minimizing home advantage",
-          "Bosnia & Herzegovina's ability to score goals despite lower Elo"
+          "The match is at a neutral venue, reducing home advantage",
+          "Both teams have had similar rest periods, potentially normalizing fitness levels"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Schweiz (1746 vs 1575) untermauert die Favoritenrolle; Bessere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs 1.6); Stärkere Defensive der Schweiz (cleanSheetRate 0.37 vs 0.19, weniger Gegentore).",
-    "inputHash": "sha256:c13eb199f8409c36e9b857bb597a163cb72d4fb1713104ee3d1a967a029c905a"
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Schweiz (1746 vs 1575); Bessere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs 1.6); Stärkere Offensive (2.02 vs 1.74 Tore/Spiel) und Defensive (1.09 vs 1.27 Gegentore) der Schweiz.",
+    "inputHash": "sha256:1981a67fb80177c42a16bf985e182f43896c71f0b09994345ce77dfa640a04cb"
   },
   "predictionHistory": [
     {
@@ -165,6 +163,19 @@
         "away": 0.2044
       },
       "confidence": 0.6683
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5611,
+        "draw": 0.1978,
+        "away": 0.2411
+      },
+      "confidence": 0.666
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "NED",
       "elo": 1825,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.859,
       "cleanSheetRate": 0.393,
       "matchesCount": 28,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "JPN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.362,
       "cleanSheetRate": 0.583,
       "matchesCount": 24,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3932,
-      "draw": 0.2846,
-      "away": 0.3222
+      "home": 0.4438,
+      "draw": 0.2587,
+      "away": 0.2974
     },
-    "confidence": 0.6177,
+    "confidence": 0.6517,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,52 +81,50 @@
         },
         "probabilities": {
           "home": 0.41,
-          "draw": 0.265,
-          "away": 0.325
+          "draw": 0.27,
+          "away": 0.32
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2.53 Tore/Spiel)",
-          "Japan defensiv außergewöhnlich stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate",
-          "Japans gewichtete Form (2.20) leicht besser als die der Niederlande (2.10)",
-          "Neutraler Spielort eliminiert Heimvorteil der Niederlande",
-          "Beide Teams nach 61 Tagen Pause gleich gut erholt"
+          "Niederlande mit höherem Elo (1825 vs 1768) und neutralem Spielort, aber kein klassischer Heimvorteil",
+          "Japan defensiv extrem stabil: nur 0.362 Gegentore/Spiel und 58.3% Clean-Sheet-Rate, deutlich besser als NED (0.859 / 39.3%)",
+          "Japans gewichtete Form (2.202) leicht über der niederländischen (2.095), trotz niedrigerer Elo",
+          "Niederlande mit stärkerer Offensive (2.533 Tore/Spiel) gegenüber Japan (1.694)",
+          "Positive News-Lage und hohe Motivation bei Japan (Sendoff-Sieg, Titelambition des Trainers)"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar – stilistisches Matchup schwer einzuschätzen",
-          "Japans starke Defensivwerte könnten gegen Top-Gegner relativiert sein (Gegnerqualität unbekannt)",
-          "Lange Pause kann Rhythmus beider Teams beeinträchtigen",
-          "Keine aktuellen Personal-/Verletzungsnews zur Verfügung"
+          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit in der direkten Einschätzung",
+          "Lange Pause von 62 Tagen für beide Teams kann Rhythmus und Frühform beeinträchtigen",
+          "Japans starke Defensivwerte könnten gegen Top-Offensiven verzerrt sein (Gegnerqualität unbekannt)",
+          "Baseline überschätzt möglicherweise den NED-Vorteil, da neutraler Platz und Japans Form/Defensive dagegensprechen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.3,
-          "away": 0.32
+          "home": 0.47,
+          "draw": 0.25,
+          "away": 0.28
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Similar Elo ratings with Netherlands slightly ahead",
-          "Netherlands has higher goals for average but lower clean sheet rate",
-          "Japan's strong defensive record with high clean sheet rate",
-          "Both teams have similar recent form",
-          "Neutral venue without host advantage"
+          "Netherlands' strong recent form with average goals for per match at 2.533",
+          "Japan's high clean sheet rate of 0.583 and consistent defense",
+          "Neutral venue mitigates any home advantage"
         ],
         "risks": [
-          "No head-to-head record to gauge past matchups",
-          "Both teams played their last match 61 days ago, potential rustiness",
-          "Neutral venue may impact both teams' performances equally"
+          "Japan's motivation and confidence boost from recent coach's statement",
+          "Comparable weighted form between both teams",
+          "Lack of head-to-head and the unpredictable nature of a first encounter"
         ]
       }
     },
-    "agreement": 0.9767,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2.53 Tore/Spiel); Japan defensiv außergewöhnlich stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate; Japans gewichtete Form (2.20) leicht besser als die der Niederlande (2.10).",
-    "inputHash": "sha256:9b8a148683abe3d03683091e33473fdf65c6e786fbc95b985a1d418876c501d4"
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs 1768) und neutralem Spielort, aber kein klassischer Heimvorteil; Japan defensiv extrem stabil: nur 0.362 Gegentore/Spiel und 58.3% Clean-Sheet-Rate, deutlich besser als NED (0.859 / 39.3%); Japans gewichtete Form (2.202) leicht über der niederländischen (2.095), trotz niedrigerer Elo.",
+    "inputHash": "sha256:d4de6cf2493e0e89f64c55ab1bc4d9a9fe990b39f3decf773d5c2bf1f092c83c"
   },
   "predictionHistory": [
     {
@@ -154,6 +152,19 @@
         "away": 0.3332
       },
       "confidence": 0.6167
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3932,
+        "draw": 0.2846,
+        "away": 0.3222
+      },
+      "confidence": 0.6177
     }
   ]
 }

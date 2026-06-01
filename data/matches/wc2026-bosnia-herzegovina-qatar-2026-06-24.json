@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "BIH",
       "elo": 1575,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.272,
       "cleanSheetRate": 0.19,
       "matchesCount": 21,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "QAT",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.802,
       "cleanSheetRate": 0.25,
       "matchesCount": 28,
-      "daysSinceLastMatch": 195
+      "daysSinceLastMatch": 196
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5353,
-      "draw": 0.22,
-      "away": 0.2447
+      "home": 0.5435,
+      "draw": 0.2222,
+      "away": 0.2344
     },
-    "confidence": 0.6379,
+    "confidence": 0.6617,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.53,
-          "draw": 0.22,
-          "away": 0.25
+          "home": 0.535,
+          "draw": 0.225,
+          "away": 0.24
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Höhere Elo (1575 vs 1509) und bessere gewichtete Form (1.445 vs 1.292) für Bosnien",
-          "Bosnien mit besserer jüngster Form (1.6 vs 1.2) und stärkerer Offensive (1.738 vs 1.459 Tore/Spiel)",
-          "Katars schwache Defensive (1.802 Gegentore/Spiel) begünstigt bosnische Angriffe",
-          "Neutraler Spielort ohne Heimvorteil für beide Teams"
+          "Bosnien hat höheres Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).",
+          "Bosnien erzielt im Schnitt mehr Tore (1.738 vs 1.459) und kassiert deutlich weniger (1.272 vs 1.802).",
+          "Katars schwache Defensive (1.802 Gegentore/Spiel) spielt der offensiven Stärke Bosniens in die Karten.",
+          "Sehr lange Spielpause bei Katar (196 Tage) deutet auf Wettkampfrhythmus-Defizit hin."
         ],
         "risks": [
-          "Katar mit höherer Clean-Sheet-Rate (0.25 vs 0.19) und defensiver Stabilität",
-          "Sehr lange Spielpause für Katar (195 Tage) erschwert Formeinschätzung",
-          "Keine Head-to-Head-Historie als Referenz vorhanden",
-          "Gelieferte News-Schnipsel inhaltlich irrelevant/fehlerhaft, daher keine belastbare Korrektur ableitbar"
+          "Neutraler Spielort nimmt Bosnien den Heimvorteil und macht das Spiel offener.",
+          "Keine direkte H2H-Historie erschwert eine belastbare Einschätzung.",
+          "Bosniens niedrige Clean-Sheet-Rate (0.19) lässt eigene Gegentore wahrscheinlich erscheinen.",
+          "Katar hat höhere Clean-Sheet-Rate (0.25) und könnte mit kompakter Defensive ein Remis erzwingen."
         ]
       },
       "chatgpt": {
@@ -104,27 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.54,
+          "home": 0.55,
           "draw": 0.22,
-          "away": 0.24
+          "away": 0.23
         },
-        "confidence": 0.68,
+        "confidence": 0.75,
         "keyFactors": [
-          "Bosnia & Herzegovina has a higher recent form rating (1.6) than Qatar (1.2).",
-          "Qatar has not played a match for 195 days, suggesting possible lack of match fitness.",
-          "The match is played at a neutral venue, eliminating home advantage.",
-          "Bosnia & Herzegovina's recent goal-scoring and defensive average are slightly better."
+          "Bosnia & Herzegovina has higher recent form compared to Qatar.",
+          "Qatar has not played in the last 196 days, which may affect their match sharpness.",
+          "Neutral venue minimizes home advantage factors; Elo difference slightly favors Bosnia & Herzegovina.",
+          "Bosnia & Herzegovina's higher average goals for and lower goals against suggest a more balanced attack and defense."
         ],
         "risks": [
-          "Clean sheet rate for Bosnia & Herzegovina is lower (0.19) compared to Qatar (0.25), indicating defensive vulnerabilities.",
-          "First encounter between these teams, increasing uncertainty.",
-          "Material news about team dynamics could influence team morale."
+          "Lack of head-to-head history between the two teams introduces uncertainty.",
+          "Material news for Qatar's coach could indicate potential strategic changes or morale impact."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Höhere Elo (1575 vs 1509) und bessere gewichtete Form (1.445 vs 1.292) für Bosnien; Bosnien mit besserer jüngster Form (1.6 vs 1.2) und stärkerer Offensive (1.738 vs 1.459 Tore/Spiel); Katars schwache Defensive (1.802 Gegentore/Spiel) begünstigt bosnische Angriffe.",
-    "inputHash": "sha256:eff71f0114a8256bec9b1e0f58134123b1375c85b87429f636dce0a421c8360d"
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnien hat höheres Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).; Bosnien erzielt im Schnitt mehr Tore (1.738 vs 1.459) und kassiert deutlich weniger (1.272 vs 1.802).; Katars schwache Defensive (1.802 Gegentore/Spiel) spielt der offensiven Stärke Bosniens in die Karten..",
+    "inputHash": "sha256:45551963e4dcce46fd0dd423b3504de6cf8562600ef9e90bae697a40315b9955"
   },
   "predictionHistory": [
     {
@@ -165,6 +164,19 @@
         "away": 0.2544
       },
       "confidence": 0.6628
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5353,
+        "draw": 0.22,
+        "away": 0.2447
+      },
+      "confidence": 0.6379
     }
   ]
 }

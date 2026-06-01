@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "AUS",
       "elo": 1666,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.08,
       "cleanSheetRate": 0.542,
       "matchesCount": 24,
-      "daysSinceLastMatch": 194
+      "daysSinceLastMatch": 195
     },
     "away": {
       "teamId": "TUR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.14,
       "cleanSheetRate": 0.296,
       "matchesCount": 27,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2454,
-      "draw": 0.2454,
-      "away": 0.5092
+      "home": 0.2455,
+      "draw": 0.24,
+      "away": 0.5145
     },
-    "confidence": 0.6457,
+    "confidence": 0.6578,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,17 +86,16 @@
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Türkei mit deutlich besserer gewichteter Form (2.27 vs 1.464) und höherer recentForm (2.2 vs 1.7)",
-          "Höherer Elo-Wert der Türkei (1731 vs 1666) untermauert leichten Klassenvorsprung",
-          "Türkei mit klar stärkerer Offensive (1.937 vs 1.257 Tore/Spiel)",
-          "Australien länger ohne Spiel (194 Tage), Türkei deutlich rhythmussicherer (61 Tage)",
+          "Türkei mit deutlich besserer gewichteter Form (2.27 vs 1.464) und höherem Elo (1731 vs 1666)",
+          "Türkische Offensivstärke (1.937 Tore/Spiel) übertrifft australischen Angriff (1.257) klar",
+          "Türkei spielrhythmisch frischer (62 Tage seit letztem Spiel) gegenüber Australien (195 Tage)",
           "Neutraler Spielort eliminiert Heimvorteil für Australien"
         ],
         "risks": [
           "Australiens solide Defensive (cleanSheetRate 0.542, 1.08 Gegentore) kann türkische Offensive bremsen",
-          "Türkische Abwehr anfällig (cleanSheetRate nur 0.296), Australien kann treffen",
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
-          "Lange Spielpause Australiens kann Form-Einschätzung verfälschen (sowohl positiv als negativ)"
+          "Lange Pause Australiens (195 Tage) erschwert Formeinschätzung – möglicher Wettkampfmangel oder gute Erholung",
+          "Türkei mit schwacher Cleansheet-Rate (0.296) anfällig in der Abwehr",
+          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -106,27 +105,25 @@
         },
         "probabilities": {
           "home": 0.25,
-          "draw": 0.25,
-          "away": 0.5
+          "draw": 0.24,
+          "away": 0.51
         },
-        "confidence": 0.7,
+        "confidence": 0.72,
         "keyFactors": [
-          "Turkey has a higher Elo rating of 1731 compared to Australia's 1666.",
-          "Turkey's weighted form of 2.27 and recent form of 2.2 indicates stronger current performance compared to Australia's 1.464 and 1.7.",
-          "Turkey has a higher goals for average of 1.937 in comparison to Australia’s 1.257.",
-          "Australia has had a longer break with 194 days since last match versus Turkey's 61 days, possibly affecting match fitness.",
-          "The match is at a neutral venue, mitigating Australia’s potential home advantage."
+          "Turkey has a higher Elo rating and better weighted form compared to Australia.",
+          "Turkey's recent form showcases strong offensive capabilities with an average of 1.937 goals for.",
+          "Australia has not played in 195 days, which might affect their match readiness.",
+          "The match is at a neutral venue, removing any home advantage."
         ],
         "risks": [
-          "Australia has a higher clean sheet rate of 0.542, which may help them defensively.",
-          "The lack of head-to-head history introduces uncertainty regarding direct competition between these teams.",
-          "Turkey's lower clean sheet rate of 0.296 could be a vulnerability if Australia applies effective attacking strategies."
+          "Australia's high clean sheet rate could influence outcome if they effectively organize their defense.",
+          "Increased preparation time for Australia could lead to unforeseen tactical improvements."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit deutlich besserer gewichteter Form (2.27 vs 1.464) und höherer recentForm (2.2 vs 1.7); Höherer Elo-Wert der Türkei (1731 vs 1666) untermauert leichten Klassenvorsprung; Türkei mit klar stärkerer Offensive (1.937 vs 1.257 Tore/Spiel).",
-    "inputHash": "sha256:c45ec2d7def540c5b295b7f472ba9bff3ed56ca369bbcd4a26a935241331e5a5"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit deutlich besserer gewichteter Form (2.27 vs 1.464) und höherem Elo (1731 vs 1666); Türkische Offensivstärke (1.937 Tore/Spiel) übertrifft australischen Angriff (1.257) klar; Türkei spielrhythmisch frischer (62 Tage seit letztem Spiel) gegenüber Australien (195 Tage).",
+    "inputHash": "sha256:de8420964f75773929e4ccb66e862c9e83cc823da6b2364185680235b67f0750"
   },
   "predictionHistory": [
     {
@@ -167,6 +164,19 @@
         "away": 0.52
       },
       "confidence": 0.6478
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2454,
+        "draw": 0.2454,
+        "away": 0.5092
+      },
+      "confidence": 0.6457
     }
   ]
 }

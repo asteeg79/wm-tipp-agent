@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "NOR",
       "elo": 1774,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.814,
       "cleanSheetRate": 0.455,
       "matchesCount": 22,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "FRA",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.947,
       "cleanSheetRate": 0.464,
       "matchesCount": 28,
-      "daysSinceLastMatch": 63
+      "daysSinceLastMatch": 64
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3358,
-      "draw": 0.22,
-      "away": 0.4442
+      "home": 0.3173,
+      "draw": 0.237,
+      "away": 0.4457
     },
-    "confidence": 0.6478,
+    "confidence": 0.6265,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.33,
+          "home": 0.34,
           "draw": 0.22,
-          "away": 0.45
+          "away": 0.44
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Frankreich mit höherem Elo (1904 vs 1774) und stärkerer gewichteter Form (2.43 vs 2.019)",
-          "Neutraler Spielort eliminiert Heimvorteil für Norwegen",
-          "Norwegen mit starker Offensive (2.78 Tore/Spiel) und solider Defensive (0.81 Gegentore) – kann Frankreich fordern",
-          "Beide Teams mit ähnlich guter Clean-Sheet-Rate (~0.46), defensiv stabil"
+          "Frankreich mit höherem Elo (1904 vs. 1774) und besserer gewichteter Form (2.43 vs. 2.019)",
+          "Norwegen mit starker offensiver Heimstärke-Statistik (goalsForAvg 2.78) trotz neutralem Spielort",
+          "Beide Teams defensiv solide (CleanSheetRate ~0.46), aber FRA leicht stärker in Topform (recentForm 2.5)",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil für Norwegen"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar – Einschätzung beruht allein auf Form und Elo",
-          "Norwegens hohe Torproduktion könnte für eine Überraschung sorgen, falls Schlüsselspieler (z.B. Haaland) treffen",
-          "Lange Pause beider Teams (~61-63 Tage) erschwert Formprognose",
-          "News zu Frankreich (Verletzungen/Unruhen) unklar bzgl. konkreter Auswirkungen auf den Kader"
+          "Lange Pause beider Teams (62/64 Tage) kann Rhythmus und Frühform beeinträchtigen",
+          "Norwegens hoher Torschnitt könnte für eine Überraschung sorgen, falls FRA defensiv unkonzentriert startet",
+          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit",
+          "News liefern keine konkreten verlässlichen Personalausfälle (FRA-Meldung betrifft Ausschreitungen, nicht Kader)"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.34,
-          "draw": 0.22,
-          "away": 0.44
+          "home": 0.3,
+          "draw": 0.25,
+          "away": 0.45
         },
-        "confidence": 0.75,
+        "confidence": 0.72,
         "keyFactors": [
-          "Norway's recent form with high average goals for and strong defensive record.",
-          "France's higher Elo rating and superior overall form.",
-          "Neutral venue negates home advantage for Norway."
+          "France has a higher Elo rating (1904 vs 1774).",
+          "Both teams have similar recent forms, but France is slightly better (2.5 vs 2.3).",
+          "France has a marginally better clean sheet rate (0.464 vs 0.455).",
+          "Neutral venue minimizes typical home advantages."
         ],
         "risks": [
-          "Potential impact of recent riots and disturbances in France.",
-          "Norway's coach publicly engaged in mind games, which may impact team morale."
+          "Potential distractions for France due to recent off-field incidents.",
+          "Norway's strong offensive form (2.777 goals per match) suggests potential for upsets."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit höherem Elo (1904 vs 1774) und stärkerer gewichteter Form (2.43 vs 2.019); Neutraler Spielort eliminiert Heimvorteil für Norwegen; Norwegen mit starker Offensive (2.78 Tore/Spiel) und solider Defensive (0.81 Gegentore) – kann Frankreich fordern.",
-    "inputHash": "sha256:990fd9e206723d38f9465f765665568fae8951976976f8b19ba0bf7f6b2735ca"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit höherem Elo (1904 vs. 1774) und besserer gewichteter Form (2.43 vs. 2.019); Norwegen mit starker offensiver Heimstärke-Statistik (goalsForAvg 2.78) trotz neutralem Spielort; Beide Teams defensiv solide (CleanSheetRate ~0.46), aber FRA leicht stärker in Topform (recentForm 2.5).",
+    "inputHash": "sha256:3ab02781c6ec39a6bca1a41c993cc37a095ba361e785877d4dec4df80c379a72"
   },
   "predictionHistory": [
     {
@@ -163,6 +164,19 @@
         "away": 0.3587
       },
       "confidence": 0.5635
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3358,
+        "draw": 0.22,
+        "away": 0.4442
+      },
+      "confidence": 0.6478
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "EGY",
       "elo": 1770,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.414,
       "cleanSheetRate": 0.571,
       "matchesCount": 28,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "IRN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.908,
       "cleanSheetRate": 0.462,
       "matchesCount": 26,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3634,
-      "draw": 0.2911,
-      "away": 0.3455
+      "home": 0.3625,
+      "draw": 0.2875,
+      "away": 0.35
     },
-    "confidence": 0.5544,
+    "confidence": 0.594,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,21 +81,22 @@
         },
         "probabilities": {
           "home": 0.38,
-          "draw": 0.28,
-          "away": 0.34
+          "draw": 0.27,
+          "away": 0.35
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Egypt mit hoher gewichteter Form (2.13) und sehr starker Defensive (Gegentore 0.41/Spiel, Clean-Sheet-Rate 57%)",
-          "Iran offensivstark (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore, 46% Clean Sheets)",
-          "Elo-Vorteil leicht bei Egypt (1770 vs 1730), neutraler Spielort hebt Heimvorteil auf",
-          "Egypts Abwehrstabilität spricht für leichte Korrektur zugunsten Egypt gegenüber der Baseline"
+          "Egypt mit höherem Elo (1770 vs 1730) und leicht besserer gewichteter Form (2.13 vs 1.81)",
+          "Egypts sehr starke Defensive: nur 0.41 Gegentore/Spiel und 57% Clean-Sheet-Rate",
+          "Iran offensiv gefährlicher (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore, 46% Clean Sheets)",
+          "Neutraler Spielort eliminiert Heimvorteil – Begegnung weitgehend ausgeglichen",
+          "Beide Teams mit identischer Pause (62 Tage) – kein Erholungsvorteil"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, hohe Unsicherheit über direktes Kräfteverhältnis",
-          "Lange Pause (61 Tage) bei beiden Teams kann Rhythmus und Form beeinträchtigen",
-          "Irans Offensivpotenzial könnte Egypts Defensive trotz Stabilität durchbrechen",
-          "Keine marktbasierten Quoten zur Validierung verfügbar"
+          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit im Stilvergleich",
+          "Iran-News deuten auf mögliche externe Unruhe/Kontroversen hin, deren sportliche Wirkung unklar ist",
+          "Lange Spielpause kann Rhythmus beider Teams beeinträchtigen und Ergebnis schwer kalkulierbar machen",
+          "Irans hohe Torquote könnte Egypts Defensive trotz starker Werte überraschen"
         ]
       },
       "chatgpt": {
@@ -108,23 +109,21 @@
           "draw": 0.30000000000000004,
           "away": 0.35000000000000003
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Both teams have not played against each other before, making historical analysis difficult.",
-          "Egypt's recent defensive form is strong with a low goals against average and high clean sheet rate.",
-          "Iran has a potent offense with a high goals for average.",
-          "The match is played at a neutral venue, eliminating home advantage.",
-          "Both teams have not played in approximately the same period (61 days), so they are equally rested."
+          "Egypt's defensive strength with a low goals against average and high clean sheet rate.",
+          "Iran's better offensive form with a higher goals for average.",
+          "Neutral venue minimizes any potential location advantages."
         ],
         "risks": [
-          "The impact of Iran's previous suspension on team morale and dynamics.",
-          "Unpredictability due to the lack of head-to-head historical data."
+          "Recent controversies involving Iran's team could impact morale.",
+          "Egypt's knowledge of opponent through Garcia may provide strategic insights."
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit hoher gewichteter Form (2.13) und sehr starker Defensive (Gegentore 0.41/Spiel, Clean-Sheet-Rate 57%); Iran offensivstark (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore, 46% Clean Sheets); Elo-Vorteil leicht bei Egypt (1770 vs 1730), neutraler Spielort hebt Heimvorteil auf.",
-    "inputHash": "sha256:c0d37de93f2f3ebb33ec8ce2e06cdf2554bc4e02d5ec0db95604b2e101fd3e0e"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit höherem Elo (1770 vs 1730) und leicht besserer gewichteter Form (2.13 vs 1.81); Egypts sehr starke Defensive: nur 0.41 Gegentore/Spiel und 57% Clean-Sheet-Rate; Iran offensiv gefährlicher (2.27 Tore/Spiel), aber defensiv anfälliger (0.91 Gegentore, 46% Clean Sheets).",
+    "inputHash": "sha256:e92c1650355566838cb8172633094e17ad787657f6c1a69389827a20e4547fd8"
   },
   "predictionHistory": [
     {
@@ -152,6 +151,19 @@
         "away": 0.3411
       },
       "confidence": 0.5791
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3634,
+        "draw": 0.2911,
+        "away": 0.3455
+      },
+      "confidence": 0.5544
     }
   ]
 }

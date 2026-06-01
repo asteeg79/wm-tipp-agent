@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "ECU",
       "elo": 1747,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.528,
       "cleanSheetRate": 0.519,
       "matchesCount": 27,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "GER",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.106,
       "cleanSheetRate": 0.407,
       "matchesCount": 27,
-      "daysSinceLastMatch": 62
+      "daysSinceLastMatch": 63
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2113,
-      "draw": 0.24,
-      "away": 0.5487
+      "home": 0.2173,
+      "draw": 0.2458,
+      "away": 0.5369
     },
-    "confidence": 0.6606,
+    "confidence": 0.7252,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.24,
           "away": 0.56
         },
-        "confidence": 0.58,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutschland mit höherem Elo (1822 vs 1747) und deutlich stärkerer gewichteter Form (2.371 vs 1.477)",
-          "Deutschland offensiv klar überlegen: 2.574 erzielte Tore pro Spiel gegen Ecuadors 0.9",
-          "Ecuador defensiv sehr stabil (0.528 Gegentore/Spiel, 51.9% Clean-Sheet-Rate), kann das Ergebnis eng halten",
-          "Neutraler Spielort eliminiert Heimvorteil für Ecuador"
+          "Deutschland mit deutlich höherer gewichteter Form (2.37 vs 1.48) und stärkerer Offensive (2.57 Tore/Spiel)",
+          "Höheres Elo (1822 vs 1747) und bessere jüngste Form (2.1 vs 1.4) sprechen für Deutschland",
+          "Ecuadors starke Defensive (0.53 Gegentore/Spiel, 51.9% Clean Sheets) kann das Ergebnis enger halten",
+          "Musiala zurück und torgefährlich, stärkt Deutschlands Offensivpotenzial"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit in der Einschätzung",
-          "Ecuadors starke Defensive könnte deutsche Torchancen begrenzen und ein knappes Resultat oder Remis ermöglichen",
-          "Lange Pause beider Teams (61/62 Tage) kann zu Rhythmusproblemen führen, besonders für das offensivstärkere Deutschland",
-          "Deutschland mit nur 40.7% Clean-Sheet-Rate defensiv anfällig, Ecuador kann kontern"
+          "Mögliche Ausfälle/Belastung bei Undav (wiederholte Verletzungsmeldungen) schwächen die Offensive",
+          "Neutraler Spielort ohne Heimvorteil für Ecuador, aber Ecuadors disziplinierte Defensive kann ein Tor verhindern",
+          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
+          "Lange Pause (62-63 Tage) bei beiden Teams kann Rhythmusprobleme verursachen"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,24 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.22,
-          "draw": 0.24,
-          "away": 0.54
+          "home": 0.23,
+          "draw": 0.25,
+          "away": 0.52
         },
-        "confidence": 0.75,
+        "confidence": 0.85,
         "keyFactors": [
-          "Germany's overall higher Elo rating and stronger recent form with a weighted form rating of 2.371 compared to Ecuador's 1.477.",
-          "Germany's impressive goals for average of 2.574 per game compared to Ecuador's lower average of 0.9.",
-          "Both teams have no significant injuries or material news affecting their performance."
+          "Germany's higher Elo and recent form advantage.",
+          "Germany's stronger offensive average (2.574 goals per game)."
         ],
         "risks": [
-          "Ecuador's strong defense, highlighted by a low goals against average of 0.528 and a clean sheet rate of 0.519, could potentially limit Germany's scoring chances.",
-          "The match being played at a neutral venue reduces any possible home advantage for Ecuador."
+          "Injury concerns for key German players like Jamal Musiala and Deniz Undav.",
+          "Ecuador's solid defensive statistics with a clean sheet rate of 51.9%."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit höherem Elo (1822 vs 1747) und deutlich stärkerer gewichteter Form (2.371 vs 1.477); Deutschland offensiv klar überlegen: 2.574 erzielte Tore pro Spiel gegen Ecuadors 0.9; Ecuador defensiv sehr stabil (0.528 Gegentore/Spiel, 51.9% Clean-Sheet-Rate), kann das Ergebnis eng halten.",
-    "inputHash": "sha256:aa135ef5b2ba0e5f87f703f43de3502c37c1526d423ddbbb360c3aa9576fd09c"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit deutlich höherer gewichteter Form (2.37 vs 1.48) und stärkerer Offensive (2.57 Tore/Spiel); Höheres Elo (1822 vs 1747) und bessere jüngste Form (2.1 vs 1.4) sprechen für Deutschland; Ecuadors starke Defensive (0.53 Gegentore/Spiel, 51.9% Clean Sheets) kann das Ergebnis enger halten.",
+    "inputHash": "sha256:1521117b2f9199b9fbb9ced9ddd3bc5b10a6687b9efd0239dc836cf6043feea7"
   },
   "predictionHistory": [
     {
@@ -163,6 +162,19 @@
         "away": 0.5341
       },
       "confidence": 0.7226
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2113,
+        "draw": 0.24,
+        "away": 0.5487
+      },
+      "confidence": 0.6606
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "NZL",
       "elo": 1641,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.053,
       "cleanSheetRate": 0.563,
       "matchesCount": 16,
-      "daysSinceLastMatch": 194
+      "daysSinceLastMatch": 195
     },
     "away": {
       "teamId": "EGY",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.414,
       "cleanSheetRate": 0.571,
       "matchesCount": 28,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.25,
-      "draw": 0.2602,
-      "away": 0.4898
+      "home": 0.2609,
+      "draw": 0.25,
+      "away": 0.4891
     },
-    "confidence": 0.6308,
+    "confidence": 0.6804,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Egypt mit deutlich höherem Elo (1770 vs 1641) und stärkerer gewichteter Form (2.133 vs 1.235)",
-          "Egypt defensiv sehr stabil: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate",
-          "Egypt aktueller im Rhythmus (61 Tage seit letztem Spiel) gegenüber NZL (194 Tage Pause)",
+          "Egypt deutlich höheres Elo (1770 vs 1641) und stärkere gewichtete Form (2.133 vs 1.235)",
+          "Egypt defensiv exzellent: nur 0.414 Gegentore im Schnitt und 57% Clean-Sheet-Rate",
+          "Egypt aktueller im Rhythmus (62 Tage seit letztem Spiel vs 195 Tage bei NZ)",
           "Neutraler Spielort eliminiert Heimvorteil für Neuseeland"
         ],
         "risks": [
-          "Neuseeland mit ordentlicher Offensive (2.122 Tore/Spiel) und guter Form (recentForm 1.9)",
-          "Lange Pause Neuseelands (194 Tage) erschwert Formeinschätzung - könnte erholt oder eingerostet sein",
-          "Keine H2H-Daten verfügbar - Stilvergleich unsicher",
-          "Geringe Spielanzahl Neuseelands (16) macht Werte volatiler"
+          "Neuseeland hat starke recentForm (1.9) und ordentliche Offensive (2.12 Tore/Spiel)",
+          "Verletzungen im neuseeländischen Mittelfeld könnten Aufbau und Defensive schwächen",
+          "Keine H2H-Daten vorhanden, Unsicherheit über direkten Vergleich",
+          "Lange Pause Neuseelands (195 Tage) erschwert Formeinschätzung"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,27 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.27,
+          "home": 0.27,
+          "draw": 0.25,
           "away": 0.48
         },
-        "confidence": 0.65,
+        "confidence": 0.75,
         "keyFactors": [
-          "Egypt's higher Elo rating and stronger recent form compared to New Zealand.",
-          "New Zealand's long break of 194 days since their last match could affect match fitness.",
-          "Egypt's defensive strength with a low goals against average of 0.414."
+          "Egypt's higher Elo rating and recent form advantage",
+          "New Zealand's lack of match practice with 195 days since last match",
+          "Egypt's superiority in defensive metrics with goals against average of 0.414",
+          "Injury issues for New Zealand's midfield"
         ],
         "risks": [
-          "Neutral venue negates potential home advantage.",
-          "No historical head-to-head data to gauge past matchups."
+          "Potential recovery and impact of New Zealand's midfield players if available",
+          "Neutral venue could level the playing field",
+          "Lack of historical head-to-head data introduces uncertainty"
         ]
       }
     },
     "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit deutlich höherem Elo (1770 vs 1641) und stärkerer gewichteter Form (2.133 vs 1.235); Egypt defensiv sehr stabil: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate; Egypt aktueller im Rhythmus (61 Tage seit letztem Spiel) gegenüber NZL (194 Tage Pause).",
-    "inputHash": "sha256:b0a92d85031a36bd64d15f81cdd546676248b42ba8856a2d29f8bc79d2c3cf3b"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt deutlich höheres Elo (1770 vs 1641) und stärkere gewichtete Form (2.133 vs 1.235); Egypt defensiv exzellent: nur 0.414 Gegentore im Schnitt und 57% Clean-Sheet-Rate; Egypt aktueller im Rhythmus (62 Tage seit letztem Spiel vs 195 Tage bei NZ).",
+    "inputHash": "sha256:a90d041728f8037d72192919cee526192607ff62e1eac29203a8d46ebd04d275"
   },
   "predictionHistory": [
     {
@@ -150,6 +152,19 @@
         "away": 0.5089
       },
       "confidence": 0.6694
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.25,
+        "draw": 0.2602,
+        "away": 0.4898
+      },
+      "confidence": 0.6308
     }
   ]
 }

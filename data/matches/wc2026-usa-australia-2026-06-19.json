@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.639,
       "cleanSheetRate": 0.235,
       "matchesCount": 34,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "AUS",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.08,
       "cleanSheetRate": 0.542,
       "matchesCount": 24,
-      "daysSinceLastMatch": 194
+      "daysSinceLastMatch": 195
     },
     "h2h": {
       "played": 1,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4629,
-      "draw": 0.2528,
-      "away": 0.2843
+      "home": 0.47,
+      "draw": 0.24,
+      "away": 0.29
     },
-    "confidence": 0.5772,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.44,
-          "draw": 0.27,
+          "home": 0.47,
+          "draw": 0.24,
           "away": 0.29
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "USA leicht höheres Elo (1676 vs 1666) und Heim-/Gastgebervorteil als Co-Ausrichter trotz neutralem Venue",
-          "USA mit besserer Form-Datenbasis (34 Spiele) und höherer weightedForm (1.517 vs 1.464)",
-          "Australien defensiv deutlich stabiler: cleanSheetRate 0.542 und nur 1.08 Gegentore/Spiel dämpfen USA-Offensive",
-          "Australiens jüngste Form (recentForm 1.7) leicht besser als USA (1.6), deutet auf enges Spiel hin"
+          "USA mit leichtem Elo-Vorteil (1676 vs 1666) und Gastgeberbonus trotz neutralem Spielort",
+          "USA bessere Offensive (goalsForAvg 1.668 vs 1.257) und leicht höhere gewichtete Form (1.517 vs 1.464)",
+          "Direkter Vergleich spricht knapp für USA (2:1-Sieg im einzigen Duell)",
+          "Baseline favorisiert USA klar, Form-/Kontextfaktoren bestätigen diese Tendenz"
         ],
         "risks": [
-          "Australien seit 194 Tagen ohne Pflichtspiel – Spielrhythmus und Matchfitness unklar, hohe Unsicherheit",
-          "Nur 1 H2H-Spiel als Referenz, statistisch wenig aussagekräftig",
-          "Gemeldete News (Iran-Suspension) wirkt irrelevant/fehlzugeordnet und liefert keinen verwertbaren Kontext",
-          "Geringe USA-cleanSheetRate (0.235) erhöht Risiko eines Gegentors trotz Favoritenrolle"
+          "Australiens starke Defensive (cleanSheetRate 0.542, goalsAgainstAvg 1.08) kann USA-Offensive bremsen",
+          "Australien lange Spielpause (195 Tage) erschwert Formeinschätzung",
+          "USA defensiv anfällig (cleanSheetRate nur 0.235, goalsAgainstAvg 1.639)",
+          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
+          "home": 0.47,
           "draw": 0.24,
-          "away": 0.28
+          "away": 0.29
         },
-        "confidence": 0.67,
+        "confidence": 0.75,
         "keyFactors": [
-          "USA has moderate host advantage despite neutral venue.",
-          "Recent form is slightly better for Australia, but USA has played more recently.",
-          "USA's recent home head-to-head win over Australia.",
-          "Higher clean sheet rate for Australia but USA's slightly better attack might exploit neutral conditions."
+          "USA has a slight form advantage with a higher recent form score of 1.6 compared to Australia's 1.7.",
+          "USA's clean sheet rate is significantly lower than Australia's, but their average goals scored is higher.",
+          "The match is played on neutral ground, but USA has host advantage contextually.",
+          "Historical head-to-head favors USA from their previous victory."
         ],
         "risks": [
-          "Australia's good recent form and longer rest period could be beneficial.",
-          "No significant news impacting either team, so unexpected events not accounted for."
+          "Australia's higher clean sheet rate could outperform expectations.",
+          "The long gap since Australia’s last match may bring unpredictability."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA leicht höheres Elo (1676 vs 1666) und Heim-/Gastgebervorteil als Co-Ausrichter trotz neutralem Venue; USA mit besserer Form-Datenbasis (34 Spiele) und höherer weightedForm (1.517 vs 1.464); Australien defensiv deutlich stabiler: cleanSheetRate 0.542 und nur 1.08 Gegentore/Spiel dämpfen USA-Offensive.",
-    "inputHash": "sha256:e53d4774113467a467793eb8e8b0c6215986f15ccd4b10d265cfaa699a9a2920"
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit leichtem Elo-Vorteil (1676 vs 1666) und Gastgeberbonus trotz neutralem Spielort; USA bessere Offensive (goalsForAvg 1.668 vs 1.257) und leicht höhere gewichtete Form (1.517 vs 1.464); Direkter Vergleich spricht knapp für USA (2:1-Sieg im einzigen Duell).",
+    "inputHash": "sha256:31cb6a4642011d6db99a631a30f4d93ae277d7eeaa6ef1ab552042ec366de914"
   },
   "predictionHistory": [
     {
@@ -164,6 +164,19 @@
         "away": 0.28
       },
       "confidence": 0.6
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4629,
+        "draw": 0.2528,
+        "away": 0.2843
+      },
+      "confidence": 0.5772
     }
   ]
 }

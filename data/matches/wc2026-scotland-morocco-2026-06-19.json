@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "SCO",
       "elo": 1586,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.281,
       "cleanSheetRate": 0.28,
       "matchesCount": 25,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "MAR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.274,
       "cleanSheetRate": 0.706,
       "matchesCount": 34,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.0903,
-      "draw": 0.1807,
-      "away": 0.729
+      "home": 0.0887,
+      "draw": 0.1523,
+      "away": 0.759
     },
-    "confidence": 0.7105,
+    "confidence": 0.7685,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.08,
-          "draw": 0.16,
-          "away": 0.76
+          "home": 0.075,
+          "draw": 0.155,
+          "away": 0.77
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Großer Elo-Unterschied (1892 vs 1586) klar zugunsten Marokkos",
-          "Marokko mit herausragender Defensive: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
-          "Marokkos starke gewichtete Form (2.585) und Offensive (2.011 Tore/Spiel) übertreffen Schottland deutlich",
-          "Schottlands schwächere Defensive (1.281 Gegentore, nur 28% Clean Sheets) limitiert die Chancen gegen Marokkos Angriff",
-          "Verletzungsbedingter Ausfall von Billy Gilmour schwächt das schottische Mittelfeld"
+          "Großer Elo-Unterschied (1586 vs. 1892) klar zugunsten Marokkos",
+          "Marokkos überragende Defensive: 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
+          "Marokkos starke Form (gewichtet 2.585, jüngst 2.4) gegenüber Schottlands schwacher Bilanz (1.301)",
+          "Verletzungsbedingter Ausfall von Schlüsselspieler Billy Gilmour schwächt Schottlands Mittelfeld zusätzlich"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit im direkten Vergleich",
-          "Schottlands zuletzt verbesserte Form (recentForm 1.6) könnte für Überraschung sorgen",
-          "Neutraler Spielort nimmt Schottland möglichen Heimvorteil, kann aber auch Marokkos Routine helfen",
-          "Lange Pause (61 Tage ohne Spiel) für beide Teams erschwert Formeinschätzung"
+          "Keine H2H-Daten verfügbar, daher direkte Vergleichswerte fehlen",
+          "Neutraler Spielort nimmt Schottland keinen Heimvorteil, könnte aber Marokkos Auswärtsbelastung mildern",
+          "62 Tage seit letztem Spiel beider Teams – mögliche Rhythmusprobleme schwer einzuschätzen",
+          "Tyler Fletcher als junger Ersatz könnte überraschen, ist aber unerprobt"
         ]
       },
       "chatgpt": {
@@ -106,24 +105,24 @@
         },
         "probabilities": {
           "home": 0.1,
-          "draw": 0.2,
-          "away": 0.7
+          "draw": 0.15,
+          "away": 0.75
         },
-        "confidence": 0.75,
+        "confidence": 0.85,
         "keyFactors": [
-          "Morocco's superior Elo rating and recent form",
-          "Scotland's key player, Billy Gilmour, out due to injury",
-          "Morocco's strong defense with a high clean sheet rate"
+          "Morocco's strong recent form with a weighted form of 2.585",
+          "High clean sheet rate of Morocco at 70.6%",
+          "Scotland missing key player Billy Gilmour due to injury"
         ],
         "risks": [
-          "Neutral venue could reduce potential advantage for Morocco",
-          "Unexpected performance from Scotland's replacement player, Tyler Fletcher"
+          "Neutral venue could slightly reduce Morocco's advantage",
+          "Lack of head-to-head data introduces uncertainty"
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1892 vs 1586) klar zugunsten Marokkos; Marokko mit herausragender Defensive: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokkos starke gewichtete Form (2.585) und Offensive (2.011 Tore/Spiel) übertreffen Schottland deutlich.",
-    "inputHash": "sha256:3d1b415b963e158a6677f836d624cf4273555b4e6142aaa0634a122778f06459"
+    "agreement": 0.9833,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1586 vs. 1892) klar zugunsten Marokkos; Marokkos überragende Defensive: 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokkos starke Form (gewichtet 2.585, jüngst 2.4) gegenüber Schottlands schwacher Bilanz (1.301).",
+    "inputHash": "sha256:9b2af787e4ce807991205f94cee9d49e4b180b9b2ef80e805580879c39d7b7fc"
   },
   "predictionHistory": [
     {
@@ -164,6 +163,19 @@
         "away": 0.7295
       },
       "confidence": 0.7053
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.0903,
+        "draw": 0.1807,
+        "away": 0.729
+      },
+      "confidence": 0.7105
     }
   ]
 }

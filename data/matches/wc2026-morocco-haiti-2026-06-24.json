@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "MAR",
       "elo": 1892,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.274,
       "cleanSheetRate": 0.706,
       "matchesCount": 34,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "HAI",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.092,
       "cleanSheetRate": 0.409,
       "matchesCount": 22,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.74,
-      "draw": 0.17,
-      "away": 0.09
+      "home": 0.7071,
+      "draw": 0.181,
+      "away": 0.1119
     },
-    "confidence": 0.775,
+    "confidence": 0.7595,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,43 +86,46 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Marokkos (1892 vs. 1576) und starke gewichtete Form (2.585 vs. 1.488).",
-          "Herausragende Defensive Marokkos: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate.",
-          "Haitis schwächere Defensive (1.092 Gegentore/Spiel, 40.9% Clean Sheets) spricht für marokkanische TortChancen.",
-          "Keine relevanten News, die Marokko schwächen (Gilmour-Meldung betrifft Schottland, nicht das Spiel)."
+          "Großer Elo-Unterschied (1892 vs. 1576) zugunsten Marokkos",
+          "Exzellente marokkanische Defensive: nur 0.27 Gegentore/Spiel, 70.6% Clean Sheets",
+          "Starke gewichtete Form Marokkos (2.585) gegenüber Haiti (1.488)",
+          "Haiti defensiv anfälliger (1.09 Gegentore/Spiel, nur 40.9% Clean Sheets)"
         ],
         "risks": [
-          "Lange Pause (61 Tage ohne Spiel) könnte Rhythmus beider Teams beeinträchtigen.",
-          "Neutraler Spielort ohne Heimvorteil für Marokko.",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit beim genauen Ergebnis.",
-          "Haiti besitzt mit 1.657 erzielten Toren/Spiel offensives Potenzial für einen Überraschungstreffer."
+          "Lange Pause beider Teams (62 Tage) kann Spielrhythmus beeinträchtigen",
+          "Keine H2H-Daten vorhanden, geringe direkte Vergleichsbasis",
+          "Haiti besitzt eine ordentliche Offensive (1.66 Tore/Spiel) und könnte für ein Tor sorgen",
+          "Neutraler Spielort ohne Heimvorteil für Marokko"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.74,
-          "draw": 0.17,
-          "away": 0.09
+          "home": 0.68,
+          "draw": 0.19,
+          "away": 0.13
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Morocco's high Elo rating compared to Haiti",
-          "Morocco's strong defensive record with a high clean sheet rate",
-          "Neutral venue with no team having host advantage"
+          "Morocco has a significantly higher Elo rating than Haiti.",
+          "Morocco's weighted form and recent form are stronger than Haiti's.",
+          "Morocco has a high clean sheet rate and low goals against average.",
+          "Neutral venue neutralizes home advantage but Morocco remains stronger.",
+          "No key injuries or suspensions reported for either team."
         ],
         "risks": [
-          "Both teams have not played in 61 days, affecting form certainty",
-          "No head-to-head history"
+          "Neutral venue may slightly reduce Morocco's dominance.",
+          "First-ever head-to-head meeting could introduce unexpected dynamics.",
+          "Unpredictable factors in World Cup games may affect outcomes."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Marokkos (1892 vs. 1576) und starke gewichtete Form (2.585 vs. 1.488).; Herausragende Defensive Marokkos: nur 0.274 Gegentore/Spiel und 70.6% Clean-Sheet-Rate.; Haitis schwächere Defensive (1.092 Gegentore/Spiel, 40.9% Clean Sheets) spricht für marokkanische TortChancen..",
-    "inputHash": "sha256:dd3da2e54a19591e71f6e715fe0b6d5f4c5214151610c3e5a66eabe6b0d409d6"
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1892 vs. 1576) zugunsten Marokkos; Exzellente marokkanische Defensive: nur 0.27 Gegentore/Spiel, 70.6% Clean Sheets; Starke gewichtete Form Marokkos (2.585) gegenüber Haiti (1.488).",
+    "inputHash": "sha256:5441b456d910867041002c407e59d4b369add03775448c21644060fb16844d42"
   },
   "predictionHistory": [
     {
@@ -163,6 +166,19 @@
         "away": 0.0777
       },
       "confidence": 0.7771
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.74,
+        "draw": 0.17,
+        "away": 0.09
+      },
+      "confidence": 0.775
     }
   ]
 }

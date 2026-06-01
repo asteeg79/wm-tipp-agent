@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "HAI",
       "elo": 1576,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.092,
       "cleanSheetRate": 0.409,
       "matchesCount": 22,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "SCO",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.281,
       "cleanSheetRate": 0.28,
       "matchesCount": 25,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3927,
-      "draw": 0.2873,
-      "away": 0.32
+      "home": 0.3792,
+      "draw": 0.3167,
+      "away": 0.3042
     },
-    "confidence": 0.5841,
+    "confidence": 0.584,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.41,
+          "home": 0.42,
           "draw": 0.27,
-          "away": 0.32
+          "away": 0.31
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Haiti mit besserer gewichteter Form (1.49 vs 1.30) und solider Defensive (GA 1.09, Clean-Sheet-Rate 0.41)",
-          "Scotland verliert Schlüsselspieler Billy Gilmour im Mittelfeld durch Knieverletzung, Ersatz ist unerfahrener Teenager Tyler Fletcher",
-          "Scotland mit besserer jüngster Form (recentForm 1.6) trotz schwächerer langfristiger Werte",
-          "Neutraler Spielort eliminiert klassischen Heimvorteil, Elo nahezu ausgeglichen (1576 vs 1586)"
+          "Haiti mit besserer gewichteter Form (1.49 vs 1.30) und stabilerer Defensive (Gegentore 1.09 vs 1.28, Clean-Sheet-Rate 0.41 vs 0.28)",
+          "Schottland verliert Schlüsselspieler Billy Gilmour (Knie) für das Turnier, Ersatz durch unerfahrenen Teenager Tyler Fletcher schwächt das Mittelfeld",
+          "Neutraler Spielort neutralisiert klassischen Heimvorteil; Elo nahezu ausgeglichen (1576 vs 1586)",
+          "Schottlands bessere jüngste Form (recentForm 1.6) deutet auf Aufwärtstrend trotz Verletzung"
         ],
         "risks": [
-          "Keinerlei Head-to-Head-Daten verfügbar, hohe Unsicherheit über Spielstil-Matchup",
-          "Lange Pause (61 Tage) bei beiden Teams kann Form und Rhythmus verzerren",
-          "Gilmour-Ausfall könnte durch taktische Anpassung kompensiert werden, Effekt schwer quantifizierbar",
-          "Scotlands schwache Clean-Sheet-Rate (0.28) macht offenes Spiel mit mehr Toren möglich"
+          "Keine H2H-Daten vorhanden, erhöht Unsicherheit der Einschätzung",
+          "Gilmour-Ausfall könnte durch taktische Anpassung kompensiert werden, Auswirkung schwer quantifizierbar",
+          "Lange Pause beider Teams (62 Tage) kann Spielrhythmus und Form verfälschen",
+          "Schottlands höhere Offensivvarianz könnte trotz schwächerer Statistik überraschen"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.3,
-          "away": 0.32
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
         },
-        "confidence": 0.68,
+        "confidence": 0.7,
         "keyFactors": [
-          "Both teams have similar Elo ratings and balanced strengths.",
-          "Haiti has slightly better average goals scored and clean sheet rate.",
-          "Scotland's key player Billy Gilmour is injured and replaced by a less experienced player.",
-          "Neutral venue removes home advantage."
+          "Neutral venue removes home advantage for Haiti",
+          "Scotland's recent form slightly better than Haiti's",
+          "Key Scotland midfielder Billy Gilmour is injured and will miss the World Cup"
         ],
         "risks": [
-          "Despite being a neutral venue, any unforeseen altitude or climate effects could impact the teams differently.",
-          "The impact of Billy Gilmour's absence might vary depending on the performance of the replacement."
+          "Lack of head-to-head data makes it difficult to predict dynamics",
+          "Uncertainty about Scotland's midfield strength due to missing Gilmour"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Haiti mit besserer gewichteter Form (1.49 vs 1.30) und solider Defensive (GA 1.09, Clean-Sheet-Rate 0.41); Scotland verliert Schlüsselspieler Billy Gilmour im Mittelfeld durch Knieverletzung, Ersatz ist unerfahrener Teenager Tyler Fletcher; Scotland mit besserer jüngster Form (recentForm 1.6) trotz schwächerer langfristiger Werte.",
-    "inputHash": "sha256:5fa37d3a974900680e50d349184163409f32faf006675beae7751e92a93c74c0"
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Haiti mit besserer gewichteter Form (1.49 vs 1.30) und stabilerer Defensive (Gegentore 1.09 vs 1.28, Clean-Sheet-Rate 0.41 vs 0.28); Schottland verliert Schlüsselspieler Billy Gilmour (Knie) für das Turnier, Ersatz durch unerfahrenen Teenager Tyler Fletcher schwächt das Mittelfeld; Neutraler Spielort neutralisiert klassischen Heimvorteil; Elo nahezu ausgeglichen (1576 vs 1586).",
+    "inputHash": "sha256:0b555620c194636b9cd4bc41ffcd596be6236765300557976fe1b501cc156be5"
   },
   "predictionHistory": [
     {
@@ -164,6 +163,19 @@
         "away": 0.2778
       },
       "confidence": 0.5753
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3927,
+        "draw": 0.2873,
+        "away": 0.32
+      },
+      "confidence": 0.5841
     }
   ]
 }

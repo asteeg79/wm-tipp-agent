@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -23,7 +23,7 @@
       "goalsAgainstAvg": 0.797,
       "cleanSheetRate": 0.588,
       "matchesCount": 34,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "away": {
       "teamId": "RSA",
@@ -34,7 +34,7 @@
       "goalsAgainstAvg": 1.009,
       "cleanSheetRate": 0.484,
       "matchesCount": 31,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.5364,
-      "draw": 0.2609,
-      "away": 0.2027
+      "home": 0.5162,
+      "draw": 0.2585,
+      "away": 0.2254
     },
-    "confidence": 0.649,
+    "confidence": 0.6327,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,54 +77,54 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "home": 0.47,
+          "draw": 0.27,
+          "away": 0.26
         },
-        "confidence": 0.6,
+        "confidence": 0.55,
         "keyFactors": [
-          "Mexiko mit höherem Elo (1729 vs 1627) und besserer gewichteter Form (1.754 vs 1.59)",
-          "Co-Gastgeber-Vorteil für Mexiko trott neutralem Spielort (hostAdvantageTeamId MEX)",
-          "Höhenlage von 2240m begünstigt das an Höhe gewöhnte Mexiko",
-          "Bessere Defensive Mexikos (0.797 Gegentore/Spiel, 58.8% Clean Sheets)"
+          "Mexico hat klaren Elo-Vorteil (1729 vs 1627) und die bessere gewichtete Form (1.754 vs 1.59)",
+          "Mexico ist faktischer Gastgeber (hostAdvantageTeamId MEX) trotz neutralem Venue-Flag, plus Höhenvorteil (2240m)",
+          "Mexico defensiv stabiler: niedrigere Gegentor-Quote (0.797) und höhere Clean-Sheet-Rate (0.588 vs 0.484)",
+          "Südafrika offensiv leicht stärker im Schnitt (goalsForAvg 1.556) und bringt Auswärts-Torgefahr"
         ],
         "risks": [
-          "Südafrika offensiv stärker (1.556 Tore/Spiel) und kann torgefährlich werden",
-          "Keine H2H-Daten verfügbar, erschwert Einschätzung",
-          "Lange Pause beider Teams (61 Tage) kann Rhythmus beeinträchtigen",
-          "Mexikos recentForm (1.4) etwas schwächer als die gewichtete Form"
+          "Keine H2H-Daten verfügbar – erhöhte Unsicherheit",
+          "Lange Pause seit letztem Match (62 Tage) für beide Teams kann Rhythmus beeinflussen",
+          "Südafrikas solide recentForm (1.5) und Torgefahr könnten ein Remis oder eine Überraschung ermöglichen",
+          "Keine materiell relevanten News zur Mexico-Aufstellung; News-Snippet bezieht sich auf USA und ist irrelevant"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "probabilities": {
           "home": 0.55,
-          "draw": 0.27,
-          "away": 0.18
+          "draw": 0.25,
+          "away": 0.2
         },
-        "confidence": 0.72,
+        "confidence": 0.75,
         "keyFactors": [
-          "Mexico has a higher Elo rating (1729) compared to South Africa (1627).",
-          "Mexico's strong defensive record with a clean sheet rate of 0.588.",
-          "High altitude of 2240 meters likely favors Mexico's conditioning.",
-          "Neutral venue diminishes potential home advantage for South Africa."
+          "Mexico has a higher Elo rating indicating stronger historical performance.",
+          "Mexico's weighted form is slightly better than South Africa's.",
+          "The match is played at high altitude which may favor Mexico, used to playing at similar altitudes.",
+          "The neutral venue lessens traditional home field advantage, but altitude may still play a role."
         ],
         "risks": [
-          "South Africa's slightly better recent form with an average of 1.5.",
-          "Mexico's attack showing fewer goals on average compared to South Africa."
+          "South Africa's recent form is slightly better than Mexico's.",
+          "Potential increased pressure on Mexico due to home tournament expectations."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko mit höherem Elo (1729 vs 1627) und besserer gewichteter Form (1.754 vs 1.59); Co-Gastgeber-Vorteil für Mexiko trott neutralem Spielort (hostAdvantageTeamId MEX); Höhenlage von 2240m begünstigt das an Höhe gewöhnte Mexiko.",
-    "inputHash": "sha256:915d7c391c141d3a01e259b79c6ed31f17e0ee9d42df6c6ab891bb16a5da9caf"
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico hat klaren Elo-Vorteil (1729 vs 1627) und die bessere gewichtete Form (1.754 vs 1.59); Mexico ist faktischer Gastgeber (hostAdvantageTeamId MEX) trotz neutralem Venue-Flag, plus Höhenvorteil (2240m); Mexico defensiv stabiler: niedrigere Gegentor-Quote (0.797) und höhere Clean-Sheet-Rate (0.588 vs 0.484).",
+    "inputHash": "sha256:acaee4ff70a4654cf803e7ad9a1c503f9b286a7b3c105bb3c9b4ac615f58ca2f"
   },
   "predictionHistory": [
     {
@@ -165,6 +165,19 @@
         "away": 0.2213
       },
       "confidence": 0.6854
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5364,
+        "draw": 0.2609,
+        "away": 0.2027
+      },
+      "confidence": 0.649
     }
   ]
 }

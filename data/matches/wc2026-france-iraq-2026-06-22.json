@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "FRA",
       "elo": 1904,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.947,
       "cleanSheetRate": 0.464,
       "matchesCount": 28,
-      "daysSinceLastMatch": 63
+      "daysSinceLastMatch": 64
     },
     "away": {
       "teamId": "IRQ",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.82,
       "cleanSheetRate": 0.458,
       "matchesCount": 24,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6525,
-      "draw": 0.2,
-      "away": 0.1475
+      "home": 0.6378,
+      "draw": 0.2056,
+      "away": 0.1567
     },
-    "confidence": 0.7005,
+    "confidence": 0.666,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,48 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.63,
+          "home": 0.66,
           "draw": 0.2,
-          "away": 0.17
+          "away": 0.14
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Frankreichs (1904 vs. 1630) und stärkere gewichtete Form (2.43 vs. 2.014)",
-          "Frankreichs höhere Offensivkraft (2.34 Tore/Spiel) gegen solide, aber harmlosere irakische Offensive (1.28)",
-          "Iraks defensive Stabilität (cleanSheetRate 0.458, nur 0.82 Gegentore/Spiel) kann das Ergebnis enger halten als Baseline suggeriert",
-          "Neutraler Spielort ohne Heimvorteil reduziert den Bonus für Frankreich leicht"
+          "Klarer Elo-Vorsprung Frankreichs (1904 vs 1630, +274 Punkte)",
+          "Frankreichs starke Offensivform (gewichtete Form 2.43, 2.34 Tore/Spiel)",
+          "Solide Defensive beider Teams (Gegentore ~0.95 bzw. 0.82, ähnliche Clean-Sheet-Raten)",
+          "Iraks ordentliche Form (gewichtete Form 2.01) macht ein zu hohes Frankreich-Ergebnis unwahrscheinlich"
         ],
         "risks": [
-          "Lange Pause beider Teams (ca. 61-63 Tage) erschwert Formeinschätzung",
-          "Materialnews zu Frankreich (Coach/Kader) unklar und potenziell relevant für Aufstellung",
-          "Kein H2H-Datensatz vorhanden, erhöht Unsicherheit",
-          "Defensiv kompakter Irak könnte ein knappes oder Remis-Ergebnis erzwingen"
+          "Keine H2H-Daten verfügbar – kein direkter Vergleichswert",
+          "Neutraler Spielort eliminiert den Heimvorteil Frankreichs",
+          "Lange Spielpause beider Teams (62-64 Tage) erschwert Formprognose",
+          "Iraks kompakte Defensive könnte das Ergebnis enger als erwartet halten"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.67,
-          "draw": 0.2,
-          "away": 0.13
+          "home": 0.62,
+          "draw": 0.21,
+          "away": 0.17
         },
-        "confidence": 0.8,
+        "confidence": 0.75,
         "keyFactors": [
-          "France's high Elo rating and recent form advantage",
-          "Iraq's lower scoring average against a strong team",
-          "Neutral venue negating home-field advantage"
+          "France's superior Elo rating and recent form metrics",
+          "Neutral venue reduces home advantage",
+          "France's higher average goals scored per game"
         ],
         "risks": [
-          "Potential distraction due to recent unrest in France",
-          "Iraq's solid clean sheet rate which might challenge scoring"
+          "Social unrest in France could potentially impact team focus"
         ]
       }
     },
     "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Frankreichs (1904 vs. 1630) und stärkere gewichtete Form (2.43 vs. 2.014); Frankreichs höhere Offensivkraft (2.34 Tore/Spiel) gegen solide, aber harmlosere irakische Offensive (1.28); Iraks defensive Stabilität (cleanSheetRate 0.458, nur 0.82 Gegentore/Spiel) kann das Ergebnis enger halten als Baseline suggeriert.",
-    "inputHash": "sha256:b2e9c253e0031d66d63404cbd4c033bb797e3aa8bae4967ec9da3218e8ac2df7"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Frankreichs (1904 vs 1630, +274 Punkte); Frankreichs starke Offensivform (gewichtete Form 2.43, 2.34 Tore/Spiel); Solide Defensive beider Teams (Gegentore ~0.95 bzw. 0.82, ähnliche Clean-Sheet-Raten).",
+    "inputHash": "sha256:6b4fe8486c1bddc563a76f864a908b805393aeaab0e9f5baeaf99bb412c1ebe4"
   },
   "predictionHistory": [
     {
@@ -163,6 +162,19 @@
         "away": 0.1577
       },
       "confidence": 0.6359
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6525,
+        "draw": 0.2,
+        "away": 0.1475
+      },
+      "confidence": 0.7005
     }
   ]
 }

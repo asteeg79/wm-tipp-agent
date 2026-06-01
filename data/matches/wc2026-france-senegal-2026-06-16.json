@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "home": {
       "teamId": "FRA",
       "elo": 1904,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.947,
       "cleanSheetRate": 0.464,
       "matchesCount": 28,
-      "daysSinceLastMatch": 63
+      "daysSinceLastMatch": 64
     },
     "away": {
       "teamId": "SEN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.614,
       "cleanSheetRate": 0.647,
       "matchesCount": 34,
-      "daysSinceLastMatch": 61
+      "daysSinceLastMatch": 62
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-05-31T19:40:16.979Z",
+    "generatedAt": "2026-06-01T04:12:28.285Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.398,
-      "draw": 0.2488,
-      "away": 0.3532
+      "home": 0.4031,
+      "draw": 0.2558,
+      "away": 0.3412
     },
-    "confidence": 0.6146,
+    "confidence": 0.6392,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.37,
-          "draw": 0.26,
+          "home": 0.38,
+          "draw": 0.25,
           "away": 0.37
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Senegal zeigt defensiv überlegene Werte (0.61 Gegentore/Spiel, 64.7% Clean-Sheet-Rate) gegenüber Frankreich (0.95 Gegentore, 46.4%), was die Baseline-Heimtendenz relativiert.",
-          "Beide Teams nahezu identische gewichtete Form (FRA 2.43, SEN 2.44) und identische jüngste Form (je 2.5) deuten auf ein ausgeglichenes Duell hin.",
-          "Neutraler Spielort eliminiert den klassischen Heimvorteil, daher Reduktion der Home-Wahrscheinlichkeit zugunsten Senegals.",
-          "Frankreichs höherer Elo (1904 vs. 1828) und leicht stärkere Offensive (2.34 vs. 2.32 Tore) bleiben ein moderater Vorteil."
+          "France mit höherem Elo (1904 vs 1828) und Heim-/Namensvorteil, aber neutraler Spielort relativiert diesen",
+          "Senegal mit nahezu identischer gewichteter Form (2.44 vs 2.43) und gleicher jüngster Form (2.5)",
+          "Senegal defensiv stärker: 0.61 Gegentore/Spiel und 64.7% Clean-Sheet-Rate vs 0.95 und 46.4% bei Frankreich",
+          "Frankreich offensiv leicht überlegen (2.34 vs 2.32 Tore/Spiel), aber Differenz minimal",
+          "Beide Teams ähnlich lange ohne Pflichtspiel (64 vs 62 Tage), kein Rhythmusvorteil"
         ],
         "risks": [
-          "Keine Head-to-Head-Daten vorhanden, daher fehlt direkte Vergleichsbasis.",
-          "Die News zu Frankreich (Riots) betreffen das Umfeld, nicht direkt den Kader; sportliche Auswirkung unsicher.",
-          "Lange Spielpause bei beiden Teams (61-63 Tage) erhöht Unsicherheit über aktuelle Spielfrische.",
-          "Senegals starke Defensive könnte ein torarmes Spiel mit Remis-Tendenz begünstigen."
+          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit",
+          "Materielle News ohne klare sportliche Relevanz (keine konkreten Ausfälle bei Frankreich oder Senegal)",
+          "Senegals starke Defensive könnte ein engeres, torärmeres Spiel begünstigen als Baseline annimmt",
+          "Hohe individuelle Qualität Frankreichs kann Spiel jederzeit kippen"
         ]
       },
       "chatgpt": {
@@ -105,25 +106,26 @@
         },
         "probabilities": {
           "home": 0.42,
-          "draw": 0.24,
-          "away": 0.34
+          "draw": 0.26,
+          "away": 0.32
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "France has a slightly higher Elo rating than Senegal, indicating a marginally stronger team overall.",
-          "Both teams have similar recent form, with the same weighted form performance.",
-          "France has a slightly higher average goals scored per match compared to Senegal.",
-          "The match is at a neutral venue, reducing location-based advantages."
+          "France has a slightly higher Elo rating than Senegal.",
+          "Both teams have similar recent form, with strong offensive averages.",
+          "France has a moderate clean sheet rate, but Senegal's is higher.",
+          "Neutral venue eliminates any inherent home advantage."
         ],
         "risks": [
-          "France is dealing with off-field disturbances due to recent riots, which might affect team focus.",
-          "Senegal has a higher clean sheet rate, which could make it difficult for France to score."
+          "Riots in France might have an indirect impact on team morale.",
+          "No previous head-to-head data to predict performance trends accurately.",
+          "The close Elo ratings and strong clean sheet rate of Senegal could lead to an upset."
         ]
       }
     },
     "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal zeigt defensiv überlegene Werte (0.61 Gegentore/Spiel, 64.7% Clean-Sheet-Rate) gegenüber Frankreich (0.95 Gegentore, 46.4%), was die Baseline-Heimtendenz relativiert.; Beide Teams nahezu identische gewichtete Form (FRA 2.43, SEN 2.44) und identische jüngste Form (je 2.5) deuten auf ein ausgeglichenes Duell hin.; Neutraler Spielort eliminiert den klassischen Heimvorteil, daher Reduktion der Home-Wahrscheinlichkeit zugunsten Senegals..",
-    "inputHash": "sha256:cbbf0b984a9a4b6b5e7a10096cc230d438ca37c38ae4c27d2d3ed8f38003ac2b"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: France mit höherem Elo (1904 vs 1828) und Heim-/Namensvorteil, aber neutraler Spielort relativiert diesen; Senegal mit nahezu identischer gewichteter Form (2.44 vs 2.43) und gleicher jüngster Form (2.5); Senegal defensiv stärker: 0.61 Gegentore/Spiel und 64.7% Clean-Sheet-Rate vs 0.95 und 46.4% bei Frankreich.",
+    "inputHash": "sha256:fa75624eadc56e3e48c5e3624563ff8c4e02ff1dc4abd6b4c08dec9f744475b9"
   },
   "predictionHistory": [
     {
@@ -164,6 +166,19 @@
         "away": 0.37
       },
       "confidence": 0.6031
+    },
+    {
+      "generatedAt": "2026-05-31T19:40:16.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.398,
+        "draw": 0.2488,
+        "away": 0.3532
+      },
+      "confidence": 0.6146
     }
   ]
 }
