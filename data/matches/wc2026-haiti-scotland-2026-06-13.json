@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "HAI",
       "elo": 1576,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3742,
-      "draw": 0.2933,
-      "away": 0.3325
+      "home": 0.3874,
+      "draw": 0.3039,
+      "away": 0.3087
     },
-    "confidence": 0.592,
+    "confidence": 0.5635,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
+          "home": 0.41,
           "draw": 0.27,
-          "away": 0.35
+          "away": 0.32
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Neutraler Spielort: kein echter Heimvorteil für Haiti, daher Baseline-Heimvorteil leicht reduziert",
-          "Scotland mit besserer aktueller Form (recentForm 1.6 vs 1.3) und marginal höherem Elo (1586 vs 1576)",
-          "Haiti defensiv stabiler (goalsAgainstAvg 1.09, cleanSheetRate 0.41) gegenüber Scotland (1.28 / 0.28)",
-          "Haitis höhere gewichtete Form (1.488 vs 1.301) und stärkere Offensive (goalsForAvg 1.66) stützen Konkurrenzfähigkeit",
-          "Hohe Moral bei Haiti nach Ende der 52-jährigen WM-Pause kann zusätzlich motivieren"
+          "Haiti mit besserer gewichteter Form (1.49 vs 1.30) und solider Defensive (Gegentore-Schnitt 1.09, Clean-Sheet-Rate 0.41)",
+          "Scotland verliert mit Billy Gilmour eine Schlüsselkraft im Mittelfeld durch schwere Verletzung",
+          "Neutraler Spielort relativiert nominellen Heimvorteil leicht, aber Baseline-Heimwert bleibt vertretbar",
+          "Haiti offensiv etwas torgefährlicher (Tore-Schnitt 1.66 vs 1.37)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
-          "Beide Teams seit 62 Tagen ohne Spiel - Form schwer einzuschätzen",
-          "Kein Marktvergleich verfügbar, um Baseline zu kalibrieren",
-          "WM-Druck und unklare endgültige Kaderlage könnten Leistung beider Teams verzerren"
+          "Scotlands bessere jüngste Form (recentForm 1.6 vs 1.3) könnte Baseline unterschätzen",
+          "Keine H2H-Daten vorhanden, hohe Unsicherheit bei Stilvergleich",
+          "Coach Migne baut Kader unter erschwerten Bedingungen auf (keine Präsenz in Haiti) - mögliche Integrationsprobleme",
+          "62 Tage ohne Pflichtspiel bei beiden Teams erschwert Formeinschätzung"
         ]
       },
       "chatgpt": {
@@ -106,23 +105,24 @@
         },
         "probabilities": {
           "home": 0.37,
-          "draw": 0.31,
-          "away": 0.32
+          "draw": 0.33,
+          "away": 0.3
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Haiti's strong motivation due to historic World Cup qualification",
-          "Neutral venue negates any home advantage",
-          "Haiti's better recent defensive record compared to Scotland"
+          "Neutral venue diminishes home advantage for Haiti.",
+          "Recent injury to key Scottish player Billy Gilmour affects team dynamics.",
+          "Haiti's slightly better recent form compared to Scotland.",
+          "Both teams have similar Elo ratings and no head-to-head history."
         ],
         "risks": [
-          "Scotland's higher recent form",
-          "Haiti's long time since last competitive match"
+          "Scotland's overall experience might outperform predictions.",
+          "Unforeseen tactical shifts due to Haiti's coaching approach."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Neutraler Spielort: kein echter Heimvorteil für Haiti, daher Baseline-Heimvorteil leicht reduziert; Scotland mit besserer aktueller Form (recentForm 1.6 vs 1.3) und marginal höherem Elo (1586 vs 1576); Haiti defensiv stabiler (goalsAgainstAvg 1.09, cleanSheetRate 0.41) gegenüber Scotland (1.28 / 0.28).",
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Haiti mit besserer gewichteter Form (1.49 vs 1.30) und solider Defensive (Gegentore-Schnitt 1.09, Clean-Sheet-Rate 0.41); Scotland verliert mit Billy Gilmour eine Schlüsselkraft im Mittelfeld durch schwere Verletzung; Neutraler Spielort relativiert nominellen Heimvorteil leicht, aber Baseline-Heimwert bleibt vertretbar.",
     "inputHash": "sha256:0b555620c194636b9cd4bc41ffcd596be6236765300557976fe1b501cc156be5"
   },
   "predictionHistory": [
@@ -203,6 +203,19 @@
         "away": 0.3157
       },
       "confidence": 0.5673
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3742,
+        "draw": 0.2933,
+        "away": 0.3325
+      },
+      "confidence": 0.592
     }
   ]
 }

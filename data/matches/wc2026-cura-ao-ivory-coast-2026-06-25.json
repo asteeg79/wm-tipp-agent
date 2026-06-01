@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "CUW",
       "elo": 1637,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2644,
+      "home": 0.28,
       "draw": 0.25,
-      "away": 0.4856
+      "away": 0.47
     },
-    "confidence": 0.6728,
+    "confidence": 0.65,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.27,
+          "home": 0.28,
           "draw": 0.25,
-          "away": 0.48
+          "away": 0.47
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Elo-Vorsprung der Ivory Coast (1753 vs. 1637) und stärkere gewichtete Form (2.267 vs. 1.857)",
-          "Bessere jüngste Form der Ivory Coast (recentForm 2.2) und solide Defensive (goalsAgainstAvg 0.558, CleanSheet 0.545)",
-          "Neutraler Spielort eliminiert Heimvorteil für Curaçao",
-          "Curaçao defensiv stark (goalsAgainstAvg 0.621, CleanSheetRate 0.55) und torgefährlich (goalsForAvg 2.199), kann mithalten"
+          "Ivory Coast mit höherem Elo (1753 vs 1637) und stärkerer gewichteter Form (2.267 vs 1.857)",
+          "Beide Teams defensiv stabil (ähnliche Clean-Sheet-Raten ~0.55), was tendenziell torärmere Partie begünstigt",
+          "Ivory Coast jüngst spielfit (62 Tage seit letztem Spiel) gegenüber Curaçao mit langer Pause (195 Tage)",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil für Curaçao"
         ],
         "risks": [
-          "Curaçao mit 195 Tagen ohne Spiel: hohe Unsicherheit über Wettkampfrhythmus und aktuelle Verfassung",
-          "Negative News-Lage bei Curaçao (Platzverweis und 1:4-Niederlage in Testspiel, Verletzungssorgen) deutet auf instabile Form",
-          "Kein H2H-Vergleich vorhanden, Einschätzung basiert allein auf Form/Elo",
-          "Bei voller Tagesform könnte Curaçaos Offensive für eine Überraschung sorgen"
+          "Mögliche Sperre von Locadia würde Curaçaos Offensive (2.199 Tore/Spiel) schwächen",
+          "Lange Spielpause von Curaçao (195 Tage) erschwert Form-Einschätzung erheblich",
+          "Keine H2H-Daten vorhanden – höhere Unsicherheit im Direktvergleich",
+          "Curaçaos starke Offensivwerte könnten bei Topform für eine Überraschung sorgen"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,24 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.26,
+          "home": 0.28,
           "draw": 0.25,
-          "away": 0.49
+          "away": 0.47
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Ivory Coast has a higher Elo rating and better recent form compared to Curaçao.",
-          "Curaçao has key player Billy Gilmour out due to injury, affecting their midfield strength.",
-          "Neutral venue eliminates home advantage for Curaçao."
+          "Ivory Coast has higher Elo rating indicating stronger overall performance.",
+          "Ivory Coast has better recent form and has played more matches recently.",
+          "Curaçao may be without Locadia due to possible suspension, impacting their offensive capabilities."
         ],
         "risks": [
-          "Curaçao's strong attacking average could challenge Ivory Coast.",
-          "The lack of head-to-head data creates uncertainty in adaptation to play style."
+          "Curaçao has strong home attacking performance as indicated by goalsForAvg and could surpass expectations.",
+          "Neutral venue may reduce typical home/away advantages."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorsprung der Ivory Coast (1753 vs. 1637) und stärkere gewichtete Form (2.267 vs. 1.857); Bessere jüngste Form der Ivory Coast (recentForm 2.2) und solide Defensive (goalsAgainstAvg 0.558, CleanSheet 0.545); Neutraler Spielort eliminiert Heimvorteil für Curaçao.",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ivory Coast mit höherem Elo (1753 vs 1637) und stärkerer gewichteter Form (2.267 vs 1.857); Beide Teams defensiv stabil (ähnliche Clean-Sheet-Raten ~0.55), was tendenziell torärmere Partie begünstigt; Ivory Coast jüngst spielfit (62 Tage seit letztem Spiel) gegenüber Curaçao mit langer Pause (195 Tage).",
     "inputHash": "sha256:db5bf06b5eab29938874e6082d696f6b6311bec6fd7506161dbb7bc8ad71abd2"
   },
   "predictionHistory": [
@@ -202,6 +202,19 @@
         "away": 0.5015
       },
       "confidence": 0.6413
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2644,
+        "draw": 0.25,
+        "away": 0.4856
+      },
+      "confidence": 0.6728
     }
   ]
 }

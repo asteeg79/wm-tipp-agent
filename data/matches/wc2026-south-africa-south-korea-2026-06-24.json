@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "RSA",
       "elo": 1627,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T09:13:04.314Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3408,
-      "draw": 0.3025,
-      "away": 0.3567
+      "home": 0.3578,
+      "draw": 0.2848,
+      "away": 0.3574
     },
-    "confidence": 0.584,
+    "confidence": 0.5673,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
-          "draw": 0.27,
-          "away": 0.4
+          "home": 0.355,
+          "draw": 0.265,
+          "away": 0.38
         },
-        "confidence": 0.55,
+        "confidence": 0.5,
         "keyFactors": [
-          "South Korea hat höhere Elo (1702 vs 1627) und bessere jüngste Form (recentForm 1.9 vs 1.5)",
-          "Neutraler Spielort entzieht South Africa den Heimvorteil, den die Baseline teils implizierte",
-          "South Africa defensiv stabiler (goalsAgainstAvg 1.009, cleanSheetRate 0.484) als South Korea (1.348, 0.414)",
-          "Beide Teams nach 62 Tagen Pause ohne klaren Rhythmusvorteil"
+          "South Korea hat höhere Elo (1702 vs 1627) und stärkere jüngste Form (recentForm 1.9 vs 1.5)",
+          "Neutraler Spielort ohne Heimvorteil für Südafrika reduziert dessen Baseline-Bonus",
+          "Südafrika defensiv solide (xGA 1.01, Clean-Sheet-Rate 0.48), was knappe Spiele begünstigt",
+          "Südkorea offensiv ausgeglichen, aber defensiv anfälliger (xGA 1.35), Tor-Risiko in beide Richtungen"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit",
-          "Materielle News rein generisch, keine konkreten Verletzungs-/Sperreninfos",
-          "Defensive Stärke Südafrikas könnte engeres Spiel als erwartet erzwingen",
-          "Höhe von 540m vernachlässigbar, aber Anpassungsfähigkeit unklar"
+          "Visa-bedingte Abwesenheit des Co-Trainers Südafrikas könnte Organisation/Vorbereitung leicht beeinträchtigen",
+          "Lange Pause (62 Tage) für beide Teams erhöht Unsicherheit über Spielrhythmus",
+          "Kein H2H-Verlauf verfügbar, daher erhöhte Prognose-Unsicherheit",
+          "Höhe (540 m) und neutrale Bedingungen schwer einzuschätzen"
         ]
       },
       "chatgpt": {
@@ -105,25 +105,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.33,
-          "away": 0.32
+          "home": 0.36,
+          "draw": 0.3,
+          "away": 0.34
         },
         "confidence": 0.65,
         "keyFactors": [
-          "Both teams have similar recent form with South Korea having a slight advantage in recent form.",
-          "The match is played at a neutral venue with no altitude or host advantage.",
-          "No head-to-head history influencing dynamics.",
-          "Both teams have similar average goals scored and conceded per match."
+          "South Korea has a higher Elo rating",
+          "South Africa's recent form is slightly lower than South Korea's",
+          "Neutral venue might reduce any home advantage"
         ],
         "risks": [
-          "Unpredictability of World Cup group stages.",
-          "Potential impact of tactical decisions by new coaches for both teams."
+          "South Africa missing assistant coach due to visa issues may affect team's preparation",
+          "No historical head-to-head data to gauge matchup dynamics"
         ]
       }
     },
-    "agreement": 0.9467,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Korea hat höhere Elo (1702 vs 1627) und bessere jüngste Form (recentForm 1.9 vs 1.5); Neutraler Spielort entzieht South Africa den Heimvorteil, den die Baseline teils implizierte; South Africa defensiv stabiler (goalsAgainstAvg 1.009, cleanSheetRate 0.484) als South Korea (1.348, 0.414).",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: South Korea hat höhere Elo (1702 vs 1627) und stärkere jüngste Form (recentForm 1.9 vs 1.5); Neutraler Spielort ohne Heimvorteil für Südafrika reduziert dessen Baseline-Bonus; Südafrika defensiv solide (xGA 1.01, Clean-Sheet-Rate 0.48), was knappe Spiele begünstigt.",
     "inputHash": "sha256:7f017bbfcf683624d454ed1aaae7461cd2faf7696d45d1d23126ca5f40b747c9"
   },
   "predictionHistory": [
@@ -191,6 +190,19 @@
         "away": 0.3541
       },
       "confidence": 0.5445
+    },
+    {
+      "generatedAt": "2026-06-01T09:13:04.314Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3408,
+        "draw": 0.3025,
+        "away": 0.3567
+      },
+      "confidence": 0.584
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "POR",
       "elo": 1793,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.5075,
-      "draw": 0.2521,
-      "away": 0.2404
+      "home": 0.4594,
+      "draw": 0.3064,
+      "away": 0.2342
     },
-    "confidence": 0.594,
+    "confidence": 0.6375,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,48 +80,49 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.49,
-          "draw": 0.255,
-          "away": 0.255
+          "home": 0.5,
+          "draw": 0.26,
+          "away": 0.24
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
           "Portugal mit höherem Elo (1793 vs 1705) und starker Offensive (2.32 Tore/Spiel)",
-          "DR Congo defensiv sehr solide (0.482 Gegentore/Spiel, 54.5% Clean Sheets), kann Spiel eng halten",
-          "DR Congo aktuell formstärker (weightedForm 2.229 vs 2.01), was die Baseline leicht relativiert",
-          "Neutraler Spielort entzieht Portugal den klassischen Heimvorteil"
+          "DR Congo defensiv sehr solide (0.48 Gegentore/Spiel, 54.5% Clean Sheets)",
+          "DR Congo mit leicht besserer gewichteter Form (2.23 vs 2.01)",
+          "Neutraler Spielort ohne Heimvorteil für Portugal"
         ],
         "risks": [
-          "Ebola-Krise stoppte das WM-Trainingslager der DR Congo – mögliche Vorbereitungsdefizite und mentale Belastung schwer einzuschätzen",
-          "Materielle News zu Portugal betreffen keine Schlüsselspieler dieser Partie (irrelevante Meldungen)",
-          "Kein H2H-Datensatz vorhanden, daher höhere Unsicherheit",
-          "DR Congos starke Defensive könnte Portugals erwartete Tore unter die Baseline drücken"
+          "Ebola-Krise stört DR-Congo-Trainingslager – mögliche Beeinträchtigung der Vorbereitung",
+          "Keine H2H-Historie, daher erhöhte Unsicherheit",
+          "Lange Pause beider Teams (62 Tage) kann Rhythmus beeinflussen",
+          "Starke kongolesische Defensive könnte Portugals erwartete Tore drücken"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
+          "home": 0.43,
+          "draw": 0.34,
           "away": 0.23
         },
-        "confidence": 0.7,
+        "confidence": 0.76,
         "keyFactors": [
-          "Portugal's higher Elo rating and historical strength.",
-          "Portugal's offensive capabilities, with average goals for at 2.32 per match.",
-          "DR Congo's recent form is slightly better, but they face morale issues due to the Ebola crisis."
+          "Portugal has slightly lower recent form compared to DR Congo but still maintains strong historical performance.",
+          "Portugal's goal-scoring average is higher compared to DR Congo, indicating a strong offensive capability.",
+          "DR Congo has a superior defensive record, suggesting a close match.",
+          "Neutral venue negates any home advantage."
         ],
         "risks": [
-          "DR Congo's strong defense with a high clean sheet rate of 0.545.",
-          "Neutral venue eliminates any home advantage for Portugal."
+          "Ebola crisis affecting DR Congo's morale might be downplayed.",
+          "Portugal's reliance on aging players could impact performance consistency."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit höherem Elo (1793 vs 1705) und starker Offensive (2.32 Tore/Spiel); DR Congo defensiv sehr solide (0.482 Gegentore/Spiel, 54.5% Clean Sheets), kann Spiel eng halten; DR Congo aktuell formstärker (weightedForm 2.229 vs 2.01), was die Baseline leicht relativiert.",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit höherem Elo (1793 vs 1705) und starker Offensive (2.32 Tore/Spiel); DR Congo defensiv sehr solide (0.48 Gegentore/Spiel, 54.5% Clean Sheets); DR Congo mit leicht besserer gewichteter Form (2.23 vs 2.01).",
     "inputHash": "sha256:088f1897f6c81d86b2199ee73082ebea1555aa369025b243f5f0b63f5318e28b"
   },
   "predictionHistory": [
@@ -202,6 +203,19 @@
         "away": 0.2218
       },
       "confidence": 0.6539
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5075,
+        "draw": 0.2521,
+        "away": 0.2404
+      },
+      "confidence": 0.594
     }
   ]
 }

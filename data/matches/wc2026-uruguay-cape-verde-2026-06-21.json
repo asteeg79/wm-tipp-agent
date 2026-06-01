@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "URU",
       "elo": 1677,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 1,
-      "away": 1
+      "away": 2
     },
     "probabilities": {
-      "home": 0.3279,
-      "draw": 0.3364,
-      "away": 0.3357
+      "home": 0.342,
+      "draw": 0.312,
+      "away": 0.346
     },
-    "confidence": 0.5243,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.33,
           "draw": 0.3,
-          "away": 0.36
+          "away": 0.37
         },
-        "confidence": 0.42,
+        "confidence": 0.5,
         "keyFactors": [
-          "Uruguay hat das deutlich höhere Elo (1677 vs 1608) und eine stärkere Defensive (CleanSheet-Rate 0.517, Gegentore 0.832).",
-          "Cape Verde zeigt die bessere gewichtete Form (1.977) und Offensive (Tore 1.673 pro Spiel), was die Baseline zu deren Gunsten verschiebt.",
-          "Neutraler Spielort, kein Heimvorteil für Uruguay – daher keine Pauschal-Korrektur nach oben.",
-          "Cape Verde mit 231 Tagen ohne Pflichtspiel: erhebliche Rost-/Rhythmusgefahr, die die starke Form relativiert."
+          "Cape Verde mit klar besserer gewichteter Form (1.98) und recentForm (2.1) sowie höherer Offensivproduktion (goalsForAvg 1.67)",
+          "Uruguay höhere Elo (1677 vs 1608) und bessere defensive Stabilität (cleanSheetRate 0.52)",
+          "Neutraler Spielort entfernt klassischen Heimvorteil und reduziert Uruguays Bonus",
+          "Baseline sieht Cape Verde leicht vorn; Form und xG stützen diese Tendenz"
         ],
         "risks": [
-          "Sehr lange Pause Cape Verdes (231 Tage) macht aktuelle Form-Werte unsicher; Leistung schwer prognostizierbar.",
-          "Kein H2H-Datenmaterial vorhanden – Stilvergleich nur indirekt möglich.",
-          "Personalfrage Uruguay: Suarez nicht im Kader, nur drei Stürmer – mögliche Offensivschwäche.",
-          "Mögliche interne Unruhe (News um Valverde/Tchouameni) – jedoch unklarer Effekt auf die Mannschaft."
+          "Cape Verde 231 Tage ohne Spiel – mögliche Rhythmus- und Matchpraxis-Defizite stark unterschätzbar",
+          "Uruguay nach 62 Tagen Pause und ohne Suarez mit nur drei nominellen Stürmern – Offensivschwäche möglich",
+          "Keine H2H-Daten verfügbar, dadurch erhöhte Prognoseunsicherheit",
+          "Geringe Tor-xG beider Teams begünstigt knappes oder Unentschieden-Ergebnis"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.36,
-          "away": 0.32
+          "home": 0.35,
+          "draw": 0.32,
+          "away": 0.33
         },
-        "confidence": 0.65,
+        "confidence": 0.75,
         "keyFactors": [
-          "Cape Verde's recent form is strong with a high weighted form of 1.977 compared to Uruguay's 1.397",
-          "Uruguay's squad changes with key player Luis Suarez not included could impact team performance",
-          "Cape Verde has a higher average goals scored per match (1.673) compared to Uruguay (0.91)",
-          "Neutral venue reduces any potential home advantage for Uruguay"
+          "Uruguay has higher Elo rating at 1677 compared to Cape Verde's 1608.",
+          "Uruguay's recent form is slightly lower at 1.6 compared to Cape Verde's 2.1.",
+          "Cape Verde has a higher goal scoring average of 1.673 goals per match.",
+          "Both teams have strong clean sheet rates, with Uruguay at 51.7% and Cape Verde at 43.5%.",
+          "Neutral venue negates home advantage for Uruguay."
         ],
         "risks": [
-          "Uruguay, traditionally stronger in tournament settings, may outperform expectations despite recent form",
-          "Long gap since Cape Verde's last match (231 days) could affect their match readiness"
+          "Uruguay's key player Luis Suarez is not included in the squad, possibly affecting offensive capabilities.",
+          "Cape Verde has not played a match for 231 days, which could impact their performance."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay hat das deutlich höhere Elo (1677 vs 1608) und eine stärkere Defensive (CleanSheet-Rate 0.517, Gegentore 0.832).; Cape Verde zeigt die bessere gewichtete Form (1.977) und Offensive (Tore 1.673 pro Spiel), was die Baseline zu deren Gunsten verschiebt.; Neutraler Spielort, kein Heimvorteil für Uruguay – daher keine Pauschal-Korrektur nach oben..",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit klar besserer gewichteter Form (1.98) und recentForm (2.1) sowie höherer Offensivproduktion (goalsForAvg 1.67); Uruguay höhere Elo (1677 vs 1608) und bessere defensive Stabilität (cleanSheetRate 0.52); Neutraler Spielort entfernt klassischen Heimvorteil und reduziert Uruguays Bonus.",
     "inputHash": "sha256:739c82fe1f99ae0741e743e53cac31ad71999a1bc1d16e3578ea5ee5dd17cf2a"
   },
   "predictionHistory": [
@@ -190,6 +191,19 @@
         "away": 0.336
       },
       "confidence": 0.6146
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3279,
+        "draw": 0.3364,
+        "away": 0.3357
+      },
+      "confidence": 0.5243
     }
   ]
 }

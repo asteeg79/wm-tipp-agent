@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "SUI",
       "elo": 1746,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3636,
-      "draw": 0.2955,
-      "away": 0.3409
+      "home": 0.354,
+      "draw": 0.296,
+      "away": 0.35
     },
-    "confidence": 0.5445,
+    "confidence": 0.6229,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.29,
-          "away": 0.33
+          "home": 0.36000000000000004,
+          "draw": 0.29000000000000004,
+          "away": 0.35000000000000003
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Schweiz mit besserer aktueller Form (recentForm 2.1 vs 1.7) und höherer Offensivkraft (goalsForAvg 2.02 vs 1.24)",
-          "Kanada defensiv stark: niedrigste Gegentorquote (0.61) und hohe Clean-Sheet-Rate (0.54), was schweizerische Tore begrenzen kann",
-          "Höhere Elo der Schweiz (1746 vs 1696) stützt leichten Favoritenstatus der Baseline",
-          "Verletzung von Marcelo Flores schwächt Kanadas Offensivoptionen vor dem Turnier"
+          "Schweiz mit leicht höherem Elo (1746 vs 1696) und besserer Offensive (goalsForAvg 2.02 vs 1.24)",
+          "Kanada defensiv stärker: niedrigerer Gegentorschnitt (0.61 vs 1.09) und höhere Clean-Sheet-Rate (0.54 vs 0.37)",
+          "Beide Teams formstark, recentForm leicht zugunsten der Schweiz (2.1 vs 1.7)",
+          "Gastgebervorteil Kanada (hostAdvantageTeamId CAN) gleicht den nominellen Heimvorteil der Schweiz teilweise aus"
         ],
         "risks": [
-          "Gastgebervorteil Kanadas (hostAdvantageTeamId CAN) trotz neutralem Veranstaltungsort könnte Kanada zusätzlich pushen",
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit der Einschätzung",
-          "62 Tage seit letztem Spiel beider Teams – Form schwer einzuschätzen, Rhythmusverlust möglich",
-          "Kanadas starke Defensive kann ein torarmes, enges Spiel mit Remis-Tendenz erzeugen"
+          "Verletzungssorgen um Schlüsselspieler Davies (Kanada) könnten Offensive schwächen",
+          "Kein Head-to-Head als Referenz vorhanden",
+          "62 Tage seit letztem Spiel bei beiden Teams – Rhythmus/Spielpraxis unsicher",
+          "Defensiv starke kanadische Spielweise kann das eGoals-Modell überschätzen lassen"
         ]
       },
       "chatgpt": {
@@ -108,21 +108,21 @@
           "draw": 0.30000000000000004,
           "away": 0.35000000000000003
         },
-        "confidence": 0.6,
+        "confidence": 0.75,
         "keyFactors": [
-          "Switzerland's slightly higher recent form compared to Canada.",
-          "Canada's strong defensive record with a high clean sheet rate.",
-          "Neutral venue reduces home advantage for Switzerland.",
-          "Injury concerns affecting Canada's squad depth."
+          "Switzerland has a slightly better recent form and higher goal-scoring rate.",
+          "Canada has a higher clean sheet rate and will have host advantage at a neutral venue.",
+          "Injury news about Canada's key player Davies might impact their performance."
         ],
         "risks": [
-          "Unclear impact of Marcelo Flores' injury on Canada's overall performance.",
-          "Lack of head-to-head matchup data makes predictions uncertain."
+          "No head-to-head data available, adding uncertainty to prediction.",
+          "Uncertainty due to neutral venue dynamics affecting both teams equally.",
+          "Switzerland's coach experience at the World Cup might provide strategic edge."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit besserer aktueller Form (recentForm 2.1 vs 1.7) und höherer Offensivkraft (goalsForAvg 2.02 vs 1.24); Kanada defensiv stark: niedrigste Gegentorquote (0.61) und hohe Clean-Sheet-Rate (0.54), was schweizerische Tore begrenzen kann; Höhere Elo der Schweiz (1746 vs 1696) stützt leichten Favoritenstatus der Baseline.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit leicht höherem Elo (1746 vs 1696) und besserer Offensive (goalsForAvg 2.02 vs 1.24); Kanada defensiv stärker: niedrigerer Gegentorschnitt (0.61 vs 1.09) und höhere Clean-Sheet-Rate (0.54 vs 0.37); Beide Teams formstark, recentForm leicht zugunsten der Schweiz (2.1 vs 1.7).",
     "inputHash": "sha256:532b0b2a8fe6ff602966fd17d62a21606732a4aa0469de61677d9e3ca395bb77"
   },
   "predictionHistory": [
@@ -201,6 +201,19 @@
         "home": 0.36,
         "draw": 0.3091,
         "away": 0.3309
+      },
+      "confidence": 0.5445
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3636,
+        "draw": 0.2955,
+        "away": 0.3409
       },
       "confidence": 0.5445
     }

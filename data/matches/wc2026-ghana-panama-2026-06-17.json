@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "GHA",
       "elo": 1548,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2685,
-      "draw": 0.2315,
-      "away": 0.5
+      "home": 0.2792,
+      "draw": 0.3238,
+      "away": 0.3969
     },
-    "confidence": 0.6446,
+    "confidence": 0.6045,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,49 +81,47 @@
         },
         "probabilities": {
           "home": 0.255,
-          "draw": 0.245,
-          "away": 0.5
+          "draw": 0.235,
+          "away": 0.51
         },
         "confidence": 0.6,
         "keyFactors": [
           "Panama mit deutlich höherem Elo (1642 vs. 1548) und besserer gewichteter Form (1.79 vs. 1.19)",
-          "Panama defensiv stabiler: nur 1.01 Gegentore pro Spiel vs. 1.56 bei Ghana",
-          "Neutraler Spielort eliminiert Heimvorteil für Ghana",
-          "Panama mit größerer Datenbasis (33 Spiele) und konsistenter Leistung"
+          "Panamas starke Defensive: nur 1.01 Gegentore im Schnitt vs. Ghanas 1.56",
+          "Neutraler Spielort ohne Heimvorteil für Ghana",
+          "Ghanas Defensivschwäche durch Verletzung von Alexander Djiku zusätzlich belastet"
         ],
         "risks": [
-          "Ghanas recentForm (1.6) liegt nah an Panama (1.7), aktueller Aufwärtstrend möglich",
-          "Keine H2H-Daten vorhanden, höhere Unsicherheit bei Direktbegegnung",
-          "Keine substanziellen mannschaftsspezifischen News verfügbar (nur irrelevante Coach-Meldung)",
-          "Lange Pause seit letztem Spiel (~62-63 Tage) kann Form beider Teams verfälschen"
+          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit",
+          "Ghanas recentForm (1.6) liegt nahe an Panama (1.7) - kurzfristiger Aufwärtstrend möglich",
+          "Lange Pause beider Teams (~62 Tage) kann Form verfälschen",
+          "Ghana besitzt offensive Qualität, die ein Remis ermöglichen kann"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.28,
-          "draw": 0.22,
-          "away": 0.5
+          "home": 0.3,
+          "draw": 0.4,
+          "away": 0.3
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Panama's higher Elo rating of 1642 versus Ghana's 1548 indicating overall stronger team performance.",
-          "Recent form slightly favors Panama with 1.7 versus Ghana's 1.6.",
-          "Panama's lower goals against average (1.012) compared to Ghana’s (1.557) suggests a stronger defense.",
-          "Neutral venue reduces any potential home advantage."
+          "Ghana's recent form improvement (1.6)",
+          "Panama's slightly higher Elo rating (1642 vs 1548)",
+          "Neutral venue minimizing home advantage"
         ],
         "risks": [
-          "No head-to-head history making direct comparison difficult.",
-          "Both teams have similar recent match absence with 62-63 days, potentially affecting match fitness comparably.",
-          "Material news items are not directly relevant to team performance or player availability."
+          "Key Ghana defender Alexander Djiku's injury",
+          "Panama's strong defensive record (goalsAgainstAvg: 1.012)"
         ]
       }
     },
-    "agreement": 0.9833,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Panama mit deutlich höherem Elo (1642 vs. 1548) und besserer gewichteter Form (1.79 vs. 1.19); Panama defensiv stabiler: nur 1.01 Gegentore pro Spiel vs. 1.56 bei Ghana; Neutraler Spielort eliminiert Heimvorteil für Ghana.",
+    "agreement": 0.86,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Panama mit deutlich höherem Elo (1642 vs. 1548) und besserer gewichteter Form (1.79 vs. 1.19); Panamas starke Defensive: nur 1.01 Gegentore im Schnitt vs. Ghanas 1.56; Neutraler Spielort ohne Heimvorteil für Ghana.",
     "inputHash": "sha256:36adaf97890ed1d8917f4c253aa311fe2445e95e92a4aa55c2f144246eef9e28"
   },
   "predictionHistory": [
@@ -204,6 +202,19 @@
         "away": 0.4891
       },
       "confidence": 0.6545
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2685,
+        "draw": 0.2315,
+        "away": 0.5
+      },
+      "confidence": 0.6446
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "ECU",
       "elo": 1747,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.22,
-      "draw": 0.2457,
-      "away": 0.5343
+      "home": 0.2228,
+      "draw": 0.2455,
+      "away": 0.5317
     },
-    "confidence": 0.6877,
+    "confidence": 0.669,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.22,
+          "home": 0.19,
           "draw": 0.24,
-          "away": 0.54
+          "away": 0.57
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutschland mit deutlich höherem Elo (1822 vs 1747) und stärkerer gewichteter Form (2.371 vs 1.477)",
-          "Deutschlands hohe Offensivproduktion (2.574 Tore/Spiel) gegenüber Ecuadors schwacher Offensive (0.9)",
-          "Ecuador defensiv solide (0.528 Gegentore/Spiel, 51.9% Clean-Sheet-Rate), was deutsche xG leicht dämpft",
+          "Germany mit deutlich höherem Elo (1822 vs 1747) und stärkerer gewichteter Form (2.371 vs 1.477)",
+          "Germany offensiv klar überlegen (goalsForAvg 2.574 vs 0.90)",
+          "Ecuadors defensive Stabilität (cleanSheetRate 0.519, goalsAgainstAvg 0.528) kann Tordifferenz begrenzen",
           "Neutraler Spielort ohne Heimvorteil für Ecuador"
         ],
         "risks": [
-          "Ecuadors starke Defensive könnte das Spiel eng halten und ein Unentschieden begünstigen",
           "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "Lange Pause beider Teams (62/63 Tage) kann Form beeinflussen",
-          "Deutschlands höhere Gegentorquote (1.106) bietet Ecuador Konterchancen"
+          "Lange Spielpause beider Teams (62/63 Tage) kann Form verzerren",
+          "Kleinere Verletzungssorgen bei Deutschland (Undav) als Restrisiko",
+          "Ecuadors kompakte Defensive könnte ein Low-Scoring-Spiel und Remis-Tendenz begünstigen"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,24 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.22,
+          "home": 0.25,
           "draw": 0.25,
-          "away": 0.53
+          "away": 0.5
         },
-        "confidence": 0.78,
+        "confidence": 0.75,
         "keyFactors": [
-          "Germany's higher Elo rating",
-          "Germany's superior offensive form",
-          "Neutral venue with no host advantage"
+          "Germany's higher elo rating and stronger weighted form.",
+          "Germany's significantly higher average goals scored per match.",
+          "Ecuador's strong defensive record with a high clean sheet rate."
         ],
         "risks": [
-          "No head-to-head data between teams",
-          "Minor injury concern for Germany's Deniz Undav"
+          "Germany's potential coaching uncertainty with the news about Klopp.",
+          "Injury news regarding a German player, albeit minor."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit deutlich höherem Elo (1822 vs 1747) und stärkerer gewichteter Form (2.371 vs 1.477); Deutschlands hohe Offensivproduktion (2.574 Tore/Spiel) gegenüber Ecuadors schwacher Offensive (0.9); Ecuador defensiv solide (0.528 Gegentore/Spiel, 51.9% Clean-Sheet-Rate), was deutsche xG leicht dämpft.",
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit deutlich höherem Elo (1822 vs 1747) und stärkerer gewichteter Form (2.371 vs 1.477); Germany offensiv klar überlegen (goalsForAvg 2.574 vs 0.90); Ecuadors defensive Stabilität (cleanSheetRate 0.519, goalsAgainstAvg 0.528) kann Tordifferenz begrenzen.",
     "inputHash": "sha256:1521117b2f9199b9fbb9ced9ddd3bc5b10a6687b9efd0239dc836cf6043feea7"
   },
   "predictionHistory": [
@@ -189,6 +189,19 @@
         "away": 0.5369
       },
       "confidence": 0.7252
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.22,
+        "draw": 0.2457,
+        "away": 0.5343
+      },
+      "confidence": 0.6877
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "AUT",
       "elo": 1748,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
-      "home": 3,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7319,
-      "draw": 0.159,
-      "away": 0.109
+      "home": 0.7,
+      "draw": 0.17,
+      "away": 0.13
     },
-    "confidence": 0.7203,
+    "confidence": 0.685,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,48 +80,48 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.71,
+          "home": 0.7,
           "draw": 0.17,
-          "away": 0.12
+          "away": 0.13
         },
-        "confidence": 0.66,
+        "confidence": 0.62,
         "keyFactors": [
-          "Klarer Elo-Vorsprung Österreichs (1748 vs. 1529, ~219 Punkte)",
-          "Starke gewichtete Form Österreichs (2.284) vs. schwache Form Jordaniens (1.07)",
-          "Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei solider Defensive (0.65 Gegentore/Spiel)",
-          "Neutraler Spielort eliminiert Heimvorteil, leichte Korrektur zugunsten der Underdog-Wahrscheinlichkeit"
+          "Deutlicher Elo-Vorsprung Österreichs (1748 vs. 1529)",
+          "Klar bessere gewichtete Form Österreichs (2.284 vs. 1.07)",
+          "Starke Defensive Österreichs (nur 0.65 Gegentore/Spiel) gegen offensiv durchlässiges Jordanien (1.54 Gegentore/Spiel)",
+          "Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel)"
         ],
         "risks": [
-          "Lange Spielpause beider Teams (62 Tage) kann Rhythmus und Frühform beeinträchtigen",
-          "Kein H2H-Vergleich vorhanden, daher höhere Unsicherheit bei der Stiltypisierung",
-          "Jordanien hat überraschend hohe Clean-Sheet-Rate (0.361), kann tief stehen und kontern",
-          "Die News zu Jordanien betrifft nur allgemeine Regeländerungen, keine konkrete personelle Schwächung – kein belastbarer Faktor"
+          "WM-Premiere Jordaniens als Motivationsfaktor (Al-Nashama)",
+          "Neutraler Spielort reduziert Heimvorteil Österreichs leicht",
+          "Keine H2H-Daten verfügbar, Einschätzung allein auf Form/Elo gestützt",
+          "Lange Pause (62 Tage) für beide Teams kann Rhythmus beeinträchtigen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 3,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.15,
-          "away": 0.1
+          "home": 0.7,
+          "draw": 0.17,
+          "away": 0.13
         },
-        "confidence": 0.8,
+        "confidence": 0.75,
         "keyFactors": [
-          "Austria has a higher Elo rating and better recent form",
-          "Austria's average goals scored is higher than Jordan's",
-          "Jordan has a news-related distraction concerning rule changes"
+          "Austria's higher Elo rating and stronger recent form compared to Jordan.",
+          "Neutral venue, diminishing home advantage for Austria.",
+          "Jordan's initial performance may be influenced by debut excitement on a big stage."
         ],
         "risks": [
-          "Neutral venue minimizes home advantage for Austria",
-          "Unknown head-to-head history could introduce unpredictability"
+          "Austria's longer period since last match may affect match sharpness.",
+          "Potential variability in Jordan's performance due to new coaching strategies and adjustments for World Cup debut."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Österreichs (1748 vs. 1529, ~219 Punkte); Starke gewichtete Form Österreichs (2.284) vs. schwache Form Jordaniens (1.07); Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei solider Defensive (0.65 Gegentore/Spiel).",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Österreichs (1748 vs. 1529); Klar bessere gewichtete Form Österreichs (2.284 vs. 1.07); Starke Defensive Österreichs (nur 0.65 Gegentore/Spiel) gegen offensiv durchlässiges Jordanien (1.54 Gegentore/Spiel).",
     "inputHash": "sha256:6101ee1ba8bf7b90cd03918d2f17e3ab34573628ba136805e55d5108e496c210"
   },
   "predictionHistory": [
@@ -189,6 +189,19 @@
         "away": 0.1371
       },
       "confidence": 0.686
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7319,
+        "draw": 0.159,
+        "away": 0.109
+      },
+      "confidence": 0.7203
     }
   ]
 }

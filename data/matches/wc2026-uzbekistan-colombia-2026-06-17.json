@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "home": {
       "teamId": "UZB",
       "elo": 1676,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T17:42:32.942Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2923,
-      "draw": 0.2582,
-      "away": 0.4495
+      "home": 0.2885,
+      "draw": 0.2558,
+      "away": 0.4558
     },
-    "confidence": 0.5998,
+    "confidence": 0.6457,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -78,25 +78,26 @@
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.31,
-          "draw": 0.27,
-          "away": 0.42
+          "home": 0.3,
+          "draw": 0.25,
+          "away": 0.45
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Colombia hat höheres Elo (1775 vs 1676) und stärkere Offensive (1.95 Tore/Spiel) sowie aktuell bessere recentForm (1.8 vs 1.6)",
-          "Uzbekistan defensiv solide mit hoher Clean-Sheet-Rate (0.625) und niedrigem Gegentorschnitt (0.893), was Colombias Angriff bremsen kann",
-          "Neutraler Spielort ohne Heimvorteil; Höhe von 2240m könnte beide Teams gleichermaßen belasten",
-          "Uzbekistans bessere gewichtete Form (1.707 vs 1.544) rechtfertigt leichte Anhebung gegenüber Baseline"
+          "Colombia mit klar höherem Elo (1775 vs. 1676) und stärkerer Offensive (goalsForAvg 1.95 vs. 1.51)",
+          "Uzbekistan defensiv solide (cleanSheetRate 0.625, goalsAgainstAvg 0.893), was Colombias xG dämpfen kann",
+          "Uzbekistans bessere gewichtete Form (1.707 vs. 1.544) hält das Spiel offen",
+          "Neutraler Spielort ohne Heimvorteil für beide Teams",
+          "Colombias jüngere Form (recentForm 1.8) leicht aufsteigend"
         ],
         "risks": [
-          "Verletzungssorgen auf beiden Seiten (je eine Meldung) mit unklarer Auswirkung auf Schlüsselspieler",
-          "Uzbekistan seit 126 Tagen ohne Spiel – mögliche Rhythmus-/Wettkampfdefizite",
-          "Keine H2H-Historie vorhanden, erhöht Prognoseunsicherheit",
-          "Colombias schwächere Defensive (Clean-Sheet 0.393) macht offenes Spiel und höhere Torzahl möglich"
+          "Verletzungssorge bei Colombia könnte Offensivpotenzial schwächen und Away-Wahrscheinlichkeit senken",
+          "Höhenlage (2240 m) als unbekannter Faktor für beide Teams, Ausdauer/Tempo beeinflussbar",
+          "Uzbekistan seit 126 Tagen ohne Pflichtspiel – mögliche Rhythmusprobleme oder unterschätzte Frische",
+          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit"
         ]
       },
       "chatgpt": {
@@ -106,25 +107,24 @@
         },
         "probabilities": {
           "home": 0.28,
-          "draw": 0.25,
-          "away": 0.47
+          "draw": 0.26,
+          "away": 0.46
         },
-        "confidence": 0.72,
+        "confidence": 0.75,
         "keyFactors": [
-          "Colombia has a higher elo rating (1775) compared to Uzbekistan (1676).",
-          "Colombia's recent form is slightly better with a 1.8 rating versus 1.6 for Uzbekistan.",
-          "Colombia has a higher average goals scored per game (1.95) than Uzbekistan (1.51).",
-          "Neutral venue at high altitude can be challenging, but no team has advantage."
+          "Colombia's higher Elo rating (1775 vs. 1676)",
+          "Colombia's better recent form (1.8 vs. 1.6 for Uzbekistan)",
+          "Uzbekistan's longer time since last match (126 days vs. 64 days for Colombia)",
+          "Neutral venue with high altitude could affect match dynamics"
         ],
         "risks": [
-          "Both teams have recent injury concerns which could affect performance.",
-          "Uzbekistan's higher clean sheet rate (0.625) may make it difficult for Colombia to score.",
-          "Uzbekistan's long break since the last match could impact their match sharpness positively or negatively."
+          "Colombia has an injury concern which could affect performance",
+          "No previous head-to-head data between teams, increasing uncertainty"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia hat höheres Elo (1775 vs 1676) und stärkere Offensive (1.95 Tore/Spiel) sowie aktuell bessere recentForm (1.8 vs 1.6); Uzbekistan defensiv solide mit hoher Clean-Sheet-Rate (0.625) und niedrigem Gegentorschnitt (0.893), was Colombias Angriff bremsen kann; Neutraler Spielort ohne Heimvorteil; Höhe von 2240m könnte beide Teams gleichermaßen belasten.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia mit klar höherem Elo (1775 vs. 1676) und stärkerer Offensive (goalsForAvg 1.95 vs. 1.51); Uzbekistan defensiv solide (cleanSheetRate 0.625, goalsAgainstAvg 0.893), was Colombias xG dämpfen kann; Uzbekistans bessere gewichtete Form (1.707 vs. 1.544) hält das Spiel offen.",
     "inputHash": "sha256:4e9daa2fab2c711c2c0e9bee7adab26f8801fab2429fe6ceb0742c46516325e8"
   },
   "predictionHistory": [
@@ -205,6 +205,19 @@
         "away": 0.4568
       },
       "confidence": 0.6188
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2923,
+        "draw": 0.2582,
+        "away": 0.4495
+      },
+      "confidence": 0.5998
     }
   ]
 }
