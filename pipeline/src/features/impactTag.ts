@@ -4,22 +4,24 @@
  */
 import type { ImpactTag } from "@wm/shared";
 
+// Reihenfolge = Priorität: spezifische Kategorien (injury, suspension) zuerst,
+// allgemeinere (coach, morale) danach. Erste Übereinstimmung gewinnt.
 const PATTERNS: { tag: ImpactTag; re: RegExp }[] = [
   {
     tag: "injury",
-    re: /\b(verletz|verletzung|ausfall|muskel|kreuzband|operation|out injured|injury|injured|sidelined|ruled out|fitness)\b/i,
+    re: /\b(verletz\w*|verletzung|ausfall|ausfällt|angeschlagen|muskel\w*|muskelfaser\w*|zerrung|kreuzband|bänder\w*|meniskus|reha|operation|operiert|op\b|fraglich|fitness|fit|comeback|rückkehr|genes\w*|krank\w*|grippe|infekt|injury|injured|injuries|out injured|sidelined|ruled out|knock|strain|hamstring|knee|ankle|setback|doubt|doubtful|fitness test|recovery|return)\b/i,
   },
   {
     tag: "suspension",
-    re: /\b(gesperrt|sperre|rote karte|platzverweis|suspend|suspension|banned|red card)\b/i,
+    re: /\b(gesperrt|sperre|sperren|gelb-rot\w*|rote karte|platzverweis|verwarn\w*|gelbsperre|suspend\w*|suspension|banned|ban\b|red card|sent off|booking|accumulation)\b/i,
   },
   {
     tag: "coach",
-    re: /\b(trainer|cheftrainer|bundestrainer|coach|manager|entlass|sacked|appointed|head coach)\b/i,
+    re: /\b(trainer\w*|cheftrainer|bundestrainer|nationaltrainer|co-trainer|trainerwechsel|entlass\w*|beurlaubt|nachfolger|verpflicht\w*|berufung|kader\w*|nominier\w*|aufstellung|coach|head coach|manager|boss|sacked|fired|appointed|appointment|hire\w*|named|squad|call-up|line-?up|roster)\b/i,
   },
   {
     tag: "morale",
-    re: /\b(streit|unruhe|krise|zoff|eklat|moral|stimmung|crisis|turmoil|unrest|row|controversy)\b/i,
+    re: /\b(streit|unruhe\w*|krise|zoff|eklat|skandal|wirbel|ärger|moral|stimmung|motivation|geschlossen\w*|teamgeist|selbstvertrauen|druck|kritik|crisis|turmoil|unrest|row|controversy|tension|rift|dressing room|morale|momentum|confidence|pressure|protest|dispute)\b/i,
   },
 ];
 
