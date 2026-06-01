@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4756,
-      "draw": 0.2812,
-      "away": 0.2432
+      "home": 0.4783,
+      "draw": 0.2764,
+      "away": 0.2453
     },
-    "confidence": 0.6188,
+    "confidence": 0.6027,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,26 +77,27 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.27,
-          "away": 0.26
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Mexico mit höherer Elo (1729 vs 1702) und besserer weightedForm (1.754 vs 1.61)",
-          "Mexico defensiv stabiler: niedrigerer Gegentorschnitt (0.797 vs 1.348) und höhere Clean-Sheet-Rate (0.588 vs 0.414)",
-          "Gastgebervorteil und Höhenlage (1566m) sprechen für Mexico, auch wenn formal neutraler Ort",
-          "Südkorea mit starker recentForm (1.9), was auf aktuellen Aufwärtstrend hindeutet"
+          "Mexico mit höherer gewichteter Form (1.754 vs 1.61) und stärkerer Defensive (GA 0.797, Clean-Sheet-Rate 58.8%)",
+          "Mexico de-facto Heimvorteil als Co-Gastgeber (hostAdvantageTeamId MEX) trotz neutralem Venue-Flag",
+          "Höhe von 1566m kann konditionellen Vorteil für die an Mexiko-Bedingungen gewöhnten Gastgeber bieten",
+          "Südkorea mit stärkerer jüngster Form (recentForm 1.9 vs 1.4) und ordentlicher Offensive (GF 1.336)",
+          "Erfahrung im Tor: Ochoa für sechste WM nominiert deutet auf Routine im Kader hin"
         ],
         "risks": [
-          "Südkoreas defensive Anfälligkeit (1.348 Gegentore) kann durch hohe Offensivkraft (1.336 Tore) und Topform kompensiert werden",
-          "Einziges H2H endete unentschieden (2:2), spricht für offenes Spiel",
-          "Lange Pause beider Teams (62 Tage) erhöht Unsicherheit über Spielfrische",
-          "Die gelieferte News (Südafrika/Visa) ist für diese Partie irrelevant und liefert keinen verwertbaren Kontext"
+          "Südkoreas defensive Anfälligkeit (GA 1.348, Clean-Sheet nur 41.4%) trifft auf eine treffsichere Offensive – Konter könnten Ergebnis kippen",
+          "Sehr dünne H2H-Basis (nur 1 Spiel, 2:2) liefert kaum belastbare Tendenz",
+          "62 Tage seit letztem Spiel für beide Teams: Rhythmusmangel erhöht Unsicherheit",
+          "Koreas hohe recentForm könnte Baseline-Vorteil von Mexico relativieren"
         ]
       },
       "chatgpt": {
@@ -105,25 +106,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
-          "draw": 0.29,
-          "away": 0.23
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Mexico's home advantage due to the tournament being played in North America",
-          "South Korea's recent form is better than Mexico's",
-          "Neutral venue minimizes typical home advantage",
-          "Both teams have a similar strength based on Elo ratings"
+          "Mexico has a slightly higher Elo rating.",
+          "Neutral venue may negate Mexico's potential home advantage from familiarity but is at altitude, potentially favoring Mexico.",
+          "Both teams have similar recent forms, with South Korea having a slightly better form in recent matches.",
+          "Head-to-head record is even, with one draw in their only encounter.",
+          "News indicates no significant player omissions or changes in team dynamics."
         ],
         "risks": [
-          "Mexico might have strategic disruption due to missing coaching staff",
-          "High altitude could affect South Korea more than Mexico"
+          "Potential altitude effect in Mexico's favor is uncertain.",
+          "South Korea's recent form is better, suggesting momentum.",
+          "Lack of recent competitive matches for both teams, with 62 days since last match."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit höherer Elo (1729 vs 1702) und besserer weightedForm (1.754 vs 1.61); Mexico defensiv stabiler: niedrigerer Gegentorschnitt (0.797 vs 1.348) und höhere Clean-Sheet-Rate (0.588 vs 0.414); Gastgebervorteil und Höhenlage (1566m) sprechen für Mexico, auch wenn formal neutraler Ort.",
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit höherer gewichteter Form (1.754 vs 1.61) und stärkerer Defensive (GA 0.797, Clean-Sheet-Rate 58.8%); Mexico de-facto Heimvorteil als Co-Gastgeber (hostAdvantageTeamId MEX) trotz neutralem Venue-Flag; Höhe von 1566m kann konditionellen Vorteil für die an Mexiko-Bedingungen gewöhnten Gastgeber bieten.",
     "inputHash": "sha256:541e8e0327f20b9ab88b961e332e7de33e97caaa8e3c284bfef31e4f7475bdae"
   },
   "predictionHistory": [
@@ -204,6 +207,19 @@
         "away": 0.25
       },
       "confidence": 0.6048
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4756,
+        "draw": 0.2812,
+        "away": 0.2432
+      },
+      "confidence": 0.6188
     }
   ]
 }

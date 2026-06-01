@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "TUR",
       "elo": 1731,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4756,
-      "draw": 0.2244,
-      "away": 0.3
+      "home": 0.4677,
+      "draw": 0.2253,
+      "away": 0.307
     },
-    "confidence": 0.6229,
+    "confidence": 0.6192,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.23,
-          "away": 0.3
+          "home": 0.452,
+          "draw": 0.232,
+          "away": 0.316
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Turkey deutlich bessere gewichtete Form (2.27 vs 1.52) und stabilere Defensive (1.14 vs 1.64 Gegentore/Spiel)",
-          "Höheres Elo (1731 vs 1676) und besserer Torschnitt für die Türkei",
-          "H2H-Vorteil knapp zugunsten der Türkei (1 Sieg, 2:1)",
-          "USA mit erkennbarer Defensivschwäche (Clean-Sheet-Rate nur 0.235, hoher Gegentorschnitt)",
-          "Türkei mit vielversprechenden jungen Talenten laut News"
+          "Turkey hat deutlich bessere gewichtete Form (2.27 vs 1.517) und stabilere Defensive (1.14 vs 1.639 Gegentore pro Spiel)",
+          "Höhere Elo für Turkey (1731 vs 1676) und positives H2H (1 Sieg, 2:1)",
+          "USA mit ausgeglichener Bilanz, aber anfälliger Abwehr (Clean-Sheet-Rate nur 0.235)",
+          "Neutraler Spielort relativiert klassischen Heimvorteil, leichter Kontextbonus für USA als Gastgeberteam"
         ],
         "risks": [
-          "Neutraler Spielort mit Heimvorteil-Kontext für die USA (Gastgeber) könnte Türkei-Vorteil mindern",
-          "Druck auf US-Coach Pochettino kann Mannschaft destabilisieren oder zusätzlich motivieren - schwer kalkulierbar",
-          "62 Tage seit letztem Spiel bei beiden Teams: mögliche Rhythmusprobleme",
-          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
+          "Verletzung eines türkischen Star-Spielers könnte Offensivkraft schwächen (News unbestätigt)",
+          "USA als Mitgastgeber könnte trotz neutralem Venue zusätzliche Unterstützung erhalten",
+          "62 Tage ohne Pflichtspiel bei beiden Teams erschwert Formprognose",
+          "Junge türkische Talente bieten Potenzial, aber auch Schwankungsrisiko"
         ]
       },
       "chatgpt": {
@@ -111,20 +110,20 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Turkey's higher weighted form and recent form compared to the USA",
-          "Neutral venue but USA has host advantage context",
-          "Turkey's better goal-scoring and defensive averages",
-          "Previous head-to-head result favors Turkey"
+          "Turkey's better weighted form compared to USA (2.27 vs 1.517).",
+          "Turkey's higher recent form than USA (2.2 vs 1.6).",
+          "USA's role as host nation might provide psychological advantage.",
+          "Head-to-head record favors Turkey.",
+          "Neutral venue reduces typical home advantage."
         ],
         "risks": [
-          "USA potential boost from host advantage context",
-          "Relative closeness in Elo ratings",
-          "Uncertainty due to long days since the last match for both teams"
+          "Injury in Turkish team might affect performance.",
+          "Psychological edge for USA as the host nation."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Turkey deutlich bessere gewichtete Form (2.27 vs 1.52) und stabilere Defensive (1.14 vs 1.64 Gegentore/Spiel); Höheres Elo (1731 vs 1676) und besserer Torschnitt für die Türkei; H2H-Vorteil knapp zugunsten der Türkei (1 Sieg, 2:1).",
+    "agreement": 0.9813,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Turkey hat deutlich bessere gewichtete Form (2.27 vs 1.517) und stabilere Defensive (1.14 vs 1.639 Gegentore pro Spiel); Höhere Elo für Turkey (1731 vs 1676) und positives H2H (1 Sieg, 2:1); USA mit ausgeglichener Bilanz, aber anfälliger Abwehr (Clean-Sheet-Rate nur 0.235).",
     "inputHash": "sha256:9959abfff4143edb7a673c0ee467bf8f4306894779ab6e48f39aa4aa7ce4dc7f"
   },
   "predictionHistory": [
@@ -218,6 +217,19 @@
         "away": 0.3031
       },
       "confidence": 0.6584
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4756,
+        "draw": 0.2244,
+        "away": 0.3
+      },
+      "confidence": 0.6229
     }
   ]
 }

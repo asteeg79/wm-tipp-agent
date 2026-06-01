@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "BEL",
       "elo": 1744,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T11:37:47.843Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4873,
-      "draw": 0.2373,
-      "away": 0.2754
+      "home": 0.478,
+      "draw": 0.2081,
+      "away": 0.3139
     },
-    "confidence": 0.637,
+    "confidence": 0.7102,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
+          "home": 0.475,
           "draw": 0.22,
-          "away": 0.31
+          "away": 0.305
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Belgiens hoher Toroutput (goalsForAvg 2.91) und sehr starke recentForm (2.2) untermauern die Baseline-Favoritenrolle",
-          "Geringer Elo-Abstand (1744 vs 1730) und solide iranische Defensive (cleanSheetRate 0.462, goalsAgainstAvg 0.908) sprechen für ein enges Spiel",
-          "Neutraler Spielort ohne Heimvorteil reduziert Belgiens Vorteil leicht",
-          "Iran zeigt ebenfalls gute Form (weightedForm 1.814) und ist offensiv nicht harmlos (goalsForAvg 2.271)"
+          "Belgien mit klar höherer Offensivproduktion (goalsForAvg 2.91 vs 2.27) und besserer gewichteter Form (1.91 vs 1.81)",
+          "Iran verliert mit dem Azmoun-Ausschluss einen erfahrenen Stürmer, was die Offensive trotz Taremi schwächt",
+          "Belgiens recentForm (2.2) leicht über der baseline-impliziten Stärke, daher minimale Heim-/Favoritenanpassung nach oben",
+          "Neutraler Spielort eliminiert Heimvorteil, hält das Rennen relativ eng (Elo 1744 vs 1730)"
         ],
         "risks": [
-          "Lukakus Verletzungsstatus laut News unsicher - könnte Belgiens Offensive schwächen und xG senken",
-          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit",
-          "Lange Pause beider Teams (62 Tage) kann Rhythmus und Form beeinflussen",
-          "Iranische Defensivstärke könnte ein Unentschieden oder eine Überraschung begünstigen"
+          "Iran defensiv stabil (cleanSheetRate 0.462, goalsAgainstAvg 0.908) und kann mit kompakter Spielweise tiefer punkten",
+          "Visa-/Reise- und Sicherheitsprobleme im iranischen Lager könnten Vorbereitung beeinträchtigen – Unsicherheit in beide Richtungen",
+          "62 Tage seit letztem Spiel bei beiden Teams erhöht Unsicherheit über aktuelle Spielform",
+          "Kein H2H-Datensatz vorhanden, daher rein modell- und kontextbasierte Einschätzung"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.25,
-          "away": 0.25
+          "home": 0.48,
+          "draw": 0.2,
+          "away": 0.32
         },
-        "confidence": 0.75,
+        "confidence": 0.85,
         "keyFactors": [
-          "Belgium's recent form is slightly higher with a weighted form of 1.908 compared to Iran's 1.814.",
-          "Belgium has a better offensive output with 2.914 goals per game than Iran's 2.271.",
-          "Belgium's defense is slightly weaker, conceding 1.054 goals on average compared to Iran's 0.908.",
-          "Romelu Lukaku's inclusion despite injury concerns might impact Belgium's performance."
+          "Belgium's stronger offensive form with goalsForAvg of 2.914 compared to Iran's 2.271.",
+          "Iran's omission of key player Sardar Azmoun affects their attacking potential.",
+          "Neutral venue mitigates home advantage, focusing on the intrinsic team qualities."
         ],
         "risks": [
-          "Romelu Lukaku's injury could affect Belgium's attacking efficiency.",
-          "Iran's higher clean sheet rate at 46.2% suggests potential defensive resilience.",
-          "Neutral venue reduces any home advantage related to crowd support."
+          "Both teams have similar ELO ratings, indicating a potentially closer contest.",
+          "Iran's solid defensive record with a clean sheet rate of 0.462 could pose challenges for Belgium."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgiens hoher Toroutput (goalsForAvg 2.91) und sehr starke recentForm (2.2) untermauern die Baseline-Favoritenrolle; Geringer Elo-Abstand (1744 vs 1730) und solide iranische Defensive (cleanSheetRate 0.462, goalsAgainstAvg 0.908) sprechen für ein enges Spiel; Neutraler Spielort ohne Heimvorteil reduziert Belgiens Vorteil leicht.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit klar höherer Offensivproduktion (goalsForAvg 2.91 vs 2.27) und besserer gewichteter Form (1.91 vs 1.81); Iran verliert mit dem Azmoun-Ausschluss einen erfahrenen Stürmer, was die Offensive trotz Taremi schwächt; Belgiens recentForm (2.2) leicht über der baseline-impliziten Stärke, daher minimale Heim-/Favoritenanpassung nach oben.",
     "inputHash": "sha256:4e123c402c44fc1c12473d6485b40903c40fc759e3a9aa884a20fa72639d1f0c"
   },
   "predictionHistory": [
@@ -191,6 +189,19 @@
         "away": 0.3066
       },
       "confidence": 0.6043
+    },
+    {
+      "generatedAt": "2026-06-01T11:37:47.843Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4873,
+        "draw": 0.2373,
+        "away": 0.2754
+      },
+      "confidence": 0.637
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "ENG",
       "elo": 1829,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.447,
-      "draw": 0.2447,
-      "away": 0.3083
+      "home": 0.4576,
+      "draw": 0.2421,
+      "away": 0.3003
     },
-    "confidence": 0.6007,
+    "confidence": 0.6584,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,27 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.41,
-          "draw": 0.25,
-          "away": 0.34
+          "home": 0.44,
+          "draw": 0.245,
+          "away": 0.315
         },
-        "confidence": 0.58,
+        "confidence": 0.55,
         "keyFactors": [
-          "England mit höherer Elo (1829 vs 1778) und exzellenter Defensive (GegentoreSchnitt 0.52, Clean-Sheet-Rate 55%)",
-          "Kroatien mit leicht besserer gewichteter Form (2.103 vs 2.032) und starker Offensive (2.205 Tore/Spiel)",
-          "Neutraler Spielort eliminiert Heimvorteil und nähert die Teams an",
-          "Kroatiens hohe recentForm (2.5) deutet auf aktuell starke Verfassung hin"
+          "England mit sehr starker Defensive: niedriger Gegentorschnitt (0,52) und hohe Clean-Sheet-Rate (55%) als Schlüssel gegen ein offensivstarkes Kroatien",
+          "Kroatien mit minimal besserer gewichteter Form (2,10 vs 2,03) und exzellenter jüngster Form (recentForm 2,5), zudem höhere Offensivproduktion (2,21 Tore/Spiel)",
+          "Neutraler Spielort entzieht England einen klassischen Heimvorteil, verschiebt das Bild leicht in Richtung Kroatien gegenüber Baseline",
+          "Solide Vorbereitung Englands (frühe Anreise in die USA, Hitze-Akklimatisierung über Team GB) spricht für gute physische Bereitschaft",
+          "Lange Pause für beide Teams (62 Tage) gleicht den Rhythmusfaktor aus"
         ],
         "risks": [
-          "Verletzung von Kapitänin/Schlüsselspieler Williamson schwächt Englands Defensivstruktur",
-          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit",
-          "Kroatiens schwächere Defensive (GegentoreSchnitt 1.10) könnte gegen Englands Offensive bestraft werden",
-          "62 Tage seit letztem Spiel beider Teams - Rhythmusverlust schwer einschätzbar"
+          "Kroatiens defensive Anfälligkeit (Clean-Sheet nur 35%, 1,10 Gegentore) gegen Englands Effizienz könnte das Ergebnis deutlicher zugunsten Englands kippen",
+          "Erfahrung und Spielkontrolle durch Modric (fünfte WM) könnte England in engen Phasen Probleme bereiten und zu einem Remis/Auswärtssieg führen",
+          "Ausfall von Williamson betraf nur Qualifikationsspiele – Unsicherheit über aktuelle Verfügbarkeit/Kaderstabilität Englands",
+          "Kein H2H-Datenpunkt verfügbar, wodurch die Einschätzung stärker auf Form- und Eloannahmen beruht"
         ]
       },
       "chatgpt": {
@@ -104,26 +105,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
+          "home": 0.47,
           "draw": 0.24,
-          "away": 0.28
+          "away": 0.29
         },
-        "confidence": 0.65,
+        "confidence": 0.78,
         "keyFactors": [
-          "England's stronger defensive record with lower goals against average",
-          "Croatia's slightly higher recent form",
-          "Game played at neutral venue, eliminating home advantage",
-          "England's distraction due to coaching staff's health issues"
+          "England's recent form is strong with a high Elo rating of 1829 and a high weighted form score.",
+          "England's defensive record is solid with a low goals against average and a high clean sheet rate.",
+          "Croatia also has strong recent form, but slightly lower Elo than England.",
+          "Neutral venue minimizes home advantage impact.",
+          "England's coach Thomas Tuchel's preparatory efforts could positively impact performance."
         ],
         "risks": [
-          "Impact of England's coach health issues on team morale and performance",
-          "Uncertainty due to no direct head-to-head history between teams",
-          "Potential underestimation of Croatia's offensive capabilities"
+          "England's captain Williamson is absent due to injury, which may weaken team leadership and defense.",
+          "Emotional effect from Kevin Keegan's diagnosis on the England team.",
+          "Croatia's high goals for average indicates potential offensive threat."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit höherer Elo (1829 vs 1778) und exzellenter Defensive (GegentoreSchnitt 0.52, Clean-Sheet-Rate 55%); Kroatien mit leicht besserer gewichteter Form (2.103 vs 2.032) und starker Offensive (2.205 Tore/Spiel); Neutraler Spielort eliminiert Heimvorteil und nähert die Teams an.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit sehr starker Defensive: niedriger Gegentorschnitt (0,52) und hohe Clean-Sheet-Rate (55%) als Schlüssel gegen ein offensivstarkes Kroatien; Kroatien mit minimal besserer gewichteter Form (2,10 vs 2,03) und exzellenter jüngster Form (recentForm 2,5), zudem höhere Offensivproduktion (2,21 Tore/Spiel); Neutraler Spielort entzieht England einen klassischen Heimvorteil, verschiebt das Bild leicht in Richtung Kroatien gegenüber Baseline.",
     "inputHash": "sha256:7712335af59a001034b98b41a644c2a420b6fd50cdf3766d66fe1c802cc124b4"
   },
   "predictionHistory": [
@@ -217,6 +219,19 @@
         "away": 0.3032
       },
       "confidence": 0.6133
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.447,
+        "draw": 0.2447,
+        "away": 0.3083
+      },
+      "confidence": 0.6007
     }
   ]
 }

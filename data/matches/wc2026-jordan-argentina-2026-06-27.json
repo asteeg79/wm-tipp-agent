@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "JOR",
       "elo": 1529,
@@ -50,7 +50,7 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 0,
       "away": 3
@@ -86,16 +86,17 @@
         },
         "confidence": 0.78,
         "keyFactors": [
-          "Großer Elo-Unterschied (1905 vs 1529) zugunsten Argentiniens",
-          "Argentiniens starke Form (weightedForm 2.55) und Defensive (0.40 Gegentore/Spiel, 63% Clean Sheets)",
-          "Jordaniens anfällige Defensive (1.54 Gegentore/Spiel) gegen einen offensivstarken Gegner (2.52 Tore/Spiel)",
-          "Neutraler Spielort entzieht Jordanien einen möglichen Heimvorteil"
+          "Großer Elo-Unterschied (1529 vs. 1905) zugunsten Argentiniens",
+          "Argentinien mit herausragender Form (weightedForm 2.55, recentForm 2.5) und starker Defensive (0.40 Gegentore/Spiel, 63% Clean Sheets)",
+          "Jordaniens schwächere Defensive (1.54 Gegentore/Spiel, nur 36% Clean Sheets) begünstigt mehrere Gegentore",
+          "Neutraler Spielort eliminiert jeglichen Heimvorteil für Jordanien",
+          "Hohe Offensivproduktion Argentiniens (2.52 Tore/Spiel) stützt das hohe xG der Baseline"
         ],
         "risks": [
-          "Verletzungsupdates bei Argentinien (Messi, Martinez u.a.) könnten Schlagkraft mindern",
-          "Jordanien als WM-Debütant könnte defensiv kompakt stehen und das Ergebnis enger gestalten",
-          "Keine H2H-Daten erhöhen die Unsicherheit der Prognose",
-          "62 Tage ohne Pflichtspiel bei beiden Teams erschweren Formeinschätzung"
+          "Keine Head-to-Head-Daten vorhanden, daher kein historischer Referenzwert",
+          "62 Tage seit letztem Spiel für beide Teams – mögliche Rhythmusprobleme schwer einzuschätzen",
+          "Argentiniens Kader-/Aufstellungssituation laut News noch nicht final, Rotation könnte Leistung dämpfen",
+          "Jordanien könnte als WM-Debütant defensiv kompakt stehen und das Ergebnis enger halten"
         ]
       },
       "chatgpt": {
@@ -110,19 +111,18 @@
         },
         "confidence": 0.9,
         "keyFactors": [
-          "Argentina's superior Elo rating and form",
-          "Jordan's debut at the World Cup leading to inexperience at this stage",
-          "Argentina's higher goals for average and strong defense"
+          "Signifikant bessere Form von Argentinien mit einem recentForm Wert von 2.5 im Vergleich zu Jordaniens 0.9.",
+          "Der hohe Elo-Unterschied zwischen den Teams (Argentinien 1905, Jordanien 1529) spricht ebenfalls deutlich für Argentinien.",
+          "Argentinien hat im Durchschnitt mehr Tore erzielt (2.521) und weniger kassiert (0.399) als Jordanien (1.616 erzielte Tore, 1.541 kassierte Tor)."
         ],
         "risks": [
-          "Potential impact of injuries on Argentina's key players including Messi",
-          "Neutral venue could reduce typical advantages for stronger teams",
-          "Jordan may have unknown potential as this is their World Cup debut"
+          "Kein direkter Head-to-Head Vergleich verfügbar, was eine gewisse Unbekannte im Matchup darstellt.",
+          "Spiel findet auf neutralem Boden statt, was den Heimlande-Vorteil Jordaniens eliminiert."
         ]
       }
     },
     "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1905 vs 1529) zugunsten Argentiniens; Argentiniens starke Form (weightedForm 2.55) und Defensive (0.40 Gegentore/Spiel, 63% Clean Sheets); Jordaniens anfällige Defensive (1.54 Gegentore/Spiel) gegen einen offensivstarken Gegner (2.52 Tore/Spiel).",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1529 vs. 1905) zugunsten Argentiniens; Argentinien mit herausragender Form (weightedForm 2.55, recentForm 2.5) und starker Defensive (0.40 Gegentore/Spiel, 63% Clean Sheets); Jordaniens schwächere Defensive (1.54 Gegentore/Spiel, nur 36% Clean Sheets) begünstigt mehrere Gegentore.",
     "inputHash": "sha256:cef9858bee2897c062e607d55c4338d0d563c87ce581d4bf46ec77e1e3d5a65b"
   },
   "predictionHistory": [
@@ -216,6 +216,19 @@
         "away": 0.8278
       },
       "confidence": 0.7965
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.05,
+        "draw": 0.1,
+        "away": 0.85
+      },
+      "confidence": 0.84
     }
   ]
 }

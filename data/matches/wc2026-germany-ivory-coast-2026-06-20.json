@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.428,
-      "draw": 0.2432,
-      "away": 0.3288
+      "home": 0.44,
+      "draw": 0.24,
+      "away": 0.32
     },
-    "confidence": 0.6146,
+    "confidence": 0.64,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,27 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.26,
-          "away": 0.34
+          "home": 0.44,
+          "draw": 0.24,
+          "away": 0.32
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Germany mit höherem Elo (1822 vs 1753) und starker gewichteter Form (2.371), höhere Torproduktion (goalsForAvg 2.574)",
-          "Ivory Coast defensiv sehr stark: cleanSheetRate 0.545 und nur 0.558 Gegentore im Schnitt, was Germanys erwartete Tore drückt",
-          "Neutraler Spielort entfernt klassischen Heimvorteil und verkleinert den Abstand zwischen beiden Teams",
-          "Beide Teams gut erholt (ca. 62-63 Tage seit letztem Spiel), ähnliche aktuelle Form (recentForm 2.1 vs 2.2)"
+          "Germany höhere Elo (1822 vs 1753) und stärkere Offensive (xG 1.68, goalsForAvg 2.574)",
+          "Beide Teams ähnlich gute Form (weightedForm 2.371 vs 2.267, recentForm 2.1 vs 2.2)",
+          "Ivory Coast defensiv sehr stabil (goalsAgainstAvg 0.558, cleanSheetRate 0.545) – Tordifferenz wird eng",
+          "Neutraler Spielort, kein Heimvorteil – Baseline-Heimbonus leicht zu reduzieren",
+          "Keine gravierenden Ausfälle in den News (Undav-Verletzung als unbedenklich gemeldet)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit in der direkten Einschätzung",
-          "Mögliche kleinere Verletzung bei Undav laut News, jedoch als unkritisch eingestuft",
-          "Defensive Stärke der Ivory Coast könnte ein Low-Scoring-Spiel begünstigen und die Poisson-Baseline für Germany überschätzen",
-          "Lange Spielpause beider Teams kann Rhythmus und Präzision beeinträchtigen"
+          "Starke ivorische Defensive könnte deutsches Tempo neutralisieren und Remis/Überraschung ermöglichen",
+          "Kein H2H-Verlauf vorhanden – hohe Unsicherheit bei der Einschätzung",
+          "Lange Pause beider Teams (~62-63 Tage) erschwert Formprognose",
+          "Ivory Coast offensiv selbstbewusst laut News – Konterpotenzial gegen hohe deutsche Linie"
         ]
       },
       "chatgpt": {
@@ -104,26 +105,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.23,
+          "home": 0.44,
+          "draw": 0.24,
           "away": 0.32
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Germany's stronger goal-scoring average compared to Ivory Coast",
-          "Germany's relatively high recent form, despite recent coaching uncertainty",
-          "Germany's historical performance in major tournaments",
-          "Neutral venue minimizes home advantage"
+          "Germany's superior goal-scoring average.",
+          "Ivory Coast's strong defensive record with higher clean sheet rate.",
+          "Neutral venue mitigates home advantage."
         ],
         "risks": [
-          "Germany's coaching situation might affect team morale",
-          "Ivory Coast's strong defensive record",
-          "Minor injury concern for Deniz Undav"
+          "Lack of head-to-head history may introduce uncertainty.",
+          "Recent form is relatively balanced between teams."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit höherem Elo (1822 vs 1753) und starker gewichteter Form (2.371), höhere Torproduktion (goalsForAvg 2.574); Ivory Coast defensiv sehr stark: cleanSheetRate 0.545 und nur 0.558 Gegentore im Schnitt, was Germanys erwartete Tore drückt; Neutraler Spielort entfernt klassischen Heimvorteil und verkleinert den Abstand zwischen beiden Teams.",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany höhere Elo (1822 vs 1753) und stärkere Offensive (xG 1.68, goalsForAvg 2.574); Beide Teams ähnlich gute Form (weightedForm 2.371 vs 2.267, recentForm 2.1 vs 2.2); Ivory Coast defensiv sehr stabil (goalsAgainstAvg 0.558, cleanSheetRate 0.545) – Tordifferenz wird eng.",
     "inputHash": "sha256:8d350a0203aecb40d5869da1319bdfe2fa139251acaa0910d46fa76a11661601"
   },
   "predictionHistory": [
@@ -204,6 +203,19 @@
         "away": 0.3344
       },
       "confidence": 0.6167
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.428,
+        "draw": 0.2432,
+        "away": 0.3288
+      },
+      "confidence": 0.6146
     }
   ]
 }

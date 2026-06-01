@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "COL",
       "elo": 1775,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3713,
-      "draw": 0.3026,
-      "away": 0.3261
+      "home": 0.3541,
+      "draw": 0.3095,
+      "away": 0.3364
     },
-    "confidence": 0.5635,
+    "confidence": 0.5998,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -87,16 +87,16 @@
         },
         "confidence": 0.5,
         "keyFactors": [
-          "DR Congo zeigt die deutlich bessere gewichtete Form (2.229 vs 1.544) und stark defensive Werte (nur 0.482 Gegentore/Spiel, 54,5% Zu-Null)",
-          "Colombia bringt höheres Elo (1775 vs 1705) und mehr Offensivkraft (1.95 Tore/Spiel) mit",
-          "Neutraler Spielort eliminiert Heimvorteil, was die Baseline-Heimkomponente relativiert",
-          "Beide Teams etwa gleich lange ohne Pflichtspiel (~62-64 Tage), keine Frische-Differenz"
+          "DR Congo zeigt eine deutlich stärkere gewichtete Form (2.23 vs 1.54) und exzellente Defensive (0.48 Gegentore/Spiel, 54,5% Clean Sheets).",
+          "Kolumbien hat das höhere Elo (1775 vs 1705) und mehr Offensivkraft (1.95 Tore/Spiel), wodurch sich die Teams insgesamt ausgleichen.",
+          "Neutrale Spielstätte ohne Heimvorteil, kein H2H-Verlauf als Anker.",
+          "James Rodríguez als kreativer Taktgeber stützt Kolumbiens Offensive."
         ],
         "risks": [
-          "Ebola-Krise stoppt DR Congos Trainingslager – mögliche Beeinträchtigung von Vorbereitung und Moral, schwer quantifizierbar",
-          "Verletzungssorge bei Colombia vor dem Turnier könnte Schlüsselspieler kosten",
-          "Keine Head-to-Head-Daten vorhanden, erhöht Prognoseunsicherheit",
-          "Höhenlage (1566 m) als möglicher Kontextfaktor für beide Teams"
+          "Ebola-Krise stoppte das WM-Trainingslager der DR Congo – mögliche Beeinträchtigung von Vorbereitung und Verfügbarkeit.",
+          "Verletzungssorge im kolumbianischen Kader könnte die Offensive schwächen.",
+          "Höhenlage (1566 m) als Belastungsfaktor für beide Teams schwer kalkulierbar.",
+          "Lange Pause beider Teams (~60 Tage) erschwert Form-Einschätzung."
         ]
       },
       "chatgpt": {
@@ -105,24 +105,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.32,
-          "away": 0.3
+          "home": 0.35,
+          "draw": 0.33,
+          "away": 0.32
         },
-        "confidence": 0.65,
+        "confidence": 0.72,
         "keyFactors": [
-          "DR Congo's strong recent form with weighted form of 2.229 and clean sheet rate of 0.545",
-          "Colombia's higher Elo rating of 1775 and recent form of 1.8",
-          "Neutral venue at an altitude of 1566 which neither team is accustomed to"
+          "DR Congo's recent form outperforms Colombia slightly with 2.3 vs 1.8.",
+          "Neutral venue negates any home advantage.",
+          "Colombia's slight historical edge in offensive metrics (1.95 goalsForAvg vs DR Congo's 1.42).",
+          "DR Congo's superior defensive record (0.482 goalsAgainstAvg vs Colombia's 1.227)."
         ],
         "risks": [
-          "Morale issue for DR Congo due to Ebola crisis affecting training",
-          "Injury concern for Colombia affecting player availability"
+          "Training disruption for DR Congo due to Ebola crisis could impact performance.",
+          "Potential injury concern in Colombian squad adds uncertainty.",
+          "Lack of head-to-head matchups creates unpredictability."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo zeigt die deutlich bessere gewichtete Form (2.229 vs 1.544) und stark defensive Werte (nur 0.482 Gegentore/Spiel, 54,5% Zu-Null); Colombia bringt höheres Elo (1775 vs 1705) und mehr Offensivkraft (1.95 Tore/Spiel) mit; Neutraler Spielort eliminiert Heimvorteil, was die Baseline-Heimkomponente relativiert.",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo zeigt eine deutlich stärkere gewichtete Form (2.23 vs 1.54) und exzellente Defensive (0.48 Gegentore/Spiel, 54,5% Clean Sheets).; Kolumbien hat das höhere Elo (1775 vs 1705) und mehr Offensivkraft (1.95 Tore/Spiel), wodurch sich die Teams insgesamt ausgleichen.; Neutrale Spielstätte ohne Heimvorteil, kein H2H-Verlauf als Anker..",
     "inputHash": "sha256:c1d8191f154ac4c826f09d478fae20c9f994acb669d53a3f1ad668560e411fc3"
   },
   "predictionHistory": [
@@ -216,6 +218,19 @@
         "away": 0.325
       },
       "confidence": 0.582
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3713,
+        "draw": 0.3026,
+        "away": 0.3261
+      },
+      "confidence": 0.5635
     }
   ]
 }

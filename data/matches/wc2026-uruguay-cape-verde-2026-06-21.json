@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "URU",
       "elo": 1677,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.342,
-      "draw": 0.312,
-      "away": 0.346
+      "home": 0.3455,
+      "draw": 0.3,
+      "away": 0.3545
     },
-    "confidence": 0.6167,
+    "confidence": 0.5482,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
+          "home": 0.34,
           "draw": 0.3,
-          "away": 0.37
+          "away": 0.36
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Cape Verde mit klar besserer gewichteter Form (1.98) und recentForm (2.1) sowie höherer Offensivproduktion (goalsForAvg 1.67)",
-          "Uruguay höhere Elo (1677 vs 1608) und bessere defensive Stabilität (cleanSheetRate 0.52)",
-          "Neutraler Spielort entfernt klassischen Heimvorteil und reduziert Uruguays Bonus",
-          "Baseline sieht Cape Verde leicht vorn; Form und xG stützen diese Tendenz"
+          "Cape Verde mit starker gewichteter Form (1.98) und hoher Offensivproduktion (1.67 Tore/Spiel) - inkl. 3:0 gegen Serbien im Test",
+          "Uruguay defensiv solide (CleanSheet-Rate 0.52, 0.83 Gegentore/Spiel) und mit guter jüngster Form (1.6)",
+          "Höherer Elo-Wert Uruguays (1677 vs 1608) und größere Turniererfahrung unter Bielsa",
+          "Neutraler Spielort - kein Heimvorteil für Uruguay, was die Baseline-Tendenz pro Cape Verde stützt"
         ],
         "risks": [
-          "Cape Verde 231 Tage ohne Spiel – mögliche Rhythmus- und Matchpraxis-Defizite stark unterschätzbar",
-          "Uruguay nach 62 Tagen Pause und ohne Suarez mit nur drei nominellen Stürmern – Offensivschwäche möglich",
-          "Keine H2H-Daten verfügbar, dadurch erhöhte Prognoseunsicherheit",
-          "Geringe Tor-xG beider Teams begünstigt knappes oder Unentschieden-Ergebnis"
+          "Cape Verde seit 231 Tagen ohne Pflichtspiel - erhebliches Risiko fehlender Spielrhythmus/Wettkampfhärte",
+          "Fehlen von Luis Suárez im uruguayischen Kader könnte Offensivschwäche bedeuten (niedriger goalsForAvg 0.91)",
+          "Kein H2H-Datensatz vorhanden - hohe Unsicherheit bei Einschätzung des direkten Duells",
+          "Uruguay 62 Tage ohne Spiel - ebenfalls mögliche Rhythmusprobleme"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.32,
-          "away": 0.33
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.75,
+        "confidence": 0.6,
         "keyFactors": [
-          "Uruguay has higher Elo rating at 1677 compared to Cape Verde's 1608.",
-          "Uruguay's recent form is slightly lower at 1.6 compared to Cape Verde's 2.1.",
-          "Cape Verde has a higher goal scoring average of 1.673 goals per match.",
-          "Both teams have strong clean sheet rates, with Uruguay at 51.7% and Cape Verde at 43.5%.",
-          "Neutral venue negates home advantage for Uruguay."
+          "Uruguay lacks star player Luis Suárez, which could impact their attacking strength.",
+          "Cape Verde has demonstrated strong recent form, outperforming their Elo rating.",
+          "Neutral venue levels the playing field with no host advantage.",
+          "Cape Verde's impressive 3-0 victory over Serbia highlights their potential threat."
         ],
         "risks": [
-          "Uruguay's key player Luis Suarez is not included in the squad, possibly affecting offensive capabilities.",
-          "Cape Verde has not played a match for 231 days, which could impact their performance."
+          "Uruguay's stronger historical World Cup experience under coach Marcelo Bielsa.",
+          "Cape Verde has not played a match in 231 days, leading to potential rustiness.",
+          "No head-to-head history, adding uncertainty to match dynamics."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit klar besserer gewichteter Form (1.98) und recentForm (2.1) sowie höherer Offensivproduktion (goalsForAvg 1.67); Uruguay höhere Elo (1677 vs 1608) und bessere defensive Stabilität (cleanSheetRate 0.52); Neutraler Spielort entfernt klassischen Heimvorteil und reduziert Uruguays Bonus.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit starker gewichteter Form (1.98) und hoher Offensivproduktion (1.67 Tore/Spiel) - inkl. 3:0 gegen Serbien im Test; Uruguay defensiv solide (CleanSheet-Rate 0.52, 0.83 Gegentore/Spiel) und mit guter jüngster Form (1.6); Höherer Elo-Wert Uruguays (1677 vs 1608) und größere Turniererfahrung unter Bielsa.",
     "inputHash": "sha256:739c82fe1f99ae0741e743e53cac31ad71999a1bc1d16e3578ea5ee5dd17cf2a"
   },
   "predictionHistory": [
@@ -204,6 +204,19 @@
         "away": 0.3357
       },
       "confidence": 0.5243
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.342,
+        "draw": 0.312,
+        "away": 0.346
+      },
+      "confidence": 0.6167
     }
   ]
 }

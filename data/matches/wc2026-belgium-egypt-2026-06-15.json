@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "BEL",
       "elo": 1744,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3717,
-      "draw": 0.3108,
-      "away": 0.3175
+      "home": 0.4248,
+      "draw": 0.2532,
+      "away": 0.322
     },
-    "confidence": 0.582,
+    "confidence": 0.6083,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,51 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.36,
+          "home": 0.38,
           "draw": 0.27,
-          "away": 0.37
+          "away": 0.35
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Egypt hat höhere Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908)",
-          "Egypts Defensive ist deutlich stärker: nur 0.414 Gegentore/Spiel und 57.1% Clean-Sheet-Rate vs Belgiens 1.054 und 38.5%",
-          "Belgiens Offensive ist offensiver (2.914 Tore/Spiel) und kann auch gegen kompakte Gegner treffen",
-          "Neutraler Spielort eliminiert Belgiens Heimvorteil, was die Baseline-Heimwahrscheinlichkeit relativiert"
+          "Egypt hat höheren Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908)",
+          "Egypts Defensive ist herausragend: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate vs Belgiens 1.054 Gegentore und 38.5% Clean Sheets",
+          "Mohamed Salah als Kapitän und offensiver Fixpunkt im Egypt-Kader bestätigt",
+          "Neutrales Spielfeld eliminiert Heimvorteil für Belgien aus der Baseline",
+          "Belgiens stärkere Offensive (2.914 Tore/Spiel) gegen Egypts solide Abwehr deutet auf knappes Duell hin"
         ],
         "risks": [
-          "Kein Head-to-Head vorhanden, daher höhere Unsicherheit bei der Einschätzung",
-          "62 Tage seit letztem Spiel bei beiden Teams – Spielrhythmus und aktuelle Form schwer einzuschätzen",
-          "Belgiens hohe Torquote könnte Egypts solide Defensive durchbrechen und das Ergebnis kippen",
-          "Mögliche personelle Veränderungen über die lange Pause nicht in Daten abgebildet"
+          "Keine Head-to-Head-Daten verfügbar (0 Spiele), erhöht Unsicherheit",
+          "Egypts hohe Torquote könnte gegen schwächere Gegner verzerrt sein (nur 1.523 Tore/Spiel offensiv)",
+          "Lange Pause beider Teams (62 Tage) erschwert Formeinschätzung zum Turnierstart",
+          "Belgiens Offensivpotenzial kann bei einem guten Tag das Spiel kippen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.34,
-          "away": 0.28
+          "home": 0.46,
+          "draw": 0.24,
+          "away": 0.3
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Both teams have similar Elo ratings and recent form.",
-          "Egypt has a better defensive record with a higher clean sheet rate.",
-          "Belgium has a slightly higher goals scored average.",
-          "Match is played at a neutral venue, no host advantage."
+          "Belgium's slightly higher recent form (2.2) compared to Egypt (2.1)",
+          "Egypt's stronger defensive record with a goals against average of 0.414 and a clean sheet rate of 0.571",
+          "Neutral venue reduces home advantage for Belgium",
+          "Mohamed Salah's leadership and influence on the Egyptian squad"
         ],
         "risks": [
-          "No head-to-head history to draw direct comparisons from.",
-          "Impact of Belgium's coach knowledge of Egyptian players is uncertain."
+          "Egypt's slightly higher Elo rating (1770) compared to Belgium (1744)",
+          "Belgium's high offensive potential with goals for average of 2.914",
+          "No head-to-head history to inform prediction"
         ]
       }
     },
-    "agreement": 0.94,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt hat höhere Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908); Egypts Defensive ist deutlich stärker: nur 0.414 Gegentore/Spiel und 57.1% Clean-Sheet-Rate vs Belgiens 1.054 und 38.5%; Belgiens Offensive ist offensiver (2.914 Tore/Spiel) und kann auch gegen kompakte Gegner treffen.",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt hat höheren Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908); Egypts Defensive ist herausragend: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate vs Belgiens 1.054 Gegentore und 38.5% Clean Sheets; Mohamed Salah als Kapitän und offensiver Fixpunkt im Egypt-Kader bestätigt.",
     "inputHash": "sha256:eed189c62043ff03b30f52e380754743e9b1163069517dc313a3677517c035ca"
   },
   "predictionHistory": [
@@ -203,6 +205,19 @@
         "away": 0.3413
       },
       "confidence": 0.5893
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3717,
+        "draw": 0.3108,
+        "away": 0.3175
+      },
+      "confidence": 0.582
     }
   ]
 }

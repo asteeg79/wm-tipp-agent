@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "NED",
       "elo": 1825,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 3,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7455,
-      "draw": 0.15,
-      "away": 0.1045
+      "home": 0.6849,
+      "draw": 0.1727,
+      "away": 0.1424
     },
-    "confidence": 0.7724,
+    "confidence": 0.6766,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,27 +76,27 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 3,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.74,
-          "draw": 0.15,
-          "away": 0.11
+          "home": 0.69,
+          "draw": 0.165,
+          "away": 0.145
         },
-        "confidence": 0.7,
+        "confidence": 0.66,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Niederlande (1825 vs 1599)",
-          "Bessere gewichtete und jüngste Form der Niederlande (2.10/2.4 vs 1.64/1.4)",
-          "Starke Offensive (2.53 Tore/Spiel) und solide Defensive (0.86 Gegentore) der Niederlande",
-          "Mehrere verletzungsbedingte Defensivausfälle bei Schweden (Holm, Juventus-Verteidiger)",
-          "Schwedens schwache Defensivwerte (1.64 Gegentore, nur 21.7% Zu-Null)"
+          "Deutlicher Elo-Vorsprung der Niederlande (1825 vs. 1599)",
+          "Starke gewichtete Form der Niederlande (2.095) und hohe Torproduktion (2.53 pro Spiel)",
+          "Niederländische Defensive deutlich stabiler (0.86 Gegentore vs. 1.64 bei Schweden)",
+          "Fitter Frenkie de Jong verleiht dem Mittelfeld zusätzliche Kontrolle",
+          "Schweden durch Ausfälle (Holm und weitere) defensiv geschwächt"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Niederlande den Heimvorteil",
-          "62 Tage seit letztem Spiel – mögliche Rhythmusprobleme bei beiden Teams",
+          "Neutraler Spielort nimmt den Niederlanden den Heimvorteil",
+          "62 Tage seit letztem Spiel – Rhythmusmangel auf beiden Seiten",
           "Keine H2H-Daten als Referenz vorhanden",
-          "Schweden kann offensiv treffen (1.91 Tore/Spiel) – Konterchancen möglich"
+          "Schweden mit ordentlicher Offensive (1.91 Tore) kann kontern und das Spiel offen halten"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.15,
-          "away": 0.1
+          "home": 0.68,
+          "draw": 0.18,
+          "away": 0.14
         },
-        "confidence": 0.85,
+        "confidence": 0.7,
         "keyFactors": [
-          "Netherlands has significantly higher ELO rating 1825 vs 1599.",
-          "Sweden's defensive line weakened due to multiple injuries.",
-          "Netherlands' recent form is strong (2.4) with high offensive output (2.533 goals per match)."
+          "Netherlands' recent form is stronger than Sweden's.",
+          "Netherlands' return of fit key player De Jong enhances team dynamics.",
+          "Sweden has multiple recent injury concerns impacting the squad's strength.",
+          "Neutral venue reduces any potential location advantage."
         ],
         "risks": [
-          "Match played on neutral ground which slightly reduces home advantage impact.",
-          "Both teams have not played a match in the last 62 days, which could affect match rhythm."
+          "Sweden's potential tactical surprises with new squad additions.",
+          "Unpredictability due to the first head-to-head meeting in recent history."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Niederlande (1825 vs 1599); Bessere gewichtete und jüngste Form der Niederlande (2.10/2.4 vs 1.64/1.4); Starke Offensive (2.53 Tore/Spiel) und solide Defensive (0.86 Gegentore) der Niederlande.",
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Niederlande (1825 vs. 1599); Starke gewichtete Form der Niederlande (2.095) und hohe Torproduktion (2.53 pro Spiel); Niederländische Defensive deutlich stabiler (0.86 Gegentore vs. 1.64 bei Schweden).",
     "inputHash": "sha256:34e5eee382ef8221890a7ab2d9af01e4a0e4a8d01009cff9b3cafaad7824a392"
   },
   "predictionHistory": [
@@ -216,6 +217,19 @@
         "away": 0.1408
       },
       "confidence": 0.7032
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7455,
+        "draw": 0.15,
+        "away": 0.1045
+      },
+      "confidence": 0.7724
     }
   ]
 }

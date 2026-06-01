@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "ALG",
       "elo": 1767,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T04:12:28.285Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.37,
-      "draw": 0.276,
-      "away": 0.354
+      "home": 0.3739,
+      "draw": 0.2452,
+      "away": 0.3809
     },
-    "confidence": 0.6125,
+    "confidence": 0.5654,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,46 +84,46 @@
           "draw": 0.24,
           "away": 0.36
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Algerien mit höherem Elo (1767 vs 1748) und leicht besserer gewichteter Form (2.384 vs 2.284)",
-          "Bessere Defensive Algeriens: nur 0.55 Gegentore/Spiel und 51.6% Zu-Null-Quote gegenüber 0.646 und 30.8% bei Österreich",
-          "Beide Teams in starker jüngster Form (recentForm jeweils 2.5) und torgefährlich",
-          "Österreichs offensiver Vorteil (2.558 Tore/Spiel) hält das Spiel offen und stützt eine knappe Differenz"
+          "Algeria mit leicht besserem Elo (1767 vs 1748) und stärkerer gewichteter Form (2.384 vs 2.284)",
+          "Algeriens defensive Stabilität deutlich besser: cleanSheetRate 0.516 vs 0.308, goalsAgainstAvg 0.55 vs 0.646",
+          "Algeria mit vollständigem Star-Kader (Mahrez-Rückkehr, Bentaleb, Zugänge) laut News positiv aufgestellt",
+          "Beide Teams offensivstark (goalsForAvg ~2.3-2.6), torreiches Spiel wahrscheinlich"
         ],
         "risks": [
-          "Keine Head-to-Head-Historie verfügbar, daher erhöhte Unsicherheit",
-          "Neutraler Spielort ohne Heimvorteil für Algerien",
-          "Lange Pause (62 Tage) bei beiden Teams kann Rhythmus beeinträchtigen",
-          "Österreichs hohe Offensivstärke kann die knappe Defensivüberlegenheit Algeriens neutralisieren"
+          "Neutraler Spielort nimmt Algeria den Heimvorteil, Baseline nahezu ausgeglichen",
+          "Kein Head-to-Head vorhanden, erschwert Einschätzung",
+          "Lange Pause (62 Tage) für beide Teams könnte Rhythmus beeinflussen",
+          "Österreichs höhere Torquote kann defensive Vorteile Algeriens neutralisieren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.25,
+          "away": 0.4
         },
-        "confidence": 0.75,
+        "confidence": 0.6,
         "keyFactors": [
-          "Both teams have identical recent forms (2.5) and similar weighted forms.",
-          "Similar Elo ratings: Algeria (1767) and Austria (1748).",
-          "Very balanced offensive and defensive stats for both teams.",
-          "Neutral venue likely to balance out small differences."
+          "Similar Elo ratings for both teams, with a slight edge to Algeria based on recent form and clean sheet rate.",
+          "Neutral venue eliminates any home advantage.",
+          "Austria has a higher recent goals scored average compared to Algeria.",
+          "Algeria has significant squad news with key players returning and debutants, indicating potential for improved performance."
         ],
         "risks": [
-          "Zero head-to-head history introduces uncertainty.",
-          "Possible underestimation of potential tactical adjustments for either team.",
-          "Weather or last-minute injuries not accounted for in available data."
+          "No head-to-head history creates uncertainty in baseline comparison.",
+          "Changes in Algeria's squad could lead to unexpected dynamics on the pitch.",
+          "Both teams have been inactive for 62 days, which might affect match sharpness."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Algerien mit höherem Elo (1767 vs 1748) und leicht besserer gewichteter Form (2.384 vs 2.284); Bessere Defensive Algeriens: nur 0.55 Gegentore/Spiel und 51.6% Zu-Null-Quote gegenüber 0.646 und 30.8% bei Österreich; Beide Teams in starker jüngster Form (recentForm jeweils 2.5) und torgefährlich.",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Algeria mit leicht besserem Elo (1767 vs 1748) und stärkerer gewichteter Form (2.384 vs 2.284); Algeriens defensive Stabilität deutlich besser: cleanSheetRate 0.516 vs 0.308, goalsAgainstAvg 0.55 vs 0.646; Algeria mit vollständigem Star-Kader (Mahrez-Rückkehr, Bentaleb, Zugänge) laut News positiv aufgestellt.",
     "inputHash": "sha256:bb0e30f40199a33aa5be4b3ed876eccb2a76fdc881b93509e43d9d5906a6d2d1"
   },
   "predictionHistory": [
@@ -165,6 +165,19 @@
         "away": 0.3556
       },
       "confidence": 0.5753
+    },
+    {
+      "generatedAt": "2026-06-01T04:12:28.285Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.37,
+        "draw": 0.276,
+        "away": 0.354
+      },
+      "confidence": 0.6125
     }
   ]
 }

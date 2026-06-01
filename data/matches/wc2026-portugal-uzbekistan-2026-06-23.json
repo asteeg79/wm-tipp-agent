@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "home": {
       "teamId": "POR",
       "elo": 1793,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T17:42:32.942Z",
+    "generatedAt": "2026-06-01T20:07:56.122Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5656,
-      "draw": 0.2244,
-      "away": 0.21
+      "home": 0.5842,
+      "draw": 0.2223,
+      "away": 0.1936
     },
-    "confidence": 0.6728,
+    "confidence": 0.677,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,20 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
-          "draw": 0.23,
-          "away": 0.21
+          "home": 0.5650000000000001,
+          "draw": 0.22500000000000003,
+          "away": 0.21000000000000002
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
           "Portugal mit höherem Elo (1793 vs 1676) und stärkerer gewichteter Form (2.01 vs 1.707)",
-          "Bessere Offensive Portugals (2.32 Tore/Spiel) gegenüber Uzbekistan (1.51)",
-          "Baseline-xG klar zugunsten Portugals (1.81:1.06), Heimstärke-Tendenz trotz neutralem Spielort"
+          "Portugals Offensive deutlich produktiver (goalsForAvg 2.32 vs 1.51)",
+          "Defensiv ähnliches Niveau (goalsAgainst 0.879 vs 0.893), aber Uzbekistan mit hoher Clean-Sheet-Rate (0.625)",
+          "Neutraler Spielort egalisiert klassischen Heimvorteil leicht zugunsten der WM-Routine Portugals"
         ],
         "risks": [
-          "Uzbekistan defensiv stabil mit hoher Clean-Sheet-Rate (0.625) – kann Spiel eng halten",
-          "Lange Pause Uzbekistans (126 Tage) erschwert Formbewertung, Rhythmus unklar",
-          "Keine H2H-Daten vorhanden, erhöhte Unsicherheit bei der Einschätzung"
+          "Uzbekistans hohe Clean-Sheet-Rate deutet auf kompakte, defensiv disziplinierte Spielweise hin, die ein knappes Ergebnis ermöglicht",
+          "Sehr lange Pause Uzbekistans (126 Tage) und Portugals (62 Tage) erschwert Formeinschätzung – Rhythmusdefizite möglich",
+          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit im direkten Vergleich",
+          "Personaldiskussion um Ronaldos Rolle könnte interne Dynamik beeinflussen"
         ]
       },
       "chatgpt": {
@@ -102,26 +104,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5700000000000001,
-          "draw": 0.22000000000000003,
-          "away": 0.21000000000000002
+          "home": 0.6,
+          "draw": 0.22,
+          "away": 0.18
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Portugal's higher Elo rating indicates a stronger team overall.",
-          "Portugal's recent form is stronger with a form rating of 2.1.",
-          "Portugal's offensive capability is higher with an average of 2.32 goals per game.",
-          "Uzbekistan has a high clean sheet rate at 0.625, which might limit Portugal's goal count."
+          "Portugal's higher Elo rating",
+          "Portugal's recent good form and strong offensive performance",
+          "Uzbekistan's defensive capabilities indicated by clean sheet rate"
         ],
         "risks": [
-          "Neutral venue negates home advantage.",
-          "Portugal's 62 days since last match might impact match sharpness.",
-          "Uzbekistan's defensive strength could lead to lower scoring opportunities for Portugal."
+          "Neutral venue may reduce Portugal's nominal advantage",
+          "Uzbekistan's potential to surprise given high clean sheet rate"
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit höherem Elo (1793 vs 1676) und stärkerer gewichteter Form (2.01 vs 1.707); Bessere Offensive Portugals (2.32 Tore/Spiel) gegenüber Uzbekistan (1.51); Baseline-xG klar zugunsten Portugals (1.81:1.06), Heimstärke-Tendenz trotz neutralem Spielort.",
+    "agreement": 0.9767,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit höherem Elo (1793 vs 1676) und stärkerer gewichteter Form (2.01 vs 1.707); Portugals Offensive deutlich produktiver (goalsForAvg 2.32 vs 1.51); Defensiv ähnliches Niveau (goalsAgainst 0.879 vs 0.893), aber Uzbekistan mit hoher Clean-Sheet-Rate (0.625).",
     "inputHash": "sha256:b7ed8f8ea712f9e0b49f5549f9694ed6cee282df592c2c5107e142e179fbd6ca"
   },
   "predictionHistory": [
@@ -215,6 +215,19 @@
         "away": 0.1962
       },
       "confidence": 0.7043
+    },
+    {
+      "generatedAt": "2026-06-01T17:42:32.942Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5656,
+        "draw": 0.2244,
+        "away": 0.21
+      },
+      "confidence": 0.6728
     }
   ]
 }
