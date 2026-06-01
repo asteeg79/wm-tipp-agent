@@ -168,20 +168,30 @@ function textOf(v: unknown): string {
   return "";
 }
 
+/** Dekodiert die gängigen HTML-Entities (eine Stufe). */
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#0*39;/g, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&#x?[0-9a-f]+;/gi, " ") // sonstige numerische Entities → Space
+    .replace(/&amp;/gi, "&");
+}
+
 function stripHtml(s: string): string {
-  // Reihenfolge wichtig: ZUERST Entities dekodieren, DANN Tags entfernen.
-  // Google-News-Snippets enthalten escapte Tags (&lt;a href=…&gt;) — würde man
-  // erst strippen und dann dekodieren, blieben echte <a>-Tags als Text übrig.
-  const decoded = s
-    .replace(/&nbsp;/g, " ")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&amp;/g, "&");
-  // Tags entfernen (zweimal, falls durch Dekodierung neue Tags entstanden sind).
-  return decoded
+  // Google-News-Snippets sind oft MEHRFACH escaped (&amp;nbsp;, &lt;a href…&gt;).
+  // Daher Entities mehrstufig dekodieren, dann Tags entfernen — so bleibt kein
+  // rohes HTML und kein "&nbsp;" im Text übrig.
+  let text = s;
+  for (let i = 0; i < 3; i++) {
+    const next = decodeEntities(text);
+    if (next === text) break;
+    text = next;
+  }
+  return text
     .replace(/<[^>]*>/g, " ")
     .replace(/<[^>]*>/g, " ")
     .replace(/\s+/g, " ")

@@ -5,14 +5,27 @@ Pipeline (GitHub Actions), nie im Browser (kein CORS, kein Key im Frontend).
 
 ## Frequenz — wann News gezogen werden
 
-News werden bei jedem Pipeline-Lauf (`refresh.yml`) geholt, nicht beim
-Seitenaufruf. Zeitplan:
+News werden serverseitig geholt, nicht beim Seitenaufruf. Die Jobs sind nach
+**Kosten** getrennt (News sind günstig, KI-Calls nicht):
 
-| Zeitraum | Cron | Häufigkeit |
-|---|---|---|
-| ganzjährig | `0 4 * * *` | täglich 04:00 UTC |
-| Turnierfenster (Juni/Juli) | `0 */3 * 6,7 *` | alle 3 Stunden |
-| jederzeit | `workflow_dispatch` | manuell |
+| Workflow | Cron | Modus | KI? |
+|---|---|---|---|
+| `news.yml` | alle 3 h (`0 */3 * * *`) | `news` | nein |
+| `predict-daily.yml` | täglich 05:00 (`0 5 * * *`) | `predict` | ja, Anpfiff ≤ 72 h |
+| `predict-hourly.yml` | stündlich Jun/Jul (`0 * * 6,7 *`) | `predict` | ja, nur fällige (T-3h) |
+| `refresh.yml` | manuell | wählbar (Default `full`) | je nach Modus |
+
+**Pipeline-Modi** (`WM_MODE` bzw. `--mode`):
+- `news`: nur News + Struktur, **keine KI** (günstig, mehrmals täglich).
+- `predict`: News + KI, aber **nur Partien mit Anpfiff ≤ `WM_AI_WINDOW_HOURS`
+  (Default 72 h)**. Die Re-Trigger-Logik (T-72/24/3h, `inputHash`, materielle
+  News) sorgt dafür, dass im stündlichen Lauf nur wirklich fällige Partien
+  einen KI-Call auslösen — insbesondere ~3 h vor Anpfiff.
+- `full`: KI für alle Partien ohne Fenster (teuer, nur manuell).
+
+So wird jede Partie i. d. R. **einmal täglich** (im 72h-Fenster) und **erneut
+~3 h vor Anpfiff** mit den aktuellsten Infos getippt, während News mehrfach
+täglich frisch gezogen werden.
 
 Zusätzlich **Feed-Cache mit 1 h TTL** je Feed-URL
 ([`features/news.ts`](../pipeline/src/features/news.ts), `FEED_TTL_MS`): Läufe
