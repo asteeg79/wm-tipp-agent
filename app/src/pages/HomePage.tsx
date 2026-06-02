@@ -15,13 +15,13 @@ export function HomePage() {
     a.date.localeCompare(b.date),
   );
 
-  // Nächste 3 anstehende Partien (kein Ergebnis, Anpfiff in der Zukunft).
+  // Nächste 5 anstehende Partien (kein Ergebnis, Anpfiff in der Zukunft).
   const upcoming = byDateAsc
     .filter((e) => e.actualResult === null && new Date(e.date).getTime() >= now)
-    .slice(0, 3);
+    .slice(0, 5);
 
-  // Falls noch keine zukünftigen Partien existieren: die 3 frühesten zeigen.
-  const upcomingList = upcoming.length > 0 ? upcoming : byDateAsc.slice(0, 3);
+  // Falls noch keine zukünftigen Partien existieren: die 5 frühesten zeigen.
+  const upcomingList = upcoming.length > 0 ? upcoming : byDateAsc.slice(0, 5);
 
   // Letzte 2 beendete Partien (mit Ergebnis), neueste zuerst.
   const recent = byDateAsc

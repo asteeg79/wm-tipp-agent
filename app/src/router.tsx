@@ -7,7 +7,6 @@ import { MatchPage } from "./pages/MatchPage.js";
 import { AccuracyPage } from "./pages/AccuracyPage.js";
 import { BracketPage } from "./pages/BracketPage.js";
 import { ComparePage } from "./pages/ComparePage.js";
-import { PlayPage } from "./pages/PlayPage.js";
 import { AdminPage } from "./pages/AdminPage.js";
 
 // Router-Basename = Vite-base (BASE_URL), ohne abschließenden Slash.
@@ -25,7 +24,6 @@ export const router = createBrowserRouter(
         { path: "accuracy", element: <AccuracyPage /> },
         { path: "bracket", element: <BracketPage /> },
         { path: "compare", element: <ComparePage /> },
-        { path: "play", element: <PlayPage /> },
         { path: "admin", element: <AdminPage /> },
         { path: "team/:teamId", element: <TeamPage /> },
         { path: "match/:matchId", element: <MatchPage /> },

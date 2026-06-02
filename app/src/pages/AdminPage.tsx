@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../i18n.js";
 import { useIndex, usePredictionsIndex } from "../lib/data.js";
 import { useTheme } from "../lib/ThemeContext.js";
-import { useVersion, formatVersion } from "../lib/useVersion.js";
+import { useVersion, formatVersion, formatBuiltAt } from "../lib/useVersion.js";
 import { StatCard } from "../components/StatCard.js";
 import { formatKickoff } from "../lib/format.js";
 
@@ -85,7 +85,8 @@ export function AdminPage() {
           </Row>
           <Row label={t("admin.appVersion")}>
             <span className="font-mono">
-              {formatVersion(v.current.version)} · {v.current.commit}
+              {formatVersion(v.current.build)} ·{" "}
+              {formatBuiltAt(v.current.version)} · {v.current.commit}
             </span>
           </Row>
           <Row label={t("admin.noFlag")}>

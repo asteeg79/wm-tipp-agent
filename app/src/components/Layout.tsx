@@ -54,8 +54,8 @@ export function Layout() {
             <NavLink to="/accuracy" className={navClass}>
               {t("nav.accuracy")}
             </NavLink>
-            <NavLink to="/play" className={navClass}>
-              {t("nav.play")}
+            <NavLink to="/admin" className={navClass}>
+              {t("nav.admin")}
             </NavLink>
           </nav>
           <div className="ml-auto flex items-center gap-2">
@@ -75,14 +75,9 @@ export function Layout() {
 
       <footer className="border-t border-edge px-4 py-4 text-center text-xs text-fg-faint">
         <div>{t("disclaimer")}</div>
-        <div className="mt-1 flex items-center justify-center gap-3 font-mono text-[10px]">
-          <span>
-            {t("version.label")} {formatVersion(v.current.version)} ·{" "}
-            {v.current.commit}
-          </span>
-          <NavLink to="/admin" className="hover:text-brand">
-            Admin
-          </NavLink>
+        <div className="mt-1 font-mono text-[10px]">
+          {t("version.label")} {formatVersion(v.current.build)} ·{" "}
+          {v.current.commit}
         </div>
       </footer>
     </div>
