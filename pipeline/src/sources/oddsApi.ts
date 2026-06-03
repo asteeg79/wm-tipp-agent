@@ -105,7 +105,13 @@ export async function loadOdds(): Promise<Map<string, MarketOdds>> {
     console.log("[odds] kein ODDS_API_KEY → Buchmacher-Quoten übersprungen");
     return new Map();
   }
-  const { sport, regions, ttlHours } = config.odds;
+  const { sport, regions, ttlHours, untilDate } = config.odds;
+
+  // Nach dem WM-Finale keine Abrufe mehr (spart "Leer"-Credits).
+  if (untilDate && Date.now() > new Date(untilDate).getTime()) {
+    console.log(`[odds] nach ${untilDate} → WM beendet, keine Quoten-Abrufe`);
+    return new Map();
+  }
   const ttlMs = ttlHours * 60 * 60 * 1000;
   const cacheKey = `odds:${sport}:${regions}:h2h`;
 
