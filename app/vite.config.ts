@@ -59,8 +59,8 @@ export default defineConfig({
         short_name: "WM-Tipp 2026",
         description:
           "Begründete Ergebnistipps für die FIFA WM 2026 — KI-gestützt.",
-        theme_color: "#0f172a",
-        background_color: "#0f172a",
+        theme_color: "#0a0e15",
+        background_color: "#0a0e15",
         display: "standalone",
         start_url: base,
         scope: base,

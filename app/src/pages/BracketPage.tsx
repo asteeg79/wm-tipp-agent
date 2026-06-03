@@ -6,6 +6,7 @@ import {
   simulateTournament,
   simulateBracket,
   type BracketMatch,
+  type BracketMode,
 } from "../lib/simulate.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 
@@ -58,28 +59,45 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
   const { t } = useTranslation();
   const { data: index } = useIndex();
   const { data: predIndex } = usePredictionsIndex();
+  const [mode, setMode] = useState<BracketMode>("favorite");
   const [seed, setSeed] = useState(() => Date.now());
 
   const bracket = useMemo(() => {
     if (!index || !predIndex) return null;
-    return simulateBracket(index, predIndex, seed);
-  }, [index, predIndex, seed]);
+    return simulateBracket(index, predIndex, mode, seed);
+  }, [index, predIndex, mode, seed]);
 
   if (!bracket) return null;
   const champ = teams.get(bracket.champion);
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-between gap-2">
-        <span className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
-          {t("bracket.draw16")}
-        </span>
-        <button
-          onClick={() => setSeed(Date.now())}
-          className="rounded-md border border-acc px-3 py-1.5 text-sm font-medium text-acc hover:bg-acc/10"
-        >
-          ↻ {t("bracket.reroll")}
-        </button>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        {/* Modus: Favorit (deterministisch) ↔ Zufall (gewichtete Auslosung) */}
+        <div className="inline-flex rounded-lg border border-edge bg-surface-2 p-1">
+          {(["favorite", "random"] as BracketMode[]).map((m) => (
+            <button
+              key={m}
+              onClick={() => setMode(m)}
+              className={`rounded-md px-3 py-1 text-xs font-semibold transition-colors ${
+                mode === m ? "bg-acc text-canvas" : "text-fg-soft hover:text-fg"
+              }`}
+            >
+              {m === "favorite" ? t("bracket.favorite") : t("bracket.chance")}
+            </button>
+          ))}
+        </div>
+        {mode === "random" && (
+          <button
+            onClick={() => setSeed(Date.now())}
+            className="rounded-md border border-acc px-3 py-1.5 text-sm font-medium text-acc hover:bg-acc/10"
+          >
+            ↻ {t("bracket.reroll")}
+          </button>
+        )}
+      </div>
+      <div className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
+        {t("bracket.draw16")}
       </div>
 
       {/* Champion-Banner */}
@@ -148,6 +166,12 @@ function BracketCell({
       <CellLine id={m.a} goals={m.score.a} win={m.winner === m.a} teams={teams} />
       <div className="h-px bg-edge" />
       <CellLine id={m.b} goals={m.score.b} win={m.winner === m.b} teams={teams} />
+      {/* Siegwahrscheinlichkeit des Favoriten/Siegers laut Stärkemodell */}
+      <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2 px-2 py-0.5">
+        <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
+          {Math.round(m.winProb * 100)}%
+        </span>
+      </div>
     </div>
   );
 }
@@ -219,28 +243,32 @@ function OddsTable({ teams }: { teams: Map<string, TeamSummary> }) {
   return (
     <div className="space-y-4">
       <div className="overflow-hidden rounded-xl border border-edge bg-surface/40">
-        <table className="w-full text-sm">
-          <thead className="bg-surface/60 font-mono text-[11px] uppercase tracking-wider text-fg-faint">
+        <table className="w-full table-fixed text-sm">
+          <thead className="bg-surface/60 font-mono text-[10px] uppercase tracking-wide text-fg-faint">
             <tr>
-              <th className="px-3 py-2 text-left">Team</th>
-              <th className="px-3 py-2 text-right">{t("bracket.groupWinner")}</th>
-              <th className="px-3 py-2 text-right">{t("bracket.advance")}</th>
-              <th className="px-3 py-2 text-right">{t("bracket.title2")}</th>
+              <th className="px-2 py-2 text-left">Team</th>
+              <th className="w-14 px-1 py-2 text-right" title={t("bracket.groupWinner")}>
+                {t("bracket.groupWinnerShort")}
+              </th>
+              <th className="w-14 px-1 py-2 text-right" title={t("bracket.advance")}>
+                {t("bracket.advanceShort")}
+              </th>
+              <th className="w-14 px-1.5 py-2 text-right">{t("bracket.title2")}</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((r) => (
               <tr key={r.id} className="border-t border-edge/70">
-                <td className="px-3 py-1.5">
+                <td className="min-w-0 px-2 py-1.5">
                   <TeamBadge team={teams.get(r.id)} fallbackId={r.id} />
                 </td>
-                <td className="px-3 py-1.5 text-right font-mono text-fg-muted">
+                <td className="px-1 py-1.5 text-right font-mono text-xs tabular-nums text-fg-muted">
                   {pct(r.groupWinner)}
                 </td>
-                <td className="px-3 py-1.5 text-right font-mono text-info">
+                <td className="px-1 py-1.5 text-right font-mono text-xs tabular-nums text-info">
                   {pct(r.advance)}
                 </td>
-                <td className="px-3 py-1.5 text-right font-mono font-bold text-acc">
+                <td className="px-1.5 py-1.5 text-right font-mono text-xs font-bold tabular-nums text-acc">
                   {pct(r.title)}
                 </td>
               </tr>
