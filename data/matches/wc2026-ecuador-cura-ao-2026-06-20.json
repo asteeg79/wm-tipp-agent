@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "ECU",
       "elo": 1747,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3174,
-      "draw": 0.3326,
-      "away": 0.35
+      "home": 0.3132,
+      "draw": 0.3186,
+      "away": 0.3682
     },
-    "confidence": 0.5673,
+    "confidence": 0.5427,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2569,
-        "draw": 0.295,
-        "away": 0.4482
+        "home": 0.2502,
+        "draw": 0.2982,
+        "away": 0.4517
       },
       "expectedGoals": {
-        "home": 0.85,
-        "away": 1.22
+        "home": 0.82,
+        "away": 1.21
       }
     },
     "models": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
-          "draw": 0.31,
-          "away": 0.35
+          "home": 0.305,
+          "draw": 0.305,
+          "away": 0.39
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Ecuador hat klar höheres Elo (1747 vs 1637) und sehr stabile Defensive (GegentoreØ 0.528, Clean-Sheet-Rate 0.519).",
-          "Curaçao zeigt starke Form (weightedForm 1.857) und hohe Offensivproduktion (ToreØ 2.199), was die Baseline-Away-Tendenz stützt.",
-          "Baseline überschätzt Curaçaos Auswärtsvorteil: 195 Tage ohne Pflichtspiel deuten auf Wettkampfrhythmus-Risiko und mögliche Anlaufschwierigkeiten.",
-          "Mögliche Sperre von Locadia würde Curaçaos Offensive schwächen und die hohe ToreØ relativieren.",
-          "Neutraler Spielort eliminiert Heimvorteil, dennoch spricht Ecuadors Turniererfahrung und WM-Debüt-Druck für Curaçao zugunsten Ecuadors."
+          "Ecuador hat höheres Elo (1747 vs 1637) und eine sehr stabile Defensive (xGA 0.528, Clean-Sheet-Rate 0.519)",
+          "Curaçao zeigt stärkere gewichtete Form (1.857) und deutlich höhere Offensivproduktion (goalsForAvg 2.199)",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil für Ecuador",
+          "Baseline favorisiert leicht Curaçao, aber Ecuadors Defensivstärke rechtfertigt eine moderate Korrektur Richtung enges Ergebnis"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden – Einschätzung beruht rein auf Form/Elo.",
-          "Curaçaos Daten basieren auf nur 20 Spielen und langer Pause; Form könnte überholt sein.",
-          "Locadia-Sperre unbestätigt – bei Einsatz steigt Curaçaos Torgefahr deutlich.",
-          "Ecuadors niedrige eigene Torproduktion (0.9) könnte zu engem, ergebnisoffenem Spiel führen."
+          "Curaçaos Daten beruhen auf nur 20 Spielen und 197 Tagen ohne Pflichtspiel – Form und Offensivwerte schwer einzuschätzen",
+          "Ecuadors lange Pause (64 Tage) und niedrige eigene Torausbeute (0.9) könnte zu wenig Durchschlagskraft führen",
+          "Keine Head-to-Head-Daten verfügbar, daher höhere Unsicherheit",
+          "Materialnews liefern keine konkreten Verletzungs-/Sperrinformationen"
         ]
       },
       "chatgpt": {
@@ -105,27 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.30000000000000004,
-          "draw": 0.35000000000000003,
-          "away": 0.35000000000000003
+          "home": 0.32,
+          "draw": 0.33,
+          "away": 0.35
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Ecuador's slightly higher Elo rating which suggests a stronger team overall.",
-          "Curaçao's recent form is better, indicating they might perform well in neutral conditions.",
-          "Curaçao has a higher goals scored average, which offsets the lack of head-to-head experience.",
-          "Ecuador's slightly better defensive record as indicated by clean sheet rate."
+          "Ecuador has a better elo rating compared to Curaçao but very close recent forms.",
+          "Curaçao scores significantly more goals on average than Ecuador.",
+          "Match is played at a neutral venue."
         ],
         "risks": [
-          "Curaçao's potential suspension of Locadia could impact their attacking strength.",
-          "Neutral venue negates home advantage, affecting Ecuador's typical home performance strength.",
-          "Ecuador's recent lack of match practice (62 days) compared to Curaçao could impact their start."
+          "Both teams have not played against each other before (H2H factor unknown).",
+          "Ecuador's recent form is slightly lower than Curaçao’s.",
+          "Curaçao's longer period since last match which might affect match sharpness."
         ]
       }
     },
     "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador hat klar höheres Elo (1747 vs 1637) und sehr stabile Defensive (GegentoreØ 0.528, Clean-Sheet-Rate 0.519).; Curaçao zeigt starke Form (weightedForm 1.857) und hohe Offensivproduktion (ToreØ 2.199), was die Baseline-Away-Tendenz stützt.; Baseline überschätzt Curaçaos Auswärtsvorteil: 195 Tage ohne Pflichtspiel deuten auf Wettkampfrhythmus-Risiko und mögliche Anlaufschwierigkeiten..",
-    "inputHash": "sha256:7a71833805716ce908df3d0a72a25fd8b36fc19c4bd2a1946303d559fffaa540"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador hat höheres Elo (1747 vs 1637) und eine sehr stabile Defensive (xGA 0.528, Clean-Sheet-Rate 0.519); Curaçao zeigt stärkere gewichtete Form (1.857) und deutlich höhere Offensivproduktion (goalsForAvg 2.199); Neutraler Spielort eliminiert klassischen Heimvorteil für Ecuador.",
+    "inputHash": "sha256:bd2e77314cfd9bc3ce86c007bd1513b94d7b2c0a042d26b98e74f544b6fc5006"
   },
   "predictionHistory": [
     {
@@ -231,6 +229,19 @@
         "away": 0.3247
       },
       "confidence": 0.4998
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3174,
+        "draw": 0.3326,
+        "away": 0.35
+      },
+      "confidence": 0.5673
     }
   ]
 }

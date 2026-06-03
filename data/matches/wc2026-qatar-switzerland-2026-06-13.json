@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
-      "away": 3
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1284,
-      "draw": 0.18,
-      "away": 0.6916
+      "home": 0.1403,
+      "draw": 0.1855,
+      "away": 0.6741
     },
-    "confidence": 0.7301,
+    "confidence": 0.7129,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.1396,
-        "draw": 0.175,
-        "away": 0.6854
+        "home": 0.1284,
+        "draw": 0.1676,
+        "away": 0.7041
       },
       "expectedGoals": {
-        "home": 1.01,
-        "away": 2.42
+        "home": 0.98,
+        "away": 2.5
       }
     },
     "models": {
@@ -80,52 +80,49 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.14,
-          "draw": 0.18,
-          "away": 0.68
+          "home": 0.13,
+          "draw": 0.17,
+          "away": 0.7
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509) untermauert Favoritenrolle",
-          "Stärkere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs. 1.2)",
-          "Bessere Defensive der Schweiz (GA 1.094, CleanSheet-Rate 0.37) gegen anfällige Qatar-Abwehr (GA 1.802)",
-          "Schweiz spielfit (62 Tage seit letztem Spiel) gegenüber langer Pause Qatars (196 Tage)"
+          "Deutlicher Elo-Unterschied (1746 vs. 1509) zugunsten der Schweiz",
+          "Bessere Form der Schweiz (recentForm 2.1, weightedForm 1.638) gegenüber Qatar (1.2 / 1.292)",
+          "Defensive Überlegenheit der Schweiz (GA 1.094, Clean-Sheet-Rate 0.37 vs. Qatar GA 1.802, 0.25)",
+          "Schweiz mit höherer Offensivproduktion (GF 2.021 vs. Qatar 1.459)"
         ],
         "risks": [
-          "Sehr lange Spielpause Qatars (196 Tage) erschwert Formeinschätzung",
-          "Okafor-Ausfall (Wade) schwächt Schweizer Offensivoptionen leicht",
-          "Kein H2H vorhanden, daher keine direkten Vergleichswerte",
-          "Neutraler Spielort nimmt Qatar möglichen Heimvorteil"
+          "Mögliche Sperre von Star-Stürmer Embolo (Einreise USA) könnte Schweizer Offensive schwächen",
+          "Qatar mit sehr langer Pause (198 Tage seit letztem Spiel) - Form schwer einzuschätzen, könnte überraschen oder Rost zeigen",
+          "Neutraler Spielort ohne Heimvorteil für beide, kein H2H-Verlauf zur Kalibrierung vorhanden"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 3
+          "away": 2
         },
         "probabilities": {
-          "home": 0.12,
-          "draw": 0.18,
-          "away": 0.7
+          "home": 0.15,
+          "draw": 0.2,
+          "away": 0.65
         },
-        "confidence": 0.85,
+        "confidence": 0.75,
         "keyFactors": [
-          "Switzerland's superior Elo rating and better weighted form.",
-          "Switzerland's stronger recent form and average goals scored.",
-          "No head-to-head history indicates dependence on current form.",
-          "Qatar's last match was 196 days ago, which could affect match readiness.",
-          "Neutral venue minimizes home advantage impact for Qatar."
+          "Switzerland's higher Elo rating and better recent form",
+          "Switzerland's higher goals for average and lower goals against average",
+          "Qatar's long break since the last match (198 days)",
+          "Neutral venue minimizes any potential home advantage for Qatar"
         ],
         "risks": [
-          "Qatar's potential improvement due to long preparation period.",
-          "Injury to key Swiss player Noah Okafor might impact team's offensive capability.",
-          "Unpredictability of World Cup matches and potential emergence of new key players."
+          "Switzerland's star striker Breel Embolo may be banned due to a suspension",
+          "Uncertainty from lack of head-to-head history"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509) untermauert Favoritenrolle; Stärkere gewichtete und jüngste Form der Schweiz (recentForm 2.1 vs. 1.2); Bessere Defensive der Schweiz (GA 1.094, CleanSheet-Rate 0.37) gegen anfällige Qatar-Abwehr (GA 1.802).",
-    "inputHash": "sha256:3da5bf3d3ea52c48378b1914b3e3b0eaff027328fcb09adc128c5e5fdbb80e8a"
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Unterschied (1746 vs. 1509) zugunsten der Schweiz; Bessere Form der Schweiz (recentForm 2.1, weightedForm 1.638) gegenüber Qatar (1.2 / 1.292); Defensive Überlegenheit der Schweiz (GA 1.094, Clean-Sheet-Rate 0.37 vs. Qatar GA 1.802, 0.25).",
+    "inputHash": "sha256:b1e5c19f5a7231483c9cc1a8ea1350de35f63a783cc4ef61dbce1d2400cf9238"
   },
   "predictionHistory": [
     {
@@ -231,6 +228,19 @@
         "away": 0.7
       },
       "confidence": 0.7325
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.1284,
+        "draw": 0.18,
+        "away": 0.6916
+      },
+      "confidence": 0.7301
     }
   ]
 }

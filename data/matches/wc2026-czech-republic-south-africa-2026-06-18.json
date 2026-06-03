@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "CZE",
       "elo": 1646,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3801,
-      "draw": 0.2985,
-      "away": 0.3214
+      "home": 0.4436,
+      "draw": 0.2464,
+      "away": 0.31
     },
-    "confidence": 0.6251,
+    "confidence": 0.6019,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4123,
-        "draw": 0.2489,
-        "away": 0.3387
+        "home": 0.4387,
+        "draw": 0.2473,
+        "away": 0.314
       },
       "expectedGoals": {
-        "home": 1.51,
-        "away": 1.35
+        "home": 1.57,
+        "away": 1.29
       }
     },
     "models": {
@@ -84,48 +84,46 @@
           "draw": 0.27,
           "away": 0.31
         },
-        "confidence": 0.55,
+        "confidence": 0.5,
         "keyFactors": [
-          "Tschechien mit leicht höherem Elo (1646 vs 1627) und stärkerer gewichteter Form (1.674 vs 1.59)",
-          "Höherer Offensivwert Tschechiens (goalsForAvg 1.957 vs 1.556) stützt leichten Heimvorteil trotz neutralem Spielort",
-          "Südafrika defensiv stabiler (cleanSheetRate 0.484 vs 0.32, goalsAgainstAvg 1.009) – hält das Spiel eng",
-          "Tschechien mit erfahrenem Kader inkl. Bundesliga-Erfahrung (Souček) als Stabilitätsfaktor",
-          "Beide Teams gleich lange Pause (62 Tage), keine konditionelle Asymmetrie"
+          "Tschechien leicht höhere Elo (1646 vs 1627) und stärkere gewichtete Form (1.674 vs 1.59)",
+          "Südafrikas defensive Stabilität sticht hervor: Clean-Sheet-Rate 0.484 und nur 1.009 Gegentore im Schnitt",
+          "Tschechien offensiv stärker (1.957 Tore/Spiel) als Südafrika (1.556), aber defensiv anfälliger (CS-Rate nur 0.32)",
+          "Neutraler Spielort eliminiert den klassischen Heimvorteil und gleicht die Teams weiter an"
         ],
         "risks": [
-          "Südafrikas Vorbereitung durch Visa-Probleme gestört – Reise ohne Co-Trainer könnte Organisation beeinträchtigen",
-          "Keine H2H-Daten (0 Spiele) – erhöhte Unsicherheit in der direkten Einschätzung",
-          "Defensivstärke Südafrikas könnte tschechische Offensive neutralisieren und zu engem Low-Scoring-Spiel führen",
-          "Beide Teams formstark, geringe Elo-Differenz lässt Unentschieden realistisch erscheinen"
+          "Keine H2H-Daten vorhanden – Begegnung schwer einschätzbar",
+          "News beider Teams sind kaum substanziell (Kit-/GM-/Spiel-Modus-Meldungen), keine klaren Verletzungs-/Sperreninfos verfügbar",
+          "Lange Pause (64 Tage seit letztem Spiel bei beiden) erhöht Unsicherheit über aktuelle Spielform",
+          "Südafrikas defensive Disziplin könnte die erwarteten tschechischen Tore drücken und das Spiel knapper gestalten als die Baseline annimmt"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.32,
-          "away": 0.33
+          "home": 0.46,
+          "draw": 0.23,
+          "away": 0.31
         },
-        "confidence": 0.73,
+        "confidence": 0.72,
         "keyFactors": [
-          "Czech Republic's inclusion of experienced players like Tomás Souček.",
-          "Czech Republic's focus on domestic champions Slavia Prague for squad selection.",
-          "South Africa's strong defensive records with a higher clean sheet rate.",
-          "South Africa's preparedness impacted by visa issues delaying assistant coach."
+          "Czech Republic has a slightly higher Elo rating and stronger recent form.",
+          "Czech Republic's offensive capability is evident with a higher goals for average (1.957).",
+          "South Africa struggles with goal scoring against higher ranked teams.",
+          "The match is played at a neutral venue, eliminating home advantage."
         ],
         "risks": [
-          "Neutral venue reducing any potential home advantage.",
-          "Lack of head-to-head data makes predicting dynamics more challenging.",
-          "Both teams have not played for 62 days which could lead to unexpected performance levels."
+          "Both teams have been inactive for 64 days, which may affect match sharpness.",
+          "South Africa's defensive strength, indicated by a higher clean sheet rate (0.484), might help them."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tschechien mit leicht höherem Elo (1646 vs 1627) und stärkerer gewichteter Form (1.674 vs 1.59); Höherer Offensivwert Tschechiens (goalsForAvg 1.957 vs 1.556) stützt leichten Heimvorteil trotz neutralem Spielort; Südafrika defensiv stabiler (cleanSheetRate 0.484 vs 0.32, goalsAgainstAvg 1.009) – hält das Spiel eng.",
-    "inputHash": "sha256:d2e1be69c47b1b55cd0f85b19954a72132f3c84c8eca4958c93b8445dfc3c297"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tschechien leicht höhere Elo (1646 vs 1627) und stärkere gewichtete Form (1.674 vs 1.59); Südafrikas defensive Stabilität sticht hervor: Clean-Sheet-Rate 0.484 und nur 1.009 Gegentore im Schnitt; Tschechien offensiv stärker (1.957 Tore/Spiel) als Südafrika (1.556), aber defensiv anfälliger (CS-Rate nur 0.32).",
+    "inputHash": "sha256:c4ddf25c871362d12e490308ea467edf09d52fc94ab3faf062912d58b723354d"
   },
   "predictionHistory": [
     {
@@ -218,6 +216,19 @@
         "away": 0.3076
       },
       "confidence": 0.6419
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3801,
+        "draw": 0.2985,
+        "away": 0.3214
+      },
+      "confidence": 0.6251
     }
   ]
 }

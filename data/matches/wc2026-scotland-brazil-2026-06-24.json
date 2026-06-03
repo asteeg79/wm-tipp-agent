@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "SCO",
       "elo": 1586,
@@ -50,82 +50,80 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
-      "away": 3
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1355,
-      "draw": 0.1952,
-      "away": 0.6693
+      "home": 0.1756,
+      "draw": 0.2044,
+      "away": 0.62
     },
-    "confidence": 0.7153,
+    "confidence": 0.7076,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.1557,
-        "draw": 0.2075,
-        "away": 0.6368
+        "home": 0.1614,
+        "draw": 0.2076,
+        "away": 0.6309
       },
       "expectedGoals": {
-        "home": 0.87,
-        "away": 2
+        "home": 0.91,
+        "away": 2.01
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.12,
-          "draw": 0.19,
-          "away": 0.69
+          "home": 0.17,
+          "draw": 0.21,
+          "away": 0.62
         },
-        "confidence": 0.7,
+        "confidence": 0.62,
         "keyFactors": [
-          "Deutliche Elo-Differenz (1586 vs. 1844) zugunsten Brasiliens",
+          "Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1586) untermauert Favoritenrolle",
           "Brasilien mit stärkerer gewichteter Form (1.791 vs. 1.301) und besserer Defensive (0.892 Gegentore, 40% Clean Sheets)",
-          "Schottland verliert mit Billy Gilmour einen Schlüsselspieler verletzungsbedingt für die WM",
-          "Brasilien erhält laut News einen 'enormen Selbstvertrauens-Schub' vor der Gruppe mit Schottland",
-          "Neutraler Spielort eliminiert Schottlands möglichen Heimvorteil"
+          "Schottlands solide jüngste Form (recentForm 1.6) und neutraler Spielort mildern den Abstand leicht",
+          "Brasiliens höhere Offensivproduktion (1.814 Tore/Spiel) stützt erwartetes xG von ~2.0"
         ],
         "risks": [
-          "Schottlands solide jüngste Form (recentForm 1.6) könnte für eine kompakte Defensivleistung sorgen",
-          "Lange Pause beider Teams (62 Tage) erschwert Formprognose",
-          "Kein H2H-Datensatz verfügbar, daher keine direkte Vergleichsbasis",
-          "Späte Kaderveränderungen bei Schottland (Berry, McAulay) erhöhen Unsicherheit"
+          "Keine H2H-Daten vorhanden, daher keine matchupspezifische Kalibrierung möglich",
+          "Lange Pause (64 Tage ohne Spiel) für beide Teams kann Form/Rhythmus verzerren",
+          "Materielle News rein zu Kaderlisten ohne Hinweise auf Ausfälle - geringe Aussagekraft",
+          "Schottlands kompakte Defensive könnte ein knapperes oder unentschiedenes Ergebnis ermöglichen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 3
+          "away": 2
         },
         "probabilities": {
-          "home": 0.15,
+          "home": 0.18,
           "draw": 0.2,
-          "away": 0.65
+          "away": 0.62
         },
-        "confidence": 0.75,
+        "confidence": 0.8,
         "keyFactors": [
-          "Brazil's higher Elo rating of 1844 compared to Scotland's 1586",
-          "Brazil's recent good form with a weighted form of 1.791",
-          "Scotland's key player Billy Gilmour is injured and out of the World Cup",
-          "Brazil has a higher average goals for (1.814) and a stronger defense",
-          "Neutral venue mitigating the home advantage"
+          "Brazil's higher Elo rating and recent form advantage",
+          "Scotland's improved recent form compared to overall form",
+          "Neutral venue mitigating home field advantage"
         ],
         "risks": [
-          "Potential underestimation of Scotland's potential to capitalize on neutral venue conditions",
-          "Injury impact on Brazil's squad unspecified, could affect performance"
+          "Lack of head-to-head history introduces uncertainty",
+          "Both teams have been equally rested with 64 days since last match",
+          "Potential impact of neutral venue conditions unknown"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliche Elo-Differenz (1586 vs. 1844) zugunsten Brasiliens; Brasilien mit stärkerer gewichteter Form (1.791 vs. 1.301) und besserer Defensive (0.892 Gegentore, 40% Clean Sheets); Schottland verliert mit Billy Gilmour einen Schlüsselspieler verletzungsbedingt für die WM.",
-    "inputHash": "sha256:44ddad60170ef37c5e8abe9684db257b9eccca1a0e63ac3f14f00bd59491e60b"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1586) untermauert Favoritenrolle; Brasilien mit stärkerer gewichteter Form (1.791 vs. 1.301) und besserer Defensive (0.892 Gegentore, 40% Clean Sheets); Schottlands solide jüngste Form (recentForm 1.6) und neutraler Spielort mildern den Abstand leicht.",
+    "inputHash": "sha256:1590fe444f04f475ec0359f119ce53576fc927a960e475250b6d9bee8a655584"
   },
   "predictionHistory": [
     {
@@ -231,6 +229,19 @@
         "away": 0.6326
       },
       "confidence": 0.6736
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.1355,
+        "draw": 0.1952,
+        "away": 0.6693
+      },
+      "confidence": 0.7153
     }
   ]
 }

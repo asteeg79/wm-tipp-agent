@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "NED",
       "elo": 1825,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4798,
-      "draw": 0.249,
-      "away": 0.2712
+      "home": 0.4087,
+      "draw": 0.3152,
+      "away": 0.2761
     },
-    "confidence": 0.6294,
+    "confidence": 0.5597,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4487,
-        "draw": 0.2521,
-        "away": 0.2991
+        "home": 0.4949,
+        "draw": 0.2444,
+        "away": 0.2608
       },
       "expectedGoals": {
-        "home": 1.53,
-        "away": 1.21
+        "home": 1.65,
+        "away": 1.13
       }
     },
     "models": {
@@ -80,50 +80,49 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.425,
-          "draw": 0.275,
-          "away": 0.3
+          "home": 0.42,
+          "draw": 0.27,
+          "away": 0.31
         },
-        "confidence": 0.55,
+        "confidence": 0.5,
         "keyFactors": [
-          "Niederlande mit starker gewichteter Form (2.10) und hoher Offensivproduktion (2.53 Tore/Spiel) sowie Elo-Vorteil (1825 vs 1768)",
-          "Japan defensiv extrem stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate, was die erwarteten Heim-Tore drückt",
-          "Japans gewichtete Form (2.20) sogar leicht über der der Niederlande, hält die Partie offen",
-          "Neutraler Spielort ohne Heimvorteil reduziert den Bonus der Niederlande",
-          "De Jong fit und einsatzbereit verleiht dem niederländischen Mittelfeld zusätzliche Kontrolle"
+          "Japan zeigt außergewöhnliche Defensivstärke (nur 0.362 Gegentore/Spiel, 58.3% Clean-Sheet-Rate) und übertrifft die Niederlande in der gewichteten Form (2.202 vs. 2.095).",
+          "Niederlande mit höherem Elo (1825 vs. 1768) und stärkerer Offensive (2.533 Tore/Spiel), spielt aber auf neutralem Platz ohne Heimvorteil.",
+          "Neutraler Spielort relativiert die nominelle Heimrolle der Niederlande, was die Baseline-Heimwahrscheinlichkeit nach unten korrigiert.",
+          "Beide Teams gleichermaßen ausgeruht (64 Tage seit letztem Spiel)."
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit im direkten Vergleich",
-          "Lange Pause (62 Tage seit letztem Spiel) für beide Teams kann Rhythmus und Form beeinträchtigen",
-          "Japans niedrige Gegentorrate könnte das erwartete 1.53-Heim-xG der Baseline überschätzen",
-          "Kaderfragen (Frimpong-Auslassung, überraschende Nominierungen) könnten die Einspielzeit beeinflussen"
+          "Verletzung von Mitoma schwächt Japans Offensivflügel und könnte die Torgefahr reduzieren.",
+          "Kein H2H-Verlauf vorhanden, daher höhere Prognoseunsicherheit.",
+          "Mögliche Ausfälle auf niederländischer Seite (unspezifische Verletzungsnews) nicht klar quantifizierbar.",
+          "Japans niedrige Gegentorquote könnte gegen Top-Offensive der Niederlande weniger belastbar sein als gegen schwächere Gegner."
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.23,
+          "home": 0.4,
+          "draw": 0.35,
           "away": 0.25
         },
-        "confidence": 0.75,
+        "confidence": 0.65,
         "keyFactors": [
-          "Netherlands has a strong offensive form with a goalsForAvg of 2.533",
-          "Fit De Jong brings an extra dimension to the Dutch midfield",
-          "Neutral venue diminishes the advantage for both teams"
+          "Both Netherlands and Japan have shown strong form, reflected in their weighted and recent form indices.",
+          "Netherlands has a higher average goals scored, but Japan has a superior clean sheet rate.",
+          "The neutral venue eliminates any home advantage."
         ],
         "risks": [
-          "Japan's strong defensive record with a goalsAgainstAvg of 0.362",
-          "Netherlands may lack historical head-to-head data against Japan"
+          "Unknown injury impacts could affect Netherlands performance.",
+          "Japan's Mitoma injury could impact their attacking threat."
         ]
       }
     },
-    "agreement": 0.9367,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit starker gewichteter Form (2.10) und hoher Offensivproduktion (2.53 Tore/Spiel) sowie Elo-Vorteil (1825 vs 1768); Japan defensiv extrem stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate, was die erwarteten Heim-Tore drückt; Japans gewichtete Form (2.20) sogar leicht über der der Niederlande, hält die Partie offen.",
-    "inputHash": "sha256:d4de6cf2493e0e89f64c55ab1bc4d9a9fe990b39f3decf773d5c2bf1f092c83c"
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan zeigt außergewöhnliche Defensivstärke (nur 0.362 Gegentore/Spiel, 58.3% Clean-Sheet-Rate) und übertrifft die Niederlande in der gewichteten Form (2.202 vs. 2.095).; Niederlande mit höherem Elo (1825 vs. 1768) und stärkerer Offensive (2.533 Tore/Spiel), spielt aber auf neutralem Platz ohne Heimvorteil.; Neutraler Spielort relativiert die nominelle Heimrolle der Niederlande, was die Baseline-Heimwahrscheinlichkeit nach unten korrigiert..",
+    "inputHash": "sha256:7eb871d513dee77e5c3ebd78c373628e11ef2dde12063f563825b3d0132fa135"
   },
   "predictionHistory": [
     {
@@ -216,6 +215,19 @@
         "away": 0.3088
       },
       "confidence": 0.6208
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4798,
+        "draw": 0.249,
+        "away": 0.2712
+      },
+      "confidence": 0.6294
     }
   ]
 }

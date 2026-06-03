@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "TUN",
       "elo": 1672,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2,
-      "draw": 0.2253,
-      "away": 0.5747
+      "home": 0.1732,
+      "draw": 0.2077,
+      "away": 0.6191
     },
-    "confidence": 0.6578,
+    "confidence": 0.6804,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2097,
-        "draw": 0.2211,
-        "away": 0.5692
+        "home": 0.1736,
+        "draw": 0.2046,
+        "away": 0.6219
       },
       "expectedGoals": {
-        "home": 1.07,
-        "away": 1.91
+        "home": 1,
+        "away": 2.08
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
-          "draw": 0.22,
-          "away": 0.58
+          "home": 0.165,
+          "draw": 0.205,
+          "away": 0.63
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorteil der Niederlande (1825 vs. 1672) und stärkere gewichtete Form (2.095 vs. 1.895)",
-          "Niederländische Offensive sehr produktiv (2.53 Tore/Spiel) bei guter jüngster Form (recentForm 2.4)",
-          "Frances De Jong wieder fit, verleiht der Mittelfeldkontrolle zusätzliche Dimension",
-          "Tunesiens Defensive solide (0.75 Gegentore/Spiel, 50% Clean Sheets) kann das Ergebnis knapp halten"
+          "Niederlande deutlich höher eingestuft (Elo 1825 vs. 1672) mit stärkerer Offensive (xG 2.08 vs 1.0)",
+          "Bessere Form der Niederlande (recentForm 2.4, weightedForm 2.095, goalsForAvg 2.533)",
+          "Solide tunesische Defensive (cleanSheetRate 0.5, goalsAgainstAvg 0.752) kann Spiel eng halten",
+          "Neutraler Spielort ohne Heimvorteil für Tunesien"
         ],
         "risks": [
-          "Tunesien defensiv stabil und in Umbruch unter Lamouchi – könnte tieferes Resultat verhindern",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "62 Tage seit letztem Spiel bei beiden Teams – mögliche Rhythmusprobleme",
-          "Niederländische Abwehr nur 39% Clean-Sheet-Rate, anfällig für tunesische Konter"
+          "Kein H2H verfügbar – erhöhte Unsicherheit",
+          "Mögliche Verletzungssorgen bei den Niederlanden laut News",
+          "Tunesien-Umbruch unter Lamouchi (alternde Mannschaft) schwer einzuschätzen",
+          "Lange Pause beider Teams (64 Tage) kann Rhythmus beeinflussen"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,27 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
-          "draw": 0.23,
-          "away": 0.57
+          "home": 0.18,
+          "draw": 0.21,
+          "away": 0.61
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Netherlands has higher Elo rating and recent form advantage.",
-          "Tunisia reshaping squad, potential instability.",
-          "Neutral venue negates home advantage for Tunisia."
+          "Netherlands has superior Elo rating and stronger recent form.",
+          "Tunisia has a recent suspension issue affecting team stability.",
+          "No historical head-to-head matches to provide contextual insight.",
+          "Both teams have had an equal rest period of 64 days before the match.",
+          "The match is played at a neutral venue, nullifying any home advantage."
         ],
         "risks": [
-          "Unknown impact of Tunisia's squad changes.",
-          "First-ever match-up between the teams.",
-          "Potential impact of new call-ups on Netherlands team dynamic."
+          "Tunisia's clean sheet rate is notably higher, potentially leading to a surprise draw.",
+          "Netherlands has a reported injury, which could impact team performance."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Niederlande (1825 vs. 1672) und stärkere gewichtete Form (2.095 vs. 1.895); Niederländische Offensive sehr produktiv (2.53 Tore/Spiel) bei guter jüngster Form (recentForm 2.4); Frances De Jong wieder fit, verleiht der Mittelfeldkontrolle zusätzliche Dimension.",
-    "inputHash": "sha256:176be26efb8d5f8979e908cd98ce059b058f9824bbec1b526aa0425a5570efd5"
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande deutlich höher eingestuft (Elo 1825 vs. 1672) mit stärkerer Offensive (xG 2.08 vs 1.0); Bessere Form der Niederlande (recentForm 2.4, weightedForm 2.095, goalsForAvg 2.533); Solide tunesische Defensive (cleanSheetRate 0.5, goalsAgainstAvg 0.752) kann Spiel eng halten.",
+    "inputHash": "sha256:f6ea8011ecfd1b835111603d02a2621ba7be1998d24702051580e6b68ab8e047"
   },
   "predictionHistory": [
     {
@@ -216,6 +217,19 @@
         "away": 0.5845
       },
       "confidence": 0.6827
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2,
+        "draw": 0.2253,
+        "away": 0.5747
+      },
+      "confidence": 0.6578
     }
   ]
 }

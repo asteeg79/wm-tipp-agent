@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "URU",
       "elo": 1677,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3455,
-      "draw": 0.3,
-      "away": 0.3545
+      "home": 0.342,
+      "draw": 0.356,
+      "away": 0.302
     },
-    "confidence": 0.5482,
+    "confidence": 0.5979,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2924,
-        "draw": 0.2964,
-        "away": 0.4112
+        "home": 0.2897,
+        "draw": 0.2871,
+        "away": 0.4231
       },
       "expectedGoals": {
-        "home": 0.94,
-        "away": 1.17
+        "home": 0.97,
+        "away": 1.24
       }
     },
     "models": {
@@ -80,22 +80,20 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
-          "draw": 0.3,
-          "away": 0.36
+          "home": 0.33,
+          "draw": 0.29,
+          "away": 0.38
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Cape Verde mit starker gewichteter Form (1.98) und hoher Offensivproduktion (1.67 Tore/Spiel) - inkl. 3:0 gegen Serbien im Test",
-          "Uruguay defensiv solide (CleanSheet-Rate 0.52, 0.83 Gegentore/Spiel) und mit guter jüngster Form (1.6)",
-          "Höherer Elo-Wert Uruguays (1677 vs 1608) und größere Turniererfahrung unter Bielsa",
-          "Neutraler Spielort - kein Heimvorteil für Uruguay, was die Baseline-Tendenz pro Cape Verde stützt"
+          "Cape Verde zeigt die deutlich stärkere gewichtete und jüngste Form (weightedForm 1.977 vs 1.397, recentForm 2.1 vs 1.6) sowie hohe Offensivproduktion (1.673 Tore/Spiel).",
+          "Uruguay verfügt über die höhere Elo (1677 vs 1608) und stabilere Defensive (cleanSheetRate 0.517, Gegentore 0.832), was die Baseline-Auswärtsfavorit-Tendenz leicht abmildert.",
+          "Neutraler Spielort ohne Heimvorteil hält die Partie offen; kein H2H als Anker vorhanden."
         ],
         "risks": [
-          "Cape Verde seit 231 Tagen ohne Pflichtspiel - erhebliches Risiko fehlender Spielrhythmus/Wettkampfhärte",
-          "Fehlen von Luis Suárez im uruguayischen Kader könnte Offensivschwäche bedeuten (niedriger goalsForAvg 0.91)",
-          "Kein H2H-Datensatz vorhanden - hohe Unsicherheit bei Einschätzung des direkten Duells",
-          "Uruguay 62 Tage ohne Spiel - ebenfalls mögliche Rhythmusprobleme"
+          "Cape Verde hatte 233 Tage seit dem letzten Spiel keine Wettkampfpraxis – Rhythmusverlust könnte die starke Form relativieren.",
+          "Interne Unruhe bei Uruguay (Bielsa, Squad-Revolt, Suárez-Debatte) könnte die Leistung negativ beeinflussen.",
+          "Sehr geringe Datenbasis (kein H2H, unklare finale Aufstellungen) erhöht die Prognoseunsicherheit."
         ]
       },
       "chatgpt": {
@@ -104,27 +102,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.4,
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.75,
         "keyFactors": [
-          "Uruguay lacks star player Luis Suárez, which could impact their attacking strength.",
-          "Cape Verde has demonstrated strong recent form, outperforming their Elo rating.",
-          "Neutral venue levels the playing field with no host advantage.",
-          "Cape Verde's impressive 3-0 victory over Serbia highlights their potential threat."
+          "Cape Verde's recent form (weightedForm 1.977) is stronger than Uruguay's (weightedForm 1.397).",
+          "Uruguay has not played a match for 64 days, potentially impacting match fitness.",
+          "Cape Verde has a higher goals for average (1.673) compared to Uruguay (0.91).",
+          "Uruguay's internal squad issues with the coach may affect performance (Sources: Ahram Online, World Soccer Talk).",
+          "Neutral venue negates any home advantage."
         ],
         "risks": [
-          "Uruguay's stronger historical World Cup experience under coach Marcelo Bielsa.",
-          "Cape Verde has not played a match in 231 days, leading to potential rustiness.",
-          "No head-to-head history, adding uncertainty to match dynamics."
+          "Uruguay has a higher Elo rating than Cape Verde, indicating a stronger historical performance.",
+          "Cape Verde's long break of 233 days since last match might affect their sharpness.",
+          "Potential last-minute squad changes or morale shifts in both teams could affect outcomes."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde mit starker gewichteter Form (1.98) und hoher Offensivproduktion (1.67 Tore/Spiel) - inkl. 3:0 gegen Serbien im Test; Uruguay defensiv solide (CleanSheet-Rate 0.52, 0.83 Gegentore/Spiel) und mit guter jüngster Form (1.6); Höherer Elo-Wert Uruguays (1677 vs 1608) und größere Turniererfahrung unter Bielsa.",
-    "inputHash": "sha256:739c82fe1f99ae0741e743e53cac31ad71999a1bc1d16e3578ea5ee5dd17cf2a"
+    "agreement": 0.9133,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde zeigt die deutlich stärkere gewichtete und jüngste Form (weightedForm 1.977 vs 1.397, recentForm 2.1 vs 1.6) sowie hohe Offensivproduktion (1.673 Tore/Spiel).; Uruguay verfügt über die höhere Elo (1677 vs 1608) und stabilere Defensive (cleanSheetRate 0.517, Gegentore 0.832), was die Baseline-Auswärtsfavorit-Tendenz leicht abmildert.; Neutraler Spielort ohne Heimvorteil hält die Partie offen; kein H2H als Anker vorhanden..",
+    "inputHash": "sha256:1bab47fcccad7015eabe03ce6a0471f65737270aaebcd87bac957ad8e454993e"
   },
   "predictionHistory": [
     {
@@ -217,6 +216,19 @@
         "away": 0.346
       },
       "confidence": 0.6167
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3455,
+        "draw": 0.3,
+        "away": 0.3545
+      },
+      "confidence": 0.5482
     }
   ]
 }

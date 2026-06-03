@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "NZL",
       "elo": 1641,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2413,
-      "draw": 0.2044,
-      "away": 0.5544
+      "home": 0.2406,
+      "draw": 0.2059,
+      "away": 0.5535
     },
-    "confidence": 0.6606,
+    "confidence": 0.649,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2466,
-        "draw": 0.2037,
-        "away": 0.5497
+        "home": 0.2448,
+        "draw": 0.1943,
+        "away": 0.5609
       },
       "expectedGoals": {
-        "home": 1.43,
-        "away": 2.2
+        "home": 1.54,
+        "away": 2.37
       }
     },
     "models": {
@@ -81,21 +81,21 @@
         },
         "probabilities": {
           "home": 0.23,
-          "draw": 0.21,
-          "away": 0.56
+          "draw": 0.19,
+          "away": 0.58
         },
-        "confidence": 0.58,
+        "confidence": 0.62,
         "keyFactors": [
-          "Belgium hat klar höheres Elo (1744 vs 1641) und deutlich bessere gewichtete Form (1.908 vs 1.235)",
-          "Belgiens Offensive ist stark (goalsForAvg 2.914), während Neuseelands Form zuletzt aufstrebend war (recentForm 1.9)",
-          "Neuseeland mit solider Defensive (cleanSheetRate 0.563, goalsAgainstAvg 1.053), was knappere Ergebnisse ermöglichen kann",
-          "Neutraler Spielort ohne Heimvorteil für Neuseeland"
+          "Belgien klar stärker (Elo 1744 vs 1641) und in besserer gewichteter Form (1.908 vs 1.235)",
+          "Belgiens hohe Offensivproduktion (2.914 Tore/Spiel) trifft auf solide, aber nicht überragende NZ-Defensive",
+          "Aktueller Wettbewerbsrhythmus Belgiens (64 Tage seit letztem Spiel) und 2:0-Testspielsieg gegen Kroatien als Formindikator",
+          "Neutraler Spielort eliminiert NZ-Heimvorteil"
         ],
         "risks": [
-          "Neuseeland 195 Tage ohne Pflichtspiel – Spielrhythmus unklar, Form schwer einzuschätzen",
-          "Kein H2H-Vergleich vorhanden",
-          "Materielle News enthalten keine relevanten verwertbaren Informationen zu beiden Teams (überwiegend andere Nationen)",
-          "Belgiens schwächere cleanSheetRate (0.385) könnte Neuseeland Tore ermöglichen"
+          "Neuseeland mit starker recentForm (1.9) und hoher Clean-Sheet-Rate (0.563) könnte defensiv überraschen",
+          "Sehr lange NZ-Spielpause (197 Tage) erschwert verlässliche Formbewertung",
+          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
+          "Materielle News teils irrelevant (Iran/Argentinien), kaufmännisch wenig belastbar für diese Partie"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,26 @@
         },
         "probabilities": {
           "home": 0.25,
-          "draw": 0.2,
-          "away": 0.55
+          "draw": 0.22,
+          "away": 0.53
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Belgium has a higher Elo rating and better recent form with 2.2.",
-          "Neutral venue with no particular home advantage.",
-          "Belgium's average goals per match is higher at 2.914 compared to New Zealand's 2.122."
+          "Belgium's higher Elo rating and strong recent form",
+          "Belgium's high goal-scoring average",
+          "Neutral venue likely negates home advantage",
+          "Belgium's confidence boost from recent friendly win"
         ],
         "risks": [
-          "New Zealand's long break since last match (195 days) might affect their match fitness.",
-          "No head-to-head data between New Zealand and Belgium."
+          "New Zealand's high clean sheet rate",
+          "Longer period since New Zealand's last match might have led to more focused preparation",
+          "Potential strength of New Zealand's attack as indicated by goals for average"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgium hat klar höheres Elo (1744 vs 1641) und deutlich bessere gewichtete Form (1.908 vs 1.235); Belgiens Offensive ist stark (goalsForAvg 2.914), während Neuseelands Form zuletzt aufstrebend war (recentForm 1.9); Neuseeland mit solider Defensive (cleanSheetRate 0.563, goalsAgainstAvg 1.053), was knappere Ergebnisse ermöglichen kann.",
-    "inputHash": "sha256:dda3d84f09d701e5fc9dd41ad9b24d86b3161080c93863f9c7102eee08eaba76"
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien klar stärker (Elo 1744 vs 1641) und in besserer gewichteter Form (1.908 vs 1.235); Belgiens hohe Offensivproduktion (2.914 Tore/Spiel) trifft auf solide, aber nicht überragende NZ-Defensive; Aktueller Wettbewerbsrhythmus Belgiens (64 Tage seit letztem Spiel) und 2:0-Testspielsieg gegen Kroatien als Formindikator.",
+    "inputHash": "sha256:5e774d2c0eec6afd564ebfd3c26d2c3aa6ffb4ca98cf27c5ca2bb50934b938a5"
   },
   "predictionHistory": [
     {
@@ -215,6 +217,19 @@
         "away": 0.5911
       },
       "confidence": 0.6705
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2413,
+        "draw": 0.2044,
+        "away": 0.5544
+      },
+      "confidence": 0.6606
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "ENG",
       "elo": 1829,
@@ -50,26 +50,26 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7177,
-      "draw": 0.1755,
-      "away": 0.1068
+      "home": 0.7187,
+      "draw": 0.1813,
+      "away": 0.1
     },
-    "confidence": 0.7263,
+    "confidence": 0.6956,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.7314,
-        "draw": 0.1671,
-        "away": 0.1015
+        "home": 0.75,
+        "draw": 0.1567,
+        "away": 0.0933
       },
       "expectedGoals": {
-        "home": 2.35,
+        "home": 2.46,
         "away": 0.75
       }
     },
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.715,
-          "draw": 0.17,
-          "away": 0.115
+          "home": 0.74,
+          "draw": 0.16,
+          "away": 0.1
         },
         "confidence": 0.66,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung England (1829 vs. 1548) und überlegene gewichtete Form (2.03 vs. 1.19)",
-          "Sehr stabile englische Defensive: 0.52 Gegentore/Spiel und 55% Clean-Sheet-Rate",
-          "Ghana defensiv anfällig (1.56 Gegentore/Spiel, nur 32% Clean Sheets) und durch Ausfall von Djiku weiter geschwächt",
-          "Neutraler Spielort relativiert keinen klaren Klassenunterschied zugunsten Englands",
-          "Tuchels Team gezielt auf WM-Hitze vorbereitet, gute logistische Vorbereitung"
+          "Deutlicher Elo-Vorsprong England (1829 vs 1548) und überlegene Form (weightedForm 2.03 vs 1.19)",
+          "Englands starke Defensive: nur 0.52 Gegentore/Spiel und 55% Clean-Sheet-Rate",
+          "Ghana defensiv anfällig (1.56 Gegentore/Spiel, nur 32% Clean Sheets)",
+          "Neutraler Spielort relativiert klassischen Heimvorteil leicht zugunsten Ghanas"
         ],
         "risks": [
-          "Kapitänin/Kapitän Williamson-Ausfall könnte englische Abwehrstruktur leicht stören (Personalmeldung)",
-          "Ghana mit Offensivpotenzial (1.47 Tore/Spiel) kann bei Standards gefährlich werden",
-          "Lange Pause beider Teams (~62 Tage) erschwert Form-Einschätzung",
-          "Verzögerte Kaderbenennung Ghanas erzeugt Unsicherheit über finale Aufstellung"
+          "Ghana erzielt offensiv im Schnitt 1.47 Tore – ein Treffer ist realistisch, was das tippte 2:1 stützt",
+          "Negative Schlagzeilen/Kontroversen im Ghana-Lager könnten Teamgeschlossenheit beeinträchtigen (schwer quantifizierbar)",
+          "Kein H2H-Datensatz vorhanden – erhöhte Unsicherheit bei direkter Einschätzung",
+          "Lange Pause (64/65 Tage ohne Spiel) kann Rhythmus beider Teams beeinflussen"
         ]
       },
       "chatgpt": {
@@ -105,26 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.7200000000000001,
-          "draw": 0.18000000000000002,
+          "home": 0.7000000000000001,
+          "draw": 0.20000000000000004,
           "away": 0.10000000000000002
         },
-        "confidence": 0.8,
+        "confidence": 0.75,
         "keyFactors": [
-          "England's recent form is strong at 2.2, while Ghana's is lower at 1.6.",
-          "England's higher Elo rating of 1829 compared to Ghana's 1548.",
-          "Neutral venue negates home advantage for England.",
-          "Kevin Keegan's health news may impact England's morale slightly."
+          "England's superior FIFA Elo rating and recent form advantage",
+          "Ghana's internal controversies affecting team morale",
+          "Neutral venue reducing home field advantage"
         ],
         "risks": [
-          "England captain ruled out, which may affect team leadership.",
-          "Injury to Ghana's Alexander Djiku may weaken their defense."
+          "England's reliance on a monitoring system could affect play dynamics",
+          "Potential positive team cohesion in Ghana despite controversies"
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung England (1829 vs. 1548) und überlegene gewichtete Form (2.03 vs. 1.19); Sehr stabile englische Defensive: 0.52 Gegentore/Spiel und 55% Clean-Sheet-Rate; Ghana defensiv anfällig (1.56 Gegentore/Spiel, nur 32% Clean Sheets) und durch Ausfall von Djiku weiter geschwächt.",
-    "inputHash": "sha256:70168d9bb7743f37e82d4b605b98d7aec89cf5b46ba648809f12a595d3d2ecfc"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprong England (1829 vs 1548) und überlegene Form (weightedForm 2.03 vs 1.19); Englands starke Defensive: nur 0.52 Gegentore/Spiel und 55% Clean-Sheet-Rate; Ghana defensiv anfällig (1.56 Gegentore/Spiel, nur 32% Clean Sheets).",
+    "inputHash": "sha256:3a509bffa78090d25ae3570968a66292796b0f826b30b55ea00792f5f55d8dad"
   },
   "predictionHistory": [
     {
@@ -230,6 +228,19 @@
         "away": 0.1369
       },
       "confidence": 0.7399
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7177,
+        "draw": 0.1755,
+        "away": 0.1068
+      },
+      "confidence": 0.7263
     }
   ]
 }

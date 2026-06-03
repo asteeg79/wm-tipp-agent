@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "NZL",
       "elo": 1641,
@@ -50,26 +50,26 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2267,
-      "draw": 0.2544,
-      "away": 0.5189
+      "home": 0.2753,
+      "draw": 0.25,
+      "away": 0.4747
     },
-    "confidence": 0.6593,
+    "confidence": 0.6578,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2876,
-        "draw": 0.2602,
-        "away": 0.4523
+        "home": 0.3311,
+        "draw": 0.2539,
+        "away": 0.4149
       },
       "expectedGoals": {
-        "home": 1.11,
+        "home": 1.29,
         "away": 1.47
       }
     },
@@ -80,52 +80,50 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.26,
-          "draw": 0.26,
+          "home": 0.27,
+          "draw": 0.25,
           "away": 0.48
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Egypt mit deutlich höherem Elo (1770 vs 1641) und stärkerer gewichteter Form (2.13 vs 1.24)",
-          "Egypt defensiv sehr stabil: nur 0.41 Gegentore/Spiel und 57% Clean-Sheet-Rate",
-          "Mohamed Salah als Anführer im Kader sorgt für offensive Qualität",
-          "Neutraler Spielort, kein Heimvorteil für Neuseeland",
-          "Egypt mit besserem Spielrhythmus (62 Tage seit letztem Spiel vs 195 bei NZL)"
+          "Egypt mit deutlich höherem Elo (1770 vs 1641) und stärkerer gewichteter Form (2.133 vs 1.235)",
+          "Egypts herausragende Defensive: nur 0.414 Gegentore im Schnitt, Clean-Sheet-Rate 0.571 bei größerer Stichprobe (28 Spiele)",
+          "Neutraler Spielort ohne Heimvorteil für Neuseeland",
+          "Egypt deutlich spielpraktischer (64 Tage seit letztem Spiel) gegenüber Neuseelands langer Pause (197 Tage)"
         ],
         "risks": [
-          "Neuseeland mit guter Heim-/Offensivstatistik (2.12 Tore/Spiel) und solider Clean-Sheet-Rate (56%)",
-          "Lange Spielpause Neuseelands (195 Tage) erschwert Formeinschätzung",
-          "Keinerlei H2H-Daten zur Kalibrierung vorhanden",
-          "Egypt-spezifische News dünn (nur Kaderbekanntgaben), keine konkreten Ausfälle bekannt"
+          "Neuseelands hohe Offensivproduktion (2.122 Tore/Spiel) könnte Egypts Defensive belasten",
+          "197 Tage Pause für Neuseeland erschweren Formeinschätzung – frische Beine oder fehlender Rhythmus möglich",
+          "Keine Head-to-Head-Daten verfügbar, erhöhte Unsicherheit",
+          "Materielle News enthalten teils irrelevante/falsch zugeordnete Squad-Informationen (Iran/Argentina) ohne klaren Bezug zu beiden Teams"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
+          "home": 0.28,
           "draw": 0.25,
-          "away": 0.55
+          "away": 0.47
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Egypt has higher elo rating indicating stronger overall team strength.",
-          "Egypt's recent form is slightly better than New Zealand's.",
-          "Egypt has a strong defensive record with a low goals against average of 0.414.",
-          "Mohamed Salah's leadership as captain adds to Egypt's offensive threat.",
-          "New Zealand has not played a match in over 6 months, which could affect their match sharpness."
+          "Egypt's higher Elo rating and stronger recent form.",
+          "New Zealand's long layoff with 197 days since last match, impacting sharpness.",
+          "Neutral venue minimizing home advantage.",
+          "Egypt's stronger defensive record with lower goals against average."
         ],
         "risks": [
-          "The venue is neutral, eliminating home advantage for either team.",
-          "Lack of head-to-head data makes predictions solely dependent on other factors."
+          "New Zealand's high goals for average, which could lead to an upset.",
+          "Lack of historical head-to-head data, introducing uncertainties."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit deutlich höherem Elo (1770 vs 1641) und stärkerer gewichteter Form (2.13 vs 1.24); Egypt defensiv sehr stabil: nur 0.41 Gegentore/Spiel und 57% Clean-Sheet-Rate; Mohamed Salah als Anführer im Kader sorgt für offensive Qualität.",
-    "inputHash": "sha256:a90d041728f8037d72192919cee526192607ff62e1eac29203a8d46ebd04d275"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt mit deutlich höherem Elo (1770 vs 1641) und stärkerer gewichteter Form (2.133 vs 1.235); Egypts herausragende Defensive: nur 0.414 Gegentore im Schnitt, Clean-Sheet-Rate 0.571 bei größerer Stichprobe (28 Spiele); Neutraler Spielort ohne Heimvorteil für Neuseeland.",
+    "inputHash": "sha256:6d5e83fbdb460748254b9b2611108850352630f7d12accb3998cf9e2f17f9c2d"
   },
   "predictionHistory": [
     {
@@ -218,6 +216,19 @@
         "away": 0.49
       },
       "confidence": 0.6589
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2267,
+        "draw": 0.2544,
+        "away": 0.5189
+      },
+      "confidence": 0.6593
     }
   ]
 }

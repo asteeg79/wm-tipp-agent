@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "SUI",
       "elo": 1746,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.362,
-      "draw": 0.308,
-      "away": 0.33
+      "home": 0.3639,
+      "draw": 0.2907,
+      "away": 0.3454
     },
-    "confidence": 0.6188,
+    "confidence": 0.5544,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3907,
-        "draw": 0.2708,
-        "away": 0.3385
+        "home": 0.4112,
+        "draw": 0.2709,
+        "away": 0.3179
       },
       "expectedGoals": {
-        "home": 1.29,
-        "away": 1.19
+        "home": 1.33,
+        "away": 1.13
       }
     },
     "models": {
@@ -81,21 +81,21 @@
         },
         "probabilities": {
           "home": 0.38,
-          "draw": 0.29,
-          "away": 0.33
+          "draw": 0.28,
+          "away": 0.34
         },
-        "confidence": 0.5,
+        "confidence": 0.52,
         "keyFactors": [
-          "Schweiz mit besserer recentForm (2.1 vs 1.7) und höherem Elo (1746 vs 1696)",
-          "Schweiz offensivstärker (goalsForAvg 2.02), Kanada defensiv solide (cleanSheetRate 0.54, goalsAgainstAvg 0.61)",
-          "Kanada genießt als Co-Gastgeber laut Kontext einen Heimvorteil trott neutralem Venue",
-          "Beide Teams gleich lange Pause (62 Tage), keine Müdigkeitsunterschiede"
+          "Switzerland leicht höheres Elo (1746 vs 1696) und stärkere recentForm (2.1 vs 1.7) sprechen für leichten Heimvorteil",
+          "Canada defensiv stabiler: niedrigerer Gegentorschnitt (0.61 vs 1.09) und höhere Clean-Sheet-Rate (0.54 vs 0.37)",
+          "Host-Advantage liegt bei Canada (Co-Gastgeber WM 2026), was den nominellen Schweizer Vorteil neutralisiert",
+          "Spielort neutral, daher klassischer Heimbonus reduziert"
         ],
         "risks": [
-          "Verletzungen auf beiden Seiten (Okafor angeschlagen bei SUI; Flores fällt aus, Davies fraglich bei CAN) erhöhen Unsicherheit",
-          "Keine H2H-Daten verfügbar, daher Einschätzung rein form-/Elo-basiert",
-          "Kanadas defensive Stabilität könnte ein knappes, torarmes Spiel begünstigen",
-          "Host-Advantage für Kanada schwer quantifizierbar bei nominell neutralem Spielort"
+          "Mögliche Sperre/Einreiseproblem für Schweizer Stürmer Embolo könnte Offensive deutlich schwächen",
+          "Keine H2H-Daten verfügbar, Einschätzung beruht nur auf Form- und Kontextwerten",
+          "Lange Pause (64 Tage seit letztem Spiel) bei beiden Teams erhöht Unsicherheit über aktuelle Form",
+          "Canadas niedriger Torschnitt (1.24) könnte zu engem, torarmem Spiel führen"
         ]
       },
       "chatgpt": {
@@ -104,27 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.32,
-          "away": 0.33
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
         },
-        "confidence": 0.75,
+        "confidence": 0.6,
         "keyFactors": [
-          "Switzerland's better recent form compared to Canada",
-          "Canada's higher clean sheet rate",
-          "Neutral venue without host advantage",
-          "Significant injuries on both sides (Noah Okafor for Switzerland, Marcelo Flores and Alphonso Davies for Canada)"
+          "Switzerland missing key striker Breel Embolo due to likely suspension.",
+          "Neutral venue, reducing typical home advantage effects.",
+          "Canada has strong recent form defensively with high clean sheet rate."
         ],
         "risks": [
-          "Impact of missing key players on team performance",
-          "Both teams not having played against each other (no head-to-head data)",
-          "Potential change in dynamics due to neutral venue and conditions"
+          "Both teams have similar recent form and performance metrics.",
+          "No head-to-head history to guide prediction."
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit besserer recentForm (2.1 vs 1.7) und höherem Elo (1746 vs 1696); Schweiz offensivstärker (goalsForAvg 2.02), Kanada defensiv solide (cleanSheetRate 0.54, goalsAgainstAvg 0.61); Kanada genießt als Co-Gastgeber laut Kontext einen Heimvorteil trott neutralem Venue.",
-    "inputHash": "sha256:532b0b2a8fe6ff602966fd17d62a21606732a4aa0469de61677d9e3ca395bb77"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland leicht höheres Elo (1746 vs 1696) und stärkere recentForm (2.1 vs 1.7) sprechen für leichten Heimvorteil; Canada defensiv stabiler: niedrigerer Gegentorschnitt (0.61 vs 1.09) und höhere Clean-Sheet-Rate (0.54 vs 0.37); Host-Advantage liegt bei Canada (Co-Gastgeber WM 2026), was den nominellen Schweizer Vorteil neutralisiert.",
+    "inputHash": "sha256:1399f1c74605acc3bc86542f632b25c08db6c4feca3a5c87dfdcbfaacecb3290"
   },
   "predictionHistory": [
     {
@@ -230,6 +228,19 @@
         "away": 0.35
       },
       "confidence": 0.6229
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.362,
+        "draw": 0.308,
+        "away": 0.33
+      },
+      "confidence": 0.6188
     }
   ]
 }

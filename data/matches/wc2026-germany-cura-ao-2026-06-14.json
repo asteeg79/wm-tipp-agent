@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.6071,
-      "draw": 0.2086,
-      "away": 0.1843
+      "home": 0.5797,
+      "draw": 0.2378,
+      "away": 0.1824
     },
-    "confidence": 0.6767,
+    "confidence": 0.6959,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.5036,
-        "draw": 0.2218,
-        "away": 0.2746
+        "home": 0.5295,
+        "draw": 0.2211,
+        "away": 0.2495
       },
       "expectedGoals": {
-        "home": 1.92,
-        "away": 1.37
+        "home": 1.93,
+        "away": 1.27
       }
     },
     "models": {
@@ -84,19 +84,17 @@
           "draw": 0.22,
           "away": 0.23
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Klarer Elo-Vorsprung Deutschlands (1822 vs. 1637) und stärkere gewichtete Form (2.371 vs. 1.857)",
-          "Deutschland mit hoher Offensivproduktion (2.574 Tore/Spiel) und solider Defensive (1.106 Gegentore/Spiel)",
-          "Curaçaos mögliche Suspendierung von Locadia schwächt die Offensive vor dem Turnierauftakt",
-          "Lange Wettkampfpause Curaçaos (195 Tage ohne Spiel) erhöht Rhythmus-Risiko",
-          "Undav-Verletzung laut News unbedenklich, kein relevanter Ausfall für Deutschland"
+          "Deutlicher Elo-Vorteil Deutschlands (1822 vs. 1637) und stärkere gewichtete Form (2.371 vs. 1.857)",
+          "Deutschland mit höherer Offensivkraft (goalsForAvg 2.574) und solider Form",
+          "Curaçao defensiv stabil (cleanSheetRate 0.55, goalsAgainstAvg 0.621), kann Spiel eng halten"
         ],
         "risks": [
-          "Curaçao mit starker defensiver Stabilität (Clean-Sheet-Rate 0.55, nur 0.621 Gegentore/Spiel) als WM-Debütant kompakt und gefährlich",
-          "Keine H2H-Daten verfügbar, erhöhte Unsicherheit in der Einschätzung",
-          "Neutraler Spielort ohne Heimvorteil für Deutschland",
-          "Deutschland 63 Tage ohne Spiel – möglicher früher Rhythmusmangel"
+          "Curaçao seit 197 Tagen ohne Pflichtspiel – Form schwer einzuschätzen, Spielrhythmus unklar",
+          "Neutraler Spielort nimmt Deutschland den Heimvorteil",
+          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
+          "Defensiv starke Außenseiter können bei deutscher Abschlussschwäche überraschen (Remis-/Kontergefahr)"
         ]
       },
       "chatgpt": {
@@ -105,27 +103,27 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
+          "home": 0.6,
+          "draw": 0.25,
           "away": 0.15
         },
-        "confidence": 0.8,
+        "confidence": 0.85,
         "keyFactors": [
-          "Germany's higher Elo rating and superior form",
-          "Curaçao's potential suspension of key player Locadia",
-          "Germany's consistent average goals scored (2.574 per match)",
-          "Neutral venue diminishes any potential home advantage"
+          "Germany's higher Elo rating indicating stronger team",
+          "Germany's stronger weighted and recent form",
+          "Germany's higher goals for average",
+          "Curaçao's long break since last match (197 days)",
+          "Curaçao has no head-to-head experience against Germany"
         ],
         "risks": [
-          "Germany's relatively recent form dip (weightedForm: 2.371 vs. recentForm: 2.1)",
-          "Potential impact of Deniz Undav's minor injury for Germany",
-          "Curaçao's high clean sheet rate (0.55)"
+          "Neutral venue eliminates home advantage",
+          "Curaçao's relatively high clean sheet rate"
         ]
       }
     },
-    "agreement": 0.9333,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Deutschlands (1822 vs. 1637) und stärkere gewichtete Form (2.371 vs. 1.857); Deutschland mit hoher Offensivproduktion (2.574 Tore/Spiel) und solider Defensive (1.106 Gegentore/Spiel); Curaçaos mögliche Suspendierung von Locadia schwächt die Offensive vor dem Turnierauftakt.",
-    "inputHash": "sha256:29559d03e4db2d0f94c4c4c68d2e8a9f19ade073e1ba75ffe78404d16ddaad26"
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil Deutschlands (1822 vs. 1637) und stärkere gewichtete Form (2.371 vs. 1.857); Deutschland mit höherer Offensivkraft (goalsForAvg 2.574) und solider Form; Curaçao defensiv stabil (cleanSheetRate 0.55, goalsAgainstAvg 0.621), kann Spiel eng halten.",
+    "inputHash": "sha256:c2420be4842f76bb8ee3c627a97ee14d7e128ccb6c65a0431a38b00fb0242575"
   },
   "predictionHistory": [
     {
@@ -231,6 +229,19 @@
         "away": 0.1538
       },
       "confidence": 0.6791
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6071,
+        "draw": 0.2086,
+        "away": 0.1843
+      },
+      "confidence": 0.6767
     }
   ]
 }

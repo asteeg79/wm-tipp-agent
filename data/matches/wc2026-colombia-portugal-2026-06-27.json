@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "COL",
       "elo": 1775,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.28,
-      "draw": 0.23,
-      "away": 0.49
+      "home": 0.287,
+      "draw": 0.22,
+      "away": 0.493
     },
-    "confidence": 0.675,
+    "confidence": 0.6831,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2968,
-        "draw": 0.2293,
-        "away": 0.4739
+        "home": 0.2774,
+        "draw": 0.2238,
+        "away": 0.4988
       },
       "expectedGoals": {
-        "home": 1.39,
-        "away": 1.81
+        "home": 1.37,
+        "away": 1.89
       }
     },
     "models": {
@@ -80,22 +80,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.28,
-          "draw": 0.23,
-          "away": 0.49
+          "home": 0.27,
+          "draw": 0.22,
+          "away": 0.51
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Portugal mit klar besserer gewichteter Form (2.01 vs 1.544) und Tordifferenz (2.32 erzielt, 0.879 kassiert)",
-          "Portugals höhere Elo (1793 vs 1775) und stabilere Defensive untermauern die Baseline-Favoritenrolle",
-          "Kolumbien defensiv anfälliger (1.227 Gegentore/Spiel) trotz solider Offensive um James Rodriguez",
-          "Neutraler Spielort ohne Heimvorteil für Kolumbien stützt Portugal-Tendenz"
+          "Portugal mit stärkerer gewichteter Form (2.01 vs 1.544) und besserer aktueller Form (2.1 vs 1.8)",
+          "Portugal defensiv deutlich solider: nur 0.879 Gegentore/Spiel vs 1.227 bei Kolumbien",
+          "Portugal offensiv effektiver: 2.32 Tore/Spiel vs 1.95 bei Kolumbien",
+          "Höheres Elo-Rating Portugals (1793 vs 1775) untermauert leichte Favoritenrolle",
+          "Neutraler Spielort eliminiert Heimvorteil für Kolumbien"
         ],
         "risks": [
-          "Verletzungssorge im kolumbianischen Kader könnte Aufstellung schwächen oder bei Rückkehr Schlüsselspieler stärken",
-          "Unsichere Rolle/Form von Ronaldo in Portugals Offensive (Diskussion um Standing) als Unsicherheitsfaktor",
-          "Kein H2H-Datensatz vorhanden, daher erhöhte Prognoseunsicherheit",
-          "Lange Pause beider Teams (60+ Tage) kann Rhythmus und frühe Spielqualität beeinflussen"
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit im direkten Vergleich",
+          "Kolumbiens ordentliche recentForm (1.8) und Offensivpotenzial können Überraschung ermöglichen",
+          "Lange Pause beider Teams (64-66 Tage) kann Rhythmus und Form beeinträchtigen",
+          "Keine materiell relevanten News (Verletzungen/Sperren), Kaderqualität schwer einzuschätzen"
         ]
       },
       "chatgpt": {
@@ -104,26 +105,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.28,
-          "draw": 0.23,
-          "away": 0.49
+          "home": 0.3,
+          "draw": 0.22,
+          "away": 0.48
         },
-        "confidence": 0.75,
+        "confidence": 0.78,
         "keyFactors": [
-          "Portugal's higher weighted form and recent form advantage.",
-          "Portugal's stronger offensive performance with a higher goals for average.",
-          "Cristiano Ronaldo's active role and potential motivation boost for Portugal's squad."
+          "Portugal's recent form is stronger with a score of 2.1, compared to Colombia's 1.8.",
+          "Portugal has a higher average goals per match with 2.32 compared to Colombia's 1.95.",
+          "Colombia has been less strong defensively with a goals against average of 1.227 compared to Portugal's 0.879."
         ],
         "risks": [
-          "Colombia's ability to perform strongly in high-stakes matches, as seen in their recent form.",
-          "Impact of the single injury concern in the Colombian squad.",
-          "The match being held at a neutral venue, mitigating location advantage."
+          "Colombia has a slightly higher clean sheet rate, which could indicate potential for defense to cause an upset.",
+          "Both teams have played a similar number of matches recently, with Colombia having a very slightly better recent form trend."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit klar besserer gewichteter Form (2.01 vs 1.544) und Tordifferenz (2.32 erzielt, 0.879 kassiert); Portugals höhere Elo (1793 vs 1775) und stabilere Defensive untermauern die Baseline-Favoritenrolle; Kolumbien defensiv anfälliger (1.227 Gegentore/Spiel) trotz solider Offensive um James Rodriguez.",
-    "inputHash": "sha256:49eb89d6284cdc8789edbeebc66ef41464887ca6da8c3bfafad64d5d729f7e0a"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit stärkerer gewichteter Form (2.01 vs 1.544) und besserer aktueller Form (2.1 vs 1.8); Portugal defensiv deutlich solider: nur 0.879 Gegentore/Spiel vs 1.227 bei Kolumbien; Portugal offensiv effektiver: 2.32 Tore/Spiel vs 1.95 bei Kolumbien.",
+    "inputHash": "sha256:16010625558babff7d50fae05b400c4ba04a347fd479edf5c4019bbf8e37c369"
   },
   "predictionHistory": [
     {
@@ -229,6 +229,19 @@
         "away": 0.49
       },
       "confidence": 0.67
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.28,
+        "draw": 0.23,
+        "away": 0.49
+      },
+      "confidence": 0.675
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5155,
-      "draw": 0.2391,
-      "away": 0.2455
+      "home": 0.5236,
+      "draw": 0.2343,
+      "away": 0.2421
     },
-    "confidence": 0.6357,
+    "confidence": 0.6766,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.495,
-        "draw": 0.244,
-        "away": 0.261
+        "home": 0.4992,
+        "draw": 0.2389,
+        "away": 0.2619
       },
       "expectedGoals": {
-        "home": 1.65,
-        "away": 1.13
+        "home": 1.71,
+        "away": 1.17
       }
     },
     "models": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.51,
-          "draw": 0.25,
-          "away": 0.24
+          "home": 0.515,
+          "draw": 0.24,
+          "away": 0.245
         },
         "confidence": 0.58,
         "keyFactors": [
-          "USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419)",
-          "Gastgeberbonus für USA trott formal neutralem Spielort (hostAdvantageTeamId USA)",
-          "USA mit deutlich höherer Offensivleistung (goalsForAvg 1.668 vs 0.984)",
-          "Paraguay mit starker defensiver Stabilität (cleanSheetRate 0.435, goalsAgainstAvg 1.059)",
-          "Einziges H2H ging knapp an USA (2:1)"
+          "USA mit Host-Advantage trotz formal neutralem Venue (hostAdvantageTeamId=USA)",
+          "Bessere Form und höherer Elo der USA (1676 vs 1644), stärkere Offensive (xG 1.71 vs 1.17)",
+          "USA gewann das einzige H2H-Duell 2:1",
+          "Paraguay defensiv solide (CleanSheet-Rate 0.435 vs 0.235), aber offensiv schwach (0.98 Tore/Spiel)"
         ],
         "risks": [
-          "Paraguays kompakte Defensive kann das USA-Ergebnis drücken und Remis begünstigen",
-          "Lange Pause beider Teams (62 Tage) erschwert Formeinschätzung",
-          "Geringe Anzahl an Spielen bei Paraguay (23) erhöht Datenunsicherheit",
-          "Keine konkreten verletzungsbedingten Ausfälle für USA/PAR in den News bestätigt"
+          "Paraguays starke Defensive könnte ein knappes, torarmes Spiel erzwingen und Remis-Wahrscheinlichkeit erhöhen",
+          "Schwache USA-Defensive (CleanSheet 0.235) macht Gegentor wahrscheinlich",
+          "Nur 1 H2H-Spiel als Referenz, geringe statistische Aussagekraft",
+          "64 Tage seit letztem Spiel beider Teams – Spielrhythmus unklar"
         ]
       },
       "chatgpt": {
@@ -105,25 +104,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
+          "home": 0.53,
           "draw": 0.23,
-          "away": 0.25
+          "away": 0.24
         },
-        "confidence": 0.7,
+        "confidence": 0.78,
         "keyFactors": [
-          "USA's higher recent team form (1.6) compared to Paraguay's (1.4)",
-          "Neutral venue with host advantage favoring USA",
-          "USA's slight historical edge in head-to-head matchups"
+          "USA hat 64 Tage seit dem letzten Spiel, was Frische bedeuten könnte",
+          "USA mit leicht besserer aktueller Form (1.6 vs. 1.4)",
+          "USA hat vorheriges Head-to-Head gewonnen",
+          "USA hat Host-Advantage beim Turnier"
         ],
         "risks": [
-          "USA's goals against average is relatively high (1.639)",
-          "Paraguay has a higher clean sheet rate (0.435)"
+          "Neutrale Austragung könnte Heimvorteil neutralisieren",
+          "Paraguay hat höhere Clean-Sheet-Rate (0.435)",
+          "Vertrautheit und Motivation von Paraguay durch WM-Kaderbekanntmachung"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419); Gastgeberbonus für USA trott formal neutralem Spielort (hostAdvantageTeamId USA); USA mit deutlich höherer Offensivleistung (goalsForAvg 1.668 vs 0.984).",
-    "inputHash": "sha256:916811b152a942d45054f833fbe421487e02b786a7e64f570afdde4b4a42e530"
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Host-Advantage trotz formal neutralem Venue (hostAdvantageTeamId=USA); Bessere Form und höherer Elo der USA (1676 vs 1644), stärkere Offensive (xG 1.71 vs 1.17); USA gewann das einzige H2H-Duell 2:1.",
+    "inputHash": "sha256:178d500616c4d21c559641e29fb57c58584b7aea9cc9cc1ede7996c466adb058"
   },
   "predictionHistory": [
     {
@@ -229,6 +230,19 @@
         "away": 0.2509
       },
       "confidence": 0.6336
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5155,
+        "draw": 0.2391,
+        "away": 0.2455
+      },
+      "confidence": 0.6357
     }
   ]
 }

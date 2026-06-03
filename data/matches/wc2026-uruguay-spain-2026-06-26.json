@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "URU",
       "elo": 1677,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.127,
-      "draw": 0.1908,
-      "away": 0.6822
+      "home": 0.1228,
+      "draw": 0.1819,
+      "away": 0.6953
     },
-    "confidence": 0.7227,
+    "confidence": 0.6622,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.0762,
-        "draw": 0.1555,
-        "away": 0.7683
+        "home": 0.0598,
+        "draw": 0.1315,
+        "away": 0.8087
       },
       "expectedGoals": {
-        "home": 0.6,
-        "away": 2.36
+        "home": 0.57,
+        "away": 2.6
       }
     },
     "models": {
@@ -81,22 +81,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.1,
-          "draw": 0.18,
-          "away": 0.72
+          "home": 0.09,
+          "draw": 0.16,
+          "away": 0.75
         },
-        "confidence": 0.68,
+        "confidence": 0.62,
         "keyFactors": [
-          "Großer Elo-Unterschied (1974 vs 1677) und deutlich bessere gewichtete Form Spaniens (2.327 vs 1.397)",
-          "Spanien mit hoher Offensivproduktion (2.68 Tore/Spiel) gegen solide, aber harmlose Uruguay-Offensive (0.91)",
-          "Uruguay defensiv stabil (CleanSheet-Rate 0.517, 0.83 Gegentore/Spiel) - kann Spaniens xG leicht drücken",
-          "Neutraler Spielort, kein Heimvorteil für Uruguay trotz Listung als Heimteam"
+          "Spanien klar überlegen in Elo (1974 vs 1677) und gewichteter Form (2.327 vs 1.397)",
+          "Spaniens Offensive sehr stark (2.675 Tore/Spiel) gegenüber schwacher Uruguay-Offensive (0.91)",
+          "Uruguay defensiv solide mit 51.7% Clean-Sheet-Rate, kann das Ergebnis enger halten als Baseline annimmt",
+          "Neutraler Spielort, kein Heimvorteil für Uruguay"
         ],
         "risks": [
-          "Höhenlage (1566 m) kann Spaniens Spielrhythmus beeinträchtigen und Uruguay leicht begünstigen",
-          "Bielsa-Effekt und kompakte uruguayische Defensive könnten ein knapperes Ergebnis erzwingen",
-          "Suárez-Auslassung schwächt Uruguays Offensive zusätzlich und reduziert Restchancen",
-          "Lange Pause beider Teams (62 Tage) erhöht Unsicherheit über aktuelle Spielform"
+          "Bielsa-Effekt: Berichte über Kaderunruhe und Suarez-Ausschluss könnten Geschlossenheit beeinträchtigen oder im Gegenteil Reaktion provozieren",
+          "Yamal-Fitness bei Spanien noch nicht final bestätigt – mögliche Schwächung der Offensive",
+          "Höhenlage (1566m) könnte konditionellen Einfluss auf beide Teams haben",
+          "Uruguay defensiv organisiert genug, um Tordifferenz niedrig zu halten; Baseline könnte Auswärtssieg-Wahrscheinlichkeit leicht überschätzen"
         ]
       },
       "chatgpt": {
@@ -109,23 +109,22 @@
           "draw": 0.2,
           "away": 0.65
         },
-        "confidence": 0.8,
+        "confidence": 0.75,
         "keyFactors": [
-          "Spain has a significantly higher Elo rating.",
-          "Uruguay's recent form is improving with a recentForm rating of 1.6.",
-          "Spain scored 2.675 goals per match on average, indicating strong offensive capability.",
-          "Neutral venue reduces home advantage impact."
+          "Spain's high Elo rating and strong weighted form",
+          "Uruguay's solid defense with a clean sheet rate of 0.517",
+          "Neutral venue minimizes home crowd advantage",
+          "Altitude of 1566 meters could influence stamina"
         ],
         "risks": [
-          "Uruguay's exclusion of Luis Suárez might impact their attacking power.",
-          "High altitude might level the playing field and impact players' stamina.",
-          "No direct head-to-head match history to inform direct comparisons."
+          "Internal tension within Uruguay squad due to coach's decisions",
+          "Potential absence or limited fitness of Spain's Lamine Yamal"
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1974 vs 1677) und deutlich bessere gewichtete Form Spaniens (2.327 vs 1.397); Spanien mit hoher Offensivproduktion (2.68 Tore/Spiel) gegen solide, aber harmlose Uruguay-Offensive (0.91); Uruguay defensiv stabil (CleanSheet-Rate 0.517, 0.83 Gegentore/Spiel) - kann Spaniens xG leicht drücken.",
-    "inputHash": "sha256:a2b04c7276fd67c326fdef97c8b152c0b2c0956e38854f0053ced1afa216b5c4"
+    "agreement": 0.9333,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien klar überlegen in Elo (1974 vs 1677) und gewichteter Form (2.327 vs 1.397); Spaniens Offensive sehr stark (2.675 Tore/Spiel) gegenüber schwacher Uruguay-Offensive (0.91); Uruguay defensiv solide mit 51.7% Clean-Sheet-Rate, kann das Ergebnis enger halten als Baseline annimmt.",
+    "inputHash": "sha256:d7696cd6b8ca6d95da4bbfc4324106d4cb9fc0feed4c4b10ccc82dd426fc67c5"
   },
   "predictionHistory": [
     {
@@ -231,6 +230,19 @@
         "away": 0.6817
       },
       "confidence": 0.669
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.127,
+        "draw": 0.1908,
+        "away": 0.6822
+      },
+      "confidence": 0.7227
     }
   ]
 }

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "BIH",
       "elo": 1575,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5458,
-      "draw": 0.2258,
-      "away": 0.2285
+      "home": 0.5713,
+      "draw": 0.2087,
+      "away": 0.22
     },
-    "confidence": 0.7053,
+    "confidence": 0.6606,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.5175,
-        "draw": 0.2243,
-        "away": 0.2582
+        "home": 0.5455,
+        "draw": 0.2204,
+        "away": 0.2341
       },
       "expectedGoals": {
-        "home": 1.89,
-        "away": 1.28
+        "home": 1.94,
+        "away": 1.2
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.54,
+          "home": 0.56,
           "draw": 0.22,
-          "away": 0.24
+          "away": 0.22
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Höheres Elo (1575 vs 1509) und bessere gewichtete Form (1.445 vs 1.292) sprechen für Bosnien",
-          "Bosnien mit klar besserer Defensive (1.272 Gegentore vs 1.802 bei Qatar) und höherer Offensivproduktion (1.738 vs 1.459)",
-          "Aktuellere Spielpraxis: Bosnien zuletzt vor 62 Tagen im Einsatz, Qatar seit 196 Tagen ohne Pflichtspiel-Rhythmus",
-          "Neutraler Spielort neutralisiert echten Heimvorteil, dennoch Baseline-Tendenz pro Bosnien gerechtfertigt"
+          "Bosnia hat höhere Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).",
+          "Bosniens Offensive ist stärker (1.738 Tore/Spiel) gegenüber Qatars schwacher Defensive (1.802 Gegentore/Spiel).",
+          "Qatar zeigt zwar leicht bessere Clean-Sheet-Rate (0.25), kassiert aber im Schnitt deutlich mehr Tore.",
+          "Neutraler Spielort eliminiert einen klassischen Heimvorteil, was die Baseline leicht relativiert."
         ],
         "risks": [
-          "Lange Spielpause Qatars könnte durch intensive Vorbereitung kompensiert sein – Form schwer einzuschätzen",
-          "Keine H2H-Daten vorhanden, Vergleichbarkeit eingeschränkt",
-          "Bosniens niedrige Clean-Sheet-Rate (0.19) macht enges Ergebnis oder Gegentor wahrscheinlich",
-          "Keine substanziellen News zu Verletzungen/Aufstellung, mögliche Kaderüberraschungen unberücksichtigt"
+          "Qatars sehr lange Pause (198 Tage seit letztem Spiel) macht Formbewertung unsicher – Spielrhythmus unklar.",
+          "Kein Head-to-Head vorhanden, daher keine direkte Vergleichsbasis.",
+          "Bosnien ebenfalls mit längerer Pause (64 Tage) und geringer Clean-Sheet-Rate (0.19) – defensive Anfälligkeit.",
+          "Keine substantiellen Material-News zu Verletzungen/Sperren; Kaderqualität schwer einschätzbar."
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.23,
+          "home": 0.58,
+          "draw": 0.2,
           "away": 0.22
         },
-        "confidence": 0.82,
+        "confidence": 0.75,
         "keyFactors": [
-          "Bosnia & Herzegovina has a slightly higher Elo rating (1575 vs 1509)",
-          "Higher weighted and recent form for Bosnia & Herzegovina (1.445 and 1.6 compared to 1.292 and 1.2 for Qatar)",
-          "More recent match experience for Bosnia & Herzegovina (62 days since last match vs 196 for Qatar)"
+          "Bosnia & Herzegovina has a better recent form with 1.6 compared to Qatar's 1.2.",
+          "Bosnia & Herzegovina has a high weighted form of 1.445, which is higher than Qatar's 1.292.",
+          "Qatar has not played a match in the last 198 days, potentially impacting match fitness.",
+          "The match is on a neutral venue, reducing any home advantage."
         ],
         "risks": [
-          "Neutral venue mitigating any home advantage",
-          "Both teams have similar clean sheet rates, slightly favoring Qatar (0.25 vs 0.19)"
+          "Both teams have not faced each other before, introducing uncertainty in dynamics.",
+          "Qatar's clean sheet rate of 0.25 is slightly better than that of Bosnia & Herzegovina."
         ]
       }
     },
     "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Höheres Elo (1575 vs 1509) und bessere gewichtete Form (1.445 vs 1.292) sprechen für Bosnien; Bosnien mit klar besserer Defensive (1.272 Gegentore vs 1.802 bei Qatar) und höherer Offensivproduktion (1.738 vs 1.459); Aktuellere Spielpraxis: Bosnien zuletzt vor 62 Tagen im Einsatz, Qatar seit 196 Tagen ohne Pflichtspiel-Rhythmus.",
-    "inputHash": "sha256:45551963e4dcce46fd0dd423b3504de6cf8562600ef9e90bae697a40315b9955"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnia hat höhere Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).; Bosniens Offensive ist stärker (1.738 Tore/Spiel) gegenüber Qatars schwacher Defensive (1.802 Gegentore/Spiel).; Qatar zeigt zwar leicht bessere Clean-Sheet-Rate (0.25), kassiert aber im Schnitt deutlich mehr Tore..",
+    "inputHash": "sha256:ff5cb88e05f1f6de24c2dabcebefde283338372b92f9236e7d1bcbbbc487a437"
   },
   "predictionHistory": [
     {
@@ -228,6 +229,19 @@
         "away": 0.23
       },
       "confidence": 0.7
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5458,
+        "draw": 0.2258,
+        "away": 0.2285
+      },
+      "confidence": 0.7053
     }
   ]
 }

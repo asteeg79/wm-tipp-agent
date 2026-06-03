@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T18:48:55.882Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "home": {
       "teamId": "IRQ",
       "elo": 1630,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-01T20:07:56.122Z",
+    "generatedAt": "2026-06-03T19:05:54.083Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1864,
-      "draw": 0.2155,
-      "away": 0.5981
+      "home": 0.1796,
+      "draw": 0.2274,
+      "away": 0.593
     },
-    "confidence": 0.6759,
+    "confidence": 0.6633,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.1546,
-        "draw": 0.2014,
-        "away": 0.644
+        "home": 0.146,
+        "draw": 0.1985,
+        "away": 0.6555
       },
       "expectedGoals": {
-        "home": 0.91,
-        "away": 2.08
+        "home": 0.87,
+        "away": 2.09
       }
     },
     "models": {
@@ -80,23 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.17,
-          "draw": 0.21,
-          "away": 0.62
+          "home": 0.155,
+          "draw": 0.2,
+          "away": 0.645
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Norwegen mit deutlich höherem Elo (1774 vs 1630) und stärkerer recentForm (2.3 vs 1.8)",
-          "Norwegens Offensive überragend (goalsForAvg 2.78) gegenüber Iraks 1.28",
-          "Iraks defensive Stabilität (goalsAgainstAvg 0.82, cleanSheetRate 0.46) kann das Ergebnis knapp halten",
-          "Neutraler Spielort ohne Heimvorteil für Irak",
-          "Iraks gewichtete Form (2.014) nahezu auf Augenhöhe mit Norwegen (2.019), spricht für leicht höhere Heimchance als reine Elo-Differenz"
+          "Norwegens deutlich höheres Elo (1774 vs 1630) und überlegene Offensive (2.78 Tore/Spiel vs 1.28)",
+          "Bessere jüngste Form Norwegens (recentForm 2.3 vs 1.8)",
+          "Neutraler Spielort ohne Heimvorteil für Iraq",
+          "Iraks solide Defensive (0.82 Gegentore/Spiel, 45.8% Clean Sheets) kann das Ergebnis knapper halten"
         ],
         "risks": [
-          "Beide Teams 62 Tage ohne Spiel – Form schwer einzuschätzen, Rhythmusverlust möglich",
-          "Kein H2H-Verlauf vorhanden, erhöhte Unsicherheit",
-          "Iraks gute Defensive könnte ein knappes oder Unentschieden-Ergebnis ermöglichen",
-          "Spärliche Newslage zu Norwegen, mögliche Personalfragen unberücksichtigt"
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit",
+          "64 Tage seit letztem Spiel für beide Teams – Rhythmus/Form schwer einzuschätzen",
+          "Iraks erstes WM-Turnier seit 40 Jahren: mögliche Überraschung oder Nervosität",
+          "Norwegens tatsächliches Niveau laut News noch nicht voll demonstriert"
         ]
       },
       "chatgpt": {
@@ -106,26 +105,25 @@
         },
         "probabilities": {
           "home": 0.2,
-          "draw": 0.22,
-          "away": 0.58
+          "draw": 0.25,
+          "away": 0.55
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Norway's slightly higher Elo and recent form advantage over Iraq.",
-          "Norway's higher goals for average (2.777) compared to Iraq's (1.28).",
-          "Both teams have not played against each other before, creating unknown dynamics.",
-          "Neutral venue which removes home advantage for Iraq."
+          "Norway has a higher Elo rating, indicating a stronger historical and statistical performance.",
+          "Norway's recent form is higher than Iraq's, suggesting better current performance.",
+          "Both teams have similar clean sheet rates, minimizing defensive advantage.",
+          "Match is played in a neutral venue, reducing potential advantage for any team."
         ],
         "risks": [
-          "Iraq's defensive strength indicated by a clean sheet rate of 45.8%.",
-          "Norway's reliance on key attacking players who may encounter strong Iraqi defense.",
-          "Both teams having not played a match in 62 days could impact current form."
+          "Iraq may have an unpredictable performance due to the excitement of their first World Cup in 40 years.",
+          "Both teams have not played each other before, adding uncertainty in how they might match up."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Norwegen mit deutlich höherem Elo (1774 vs 1630) und stärkerer recentForm (2.3 vs 1.8); Norwegens Offensive überragend (goalsForAvg 2.78) gegenüber Iraks 1.28; Iraks defensive Stabilität (goalsAgainstAvg 0.82, cleanSheetRate 0.46) kann das Ergebnis knapp halten.",
-    "inputHash": "sha256:c45631a837efca54ff5eb21454fe3f525ed218abe55b216611af0cda18ff0947"
+    "agreement": 0.9367,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Norwegens deutlich höheres Elo (1774 vs 1630) und überlegene Offensive (2.78 Tore/Spiel vs 1.28); Bessere jüngste Form Norwegens (recentForm 2.3 vs 1.8); Neutraler Spielort ohne Heimvorteil für Iraq.",
+    "inputHash": "sha256:d4505abded2308b72509940c023c299a3c9528831970dbaf4dd03efea404c396"
   },
   "predictionHistory": [
     {
@@ -218,6 +216,19 @@
         "away": 0.5923
       },
       "confidence": 0.6402
+    },
+    {
+      "generatedAt": "2026-06-01T20:07:56.122Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1864,
+        "draw": 0.2155,
+        "away": 0.5981
+      },
+      "confidence": 0.6759
     }
   ]
 }
