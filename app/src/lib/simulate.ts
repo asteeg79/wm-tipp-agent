@@ -150,3 +150,116 @@ export function simulateTournament(
 function avgWin(p: Outcome1x2): { home: number; away: number } {
   return { home: p.home + p.draw / 2, away: p.away + p.draw / 2 };
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   K.-o.-Baum: EINE simulierte Auslosung (Achtelfinale → Finale)
+   Die 16 stärksten Teams (Stärke-Proxy aus den 1X2-Wahrscheinlichkeiten)
+   werden nach Standard-Setzliste platziert; jede Partie wird einzeln
+   ausgespielt — inkl. plausiblem Ergebnis (im K.-o. immer ein Sieger).
+   ════════════════════════════════════════════════════════════════════════ */
+
+export type KoStage = "round16" | "quarter" | "semi" | "final";
+
+export interface BracketMatch {
+  a: string;
+  b: string;
+  winner: string;
+  /** Getipptes Ergebnis dieser Partie (Sieger strikt mehr Tore). */
+  score: { a: number; b: number };
+}
+
+export interface BracketRound {
+  stage: KoStage;
+  matches: BracketMatch[];
+}
+
+export interface BracketResult {
+  rounds: BracketRound[];
+  champion: string;
+}
+
+const KO_STAGES: KoStage[] = ["round16", "quarter", "semi", "final"];
+// Standard-Setzliste für 16 Plätze: Seed 1 trifft 16, 1 & 2 in versch. Hälften.
+const SEED_ORDER = [1, 16, 8, 9, 5, 12, 4, 13, 3, 14, 6, 11, 7, 10, 2, 15];
+
+/** Stärke-Proxy je Team aus den Gruppen-1X2-Wahrscheinlichkeiten. */
+function teamStrength(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+): Map<string, number> {
+  const strength = new Map<string, number>();
+  for (const t of index.teams) strength.set(t.id, 0.5);
+  for (const e of predIndex.entries) {
+    if (e.stage !== "group" || !e.probabilities) continue;
+    const aw = avgWin(e.probabilities);
+    strength.set(e.homeTeamId, (strength.get(e.homeTeamId) ?? 0.5) + aw.home);
+    strength.set(e.awayTeamId, (strength.get(e.awayTeamId) ?? 0.5) + aw.away);
+  }
+  return strength;
+}
+
+/** Plausibles K.-o.-Ergebnis aus der Stärkedifferenz (Sieger ≥ 1 Tor mehr). */
+function koScore(
+  gap: number,
+  rng: () => number,
+): { win: number; lose: number } {
+  const clamp = (v: number, lo: number, hi: number): number =>
+    Math.max(lo, Math.min(hi, v));
+  let gw = clamp(Math.round(1 + rng() * 1.5 + gap * 1.2), 1, 4);
+  let gl = clamp(Math.round(rng() * 1.3 - gap * 0.9), 0, 3);
+  if (gl >= gw) gl = gw - 1;
+  return { win: gw, lose: gl };
+}
+
+export function simulateBracket(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+  seed: number = Date.now(),
+): BracketResult {
+  const rng = makeRng(seed);
+  const strength = teamStrength(index, predIndex);
+
+  // 16 stärkste Teams ermitteln und nach Setzliste platzieren.
+  const top16 = [...strength.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 16)
+    .map(([id]) => id);
+  if (top16.length < 16) {
+    for (const t of index.teams) {
+      if (top16.length >= 16) break;
+      if (!top16.includes(t.id)) top16.push(t.id);
+    }
+  }
+  let bracket = SEED_ORDER.map((s) => top16[s - 1]!).filter(Boolean);
+
+  const rounds: BracketRound[] = [];
+  let si = 0;
+  while (bracket.length > 1) {
+    const matches: BracketMatch[] = [];
+    const next: string[] = [];
+    for (let i = 0; i < bracket.length; i += 2) {
+      const a = bracket[i]!;
+      const b = bracket[i + 1]!;
+      const sa = strength.get(a) ?? 0.5;
+      const sb = strength.get(b) ?? 0.5;
+      // Siegwahrscheinlichkeit proportional zur Stärke (+ Rauschen via RNG).
+      const pA = sa / (sa + sb);
+      const winner = rng() < pA ? a : b;
+      const loser = winner === a ? b : a;
+      const gap = Math.abs((strength.get(winner) ?? 0.5) - (strength.get(loser) ?? 0.5));
+      const { win, lose } = koScore(gap, rng);
+      matches.push({
+        a,
+        b,
+        winner,
+        score: { a: winner === a ? win : lose, b: winner === a ? lose : win },
+      });
+      next.push(winner);
+    }
+    rounds.push({ stage: KO_STAGES[si] ?? "final", matches });
+    bracket = next;
+    si++;
+  }
+
+  return { rounds, champion: bracket[0]! };
+}

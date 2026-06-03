@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { MatchCard } from "../components/MatchCard.js";
+import { Scorebug } from "../components/Scorebug.js";
 
 export function HomePage() {
   const { t } = useTranslation();
@@ -15,13 +16,17 @@ export function HomePage() {
     a.date.localeCompare(b.date),
   );
 
-  // Nächste 5 anstehende Partien (kein Ergebnis, Anpfiff in der Zukunft).
-  const upcoming = byDateAsc
-    .filter((e) => e.actualResult === null && new Date(e.date).getTime() >= now)
-    .slice(0, 5);
+  // Nächste anstehende Partien (kein Ergebnis, Anpfiff in der Zukunft).
+  const upcoming = byDateAsc.filter(
+    (e) => e.actualResult === null && new Date(e.date).getTime() >= now,
+  );
+  const upcomingList = upcoming.length > 0 ? upcoming : byDateAsc.slice(0, 6);
 
-  // Falls noch keine zukünftigen Partien existieren: die 5 frühesten zeigen.
-  const upcomingList = upcoming.length > 0 ? upcoming : byDateAsc.slice(0, 5);
+  // Held = nächste Partie mit vollständigem KI-Tipp; sonst die erste.
+  const featured =
+    upcomingList.find((e) => e.predictedScore && e.probabilities) ??
+    upcomingList[0];
+  const rest = upcomingList.filter((e) => e.matchId !== featured?.matchId).slice(0, 5);
 
   // Letzte 2 beendete Partien (mit Ergebnis), neueste zuerst.
   const recent = byDateAsc
@@ -32,28 +37,28 @@ export function HomePage() {
   return (
     <section className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold">{t("appTitle")}</h2>
-        <p className="mt-1 text-sm text-fg-muted">{t("tagline")}</p>
+        <div className="font-mono text-[11px] uppercase tracking-wider text-acc">
+          {t("overview.kicker")}
+        </div>
+        <h2 className="mt-1 text-xl font-bold">{t("overview.today")}</h2>
       </div>
 
-      {/* Nächste Spiele */}
-      <div className="space-y-2">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-fg-muted">
-          {t("overview.upcoming")}
-        </h3>
-        {upcomingList.length === 0 ? (
-          <p className="text-fg-faint">{t("overview.empty")}</p>
-        ) : (
-          upcomingList.map((e) => (
+      {featured && <Scorebug entry={featured} teams={teams} />}
+
+      {rest.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-mono text-[11px] font-semibold uppercase tracking-wider text-fg-faint">
+            {t("overview.upcoming")}
+          </h3>
+          {rest.map((e) => (
             <MatchCard key={e.matchId} entry={e} teams={teams} />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
 
-      {/* Zuletzt gespielt — Ist-Ergebnis vs. KI-Tipp */}
       {recent.length > 0 && (
         <div className="space-y-2">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-fg-muted">
+          <h3 className="font-mono text-[11px] font-semibold uppercase tracking-wider text-fg-faint">
             {t("overview.recent")}
           </h3>
           {recent.map((e) => (

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout.js";
 import { HomePage } from "./pages/HomePage.js";
 import { GroupsPage } from "./pages/GroupsPage.js";
+import { TeamsPage } from "./pages/TeamsPage.js";
 import { TeamPage } from "./pages/TeamPage.js";
 import { MatchPage } from "./pages/MatchPage.js";
 import { AccuracyPage } from "./pages/AccuracyPage.js";
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
       children: [
         { index: true, element: <HomePage /> },
         { path: "groups", element: <GroupsPage /> },
+        { path: "teams", element: <TeamsPage /> },
         { path: "accuracy", element: <AccuracyPage /> },
         { path: "bracket", element: <BracketPage /> },
         { path: "compare", element: <ComparePage /> },

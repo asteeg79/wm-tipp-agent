@@ -11,10 +11,14 @@ const resources = {
         overview: "Übersicht",
         groups: "Gruppen",
         accuracy: "Genauigkeit",
-        admin: "Admin",
-        bracket: "Turnierbaum",
+        admin: "Adminbereich",
+        bracket: "Bracket",
         compare: "Vergleich",
         play: "Tippspiel",
+        spiele: "Spiele",
+        gruppen: "Gruppen",
+        team: "Teams",
+        genau: "Bilanz",
       },
       theme: {
         label: "Darstellung",
@@ -27,6 +31,9 @@ const resources = {
       error: "Daten konnten nicht geladen werden.",
       overview: {
         title: "Anstehende Partien",
+        kicker: "FIFA WM 2026 · KI-Tipps",
+        today: "Heute im Fokus",
+        featured: "Tipp des Tages",
         empty: "Keine anstehenden Partien.",
         tipSoon: "Tipp folgt",
         upcoming: "Nächste Spiele",
@@ -111,6 +118,14 @@ const resources = {
         higher: "höher = besser",
         recent: "Letzte Ergebnisse",
       },
+      teams: {
+        kicker: "48 Teams · zum Öffnen tippen",
+        title: "Mannschaften",
+        search: "Team suchen …",
+        favorites: "Favoriten",
+        all: "Alle Teams",
+        none: "Kein Team gefunden.",
+      },
       bracket: {
         title: "Turnier-Simulator",
         intro:
@@ -121,6 +136,19 @@ const resources = {
         advance: "Achtelfinale+",
         title2: "Titel",
         groupWinner: "Gruppensieg",
+        tree: "K.-o.-Baum",
+        odds: "Titelchancen",
+        reroll: "Neu auslosen",
+        draw16: "Eine Auslosung · 16 stärkste Teams",
+        champion: "Simulierter Weltmeister",
+        treeNote:
+          "Setzung nach Stärke; jede Partie einzeln aus den 1X2-Wahrscheinlichkeiten ausgespielt — im K.-o. immer mit Sieger.",
+        rounds: {
+          round16: "Achtelfinale",
+          quarter: "Viertelfinale",
+          semi: "Halbfinale",
+          final: "Finale",
+        },
         note: "Vereinfachte Simulation auf Basis der aktuellen 1X2-Wahrscheinlichkeiten (Gruppenphase). K.-o.-Phase ab feststehenden Paarungen.",
       },
       compare: {
@@ -207,6 +235,10 @@ const resources = {
         bracket: "Bracket",
         compare: "Compare",
         play: "Play",
+        spiele: "Matches",
+        gruppen: "Groups",
+        team: "Teams",
+        genau: "Accuracy",
       },
       theme: {
         label: "Appearance",
@@ -219,6 +251,9 @@ const resources = {
       error: "Failed to load data.",
       overview: {
         title: "Upcoming matches",
+        kicker: "FIFA World Cup 2026 · AI picks",
+        today: "Today's focus",
+        featured: "Pick of the day",
         empty: "No upcoming matches.",
         tipSoon: "Tip pending",
         upcoming: "Next matches",
@@ -303,6 +338,14 @@ const resources = {
         higher: "higher = better",
         recent: "Recent results",
       },
+      teams: {
+        kicker: "48 teams · tap to open",
+        title: "Teams",
+        search: "Search team …",
+        favorites: "Favorites",
+        all: "All teams",
+        none: "No team found.",
+      },
       bracket: {
         title: "Tournament simulator",
         intro:
@@ -313,6 +356,19 @@ const resources = {
         advance: "Round of 16+",
         title2: "Title",
         groupWinner: "Group win",
+        tree: "Knockout tree",
+        odds: "Title odds",
+        reroll: "Redraw",
+        draw16: "One draw · 16 strongest teams",
+        champion: "Simulated champion",
+        treeNote:
+          "Seeded by strength; each tie played out from the 1X2 probabilities — knockouts always have a winner.",
+        rounds: {
+          round16: "Round of 16",
+          quarter: "Quarter-final",
+          semi: "Semi-final",
+          final: "Final",
+        },
         note: "Simplified simulation from current 1X2 probabilities (group stage). Knockout once pairings are set.",
       },
       compare: {

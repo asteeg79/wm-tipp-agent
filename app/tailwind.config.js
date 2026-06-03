@@ -19,6 +19,9 @@ export default {
         "fg-soft": v("fg-soft"),
         "fg-muted": v("fg-muted"),
         "fg-faint": v("fg-faint"),
+        acc: v("acc"), // Matchday-Signature-Akzent (Lime)
+        home: v("home"), // 1 (Heim)
+        away: v("away"), // 2 (Auswärts)
         pos: v("pos"),
         warn: v("warn"),
         neg: v("neg"),
@@ -30,6 +33,11 @@ export default {
           mid: "#f59e0b",
           high: "#22c55e",
         },
+      },
+      fontFamily: {
+        // Space Grotesk = UI, JetBrains Mono = alle Zahlen/Scores.
+        sans: ['"Space Grotesk"', "system-ui", "sans-serif"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
     },
   },

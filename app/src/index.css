@@ -3,47 +3,56 @@
 @tailwind utilities;
 
 /*
- * Semantisches Theme-Token-System (Sportschau-inspiriert).
+ * Semantisches Theme-Token-System — Matchday-Redesign.
  * Werte sind RGB-Tripel (space-separated), damit Tailwind-Opacity-Modifier
  * wie `bg-surface/40` über `rgb(var(--surface) / <alpha-value>)` funktionieren.
  * .dark / .light auf <html> schaltet die Paletten um.
+ *
+ * Matchday = Broadcast/Analytics, dunkel-first: tiefes Marineblau-Schwarz,
+ * elektrischer Lime-Akzent (--acc), Cyan = Heim (1), Orange = Auswärts (2).
  */
 :root,
 .light {
   color-scheme: light;
-  --canvas: 244 245 247; /* heller Seitenhintergrund (#f4f5f7) */
-  --surface: 255 255 255; /* Karten/Boxen (weiß) */
-  --surface-2: 237 239 242; /* leicht abgesetzte Flächen */
-  --edge: 222 226 231; /* feine Linien/Border */
-  --edge-strong: 200 205 212; /* kräftigere Border/Inputs */
-  --fg: 24 28 35; /* Haupttext (fast schwarz) */
-  --fg-soft: 55 62 74; /* sekundärer Text */
-  --fg-muted: 92 101 115; /* gedämpfter Text */
-  --fg-faint: 124 133 148; /* sehr gedämpft */
-  /* Akzente — Textfarben auf getöntem Grund (im Light kräftiger) */
-  --pos: 21 128 61; /* grün (Treffer/Heim) */
+  --canvas: 236 239 244; /* heller Seitenhintergrund (#eceff4) */
+  --surface: 255 255 255; /* Karten/Panels */
+  --surface-2: 244 246 250; /* leicht abgesetzte Flächen */
+  --edge: 221 227 236; /* feine Linien/Border */
+  --edge-strong: 200 210 224; /* kräftigere Border/Inputs */
+  --fg: 11 20 33; /* Haupttext */
+  --fg-soft: 71 84 103; /* sekundärer Text */
+  --fg-muted: 100 113 130; /* gedämpfter Text */
+  --fg-faint: 132 147 166; /* sehr gedämpft */
+  /* Akzente — im Hellmodus kräftiger/dunkler für Kontrast */
+  --acc: 78 125 0; /* gedämpftes Lime (#4e7d00) */
+  --home: 10 127 184; /* Cyan-Blau = Heim/1 */
+  --away: 207 90 48; /* Orange = Auswärts/2 */
+  --pos: 15 158 110; /* grün (Treffer) */
   --warn: 180 83 9; /* amber */
-  --neg: 185 28 28; /* rot */
-  --info: 29 78 216; /* blau */
-  --brand: 198 16 28; /* Sportschau-rot */
+  --neg: 214 47 78; /* rot/pink */
+  --info: 10 127 184; /* = home */
+  --brand: 78 125 0; /* Matchday-Akzent statt Sportschau-Rot */
 }
 
 .dark {
   color-scheme: dark;
-  --canvas: 8 12 20; /* sehr dunkles Marineblau (#080c14) */
-  --surface: 17 24 36; /* Karten */
-  --surface-2: 24 33 48;
-  --edge: 32 42 58;
-  --edge-strong: 48 60 80;
-  --fg: 237 241 247;
+  --canvas: 10 14 21; /* #0a0e15 */
+  --surface: 17 26 39; /* #111a27 */
+  --surface-2: 13 20 30; /* #0d141e */
+  --edge: 31 44 61; /* #1f2c3d */
+  --edge-strong: 44 61 82; /* #2c3d52 */
+  --fg: 234 241 248; /* #eaf1f8 */
   --fg-soft: 200 208 220;
-  --fg-muted: 148 160 178;
-  --fg-faint: 110 122 140;
-  --pos: 52 211 153; /* helleres Grün auf dunklem Grund */
-  --warn: 251 191 36;
-  --neg: 248 113 113;
-  --info: 56 189 248;
-  --brand: 248 113 113;
+  --fg-muted: 147 164 184;
+  --fg-faint: 86 103 121;
+  --acc: 200 255 58; /* elektrisches Lime (#c8ff3a) */
+  --home: 55 208 255; /* Cyan = Heim/1 (#37d0ff) */
+  --away: 255 138 92; /* Orange = Auswärts/2 (#ff8a5c) */
+  --pos: 52 224 160; /* helleres Grün (#34e0a0) */
+  --warn: 255 178 46;
+  --neg: 255 84 112; /* #ff5470 */
+  --info: 55 208 255;
+  --brand: 200 255 58; /* Matchday-Akzent */
 }
 
 html,
@@ -54,4 +63,9 @@ body,
 
 body {
   @apply bg-canvas text-fg antialiased;
+}
+
+/* Schmale, unauffällige Scrollbars (Broadcast-Look). */
+* {
+  scrollbar-width: thin;
 }
