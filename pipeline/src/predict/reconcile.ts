@@ -98,15 +98,9 @@ export function reconcile(
     away: round4(acc.away / wSum),
   };
 
-  // Finaler Score: vom Modell mit höherer Konfidenz, aber konsistent zum
-  // wahrscheinlichsten Ausgang gemacht.
-  const top = results
-    .slice()
-    .sort((a, b) => b.prediction.confidence - a.prediction.confidence)[0]!;
-  const predictedScore = makeConsistent(
-    top.prediction.predictedScore,
-    probabilities,
-  );
+  // Finaler Score (siehe deriveScore): Modell-Konsens vor knappem Top-Ausgang,
+  // Magnitude aus der xG-Baseline statt hartkodiert.
+  const predictedScore = deriveScore(results, probabilities, baseline);
 
   // agreement nur sinnvoll bei zwei Modellen.
   const agreement =
@@ -135,8 +129,65 @@ export function reconcile(
   };
 }
 
+type Outcome = "home" | "draw" | "away";
+
+/** Top-1X2-Ausgang + Vorsprung zum zweitwahrscheinlichsten. */
+function topOutcome(p: Outcome1x2): { key: Outcome; margin: number } {
+  const arr: Array<[Outcome, number]> = [
+    ["home", p.home],
+    ["draw", p.draw],
+    ["away", p.away],
+  ];
+  arr.sort((a, b) => b[1] - a[1]);
+  return { key: arr[0]![0], margin: arr[0]![1] - arr[1]![1] };
+}
+
+/** Ausgang eines konkreten Score. */
+function outcomeOf(s: ScoreLine): Outcome {
+  return s.home > s.away ? "home" : s.home < s.away ? "away" : "draw";
+}
+
+/**
+ * Leitet den finalen Score ab:
+ *  1) Nennen BEIDE Modelle denselben Score (Konsens) und passt der zum
+ *     Top-Ausgang ODER ist das Rennen knapp (margin < 0.10) → Konsens nehmen.
+ *     (Verhindert, dass ein hauchdünner Wahrscheinlichkeits-Vorsprung den
+ *      einhelligen Modell-Tipp kippt — der frühere 2:1-Bug.)
+ *  2) Sonst: Score des konfidenzstärkeren Modells, konsistent zum Top-Ausgang
+ *     gemacht (Magnitude aus der xG-Baseline).
+ */
+function deriveScore(
+  results: ModelResult[],
+  p: Outcome1x2,
+  baseline: Baseline,
+): ScoreLine {
+  const { key: topKey, margin } = topOutcome(p);
+
+  const consensus =
+    results.length === 2 &&
+    results[0]!.prediction.predictedScore.home ===
+      results[1]!.prediction.predictedScore.home &&
+    results[0]!.prediction.predictedScore.away ===
+      results[1]!.prediction.predictedScore.away
+      ? results[0]!.prediction.predictedScore
+      : null;
+
+  if (consensus && (outcomeOf(consensus) === topKey || margin < 0.1)) {
+    return consensus;
+  }
+
+  const top = results
+    .slice()
+    .sort((a, b) => b.prediction.confidence - a.prediction.confidence)[0]!;
+  return makeConsistent(top.prediction.predictedScore, p, baseline);
+}
+
 /** Macht einen Score konsistent zum wahrscheinlichsten 1X2-Ausgang. */
-function makeConsistent(score: ScoreLine, p: Outcome1x2): ScoreLine {
+function makeConsistent(
+  score: ScoreLine,
+  p: Outcome1x2,
+  baseline?: Baseline,
+): ScoreLine {
   const top = Math.max(p.home, p.draw, p.away);
   const sH = score.home;
   const sA = score.away;
@@ -144,19 +195,26 @@ function makeConsistent(score: ScoreLine, p: Outcome1x2): ScoreLine {
   if (top === p.away && sA > sH) return score;
   if (top === p.draw && sH === sA) return score;
   // sonst aus der Verteilung ableiten
-  return scoreFromProbs(p, undefined);
+  return scoreFromProbs(p, baseline);
 }
 
-/** Plausibler Score passend zum Top-Ausgang (Fallback). */
+/** Plausibler Score passend zum Top-Ausgang; Magnitude aus xG, wenn vorhanden. */
 function scoreFromProbs(p: Outcome1x2, baseline?: Baseline): ScoreLine {
   const top = Math.max(p.home, p.draw, p.away);
   if (baseline) {
     const eg = baseline.expectedGoals;
     const h = Math.max(0, Math.round(eg.home));
     const a = Math.max(0, Math.round(eg.away));
-    if (top === p.home) return { home: Math.max(h, a + 1), away: Math.min(a, h - 1 < 0 ? 0 : h - 1) };
-    if (top === p.away) return { home: Math.min(h, a - 1 < 0 ? 0 : a - 1), away: Math.max(a, h + 1) };
-    return { home: Math.max(h, a), away: Math.max(h, a) };
+    if (top === p.draw) {
+      const d = Math.max(h, a);
+      return { home: d, away: d };
+    }
+    if (top === p.home) {
+      // Heimsieg: knappster plausibler Sieg, Magnitude aus xG.
+      return h > a ? { home: h, away: a } : { home: a + 1, away: a };
+    }
+    // Auswärtssieg
+    return a > h ? { home: h, away: a } : { home: h, away: h + 1 };
   }
   if (top === p.home) return { home: 2, away: 1 };
   if (top === p.away) return { home: 1, away: 2 };
