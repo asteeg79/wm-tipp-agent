@@ -1,10 +1,11 @@
 // Erzeugt app/public/version.json. Läuft im Build (Vercel + lokal) VOR vite build.
 //
-// build    = fortlaufende Build-Nummer = Commit-Anzahl (git rev-list --count).
-//            Steigt mit jedem Commit. Angezeigt als "v0.<build>".
 // version  = Commit-Zeitstempel YYYYMMDDHHMM (UTC) — monoton steigend und auch
-//            bei shallow clone verfügbar; dient als robuste VERGLEICHS-Basis
-//            für die Update-Erkennung (unabhängig von der Build-Nummer).
+//            bei Vercels SHALLOW Clone korrekt. Dient als Anzeige
+//            (CalVer "v2026.06.03-1301") UND als Vergleichs-Basis für die
+//            Update-Erkennung. (Eine Commit-ANZAHL wäre auf Vercel unbrauchbar:
+//            der Shallow-Clone hat nur ~10 Commits, --unshallow scheitert dort
+//            → die Nummer zählte nicht hoch.)
 // commit   = kurzer Git-SHA (eindeutig pro Repo-Stand)
 // builtAt  = Build-Zeitpunkt (ISO)
 import { execSync } from "node:child_process";
@@ -41,28 +42,22 @@ function commitTimestampVersion() {
   );
 }
 
-// Build-Nummer = Commit-Anzahl. Vercel klont shallow → Historie nachladen,
-// damit die Zählung dem echten Repo-Stand entspricht.
-function buildNumber() {
-  if (sh("git rev-parse --is-shallow-repository") === "true") {
-    sh("git fetch --unshallow --quiet") ||
-      sh("git fetch --deepen=1000000 --quiet");
-  }
-  const c = sh("git rev-list --count HEAD");
-  return c && /^\d+$/.test(c) ? Number(c) : 0;
-}
-
 const version = commitTimestampVersion();
-const build = buildNumber();
 
 const info = {
-  build,
   version,
   commit,
   builtAt: new Date().toISOString(),
 };
 
+/** CalVer-Anzeige aus YYYYMMDDHHMM → "v2026.06.03-1301". */
+function calver(v) {
+  const s = String(v);
+  if (s.length !== 12) return `v${v}`;
+  return `v${s.slice(0, 4)}.${s.slice(4, 6)}.${s.slice(6, 8)}-${s.slice(8, 12)}`;
+}
+
 const dest = join(root, "app", "public", "version.json");
 mkdirSync(dirname(dest), { recursive: true });
 writeFileSync(dest, JSON.stringify(info) + "\n", "utf8");
-console.log(`[gen-version] v0.${build} (${version}) · ${commit} → ${dest}`);
+console.log(`[gen-version] ${calver(version)} · ${commit} → ${dest}`);

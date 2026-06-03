@@ -7,24 +7,21 @@ import { VitePWA } from "vite-plugin-pwa";
 // Version aus public/version.json lesen (gen-version.mjs schreibt sie im Build
 // VOR vite build). So kennt das App-Bundle exakt seinen eigenen Build-Stand.
 function readBuildVersion(): {
-  build: number;
   version: number;
   commit: string;
 } {
   try {
     const p = fileURLToPath(new URL("./public/version.json", import.meta.url));
     const j = JSON.parse(readFileSync(p, "utf8")) as {
-      build?: number;
       version?: number;
       commit?: string;
     };
     return {
-      build: j.build ?? 0,
       version: j.version ?? 0,
       commit: j.commit ?? "dev",
     };
   } catch {
-    return { build: 0, version: 0, commit: "dev" };
+    return { version: 0, commit: "dev" };
   }
 }
 const buildVersion = readBuildVersion();
@@ -47,7 +44,6 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(buildVersion.version),
     __APP_COMMIT__: JSON.stringify(buildVersion.commit),
-    __APP_BUILD__: JSON.stringify(buildVersion.build),
   },
   plugins: [
     react(),

@@ -13,18 +13,21 @@ import { useRegisterSW } from "virtual:pwa-register/react";
 // Vom Vite-`define` zur Build-Zeit injiziert.
 declare const __APP_VERSION__: number;
 declare const __APP_COMMIT__: string;
-declare const __APP_BUILD__: number;
 
 export const APP_VERSION: number =
   typeof __APP_VERSION__ === "number" ? __APP_VERSION__ : 0;
 export const APP_COMMIT: string =
   typeof __APP_COMMIT__ === "string" ? __APP_COMMIT__ : "dev";
-export const APP_BUILD: number =
-  typeof __APP_BUILD__ === "number" ? __APP_BUILD__ : 0;
 
-/** Sprechende Versionsnummer: "v0.<build>". */
-export function formatVersion(build: number): string {
-  return `v0.${build}`;
+/**
+ * Sprechende Versionsnummer aus dem Commit-Zeitstempel YYYYMMDDHHMM →
+ * CalVer "v2026.06.03-1301". Monoton steigend bei jedem Commit/Deploy und
+ * auch bei Vercels Shallow-Clone korrekt (Commit-Anzahl ist es dort NICHT).
+ */
+export function formatVersion(version: number): string {
+  const s = String(version);
+  if (s.length !== 12) return `v${version}`;
+  return `v${s.slice(0, 4)}.${s.slice(4, 6)}.${s.slice(6, 8)}-${s.slice(8, 12)}`;
 }
 
 /** Commit-Zeitstempel YYYYMMDDHHMM → "2026-05-31 13:31" (für Detailanzeige). */
@@ -35,7 +38,6 @@ export function formatBuiltAt(v: number): string {
 }
 
 interface ServerVersion {
-  build?: number;
   version: number;
   commit: string;
 }
@@ -47,7 +49,7 @@ export interface VersionState {
   /** Eine neue Version liegt vor (SW-Update ODER abweichende version.json). */
   updateAvailable: boolean;
   /** Aktuell laufende (eingebaute) Version. */
-  current: { build: number; version: number; commit: string };
+  current: { version: number; commit: string };
   /** Auf dem Server gefundene Version (falls abgerufen). */
   latest: ServerVersion | null;
   /** App aktualisieren: SW übernehmen + neu laden. */
@@ -112,7 +114,7 @@ export function useVersion(): VersionState {
 
   return {
     updateAvailable: needRefresh || versionMismatch,
-    current: { build: APP_BUILD, version: APP_VERSION, commit: APP_COMMIT },
+    current: { version: APP_VERSION, commit: APP_COMMIT },
     latest,
     update,
   };

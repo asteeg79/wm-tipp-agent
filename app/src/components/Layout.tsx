@@ -108,7 +108,7 @@ export function Layout() {
       <footer className="mx-auto w-full max-w-3xl px-4 pb-24 pt-2 text-center text-[11px] text-fg-faint">
         <div>{t("disclaimer")}</div>
         <div className="mt-1 font-mono text-[10px]">
-          {t("version.label")} {formatVersion(v.current.build)} ·{" "}
+          {t("version.label")} {formatVersion(v.current.version)} ·{" "}
           {v.current.commit}
         </div>
       </footer>

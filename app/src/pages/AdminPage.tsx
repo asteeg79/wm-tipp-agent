@@ -85,7 +85,7 @@ export function AdminPage() {
           </Row>
           <Row label={t("admin.appVersion")}>
             <span className="font-mono">
-              {formatVersion(v.current.build)} ·{" "}
+              {formatVersion(v.current.version)} ·{" "}
               {formatBuiltAt(v.current.version)} · {v.current.commit}
             </span>
           </Row>

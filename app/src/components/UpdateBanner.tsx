@@ -17,7 +17,7 @@ export function UpdateBanner({ v }: { v: VersionState }) {
             {t("version.updateBody")}
             {v.latest && (
               <span className="ml-1 font-mono text-xs text-emerald-100/50">
-                {formatVersion(v.latest.build ?? 0)} · {v.latest.commit}
+                {formatVersion(v.latest.version)} · {v.latest.commit}
               </span>
             )}
           </span>
