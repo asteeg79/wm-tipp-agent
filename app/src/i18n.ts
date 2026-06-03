@@ -112,6 +112,15 @@ const resources = {
         timelineNow: "aktueller Lauf",
         aiTip: "KI-Tipp (Claude + ChatGPT)",
       },
+      market: {
+        title: "Buchmacher-Quoten",
+        bookmakers: "Buchmacher",
+        implied: "Implizite Wahrscheinlichkeit",
+        compare: "Wir vs. Markt",
+        us: "Wir",
+        market: "Markt",
+        note: "Median über mehrere Buchmacher; die Buchmacher-Marge wurde herausgerechnet (de-vig).",
+      },
       accuracy: {
         title: "Genauigkeit & Vertrauen",
         intro:
@@ -340,6 +349,15 @@ const resources = {
         timeline: "Tip timeline",
         timelineNow: "current run",
         aiTip: "AI tip (Claude + ChatGPT)",
+      },
+      market: {
+        title: "Bookmaker odds",
+        bookmakers: "bookmakers",
+        implied: "Implied probability",
+        compare: "Us vs. market",
+        us: "Us",
+        market: "Market",
+        note: "Median across several bookmakers; the bookmaker margin has been removed (de-vig).",
       },
       accuracy: {
         title: "Accuracy & Trust",

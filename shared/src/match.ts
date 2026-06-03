@@ -73,6 +73,26 @@ export const PredictionHistoryEntry = z.object({
 });
 export type PredictionHistoryEntry = z.infer<typeof PredictionHistoryEntry>;
 
+/**
+ * Buchmacher-Markt: aus den h2h-Quoten mehrerer Buchmacher abgeleitete
+ * 1X2-Wahrscheinlichkeiten (de-vig-bereinigt) + repräsentative Dezimalquoten.
+ */
+export const MarketOdds = z.object({
+  source: z.string(),
+  updatedAt: IsoDateTime,
+  /** Anzahl der Buchmacher, über die gemittelt wurde. */
+  bookmakerCount: z.number().int().min(0),
+  /** Normierte 1X2-Wahrscheinlichkeiten (Σ = 1, Buchmacher-Marge entfernt). */
+  probabilities: Outcome1x2,
+  /** Repräsentative Dezimalquote (Median über die Buchmacher). */
+  decimal: z.object({
+    home: z.number(),
+    draw: z.number(),
+    away: z.number(),
+  }),
+});
+export type MarketOdds = z.infer<typeof MarketOdds>;
+
 /** Deterministische Form-/Stärke-Features eines Teams für eine Partie. */
 export const TeamFeatures = z.object({
   teamId: z.string(),
@@ -137,5 +157,7 @@ export const Match = z.object({
   featureBundle: FeatureBundle.optional(),
   prediction: Prediction.optional(),
   predictionHistory: z.array(PredictionHistoryEntry).default([]),
+  /** Buchmacher-Markt (optional, nur wenn Odds-Quelle aktiv). */
+  market: MarketOdds.optional(),
 });
 export type Match = z.infer<typeof Match>;

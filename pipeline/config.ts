@@ -89,6 +89,15 @@ export interface PipelineConfig {
     /** Quelle für Länderspiel-Historie (Form/H2H). */
     history: "openfootball" | "none";
   };
+  /** Buchmacher-Quoten (The Odds API, optional via ODDS_API_KEY). */
+  odds: {
+    /** Sport-Key bei The Odds API. */
+    sport: string;
+    /** Quoten-Region(en), z. B. "eu". */
+    regions: string;
+    /** Cache-TTL in Stunden (begrenzt Credit-Verbrauch, Free-Tier 500/Monat). */
+    ttlHours: number;
+  };
 }
 
 /** Saison aus Env (Testläufe gegen andere WM-Jahre), sonst Default. */
@@ -144,5 +153,11 @@ export const config: PipelineConfig = {
   providers: {
     tournament: "openfootball",
     history: "openfootball",
+  },
+  odds: {
+    sport: "soccer_fifa_world_cup",
+    regions: "eu",
+    // 6h → max ~4 Abrufe/Tag (~120/Monat), bleibt unter dem Free-Tier (500).
+    ttlHours: 6,
   },
 };

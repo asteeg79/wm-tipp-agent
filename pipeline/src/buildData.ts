@@ -48,6 +48,8 @@ import {
   loadExternalPriors,
   type ExternalPriors,
 } from "./sources/externalPriors.js";
+import { loadOdds, oddsKey, swapMarket } from "./sources/oddsApi.js";
+import type { MarketOdds } from "@wm/shared";
 import { readJsonOptional } from "./io/json.js";
 import { aggregateAccuracy, scoreMatch } from "./features/accuracy.js";
 
@@ -240,6 +242,12 @@ export async function buildData(
     );
   }
 
+  // Buchmacher-Quoten (optional; nur mit ODDS_API_KEY, gecacht).
+  const odds = await loadOdds();
+  if (odds.size > 0) {
+    console.log(`[pipeline] Buchmacher-Quoten geladen: ${odds.size} Partien`);
+  }
+
   const matchResult = await writeMatches(schedule, {
     resultsByTeam,
     newsByTeam,
@@ -249,6 +257,7 @@ export async function buildData(
     ensemble: ensemble && ensemble.active ? ensemble : null,
     aiWindowHours: options.aiWindowHours ?? null,
     externalPriors,
+    odds,
   });
   stats.matchesWritten = matchResult.written;
   stats.aiEvaluated = matchResult.aiEvaluated;
@@ -272,6 +281,8 @@ interface WriteMatchesCtx {
   aiWindowHours: number | null;
   /** Optionale externe Prognose-Priors (als Anker für die KI). */
   externalPriors: ExternalPriors | null;
+  /** Buchmacher-Quoten je Partie (gekeyt über oddsKey(home, away)). */
+  odds: Map<string, MarketOdds>;
 }
 
 interface WriteMatchesResult {
@@ -327,6 +338,17 @@ async function writeMatches(
     };
     if (fx.groupId) match.groupId = fx.groupId;
 
+    // Buchmacher-Quoten zuordnen (über normalisierte Teamnamen; bei
+    // umgekehrter Paarung Heim/Auswärts tauschen).
+    const homeName = ctx.nameById.get(fx.homeTeamId) ?? fx.homeTeamId;
+    const awayName = ctx.nameById.get(fx.awayTeamId) ?? fx.awayTeamId;
+    const market =
+      ctx.odds.get(oddsKey(homeName, awayName)) ??
+      (ctx.odds.has(oddsKey(awayName, homeName))
+        ? swapMarket(ctx.odds.get(oddsKey(awayName, homeName))!)
+        : undefined);
+    if (market) match.market = market;
+
     const homeResults = resultsByTeam.get(fx.homeTeamId);
     const awayResults = resultsByTeam.get(fx.awayTeamId);
 
@@ -376,7 +398,11 @@ async function writeMatches(
         );
         if (decision.shouldEvaluate) {
           try {
-            const prior = ctx.externalPriors?.byMatch.get(fx.matchId);
+            // Markt-Anker für die KI: echte Buchmacher-Quoten bevorzugt,
+            // sonst der optionale externe Prior.
+            const prior =
+              match.market?.probabilities ??
+              ctx.externalPriors?.byMatch.get(fx.matchId);
             const aiPred = await ensemble.evaluate({
               homeName: nameById.get(fx.homeTeamId) ?? fx.homeTeamId,
               awayName: nameById.get(fx.awayTeamId) ?? fx.awayTeamId,

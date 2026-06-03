@@ -195,6 +195,82 @@ export function MatchPage() {
           {t("match.predictionSoon")}
         </div>
       )}
+
+      {/* Buchmacher-Quoten (nur wenn Odds-Quelle aktiv) */}
+      {match.market && (
+        <div className="space-y-3 rounded-xl border border-edge bg-surface/40 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="font-semibold">{t("market.title")}</h3>
+            <span className="text-[11px] text-fg-faint">
+              {match.market.source} · {match.market.bookmakerCount}{" "}
+              {t("market.bookmakers")}
+            </span>
+          </div>
+
+          {/* Dezimalquoten 1 / X / 2 */}
+          <div className="grid grid-cols-3 gap-2">
+            {(
+              [
+                ["1", match.market.decimal.home],
+                ["X", match.market.decimal.draw],
+                ["2", match.market.decimal.away],
+              ] as const
+            ).map(([lbl, od]) => (
+              <div
+                key={lbl}
+                className="rounded-lg border border-edge bg-surface-2 px-2 py-2 text-center"
+              >
+                <div className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
+                  {lbl}
+                </div>
+                <div className="font-mono text-lg font-bold text-fg">
+                  {od.toFixed(2)}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Implizite Wahrscheinlichkeit (Buchmacher-Marge entfernt) */}
+          <div>
+            <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
+              {t("market.implied")}
+            </div>
+            <ProbabilityBar p={match.market.probabilities} />
+          </div>
+
+          {/* Wir vs. Markt je Ausgang */}
+          {pred && (
+            <div className="border-t border-edge pt-2">
+              <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
+                {t("market.compare")}
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
+                {(
+                  [
+                    ["match.home", pred.probabilities.home, match.market.probabilities.home],
+                    ["match.draw", pred.probabilities.draw, match.market.probabilities.draw],
+                    ["match.away", pred.probabilities.away, match.market.probabilities.away],
+                  ] as const
+                ).map(([k, ours, mkt]) => (
+                  <div key={k}>
+                    <div className="text-fg-faint">{t(k)}</div>
+                    <div className="font-mono text-pos">
+                      {t("market.us")} {pct(ours)}
+                    </div>
+                    <div className="font-mono text-fg-muted">
+                      {t("market.market")} {pct(mkt)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <p className="text-[10px] leading-snug text-fg-faint">
+            {t("market.note")}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
