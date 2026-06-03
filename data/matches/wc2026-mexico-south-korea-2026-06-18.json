@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4817,
-      "draw": 0.3047,
-      "away": 0.2136
+      "home": 0.4892,
+      "draw": 0.2862,
+      "away": 0.2246
     },
-    "confidence": 0.6187,
+    "confidence": 0.6237,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,26 +77,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
+          "home": 0.5,
+          "draw": 0.27,
           "away": 0.23
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Mexico mit besserer defensiver Stabilitaet (Gegentore 0.80 pro Spiel, Clean-Sheet-Rate 58.8%) gegenueber Koreas anfaelliger Abwehr (1.35 Gegentore, Clean-Sheet 41.4%)",
-          "Mexico geniesst als Gastgeber faktischen Heimvorteil (hostAdvantageTeamId MEX), auch wenn Venue nominell neutral",
-          "Hoehenlage von 1566m kann Mexiko als akklimatisiertes Team beguenstigen und Koreas Ausdauer beeintraechtigen",
-          "Suedkorea zeigt starke juengste Form (recentForm 1.9 > Mexikos 1.4), bleibt offensiv gefaehrlich"
+          "Mexico mit höherer Elo (1729 vs 1702) und stärkerer gewichteter Form (1.754 vs 1.610)",
+          "Host-Advantage und Höhenvorteil (1566 m) klar für Mexico, da Spiel faktisch im mexikanischen Umfeld",
+          "Mexicos defensive Stabilität (Gegentore 0.797, Clean-Sheet-Rate 58.8%) deutlich besser als Südkorea (1.348 / 41.4%)",
+          "Südkoreas starke jüngste Form (recentForm 1.9) und solide Offensive (1.336 Tore/Spiel) halten das Spiel offen"
         ],
         "risks": [
-          "Beide Teams 64 Tage ohne Spiel - Rhythmusmangel erschwert Formprognose",
-          "Koreas hoehere recentForm koennte die Baseline-Heimstaerke relativieren und ein Remis/Upset ermoeglichen",
-          "Duenne und unspezifische materielle News liefern kaum belastbare Anpassungsgrundlage",
-          "Nur ein H2H-Spiel (2:2) bietet sehr begrenzte direkte Vergleichsbasis"
+          "Südkoreas aufsteigender Trend in der jüngsten Form könnte die Baseline-Favoritenstellung relativieren",
+          "Lange Pause (64 Tage ohne Spiel) für beide Teams erschwert Formprognose",
+          "Einziges H2H endete unentschieden (2:2), geringe Datenbasis für Tendenz",
+          "Höhenvorteil nur teilweise nutzbar, falls Spielort nicht in großer Höhe liegt"
         ]
       },
       "chatgpt": {
@@ -105,27 +105,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.35,
-          "away": 0.2
+          "home": 0.48,
+          "draw": 0.3,
+          "away": 0.22
         },
-        "confidence": 0.7,
+        "confidence": 0.68,
         "keyFactors": [
-          "Both teams have a similar Elo rating with Mexico slightly ahead.",
-          "Mexico's recent form is slightly lower than South Korea's.",
-          "Neutral venue but played at high altitude, potential advantage for Mexico in terms of adaptation.",
-          "Head-to-head is balanced with 1 draw, no wins.",
-          "Mexico has a higher clean sheet rate."
+          "Neutral venue negates home advantage for Mexico.",
+          "South Korea's recent form is slightly better than Mexico's.",
+          "Head-to-head record is even with a draw in the previous encounter."
         ],
         "risks": [
-          "South Korea's recent form indicates improvement.",
-          "High altitude could adversely affect South Korea's performance.",
-          "Both teams have had an equal number of days of rest."
+          "Potential underperformance due to altitude, affecting both teams equally",
+          "News affecting South Korea's morale, though not explicitly negative for their performance"
         ]
       }
     },
-    "agreement": 0.9333,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit besserer defensiver Stabilitaet (Gegentore 0.80 pro Spiel, Clean-Sheet-Rate 58.8%) gegenueber Koreas anfaelliger Abwehr (1.35 Gegentore, Clean-Sheet 41.4%); Mexico geniesst als Gastgeber faktischen Heimvorteil (hostAdvantageTeamId MEX), auch wenn Venue nominell neutral; Hoehenlage von 1566m kann Mexiko als akklimatisiertes Team beguenstigen und Koreas Ausdauer beeintraechtigen.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit höherer Elo (1729 vs 1702) und stärkerer gewichteter Form (1.754 vs 1.610); Host-Advantage und Höhenvorteil (1566 m) klar für Mexico, da Spiel faktisch im mexikanischen Umfeld; Mexicos defensive Stabilität (Gegentore 0.797, Clean-Sheet-Rate 58.8%) deutlich besser als Südkorea (1.348 / 41.4%).",
     "inputHash": "sha256:d36f55e39207629e729c5babd9d7b83f3a926bfed512a3d8b4cc39a394a0045e"
   },
   "predictionHistory": [
@@ -232,11 +229,24 @@
         "away": 0.2453
       },
       "confidence": 0.6027
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4817,
+        "draw": 0.3047,
+        "away": 0.2136
+      },
+      "confidence": 0.6187
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.026Z",
+    "updatedAt": "2026-06-03T20:29:14.070Z",
     "bookmakerCount": 17,
     "probabilities": {
       "home": 0.513,

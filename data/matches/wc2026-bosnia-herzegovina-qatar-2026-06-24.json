@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "BIH",
       "elo": 1575,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5713,
-      "draw": 0.2087,
-      "away": 0.22
+      "home": 0.5756,
+      "draw": 0.2278,
+      "away": 0.1965
     },
-    "confidence": 0.6606,
+    "confidence": 0.6617,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
-          "draw": 0.22,
-          "away": 0.22
+          "home": 0.5700000000000001,
+          "draw": 0.22500000000000003,
+          "away": 0.20500000000000002
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Bosnia hat höhere Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).",
-          "Bosniens Offensive ist stärker (1.738 Tore/Spiel) gegenüber Qatars schwacher Defensive (1.802 Gegentore/Spiel).",
-          "Qatar zeigt zwar leicht bessere Clean-Sheet-Rate (0.25), kassiert aber im Schnitt deutlich mehr Tore.",
-          "Neutraler Spielort eliminiert einen klassischen Heimvorteil, was die Baseline leicht relativiert."
+          "Bosnia hat höheres Elo (1575 vs 1509) und bessere gewichtete Form (1.445 vs 1.292) sowie stärkere jüngste Form (1.6 vs 1.2).",
+          "Offensiv- und Defensivwerte sprechen für Bosnia: höhere goalsForAvg (1.738 vs 1.459) und deutlich niedrigere goalsAgainstAvg (1.272 vs 1.802).",
+          "Qatars hohe goalsAgainstAvg (1.802) deutet auf defensive Anfälligkeit hin, was Bosnias Torproduktion begünstigt.",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil, hält die Partie aber leicht zugunsten Bosnias offen."
         ],
         "risks": [
-          "Qatars sehr lange Pause (198 Tage seit letztem Spiel) macht Formbewertung unsicher – Spielrhythmus unklar.",
-          "Kein Head-to-Head vorhanden, daher keine direkte Vergleichsbasis.",
-          "Bosnien ebenfalls mit längerer Pause (64 Tage) und geringer Clean-Sheet-Rate (0.19) – defensive Anfälligkeit.",
-          "Keine substantiellen Material-News zu Verletzungen/Sperren; Kaderqualität schwer einschätzbar."
+          "Qatar war 198 Tage ohne Pflichtspiel – Formstatus schwer einschätzbar, mögliche Frische oder Spielrhythmus-Defizit.",
+          "Keine H2H-Daten vorhanden, daher fehlt direkter Vergleichsmaßstab.",
+          "Bosnia mit niedriger cleanSheetRate (0.19) anfällig für Gegentore, was ein Remis-Szenario realistisch hält.",
+          "Keine substanziellen taktischen/Verletzungs-News verfügbar – Korrektur basiert nur auf Form-/Elo-Daten."
         ]
       },
       "chatgpt": {
@@ -105,24 +105,24 @@
         },
         "probabilities": {
           "home": 0.58,
-          "draw": 0.2,
-          "away": 0.22
+          "draw": 0.23,
+          "away": 0.19
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Bosnia & Herzegovina has a better recent form with 1.6 compared to Qatar's 1.2.",
-          "Bosnia & Herzegovina has a high weighted form of 1.445, which is higher than Qatar's 1.292.",
-          "Qatar has not played a match in the last 198 days, potentially impacting match fitness.",
-          "The match is on a neutral venue, reducing any home advantage."
+          "Bosnia & Herzegovina has a higher Elo rating (1575) compared to Qatar (1509).",
+          "Bosnia & Herzegovina's recent form is stronger (1.6) compared to Qatar's (1.2).",
+          "Qatar has not played a match in the last 198 days compared to Bosnia & Herzegovina's 64 days, which may affect match fitness.",
+          "Neutral venue, hence no home advantage for either team."
         ],
         "risks": [
-          "Both teams have not faced each other before, introducing uncertainty in dynamics.",
-          "Qatar's clean sheet rate of 0.25 is slightly better than that of Bosnia & Herzegovina."
+          "Qatar's higher clean sheet rate (0.25) compared to Bosnia's (0.19) could potentially lead to a more defensive game.",
+          "Both teams have similar general goal averages, so potential exists for a draw."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnia hat höhere Elo (1575 vs 1509) und bessere gewichtete sowie aktuelle Form (1.445/1.6 vs 1.292/1.2).; Bosniens Offensive ist stärker (1.738 Tore/Spiel) gegenüber Qatars schwacher Defensive (1.802 Gegentore/Spiel).; Qatar zeigt zwar leicht bessere Clean-Sheet-Rate (0.25), kassiert aber im Schnitt deutlich mehr Tore..",
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnia hat höheres Elo (1575 vs 1509) und bessere gewichtete Form (1.445 vs 1.292) sowie stärkere jüngste Form (1.6 vs 1.2).; Offensiv- und Defensivwerte sprechen für Bosnia: höhere goalsForAvg (1.738 vs 1.459) und deutlich niedrigere goalsAgainstAvg (1.272 vs 1.802).; Qatars hohe goalsAgainstAvg (1.802) deutet auf defensive Anfälligkeit hin, was Bosnias Torproduktion begünstigt..",
     "inputHash": "sha256:ff5cb88e05f1f6de24c2dabcebefde283338372b92f9236e7d1bcbbbc487a437"
   },
   "predictionHistory": [
@@ -242,11 +242,24 @@
         "away": 0.2285
       },
       "confidence": 0.7053
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5713,
+        "draw": 0.2087,
+        "away": 0.22
+      },
+      "confidence": 0.6606
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.028Z",
+    "updatedAt": "2026-06-03T20:29:14.074Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.5926,

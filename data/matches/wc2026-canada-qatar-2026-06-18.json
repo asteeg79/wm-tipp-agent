@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "CAN",
       "elo": 1696,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.7289,
-      "draw": 0.1742,
-      "away": 0.0969
+      "home": 0.6883,
+      "draw": 0.19,
+      "away": 0.1217
     },
-    "confidence": 0.7228,
+    "confidence": 0.74,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,46 +81,48 @@
         },
         "probabilities": {
           "home": 0.7000000000000001,
-          "draw": 0.18000000000000002,
-          "away": 0.12000000000000001
+          "draw": 0.19000000000000003,
+          "away": 0.11000000000000001
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Kanadas (1696 vs. 1509) untermauert die Favoritenrolle.",
-          "Bessere Defensive Kanadas: 0.61 Gegentore/Spiel und 53.6% Clean-Sheet-Rate gegen Katars schwache 1.80 Gegentore/Spiel und nur 25% Clean Sheets.",
-          "Stärkere gewichtete Form Kanadas (1.623 vs. 1.292) sowie besserer recentForm-Wert (1.7 vs. 1.2).",
-          "Kontextueller Host-Vorteil zugunsten Kanadas trotz formal neutralem Spielort."
+          "Klarer Elo-Vorsprung Kanadas (1696 vs. 1509) und besserer gewichteter Form-Wert (1.623 vs. 1.292)",
+          "Kanada mit deutlich stabilerer Defensive: 0.606 Gegentore/Spiel und 53.6% Clean-Sheet-Rate gegenüber 1.802 Gegentoren und nur 25% bei Katar",
+          "Host-Advantage-Faktor zugunsten Kanadas trotz nominell neutralem Spielort",
+          "Baseline und externe Prognose decken sich eng (ca. 0.69-0.71 Heimsieg), was die Einschätzung stützt"
         ],
         "risks": [
-          "Katar hat mit 1.459 Toren/Spiel offensiv mehr Output als Kanada (1.242), was Treffer wahrscheinlich macht.",
-          "Lange Wettkampfpause Katars (198 Tage seit letztem Spiel) erschwert Formeinschätzung und kann in beide Richtungen wirken.",
-          "Keine Head-to-Head-Daten vorhanden, dadurch erhöhte Unsicherheit.",
-          "Kanada ebenfalls mit langer Pause (64 Tage), möglicher Rhythmusverlust."
+          "Katar hat mit 198 Tagen seit dem letzten Spiel eine sehr lange Pause – Spielrhythmus und Fitness schwer einzuschätzen, kann positiv (frisch) oder negativ (Spielpraxis) wirken",
+          "Kein H2H-Datenmaterial vorhanden, daher höhere Unsicherheit",
+          "Katars überdurchschnittliche Offensive (1.459 Tore/Spiel) kann gegen kanadische Abwehrfehler zu einem Treffer führen",
+          "Kanada 64 Tage ohne Spiel – mögliche Anlaufschwierigkeiten zu Turnierbeginn"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.17,
-          "away": 0.08
+          "home": 0.68,
+          "draw": 0.19,
+          "away": 0.13
         },
-        "confidence": 0.85,
+        "confidence": 0.87,
         "keyFactors": [
-          "Canada's recent form is strong with a recentForm score of 1.7.",
-          "Qatar has not played a match for 198 days, indicating potential lack of match sharpness.",
-          "Canada has a high clean sheet rate of 53.6% and a strong defense."
+          "Canada has a higher Elo rating (1696 vs 1509) and weighted form (1.623 vs 1.292).",
+          "Canada's recent form is also superior (1.7 vs 1.2).",
+          "Canada has a strong defensive record with a higher clean sheet rate (0.536 vs 0.25).",
+          "Although the match is at a neutral venue, Canada has host advantage as a co-host nation."
         ],
         "risks": [
-          "Neutral venue reduces Canada's potential home advantage despite being the host nation."
+          "Canada's days since last match are 64, which might slightly impact competitive form.",
+          "Qatar's higher average goals for (1.459) suggests they can potentially score."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Kanadas (1696 vs. 1509) untermauert die Favoritenrolle.; Bessere Defensive Kanadas: 0.61 Gegentore/Spiel und 53.6% Clean-Sheet-Rate gegen Katars schwache 1.80 Gegentore/Spiel und nur 25% Clean Sheets.; Stärkere gewichtete Form Kanadas (1.623 vs. 1.292) sowie besserer recentForm-Wert (1.7 vs. 1.2)..",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Kanadas (1696 vs. 1509) und besserer gewichteter Form-Wert (1.623 vs. 1.292); Kanada mit deutlich stabilerer Defensive: 0.606 Gegentore/Spiel und 53.6% Clean-Sheet-Rate gegenüber 1.802 Gegentoren und nur 25% bei Katar; Host-Advantage-Faktor zugunsten Kanadas trotz nominell neutralem Spielort.",
     "inputHash": "sha256:d7712f39dc453df4c52490e74d2ed82d71a8c88575a06d18597ff05306ac9767"
   },
   "predictionHistory": [
@@ -240,11 +242,24 @@
         "away": 0.1367
       },
       "confidence": 0.6883
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7289,
+        "draw": 0.1742,
+        "away": 0.0969
+      },
+      "confidence": 0.7228
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.026Z",
+    "updatedAt": "2026-06-03T20:29:14.070Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.7072,

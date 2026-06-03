@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "NOR",
       "elo": 1774,
@@ -50,15 +50,15 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3044,
-      "draw": 0.2256,
-      "away": 0.47
+      "home": 0.28,
+      "draw": 0.2456,
+      "away": 0.4744
     },
     "confidence": 0.6728,
     "baseline": {
@@ -80,22 +80,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.31,
-          "draw": 0.22,
-          "away": 0.47
+          "home": 0.28,
+          "draw": 0.24,
+          "away": 0.48
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Frankreich klar höhere Elo (1904 vs 1774) und stärkere gewichtete Form (2.43 vs 2.019)",
-          "Saliba laut Deschamps fit für die WM, keine materiellen Ausfälle bei Frankreich",
-          "Norwegen mit starker Offensive (2.78 Tore/Spiel) und solider Defensive (0.81 Gegentore), Heimwert real reduziert durch neutralen Platz",
-          "Beide Teams gut ausgeruht (64/66 Tage), Form jeweils hoch (recentForm 2.3 bzw. 2.5)"
+          "France mit höherem Elo (1904 vs 1774) und stärkerer gewichteter Form (2.43 vs 2.019)",
+          "Norwegen offensiv stark (goalsForAvg 2.78) und sehr solide defensiv (goalsAgainstAvg 0.81)",
+          "Neutraler Spielort, kein Heimvorteil für Norwegen",
+          "Saliba laut Deschamps fit für die WM, kein gravierender Ausfall bei Frankreich",
+          "Beide Teams mit ähnlich hoher Clean-Sheet-Rate (~0.46)"
         ],
         "risks": [
-          "Norwegens hohe Torquote kann bei Standardsituationen für Überraschung sorgen",
-          "Kein Head-to-Head als Referenz vorhanden",
-          "Lange Pause seit letztem Spiel erschwert Formeinschätzung",
-          "Genauer Kaderstatus (Startelf) beider Teams noch nicht final bestätigt"
+          "Norwegens hohe Torquote (Haaland-Faktor) kann das Spiel kippen lassen",
+          "Lange Pause beider Teams (64/66 Tage) erschwert Formeinschätzung",
+          "Keine H2H-Daten als Referenz vorhanden",
+          "Defensive Stärke Norwegens könnte die erwarteten France-Tore drücken"
         ]
       },
       "chatgpt": {
@@ -104,24 +105,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.23,
+          "home": 0.28,
+          "draw": 0.25,
           "away": 0.47
         },
         "confidence": 0.75,
         "keyFactors": [
-          "France has a higher Elo rating and recent form advantage over Norway.",
-          "Neutral venue levels the playing field, but doesn't significantly alter France's advantage.",
-          "Norway's higher goals for average indicates potential to score, but France’s overall quality is higher."
+          "France has a higher Elo rating (1904) compared to Norway (1774), suggesting stronger overall performance.",
+          "Both teams show good recent form, but France's weighted form and recent form are slightly better (2.43 and 2.5) than Norway's (2.019 and 2.3).",
+          "Despite Norway's strong average goals for (2.777), France's competitive clean sheet rate (0.464) and slightly better defensive record could limit Norway's scoring.",
+          "The match is played at a neutral venue, nullifying any home advantage."
         ],
         "risks": [
-          "Injury concerns for key French player William Saliba, although reported as manageable per recent news.",
-          "Potential variability in Norway's performance as they determine a starting lineup."
+          "France has a slight injury concern with William Saliba, but he is expected to be fit. However, unexpected developments could impact their defensive stability.",
+          "Norway's strong goal-scoring form and recent high performances could pose a threat despite being the underdog."
         ]
       }
     },
     "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich klar höhere Elo (1904 vs 1774) und stärkere gewichtete Form (2.43 vs 2.019); Saliba laut Deschamps fit für die WM, keine materiellen Ausfälle bei Frankreich; Norwegen mit starker Offensive (2.78 Tore/Spiel) und solider Defensive (0.81 Gegentore), Heimwert real reduziert durch neutralen Platz.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: France mit höherem Elo (1904 vs 1774) und stärkerer gewichteter Form (2.43 vs 2.019); Norwegen offensiv stark (goalsForAvg 2.78) und sehr solide defensiv (goalsAgainstAvg 0.81); Neutraler Spielort, kein Heimvorteil für Norwegen.",
     "inputHash": "sha256:1ffbc945ac8751296e261c011e847055182068259b81b56057132471dcd7745c"
   },
   "predictionHistory": [
@@ -241,11 +243,24 @@
         "away": 0.462
       },
       "confidence": 0.6104
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3044,
+        "draw": 0.2256,
+        "away": 0.47
+      },
+      "confidence": 0.6728
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.030Z",
+    "updatedAt": "2026-06-03T20:29:14.075Z",
     "bookmakerCount": 13,
     "probabilities": {
       "home": 0.2187,

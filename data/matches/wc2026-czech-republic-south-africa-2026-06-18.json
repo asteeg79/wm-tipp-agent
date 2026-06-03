@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "CZE",
       "elo": 1646,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4436,
-      "draw": 0.2464,
-      "away": 0.31
+      "home": 0.4633,
+      "draw": 0.2742,
+      "away": 0.2625
     },
-    "confidence": 0.6019,
+    "confidence": 0.592,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.42,
-          "draw": 0.27,
-          "away": 0.31
+          "home": 0.44,
+          "draw": 0.28,
+          "away": 0.28
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Tschechien leicht höhere Elo (1646 vs 1627) und stärkere gewichtete Form (1.674 vs 1.59)",
-          "Südafrikas defensive Stabilität sticht hervor: Clean-Sheet-Rate 0.484 und nur 1.009 Gegentore im Schnitt",
-          "Tschechien offensiv stärker (1.957 Tore/Spiel) als Südafrika (1.556), aber defensiv anfälliger (CS-Rate nur 0.32)",
-          "Neutraler Spielort eliminiert den klassischen Heimvorteil und gleicht die Teams weiter an"
+          "Tschechien mit leicht höherem Elo (1646 vs 1627) und besserer Offensive (Tore/Spiel 1.96 vs 1.56)",
+          "Südafrika defensiv stark: hohe Clean-Sheet-Rate (0.484) und nur 1.01 Gegentore/Spiel",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil",
+          "Beide Teams mit ähnlicher gewichteter Form (1.67 vs 1.59) und gleicher Pause (64 Tage)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden – Begegnung schwer einschätzbar",
-          "News beider Teams sind kaum substanziell (Kit-/GM-/Spiel-Modus-Meldungen), keine klaren Verletzungs-/Sperreninfos verfügbar",
-          "Lange Pause (64 Tage seit letztem Spiel bei beiden) erhöht Unsicherheit über aktuelle Spielform",
-          "Südafrikas defensive Disziplin könnte die erwarteten tschechischen Tore drücken und das Spiel knapper gestalten als die Baseline annimmt"
+          "Keine Head-to-Head-Daten verfügbar, daher höhere Unsicherheit",
+          "Keine substanziellen verletzungs-/personenbezogenen News, nur Kader-/Marketing-Meldungen",
+          "Südafrikas defensive Stabilität könnte tschechische Offensive neutralisieren und Remis begünstigen",
+          "Lange Pause beider Teams kann Spielrhythmus beeinträchtigen"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.46,
-          "draw": 0.23,
-          "away": 0.31
+          "home": 0.48,
+          "draw": 0.27,
+          "away": 0.25
         },
-        "confidence": 0.72,
+        "confidence": 0.7,
         "keyFactors": [
-          "Czech Republic has a slightly higher Elo rating and stronger recent form.",
-          "Czech Republic's offensive capability is evident with a higher goals for average (1.957).",
-          "South Africa struggles with goal scoring against higher ranked teams.",
-          "The match is played at a neutral venue, eliminating home advantage."
+          "Czech Republic has a slightly higher Elo rating with 1646 compared to South Africa's 1627.",
+          "Czech Republic shows better recent form (1.6) compared to South Africa's (1.5).",
+          "Czech Republic has a higher goals for average of 1.957 goals per match.",
+          "Neutral venue reduces any home advantage benefits for South Africa."
         ],
         "risks": [
-          "Both teams have been inactive for 64 days, which may affect match sharpness.",
-          "South Africa's defensive strength, indicated by a higher clean sheet rate (0.484), might help them."
+          "South Africa's higher clean sheet rate at 0.484 could make scoring more difficult for Czech Republic.",
+          "There is no head-to-head history, introducing uncertainty in direct matchup impact.",
+          "Any potential advantages tied to team cohesion or morale are not captured in the statistics, especially considering significant events like new management or coaching hires for Czech Republic."
         ]
       }
     },
     "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tschechien leicht höhere Elo (1646 vs 1627) und stärkere gewichtete Form (1.674 vs 1.59); Südafrikas defensive Stabilität sticht hervor: Clean-Sheet-Rate 0.484 und nur 1.009 Gegentore im Schnitt; Tschechien offensiv stärker (1.957 Tore/Spiel) als Südafrika (1.556), aber defensiv anfälliger (CS-Rate nur 0.32).",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tschechien mit leicht höherem Elo (1646 vs 1627) und besserer Offensive (Tore/Spiel 1.96 vs 1.56); Südafrika defensiv stark: hohe Clean-Sheet-Rate (0.484) und nur 1.01 Gegentore/Spiel; Neutraler Spielort eliminiert klassischen Heimvorteil.",
     "inputHash": "sha256:c4ddf25c871362d12e490308ea467edf09d52fc94ab3faf062912d58b723354d"
   },
   "predictionHistory": [
@@ -229,11 +230,24 @@
         "away": 0.3214
       },
       "confidence": 0.6251
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4436,
+        "draw": 0.2464,
+        "away": 0.31
+      },
+      "confidence": 0.6019
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.026Z",
+    "updatedAt": "2026-06-03T20:29:14.070Z",
     "bookmakerCount": 17,
     "probabilities": {
       "home": 0.4747,

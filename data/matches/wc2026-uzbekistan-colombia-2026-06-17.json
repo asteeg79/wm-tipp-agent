@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "UZB",
       "elo": 1676,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2848,
-      "draw": 0.2463,
-      "away": 0.4688
+      "home": 0.2708,
+      "draw": 0.2454,
+      "away": 0.4838
     },
-    "confidence": 0.6392,
+    "confidence": 0.6435,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,23 +81,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.305,
-          "draw": 0.255,
-          "away": 0.44
+          "home": 0.26,
+          "draw": 0.24,
+          "away": 0.5
         },
-        "confidence": 0.55,
+        "confidence": 0.6,
         "keyFactors": [
-          "Colombia hat klar höheres Elo (1775 vs 1676) und stärkere Offensive (goalsForAvg 1.95 vs 1.51).",
-          "Uzbekistan defensiv solide (cleanSheetRate 0.625, goalsAgainstAvg 0.893), was Kolumbiens Torausbeute dämpfen könnte.",
-          "Neutrale Spielstätte ohne Heimvorteil; zudem Höhe (2240m), die beide Teams gleichermaßen fordert.",
-          "Uzbekistans gewichtete Form (1.707) liegt leicht über Kolumbiens (1.544), während Kolumbiens jüngste Form (1.8) besser ist.",
-          "Cannavaro-Squad bestätigt und etablierte Spieler wie Khusanov verfügbar – stabile Kaderlage bei Uzbekistan."
+          "Colombia hat klar höheres Elo (1775 vs 1676) und stärkere Offensive (1.95 Tore/Spiel vs 1.51).",
+          "Uzbekistan defensiv solide (Clean-Sheet-Rate 0.625, nur 0.893 Gegentore/Spiel), kann das Ergebnis eng halten.",
+          "Externer Forecast sieht Colombia noch deutlicher vorne (0.67), was die Baseline-Auswärtswahrscheinlichkeit stützt.",
+          "Neutraler Spielort ohne Heimvorteil für Uzbekistan; gute Form Colombias (recentForm 1.8)."
         ],
         "risks": [
-          "Keinerlei H2H-Daten verfügbar, erhöht Unsicherheit.",
-          "Uzbekistan 128 Tage ohne Spiel – mögliche Wettkampfrhythmus-Defizite.",
-          "Höhe von 2240m könnte unvorhersehbare Auswirkungen auf beide Teams haben.",
-          "Begrenzte News-Lage zu Kolumbiens Aufstellung/Verletzungen."
+          "Höhenlage (2240 m) könnte Colombias Spiel beeinträchtigen und Uzbekistan einen Ausgleich verschaffen.",
+          "Uzbekistan seit 128 Tagen ohne Spiel – Form schwer einzuschätzen, neuer Coach Cannavaro kann taktisch überraschen.",
+          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit.",
+          "Uzbekistans starke Defensive könnte ein Remis ermöglichen."
         ]
       },
       "chatgpt": {
@@ -106,26 +105,26 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.27,
-          "draw": 0.24,
-          "away": 0.49
+          "home": 0.28,
+          "draw": 0.25,
+          "away": 0.47
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Uzbekistan's recent improvement under coach Fabio Cannavaro, though the team has not played a match in 128 days may affect match sharpness.",
-          "Colombia's recent form is slightly better despite their higher goals conceded average.",
-          "Colombia has a higher Elo rating, suggesting overall strength.",
-          "Playing at a neutral venue with high altitude could slightly neutralize advantages, but both teams show ability to adapt."
+          "Colombia's higher Elo rating (1775 vs 1676)",
+          "Colombia's recent form advantage (1.8 vs 1.6)",
+          "Colombia's higher average goals scored (1.95 vs 1.51)",
+          "Cannavaro's appointment for Uzbekistan may increase motivation"
         ],
         "risks": [
-          "Uzbekistan's clean sheet rate indicates a strong defense which could limit Colombia's attack.",
-          "Colombia's relatively high goals against average, coupled with Uzbekistan's decent goal-scoring average, suggests vulnerability.",
-          "No head-to-head match history to draw on for further insights."
+          "Neutral venue at high altitude (2240m)",
+          "128 days since Uzbekistan's last match compared to 66 for Colombia",
+          "Uzbekistan's strong recent defensive record (clean sheet rate 0.625)"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia hat klar höheres Elo (1775 vs 1676) und stärkere Offensive (goalsForAvg 1.95 vs 1.51).; Uzbekistan defensiv solide (cleanSheetRate 0.625, goalsAgainstAvg 0.893), was Kolumbiens Torausbeute dämpfen könnte.; Neutrale Spielstätte ohne Heimvorteil; zudem Höhe (2240m), die beide Teams gleichermaßen fordert..",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia hat klar höheres Elo (1775 vs 1676) und stärkere Offensive (1.95 Tore/Spiel vs 1.51).; Uzbekistan defensiv solide (Clean-Sheet-Rate 0.625, nur 0.893 Gegentore/Spiel), kann das Ergebnis eng halten.; Externer Forecast sieht Colombia noch deutlicher vorne (0.67), was die Baseline-Auswärtswahrscheinlichkeit stützt..",
     "inputHash": "sha256:141491e6e5fe982c899cfebf0e763876d5f36347269a97ed0ac206e714b871fd"
   },
   "predictionHistory": [
@@ -245,11 +244,24 @@
         "away": 0.46
       },
       "confidence": 0.6229
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2848,
+        "draw": 0.2463,
+        "away": 0.4688
+      },
+      "confidence": 0.6392
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.026Z",
+    "updatedAt": "2026-06-03T20:29:14.070Z",
     "bookmakerCount": 19,
     "probabilities": {
       "home": 0.1221,

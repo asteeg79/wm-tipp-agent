@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "ESP",
       "elo": 1974,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 3,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8688,
-      "draw": 0.0906,
-      "away": 0.0406
+      "home": 0.8775,
+      "draw": 0.0859,
+      "away": 0.0366
     },
-    "confidence": 0.8387,
+    "confidence": 0.8317,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.89,
-          "draw": 0.08,
-          "away": 0.03
+          "home": 0.875,
+          "draw": 0.092,
+          "away": 0.033
         },
-        "confidence": 0.8,
+        "confidence": 0.82,
         "keyFactors": [
-          "Großer Klassenunterschied laut Elo (1974 vs. 1572) und Form (gewichtet 2.33 vs. 1.26)",
-          "Spaniens starke Offensive (2.68 Tore/Spiel) trifft auf defensiv anfälligere Saudis (1.32 Gegentore/Spiel)",
-          "Yamal-Updates überwiegend positiv: Trainer rechnet mit Einsatzfähigkeit zum Turnierstart",
-          "Neutraler Spielort ohne Heimvorteil für beide, was die individuelle Qualität noch stärker gewichtet"
+          "Großer Klassenunterschied im Elo (1974 vs. 1572, ~400 Punkte) zugunsten Spaniens",
+          "Spaniens überlegene Form (weightedForm 2.33 vs. 1.26) und Offensive (2.68 Tore/Spiel gegen 0.87 KSA)",
+          "Saudi-Arabien defensiv anfällig (1.32 Gegentore/Spiel) gegen hochkarätige Offensive",
+          "Yamal-Verfügbarkeit laut mehreren Quellen erwartet, mindert Personalrisiko"
         ],
         "risks": [
-          "Restunsicherheit über Yamals tatsächliche Fitness könnte Spaniens Offensivpotenzial leicht mindern",
-          "Saudi-Arabiens ordentliche Clean-Sheet-Rate (0.47) und defensive Kompaktheit könnten ein knapperes Ergebnis erzwingen",
-          "Lange Pause (64 Tage ohne Spiel) auf beiden Seiten kann zu Rhythmus- und Abstimmungsproblemen führen",
-          "Kein H2H-Datenpunkt vorhanden, daher höhere Modellunsicherheit bei der konkreten Ergebnishöhe"
+          "Restunsicherheit um Yamals Fitness könnte Spaniens Offensivpotenzial leicht dämpfen",
+          "Keine H2H-Daten verfügbar, daher höhere Schätzunsicherheit",
+          "Lange Pause (64 Tage) ohne Spielpraxis für beide Teams – möglicher Rhythmusverlust",
+          "Neutraler Spielort, kein Heimvorteil für Spanien"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,24 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.85,
-          "draw": 0.1,
-          "away": 0.05
+          "home": 0.88,
+          "draw": 0.08,
+          "away": 0.04
         },
-        "confidence": 0.9,
+        "confidence": 0.85,
         "keyFactors": [
-          "Spain's significantly higher Elo rating and stronger recent form",
-          "Saudi Arabia's relatively low goals for average and high goals against average",
-          "Spain's ability to maintain clean sheets",
-          "Neutral venue, minimizing potential host advantage"
+          "Spain's significantly higher Elo rating than Saudi Arabia",
+          "Spain's strong recent form with a weighted form of 2.327",
+          "Saudi Arabia's weaker recent form and higher average goals against",
+          "Neutral venue diminishes any host advantage, favoring stronger team Spain"
         ],
         "risks": [
-          "Potential impact of Yamal's fitness on Spain's attacking options",
-          "Lack of head-to-head data between the two teams"
+          "Lamine Yamal's injury status is uncertain, though not deemed critical for Spain's overall performance"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Klassenunterschied laut Elo (1974 vs. 1572) und Form (gewichtet 2.33 vs. 1.26); Spaniens starke Offensive (2.68 Tore/Spiel) trifft auf defensiv anfälligere Saudis (1.32 Gegentore/Spiel); Yamal-Updates überwiegend positiv: Trainer rechnet mit Einsatzfähigkeit zum Turnierstart.",
+    "agreement": 0.992,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Klassenunterschied im Elo (1974 vs. 1572, ~400 Punkte) zugunsten Spaniens; Spaniens überlegene Form (weightedForm 2.33 vs. 1.26) und Offensive (2.68 Tore/Spiel gegen 0.87 KSA); Saudi-Arabien defensiv anfällig (1.32 Gegentore/Spiel) gegen hochkarätige Offensive.",
     "inputHash": "sha256:683f98dcc16b494a68d1dd86db07f9391025fdc8ab2f69b011ffca5b959cc492"
   },
   "predictionHistory": [
@@ -242,11 +241,24 @@
         "away": 0.0427
       },
       "confidence": 0.8536
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8688,
+        "draw": 0.0906,
+        "away": 0.0406
+      },
+      "confidence": 0.8387
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.027Z",
+    "updatedAt": "2026-06-03T20:29:14.071Z",
     "bookmakerCount": 19,
     "probabilities": {
       "home": 0.8535,

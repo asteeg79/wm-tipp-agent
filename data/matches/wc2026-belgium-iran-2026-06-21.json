@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "BEL",
       "elo": 1744,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5156,
-      "draw": 0.2156,
-      "away": 0.2689
+      "home": 0.55,
+      "draw": 0.2318,
+      "away": 0.2182
     },
-    "confidence": 0.6705,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.51,
+          "home": 0.55,
           "draw": 0.21,
-          "away": 0.28
+          "away": 0.24
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Belgien mit starker gewichteter Form (1.91) und sehr guter Offensive (2.91 Tore/Spiel)",
-          "Frischer Moral-Boost durch 2:0-Testspielsieg gegen Kroatien",
-          "Iran verliert Schlüsselstürmer Sardar Azmun (nicht im WM-Kader) - Schwächung der Offensive",
-          "Belgien leicht höhere Elo (1744 vs 1730) und höherer recentForm-Wert (2.2 vs 1.9)"
+          "Belgium mit stärkerer Offensive (goalsForAvg 2.91 vs 2.27) und besserer Form (weightedForm 1.91, recentForm 2.2)",
+          "Belgium mit Schwung: 2-0 Testspielsieg gegen Kroatien stärkt Selbstvertrauen",
+          "Iran verliert Schlüsselstürmer Sardar Azmun für den WM-Kader, schwächt Offensivpotenzial",
+          "Höhere Elo-Wertung Belgiens (1744 vs 1730) sowie überlegene externe Prognose (66,8% Heimsieg)"
         ],
         "risks": [
-          "Iran defensiv sehr stabil (CleanSheet-Rate 0.46, nur 0.91 Gegentore/Spiel) - Tore könnten schwerfallen",
-          "Neutraler Spielort eliminiert Heimvorteil",
-          "Kein Head-to-Head-Verlauf vorhanden, daher erhöhte Unsicherheit",
-          "Belgiens Defensive nur durchschnittlich (1.05 Gegentore/Spiel, CleanSheet 0.39) - Iran kann kontern"
+          "Iran defensiv stabil (cleanSheetRate 0.462, goalsAgainstAvg 0.908) und kann Spiel eng halten",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil Belgiens",
+          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit",
+          "Lange Pause beider Teams (64 Tage) kann Form-Einschätzung verzerren"
         ]
       },
       "chatgpt": {
@@ -104,24 +104,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.22,
-          "away": 0.26
+          "home": 0.55,
+          "draw": 0.25,
+          "away": 0.2
         },
-        "confidence": 0.75,
+        "confidence": 0.72,
         "keyFactors": [
-          "Belgium's recent form is stronger with a 2-0 win over Croatia.",
-          "Iran's star striker Sardar Azmun is excluded from the squad.",
-          "Belgium's attack is more potent, averaging 2.914 goals per match."
+          "Belgium's recent form is stronger with a boost in morale after a 2-0 win over Croatia.",
+          "Iran missing key player Sardar Azmun from the squad.",
+          "Belgium has a higher goals for average compared to Iran."
         ],
         "risks": [
-          "Neutral venue could reduce home advantage for Belgium.",
-          "Iran has a solid defensive record with a higher clean sheet rate."
+          "Neutral venue may reduce home advantage for Belgium.",
+          "Both teams have similar elo ratings, indicating potentially closer competition."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit starker gewichteter Form (1.91) und sehr guter Offensive (2.91 Tore/Spiel); Frischer Moral-Boost durch 2:0-Testspielsieg gegen Kroatien; Iran verliert Schlüsselstürmer Sardar Azmun (nicht im WM-Kader) - Schwächung der Offensive.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgium mit stärkerer Offensive (goalsForAvg 2.91 vs 2.27) und besserer Form (weightedForm 1.91, recentForm 2.2); Belgium mit Schwung: 2-0 Testspielsieg gegen Kroatien stärkt Selbstvertrauen; Iran verliert Schlüsselstürmer Sardar Azmun für den WM-Kader, schwächt Offensivpotenzial.",
     "inputHash": "sha256:31f11e0666a4e498d3a9ba0d2c509a667201f347657f18f7f25627aa315445c3"
   },
   "predictionHistory": [
@@ -215,11 +215,24 @@
         "away": 0.3139
       },
       "confidence": 0.7102
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5156,
+        "draw": 0.2156,
+        "away": 0.2689
+      },
+      "confidence": 0.6705
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.027Z",
+    "updatedAt": "2026-06-03T20:29:14.071Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.6676,

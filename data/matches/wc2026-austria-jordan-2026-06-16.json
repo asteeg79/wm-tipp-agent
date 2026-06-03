@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "AUT",
       "elo": 1748,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
-      "home": 3,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7458,
-      "draw": 0.15,
-      "away": 0.1042
+      "home": 0.7082,
+      "draw": 0.1812,
+      "away": 0.1106
     },
-    "confidence": 0.7325,
+    "confidence": 0.6468,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,47 +81,48 @@
         },
         "probabilities": {
           "home": 0.74,
-          "draw": 0.15,
-          "away": 0.11
+          "draw": 0.16,
+          "away": 0.1
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Österreichs (1748 vs. 1529) und klar bessere gewichtete Form (2.28 vs. 1.07)",
-          "Starke österreichische Offensive (2.56 Tore/Spiel) bei solider Defensive (0.65 Gegentore/Spiel)",
-          "Jordaniens schwächere Form (recentForm 0.9) und höhere Gegentorquote (1.54) sprechen für Heimsieg",
-          "Neutraler Spielort relativiert klassische Heimvorteile leicht zugunsten Jordans"
+          "Deutlicher Elo-Vorsprung Österreichs (1748 vs 1529) und klar bessere gewichtete Form (2.28 vs 1.07)",
+          "Österreich mit starker Offensive (2.56 Tore/Spiel) und solider Defensive (0.65 Gegentore/Spiel)",
+          "Jordanien defensiv anfällig (1.54 Gegentore/Spiel) bei nur durchschnittlicher Form",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil, dämpft Heimwahrscheinlichkeit leicht"
         ],
         "risks": [
-          "Verletzungssorgen bei Österreich (Argentinien-Talent fraglich, Kaderfragen um Baumgartner-Ersatz) könnten Offensivkraft schwächen",
-          "Jordanien mit ordentlicher Clean-Sheet-Rate (0.36) und WM-Debüt-Motivation könnte defensiv überraschen",
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit in der Einschätzung",
-          "Lange Pause beider Teams (64 Tage) erhöht Unvorhersehbarkeit der Tagesform"
+          "Baumgartner-Ausfall schwächt Österreichs Offensivpotenzial – leichte Reduktion der xG plausibel",
+          "Jordanien hat respektable Clean-Sheet-Rate (0.36) und könnte tief stehen",
+          "WM-Debüt Jordaniens kann zu erhöhter Motivation und Defensivdisziplin führen",
+          "Kein H2H verfügbar, daher höhere Unsicherheit in der Einschätzung"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 3,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.15,
-          "away": 0.1
+          "home": 0.68,
+          "draw": 0.2,
+          "away": 0.12
         },
-        "confidence": 0.85,
+        "confidence": 0.7,
         "keyFactors": [
-          "Austria's higher Elo rating and strong recent form",
-          "Jordan making their World Cup debut with less experience",
-          "Neutral venue, no host advantage"
+          "Home team's recent good form despite Baumgartner's injury.",
+          "Positive offensive and defensive statistics for Austria.",
+          "Inexperience of Jordan on World Cup stage."
         ],
         "risks": [
-          "Potential impact of injury news on Austria's squad",
-          "Unpredictability of Jordan's performance due to new roster and debut motivation"
+          "Impact of Baumgartner's absence on Austria's gameplay.",
+          "Neutral venue could reduce Austria's advantage.",
+          "Potential underestimation of Jordan's motivation on World Cup debut."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Österreichs (1748 vs. 1529) und klar bessere gewichtete Form (2.28 vs. 1.07); Starke österreichische Offensive (2.56 Tore/Spiel) bei solider Defensive (0.65 Gegentore/Spiel); Jordaniens schwächere Form (recentForm 0.9) und höhere Gegentorquote (1.54) sprechen für Heimsieg.",
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Österreichs (1748 vs 1529) und klar bessere gewichtete Form (2.28 vs 1.07); Österreich mit starker Offensive (2.56 Tore/Spiel) und solider Defensive (0.65 Gegentore/Spiel); Jordanien defensiv anfällig (1.54 Gegentore/Spiel) bei nur durchschnittlicher Form.",
     "inputHash": "sha256:4f5db44f3314ad3911a42d285f14e20e585efc5b4ac346b7ad67d31c85b3b867"
   },
   "predictionHistory": [
@@ -228,11 +229,24 @@
         "away": 0.1127
       },
       "confidence": 0.7228
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7458,
+        "draw": 0.15,
+        "away": 0.1042
+      },
+      "confidence": 0.7325
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.026Z",
+    "updatedAt": "2026-06-03T20:29:14.070Z",
     "bookmakerCount": 20,
     "probabilities": {
       "home": 0.7267,

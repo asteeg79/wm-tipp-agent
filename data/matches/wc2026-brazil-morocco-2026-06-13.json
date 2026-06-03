@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2792,
-      "draw": 0.2477,
-      "away": 0.4731
+      "home": 0.3269,
+      "draw": 0.3085,
+      "away": 0.3646
     },
-    "confidence": 0.6392,
+    "confidence": 0.6197,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,51 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.255,
-          "draw": 0.245,
-          "away": 0.5
+          "home": 0.3,
+          "draw": 0.26,
+          "away": 0.44
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Morocco hat einen klaren Vorteil in der gewichteten Form (2.585 vs 1.791) und jüngsten Form (2.4 vs 1.7).",
-          "Marokkos Defensive ist herausragend: 0.274 Gegentore/Spiel und 70.6% Zu-Null-Rate gegenüber 0.892 und 40% bei Brasilien.",
-          "Höheres Elo für Marokko (1892 vs 1844) stützt die Baseline-Favoritenrolle der Gäste.",
-          "Neutraler Spielort eliminiert einen möglichen Heimvorteil für Brasilien."
+          "Morocco mit klar besserer gewichteter Form (2.585 vs 1.791) und überragender Defensive (0.274 Gegentore/Spiel, 70.6% Clean Sheets)",
+          "Morocco höher eingestuft im Elo (1892 vs 1844) und mit größerer Datenbasis (34 Spiele)",
+          "Brazil offensiv stärker als die nackten Form-Werte (1.814 Tore/Spiel), bleibt aber gefährlich",
+          "Neutraler Spielort ohne Heimvorteil für Brazil",
+          "Baseline und externe Prognose divergieren stark; statistische Defensiv-Dominanz Marokkos stützt eher die Baseline"
         ],
         "risks": [
-          "Brasiliens individuelle Offensivqualität (1.814 Tore/Spiel) kann jede defensive Struktur knacken.",
-          "Beide Teams 64 Tage ohne Spiel – Form und Spielrhythmus schwer einzuschätzen.",
-          "Kein direkter H2H-Vergleich vorhanden, was die Prognose unsicherer macht.",
-          "Verletzungslage bei Marokko laut News-Hinweis nicht vollständig geklärt."
+          "Externe Prognose sieht Brazil klar vorne (59.5%) – große Modellunsicherheit",
+          "Kein direkter H2H-Verlauf vorhanden, geringe Vergleichsbasis",
+          "Lange Pause beider Teams (64 Tage) kann Rhythmus und Form verzerren",
+          "Brazils individuelle Qualität kann statistische Modelle untergewichten"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.25,
-          "away": 0.45
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Morocco's higher elo rating and recent strong form.",
-          "Brazil's relatively lower recent form and recent matches goal-scoring rate.",
-          "No head-to-head matches for historical comparison.",
-          "Neutral venue reducing potential home advantage for Brazil."
+          "Brazil's high goal-scoring average of 1.814 and good recent form indicates offensive strength.",
+          "Morocco's strong recent form with a high clean sheet rate of 0.706 suggests solid defensive ability.",
+          "Neutral venue negates any home advantage.",
+          "No head-to-head history provides no historical psychological advantage for either team."
         ],
         "risks": [
-          "Impact of possible injuries on Morocco's performance.",
-          "Lack of historical head-to-head encounter making predictions less certain."
+          "Morocco's higher Elo rating indicates they might perform better than expected.",
+          "Recent form favors Morocco, indicating potential for an upset.",
+          "Discrepancy between baseline probabilities and external forecast suggests uncertainty."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Morocco hat einen klaren Vorteil in der gewichteten Form (2.585 vs 1.791) und jüngsten Form (2.4 vs 1.7).; Marokkos Defensive ist herausragend: 0.274 Gegentore/Spiel und 70.6% Zu-Null-Rate gegenüber 0.892 und 40% bei Brasilien.; Höheres Elo für Marokko (1892 vs 1844) stützt die Baseline-Favoritenrolle der Gäste..",
+    "agreement": 0.9067,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Morocco mit klar besserer gewichteter Form (2.585 vs 1.791) und überragender Defensive (0.274 Gegentore/Spiel, 70.6% Clean Sheets); Morocco höher eingestuft im Elo (1892 vs 1844) und mit größerer Datenbasis (34 Spiele); Brazil offensiv stärker als die nackten Form-Werte (1.814 Tore/Spiel), bleibt aber gefährlich.",
     "inputHash": "sha256:c476a99d69a3cd4c123636e2491552bfac45c6cbd5a817e46481ccfeda5c4b88"
   },
   "predictionHistory": [
@@ -242,11 +244,24 @@
         "away": 0.4689
       },
       "confidence": 0.6068
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2792,
+        "draw": 0.2477,
+        "away": 0.4731
+      },
+      "confidence": 0.6392
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.025Z",
+    "updatedAt": "2026-06-03T20:29:14.068Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.5946,

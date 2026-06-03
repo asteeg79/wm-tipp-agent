@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "CAN",
       "elo": 1696,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.538,
-      "draw": 0.2476,
-      "away": 0.2144
+      "home": 0.4818,
+      "draw": 0.2773,
+      "away": 0.2409
     },
-    "confidence": 0.6188,
+    "confidence": 0.6446,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,50 +80,48 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.525,
-          "draw": 0.245,
+          "home": 0.52,
+          "draw": 0.25,
           "away": 0.23
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Canada mit klarem Elo-Vorteil (1696 vs 1575) und Host-Advantage als Gastgeberland",
-          "Bessere Defensive Canadas (0.61 Gegentore/Spiel, 53.6% Clean-Sheet-Rate) vs schwache BIH-Abwehr (1.27 Gegentore, nur 19% Clean Sheets)",
-          "Höhere gewichtete Form Canadas (1.623 vs 1.445) und stabilere jüngste Form",
-          "BIH offensiv durchaus gefährlich (1.74 Tore/Spiel), kann selbst treffen"
+          "Canada mit deutlich höherem Elo (1696 vs 1575) und Host-/Heimvorteil trotz neutralem Spielort",
+          "Stabilere Defensive Kanadas (GA 0.61, Clean-Sheet-Rate 53.6%) gegenüber anfälliger BIH-Abwehr (GA 1.27, CS 19%)",
+          "Bessere gewichtete und jüngste Form Kanadas (wForm 1.62, recent 1.7)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, erhöhte Unsicherheit",
-          "Beide Teams 64 Tage ohne Pflichtspiel – Rhythmusfrage",
-          "BIH-Offensivpotenzial könnte trotz schwacher Defensive für Punkte sorgen",
-          "Keine konkreten verletzungs-/aufstellungsrelevanten News verfügbar"
+          "BIH mit höherer Offensivproduktion (GF 1.74) kann jederzeit treffen",
+          "Keine H2H-Daten erhöhen die Unsicherheit der Einschätzung",
+          "Lange Pause (64 Tage) für beide Teams kann zu Rhythmusverlust führen",
+          "Keine substanziellen verletzungs-/aufstellungsrelevanten News verfügbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
-          "away": 0.2
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.65,
+        "confidence": 0.72,
         "keyFactors": [
-          "Higher Elo rating for Canada",
-          "Canada's stronger defensive record",
-          "Neutral venue but host advantage for Canada",
-          "Canada's recent form slightly better than Bosnia & Herzegovina"
+          "Canada has slightly better Elo rating and form.",
+          "Neutral venue but Canada might have slight host advantage.",
+          "Canada's strong defense (higher clean sheet rate).",
+          "Bosnia & Herzegovina scores more on average."
         ],
         "risks": [
-          "Bosnia & Herzegovina's higher average goals scored per game",
-          "No head-to-head history between the teams",
-          "Similar recent form indicators"
+          "No head-to-head history between the teams.",
+          "Both teams have not played for 64 days, unknown form changes."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Canada mit klarem Elo-Vorteil (1696 vs 1575) und Host-Advantage als Gastgeberland; Bessere Defensive Canadas (0.61 Gegentore/Spiel, 53.6% Clean-Sheet-Rate) vs schwache BIH-Abwehr (1.27 Gegentore, nur 19% Clean Sheets); Höhere gewichtete Form Canadas (1.623 vs 1.445) und stabilere jüngste Form.",
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Canada mit deutlich höherem Elo (1696 vs 1575) und Host-/Heimvorteil trotz neutralem Spielort; Stabilere Defensive Kanadas (GA 0.61, Clean-Sheet-Rate 53.6%) gegenüber anfälliger BIH-Abwehr (GA 1.27, CS 19%); Bessere gewichtete und jüngste Form Kanadas (wForm 1.62, recent 1.7).",
     "inputHash": "sha256:3b88548cce5b6596e0e9baf9107e2589c213ed2ec119061934e26c4e7b62ee73"
   },
   "predictionHistory": [
@@ -243,11 +241,24 @@
         "away": 0.2387
       },
       "confidence": 0.6112
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.538,
+        "draw": 0.2476,
+        "away": 0.2144
+      },
+      "confidence": 0.6188
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.024Z",
+    "updatedAt": "2026-06-03T20:29:14.068Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.5262,

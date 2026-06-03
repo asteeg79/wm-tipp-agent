@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "COL",
       "elo": 1775,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
-      "home": 2,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3557,
-      "draw": 0.307,
-      "away": 0.3374
+      "home": 0.3818,
+      "draw": 0.3073,
+      "away": 0.3109
     },
-    "confidence": 0.5673,
+    "confidence": 0.5372,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.29000000000000004,
-          "away": 0.36000000000000004
+          "home": 0.42,
+          "draw": 0.28,
+          "away": 0.3
         },
         "confidence": 0.5,
         "keyFactors": [
-          "DR Congo zeigt deutlich stärkere gewichtete Form (2.229 vs 1.544) und Recent Form (2.3 vs 1.8)",
-          "DR Congo defensiv sehr stabil: nur 0.482 Gegentore/Spiel und 54,5% Clean-Sheet-Rate",
           "Colombia mit höherem Elo (1775 vs 1705) und stärkerer Offensive (1.95 Tore/Spiel)",
-          "Neutraler Spielort ohne Heimvorteil für Colombia, kein H2H-Verlauf vorhanden"
+          "DR Congo zeigt exzellente Defensive (0.48 Gegentore/Spiel, 54.5% Clean Sheets) und überragende gewichtete Form (2.229 vs 1.544)",
+          "Neutraler Spielort eliminiert Heimvorteil Kolumbiens",
+          "DR Congos jüngste Form (recentForm 2.3) übertrifft Kolumbien (1.8) deutlich"
         ],
         "risks": [
-          "Colombias schwächere Defensive (1.227 Gegentore, 39% Clean Sheets) trifft auf kompakte kongolesische Abwehr",
-          "Lange Pause beider Teams (über 60 Tage) erschwert Formeinschätzung",
-          "Keine direkten Vergleichsdaten (0 H2H-Spiele) erhöhen Unsicherheit",
-          "Höhenlage (1566 m) als unbekannter Kontextfaktor für beide Teams"
+          "Höhenlage (1566m) als möglicher Einflussfaktor, Anpassung beider Teams unklar",
+          "Keine Head-to-Head-Daten verfügbar, erhöhte Unsicherheit",
+          "Externe Prognose überschätzt Kolumbien (0.645) stark und widerspricht der starken Form von DR Congo",
+          "Lange Pause seit letztem Spiel (~64-66 Tage) bei beiden Teams kann Rhythmus beeinträchtigen"
         ]
       },
       "chatgpt": {
@@ -105,27 +105,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.36,
-          "draw": 0.32,
+          "home": 0.35,
+          "draw": 0.33,
           "away": 0.32
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "DR Congo has a stronger recent form with a weighted form of 2.229 compared to Colombia's 1.544.",
-          "DR Congo's defense is notably solid, averaging only 0.482 goals against.",
-          "Colombia has a higher goals scored average at 1.95 per game.",
-          "The match is at a neutral venue with altitude possibly affecting fitness",
-          "No head-to-head history exists to compare past performances directly."
+          "DR Congo has better current form with a weighted form score of 2.229 compared to Colombia's 1.544.",
+          "Colombia has a stronger attacking average with 1.95 goals per game, but DR Congo has a better defensive record.",
+          "The match is played at a neutral venue, which negates any home advantage."
         ],
         "risks": [
-          "The altitude could impact the performance of the teams unpredictably.",
-          "Colombia's clean sheet rate is lower, which may affect their defensive capabilities.",
-          "There is no direct information from recent news that could significantly impact form."
+          "No head-to-head history available, increasing the uncertainty in predictions.",
+          "Colombia's higher Elo rating may not fully reflect recent form.",
+          "DR Congo's superior recent form could indicate an underestimation of their current capabilities."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo zeigt deutlich stärkere gewichtete Form (2.229 vs 1.544) und Recent Form (2.3 vs 1.8); DR Congo defensiv sehr stabil: nur 0.482 Gegentore/Spiel und 54,5% Clean-Sheet-Rate; Colombia mit höherem Elo (1775 vs 1705) und stärkerer Offensive (1.95 Tore/Spiel).",
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia mit höherem Elo (1775 vs 1705) und stärkerer Offensive (1.95 Tore/Spiel); DR Congo zeigt exzellente Defensive (0.48 Gegentore/Spiel, 54.5% Clean Sheets) und überragende gewichtete Form (2.229 vs 1.544); Neutraler Spielort eliminiert Heimvorteil Kolumbiens.",
     "inputHash": "sha256:63f14341c374b4891a0e28002f109b421f2146b3103201489cdc96174d8c1408"
   },
   "predictionHistory": [
@@ -245,11 +243,24 @@
         "away": 0.3364
       },
       "confidence": 0.5998
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3557,
+        "draw": 0.307,
+        "away": 0.3374
+      },
+      "confidence": 0.5673
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.028Z",
+    "updatedAt": "2026-06-03T20:29:14.074Z",
     "bookmakerCount": 17,
     "probabilities": {
       "home": 0.645,

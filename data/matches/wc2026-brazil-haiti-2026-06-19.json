@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
-      "home": 2,
+      "home": 3,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6385,
-      "draw": 0.2023,
-      "away": 0.1592
+      "home": 0.78,
+      "draw": 0.141,
+      "away": 0.079
     },
-    "confidence": 0.6446,
+    "confidence": 0.7698,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,51 +76,53 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 3,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.625,
-          "draw": 0.205,
-          "away": 0.17
+          "home": 0.78,
+          "draw": 0.13,
+          "away": 0.09
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1576)",
-          "Bessere gewichtete Form Brasiliens (1.791 vs. 1.488)",
-          "Höhere Offensivstärke Brasiliens (xG 1.92 vs. 0.92) bei solider Defensive (0.892 Gegentore/Spiel)"
+          "Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1576, ~268 Punkte)",
+          "Bessere gewichtete Form (1.791 vs. 1.488) und höhere Offensivqualität",
+          "Externe Prognose sieht Brasilien noch klar dominanter (90% Heimsieg), rechtfertigt Anhebung über Baseline",
+          "Neutraler Spielort relativiert Heimvorteil, ändert das Klassengefälle aber kaum"
         ],
         "risks": [
-          "Haiti zeigt ordentliche Offensivwerte (1.657 Tore/Spiel) und kann gefährlich kontern",
-          "Neutraler Spielort ohne Heimvorteil für Brasilien",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit in der Einschätzung",
-          "Lange Pause (64 Tage) könnte Rhythmus beider Teams beeinträchtigen"
+          "Haiti mit ordentlicher eigener Offensive (1.657 Tore/Spiel) und solider Clean-Sheet-Rate (0.409) könnte überraschen",
+          "64 Tage seit letztem Spiel: Rhythmusmangel und Turnierform beider Teams unsicher",
+          "Keine direkten H2H-Daten verfügbar, erhöht Unsicherheit der Einschätzung",
+          "Brasiliens Clean-Sheet-Rate nur 0.4 – Defensive nicht unverwundbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 3,
           "away": 1
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
-          "away": 0.15
+          "home": 0.78,
+          "draw": 0.15,
+          "away": 0.07
         },
-        "confidence": 0.7,
+        "confidence": 0.85,
         "keyFactors": [
-          "Brazil's superior Elo rating and historical performance against weaker teams.",
-          "Neutral venue limiting Brazil's potential home advantage.",
-          "Haiti's relatively solid recent form and ability to score goals."
+          "Brazil's significantly higher Elo rating (1844 vs. 1576)",
+          "Brazil's superior weighted and recent form compared to Haiti",
+          "Brazil's World Cup history and squad depth",
+          "Neutral venue minimizes home advantage risks"
         ],
         "risks": [
-          "Lack of direct head-to-head history between the teams.",
-          "Neutral venue effect could reduce Brazil's performance edge."
+          "Potential overperformance by Haiti given similar clean sheet rates",
+          "First-ever encounter between the teams can create unforeseen dynamics"
         ]
       }
     },
-    "agreement": 0.9833,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1576); Bessere gewichtete Form Brasiliens (1.791 vs. 1.488); Höhere Offensivstärke Brasiliens (xG 1.92 vs. 0.92) bei solider Defensive (0.892 Gegentore/Spiel).",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1576, ~268 Punkte); Bessere gewichtete Form (1.791 vs. 1.488) und höhere Offensivqualität; Externe Prognose sieht Brasilien noch klar dominanter (90% Heimsieg), rechtfertigt Anhebung über Baseline.",
     "inputHash": "sha256:ec508dba1de2ad004b92b0f26dbb3750cb656abac294a251d3243a377c348ff3"
   },
   "predictionHistory": [
@@ -240,11 +242,24 @@
         "away": 0.1734
       },
       "confidence": 0.6965
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6385,
+        "draw": 0.2023,
+        "away": 0.1592
+      },
+      "confidence": 0.6446
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.027Z",
+    "updatedAt": "2026-06-03T20:29:14.071Z",
     "bookmakerCount": 17,
     "probabilities": {
       "home": 0.9013,

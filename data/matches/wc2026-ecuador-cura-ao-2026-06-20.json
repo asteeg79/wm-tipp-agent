@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "ECU",
       "elo": 1747,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3132,
-      "draw": 0.3186,
-      "away": 0.3682
+      "home": 0.3706,
+      "draw": 0.3841,
+      "away": 0.2453
     },
-    "confidence": 0.5427,
+    "confidence": 0.4828,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.305,
-          "draw": 0.305,
-          "away": 0.39
+          "home": 0.4,
+          "draw": 0.29,
+          "away": 0.31
         },
-        "confidence": 0.5,
+        "confidence": 0.42,
         "keyFactors": [
-          "Ecuador hat höheres Elo (1747 vs 1637) und eine sehr stabile Defensive (xGA 0.528, Clean-Sheet-Rate 0.519)",
-          "Curaçao zeigt stärkere gewichtete Form (1.857) und deutlich höhere Offensivproduktion (goalsForAvg 2.199)",
-          "Neutraler Spielort eliminiert klassischen Heimvorteil für Ecuador",
-          "Baseline favorisiert leicht Curaçao, aber Ecuadors Defensivstärke rechtfertigt eine moderate Korrektur Richtung enges Ergebnis"
+          "Ecuador deutlich höheres Elo (1747 vs 1637) und solide Defensive (GA 0.528, Clean-Sheet 51.9%)",
+          "Curaçao mit starker Offensive (GF 2.199) und guter gewichteter Form (1.857), aber gegen defensivstarke Gegner riskant",
+          "Baseline favorisiert Curaçao deutlich, was angesichts Ecuadors höherer Elo und Defensivstärke korrigiert wird",
+          "Externer Forecast überschätzt Ecuador (0.766) stark; realistischere Einordnung dazwischen"
         ],
         "risks": [
-          "Curaçaos Daten beruhen auf nur 20 Spielen und 197 Tagen ohne Pflichtspiel – Form und Offensivwerte schwer einzuschätzen",
-          "Ecuadors lange Pause (64 Tage) und niedrige eigene Torausbeute (0.9) könnte zu wenig Durchschlagskraft führen",
-          "Keine Head-to-Head-Daten verfügbar, daher höhere Unsicherheit",
-          "Materialnews liefern keine konkreten Verletzungs-/Sperrinformationen"
+          "Curaçaos lange Spielpause (197 Tage) erschwert Formbewertung erheblich",
+          "Kein H2H-Verlauf vorhanden, hohe Unsicherheit",
+          "Ecuadors niedrige Torausbeute (GF 0.9) könnte enges, torarmes Spiel bedeuten",
+          "Große Diskrepanz zwischen Baseline und externem Forecast erhöht Prognoseunsicherheit"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.33,
-          "away": 0.35
+          "home": 0.35,
+          "draw": 0.45,
+          "away": 0.2
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Ecuador has a better elo rating compared to Curaçao but very close recent forms.",
-          "Curaçao scores significantly more goals on average than Ecuador.",
-          "Match is played at a neutral venue."
+          "Curaçao's recent form and high goal-scoring average in the past matches.",
+          "Ecuador's slightly stronger Elo rating and defensive capabilities.",
+          "Neutral venue reducing any potential home advantage."
         ],
         "risks": [
-          "Both teams have not played against each other before (H2H factor unknown).",
-          "Ecuador's recent form is slightly lower than Curaçao’s.",
-          "Curaçao's longer period since last match which might affect match sharpness."
+          "Underestimation of Ecuador's home form advantage in a neutral setting.",
+          "Ecuador's last match being more recent, potentially affecting match sharpness.",
+          "Weight of historical head-to-head nonexistence, making matchup unpredictable."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador hat höheres Elo (1747 vs 1637) und eine sehr stabile Defensive (xGA 0.528, Clean-Sheet-Rate 0.519); Curaçao zeigt stärkere gewichtete Form (1.857) und deutlich höhere Offensivproduktion (goalsForAvg 2.199); Neutraler Spielort eliminiert klassischen Heimvorteil für Ecuador.",
+    "agreement": 0.8933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador deutlich höheres Elo (1747 vs 1637) und solide Defensive (GA 0.528, Clean-Sheet 51.9%); Curaçao mit starker Offensive (GF 2.199) und guter gewichteter Form (1.857), aber gegen defensivstarke Gegner riskant; Baseline favorisiert Curaçao deutlich, was angesichts Ecuadors höherer Elo und Defensivstärke korrigiert wird.",
     "inputHash": "sha256:bd2e77314cfd9bc3ce86c007bd1513b94d7b2c0a042d26b98e74f544b6fc5006"
   },
   "predictionHistory": [
@@ -242,11 +242,24 @@
         "away": 0.35
       },
       "confidence": 0.5673
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3132,
+        "draw": 0.3186,
+        "away": 0.3682
+      },
+      "confidence": 0.5427
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.027Z",
+    "updatedAt": "2026-06-03T20:29:14.071Z",
     "bookmakerCount": 19,
     "probabilities": {
       "home": 0.7663,

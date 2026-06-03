@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "URU",
       "elo": 1677,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.342,
-      "draw": 0.356,
-      "away": 0.302
+      "home": 0.38,
+      "draw": 0.3313,
+      "away": 0.2888
     },
-    "confidence": 0.5979,
+    "confidence": 0.5507,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,20 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
-          "draw": 0.29,
-          "away": 0.38
+          "home": 0.38,
+          "draw": 0.3,
+          "away": 0.32
         },
-        "confidence": 0.5,
+        "confidence": 0.42,
         "keyFactors": [
-          "Cape Verde zeigt die deutlich stärkere gewichtete und jüngste Form (weightedForm 1.977 vs 1.397, recentForm 2.1 vs 1.6) sowie hohe Offensivproduktion (1.673 Tore/Spiel).",
-          "Uruguay verfügt über die höhere Elo (1677 vs 1608) und stabilere Defensive (cleanSheetRate 0.517, Gegentore 0.832), was die Baseline-Auswärtsfavorit-Tendenz leicht abmildert.",
-          "Neutraler Spielort ohne Heimvorteil hält die Partie offen; kein H2H als Anker vorhanden."
+          "Uruguay deutlich höheres Elo (1677 vs 1608) und Bielsa-System mit solider Defensive (CleanSheet-Rate 0.517, GegentoreAvg 0.832)",
+          "Cape Verde mit stärkerer gewichteter Form (1.977 vs 1.397) und deutlich höherer Offensivproduktion (goalsForAvg 1.673)",
+          "Externe Prognose sieht Uruguay klar vorn (0.653), während Baseline Cape Verde favorisiert – Kompromiss zwischen beiden gewählt",
+          "Beide Teams defensiv etwa gleichwertig (GegentoreAvg ~0.83), was ein enges Spiel nahelegt"
         ],
         "risks": [
-          "Cape Verde hatte 233 Tage seit dem letzten Spiel keine Wettkampfpraxis – Rhythmusverlust könnte die starke Form relativieren.",
-          "Interne Unruhe bei Uruguay (Bielsa, Squad-Revolt, Suárez-Debatte) könnte die Leistung negativ beeinflussen.",
-          "Sehr geringe Datenbasis (kein H2H, unklare finale Aufstellungen) erhöht die Prognoseunsicherheit."
+          "Cape Verde seit 233 Tagen ohne Pflichtspiel – massive Unsicherheit über aktuelle Spielfähigkeit und Matchpraxis",
+          "Starke Divergenz zwischen Baseline (away-Favorit) und externer Prognose (home-Favorit) erhöht Unsicherheit",
+          "Kein Head-to-Head-Datenmaterial verfügbar (0 Spiele)",
+          "Morale-News deutet auf entspannte/feierfreudige Stimmung im Cape-Verde-Lager – Fokus unklar"
         ]
       },
       "chatgpt": {
@@ -102,27 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.4,
-          "away": 0.25
+          "home": 0.38,
+          "draw": 0.35,
+          "away": 0.27
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Cape Verde's recent form (weightedForm 1.977) is stronger than Uruguay's (weightedForm 1.397).",
-          "Uruguay has not played a match for 64 days, potentially impacting match fitness.",
-          "Cape Verde has a higher goals for average (1.673) compared to Uruguay (0.91).",
-          "Uruguay's internal squad issues with the coach may affect performance (Sources: Ahram Online, World Soccer Talk).",
-          "Neutral venue negates any home advantage."
+          "Cape Verde's weighted form is higher, indicating strong recent performance.",
+          "Uruguay has not played in 64 days, while Cape Verde hasn't played in 233 days, potentially affecting sharpness.",
+          "Neutral venue reduces typical home advantage, leveling playing field.",
+          "No head-to-head data available, adding uncertainty."
         ],
         "risks": [
-          "Uruguay has a higher Elo rating than Cape Verde, indicating a stronger historical performance.",
-          "Cape Verde's long break of 233 days since last match might affect their sharpness.",
-          "Potential last-minute squad changes or morale shifts in both teams could affect outcomes."
+          "Cape Verde's recent success partly due to lower-quality opposition; potential underestimation of Uruguay's strength.",
+          "Injury concerns for Cape Verde could disrupt team dynamics.",
+          "Uruguay's greater historical experience in high-stakes matches could give them an edge."
         ]
       }
     },
-    "agreement": 0.9133,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Cape Verde zeigt die deutlich stärkere gewichtete und jüngste Form (weightedForm 1.977 vs 1.397, recentForm 2.1 vs 1.6) sowie hohe Offensivproduktion (1.673 Tore/Spiel).; Uruguay verfügt über die höhere Elo (1677 vs 1608) und stabilere Defensive (cleanSheetRate 0.517, Gegentore 0.832), was die Baseline-Auswärtsfavorit-Tendenz leicht abmildert.; Neutraler Spielort ohne Heimvorteil hält die Partie offen; kein H2H als Anker vorhanden..",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höheres Elo (1677 vs 1608) und Bielsa-System mit solider Defensive (CleanSheet-Rate 0.517, GegentoreAvg 0.832); Cape Verde mit stärkerer gewichteter Form (1.977 vs 1.397) und deutlich höherer Offensivproduktion (goalsForAvg 1.673); Externe Prognose sieht Uruguay klar vorn (0.653), während Baseline Cape Verde favorisiert – Kompromiss zwischen beiden gewählt.",
     "inputHash": "sha256:1bab47fcccad7015eabe03ce6a0471f65737270aaebcd87bac957ad8e454993e"
   },
   "predictionHistory": [
@@ -229,11 +230,24 @@
         "away": 0.3545
       },
       "confidence": 0.5482
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.342,
+        "draw": 0.356,
+        "away": 0.302
+      },
+      "confidence": 0.5979
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.027Z",
+    "updatedAt": "2026-06-03T20:29:14.071Z",
     "bookmakerCount": 19,
     "probabilities": {
       "home": 0.653,

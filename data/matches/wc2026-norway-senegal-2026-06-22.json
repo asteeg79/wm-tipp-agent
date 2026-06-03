@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-03T20:01:57.834Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "home": {
       "teamId": "NOR",
       "elo": 1774,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T19:05:54.083Z",
+    "generatedAt": "2026-06-03T20:29:13.708Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 3
     },
     "probabilities": {
-      "home": 0.3288,
-      "draw": 0.2412,
-      "away": 0.43
+      "home": 0.3513,
+      "draw": 0.2796,
+      "away": 0.3691
     },
-    "confidence": 0.6208,
+    "confidence": 0.5578,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,48 +81,50 @@
         },
         "probabilities": {
           "home": 0.34,
-          "draw": 0.23,
-          "away": 0.43
+          "draw": 0.24,
+          "away": 0.42
         },
-        "confidence": 0.55,
+        "confidence": 0.5,
         "keyFactors": [
-          "Senegal hat höheres Elo (1828 vs 1774) und stärkere gewichtete Form (2.441 vs 2.019)",
-          "Senegals defensive Stabilität ist überlegen: Clean-Sheet-Rate 0.647 vs 0.455 und nur 0.614 Gegentore/Spiel",
-          "Neutraler Spielort eliminiert Heimvorteil Norwegens, was die Baseline-Heimkomponente relativiert",
-          "Norwegens starke Offensive (2.777 Tore/Spiel) sorgt für realistische Chancen auf eigene Treffer"
+          "Senegal mit höherem Elo (1828 vs 1774) und stärkerer gewichteter Form (2.441 vs 2.019)",
+          "Senegal defensiv stabiler: cleanSheetRate 0.647 vs 0.455, goalsAgainstAvg 0.614 vs 0.814",
+          "Senegal mit größerer Datenbasis (34 Spiele) und konstant guter recentForm (2.5)",
+          "Norwegen offensiv potent (goalsForAvg 2.777), kann jederzeit treffen",
+          "Neutraler Spielort – kein Heimvorteil für Norwegen"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit in der direkten Einschätzung",
-          "Lange Pause beider Teams (64 Tage) kann zu Rhythmusproblemen und unvorhersehbaren Leistungen führen",
-          "Norwegens hohe Offensivkraft könnte ein offenes Spiel mit mehr Toren als erwartet erzeugen",
-          "News liefern keine belastbaren Verletzungs-/Ausfallinformationen, Kaderqualität bleibt teils unklar"
+          "Keinerlei H2H-Daten verfügbar – Begegnungsdynamik unbekannt",
+          "Norwegens hoher Torschnitt könnte die Poisson-Baseline zugunsten Heim verschieben",
+          "Lange Pause (64 Tage) für beide Teams – Form/Spielrhythmus schwer einzuschätzen",
+          "Materielle News bieten kaum konkrete Verletzungs-/Kaderinfos zur Feinjustierung"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.25,
-          "away": 0.43
+          "home": 0.36,
+          "draw": 0.31,
+          "away": 0.33
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Senegal's higher Elo rating indicates a stronger overall team performance historically.",
-          "Both teams have similar strong recent forms but Senegal's clean sheet rate is notably higher.",
-          "No head-to-head precedent; implies reliance on recent performance and statistics.",
-          "Neutral venue negates any home advantage, placing emphasis on team strength and form."
+          "Comparable recent form and weighted form for both teams.",
+          "Senegal's higher Elo and strong defensive record (0.614 goals against avg., 0.647 clean sheet rate).",
+          "Norway's strong offensive average (2.777 goals for avg.) suggesting potential to score.",
+          "Neutral venue, eliminating home advantage for Norway."
         ],
         "risks": [
-          "Norway's high goals for average can threaten Senegal's defense.",
-          "Effective coaching strategies and squad announcements may influence team morale and performance."
+          "No head-to-head games for direct comparison.",
+          "Both teams have not played recently (64 days since last match), possibly affecting match sharpness.",
+          "Both teams part of recent discussions in media suggesting unpredictability."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal hat höheres Elo (1828 vs 1774) und stärkere gewichtete Form (2.441 vs 2.019); Senegals defensive Stabilität ist überlegen: Clean-Sheet-Rate 0.647 vs 0.455 und nur 0.614 Gegentore/Spiel; Neutraler Spielort eliminiert Heimvorteil Norwegens, was die Baseline-Heimkomponente relativiert.",
+    "agreement": 0.94,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal mit höherem Elo (1828 vs 1774) und stärkerer gewichteter Form (2.441 vs 2.019); Senegal defensiv stabiler: cleanSheetRate 0.647 vs 0.455, goalsAgainstAvg 0.614 vs 0.814; Senegal mit größerer Datenbasis (34 Spiele) und konstant guter recentForm (2.5).",
     "inputHash": "sha256:00d9492d09356e12dd02f971ead01fdbf034bdf4b1ad003e1d8d0a23e86c1e84"
   },
   "predictionHistory": [
@@ -242,11 +244,24 @@
         "away": 0.4043
       },
       "confidence": 0.607
+    },
+    {
+      "generatedAt": "2026-06-03T19:05:54.083Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3288,
+        "draw": 0.2412,
+        "away": 0.43
+      },
+      "confidence": 0.6208
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-03T20:02:49.028Z",
+    "updatedAt": "2026-06-03T20:29:14.074Z",
     "bookmakerCount": 17,
     "probabilities": {
       "home": 0.4529,
