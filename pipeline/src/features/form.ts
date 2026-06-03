@@ -34,6 +34,10 @@ export interface FormMetrics {
   matchesCount: number;
   /** Tage seit letztem Spiel. */
   daysSinceLastMatch: number | null;
+  /** Momentum: erzielte Tore/Spiel über die letzten N Spiele (ungewichtet). */
+  scoredRecent: number;
+  /** Momentum: kassierte Tore/Spiel über die letzten M Spiele (ungewichtet). */
+  concededRecent: number;
 }
 
 /**
@@ -50,6 +54,8 @@ export function computeForm(results: TeamResult[], now: Date): FormMetrics {
       cleanSheetRate: 0,
       matchesCount: 0,
       daysSinceLastMatch: null,
+      scoredRecent: config.poisson.leagueAvgGoals,
+      concededRecent: config.poisson.leagueAvgGoals,
     };
   }
 
@@ -81,6 +87,15 @@ export function computeForm(results: TeamResult[], now: Date): FormMetrics {
   const lastDate = new Date(sorted[sorted.length - 1]!.date);
   const days = Math.floor((now.getTime() - lastDate.getTime()) / MS_PER_DAY);
 
+  // Asymmetrisches Momentum (GS-inspiriert): erzielte Tore über die letzten
+  // N Spiele, kassierte Tore über die letzten M Spiele — ungewichtet.
+  const scoredWin = sorted.slice(-config.poisson.momentumScoredWindow);
+  const concededWin = sorted.slice(-config.poisson.momentumConcededWindow);
+  const scoredRecent =
+    scoredWin.reduce((s, r) => s + r.goalsFor, 0) / scoredWin.length;
+  const concededRecent =
+    concededWin.reduce((s, r) => s + r.goalsAgainst, 0) / concededWin.length;
+
   return {
     weightedForm: wSum > 0 ? wPts / wSum : 0,
     recentForm: recentPts,
@@ -89,5 +104,7 @@ export function computeForm(results: TeamResult[], now: Date): FormMetrics {
     cleanSheetRate: cleanSheets / sorted.length,
     matchesCount: sorted.length,
     daysSinceLastMatch: Number.isFinite(days) ? days : null,
+    scoredRecent,
+    concededRecent,
   };
 }

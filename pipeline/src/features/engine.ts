@@ -13,6 +13,7 @@ import type {
 import { config } from "../../config.js";
 import { computeForm, type FormMetrics } from "./form.js";
 import { estimateLambdas, poissonBaseline } from "./poisson.js";
+import { isEuropean, isMajorNation } from "./confederation.js";
 
 /** Gastgeber-Nationen 2026 (Heimvorteil). */
 const HOST_TEAM_IDS = new Set(["USA", "CAN", "MEX"]);
@@ -94,7 +95,14 @@ export function runEngine(
   if (hostIsHome === true) eloDiff += config.homeFieldAdvantageElo;
   else if (hostIsHome === false) eloDiff -= config.homeFieldAdvantageElo;
 
-  const lambdas = estimateLambdas(eloDiff, homeForm, awayForm, hostIsHome);
+  const lambdas = estimateLambdas(eloDiff, homeForm, awayForm, hostIsHome, {
+    homeId: match.homeTeamId,
+    awayId: match.awayTeamId,
+    homeEuropean: isEuropean(match.homeTeamId),
+    awayEuropean: isEuropean(match.awayTeamId),
+    homeMajor: isMajorNation(match.homeTeamId),
+    awayMajor: isMajorNation(match.awayTeamId),
+  });
   const base = poissonBaseline(lambdas.home, lambdas.away);
 
   const featureBundle: FeatureBundle = {

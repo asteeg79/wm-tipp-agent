@@ -43,12 +43,14 @@ async function main(): Promise<void> {
       exact: pct(withSeed.exactScoreRate),
       Brier: num(withSeed.brierMean),
       RPS: num(withSeed.rpsMean),
+      GDcorr: num(withSeed.goalDiffCorr),
     },
     "ohne Seed": {
       "1X2%": pct(noSeed.outcomeRate),
       exact: pct(noSeed.exactScoreRate),
       Brier: num(noSeed.brierMean),
       RPS: num(noSeed.rpsMean),
+      GDcorr: num(noSeed.goalDiffCorr),
     },
   });
 
@@ -74,6 +76,7 @@ async function main(): Promise<void> {
       exact: pct(r.exactScoreRate),
       Brier: num(r.brierMean),
       RPS: num(r.rpsMean),
+      GDcorr: num(r.goalDiffCorr),
     })),
   );
 

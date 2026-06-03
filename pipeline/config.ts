@@ -34,6 +34,30 @@ export interface PipelineConfig {
     maxGoals: number;
     /** Wie stark die Elo-Differenz die erwarteten Tore beeinflusst. */
     eloToGoalsScale: number;
+    /**
+     * Gewicht des asymmetrischen Momentum-Terms (0..1): Mischung aus
+     * "Tore erzielt (letzte N)" des angreifenden Teams und "Tore kassiert
+     * (letzte M)" des Gegners. 0 = aus (nur gewichtete Form), 1 = nur Momentum.
+     */
+    momentumWeight: number;
+    /** Fenster für erzielte Tore (Angriffs-Momentum). */
+    momentumScoredWindow: number;
+    /** Fenster für kassierte Tore des Gegners (Abwehr-Momentum). */
+    momentumConcededWindow: number;
+  };
+  /**
+   * Mentalitäts-/Konföderations-Faktoren (Goldman-Sachs-inspiriert).
+   * Multiplikatoren auf die erwarteten Tore (λ).
+   */
+  factors: {
+    /** Malus auf λ des Titelverteidigers ("Winner's Slump"). */
+    winnersSlump: number;
+    /** Team-ID des amtierenden Weltmeisters (FIFA-Code). */
+    defendingChampionId: string;
+    /** Es ist schwerer, gegen europäische Teams zu treffen → λ-Malus für den Gegner. */
+    vsEuropeanDefenseBonus: number;
+    /** λ-Boost für etablierte Top-Nationen. */
+    majorNationBoost: number;
   };
   /** Re-Trigger-Milestones in Stunden vor Anpfiff. */
   reTriggerMilestonesHours: number[];
@@ -91,6 +115,15 @@ export const config: PipelineConfig = {
     // Per Backtest getunt (2126 Länderspiele, Walk-Forward): 0.001 minimiert
     // RPS (0.1943 vs. 0.1953 bei 0.0016). `pnpm --filter @wm/pipeline backtest`.
     eloToGoalsScale: 0.001,
+    momentumWeight: 0.25,
+    momentumScoredWindow: 10,
+    momentumConcededWindow: 5,
+  },
+  factors: {
+    winnersSlump: 0.93,
+    defendingChampionId: "ARG", // Weltmeister 2022
+    vsEuropeanDefenseBonus: 0.96,
+    majorNationBoost: 1.03,
   },
   reTriggerMilestonesHours: [72, 24, 3],
   maxNewsPerTeam: 20,

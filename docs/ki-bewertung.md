@@ -63,6 +63,52 @@ Erzeugt in `pipeline/src/features/`, bevor ein LLM aufgerufen wird:
 
 Resultat: `featureBundle` + `baseline` pro Match — genau das geht in den Prompt.
 
+## Schritt A+ — GS-inspirierte Faktoren in der λ-Schätzung
+
+Angeregt durch die Goldman-Sachs-WM-Methodik (Poisson + Elo-Regression auf
+~20k Länderspielen) verfeinert `estimateLambdas()` die rohe Elo+Form-Erwartung
+um vier Faktoren. Alle Parameter stehen zentral in `pipeline/config.ts`
+(`poisson.*`, `factors.*`) und sind per Backtest gegengeprüft.
+
+- **Asymmetrisches Momentum** (`form.ts`, `poisson.ts`): GS koppelt die jüngst
+  *erzielten* Tore eines Teams mit den jüngst *kassierten* des Gegners. Wir
+  führen `scoredRecent` (letzte `momentumScoredWindow` = 10 Spiele) und
+  `concededRecent` (letzte `momentumConcededWindow` = 5) und mischen sie mit
+  Gewicht `momentumWeight` = 0,25 in λ:
+  `λ_home = (1−mw)·((Att_home+Def_away)/2) + mw·((scored_home+conceded_away)/2)`.
+- **Winner's-Slump** (`factors.winnersSlump` = 0,93): der amtierende Weltmeister
+  (`factors.defendingChampionId` = `ARG`) tendiert historisch zu schwächerem
+  Turnierstart — seine λ wird leicht gedämpft.
+- **Konföderations-/Status-Faktoren** (`confederation.ts`): GS findet, dass es
+  *schwerer ist, gegen europäische Teams zu treffen* (Abwehr-Bonus
+  `vsEuropeanDefenseBonus` = 0,96 auf die λ des Gegners eines UEFA-Teams) und
+  dass große Fußballnationen einen kleinen Boost tragen
+  (`majorNationBoost` = 1,03). `isEuropean()`/`isMajorNation()` liefern die
+  Zuordnung.
+- **FIFA-Elo-Seed** (`eloSeed.ts`, s. o.): deckt GS' Forderung nach einem
+  belastbaren Stärke-Anker trotz kurzer Historie ab.
+
+**Backtest-Beleg** (`pnpm --filter @wm/pipeline backtest`): zusätzlich zu
+RPS/Brier/1X2/Exact misst der Backtest jetzt die **Tordifferenz-Korrelation**
+(`GDcorr`, Pearson zwischen vorhergesagter und tatsächlicher Tordifferenz) — die
+Kenngröße, die GS selbst mit ~49 % ausweist. Mit Seed erreichen wir
+**GDcorr ≈ 0,54** bei stabilem **RPS ≈ 0,190**, also über GS' berichtetem Wert.
+
+## Externer Prognose-Prior (optional, generisch)
+
+`pipeline/src/sources/externalPriors.ts` lädt — falls vorhanden — die Datei
+`data/external/priors.json` mit fremden 1X2-Wahrscheinlichkeiten je Partie und
+reicht sie als zusätzlichen **Anker** in den Prompt (`externalForecast`-Slot, die
+KI darf ihn berücksichtigen, ist aber nicht gebunden).
+
+> **Rechtlicher Hinweis:** Die Datei ist **gitignored** und wird nicht
+> ausgeliefert. Goldman Sachs' Report ist lizenziert (»For the exclusive use of …«,
+> keine Vervielfältigung/Weitergabe/Ableitung). Deshalb sind **keine
+> GS-Originalzahlen im Repo oder in der deployten App** — nur der neutrale
+> Mechanismus. Wer dort lizenzierte Fremdprognosen lokal einträgt, ist selbst für
+> die Einhaltung der jeweiligen Nutzungsbedingungen verantwortlich. Eine
+> Vorlage liegt unter `data/external/priors.example.json`.
+
 ## Schritt B — Der Prompt
 
 - **System-Prompt** (fix): Rolle „erfahrener Fußball-Analyst WM 2026", Kernregel

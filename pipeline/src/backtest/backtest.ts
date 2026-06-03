@@ -15,6 +15,7 @@ import { computeForm } from "../features/form.js";
 import { expectedScore } from "../features/elo.js";
 import { ELO_SEED } from "../features/eloSeed.js";
 import { estimateLambdas, poissonBaseline } from "../features/poisson.js";
+import { isEuropean, isMajorNation } from "../features/confederation.js";
 import { scoreMatch, aggregateAccuracy } from "../features/accuracy.js";
 import type { BacktestGame } from "../sources/openFootballHistory.js";
 
@@ -50,6 +51,28 @@ export interface BacktestResult {
   outcomeRate: number | null;
   brierMean: number | null;
   rpsMean: number | null;
+  /** Korrelation vorhergesagte vs. echte Tordifferenz (GS-Hauptvalidierung). */
+  goalDiffCorr: number | null;
+}
+
+/** Pearson-Korrelation zweier gleich langer Zahlenreihen. */
+function pearson(xs: number[], ys: number[]): number | null {
+  const n = xs.length;
+  if (n < 2) return null;
+  const mx = xs.reduce((a, b) => a + b, 0) / n;
+  const my = ys.reduce((a, b) => a + b, 0) / n;
+  let sxy = 0;
+  let sxx = 0;
+  let syy = 0;
+  for (let i = 0; i < n; i++) {
+    const dx = xs[i]! - mx;
+    const dy = ys[i]! - my;
+    sxy += dx * dy;
+    sxx += dx * dx;
+    syy += dy * dy;
+  }
+  const denom = Math.sqrt(sxx * syy);
+  return denom === 0 ? null : sxy / denom;
 }
 
 /** Tordifferenz-Multiplikator (wie features/elo.ts). */
@@ -125,6 +148,9 @@ export function runBacktest(
       accuracy: ReturnType<typeof scoreMatch>;
       actualResult: { home: number; away: number };
     }[] = [];
+    // Für die GS-artige Korrelations-Metrik: vorhergesagte vs. echte Tordiff.
+    const predDiff: number[] = [];
+    const actualDiff: number[] = [];
 
     for (const g of games) {
       const homeHist = history.get(g.homeId) ?? [];
@@ -136,13 +162,23 @@ export function runBacktest(
         const homeForm = computeForm(toResults(g.homeId, homeHist), now);
         const awayForm = computeForm(toResults(g.awayId, awayHist), now);
         const eloDiff = getElo(g.homeId) - getElo(g.awayId);
-        const lambdas = estimateLambdas(eloDiff, homeForm, awayForm, null);
+        const lambdas = estimateLambdas(eloDiff, homeForm, awayForm, null, {
+          homeId: g.homeId,
+          awayId: g.awayId,
+          homeEuropean: isEuropean(g.homeId),
+          awayEuropean: isEuropean(g.awayId),
+          homeMajor: isMajorNation(g.homeId),
+          awayMajor: isMajorNation(g.awayId),
+        });
         const base = poissonBaseline(lambdas.home, lambdas.away);
         const actual = { home: g.goalsHome, away: g.goalsAway };
         entries.push({
           accuracy: scoreMatch(base.mostLikelyScore, base.probabilities, actual),
           actualResult: actual,
         });
+        // erwartete Tordifferenz = λ_home − λ_away (GS-Trainingsziel).
+        predDiff.push(lambdas.home - lambdas.away);
+        actualDiff.push(g.goalsHome - g.goalsAway);
       }
 
       // Elo nach dem Spiel updaten (Walk-Forward).
@@ -169,6 +205,7 @@ export function runBacktest(
       outcomeRate: agg.outcomeRate,
       brierMean: agg.brierMean,
       rpsMean: agg.rpsMean,
+      goalDiffCorr: pearson(predDiff, actualDiff),
     };
   } finally {
     config.decayHalfLifeDays = saved.decayHalfLifeDays;

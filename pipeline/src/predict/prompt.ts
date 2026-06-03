@@ -49,7 +49,9 @@ export function buildUserMessage(ctx: PromptContext): string {
       expectedGoals: ctx.baseline.expectedGoals,
       source: ctx.baseline.source,
     },
-    market: ctx.marketProbabilities ?? null,
+    // Externe Prognose (z. B. Markt-Quoten oder ein Fremdmodell) als Anker,
+    // falls vorhanden. Die KI darf sie berücksichtigen, ist aber nicht gebunden.
+    externalForecast: ctx.marketProbabilities ?? null,
     features: {
       home: ctx.featureBundle.home,
       away: ctx.featureBundle.away,

@@ -44,6 +44,10 @@ import { runEngine, featureHash } from "./features/engine.js";
 import { computeForm, recencyWeight as recencyWeightFor } from "./features/form.js";
 import { makeEnsemble, type Ensemble } from "./predict/index.js";
 import { decideRetrigger } from "./predict/retrigger.js";
+import {
+  loadExternalPriors,
+  type ExternalPriors,
+} from "./sources/externalPriors.js";
 import { readJsonOptional } from "./io/json.js";
 import { aggregateAccuracy, scoreMatch } from "./features/accuracy.js";
 
@@ -229,6 +233,13 @@ export async function buildData(
     console.log(`[pipeline] KI-Ensemble aktiv: ${ensemble.modelIds.join(", ")}`);
   }
 
+  const externalPriors = loadExternalPriors();
+  if (externalPriors) {
+    console.log(
+      `[pipeline] Externe Priors geladen (${externalPriors.source}): ${externalPriors.byMatch.size} Partien`,
+    );
+  }
+
   const matchResult = await writeMatches(schedule, {
     resultsByTeam,
     newsByTeam,
@@ -237,6 +248,7 @@ export async function buildData(
     now,
     ensemble: ensemble && ensemble.active ? ensemble : null,
     aiWindowHours: options.aiWindowHours ?? null,
+    externalPriors,
   });
   stats.matchesWritten = matchResult.written;
   stats.aiEvaluated = matchResult.aiEvaluated;
@@ -258,6 +270,8 @@ interface WriteMatchesCtx {
   ensemble: Ensemble | null;
   /** KI nur für Partien ≤ diesem Anpfiff-Fenster (Std.); null = unbegrenzt. */
   aiWindowHours: number | null;
+  /** Optionale externe Prognose-Priors (als Anker für die KI). */
+  externalPriors: ExternalPriors | null;
 }
 
 interface WriteMatchesResult {
@@ -362,6 +376,7 @@ async function writeMatches(
         );
         if (decision.shouldEvaluate) {
           try {
+            const prior = ctx.externalPriors?.byMatch.get(fx.matchId);
             const aiPred = await ensemble.evaluate({
               homeName: nameById.get(fx.homeTeamId) ?? fx.homeTeamId,
               awayName: nameById.get(fx.awayTeamId) ?? fx.awayTeamId,
@@ -371,6 +386,7 @@ async function writeMatches(
               awayNews,
               inputHash,
               now,
+              ...(prior ? { marketProbabilities: prior } : {}),
             });
             // Alten KI-Tipp in die Historie schieben.
             if (prev?.prediction?.models) {

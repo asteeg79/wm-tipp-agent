@@ -28,11 +28,24 @@ function factorial(n: number): number {
  * Schätzt λ aus Elo-Differenz, Form (Tore für/gegen) und Heimvorteil.
  * @param eloDiff  Elo(Heim) − Elo(Auswärts), inkl. HFA falls Gastgeber.
  */
+/** Optionale Team-Kontextinfos für die Mentalitäts-/Konföderations-Faktoren. */
+export interface LambdaContext {
+  homeId?: string;
+  awayId?: string;
+  /** Ist das Team aus der UEFA (Europa)? */
+  homeEuropean?: boolean;
+  awayEuropean?: boolean;
+  /** Etablierte Top-Nation? */
+  homeMajor?: boolean;
+  awayMajor?: boolean;
+}
+
 export function estimateLambdas(
   eloDiff: number,
   homeForm: FormMetrics,
   awayForm: FormMetrics,
   hostIsHome: boolean | null,
+  ctx: LambdaContext = {},
 ): { home: number; away: number } {
   const avg = config.poisson.leagueAvgGoals;
 
@@ -43,9 +56,15 @@ export function estimateLambdas(
   const awayAtt = awayForm.matchesCount > 0 ? awayForm.goalsForAvg : avg;
   const awayDef = awayForm.matchesCount > 0 ? awayForm.goalsAgainstAvg : avg;
 
-  // Basis: gemittelte Angriffsstärke des einen × Abwehrschwäche des anderen.
-  let lambdaHome = (homeAtt + awayDef) / 2;
-  let lambdaAway = (awayAtt + homeDef) / 2;
+  // Asymmetrisches Momentum (GS-inspiriert): Angriff = eigene erzielte Tore
+  // (letzte N) gemischt mit kassierten Toren des Gegners (letzte M).
+  const mw = config.poisson.momentumWeight;
+  const homeMomentum = (homeForm.scoredRecent + awayForm.concededRecent) / 2;
+  const awayMomentum = (awayForm.scoredRecent + homeForm.concededRecent) / 2;
+
+  // Basis: gemittelte Angriffsstärke × Abwehrschwäche, gemischt mit Momentum.
+  let lambdaHome = (1 - mw) * ((homeAtt + awayDef) / 2) + mw * homeMomentum;
+  let lambdaAway = (1 - mw) * ((awayAtt + homeDef) / 2) + mw * awayMomentum;
 
   // Elo-Differenz multiplikativ einrechnen (stärkeres Team skaliert hoch).
   const eloFactor = Math.exp(config.poisson.eloToGoalsScale * eloDiff);
@@ -57,6 +76,18 @@ export function estimateLambdas(
     lambdaHome *= 1.1;
     lambdaAway *= 0.95;
   }
+
+  // --- Mentalitäts-/Konföderations-Faktoren (GS-inspiriert) ---
+  const f = config.factors;
+  // Winner's Slump: Titelverteidiger erzielt etwas weniger.
+  if (ctx.homeId === f.defendingChampionId) lambdaHome *= f.winnersSlump;
+  if (ctx.awayId === f.defendingChampionId) lambdaAway *= f.winnersSlump;
+  // Schwerer, gegen europäische Teams zu treffen → Gegner-λ sinkt.
+  if (ctx.awayEuropean) lambdaHome *= f.vsEuropeanDefenseBonus;
+  if (ctx.homeEuropean) lambdaAway *= f.vsEuropeanDefenseBonus;
+  // Top-Nation-Boost.
+  if (ctx.homeMajor) lambdaHome *= f.majorNationBoost;
+  if (ctx.awayMajor) lambdaAway *= f.majorNationBoost;
 
   // Plausibilitätsgrenzen.
   lambdaHome = clamp(lambdaHome, 0.2, 4.5);
