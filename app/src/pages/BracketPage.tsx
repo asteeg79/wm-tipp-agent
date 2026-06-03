@@ -6,7 +6,6 @@ import {
   simulateTournament,
   simulateBracket,
   type BracketMatch,
-  type BracketMode,
 } from "../lib/simulate.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 
@@ -59,43 +58,16 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
   const { t } = useTranslation();
   const { data: index } = useIndex();
   const { data: predIndex } = usePredictionsIndex();
-  const [mode, setMode] = useState<BracketMode>("favorite");
-  const [seed, setSeed] = useState(() => Date.now());
-
   const bracket = useMemo(() => {
     if (!index || !predIndex) return null;
-    return simulateBracket(index, predIndex, mode, seed);
-  }, [index, predIndex, mode, seed]);
+    return simulateBracket(index, predIndex);
+  }, [index, predIndex]);
 
   if (!bracket) return null;
   const champ = teams.get(bracket.champion);
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        {/* Modus: Favorit (deterministisch) ↔ Zufall (gewichtete Auslosung) */}
-        <div className="inline-flex rounded-lg border border-edge bg-surface-2 p-1">
-          {(["favorite", "random"] as BracketMode[]).map((m) => (
-            <button
-              key={m}
-              onClick={() => setMode(m)}
-              className={`rounded-md px-3 py-1 text-xs font-semibold transition-colors ${
-                mode === m ? "bg-acc text-canvas" : "text-fg-soft hover:text-fg"
-              }`}
-            >
-              {m === "favorite" ? t("bracket.favorite") : t("bracket.chance")}
-            </button>
-          ))}
-        </div>
-        {mode === "random" && (
-          <button
-            onClick={() => setSeed(Date.now())}
-            className="rounded-md border border-acc px-3 py-1.5 text-sm font-medium text-acc hover:bg-acc/10"
-          >
-            ↻ {t("bracket.reroll")}
-          </button>
-        )}
-      </div>
       <div className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
         {t("bracket.draw16")}
       </div>

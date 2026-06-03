@@ -145,15 +145,12 @@ const resources = {
         groupWinner: "Gruppensieg",
         tree: "K.-o.-Baum",
         odds: "Titelchancen",
-        reroll: "Neu auslosen",
-        favorite: "Favoriten",
-        chance: "🎲 Zufall",
         groupWinnerShort: "Grp.",
         advanceShort: "AF+",
         draw16: "16 stärkste Teams · Setzung nach Stärke",
         champion: "Simulierter Weltmeister",
         treeNote:
-          "Stärke je Team = Summe der Siegerwartung aus den Gruppen-1X2-Wahrscheinlichkeiten (Elo+Poisson). Favoriten-Modus: das stärkere Team kommt weiter (% = Siegwahrscheinlichkeit). Zufalls-Modus: jede Partie wird gewichtet ausgelost, „Neu auslosen“ würfelt neu.",
+          "Stärke je Team = Summe der Siegerwartung aus den Gruppen-1X2-Wahrscheinlichkeiten (Elo+Poisson). Je Partie kommt das stärkere Team weiter; % = dessen Siegwahrscheinlichkeit.",
         rounds: {
           round16: "Achtelfinale",
           quarter: "Viertelfinale",
@@ -376,15 +373,12 @@ const resources = {
         groupWinner: "Group win",
         tree: "Knockout tree",
         odds: "Title odds",
-        reroll: "Redraw",
-        favorite: "Favorites",
-        chance: "🎲 Random",
         groupWinnerShort: "Grp.",
         advanceShort: "R16+",
         draw16: "16 strongest teams · seeded by strength",
         champion: "Simulated champion",
         treeNote:
-          "Team strength = sum of win expectancy from the group-stage 1X2 probabilities (Elo+Poisson). Favorites mode: the stronger team advances (% = win probability). Random mode: each tie is drawn weighted by strength; “Redraw” rolls again.",
+          "Team strength = sum of win expectancy from the group-stage 1X2 probabilities (Elo+Poisson). In each tie the stronger team advances; % = its win probability.",
         rounds: {
           round16: "Round of 16",
           quarter: "Quarter-final",

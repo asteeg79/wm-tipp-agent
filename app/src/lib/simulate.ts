@@ -170,9 +170,6 @@ export interface BracketMatch {
   winProb: number;
 }
 
-/** Auslosungsmodus für den K.-o.-Baum. */
-export type BracketMode = "favorite" | "random";
-
 export interface BracketRound {
   stage: KoStage;
   matches: BracketMatch[];
@@ -216,34 +213,27 @@ function tieWinProb(sa: number, sb: number): number {
 }
 
 /**
- * Plausibles K.-o.-Ergebnis aus der Siegwahrscheinlichkeit des Favoriten.
- * Im Favoriten-Modus deterministisch (rng weggelassen → reproduzierbar),
- * im Zufallsmodus mit etwas Streuung.
+ * Plausibles, deterministisches K.-o.-Ergebnis aus der Siegwahrscheinlichkeit
+ * des Favoriten (kein Zufall → reproduzierbar). edge 0 (knapp) .. 1 (klar).
  */
-function koScore(
-  pWin: number,
-  rng?: () => number,
-): { win: number; lose: number } {
+function koScore(pWin: number): { win: number; lose: number } {
   const clamp = (v: number, lo: number, hi: number): number =>
     Math.max(lo, Math.min(hi, v));
-  // edge = 0 (knapp) .. 1 (klar überlegen)
   const edge = clamp((pWin - 0.5) * 2, 0, 1);
-  const noiseW = rng ? rng() * 0.8 : 0.4;
-  const noiseL = rng ? rng() * 0.8 : 0.4;
-  let gw = clamp(Math.round(1 + edge * 1.8 + noiseW), 1, 4);
-  let gl = clamp(Math.round(0.9 - edge * 1.1 + noiseL), 0, 3);
+  const gw = clamp(Math.round(1 + edge * 1.8 + 0.4), 1, 4);
+  let gl = clamp(Math.round(0.9 - edge * 1.1 + 0.4), 0, 3);
   if (gl >= gw) gl = gw - 1;
   return { win: gw, lose: gl };
 }
 
+/**
+ * Deterministischer K.-o.-Baum: die 16 stärksten Teams (Stärke-Proxy aus den
+ * Gruppen-1X2) nach Setzliste; je Partie kommt das stärkere Team weiter.
+ */
 export function simulateBracket(
   index: IndexFile,
   predIndex: PredictionsIndex,
-  mode: BracketMode = "favorite",
-  seed: number = Date.now(),
 ): BracketResult {
-  // Zufalls-RNG nur im Zufallsmodus; Favoriten-Modus ist deterministisch.
-  const rng = mode === "random" ? makeRng(seed) : undefined;
   const strength = teamStrength(index, predIndex);
 
   // 16 stärkste Teams ermitteln und nach Setzliste platzieren.
@@ -270,12 +260,11 @@ export function simulateBracket(
       const sa = strength.get(a) ?? 0.5;
       const sb = strength.get(b) ?? 0.5;
       const pA = tieWinProb(sa, sb);
-      // Favoriten-Modus: stärkeres Team kommt weiter (deterministisch).
-      // Zufallsmodus: Münzwurf gewichtet mit pA.
-      const aWins = rng ? rng() < pA : pA >= 0.5;
+      // Stärkeres Team kommt weiter (deterministisch).
+      const aWins = pA >= 0.5;
       const winner = aWins ? a : b;
       const winProb = aWins ? pA : 1 - pA;
-      const { win, lose } = koScore(winProb, rng);
+      const { win, lose } = koScore(winProb);
       matches.push({
         a,
         b,
