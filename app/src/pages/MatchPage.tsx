@@ -141,25 +141,50 @@ export function MatchPage() {
             </div>
           )}
 
-          {/* Tipp-Timeline */}
-          {match.predictionHistory.length > 0 && (
-            <div className="border-t border-edge pt-3">
-              <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
-                {t("match.timeline")}
+          {/* Tipp-Verlauf: aktueller Lauf (oben, "jetzt") + frühere Läufe. */}
+          {(() => {
+            const timeline = [
+              {
+                generatedAt: pred.generatedAt,
+                predictedScore: pred.predictedScore,
+                confidence: pred.confidence,
+                current: true,
+              },
+              ...[...match.predictionHistory].reverse().map((h) => ({
+                generatedAt: h.generatedAt,
+                predictedScore: h.predictedScore,
+                confidence: h.confidence,
+                current: false,
+              })),
+            ];
+            return (
+              <div className="border-t border-edge pt-3">
+                <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
+                  {t("match.timeline")}
+                </div>
+                <ul className="space-y-1 text-sm">
+                  {timeline.map((h, i) => (
+                    <li
+                      key={i}
+                      className={`flex justify-between ${
+                        h.current ? "font-semibold text-fg" : "text-fg-muted"
+                      }`}
+                    >
+                      <span>
+                        {h.current && <span className="mr-1 text-acc">●</span>}
+                        {formatKickoff(h.generatedAt)}
+                        {h.current ? ` · ${t("match.timelineNow")}` : ""}
+                      </span>
+                      <span className="font-mono">
+                        {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
+                        {Math.round(h.confidence * 100)}%
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-1 text-sm">
-                {[...match.predictionHistory].reverse().map((h, i) => (
-                  <li key={i} className="flex justify-between text-fg-muted">
-                    <span>{formatKickoff(h.generatedAt)}</span>
-                    <span className="font-mono">
-                      {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
-                      {Math.round(h.confidence * 100)}%
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+            );
+          })()}
 
           <p className="border-t border-edge pt-3 text-xs text-fg-faint">
             {pred.rationale ?? t("match.baselineNote")}

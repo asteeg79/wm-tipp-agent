@@ -109,6 +109,7 @@ const resources = {
         agreement: "Übereinstimmung",
         baselineVsAi: "Baseline vs. KI",
         timeline: "Tipp-Verlauf",
+        timelineNow: "aktueller Lauf",
         aiTip: "KI-Tipp (Claude + ChatGPT)",
       },
       accuracy: {
@@ -337,6 +338,7 @@ const resources = {
         agreement: "Agreement",
         baselineVsAi: "Baseline vs. AI",
         timeline: "Tip timeline",
+        timelineNow: "current run",
         aiTip: "AI tip (Claude + ChatGPT)",
       },
       accuracy: {
