@@ -14,7 +14,6 @@ export const matchesDir = join(dataDir, "matches");
 export const cacheDir = join(repoRoot, "pipeline", "cache");
 
 export const indexPath = join(dataDir, "index.json");
-export const standingsPath = join(dataDir, "standings.json");
 export const predictionsIndexPath = join(dataDir, "predictions-index.json");
 
 export const teamPath = (teamId: string): string =>

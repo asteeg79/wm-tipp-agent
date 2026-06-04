@@ -6,4 +6,3 @@ export * from "./team.js";
 export * from "./match.js";
 export * from "./index-file.js";
 export * from "./predictions-index.js";
-export * from "./standings.js";
