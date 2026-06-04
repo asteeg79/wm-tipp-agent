@@ -2,7 +2,13 @@
  * Geteilter Favoriten-State (localStorage-gestützt), damit Toggle (Team-Detail)
  * und Alert-Wächter (Layout) dieselbe Quelle nutzen.
  */
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 const FAV_KEY = "wm-tipp-favorites-v1";
 

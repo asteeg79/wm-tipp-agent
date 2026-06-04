@@ -35,13 +35,13 @@ import type {
 } from "./sources/types.js";
 import { computeH2h, deriveOpponentSets } from "./features/opponents.js";
 import { NewsAggregator } from "./features/news.js";
-import {
-  computeEloRatings,
-  gamesFromHistories,
-} from "./features/elo.js";
+import { computeEloRatings, gamesFromHistories } from "./features/elo.js";
 import { ELO_SEED } from "./features/eloSeed.js";
 import { runEngine, featureHash } from "./features/engine.js";
-import { computeForm, recencyWeight as recencyWeightFor } from "./features/form.js";
+import {
+  computeForm,
+  recencyWeight as recencyWeightFor,
+} from "./features/form.js";
 import { makeEnsemble, type Ensemble } from "./predict/index.js";
 import { decideRetrigger } from "./predict/retrigger.js";
 import {
@@ -215,7 +215,14 @@ export async function buildData(
       await writeJson(
         teamPath(team.id),
         Team,
-        buildTeam(team, nowIso, results, potentialOpponents, news, eloOf(team.id)),
+        buildTeam(
+          team,
+          nowIso,
+          results,
+          potentialOpponents,
+          news,
+          eloOf(team.id),
+        ),
       );
       progress.teamsBackfilled[team.id] = nowIso;
       stats.teamsWritten++;
@@ -232,7 +239,9 @@ export async function buildData(
       "[pipeline] Kein KI-Key gesetzt → nur Baseline (graceful degradation).",
     );
   } else if (ensemble) {
-    console.log(`[pipeline] KI-Ensemble aktiv: ${ensemble.modelIds.join(", ")}`);
+    console.log(
+      `[pipeline] KI-Ensemble aktiv: ${ensemble.modelIds.join(", ")}`,
+    );
   }
 
   const externalPriors = loadExternalPriors();
@@ -264,7 +273,10 @@ export async function buildData(
   stats.aiSkipped = matchResult.aiSkipped;
 
   // 8) predictions-index.json inkl. Accuracy nach Spielende.
-  stats.accuracyScored = await writePredictionsIndex(matchResult.matches, nowIso);
+  stats.accuracyScored = await writePredictionsIndex(
+    matchResult.matches,
+    nowIso,
+  );
 
   await persistProgress(progress);
   return stats;
@@ -360,8 +372,16 @@ async function writeMatches(
           neutral: fx.neutral,
           altitude: fx.altitude ?? null,
         },
-        { teamId: fx.homeTeamId, elo: eloOf(fx.homeTeamId), results: homeResults },
-        { teamId: fx.awayTeamId, elo: eloOf(fx.awayTeamId), results: awayResults },
+        {
+          teamId: fx.homeTeamId,
+          elo: eloOf(fx.homeTeamId),
+          results: homeResults,
+        },
+        {
+          teamId: fx.awayTeamId,
+          elo: eloOf(fx.awayTeamId),
+          results: awayResults,
+        },
         now,
       );
       match.featureBundle = featureBundle;

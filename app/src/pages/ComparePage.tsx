@@ -149,7 +149,15 @@ function Row({
 }
 
 /** H2H aus a.potentialOpponents (gegen b) — funktioniert für Gruppengegner. */
-function H2HRow({ a, b, label }: { a: Team; b: Team; label: string }): JSX.Element {
+function H2HRow({
+  a,
+  b,
+  label,
+}: {
+  a: Team;
+  b: Team;
+  label: string;
+}): JSX.Element {
   const h = a.potentialOpponents.find((o) => o.teamId === b.id)?.h2hSummary;
   const txt = h ? `${h.w}-${h.d}-${h.l} (${h.gf}:${h.ga})` : "–";
   return (

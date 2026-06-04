@@ -26,8 +26,16 @@ describe("scoreMatch", () => {
   });
 
   it("falsche Tendenz → hoher RPS", () => {
-    const richtig = scoreMatch({ home: 2, away: 0 }, { home: 0.7, draw: 0.2, away: 0.1 }, { home: 2, away: 0 });
-    const falsch = scoreMatch({ home: 2, away: 0 }, { home: 0.7, draw: 0.2, away: 0.1 }, { home: 0, away: 2 });
+    const richtig = scoreMatch(
+      { home: 2, away: 0 },
+      { home: 0.7, draw: 0.2, away: 0.1 },
+      { home: 2, away: 0 },
+    );
+    const falsch = scoreMatch(
+      { home: 2, away: 0 },
+      { home: 0.7, draw: 0.2, away: 0.1 },
+      { home: 0, away: 2 },
+    );
     expect(falsch.rps!).toBeGreaterThan(richtig.rps!);
   });
 
@@ -47,8 +55,22 @@ describe("aggregateAccuracy", () => {
 
   it("aggregiert Trefferquoten + Mittelwerte über beendete Partien", () => {
     const agg = aggregateAccuracy([
-      { actualResult: { home: 2, away: 1 }, accuracy: scoreMatch({ home: 2, away: 1 }, { home: 0.7, draw: 0.2, away: 0.1 }, { home: 2, away: 1 }) },
-      { actualResult: { home: 0, away: 0 }, accuracy: scoreMatch({ home: 1, away: 0 }, { home: 0.5, draw: 0.3, away: 0.2 }, { home: 0, away: 0 }) },
+      {
+        actualResult: { home: 2, away: 1 },
+        accuracy: scoreMatch(
+          { home: 2, away: 1 },
+          { home: 0.7, draw: 0.2, away: 0.1 },
+          { home: 2, away: 1 },
+        ),
+      },
+      {
+        actualResult: { home: 0, away: 0 },
+        accuracy: scoreMatch(
+          { home: 1, away: 0 },
+          { home: 0.5, draw: 0.3, away: 0.2 },
+          { home: 0, away: 0 },
+        ),
+      },
       { actualResult: null }, // offen → ignoriert
     ]);
     expect(agg.finishedCount).toBe(2);

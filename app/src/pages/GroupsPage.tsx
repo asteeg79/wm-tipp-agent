@@ -61,8 +61,7 @@ export function GroupsPage() {
           let matches = matchesByGroup.get(g.id) ?? [];
           if (teamFilter)
             matches = matches.filter(
-              (m) =>
-                m.homeTeamId === teamFilter || m.awayTeamId === teamFilter,
+              (m) => m.homeTeamId === teamFilter || m.awayTeamId === teamFilter,
             );
 
           return (

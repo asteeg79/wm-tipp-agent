@@ -81,9 +81,10 @@ export async function fetchJson<T = unknown>(
       if (res.status === 429 || res.status >= 500) {
         // Rate-Limit oder Serverfehler → Backoff und erneut versuchen.
         const retryAfter = Number(res.headers.get("retry-after"));
-        const wait = Number.isFinite(retryAfter) && retryAfter > 0
-          ? retryAfter * 1000
-          : backoffBaseMs * 2 ** attempt + Math.random() * 250;
+        const wait =
+          Number.isFinite(retryAfter) && retryAfter > 0
+            ? retryAfter * 1000
+            : backoffBaseMs * 2 ** attempt + Math.random() * 250;
         lastErr = new Error(`HTTP ${res.status} für ${url}`);
         if (attempt < maxRetries) {
           await sleep(wait);

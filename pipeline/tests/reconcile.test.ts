@@ -87,7 +87,8 @@ describe("reconcile", () => {
       new Date(),
       "h",
     );
-    const sum = r.probabilities.home + r.probabilities.draw + r.probabilities.away;
+    const sum =
+      r.probabilities.home + r.probabilities.draw + r.probabilities.away;
     // Werte sind auf 4 Nachkommastellen gerundet → Summe minimal um 1.
     expect(sum).toBeCloseTo(1, 3);
     // ChatGPT (conf 0.8) zieht die Mischung stärker → home > away.

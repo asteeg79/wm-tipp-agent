@@ -40,6 +40,10 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Lint (ESLint)
+        run: pnpm lint
+      - name: Format-Check (Prettier)
+        run: pnpm format:check
       - name: Typecheck (alle Pakete)
         run: pnpm -r typecheck
       - name: Unit-Tests (Vitest)

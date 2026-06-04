@@ -114,7 +114,9 @@ export function reconcile(
   // Konfidenz: Mittelwert der Modell-Konfidenzen, bei Uneinigkeit gedämpft.
   const meanConf =
     results.reduce((s, r) => s + r.prediction.confidence, 0) / results.length;
-  const confidence = round4(Math.max(0, Math.min(1, meanConf * (0.5 + 0.5 * agreement))));
+  const confidence = round4(
+    Math.max(0, Math.min(1, meanConf * (0.5 + 0.5 * agreement))),
+  );
 
   return {
     generatedAt: now.toISOString(),
@@ -229,7 +231,8 @@ function confidenceFromProbs(p: Outcome1x2): number {
 /** Regelbasierte Prosa-Synthese aus den keyFactors beider Modelle. */
 function buildRationale(results: ModelResult[], agreement: number): string {
   const factors = new Set<string>();
-  for (const r of results) for (const f of r.prediction.keyFactors) factors.add(f);
+  for (const r of results)
+    for (const f of r.prediction.keyFactors) factors.add(f);
   const topFactors = [...factors].slice(0, 3);
   const accord =
     results.length === 2

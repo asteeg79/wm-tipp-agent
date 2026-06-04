@@ -42,7 +42,10 @@ describe("runEngine", () => {
       {
         teamId: "AAA",
         elo: 1600,
-        results: [res("2025-09-01", "ZZZ", 3, 1), res("2025-10-01", "ZZZ", 0, 0)],
+        results: [
+          res("2025-09-01", "ZZZ", 3, 1),
+          res("2025-10-01", "ZZZ", 0, 0),
+        ],
       },
       { teamId: "ZZZ", elo: 1600, results: [] },
       now,

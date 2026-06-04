@@ -26,7 +26,9 @@ export function HomePage() {
   const featured =
     upcomingList.find((e) => e.predictedScore && e.probabilities) ??
     upcomingList[0];
-  const rest = upcomingList.filter((e) => e.matchId !== featured?.matchId).slice(0, 5);
+  const rest = upcomingList
+    .filter((e) => e.matchId !== featured?.matchId)
+    .slice(0, 5);
 
   // Letzte 2 beendete Partien (mit Ergebnis), neueste zuerst.
   const recent = byDateAsc

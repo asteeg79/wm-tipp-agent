@@ -107,7 +107,7 @@ export function simulateTournament(
       const pts = simulateGroup(matches, rng);
       const ranked = [...pts.entries()]
         // kleiner Zufalls-Tiebreak
-        .sort((a, b) => b[1] - a[1] || (rng() - 0.5))
+        .sort((a, b) => b[1] - a[1] || rng() - 0.5)
         .map(([id]) => id);
       if (ranked[0]) inc(groupWinner, ranked[0]);
       const top2 = ranked.slice(0, 2);

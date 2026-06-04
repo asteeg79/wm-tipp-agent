@@ -61,7 +61,14 @@ function h2hFromResults(
   homeResults: TeamResult[],
   awayTeamId: string,
 ): FeatureBundle["h2h"] {
-  const h = { played: 0, homeWins: 0, draws: 0, awayWins: 0, homeGoals: 0, awayGoals: 0 };
+  const h = {
+    played: 0,
+    homeWins: 0,
+    draws: 0,
+    awayWins: 0,
+    homeGoals: 0,
+    awayGoals: 0,
+  };
   for (const r of homeResults) {
     if (r.opponentId !== awayTeamId) continue;
     h.played++;

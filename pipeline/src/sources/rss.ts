@@ -32,7 +32,9 @@ export async function fetchFeed(
   try {
     xml = await fetchText(url, { maxRetries: 2, backoffBaseMs: 800 });
   } catch (err) {
-    console.warn(`[rss] Feed nicht erreichbar (${sourceLabel}): ${String(err)}`);
+    console.warn(
+      `[rss] Feed nicht erreichbar (${sourceLabel}): ${String(err)}`,
+    );
     return [];
   }
   if (!xml) return [];
@@ -119,12 +121,14 @@ function fromAtomEntry(
 ): RawNewsItem | null {
   const title = textOf(entry["title"]);
   const link = entry["link"];
-  let url = "";
+  let url: string; // wird in allen Zweigen gesetzt
   if (Array.isArray(link)) {
     const alt = link.find(
       (l) => (l as Record<string, unknown>)["@_rel"] !== "self",
     ) as Record<string, unknown> | undefined;
-    url = textOf(alt?.["@_href"]) || textOf((link[0] as Record<string, unknown>)?.["@_href"]);
+    url =
+      textOf(alt?.["@_href"]) ||
+      textOf((link[0] as Record<string, unknown>)?.["@_href"]);
   } else if (link && typeof link === "object") {
     url = textOf((link as Record<string, unknown>)["@_href"]);
   } else {
@@ -213,7 +217,8 @@ function toIso(dateStr: string): string {
  * Hostname. Bevorzugt den übergebenen Channel-Titel, fällt auf Host zurück.
  */
 function hostLabel(channelSource: string, url: string): string {
-  if (channelSource && !/google news/i.test(channelSource)) return channelSource;
+  if (channelSource && !/google news/i.test(channelSource))
+    return channelSource;
   try {
     return new URL(url).hostname.replace(/^www\./, "");
   } catch {

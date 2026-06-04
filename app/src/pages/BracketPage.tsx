@@ -47,7 +47,11 @@ export function BracketPage() {
         ))}
       </div>
 
-      {view === "tree" ? <TreeView teams={teams} /> : <OddsTable teams={teams} />}
+      {view === "tree" ? (
+        <TreeView teams={teams} />
+      ) : (
+        <OddsTable teams={teams} />
+      )}
     </section>
   );
 }
@@ -135,9 +139,19 @@ function BracketCell({
         final ? "border-acc/60" : "border-edge"
       }`}
     >
-      <CellLine id={m.a} goals={m.score.a} win={m.winner === m.a} teams={teams} />
+      <CellLine
+        id={m.a}
+        goals={m.score.a}
+        win={m.winner === m.a}
+        teams={teams}
+      />
       <div className="h-px bg-edge" />
-      <CellLine id={m.b} goals={m.score.b} win={m.winner === m.b} teams={teams} />
+      <CellLine
+        id={m.b}
+        goals={m.score.b}
+        win={m.winner === m.b}
+        teams={teams}
+      />
       {/* Siegwahrscheinlichkeit des Favoriten/Siegers laut Stärkemodell */}
       <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2 px-2 py-0.5">
         <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
@@ -161,7 +175,9 @@ function CellLine({
 }) {
   const team = teams.get(id);
   return (
-    <div className={`flex items-center gap-2 px-2 py-1.5 ${win ? "bg-acc/10" : ""}`}>
+    <div
+      className={`flex items-center gap-2 px-2 py-1.5 ${win ? "bg-acc/10" : ""}`}
+    >
       {team?.logo ? (
         <img
           src={team.logo}
@@ -219,13 +235,21 @@ function OddsTable({ teams }: { teams: Map<string, TeamSummary> }) {
           <thead className="bg-surface/60 font-mono text-[10px] uppercase tracking-wide text-fg-faint">
             <tr>
               <th className="px-2 py-2 text-left">Team</th>
-              <th className="w-14 px-1 py-2 text-right" title={t("bracket.groupWinner")}>
+              <th
+                className="w-14 px-1 py-2 text-right"
+                title={t("bracket.groupWinner")}
+              >
                 {t("bracket.groupWinnerShort")}
               </th>
-              <th className="w-14 px-1 py-2 text-right" title={t("bracket.advance")}>
+              <th
+                className="w-14 px-1 py-2 text-right"
+                title={t("bracket.advance")}
+              >
                 {t("bracket.advanceShort")}
               </th>
-              <th className="w-14 px-1.5 py-2 text-right">{t("bracket.title2")}</th>
+              <th className="w-14 px-1.5 py-2 text-right">
+                {t("bracket.title2")}
+              </th>
             </tr>
           </thead>
           <tbody>

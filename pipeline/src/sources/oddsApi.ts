@@ -163,6 +163,10 @@ export function swapMarket(m: MarketOdds): MarketOdds {
       draw: m.probabilities.draw,
       away: m.probabilities.home,
     },
-    decimal: { home: m.decimal.away, draw: m.decimal.draw, away: m.decimal.home },
+    decimal: {
+      home: m.decimal.away,
+      draw: m.decimal.draw,
+      away: m.decimal.home,
+    },
   };
 }

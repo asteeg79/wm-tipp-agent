@@ -16,7 +16,11 @@ import {
 
 function historySeasons(years: number): number[] {
   const env = process.env.WM_HISTORY_SEASONS;
-  if (env) return env.split(",").map((s) => Number(s.trim())).filter(Number.isInteger);
+  if (env)
+    return env
+      .split(",")
+      .map((s) => Number(s.trim()))
+      .filter(Number.isInteger);
   const end = new Date().getUTCFullYear();
   const out: number[] = [];
   for (let y = end - years; y <= end; y++) out.push(y);
@@ -28,7 +32,9 @@ async function main(): Promise<void> {
   const provider = new OpenFootballHistoryProvider();
   const seasons = historySeasons(config.historyYears);
   const games = await provider.getAllGames(seasons);
-  console.log(`[backtest] ${games.length} Länderspiele aus Saisons ${seasons.join(",")}`);
+  console.log(
+    `[backtest] ${games.length} Länderspiele aus Saisons ${seasons.join(",")}`,
+  );
 
   const base = paramsFromConfig(config);
 
@@ -58,14 +64,18 @@ async function main(): Promise<void> {
   const candidates: BacktestParams[] = sweep
     ? crossProduct(base, {
         decayHalfLifeDays: [120, 180, 270, 365],
-        eloToGoalsScale: [0.0010, 0.0016, 0.0022],
+        eloToGoalsScale: [0.001, 0.0016, 0.0022],
       })
     : [base];
 
-  const results: BacktestResult[] = candidates.map((p) => runBacktest(games, p));
+  const results: BacktestResult[] = candidates.map((p) =>
+    runBacktest(games, p),
+  );
   results.sort((a, b) => (a.rpsMean ?? 9) - (b.rpsMean ?? 9));
 
-  console.log(`\n[backtest] ${results.length} Parameter-Set(s), sortiert nach RPS (niedriger = besser):\n`);
+  console.log(
+    `\n[backtest] ${results.length} Parameter-Set(s), sortiert nach RPS (niedriger = besser):\n`,
+  );
   console.table(
     results.map((r) => ({
       H: r.params.decayHalfLifeDays,

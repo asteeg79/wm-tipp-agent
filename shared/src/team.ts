@@ -1,10 +1,5 @@
 import { z } from "zod";
-import {
-  IsoDate,
-  IsoDateTime,
-  ImpactTag,
-  OpponentStage,
-} from "./common.js";
+import { IsoDate, IsoDateTime, ImpactTag, OpponentStage } from "./common.js";
 
 /** Ein einzelnes vergangenes Ergebnis eines Teams (letzte 2 Jahre). */
 export const TeamResult = z.object({

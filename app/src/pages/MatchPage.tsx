@@ -247,9 +247,21 @@ export function MatchPage() {
               <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
                 {(
                   [
-                    ["match.home", pred.probabilities.home, match.market.probabilities.home],
-                    ["match.draw", pred.probabilities.draw, match.market.probabilities.draw],
-                    ["match.away", pred.probabilities.away, match.market.probabilities.away],
+                    [
+                      "match.home",
+                      pred.probabilities.home,
+                      match.market.probabilities.home,
+                    ],
+                    [
+                      "match.draw",
+                      pred.probabilities.draw,
+                      match.market.probabilities.draw,
+                    ],
+                    [
+                      "match.away",
+                      pred.probabilities.away,
+                      match.market.probabilities.away,
+                    ],
                   ] as const
                 ).map(([k, ours, mkt]) => (
                   <div key={k}>

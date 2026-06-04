@@ -15,10 +15,7 @@ import { fetchFeed, type RawNewsItem } from "../sources/rss.js";
 const FEED_TTL_MS = 60 * 60 * 1000; // 1 h (News sind volatil)
 
 /** Holt einen Feed mit kurzer Cache-TTL (schont Bandbreite bei vielen Teams). */
-async function cachedFeed(
-  url: string,
-  label: string,
-): Promise<RawNewsItem[]> {
+async function cachedFeed(url: string, label: string): Promise<RawNewsItem[]> {
   const key = `rss:${url}`;
   const cached = await cacheGet<RawNewsItem[]>(key, FEED_TTL_MS);
   if (cached) return cached;
@@ -53,9 +50,7 @@ export class NewsAggregator {
 
     // 2) Globale Feeds nach Teamname/Alias filtern.
     const global = await this.loadGlobal();
-    const matchedGlobal = global.filter((it) =>
-      matchesTeam(it, aliases),
-    );
+    const matchedGlobal = global.filter((it) => matchesTeam(it, aliases));
 
     // 3) Zusammenführen, dedupen, taggen, sortieren, kürzen.
     const merged = [...perTeam, ...matchedGlobal];

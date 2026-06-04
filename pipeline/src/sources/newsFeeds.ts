@@ -26,7 +26,10 @@ export const GLOBAL_FEEDS: { url: string; label: string }[] = [
   { url: "https://www.n-tv.de/sport/fussball/rss", label: "n-tv Fußball" },
   { url: "https://www.spiegel.de/sport/fussball/index.rss", label: "Spiegel" },
   // International
-  { url: "https://feeds.bbci.co.uk/sport/football/rss.xml", label: "BBC Sport" },
+  {
+    url: "https://feeds.bbci.co.uk/sport/football/rss.xml",
+    label: "BBC Sport",
+  },
   { url: "https://www.theguardian.com/football/rss", label: "The Guardian" },
   { url: "https://www.espn.com/espn/rss/soccer/news", label: "ESPN" },
   { url: "https://www.skysports.com/rss/12040", label: "Sky Sports" },

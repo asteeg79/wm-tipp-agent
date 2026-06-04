@@ -8,9 +8,6 @@ const resources = {
       appTitle: "WM-Tipp-Assistent 2026",
       tagline: "Begründete Ergebnistipps für die FIFA WM 2026.",
       nav: {
-        overview: "Übersicht",
-        groups: "Gruppen",
-        accuracy: "Genauigkeit",
         admin: "Adminbereich",
         bracket: "Bracket",
         compare: "Vergleich",
@@ -229,9 +226,6 @@ const resources = {
       appTitle: "World Cup Tip Assistant 2026",
       tagline: "Reasoned score predictions for the FIFA World Cup 2026.",
       nav: {
-        overview: "Overview",
-        groups: "Groups",
-        accuracy: "Accuracy",
         admin: "Admin",
         bracket: "Bracket",
         compare: "Compare",
@@ -400,7 +394,8 @@ const resources = {
         matches: "Matches (2y)",
         h2h: "Head-to-head",
       },
-      disclaimer: "Not betting or financial advice. Predictions without warranty.",
+      disclaimer:
+        "Not betting or financial advice. Predictions without warranty.",
       version: {
         label: "Version",
         updateTitle: "New version available",

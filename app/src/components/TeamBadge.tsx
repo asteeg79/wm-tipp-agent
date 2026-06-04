@@ -44,10 +44,7 @@ export function TeamBadge({
 
   if (link && team) {
     return (
-      <Link
-        to={`/team/${team.id}`}
-        className="min-w-0 text-fg hover:text-pos"
-      >
+      <Link to={`/team/${team.id}`} className="min-w-0 text-fg hover:text-pos">
         {content}
       </Link>
     );

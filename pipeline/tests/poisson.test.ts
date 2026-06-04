@@ -1,8 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  estimateLambdas,
-  poissonBaseline,
-} from "../src/features/poisson.js";
+import { estimateLambdas, poissonBaseline } from "../src/features/poisson.js";
 import type { FormMetrics } from "../src/features/form.js";
 
 /** Neutrale Form (Liga-Schnitt), damit Tests gezielt einzelne Effekte messen. */
@@ -40,7 +37,12 @@ describe("estimateLambdas", () => {
   });
 
   it("λ bleibt in plausiblen Grenzen [0.2, 4.5]", () => {
-    const { home, away } = estimateLambdas(2000, form({ goalsForAvg: 9 }), form(), true);
+    const { home, away } = estimateLambdas(
+      2000,
+      form({ goalsForAvg: 9 }),
+      form(),
+      true,
+    );
     expect(home).toBeLessThanOrEqual(4.5);
     expect(away).toBeGreaterThanOrEqual(0.2);
   });
@@ -49,7 +51,8 @@ describe("estimateLambdas", () => {
 describe("poissonBaseline", () => {
   it("1X2-Wahrscheinlichkeiten summieren zu 1", () => {
     const b = poissonBaseline(1.5, 1.1);
-    const s = b.probabilities.home + b.probabilities.draw + b.probabilities.away;
+    const s =
+      b.probabilities.home + b.probabilities.draw + b.probabilities.away;
     expect(s).toBeCloseTo(1, 4);
   });
 

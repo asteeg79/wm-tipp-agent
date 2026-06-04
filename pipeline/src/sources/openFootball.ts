@@ -29,7 +29,11 @@ interface OfMatch {
   team2: string;
   group?: string;
   ground?: string;
-  score?: { ft?: [number, number]; et?: [number, number]; p?: [number, number] };
+  score?: {
+    ft?: [number, number];
+    et?: [number, number];
+    p?: [number, number];
+  };
 }
 interface OfFile {
   name: string;
@@ -144,7 +148,8 @@ function buildTeamSummary(name: string, groupId: string): TeamSummary {
     groupId,
   };
   if (info) base.logo = flagUrl(info.iso2);
-  else console.warn(`[openfootball] unbekanntes Land (kein Flag/Code): ${name}`);
+  else
+    console.warn(`[openfootball] unbekanntes Land (kein Flag/Code): ${name}`);
   return base;
 }
 

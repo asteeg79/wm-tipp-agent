@@ -93,7 +93,8 @@ async function main(): Promise<void> {
   const mode = resolveMode();
   // KI-Fenster (Std.) konfigurierbar über WM_AI_WINDOW_HOURS, Default 72.
   const windowEnv = Number(process.env.WM_AI_WINDOW_HOURS);
-  const aiWindowHours = Number.isFinite(windowEnv) && windowEnv > 0 ? windowEnv : 72;
+  const aiWindowHours =
+    Number.isFinite(windowEnv) && windowEnv > 0 ? windowEnv : 72;
 
   // Test-Overrides bleiben erhalten.
   const withNews = process.env.WM_NO_NEWS !== "1";
@@ -101,7 +102,9 @@ async function main(): Promise<void> {
 
   console.log(
     `[pipeline] Modus: ${mode}` +
-      (withAi ? ` (KI-Fenster: ${mode === "full" ? "alle" : aiWindowHours + "h"})` : " (ohne KI)"),
+      (withAi
+        ? ` (KI-Fenster: ${mode === "full" ? "alle" : aiWindowHours + "h"})`
+        : " (ohne KI)"),
   );
 
   const stats = await buildData(tournamentProvider, historyProvider, {

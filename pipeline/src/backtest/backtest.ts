@@ -84,10 +84,7 @@ function goalMultiplier(goalDiff: number): number {
 }
 
 /** Wandelt vergangene Spiele eines Teams in TeamResult[] (für computeForm). */
-function toResults(
-  teamId: string,
-  games: BacktestGame[],
-): TeamResult[] {
+function toResults(teamId: string, games: BacktestGame[]): TeamResult[] {
   return games.map((g) => {
     const home = g.homeId === teamId;
     return {
@@ -118,14 +115,16 @@ export function runBacktest(
 ): BacktestResult {
   // config temporär mit den Backtest-Parametern überschreiben, da die
   // Engine-Funktionen aus der globalen config lesen.
-  const saved = JSON.parse(JSON.stringify({
-    decayHalfLifeDays: config.decayHalfLifeDays,
-    opponentHighlightWeight: config.opponentHighlightWeight,
-    formWindow: config.formWindow,
-    eloK: config.elo.k,
-    eloInitial: config.elo.initial,
-    eloToGoalsScale: config.poisson.eloToGoalsScale,
-  }));
+  const saved = JSON.parse(
+    JSON.stringify({
+      decayHalfLifeDays: config.decayHalfLifeDays,
+      opponentHighlightWeight: config.opponentHighlightWeight,
+      formWindow: config.formWindow,
+      eloK: config.elo.k,
+      eloInitial: config.elo.initial,
+      eloToGoalsScale: config.poisson.eloToGoalsScale,
+    }),
+  );
   config.decayHalfLifeDays = params.decayHalfLifeDays;
   config.opponentHighlightWeight = params.opponentHighlightWeight;
   config.formWindow = params.formWindow;
@@ -173,7 +172,11 @@ export function runBacktest(
         const base = poissonBaseline(lambdas.home, lambdas.away);
         const actual = { home: g.goalsHome, away: g.goalsAway };
         entries.push({
-          accuracy: scoreMatch(base.mostLikelyScore, base.probabilities, actual),
+          accuracy: scoreMatch(
+            base.mostLikelyScore,
+            base.probabilities,
+            actual,
+          ),
           actualResult: actual,
         });
         // erwartete Tordifferenz = λ_home − λ_away (GS-Trainingsziel).

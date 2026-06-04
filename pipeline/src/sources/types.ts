@@ -74,10 +74,7 @@ export interface HistoryProvider {
    * Alle abgeschlossenen Spiele eines Teams in den angegebenen Saisons
    * (über alle Wettbewerbe hinweg), perspektiv-normalisiert.
    */
-  getTeamHistory(
-    team: TeamSummary,
-    seasons: number[],
-  ): Promise<HistoryMatch[]>;
+  getTeamHistory(team: TeamSummary, seasons: number[]): Promise<HistoryMatch[]>;
 }
 
 /** Provider, der keine Historie liefert (graceful degradation). */

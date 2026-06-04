@@ -128,23 +128,17 @@ export function AdminPage() {
           </Row>
           <div className="flex flex-wrap gap-2 border-t border-edge pt-3">
             <AdminButton
-              onClick={() =>
-                clearKey("wm-tipp-user-tips-v1", t("admin.done"))
-              }
+              onClick={() => clearKey("wm-tipp-user-tips-v1", t("admin.done"))}
             >
               {t("admin.resetTips")}
             </AdminButton>
             <AdminButton
-              onClick={() =>
-                clearKey("wm-tipp-favorites-v1", t("admin.done"))
-              }
+              onClick={() => clearKey("wm-tipp-favorites-v1", t("admin.done"))}
             >
               {t("admin.resetFavorites")}
             </AdminButton>
             <AdminButton
-              onClick={() =>
-                clearKey("wm-tipp-notified-v1", t("admin.done"))
-              }
+              onClick={() => clearKey("wm-tipp-notified-v1", t("admin.done"))}
             >
               {t("admin.resetNotified")}
             </AdminButton>

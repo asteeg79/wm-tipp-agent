@@ -37,7 +37,12 @@ export default {
       fontFamily: {
         // Space Grotesk = UI, JetBrains Mono = alle Zahlen/Scores.
         sans: ['"Space Grotesk"', "system-ui", "sans-serif"],
-        mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
+        mono: [
+          '"JetBrains Mono"',
+          "ui-monospace",
+          "SFMono-Regular",
+          "monospace",
+        ],
       },
     },
   },

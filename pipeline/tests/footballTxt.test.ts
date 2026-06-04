@@ -38,8 +38,14 @@ Thu Mar 26
   });
 
   it("verarbeitet Halbzeit-Stände in Klammern", () => {
-    const txt = "Sun Mar 15\n  Spain                  2-1 (1-0) Italy   @ Madrid\n";
+    const txt =
+      "Sun Mar 15\n  Spain                  2-1 (1-0) Italy   @ Madrid\n";
     const games = parseFootballTxt(txt, 2026);
-    expect(games[0]).toMatchObject({ teamA: "Spain", teamB: "Italy", scoreA: 2, scoreB: 1 });
+    expect(games[0]).toMatchObject({
+      teamA: "Spain",
+      teamB: "Italy",
+      scoreA: 2,
+      scoreB: 1,
+    });
   });
 });

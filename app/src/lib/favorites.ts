@@ -67,9 +67,7 @@ export interface UpcomingFavMatch {
 export function notifyUpcoming(m: UpcomingFavMatch): void {
   if (!notificationsEnabled()) return;
   if (loadNotified().has(m.matchId)) return;
-  const body = m.tip
-    ? `Anpfiff bald · Tipp: ${m.tip}`
-    : "Anpfiff bald";
+  const body = m.tip ? `Anpfiff bald · Tipp: ${m.tip}` : "Anpfiff bald";
   try {
     new Notification(`${m.homeName} – ${m.awayName}`, {
       body,
@@ -86,7 +84,10 @@ export function notifyUpcoming(m: UpcomingFavMatch): void {
 export const NOTIFY_WINDOW_MIN = 60;
 
 /** Prüft, ob ein Match jetzt im Benachrichtigungsfenster liegt. */
-export function isWithinNotifyWindow(dateIso: string, now = Date.now()): boolean {
+export function isWithinNotifyWindow(
+  dateIso: string,
+  now = Date.now(),
+): boolean {
   const kickoff = new Date(dateIso).getTime();
   const minsUntil = (kickoff - now) / 60000;
   return minsUntil > 0 && minsUntil <= NOTIFY_WINDOW_MIN;

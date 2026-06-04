@@ -49,7 +49,11 @@ function ProbBar({ p }: { p: { home: number; draw: number; away: number } }) {
     <div>
       <div className="flex h-3 overflow-hidden rounded-sm bg-surface-2">
         {seg.map(([k, v, c]) => (
-          <div key={k} className={c} style={{ width: `${Math.round(v * 100)}%` }} />
+          <div
+            key={k}
+            className={c}
+            style={{ width: `${Math.round(v * 100)}%` }}
+          />
         ))}
       </div>
       <div className="mt-1.5 flex justify-between font-mono text-[11px] text-fg-soft">

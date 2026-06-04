@@ -9,13 +9,7 @@ import { NewsList } from "../components/NewsList.js";
 import { FavoriteToggle } from "../components/FavoriteToggle.js";
 import { useFavorites } from "../lib/FavoritesContext.js";
 
-function Section({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
+function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="rounded-xl border border-edge bg-surface/40 p-4">
       <h3 className="mb-3 font-semibold">{title}</h3>

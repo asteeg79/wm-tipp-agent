@@ -1,10 +1,5 @@
 import { z } from "zod";
-import {
-  IsoDateTime,
-  Outcome1x2,
-  ScoreLine,
-  Stage,
-} from "./common.js";
+import { IsoDateTime, Outcome1x2, ScoreLine, Stage } from "./common.js";
 
 /** Genauigkeits-Metriken pro abgeschlossener Partie. */
 export const AccuracyEntry = z.object({

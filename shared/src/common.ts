@@ -3,7 +3,9 @@ import { z } from "zod";
 /** ISO-8601-Datum/Zeit-String. */
 export const IsoDateTime = z.string().datetime({ offset: true });
 /** Reines Kalenderdatum YYYY-MM-DD. */
-export const IsoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "YYYY-MM-DD erwartet");
+export const IsoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "YYYY-MM-DD erwartet");
 
 /** Wahrscheinlichkeit im Bereich 0..1. */
 export const Probability = z.number().min(0).max(1);

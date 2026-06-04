@@ -38,11 +38,20 @@ export function MatchCard({ entry, teams }: Props) {
   let hitBadge: { label: string; cls: string } | null = null;
   if (r && pred) {
     if (r.home === pred.home && r.away === pred.away)
-      hitBadge = { label: t("overview.exactHit"), cls: "bg-emerald-500/15 text-pos ring-emerald-500/30" };
+      hitBadge = {
+        label: t("overview.exactHit"),
+        cls: "bg-emerald-500/15 text-pos ring-emerald-500/30",
+      };
     else if (sameTendency(r, pred))
-      hitBadge = { label: t("overview.hit"), cls: "bg-amber-500/15 text-warn ring-amber-500/30" };
+      hitBadge = {
+        label: t("overview.hit"),
+        cls: "bg-amber-500/15 text-warn ring-amber-500/30",
+      };
     else
-      hitBadge = { label: t("overview.miss"), cls: "bg-red-500/15 text-neg ring-red-500/30" };
+      hitBadge = {
+        label: t("overview.miss"),
+        cls: "bg-red-500/15 text-neg ring-red-500/30",
+      };
   }
 
   return (
@@ -56,13 +65,22 @@ export function MatchCard({ entry, teams }: Props) {
           {formatKickoff(entry.date)}
         </div>
         <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
-          <TeamBadge team={home} fallbackId={entry.homeTeamId} link={false} align="right" />
+          <TeamBadge
+            team={home}
+            fallbackId={entry.homeTeamId}
+            link={false}
+            align="right"
+          />
         </div>
         <div className="shrink-0 px-1 text-center font-mono">
           {r ? (
-            <span className="text-lg font-bold">{r.home}:{r.away}</span>
+            <span className="text-lg font-bold">
+              {r.home}:{r.away}
+            </span>
           ) : pred ? (
-            <span className="text-fg-soft">{pred.home}:{pred.away}</span>
+            <span className="text-fg-soft">
+              {pred.home}:{pred.away}
+            </span>
           ) : (
             <span className="text-fg-faint">vs</span>
           )}
@@ -87,7 +105,9 @@ export function MatchCard({ entry, teams }: Props) {
           <ConfidenceBadge value={entry.confidence} />
         )}
         {hitBadge && (
-          <span className={`rounded-full px-2 py-0.5 font-medium ring-1 ring-inset ${hitBadge.cls}`}>
+          <span
+            className={`rounded-full px-2 py-0.5 font-medium ring-1 ring-inset ${hitBadge.cls}`}
+          >
             {hitBadge.label}
           </span>
         )}

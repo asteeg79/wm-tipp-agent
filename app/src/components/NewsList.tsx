@@ -18,10 +18,7 @@ export function NewsList({ news }: { news: NewsItem[] }) {
   return (
     <ul className="space-y-2">
       {news.map((n, i) => (
-        <li
-          key={i}
-          className="rounded-lg border border-edge bg-surface/40 p-3"
-        >
+        <li key={i} className="rounded-lg border border-edge bg-surface/40 p-3">
           <a
             href={n.url}
             target="_blank"

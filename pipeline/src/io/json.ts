@@ -11,10 +11,7 @@ import type { z } from "zod";
 type Schema<T> = z.ZodType<T, z.ZodTypeDef, unknown>;
 
 /** Liest und validiert eine JSON-Datei gegen ein Schema. */
-export async function readJson<T>(
-  path: string,
-  schema: Schema<T>,
-): Promise<T> {
+export async function readJson<T>(path: string, schema: Schema<T>): Promise<T> {
   const raw = await readFile(path, "utf8");
   return schema.parse(JSON.parse(raw));
 }

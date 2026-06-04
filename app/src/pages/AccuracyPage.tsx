@@ -74,19 +74,37 @@ export function AccuracyPage() {
                     className="flex items-center gap-2 px-3 py-2 text-sm"
                   >
                     <span className="min-w-0 flex-1 truncate text-right">
-                      <TeamBadge team={teams.get(e.homeTeamId)} fallbackId={e.homeTeamId} link={false} />
+                      <TeamBadge
+                        team={teams.get(e.homeTeamId)}
+                        fallbackId={e.homeTeamId}
+                        link={false}
+                      />
                     </span>
                     <span className="shrink-0 font-mono">
                       {e.actualResult!.home}:{e.actualResult!.away}
                     </span>
                     <span className="min-w-0 flex-1 truncate">
-                      <TeamBadge team={teams.get(e.awayTeamId)} fallbackId={e.awayTeamId} link={false} />
+                      <TeamBadge
+                        team={teams.get(e.awayTeamId)}
+                        fallbackId={e.awayTeamId}
+                        link={false}
+                      />
                     </span>
                     <span className="shrink-0">
                       {a.exactScoreHit ? (
-                        <span className="text-pos" title={t("accuracy.exactRate")}>★</span>
+                        <span
+                          className="text-pos"
+                          title={t("accuracy.exactRate")}
+                        >
+                          ★
+                        </span>
                       ) : a.outcomeHit ? (
-                        <span className="text-warn" title={t("accuracy.outcomeRate")}>✓</span>
+                        <span
+                          className="text-warn"
+                          title={t("accuracy.outcomeRate")}
+                        >
+                          ✓
+                        </span>
                       ) : (
                         <span className="text-neg">✗</span>
                       )}

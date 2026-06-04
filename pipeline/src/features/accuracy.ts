@@ -76,7 +76,9 @@ export function scoreMatch(
   return {
     exactScoreHit,
     outcomeHit,
-    brier: probabilities ? round4(brierScore(probabilities, actualOutcome)) : null,
+    brier: probabilities
+      ? round4(brierScore(probabilities, actualOutcome))
+      : null,
     rps: probabilities
       ? round4(rankedProbabilityScore(probabilities, actualOutcome))
       : null,
@@ -87,9 +89,7 @@ export function scoreMatch(
 export function aggregateAccuracy(
   entries: { accuracy?: AccuracyEntry; actualResult: ScoreLine | null }[],
 ): AccuracyAggregate {
-  const finished = entries.filter(
-    (e) => e.actualResult !== null && e.accuracy,
-  );
+  const finished = entries.filter((e) => e.actualResult !== null && e.accuracy);
   const n = finished.length;
   if (n === 0) {
     return {

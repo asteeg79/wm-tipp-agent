@@ -3,12 +3,7 @@
  * Ruft Claude + ChatGPT für eine Partie, validiert, reconciled und liefert
  * die finale Prediction. Re-Trigger-Entscheidung erfolgt im Aufrufer.
  */
-import type {
-  Baseline,
-  FeatureBundle,
-  NewsItem,
-  Prediction,
-} from "@wm/shared";
+import type { Baseline, FeatureBundle, NewsItem, Prediction } from "@wm/shared";
 import { buildUserMessage } from "./prompt.js";
 import { ChatGptClient, ClaudeClient, type ModelClient } from "./models.js";
 import { reconcile, type ModelResult } from "./reconcile.js";

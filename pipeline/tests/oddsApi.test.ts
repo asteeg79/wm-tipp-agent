@@ -13,9 +13,7 @@ describe("oddsKey", () => {
     expect(oddsKey("Curaçao", "Côte d'Ivoire")).toBe(
       oddsKey("Curacao", "Cote d Ivoire"),
     );
-    expect(oddsKey("Bosnia & Herzegovina", "X")).toBe(
-      "bosniaherzegovina|x",
-    );
+    expect(oddsKey("Bosnia & Herzegovina", "X")).toBe("bosniaherzegovina|x");
   });
 });
 
@@ -58,7 +56,8 @@ describe("deriveMarket (de-vig)", () => {
 
   it("liefert normierte 1X2 (Σ=1) ohne Buchmacher-Marge", () => {
     const m = deriveMarket(ev)!;
-    const sum = m.probabilities.home + m.probabilities.draw + m.probabilities.away;
+    const sum =
+      m.probabilities.home + m.probabilities.draw + m.probabilities.away;
     expect(sum).toBeCloseTo(1, 6);
     expect(m.bookmakerCount).toBe(2);
     expect(m.probabilities.home).toBeGreaterThan(m.probabilities.away);
