@@ -27,7 +27,7 @@ interface OddsBookmaker {
   title: string;
   markets: OddsMarket[];
 }
-interface OddsEvent {
+export interface OddsEvent {
   home_team: string;
   away_team: string;
   commence_time: string;
@@ -55,8 +55,11 @@ function median(xs: number[]): number {
   return s.length % 2 ? s[m]! : (s[m - 1]! + s[m]!) / 2;
 }
 
-/** Leitet aus einem Odds-Event die de-vig-1X2-Wahrscheinlichkeiten ab. */
-function deriveMarket(ev: OddsEvent): MarketOdds | null {
+/**
+ * Leitet aus einem Odds-Event die de-vig-1X2-Wahrscheinlichkeiten ab.
+ * Exportiert für Unit-Tests (reine Funktion, keine Seiteneffekte).
+ */
+export function deriveMarket(ev: OddsEvent): MarketOdds | null {
   const home: number[] = [];
   const draw: number[] = [];
   const away: number[] = [];
