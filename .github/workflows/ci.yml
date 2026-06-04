@@ -1,0 +1,46 @@
+name: CI (Typecheck + Tests)
+
+# Qualitäts-Gate: prüft bei jedem Code-Push/PR den Typecheck aller Pakete und
+# die Vitest-Suite (deterministischer Kern). Keine Secrets nötig — die Tests
+# laufen rein lokal ohne Netzwerk/KI.
+#
+# paths-ignore: reine Daten-Commits (vom Pipeline-Bot, alle paar Stunden) sowie
+# Doku-/Markdown-Änderungen lösen KEINEN Testlauf aus → spart CI-Minuten.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
+      - "docs/**"
+      - "**.md"
+  pull_request:
+    paths-ignore:
+      - "data/**"
+      - "docs/**"
+      - "**.md"
+  workflow_dispatch:
+
+# Superseded Läufe auf demselben Ref abbrechen (CI darf canceln — anders als die
+# Daten-Pipeline, die nie abgebrochen wird).
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Typecheck (alle Pakete)
+        run: pnpm -r typecheck
+      - name: Unit-Tests (Vitest)
+        run: pnpm test
