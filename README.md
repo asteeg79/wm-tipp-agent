@@ -33,6 +33,20 @@ liegen nur als GitHub Secrets vor und kommen nie ins Frontend-Bundle.
 > Spiegel, BBC, Guardian, ESPN, Sky + Google-News pro Team), Filterung,
 > Dedupe, Impact-Tagging und Speicherung sind in
 > [`docs/news-pipeline.md`](docs/news-pipeline.md) beschrieben.
+>
+> **Gesamtarchitektur** (Module/„Services", Datenfluss, Hosting, Teststrategie):
+> [`docs/architecture.md`](docs/architecture.md).
+
+## Tests
+
+Vitest deckt den deterministischen Kern ab (Schemas, Features, Reconciliation,
+Odds-De-vig, Parser). Siehe [`docs/architecture.md`](docs/architecture.md) §7.
+
+```bash
+pnpm test        # einmalig
+pnpm test:watch  # Watch-Modus
+pnpm coverage    # mit Coverage-Report
+```
 
 ## Voraussetzungen
 
