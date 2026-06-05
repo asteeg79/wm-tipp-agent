@@ -29,8 +29,9 @@ liegen nur als GitHub Secrets vor und kommen nie ins Frontend-Bundle.
 > der Fundort der Prompts sind in [`docs/ki-bewertung.md`](docs/ki-bewertung.md)
 > ausführlich beschrieben.
 >
-> **Woher kommen die News?** Frequenz, Quellen (kicker, Sportschau, n-tv,
-> Spiegel, BBC, Guardian, ESPN, Sky + Google-News pro Team), Filterung,
+> **Woher kommen die News?** Frequenz, Quellen (deutschsprachig priorisiert:
+> kicker, Sportschau, n-tv, Spiegel + BBC als internationale Rückfallquelle +
+> Google-News pro Team in DE/EN), Filterung,
 > Dedupe, Impact-Tagging und Speicherung sind in
 > [`docs/news-pipeline.md`](docs/news-pipeline.md) beschrieben.
 >

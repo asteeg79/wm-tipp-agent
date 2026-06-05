@@ -36,10 +36,11 @@ Bandbreite bei ~100 Feed-Abrufen für 48 Teams).
 
 Definiert in [`sources/newsFeeds.ts`](../pipeline/src/sources/newsFeeds.ts).
 
-**Globale Feeds** (einmal pro Lauf, dann je Team gefiltert):
-- Deutsch: kicker (WM + Fußball), Sportschau (Fußball + WM 2026), n-tv (Sport +
-  Fußball), Spiegel Fußball
-- International: BBC Sport, The Guardian, ESPN, Sky Sports
+**Globale Feeds** (einmal pro Lauf, dann je Team gefiltert) — bewusst auf die
+**wichtigsten** Quellen reduziert, mit Schwerpunkt **deutschsprachig**:
+- Deutsch: kicker (WM + Fußball), Sportschau WM 2026, n-tv Fußball, Spiegel
+  Fußball
+- International (Rückfallquelle): BBC Sport
 
 **Pro-Team-Feeds** — Google-News-RSS-Suche je Team in **DE + EN**:
 - `news.google.com/rss/search?q="<Team>"+(Nationalmannschaft OR Fußball OR WM)&hl=de`
@@ -47,6 +48,11 @@ Definiert in [`sources/newsFeeds.ts`](../pipeline/src/sources/newsFeeds.ts).
 
 Die Google-News-Suche ist der universelle Hebel: auch kleine Verbände bekommen
 relevante Schlagzeilen, ohne dedizierten Feed.
+
+**Sprach-Priorisierung:** Jeder Feed ist mit `lang` (`de`/`en`) markiert. Die
+Aggregation sortiert **deutschsprachige News zuerst** (`compareNews`), danach je
+Sprache die neuesten zuerst — so füllen deutsche Treffer die Liste vorrangig,
+englische nur die Restplätze (für Teams mit wenig deutscher Berichterstattung).
 
 **Abruf** ([`sources/rss.ts`](../pipeline/src/sources/rss.ts)): RSS/Atom via
 `fast-xml-parser`, fehlertolerant (ein toter Feed bricht den Lauf nicht ab) mit

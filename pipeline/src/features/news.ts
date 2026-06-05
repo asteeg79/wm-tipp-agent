@@ -2,17 +2,37 @@
  * News-Aggregation pro Team (Abschnitt 8.2):
  * - Globale Feeds einmal holen, pro Team relevant filtern.
  * - Pro-Team Google-News-Feeds (DE+EN) holen.
- * - Stichwort-Match (Teamname/Aliasse), Dedupe (URL/Titel), N neueste behalten.
+ * - Stichwort-Match (Teamname/Aliasse), Dedupe (URL/Titel).
+ * - Sortierung: deutschsprachige News bevorzugt, dann neueste; N behalten.
  * - Impact-Tagging per Heuristik. Nur Metadaten + Snippet (kein Volltext).
  */
 import type { NewsItem, TeamSummary } from "@wm/shared";
 import { config } from "../../config.js";
 import { cacheGet, cacheSet } from "../io/cache.js";
 import { classifyImpact } from "./impactTag.js";
-import { GLOBAL_FEEDS, googleNewsFeeds } from "../sources/newsFeeds.js";
+import {
+  GLOBAL_FEEDS,
+  googleNewsFeeds,
+  type NewsLang,
+} from "../sources/newsFeeds.js";
 import { fetchFeed, type RawNewsItem } from "../sources/rss.js";
 
 const FEED_TTL_MS = 60 * 60 * 1000; // 1 h (News sind volatil)
+
+/** Rohitem inkl. Sprachmarkierung (aus dem Quell-Feed). */
+type LangTagged = RawNewsItem & { lang: NewsLang };
+
+/**
+ * Sortier-Vergleich: deutschsprachige News zuerst, danach jeweils die
+ * neuesten zuerst. Pure Funktion (für Unit-Tests exportiert).
+ */
+export function compareNews(
+  a: { lang: NewsLang; publishedAt: string },
+  b: { lang: NewsLang; publishedAt: string },
+): number {
+  if (a.lang !== b.lang) return a.lang === "de" ? -1 : 1;
+  return b.publishedAt.localeCompare(a.publishedAt);
+}
 
 /** Holt einen Feed mit kurzer Cache-TTL (schont Bandbreite bei vielen Teams). */
 async function cachedFeed(url: string, label: string): Promise<RawNewsItem[]> {
@@ -26,13 +46,14 @@ async function cachedFeed(url: string, label: string): Promise<RawNewsItem[]> {
 
 /** Lädt alle globalen Feeds einmal (memoisiert pro Lauf). */
 export class NewsAggregator {
-  private globalItems: RawNewsItem[] | null = null;
+  private globalItems: LangTagged[] | null = null;
 
-  private async loadGlobal(): Promise<RawNewsItem[]> {
+  private async loadGlobal(): Promise<LangTagged[]> {
     if (this.globalItems) return this.globalItems;
-    const all: RawNewsItem[] = [];
+    const all: LangTagged[] = [];
     for (const f of GLOBAL_FEEDS) {
-      all.push(...(await cachedFeed(f.url, f.label)));
+      const items = await cachedFeed(f.url, f.label);
+      all.push(...items.map((it) => ({ ...it, lang: f.lang })));
     }
     this.globalItems = all;
     return all;
@@ -43,19 +64,21 @@ export class NewsAggregator {
     const aliases = teamAliases(team);
 
     // 1) Pro-Team Google-News-Feeds (bereits team-spezifisch → kein Filter).
-    const perTeam: RawNewsItem[] = [];
+    const perTeam: LangTagged[] = [];
     for (const f of googleNewsFeeds(team.name)) {
-      perTeam.push(...(await cachedFeed(f.url, f.label)));
+      const items = await cachedFeed(f.url, f.label);
+      perTeam.push(...items.map((it) => ({ ...it, lang: f.lang })));
     }
 
     // 2) Globale Feeds nach Teamname/Alias filtern.
     const global = await this.loadGlobal();
     const matchedGlobal = global.filter((it) => matchesTeam(it, aliases));
 
-    // 3) Zusammenführen, dedupen, taggen, sortieren, kürzen.
+    // 3) Zusammenführen, dedupen, deutsch-zuerst sortieren, kürzen, taggen.
     const merged = [...perTeam, ...matchedGlobal];
     const deduped = dedupe(merged);
-    const tagged: NewsItem[] = deduped.map((it) => ({
+    deduped.sort(compareNews); // deutschsprachige News bevorzugt
+    return deduped.slice(0, config.maxNewsPerTeam).map((it) => ({
       title: it.title,
       source: it.source,
       url: it.url,
@@ -63,8 +86,6 @@ export class NewsAggregator {
       snippet: it.snippet,
       impactTag: classifyImpact(it.title, it.snippet),
     }));
-    tagged.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-    return tagged.slice(0, config.maxNewsPerTeam);
   }
 }
 
@@ -97,10 +118,10 @@ function matchesTeam(it: RawNewsItem, aliases: string[]): boolean {
 }
 
 /** Dedupe nach normalisierter URL und normalisiertem Titel. */
-function dedupe(items: RawNewsItem[]): RawNewsItem[] {
+function dedupe<T extends RawNewsItem>(items: T[]): T[] {
   const seenUrl = new Set<string>();
   const seenTitle = new Set<string>();
-  const out: RawNewsItem[] = [];
+  const out: T[] = [];
   for (const it of items) {
     const u = normalizeUrl(it.url);
     const t = it.title.toLowerCase().replace(/\s+/g, " ").trim();
