@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "ARG",
       "elo": 1905,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5489,
-      "draw": 0.2465,
-      "away": 0.2046
+      "home": 0.5432,
+      "draw": 0.2477,
+      "away": 0.2091
     },
-    "confidence": 0.6923,
+    "confidence": 0.6804,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,21 +81,21 @@
         },
         "probabilities": {
           "home": 0.535,
-          "draw": 0.242,
-          "away": 0.223
+          "draw": 0.245,
+          "away": 0.22
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Argentina mit deutlich höherem Elo (1905 vs 1748) und stärkerer gewichteter Form (2.55 vs 2.28)",
-          "Defensive Überlegenheit Argentiniens: 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 0.65 bzw. 30.8% bei Österreich",
-          "Externer Forecast stützt klare Argentinien-Tendenz (57.3% Heim) und liegt über der Baseline",
-          "Beide Teams mit identischer Pause (64 Tage) und neutralem Spielort – keine Verzerrung durch Heimvorteil"
+          "Argentinien deutlich höheres Elo (1905 vs. 1748) und stärkere defensive Stabilität (Gegentore 0.40 vs. 0.65, Clean-Sheet-Rate 0.63 vs. 0.31)",
+          "Bessere gewichtete Form Argentiniens (2.553 vs. 2.284) bei ähnlich starker jüngster Form beider Teams (je 2.5)",
+          "Externe Prognose stützt höhere Heim-Wahrscheinlichkeit (0.571), daher leichte Aufwertung gegenüber Baseline",
+          "Österreich offensiv durchaus gefährlich (Tore/Spiel 2.558), was Gegentore und Unentschieden/Auswärtsoption offenhält"
         ],
         "risks": [
-          "Verletzungssorge um Nico Paz bei Argentinien (mehrere widersprüchliche Meldungen) könnte Offensivqualität mindern",
-          "Österreich ebenfalls offensiv stark (2.56 Tore/Spiel), kann bei Konteranfälligkeit Argentiniens treffen",
-          "Ausfall von Baumgartner schwächt Österreich, jedoch ohne Nachnominierung – Kaderbalance unklar",
-          "Kein H2H-Datensatz vorhanden, dadurch erhöhte Unsicherheit in der Einschätzung"
+          "Unsicherheit um Messi-Teilnahme (Trainer äußert Bedenken) könnte Argentiniens Offensivstärke schwächen",
+          "Verletzungssorgen bei Österreich (Karl) könnten Kaderstärke mindern – Datenlage unklar",
+          "Kein H2H vorhanden, daher erhöhte Modellunsicherheit",
+          "Neutraler Spielort ohne Heimvorteil reduziert Argentiniens Vorteil leicht"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
+          "home": 0.55,
           "draw": 0.25,
-          "away": 0.19
+          "away": 0.2
         },
-        "confidence": 0.78,
+        "confidence": 0.75,
         "keyFactors": [
-          "Argentina's higher Elo rating (1905 vs 1748)",
-          "Argentina's better defensive record (0.399 goals against average vs 0.646)",
-          "Neutral venue minimizes typical home advantage"
+          "Argentinien hat eine höhere Elo-Bewertung (1905) im Vergleich zu Österreich (1748).",
+          "Starker Unterschied in der Defensivleistung: Argentinien hat eine höhere Clean-Sheet-Rate (0.63) als Österreich (0.308).",
+          "Neutraler Spielort begünstigt keine der beiden Mannschaften, hebt jedoch die individuelle Qualität von Argentinien hervor.",
+          "Austrias Gewichtete Form (2.284) zeigt keine überlegene Leistung gegenüber Argentinien (2.553)."
         ],
         "risks": [
-          "Injury concerns for Argentina's Nico Paz",
-          "Austria's offensive capability with high goals for average (2.558)"
+          "Messis Teilnahme an der WM 2026 ist unklar, könnte einen Unterschied in der Performance machen.",
+          "Trotz neutralem Spielort und potenzieller Verletzungsprobleme spielt Österreich unerwartet stark in letzter Zeit."
         ]
       }
     },
-    "agreement": 0.978,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentina mit deutlich höherem Elo (1905 vs 1748) und stärkerer gewichteter Form (2.55 vs 2.28); Defensive Überlegenheit Argentiniens: 0.40 Gegentore/Spiel und 63% Clean-Sheet-Rate gegenüber 0.65 bzw. 30.8% bei Österreich; Externer Forecast stützt klare Argentinien-Tendenz (57.3% Heim) und liegt über der Baseline.",
-    "inputHash": "sha256:1e33f21d13e51023f034f237514e2cf7c97470626b178b41491025e53ffec137"
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich höheres Elo (1905 vs. 1748) und stärkere defensive Stabilität (Gegentore 0.40 vs. 0.65, Clean-Sheet-Rate 0.63 vs. 0.31); Bessere gewichtete Form Argentiniens (2.553 vs. 2.284) bei ähnlich starker jüngster Form beider Teams (je 2.5); Externe Prognose stützt höhere Heim-Wahrscheinlichkeit (0.571), daher leichte Aufwertung gegenüber Baseline.",
+    "inputHash": "sha256:54f299859a795e0b69abe24818f0898c06e1d4849a14a515261e89e8ef9a7ace"
   },
   "predictionHistory": [
     {
@@ -254,11 +255,24 @@
         "away": 0.2471
       },
       "confidence": 0.6879
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5489,
+        "draw": 0.2465,
+        "away": 0.2046
+      },
+      "confidence": 0.6923
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.189Z",
+    "updatedAt": "2026-06-06T06:24:51.746Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.571,

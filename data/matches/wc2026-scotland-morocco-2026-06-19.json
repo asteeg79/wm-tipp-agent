@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "SCO",
       "elo": 1586,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1779,
-      "draw": 0.2526,
-      "away": 0.5696
+      "home": 0.2002,
+      "draw": 0.2091,
+      "away": 0.5907
     },
-    "confidence": 0.6651,
+    "confidence": 0.6599,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.13,
-          "draw": 0.21,
-          "away": 0.66
+          "home": 0.14,
+          "draw": 0.22,
+          "away": 0.64
         },
-        "confidence": 0.66,
+        "confidence": 0.62,
         "keyFactors": [
-          "Großer Elo-Unterschied (1892 vs 1586) zugunsten Marokkos",
-          "Marokko mit herausragender Defensive: nur 0.27 Gegentore/Spiel und 70.6% Clean-Sheet-Rate",
-          "Marokko in starker gewichteter Form (2.585) und hoher Offensivproduktion (2.01 Tore/Spiel)",
-          "Schottlands schwache Clean-Sheet-Rate (28%) und moderate Form (1.30)"
+          "Deutlicher Elo-Vorsprung Marokkos (1892 vs. 1586) und überlegene gewichtete Form (2.585 vs. 1.301)",
+          "Marokkos herausragende Defensive: nur 0.274 Gegentore pro Spiel und 70.6% Clean-Sheet-Rate",
+          "Schottlands schwache Defensivwerte (1.281 Gegentore/Spiel, nur 28% Clean Sheets) erschweren das Toreschießen gegen MAR",
+          "Neutraler Spielort entfernt jeglichen Heimvorteil für Schottland"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Schottland möglichen Heimvorteil, könnte aber engeres Spiel begünstigen",
-          "Lange Pause (64 Tage) bei beiden Teams erschwert Formeinschätzung",
-          "Keine H2H-Daten verfügbar",
-          "Externe Prognose sieht das Spiel deutlich offener als die Baseline (Away nur 47%)"
+          "Schottlands gute jüngste Form (recentForm 1.6) könnte für eine Überraschung oder ein knappes Ergebnis sorgen",
+          "Mögliche Moral-/Disziplinprobleme bei Marokko (News-Eklat um Infantino) könnten Leistung beeinträchtigen",
+          "Lange Pause beider Teams (67 Tage) erhöht Unsicherheit über aktuelle Spielform",
+          "Kein H2H-Verlauf vorhanden, daher keine direkte Vergleichsbasis"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,26 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.22,
-          "draw": 0.29,
-          "away": 0.49
+          "home": 0.25,
+          "draw": 0.2,
+          "away": 0.55
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Morocco has significantly higher Elo rating and better recent form compared to Scotland.",
-          "Morocco's clean sheet rate is over 70%, indicating strong defensive capabilities.",
-          "Scotland's recent form has improved but still falls short in comparison to Morocco."
+          "Morocco's superior Elo rating and recent form give them a strong edge.",
+          "Morocco's goals against average indicates a tight defense.",
+          "Scotland has a higher recent form compared to their weighted form, indicating an improvement.",
+          "Neutral venue negates home advantage."
         ],
         "risks": [
-          "Neutral venue could potentially negate home advantage for Scotland.",
-          "No head-to-head data available, introducing uncertainty in matchup dynamics.",
-          "Days since last match is equal, reducing any potential advantage from recent play."
+          "Potential morale impact on Morocco due to recent news controversy.",
+          "No head-to-head history between the teams adds uncertainty."
         ]
       }
     },
-    "agreement": 0.8867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1892 vs 1586) zugunsten Marokkos; Marokko mit herausragender Defensive: nur 0.27 Gegentore/Spiel und 70.6% Clean-Sheet-Rate; Marokko in starker gewichteter Form (2.585) und hoher Offensivproduktion (2.01 Tore/Spiel).",
-    "inputHash": "sha256:007a1630ff348cdead99e4c961a289e899d696509e2e47511c16a0743d8cf547"
+    "agreement": 0.9267,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Marokkos (1892 vs. 1586) und überlegene gewichtete Form (2.585 vs. 1.301); Marokkos herausragende Defensive: nur 0.274 Gegentore pro Spiel und 70.6% Clean-Sheet-Rate; Schottlands schwache Defensivwerte (1.281 Gegentore/Spiel, nur 28% Clean Sheets) erschweren das Toreschießen gegen MAR.",
+    "inputHash": "sha256:ecf34876f584137a16cd271d766877e95a5d87aac86f08b6eccf71b94a2260fa"
   },
   "predictionHistory": [
     {
@@ -255,11 +255,24 @@
         "away": 0.6845
       },
       "confidence": 0.6739
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1779,
+        "draw": 0.2526,
+        "away": 0.5696
+      },
+      "confidence": 0.6651
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.188Z",
+    "updatedAt": "2026-06-06T06:24:51.745Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.2329,

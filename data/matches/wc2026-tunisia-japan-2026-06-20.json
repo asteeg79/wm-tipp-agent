@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "TUN",
       "elo": 1672,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2168,
-      "draw": 0.2877,
-      "away": 0.4955
+      "home": 0.2254,
+      "draw": 0.2746,
+      "away": 0.5
     },
-    "confidence": 0.6567,
+    "confidence": 0.6478,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,23 +81,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.225,
-          "draw": 0.285,
-          "away": 0.49
+          "home": 0.22,
+          "draw": 0.28,
+          "away": 0.5
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Japan mit höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.20 vs 1.90)",
-          "Japans defensive Stärke: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate",
-          "Tunesien defensiv solide (0.75 Gegentore/Spiel, 50% Clean Sheets), aber offensiv weniger durchschlagend",
-          "Neutraler Spielort ohne Heimvorteil für Tunesien",
-          "Externe Prognose stützt Japan-Favoritenrolle (0.52 Auswärtssieg)"
+          "Japan mit deutlich höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.202 vs 1.895)",
+          "Japan defensiv sehr stabil: nur 0.362 Gegentore/Spiel und 58.3% Clean-Sheet-Rate",
+          "Tunesien defensiv solide (0.752 Gegentore/Spiel, 50% Clean Sheets), kann das Spiel eng halten",
+          "Neutraler Spielort ohne Heimvorteil für Tunesien"
         ],
         "risks": [
-          "Kein Head-to-Head vorhanden, höhere Unsicherheit in der Einschätzung",
-          "Tunesien-Squad im Umbruch unter Lamouchi (alternde Mannschaft, frischer Spark gesucht) – Leistung schwer prognostizierbar",
-          "Lange Pause (64 Tage seit letztem Spiel) für beide Teams kann Rhythmus beeinträchtigen",
-          "Höhenlage (540m) als kleiner Kontextfaktor"
+          "Keine H2H-Daten vorhanden, erhöht Prognoseunsicherheit",
+          "67 Tage seit letztem Spiel beider Teams – Rhythmus schwer einschätzbar",
+          "Tunesiens überdurchschnittliche Form könnte für eine Überraschung sorgen",
+          "Höhe (540m) als geringer, schwer quantifizierbarer Kontextfaktor"
         ]
       },
       "chatgpt": {
@@ -106,27 +105,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.21,
-          "draw": 0.29,
+          "home": 0.23,
+          "draw": 0.27,
           "away": 0.5
         },
-        "confidence": 0.72,
+        "confidence": 0.7,
         "keyFactors": [
-          "Tunisia's weighted form (1.895) is lower compared to Japan's (2.202).",
-          "Japan has a higher Elo rating (1768) versus Tunisia (1672).",
-          "Japan's recent form (2) is stronger than Tunisia's (1.7).",
-          "No head-to-head matches provide additional history biases.",
-          "Both teams have not played in 64 days, neutralizing match sharpness."
+          "Japan's higher Elo rating compared to Tunisia indicates stronger overall team strength.",
+          "Japan's recent form is slightly better than Tunisia, with more goals scored on average and a better defensive record.",
+          "Neutral venue eliminates any home advantage."
         ],
         "risks": [
-          "Neutral venue minimizes any geographical advantage.",
-          "Potential changes in team dynamics due to squad reshaping by Tunisia's coach."
+          "Both teams have the same number of days since their last match, which could imply unpredictability in recent performance.",
+          "The absence of prior head-to-head encounters adds uncertainty to projections."
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan mit höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.20 vs 1.90); Japans defensive Stärke: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate; Tunesien defensiv solide (0.75 Gegentore/Spiel, 50% Clean Sheets), aber offensiv weniger durchschlagend.",
-    "inputHash": "sha256:000131613f2c82995d7787342e957b82625c6a2159b3ac3a7bc5436bd0afc456"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan mit deutlich höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.202 vs 1.895); Japan defensiv sehr stabil: nur 0.362 Gegentore/Spiel und 58.3% Clean-Sheet-Rate; Tunesien defensiv solide (0.752 Gegentore/Spiel, 50% Clean Sheets), kann das Spiel eng halten.",
+    "inputHash": "sha256:8028b05530416074568f98711accb4fd3df5d8863d4f561b3ad7413293ee3084"
   },
   "predictionHistory": [
     {
@@ -245,11 +242,24 @@
         "away": 0.4831
       },
       "confidence": 0.7005
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2168,
+        "draw": 0.2877,
+        "away": 0.4955
+      },
+      "confidence": 0.6567
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.188Z",
+    "updatedAt": "2026-06-06T06:24:51.745Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.1936,

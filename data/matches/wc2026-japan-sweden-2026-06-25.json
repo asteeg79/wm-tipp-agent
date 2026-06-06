@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "JPN",
       "elo": 1768,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5362,
-      "draw": 0.25,
-      "away": 0.2138
+      "home": 0.5481,
+      "draw": 0.2519,
+      "away": 0.2
     },
-    "confidence": 0.6435,
+    "confidence": 0.6759,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "home": 0.57,
+          "draw": 0.23,
+          "away": 0.2
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Japan deutlich höhere Elo (1768 vs 1599) und stärkere gewichtete Form (2.20 vs 1.64)",
-          "Sehr starke Defensive Japans: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate",
-          "Schwedens anfällige Abwehr (1.64 Gegentore/Spiel, nur 22% Clean Sheets) spricht für Japan-Tore",
-          "Neutraler Spielort eliminiert Heimvorteil, was Japans Baseline-Wahrscheinlichkeit etwas relativiert"
+          "Deutlicher Elo-Vorsprung Japans (1768 vs. 1599)",
+          "Starke defensive Stabilität Japans (GA 0.36, Clean-Sheet-Rate 58%)",
+          "Bessere gewichtete Form Japans (2.20 vs. 1.64) und Topform (recentForm 2.0)",
+          "Schwache Defensive Schwedens (GA 1.64, Clean-Sheet-Rate nur 22%)"
         ],
         "risks": [
-          "Verletzungsmeldungen bei Schlüsselspielern Japans könnten die Defensivstärke schwächen",
-          "Schweden mit ordentlicher Offensive (1.91 Tore/Spiel) kann jederzeit treffen",
-          "Keine H2H-Daten verfügbar, daher höhere Prognoseunsicherheit",
-          "Lange Pause (64 Tage) für beide Teams kann Rhythmus und Form beeinträchtigen"
+          "Schweden hat hohe Offensivproduktion (GF 1.91), kann Tore erzielen",
+          "Neutraler Spielort ohne Heimvorteil für Japan",
+          "Keine H2H-Daten, lange Pause (67 Tage) bei beiden Teams erhöht Unsicherheit",
+          "Externe Prognose sieht das Spiel deutlich enger als die Baseline"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
+          "home": 0.53,
+          "draw": 0.27,
           "away": 0.2
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Japan's superior recent form and overall Elo rating",
-          "Strong defensive record of Japan with a 58.3% clean sheet rate",
-          "Sweden has a weaker recent form and higher goals against average"
+          "Japan hat eine höhere Elo-Zahl (1768) im Vergleich zu Schweden (1599).",
+          "Japan zeigt eine bessere gewichtete Form (2.202) und hat eine starke Defensivleistung mit einem Gegentor-Durchschnitt von nur 0.362.",
+          "Schwedens Defensive ist anfällig mit einem Gegentor-Durchschnitt von 1.638 und einer geringen Clean-Sheet-Rate von 0.217.",
+          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil für Japan relativiert."
         ],
         "risks": [
-          "Neutral venue may mitigate home advantage for Japan",
-          "Injuries to key players in Japan's squad",
-          "Sweden's potential for strong offensive play with a higher goals-for average"
+          "Keine direkten H2H-Daten verfügbar, da beide Teams noch nie gegeneinander gespielt haben.",
+          "Schweden hat einen etwas höheren Tore-Pro-Schnitt (1.91) als Japan (1.694), was ein Potenzial für Offensivgefahren zeigt.",
+          "Die Form von Schweden könnte sich jederzeit verbessern, basierend auf dem jüngsten Hinzufügen neuer Spieler oder taktischer Anpassungen, worüber es allerdings keine aktuellen Nachrichten gibt."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan deutlich höhere Elo (1768 vs 1599) und stärkere gewichtete Form (2.20 vs 1.64); Sehr starke Defensive Japans: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate; Schwedens anfällige Abwehr (1.64 Gegentore/Spiel, nur 22% Clean Sheets) spricht für Japan-Tore.",
-    "inputHash": "sha256:7b22a1f27d3c659ba86d3ee877cfd4eb1a0ef79edcb4851801bcadbce0364d3f"
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Japans (1768 vs. 1599); Starke defensive Stabilität Japans (GA 0.36, Clean-Sheet-Rate 58%); Bessere gewichtete Form Japans (2.20 vs. 1.64) und Topform (recentForm 2.0).",
+    "inputHash": "sha256:2734242362c3539c59b2783d1d3ad2c274e8a8491412fd90f1e5307339b36059"
   },
   "predictionHistory": [
     {
@@ -255,11 +256,24 @@
         "away": 0.2315
       },
       "confidence": 0.624
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5362,
+        "draw": 0.25,
+        "away": 0.2138
+      },
+      "confidence": 0.6435
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.191Z",
+    "updatedAt": "2026-06-06T06:24:51.750Z",
     "bookmakerCount": 14,
     "probabilities": {
       "home": 0.4543,

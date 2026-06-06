@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "ESP",
       "elo": 1974,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 3,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8775,
-      "draw": 0.0859,
-      "away": 0.0366
+      "home": 0.88,
+      "draw": 0.0877,
+      "away": 0.0323
     },
-    "confidence": 0.8317,
+    "confidence": 0.8386,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.875,
-          "draw": 0.092,
-          "away": 0.033
+          "home": 0.88,
+          "draw": 0.085,
+          "away": 0.035
         },
-        "confidence": 0.82,
+        "confidence": 0.78,
         "keyFactors": [
-          "Großer Klassenunterschied im Elo (1974 vs. 1572, ~400 Punkte) zugunsten Spaniens",
-          "Spaniens überlegene Form (weightedForm 2.33 vs. 1.26) und Offensive (2.68 Tore/Spiel gegen 0.87 KSA)",
-          "Saudi-Arabien defensiv anfällig (1.32 Gegentore/Spiel) gegen hochkarätige Offensive",
-          "Yamal-Verfügbarkeit laut mehreren Quellen erwartet, mindert Personalrisiko"
+          "Großer Elo-Unterschied (1974 vs. 1572) zugunsten Spaniens",
+          "Spaniens überlegene gewichtete Form (2.33 vs. 1.26) und hohe Torausbeute (2.68 Tore/Spiel)",
+          "Schwache Defensivbilanz Saudi-Arabiens (1.32 Gegentore/Spiel) bei nur 0.87 erzielten Toren",
+          "Neutraler Spielort eliminiert Heimvorteil, aber Spaniens Qualität dominiert dennoch"
         ],
         "risks": [
-          "Restunsicherheit um Yamals Fitness könnte Spaniens Offensivpotenzial leicht dämpfen",
-          "Keine H2H-Daten verfügbar, daher höhere Schätzunsicherheit",
-          "Lange Pause (64 Tage) ohne Spielpraxis für beide Teams – möglicher Rhythmusverlust",
-          "Neutraler Spielort, kein Heimvorteil für Spanien"
+          "Keine H2H-Daten verfügbar, daher keine direkte Vergleichsbasis",
+          "Lange Pause (67 Tage ohne Spiel) könnte spanischen Spielrhythmus beeinträchtigen",
+          "Saudi-Arabien mit solider Clean-Sheet-Rate (0.47) könnte defensiv kompakt stehen und das Ergebnis niedriger halten",
+          "Kaderzusammensetzung noch unklar (News deuten auf offene Aufgebotsentscheidungen hin)"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,25 @@
         },
         "probabilities": {
           "home": 0.88,
-          "draw": 0.08,
-          "away": 0.04
+          "draw": 0.09,
+          "away": 0.03
         },
-        "confidence": 0.85,
+        "confidence": 0.9,
         "keyFactors": [
-          "Spain's significantly higher Elo rating than Saudi Arabia",
-          "Spain's strong recent form with a weighted form of 2.327",
-          "Saudi Arabia's weaker recent form and higher average goals against",
-          "Neutral venue diminishes any host advantage, favoring stronger team Spain"
+          "Spain's superior elo rating and recent performance",
+          "Spain's high goals for average compared to Saudi Arabia's lower scoring average",
+          "Neutral venue mitigates any home advantage, but Spain remains stronger overall"
         ],
         "risks": [
-          "Lamine Yamal's injury status is uncertain, though not deemed critical for Spain's overall performance"
+          "Unpredictability due to a lack of direct head-to-head history between Spain and Saudi Arabia",
+          "Possible overconfidence from Spain causing underperformance",
+          "Both teams have been inactive for 67 days before the match, impacting form"
         ]
       }
     },
-    "agreement": 0.992,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Klassenunterschied im Elo (1974 vs. 1572, ~400 Punkte) zugunsten Spaniens; Spaniens überlegene Form (weightedForm 2.33 vs. 1.26) und Offensive (2.68 Tore/Spiel gegen 0.87 KSA); Saudi-Arabien defensiv anfällig (1.32 Gegentore/Spiel) gegen hochkarätige Offensive.",
-    "inputHash": "sha256:683f98dcc16b494a68d1dd86db07f9391025fdc8ab2f69b011ffca5b959cc492"
+    "agreement": 0.9967,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1974 vs. 1572) zugunsten Spaniens; Spaniens überlegene gewichtete Form (2.33 vs. 1.26) und hohe Torausbeute (2.68 Tore/Spiel); Schwache Defensivbilanz Saudi-Arabiens (1.32 Gegentore/Spiel) bei nur 0.87 erzielten Toren.",
+    "inputHash": "sha256:c9ec90a986d4737ed13e1d3ed4beed3960f4c2ef4cb23408e745648f18d6d07b"
   },
   "predictionHistory": [
     {
@@ -254,11 +255,24 @@
         "away": 0.0406
       },
       "confidence": 0.8387
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8775,
+        "draw": 0.0859,
+        "away": 0.0366
+      },
+      "confidence": 0.8317
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.189Z",
+    "updatedAt": "2026-06-06T06:24:51.746Z",
     "bookmakerCount": 18,
     "probabilities": {
       "home": 0.8568,

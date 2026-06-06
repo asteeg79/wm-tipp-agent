@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "ECU",
       "elo": 1747,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1909,
+      "home": 0.197,
       "draw": 0.24,
-      "away": 0.5691
+      "away": 0.563
     },
-    "confidence": 0.6804,
+    "confidence": 0.6831,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,19 +84,18 @@
           "draw": 0.24,
           "away": 0.58
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Deutschland mit deutlich höherem Elo (1822 vs 1747) und stärkerer gewichteter Form (2.371 vs 1.477)",
-          "Deutschland offensiv überlegen (2.574 Tore/Spiel) gegenüber Ecuadors moderatem Angriff (0.9)",
-          "Ecuador defensiv sehr solid (cleanSheetRate 0.519, nur 0.528 Gegentore/Spiel), was das deutsche xG drücken kann",
-          "Neutraler Spielort ohne Heimvorteil für Ecuador",
-          "Keine materiellen News mit direktem sportlichem Einfluss auf die Aufstellungen erkennbar"
+          "Deutschland mit deutlich stärkerer gewichteter Form (2.371 vs 1.477) und höherem Elo (1822 vs 1747)",
+          "Deutschlands Offensive überlegen (goalsForAvg 2.574 vs 0.9), Baseline-xG bestätigt Übergewicht (1.69 vs 0.84)",
+          "Ecuador defensiv solide (cleanSheetRate 0.519, goalsAgainstAvg 0.528) – kann das Ergebnis eng halten",
+          "Neutraler Spielort ohne Heimvorteil für Ecuador"
         ],
         "risks": [
-          "Keine Head-to-Head-Daten vorhanden, erhöht die Unsicherheit",
-          "Ecuadors starke Defensive könnte ein knappes Ergebnis oder Remis ermöglichen",
-          "Lange Pause beider Teams (64/65 Tage) kann Rhythmus und frühe Spielqualität beeinträchtigen",
-          "Deutsche Defensive anfälliger (1.106 Gegentore/Spiel, cleanSheetRate nur 0.407) – Konter Ecuadors möglich"
+          "Keine H2H-Daten verfügbar – erhöhte Unsicherheit",
+          "Deutschlands höhere Gegentorquote (1.106) kann Ecuador Chancen eröffnen",
+          "Lange Pause beider Teams (67/68 Tage) – Formstand schwer einschätzbar",
+          "Keine substantiellen Material-News (nur Kaderlisten, irrelevante Eishockey-Meldung)"
         ]
       },
       "chatgpt": {
@@ -105,27 +104,26 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
+          "home": 0.21,
           "draw": 0.24,
-          "away": 0.56
+          "away": 0.55
         },
-        "confidence": 0.75,
+        "confidence": 0.78,
         "keyFactors": [
-          "Germany's superior Elo rating suggests stronger team capabilities.",
-          "Germany's high average goals scored (2.574) compared to Ecuador's (0.9)",
-          "Ecuador's solid defensive record with a clean sheet rate of 0.519.",
-          "Neutral venue eliminates any home advantage."
+          "Germany has a higher Elo rating (1822 vs 1747).",
+          "Germany's weighted and recent form is significantly better (2.371 vs 1.477).",
+          "Germany's offensive capability is stronger (goalsForAvg of 2.574 vs 0.9).",
+          "Neutral venue mitigates home advantage."
         ],
         "risks": [
-          "Potential for form fluctuation due to equal number of days since the last match for both teams.",
-          "Limited recent head-to-head data as the teams haven't played against each other before.",
-          "External factors such as team morale and news may influence performance."
+          "Ecuador has a high clean sheet rate (51.9%), which might indicate a strong defense.",
+          "Germany's clean sheet rate is moderate (40.7%), suggesting vulnerability in defense."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit deutlich höherem Elo (1822 vs 1747) und stärkerer gewichteter Form (2.371 vs 1.477); Deutschland offensiv überlegen (2.574 Tore/Spiel) gegenüber Ecuadors moderatem Angriff (0.9); Ecuador defensiv sehr solid (cleanSheetRate 0.519, nur 0.528 Gegentore/Spiel), was das deutsche xG drücken kann.",
-    "inputHash": "sha256:fbf0419c6062583de8d639dd56355b82cbca53b728c076bf68263054562f0940"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit deutlich stärkerer gewichteter Form (2.371 vs 1.477) und höherem Elo (1822 vs 1747); Deutschlands Offensive überlegen (goalsForAvg 2.574 vs 0.9), Baseline-xG bestätigt Übergewicht (1.69 vs 0.84); Ecuador defensiv solide (cleanSheetRate 0.519, goalsAgainstAvg 0.528) – kann das Ergebnis eng halten.",
+    "inputHash": "sha256:e14be2d97ca09b21570ba0506f02fd4195c3b7899002e956c09eff06cec121bf"
   },
   "predictionHistory": [
     {
@@ -244,11 +242,24 @@
         "away": 0.5636
       },
       "confidence": 0.6782
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1909,
+        "draw": 0.24,
+        "away": 0.5691
+      },
+      "confidence": 0.6804
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.191Z",
+    "updatedAt": "2026-06-06T06:24:51.750Z",
     "bookmakerCount": 15,
     "probabilities": {
       "home": 0.1902,

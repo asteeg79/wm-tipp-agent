@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "ENG",
       "elo": 1829,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5074,
-      "draw": 0.2458,
-      "away": 0.2468
+      "home": 0.5201,
+      "draw": 0.24,
+      "away": 0.2399
     },
-    "confidence": 0.6808,
+    "confidence": 0.6641,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.49,
+          "home": 0.48,
           "draw": 0.24,
-          "away": 0.27
+          "away": 0.28
         },
         "confidence": 0.58,
         "keyFactors": [
-          "England mit deutlich stärkster Defensive: nur 0.522 Gegentore/Spiel und 55% Clean-Sheet-Rate, gestützt durch hohen Elo-Wert (1829)",
-          "Beide Teams in guter Form, jedoch England defensiv stabiler, während Kroatien mehr Gegentore zulässt (1.104/Spiel, nur 35% Clean Sheets)",
-          "Kroatien zuletzt in Warm-up-Spiel 0:2 gegen Belgien verloren – Dämpfer für Momentum",
-          "Externe Prognose sieht England klar vorne (55% Sieg), stärkt die Heim-/Favoritentendenz gegenüber der Baseline"
+          "England mit deutlich besserer Defensive (goalsAgainstAvg 0.52, cleanSheetRate 0.55) und höherem Elo (1829 vs 1778)",
+          "Kroatien offensiv stärker (goalsForAvg 2.21, recentForm 2.5), aber anfällig hinten (goalsAgainstAvg 1.10)",
+          "Beide Teams in starker Form, jedoch Englands Balance zwischen Angriff und Abwehr ausschlaggebend",
+          "Neutraler Spielort ohne Heimvorteil – leichte Abschwächung des nominellen Heimbonus",
+          "Externer Forecast stützt klare England-Tendenz (0.55), Baseline und Forecast gemittelt"
         ],
         "risks": [
-          "Neutraler Spielort entzieht England den klassischen Heimvorteil",
-          "Kroatien mit hoher Offensivproduktion (2.205 Tore/Spiel) und starker recentForm (2.5) kann jederzeit treffen",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit der Einschätzung",
-          "64 Tage seit letztem Spiel bei beiden Teams – Rhythmusfragen schwer einzuschätzen"
+          "Kroatiens hohe Offensivproduktion kann Englands Clean-Sheet-Quote brechen",
+          "Materielle News liefern keine belastbaren Spieler-/Ausfallinformationen (nur irrelevante Coach-Meldungen zu Amateurklubs)",
+          "Keine H2H-Daten vorhanden, erhöhte Unsicherheit",
+          "Lange Pause (67 Tage) könnte Rhythmus beider Teams beeinträchtigen"
         ]
       },
       "chatgpt": {
@@ -104,26 +105,26 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "home": 0.55,
+          "draw": 0.24,
+          "away": 0.21
         },
-        "confidence": 0.8,
+        "confidence": 0.78,
         "keyFactors": [
-          "Recent positive form of Croatia with a weighted form of 2.5.",
-          "England's strong recent form and defensive solidity with a 0.522 goals against average.",
-          "England's home advantage seemingly offset by a neutral venue."
+          "England hat eine starke Form mit einem hohen Elo-Wert und einem soliden Angriff sowie eine gute Defensivleistung.",
+          "Croatia zeigt auch eine bemerkenswerte Form, hat aber mehr Gegentore im Schnitt kassiert.",
+          "Das Spiel findet an einem neutralen Ort statt, was den Heimvorteil neutralisiert.",
+          "Englands Trainer Tuchel plant eine neue Rolle für Kane, was für frische Impulse sorgen könnte."
         ],
         "risks": [
-          "Potential impact of England's unconventional coaching adjustments.",
-          "Croatia's boosted morale from recent friendly results.",
-          "No prior head-to-head data between teams which adds uncertainty."
+          "England könnte durch die überraschende Rolle für Kane an Stabilität verlieren.",
+          "Croatia hat einen erfahrenen neuen Trainer, der positive Veränderungen bringen könnte."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit deutlich stärkster Defensive: nur 0.522 Gegentore/Spiel und 55% Clean-Sheet-Rate, gestützt durch hohen Elo-Wert (1829); Beide Teams in guter Form, jedoch England defensiv stabiler, während Kroatien mehr Gegentore zulässt (1.104/Spiel, nur 35% Clean Sheets); Kroatien zuletzt in Warm-up-Spiel 0:2 gegen Belgien verloren – Dämpfer für Momentum.",
-    "inputHash": "sha256:8cd471afa7f20ef824be3cd662eb6a5b9f7dc124befc92238173f74af5c2fda2"
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit deutlich besserer Defensive (goalsAgainstAvg 0.52, cleanSheetRate 0.55) und höherem Elo (1829 vs 1778); Kroatien offensiv stärker (goalsForAvg 2.21, recentForm 2.5), aber anfällig hinten (goalsAgainstAvg 1.10); Beide Teams in starker Form, jedoch Englands Balance zwischen Angriff und Abwehr ausschlaggebend.",
+    "inputHash": "sha256:d09a2e63bb2038a0412a1a502e73352def0b68ff9d9b92c7bb240f8bd8ae10be"
   },
   "predictionHistory": [
     {
@@ -255,11 +256,24 @@
         "away": 0.2812
       },
       "confidence": 0.6348
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5074,
+        "draw": 0.2458,
+        "away": 0.2468
+      },
+      "confidence": 0.6808
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.188Z",
+    "updatedAt": "2026-06-06T06:24:51.744Z",
     "bookmakerCount": 20,
     "probabilities": {
       "home": 0.5482,

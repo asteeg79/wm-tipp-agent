@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "FRA",
       "elo": 1904,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
-      "home": 3,
+      "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7287,
-      "draw": 0.1713,
-      "away": 0.1
+      "home": 0.7456,
+      "draw": 0.1678,
+      "away": 0.0866
     },
-    "confidence": 0.75,
+    "confidence": 0.7861,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,49 +81,46 @@
         },
         "probabilities": {
           "home": 0.74,
-          "draw": 0.16,
-          "away": 0.1
+          "draw": 0.165,
+          "away": 0.095
         },
-        "confidence": 0.66,
+        "confidence": 0.7,
         "keyFactors": [
-          "Großer Klassenunterschied im Elo (1904 vs. 1630) und in der gewichteten Form (2.43 vs. 2.01)",
-          "Frankreichs starke Offensive (2.34 Tore/Spiel) trifft auf solide, aber qualitativ unterlegene irakische Defensive",
-          "Saliba laut Deschamps fit, Frankreich kann in Bestbesetzung antreten",
-          "Iraks erste WM-Teilnahme seit 40 Jahren spricht für Underdog-Druck und individuelle Defizite gegen Topgegner"
+          "Deutlicher Elo-Vorsprung Frankreichs (1904 vs. 1630) und stärkere gewichtete Form (2.43 vs. 2.01)",
+          "Höhere Offensivkraft Frankreichs (xG 2.16, goalsForAvg 2.34) gegenüber Iraks 1.28",
+          "Externe Prognose stützt klare Favoritenrolle Frankreichs (0.84) und rechtfertigt leichte Anhebung der Heimwahrscheinlichkeit über die Baseline"
         ],
         "risks": [
-          "Neutraler Spielort nimmt Frankreich den Heimvorteil",
-          "Kein H2H-Datenpunkt verfügbar – Stilfaktoren schwer einschätzbar",
-          "Irak mit ordentlicher defensiver Cleansheet-Rate (0.46) könnte tiefstehend punkten",
-          "Lange Spielpause beider Teams (über 60 Tage) erhöht Unsicherheit bei der Tagesform"
+          "Irak verfügt über solide Defensive (cleanSheetRate 0.458, goalsAgainstAvg 0.82), was ein knappes Ergebnis möglich macht",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit bei der Spielcharakteristik",
+          "Lange Pause beider Teams (~68 Tage) kann Rhythmus und Form beeinflussen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 3,
+          "home": 2,
           "away": 0
         },
         "probabilities": {
-          "home": 0.7200000000000001,
-          "draw": 0.18000000000000002,
-          "away": 0.10000000000000002
+          "home": 0.75,
+          "draw": 0.17,
+          "away": 0.08
         },
-        "confidence": 0.85,
+        "confidence": 0.88,
         "keyFactors": [
-          "France's superior recent form and elo rating compared to Iraq",
-          "France's high goals for average and decent defensive record",
-          "Neutral venue reduces typical home advantage",
-          "William Saliba expected to be fit despite injury fears"
+          "France has a significantly higher Elo rating (1904 vs 1630)",
+          "France's stronger recent form (2.5 vs 1.8)",
+          "France's higher goals for average (2.338 vs 1.28)"
         ],
         "risks": [
-          "Iraq's motivation in first World Cup in 40 years",
-          "Potential underestimation of Iraq's newly selected squad"
+          "Match is played at a neutral venue, reducing traditional home advantage",
+          "Iraq's clean sheet rate is similar to France's, could indicate defensive resilience"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Klassenunterschied im Elo (1904 vs. 1630) und in der gewichteten Form (2.43 vs. 2.01); Frankreichs starke Offensive (2.34 Tore/Spiel) trifft auf solide, aber qualitativ unterlegene irakische Defensive; Saliba laut Deschamps fit, Frankreich kann in Bestbesetzung antreten.",
-    "inputHash": "sha256:09ff7d5ba01caa76dfc339ea103c764beea456abc038baffba7f891d2ebfe2da"
+    "agreement": 0.99,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Frankreichs (1904 vs. 1630) und stärkere gewichtete Form (2.43 vs. 2.01); Höhere Offensivkraft Frankreichs (xG 2.16, goalsForAvg 2.34) gegenüber Iraks 1.28; Externe Prognose stützt klare Favoritenrolle Frankreichs (0.84) und rechtfertigt leichte Anhebung der Heimwahrscheinlichkeit über die Baseline.",
+    "inputHash": "sha256:921c9fa4d71ff0fd8a559a4695d676d2601a5d216fc4bceab584162d7f31340d"
   },
   "predictionHistory": [
     {
@@ -255,11 +252,24 @@
         "away": 0.1144
       },
       "confidence": 0.7474
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7287,
+        "draw": 0.1713,
+        "away": 0.1
+      },
+      "confidence": 0.75
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.189Z",
+    "updatedAt": "2026-06-06T06:24:51.746Z",
     "bookmakerCount": 17,
     "probabilities": {
       "home": 0.8413,

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "ESP",
       "elo": 1974,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 3,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.8325,
-      "draw": 0.1044,
-      "away": 0.0631
+      "home": 0.8366,
+      "draw": 0.1045,
+      "away": 0.0589
     },
-    "confidence": 0.7893,
+    "confidence": 0.7969,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,50 +80,52 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.81,
+          "home": 0.82,
           "draw": 0.11,
-          "away": 0.08
+          "away": 0.07
         },
-        "confidence": 0.7,
+        "confidence": 0.72,
         "keyFactors": [
-          "Erheblicher Elo-Vorsprung Spaniens (1974 vs. 1608) und höhere Offensivkraft (xG 2.68 vs. 0.77)",
-          "Spaniens starke Form (gewichtet 2.33, recent 2.4) und solide Defensive (gegen 0.70, Clean-Sheet-Rate 48%)",
-          "Schlüsselspieler Yamal und Nico Williams laut News voraussichtlich rechtzeitig fit",
-          "Cape Verde mit langer Wettkampfpause (233 Tage) und entsprechend ungewissem Rhythmus"
+          "Deutlicher Elo-Vorsprung Spaniens (1974 vs. 1608, ~366 Punkte)",
+          "Starke spanische Offensive (2.68 xG, 2.675 erzielte Tore/Spiel) und solide Defensive (0.699 Gegentore, 48% Clean Sheets)",
+          "Hohe gewichtete Form Spaniens (2.327) im Vergleich zu Kap Verde (1.977)",
+          "Externer Forecast stützt klare Spanien-Favoritenrolle (87.8%)"
         ],
         "risks": [
-          "Yamals Fitness nicht endgültig gesichert - Restrisiko für Spaniens Offensive",
-          "Cape Verde mit ordentlicher Form (1.98) und Torgefahr (1.67 pro Spiel) könnte Treffer erzielen",
-          "Erstes Turnierspiel: oft taktisch, Tempo niedrig, mögliche frühe Nervosität beim Favoriten",
-          "Kein H2H-Datenmaterial vorhanden, Einschätzung beruht rein auf Form/Elo"
+          "Sehr lange Spielpause Spaniens (67 Tage) könnte Rhythmus beeinträchtigen",
+          "Extrem lange Inaktivität von Kap Verde (236 Tage) erschwert Formbewertung",
+          "Kap Verde mit ordentlicher Offensive (1.673 Tore/Spiel) als potenzieller Torschütze",
+          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
           "home": 0.85,
           "draw": 0.1,
           "away": 0.05
         },
-        "confidence": 0.9,
+        "confidence": 0.89,
         "keyFactors": [
-          "Spain's high Elo rating compared to Cape Verde",
-          "Spain's superior recent form and goal-scoring record",
-          "Lamine Yamal, key player for Spain, expected to be fit for the match",
-          "Cape Verde's long break since last match, potentially affecting sharpness"
+          "Spain's higher ELO rating of 1974 compared to Cape Verde's 1608",
+          "Spain's strong recent form with a rating of 2.4",
+          "Spain's average goals for (2.675) and against (0.699) favoring a strong attack and solid defense",
+          "Cape Verde has not played a match in 236 days, indicating possible rustiness",
+          "Neutral venue reduces potential home advantage"
         ],
         "risks": [
-          "Neutral venue removing typical home advantage",
-          "Potential last-minute change if Yamal is not fully fit"
+          "Cape Verde's goals against average is relatively low at 0.838, indicating a capable defense",
+          "Spain has no head-to-head history to draw comparisons",
+          "Neutral venue might mitigate usual performance dynamics"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Erheblicher Elo-Vorsprung Spaniens (1974 vs. 1608) und höhere Offensivkraft (xG 2.68 vs. 0.77); Spaniens starke Form (gewichtet 2.33, recent 2.4) und solide Defensive (gegen 0.70, Clean-Sheet-Rate 48%); Schlüsselspieler Yamal und Nico Williams laut News voraussichtlich rechtzeitig fit.",
-    "inputHash": "sha256:67272c30fab8eee64b11e50645c1b7201e86c93f9eef579373d5864f7bb60c96"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Spaniens (1974 vs. 1608, ~366 Punkte); Starke spanische Offensive (2.68 xG, 2.675 erzielte Tore/Spiel) und solide Defensive (0.699 Gegentore, 48% Clean Sheets); Hohe gewichtete Form Spaniens (2.327) im Vergleich zu Kap Verde (1.977).",
+    "inputHash": "sha256:52ec4cc3efd4e9bdd123a29d4bb11cbf8d4d44bfb6d9b1e3073e98e9511c80b3"
   },
   "predictionHistory": [
     {
@@ -255,11 +257,24 @@
         "away": 0.0745
       },
       "confidence": 0.7724
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8325,
+        "draw": 0.1044,
+        "away": 0.0631
+      },
+      "confidence": 0.7893
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.187Z",
+    "updatedAt": "2026-06-06T06:24:51.743Z",
     "bookmakerCount": 21,
     "probabilities": {
       "home": 0.8776,

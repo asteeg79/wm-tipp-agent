@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-06T06:23:06.415Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "home": {
       "teamId": "BEL",
       "elo": 1744,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-03T20:29:13.708Z",
+    "generatedAt": "2026-06-06T06:24:51.441Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5044,
-      "draw": 0.2398,
-      "away": 0.2557
+      "home": 0.4919,
+      "draw": 0.2479,
+      "away": 0.2602
     },
-    "confidence": 0.6006,
+    "confidence": 0.5884,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,19 +84,18 @@
           "draw": 0.27,
           "away": 0.31
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Egypt hat höheres Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908)",
-          "Egypts Defensive ist herausragend: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate",
-          "Belgiens Offensive ist stark (2.914 Tore/Spiel), aber defensiv anfälliger (1.054 Gegentore, 38.5% Clean Sheets)",
-          "Neutraler Spielort ohne Heimvorteil für Belgien",
-          "Belgien mit Moral-Boost durch 2:0-Testspielsieg gegen Kroatien"
+          "Belgiens starke Offensive (2.91 Tore/Spiel) gegen Ägyptens sehr solide Defensive (0.41 Gegentore/Spiel, 57% Clean Sheets)",
+          "Ägypten hat höheren Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908)",
+          "Neutraler Spielort eliminiert klassischen Heimvorteil und relativiert die Baseline-Heimgewichtung",
+          "Ägyptens defensive Stabilität dürfte Belgiens erwartete Tore drücken"
         ],
         "risks": [
-          "Keine direkten H2H-Daten vorhanden",
-          "Baseline und externe Prognose überschätzen möglicherweise Belgiens Heimstatus trotz neutralem Venue",
-          "64 Tage seit letztem Spiel für beide Teams – Spielrhythmus ungewiss",
-          "Egypts niedriger Torschnitt könnte gegen offensivstarke Belgier zu engem Resultat führen"
+          "Keine Head-to-Head-Daten vorhanden, erschwert direkte Einschätzung",
+          "Lange Pause beider Teams (67 Tage) erhöht Unsicherheit über Tagesform",
+          "Belgiens Offensivpotenzial kann jederzeit Spiele kippen trotz starker ägyptischer Abwehr",
+          "Keine aktuellen Material-News (Verletzungen/Sperren) verfügbar"
         ]
       },
       "chatgpt": {
@@ -105,25 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
-          "draw": 0.22,
+          "home": 0.55,
+          "draw": 0.23,
           "away": 0.22
         },
-        "confidence": 0.76,
+        "confidence": 0.68,
         "keyFactors": [
-          "Belgium's recent form is strong with a boost from a 2-0 friendly win over Croatia.",
-          "Belgium's goal-scoring record is high with an average of 2.914 goals per match.",
-          "Egypt has a strong defensive record with a high clean sheet rate of 0.571."
+          "Belgium's higher goal average with 2.914 goals per game",
+          "Egypt's better defensive record with a lower goals against average of 0.414",
+          "Neutral venue eliminates home advantage"
         ],
         "risks": [
-          "Egypt's recent form is also strong, showing they can compete at a high level.",
-          "Neutral venue mitigates some advantages Belgium usually has at home."
+          "Egypt's higher Elo rating and slightly better weighted form",
+          "No head-to-head history between the teams"
         ]
       }
     },
-    "agreement": 0.9067,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Egypt hat höheres Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908); Egypts Defensive ist herausragend: nur 0.414 Gegentore/Spiel und 57% Clean-Sheet-Rate; Belgiens Offensive ist stark (2.914 Tore/Spiel), aber defensiv anfälliger (1.054 Gegentore, 38.5% Clean Sheets).",
-    "inputHash": "sha256:0f47ea44ae3c81f4073c7bb19dc78371e9079f303c1eaa29d532d5619566f375"
+    "agreement": 0.9133,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgiens starke Offensive (2.91 Tore/Spiel) gegen Ägyptens sehr solide Defensive (0.41 Gegentore/Spiel, 57% Clean Sheets); Ägypten hat höheren Elo (1770 vs 1744) und bessere gewichtete Form (2.133 vs 1.908); Neutraler Spielort eliminiert klassischen Heimvorteil und relativiert die Baseline-Heimgewichtung.",
+    "inputHash": "sha256:1d6d12daafeecdfb088febc6a6bc74432a12f80b544e81709cb6733c1c32960a"
   },
   "predictionHistory": [
     {
@@ -242,11 +241,24 @@
         "away": 0.2854
       },
       "confidence": 0.6262
+    },
+    {
+      "generatedAt": "2026-06-03T20:29:13.708Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5044,
+        "draw": 0.2398,
+        "away": 0.2557
+      },
+      "confidence": 0.6006
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-06T06:23:50.187Z",
+    "updatedAt": "2026-06-06T06:24:51.743Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.5721,
