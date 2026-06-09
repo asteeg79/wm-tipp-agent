@@ -44,9 +44,9 @@ export function MatchRow({ entry, teams }: Props) {
   return (
     <Link
       to={`/match/${entry.matchId}`}
-      className="flex items-center gap-3 rounded-lg border border-edge bg-surface/40 px-3 py-2 hover:border-edge-strong"
+      className="flex min-w-0 items-center gap-2 rounded-lg border border-edge bg-surface/40 px-2 py-2 hover:border-edge-strong sm:gap-3 sm:px-3"
     >
-      <div className="w-28 shrink-0 text-xs text-fg-faint">
+      <div className="hidden w-28 shrink-0 text-xs text-fg-faint sm:block">
         {formatKickoff(entry.date)}
       </div>
       <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
@@ -57,7 +57,7 @@ export function MatchRow({ entry, teams }: Props) {
           align="right"
         />
       </div>
-      <div className="shrink-0 px-2 text-center font-mono text-sm">
+      <div className="shrink-0 px-1 text-center font-mono text-sm sm:px-2">
         {scoreCell}
       </div>
       <div className="flex min-w-0 flex-1 items-center gap-2">

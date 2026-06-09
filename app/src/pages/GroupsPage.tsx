@@ -86,7 +86,7 @@ export function GroupsPage() {
           return (
             <div
               key={g.id}
-              className="rounded-xl border border-edge bg-surface/40 p-4"
+              className="min-w-0 overflow-hidden rounded-xl border border-edge bg-surface/40 p-4"
             >
               <h3 className="mb-2 font-semibold">
                 {t("groups.group", { id: g.id })}
@@ -106,8 +106,13 @@ export function GroupsPage() {
                   </li>
                 )}
                 {groupTeams.map((tm) => (
-                  <li key={tm.id} className="flex items-center justify-between">
-                    <TeamBadge team={tm} />
+                  <li
+                    key={tm.id}
+                    className="flex items-center justify-between gap-2"
+                  >
+                    <span className="min-w-0 flex-1">
+                      <TeamBadge team={tm} />
+                    </span>
                     {sim && (
                       <span className="flex shrink-0 gap-3 font-mono text-xs">
                         <span className="w-10 text-right text-fg-muted">
