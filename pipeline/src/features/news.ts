@@ -1,9 +1,9 @@
 /**
  * News-Aggregation pro Team (Abschnitt 8.2):
- * - Globale Feeds einmal holen, pro Team relevant filtern.
- * - Pro-Team Google-News-Feeds (DE+EN) holen.
- * - Stichwort-Match (Teamname/Aliasse), Dedupe (URL/Titel).
- * - Sortierung: deutschsprachige News bevorzugt, dann neueste; N behalten.
+ * - Pro-Team Google-News-Feeds (DE+EN), fußballstrikt (Pflicht-Fußballbegriff).
+ * - Globale Feeds einmal holen, je Team nur bei WORTGENAUEM Namenstreffer.
+ * - Dedupe (URL/Titel), deutschsprachige News bevorzugt, dann neueste.
+ * - Optionaler KI-Relevanzfilter (1 Call/Team) entfernt Fehltreffer.
  * - Impact-Tagging per Heuristik. Nur Metadaten + Snippet (kein Volltext).
  */
 import type { NewsItem, TeamSummary } from "@wm/shared";
@@ -21,6 +21,17 @@ const FEED_TTL_MS = 60 * 60 * 1000; // 1 h (News sind volatil)
 
 /** Rohitem inkl. Sprachmarkierung (aus dem Quell-Feed). */
 type LangTagged = RawNewsItem & { lang: NewsLang };
+
+/**
+ * KI-Relevanzfilter: bekommt Teamname + Kandidaten-News und liefert die
+ * tatsächlich relevante Teilmenge zurück (gleiche Reihenfolge). Wird per
+ * Dependency-Injection übergeben, damit `features/news` nicht von `predict`
+ * abhängt. Implementierung: `predict/newsRelevance.ts`.
+ */
+export type NewsRelevanceFilter = (
+  teamName: string,
+  items: NewsItem[],
+) => Promise<NewsItem[]>;
 
 /**
  * Sortier-Vergleich: deutschsprachige News zuerst, danach jeweils die
@@ -59,26 +70,32 @@ export class NewsAggregator {
     return all;
   }
 
-  /** Relevante, deduplizierte, getaggte News für ein Team. */
-  async forTeam(team: TeamSummary): Promise<NewsItem[]> {
-    const aliases = teamAliases(team);
-
-    // 1) Pro-Team Google-News-Feeds (bereits team-spezifisch → kein Filter).
+  /**
+   * Relevante, deduplizierte, getaggte News für ein Team.
+   * @param relevanceFilter optionaler KI-Filter (1 Call/Team), der Fehltreffer
+   *        (andere Sportarten/Teams) aussortiert. Fehlt er, greift nur die
+   *        Heuristik (striktes Matching + Quellen).
+   */
+  async forTeam(
+    team: TeamSummary,
+    relevanceFilter?: NewsRelevanceFilter,
+  ): Promise<NewsItem[]> {
+    // 1) Pro-Team Google-News-Feeds (bereits team-spezifisch + fußballstrikt).
     const perTeam: LangTagged[] = [];
     for (const f of googleNewsFeeds(team.name)) {
       const items = await cachedFeed(f.url, f.label);
       perTeam.push(...items.map((it) => ({ ...it, lang: f.lang })));
     }
 
-    // 2) Globale Feeds nach Teamname/Alias filtern.
+    // 2) Globale Feeds: nur exakte (wortgenaue) Teamnamen-Treffer.
     const global = await this.loadGlobal();
-    const matchedGlobal = global.filter((it) => matchesTeam(it, aliases));
+    const matchedGlobal = global.filter((it) => matchesTeam(it, team.name));
 
-    // 3) Zusammenführen, dedupen, deutsch-zuerst sortieren, kürzen, taggen.
+    // 3) Zusammenführen, dedupen, deutsch-zuerst sortieren, kappen.
     const merged = [...perTeam, ...matchedGlobal];
     const deduped = dedupe(merged);
     deduped.sort(compareNews); // deutschsprachige News bevorzugt
-    return deduped.slice(0, config.maxNewsPerTeam).map((it) => ({
+    let candidates: NewsItem[] = deduped.slice(0, CANDIDATE_CAP).map((it) => ({
       title: it.title,
       source: it.source,
       url: it.url,
@@ -86,35 +103,39 @@ export class NewsAggregator {
       snippet: it.snippet,
       impactTag: classifyImpact(it.title, it.snippet),
     }));
+
+    // 4) Optionaler KI-Relevanzfilter (entfernt Fehltreffer). Bei Fehler
+    //    liefert der Filter die Eingabe unverändert zurück (graceful).
+    if (relevanceFilter) {
+      candidates = await relevanceFilter(team.name, candidates);
+    }
+
+    return candidates.slice(0, config.maxNewsPerTeam);
   }
 }
 
-/** Such-Aliasse: voller Name + signifikante Wortteile. */
-function teamAliases(team: TeamSummary): string[] {
-  const names = new Set<string>([team.name.toLowerCase()]);
-  // Längstes Wort als zusätzlicher Treffer (z. B. "Korea", "Republic").
-  const words = team.name
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((w) => w.length >= 4 && !STOPWORDS.has(w));
-  for (const w of words) names.add(w);
-  return [...names];
+/** Obergrenze an Kandidaten vor dem (KI-)Filter — begrenzt Tokens/Kosten. */
+const CANDIDATE_CAP = 30;
+
+/**
+ * Wortgenauer Treffer des vollständigen Teamnamens in Titel/Snippet.
+ * Verhindert Substring-Fehltreffer (z. B. „France" in „Tour de France");
+ * Diakritika werden ignoriert. Hinweis: globale DE-Feeds führen englische
+ * Teamnamen selten — der primäre Kanal ist die team-spezifische Google-Suche.
+ */
+export function matchesTeam(it: RawNewsItem, teamName: string): boolean {
+  const hay = norm(`${it.title} ${it.snippet}`);
+  const name = norm(teamName);
+  const re = new RegExp(`(?:^|[^a-z0-9])${escapeRe(name)}(?:[^a-z0-9]|$)`);
+  return re.test(hay);
 }
 
-const STOPWORDS = new Set([
-  "republic",
-  "north",
-  "south",
-  "saudi",
-  "united",
-  "states",
-  "and",
-  "the",
-]);
+function norm(s: string): string {
+  return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
 
-function matchesTeam(it: RawNewsItem, aliases: string[]): boolean {
-  const hay = `${it.title} ${it.snippet}`.toLowerCase();
-  return aliases.some((a) => hay.includes(a));
+function escapeRe(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 /** Dedupe nach normalisierter URL und normalisiertem Titel. */

@@ -49,17 +49,37 @@ export const GLOBAL_FEEDS: FeedSource[] = [
   },
 ];
 
-/** Baut die zwei Google-News-RSS-Such-URLs (DE + EN) für ein Team. */
+/**
+ * Baut die zwei Google-News-RSS-Such-URLs (DE + EN) für ein Team.
+ *
+ * Wichtig gegen Fehltreffer: der Teamname wird mit einer **verpflichtenden**
+ * Fußball-Begriffsgruppe UND-verknüpft (Leerzeichen = AND bei Google), damit
+ * z. B. „Tour de France" (enthält „France", aber keinen Fußballbegriff) nicht
+ * mehr matcht. Mehrdeutige Begriffe wie „WM" (auch Rad-/Tennis-WM) werden
+ * vermieden; zusätzlich schließen Negativ-Keywords andere Sportarten aus.
+ */
 export function googleNewsFeeds(teamName: string): FeedSource[] {
   const q = encodeURIComponent(`"${teamName}"`);
+  const deFootball = encodeURIComponent(
+    "(Fußball OR Fussball OR Nationalmannschaft OR Länderspiel OR Nationalelf)",
+  );
+  const deExclude = encodeURIComponent(
+    "-Radsport -Tour -Tennis -Formel -Basketball -Handball -Olympia -Eishockey",
+  );
+  const enFootball = encodeURIComponent(
+    '(football OR soccer OR "national team")',
+  );
+  const enExclude = encodeURIComponent(
+    "-cycling -tennis -NFL -NBA -cricket -rugby -F1 -golf",
+  );
   return [
     {
-      url: `https://news.google.com/rss/search?q=${q}+(Nationalmannschaft+OR+Fu%C3%9Fball+OR+WM)&hl=de&gl=DE&ceid=DE:de`,
+      url: `https://news.google.com/rss/search?q=${q}+${deFootball}+${deExclude}&hl=de&gl=DE&ceid=DE:de`,
       label: "Google News",
       lang: "de",
     },
     {
-      url: `https://news.google.com/rss/search?q=${q}+(national+team+OR+World+Cup)&hl=en-US&gl=US&ceid=US:en`,
+      url: `https://news.google.com/rss/search?q=${q}+${enFootball}+${enExclude}&hl=en-US&gl=US&ceid=US:en`,
       label: "Google News",
       lang: "en",
     },

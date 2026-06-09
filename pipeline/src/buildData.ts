@@ -35,6 +35,7 @@ import type {
 } from "./sources/types.js";
 import { computeH2h, deriveOpponentSets } from "./features/opponents.js";
 import { NewsAggregator } from "./features/news.js";
+import { makeNewsRelevanceFilter } from "./predict/newsRelevance.js";
 import { computeEloRatings, gamesFromHistories } from "./features/elo.js";
 import { ELO_SEED } from "./features/eloSeed.js";
 import { runEngine, featureHash } from "./features/engine.js";
@@ -190,6 +191,13 @@ export async function buildData(
 
   // 6) Teams schreiben (inkl. Form + News).
   const newsAggregator = options.withNews ? new NewsAggregator() : null;
+  // KI-Relevanzfilter (1 Call/Team, günstiges Modell, gecacht) — nur wenn ein
+  // OpenAI-Key vorhanden ist und nicht via WM_NO_NEWS_AI deaktiviert.
+  const newsFilter =
+    options.withNews && process.env.WM_NO_NEWS_AI !== "1"
+      ? makeNewsRelevanceFilter(process.env.OPENAI_API_KEY)
+      : null;
+  if (newsFilter) console.log("[pipeline] KI-News-Relevanzfilter aktiv");
   for (const team of limitedTeams) {
     const results = resultsByTeam.get(team.id);
     if (!results) continue; // Historie fehlgeschlagen
@@ -204,7 +212,7 @@ export async function buildData(
       let news: NewsItem[] = [];
       if (newsAggregator) {
         try {
-          news = await newsAggregator.forTeam(team);
+          news = await newsAggregator.forTeam(team, newsFilter ?? undefined);
           stats.newsLoaded += news.length;
         } catch (err) {
           console.warn(`[pipeline] News für ${team.id} fehlgeschlagen:`, err);

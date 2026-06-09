@@ -61,10 +61,13 @@ Backoff. Bei Google-News wird die echte Medienquelle aus dem Titel-Suffix
 
 ## Verarbeitung — pro Team (`NewsAggregator.forTeam`)
 
-1. **Sammeln:** die zwei Google-News-Feeds des Teams + die globalen Feeds.
-2. **Filtern** (nur globale Feeds): Item behalten, wenn Titel/Snippet den
-   Teamnamen oder ein **Alias** enthält (voller Name + signifikante Wörter ab
-   4 Buchstaben ohne Stoppwörter wie "Republic/North/South").
+1. **Sammeln:** die zwei Google-News-Feeds des Teams (jetzt **fußballstrikt**:
+   der Teamname wird mit einer Pflicht-Fußballbegriffsgruppe UND-verknüpft, plus
+   Negativ-Keywords gegen andere Sportarten → kein „Tour de France" mehr) + die
+   globalen Feeds.
+2. **Filtern** (nur globale Feeds): Item behalten nur bei **wortgenauem**
+   Treffer des **vollständigen** Teamnamens (Diakritika-tolerant). Verhindert
+   Substring-Fehltreffer (z. B. „Mali" in „Somalia").
 3. **Deduplizieren:** nach normalisierter **URL** (ohne Query/Hash) **und**
    normalisiertem **Titel** — fängt identische Links und Cross-Postings.
 4. **Impact-Tagging** ([`features/impactTag.ts`](../pipeline/src/features/impactTag.ts)):
@@ -76,12 +79,22 @@ Backoff. Bei Google-News wird die echte Medienquelle aus dem Titel-Suffix
    - `coach` (trainer, kader, nominiert, aufstellung, squad, call-up, line-up …)
    - `morale` (streit, krise, unruhe, momentum, confidence, controversy …)
    - sonst `none`
-5. **Sortieren** (neueste zuerst) und auf **`config.maxNewsPerTeam` = 20**
-   kürzen.
+5. **Sortieren** (deutschsprachig bevorzugt, dann neueste) und auf max. 30
+   Kandidaten kappen.
+6. **KI-Relevanzfilter** (optional, [`predict/newsRelevance.ts`](../pipeline/src/predict/newsRelevance.ts)):
+   **genau ein** Call pro Team an ein günstiges Modell (`gpt-4o-mini`) mit allen
+   Kandidaten-Titeln; das Modell gibt die Indizes der wirklich relevanten
+   Schlagzeilen zurück (Männer-Nationalelf, Fußballkontext). Entfernt
+   Themenfremdes, das die Heuristik durchlässt (z. B. „Terror in Paris"). Wird
+   **per Inhalts-Hash gecacht** (12 h) → unveränderte Kandidaten lösen keinen
+   neuen Call aus; bei Fehler bleibt die Eingabe erhalten. Deaktivierbar via
+   `WM_NO_NEWS_AI=1`; ohne `OPENAI_API_KEY` inaktiv. Danach auf
+   **`config.maxNewsPerTeam` = 20** kürzen.
 
-> Hinweis: Das Tagging ist eine Heuristik und kann mehrdeutige Schlagzeilen
-> falsch einordnen. Es ist nur der grobe Vorfilter — die **KI** bewertet die
-> Materialität in Phase 5 feiner (siehe [`ki-bewertung.md`](ki-bewertung.md)).
+> Hinweis: Das Tagging ist eine Heuristik; der KI-Relevanzfilter (Schritt 6) und
+> die finale **KI-Bewertung** (siehe [`ki-bewertung.md`](ki-bewertung.md)) — deren
+> System-Prompt jetzt auch eigene, zu 100 % relevante News der KI zulässt —
+> sorgen für die feine Relevanz.
 
 ## Speicherung — wo und in welcher Form
 

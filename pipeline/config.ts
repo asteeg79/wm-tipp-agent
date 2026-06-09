@@ -67,6 +67,8 @@ export interface PipelineConfig {
   models: {
     claude: string;
     chatgpt: string;
+    /** Günstiges Modell für die ressourcenschonende News-Relevanzprüfung. */
+    newsFilter: string;
   };
   /** Ensemble-Strategie. */
   ensemble: {
@@ -141,6 +143,7 @@ export const config: PipelineConfig = {
   models: {
     claude: "claude-opus-4-8",
     chatgpt: "gpt-4o",
+    newsFilter: "gpt-4o-mini",
   },
   ensemble: {
     confidenceWeighted: true,
