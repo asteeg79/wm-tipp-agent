@@ -4,6 +4,14 @@
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "node ../scripts/gen-version.mjs && node ../scripts/stage-data.mjs && pnpm --filter @wm/app build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "destination": "https://wm-tipp-agent.a-tec.dev/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!data/|assets/|icons/|.*\\.).*)",
