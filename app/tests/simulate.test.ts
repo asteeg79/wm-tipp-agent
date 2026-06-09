@@ -126,4 +126,37 @@ describe("simulateBracket", () => {
     for (const rnd of b1.rounds)
       for (const m of rnd.matches) expect([m.a, m.b]).toContain(m.winner);
   });
+
+  it("echte K.-o.-Ergebnisse fließen ein, sobald sie existieren", () => {
+    const { index, pred } = fixture();
+    // Halbfinal-Paarungen mit aufgelösten Teams; ein echtes Ergebnis (Außenseiter
+    // B1 schlägt das stärkste Team A0), das andere offen.
+    pred.entries.push(
+      {
+        matchId: "sf1",
+        date: "2026-07-14T00:00:00Z",
+        stage: "semi",
+        homeTeamId: "A0",
+        awayTeamId: "B1",
+        probabilities: { home: 0.6, draw: 0.2, away: 0.2 },
+        actualResult: { home: 0, away: 1 }, // B1 gewinnt real
+      },
+      {
+        matchId: "sf2",
+        date: "2026-07-14T03:00:00Z",
+        stage: "semi",
+        homeTeamId: "A1",
+        awayTeamId: "B0",
+        probabilities: { home: 0.5, draw: 0.25, away: 0.25 },
+        actualResult: null, // offen → simuliert
+      },
+    );
+    const b = simulateBracket(index, pred);
+    expect(b.rounds[0]!.stage).toBe("semi");
+    const sf = b.rounds[0]!.matches.find((m) => m.a === "A0" && m.b === "B1")!;
+    expect(sf.winner).toBe("B1"); // echtes Ergebnis schlägt Elo-Favorit
+    expect(sf.score).toEqual({ a: 0, b: 1 });
+    // B1 darf trotz schwächerer Elo im Finale stehen → Champion nicht zwingend A0.
+    expect(["A0", "A1", "B0", "B1"]).toContain(b.champion);
+  });
 });

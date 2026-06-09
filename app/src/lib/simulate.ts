@@ -339,14 +339,129 @@ function koScore(pWin: number): { win: number; lose: number } {
   return { win: gw, lose: gl };
 }
 
+/**
+ * Baut den Baum aus den ECHTEN K.-o.-Partien, sobald deren Teilnehmer
+ * feststehen (openfootball löst Platzhalter nach der Gruppenphase auf).
+ * Gespielte Partien liefern realen Sieger/Score, ungespielte werden per Elo
+ * simuliert. `null`, solange keine aufgelösten K.-o.-Partien vorliegen.
+ */
+function realBracketRounds(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+  eloOf: (id: string) => number,
+): BracketResult | null {
+  const teamSet = new Set(index.teams.map((t) => t.id));
+  const byStage = new Map<
+    KoStage,
+    { home: string; away: string; result: ScoreLine | null; date: string }[]
+  >();
+  // Reales Ergebnis je ungeordnetem Team-Paar (90-min-Remis → Sieger via
+  // ET/Pens unbekannt → simulieren).
+  const realResult = new Map<
+    string,
+    { winner: string; home: string; hg: number; ag: number }
+  >();
+  const pairKey = (a: string, b: string): string => [a, b].sort().join("|");
+
+  for (const e of predIndex.entries) {
+    const st = e.stage as KoStage;
+    if (!KO_STAGES.includes(st)) continue; // Gruppe + Platz-3-Spiel ignorieren
+    if (!teamSet.has(e.homeTeamId) || !teamSet.has(e.awayTeamId)) continue; // Platzhalter
+    if (!byStage.has(st)) byStage.set(st, []);
+    byStage.get(st)!.push({
+      home: e.homeTeamId,
+      away: e.awayTeamId,
+      result: e.actualResult ?? null,
+      date: e.date,
+    });
+    const res = e.actualResult;
+    if (res && res.home !== res.away) {
+      realResult.set(pairKey(e.homeTeamId, e.awayTeamId), {
+        winner: res.home > res.away ? e.homeTeamId : e.awayTeamId,
+        home: e.homeTeamId,
+        hg: res.home,
+        ag: res.away,
+      });
+    }
+  }
+
+  const present = KO_STAGES.filter((s) => byStage.has(s));
+  if (present.length === 0) return null;
+  const startIdx = KO_STAGES.indexOf(present[0]!);
+
+  // Einstiegsrunde = früheste vorhandene K.-o.-Stufe (Paarungen in Datumsfolge).
+  const entry = [...byStage.get(present[0]!)!].sort((a, b) =>
+    a.date.localeCompare(b.date),
+  );
+  let bracket = entry.flatMap((m) => [m.home, m.away]);
+  // Teilnehmerzahl muss 2er-Potenz sein, sonst lieber die Projektion nutzen.
+  if (bracket.length < 2 || (bracket.length & (bracket.length - 1)) !== 0) {
+    return null;
+  }
+
+  const rounds: BracketRound[] = [];
+  let ri = 0;
+  while (bracket.length > 1) {
+    const matches: BracketMatch[] = [];
+    const next: string[] = [];
+    for (let i = 0; i < bracket.length; i += 2) {
+      const a = bracket[i]!;
+      const b = bracket[i + 1]!;
+      const real = realResult.get(pairKey(a, b));
+      if (real) {
+        // Echtes Ergebnis fließt direkt ein.
+        matches.push({
+          a,
+          b,
+          winner: real.winner,
+          winProb: eloWinProb(
+            eloOf(real.winner),
+            eloOf(real.winner === a ? b : a),
+          ),
+          score: {
+            a: a === real.home ? real.hg : real.ag,
+            b: b === real.home ? real.hg : real.ag,
+          },
+        });
+        next.push(real.winner);
+      } else {
+        // Offene Partie → Elo-Favorit.
+        const pA = eloWinProb(eloOf(a), eloOf(b));
+        const aWins = pA >= 0.5;
+        const winner = aWins ? a : b;
+        const winProb = aWins ? pA : 1 - pA;
+        const { win, lose } = koScore(winProb);
+        matches.push({
+          a,
+          b,
+          winner,
+          winProb,
+          score: { a: aWins ? win : lose, b: aWins ? lose : win },
+        });
+        next.push(winner);
+      }
+    }
+    rounds.push({ stage: KO_STAGES[startIdx + ri] ?? "final", matches });
+    bracket = next;
+    ri++;
+  }
+  return { rounds, champion: bracket[0]! };
+}
+
 export function simulateBracket(
   index: IndexFile,
   predIndex: PredictionsIndex,
 ): BracketResult {
-  const { teamsByGroup, matchesByGroup } = prepare(index, predIndex);
   const eloOf = eloMap(index);
 
-  // Deterministisches K.-o.-Feld (rng=null) + Elo-Setzung.
+  // 1) Echte K.-o.-Partien nutzen, sobald die Teilnehmer feststehen
+  //    (gespielte Ergebnisse fließen sofort ein).
+  const real = realBracketRounds(index, predIndex, eloOf);
+  if (real) return real;
+
+  // 2) Sonst: K.-o.-Feld aus den (ergebnisbasierten) Gruppen projizieren und
+  //    nach Elo setzen.
+  const { teamsByGroup, matchesByGroup } = prepare(index, predIndex);
   const { advancers } = knockoutField(
     teamsByGroup,
     matchesByGroup,
