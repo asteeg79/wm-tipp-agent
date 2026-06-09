@@ -189,6 +189,15 @@ export async function buildData(
   const eloOf = (id: string): number =>
     eloRatings.get(id) ?? ELO_SEED[id] ?? config.elo.initial;
 
+  // index.json mit Elo anreichern (Enabler für die Elo-basierte K.-o.-Sim im
+  // Client). Überschreibt den frühen Schreibvorgang aus Schritt 1.
+  await writeJson(indexPath, IndexFile, {
+    tournament,
+    lastUpdated: nowIso,
+    groups,
+    teams: teams.map((t) => ({ ...t, elo: Math.round(eloOf(t.id)) })),
+  });
+
   // 6) Teams schreiben (inkl. Form + News).
   const newsAggregator = options.withNews ? new NewsAggregator() : null;
   // KI-Relevanzfilter (1 Call/Team, günstiges Modell, gecacht) — nur wenn ein
@@ -520,6 +529,10 @@ async function writePredictionsIndex(
         entry.predictedScore = pred.predictedScore;
         entry.probabilities = pred.probabilities;
         entry.confidence = pred.confidence;
+        // Erwartete Tore (Baseline) für die tor-basierte Gruppensimulation.
+        if (pred.baseline?.expectedGoals) {
+          entry.expectedGoals = pred.baseline.expectedGoals;
+        }
       }
       // Accuracy nur für beendete Partien mit Tipp.
       if (m.actualResult && pred) {

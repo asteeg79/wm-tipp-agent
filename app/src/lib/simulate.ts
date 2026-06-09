@@ -1,55 +1,39 @@
 /**
- * Monte-Carlo-Gruppensimulation aus den 1X2-Wahrscheinlichkeiten der Partien.
- * Vereinfachung: Gruppenphase wird simuliert (Punkte/Rang), K.-o.-Phase
- * approximiert über "Weiterkommen = Top-2 der Gruppe + grobe Titelchance".
- * Läuft komplett clientseitig (kein Server).
+ * Clientseitige Turnier-Simulation für Gruppen- und K.-o.-Chancen.
+ *
+ * Realismus (gegenüber der früheren 1X2-Lotterie):
+ *  - **Echte Ergebnisse**: bereits gespielte Partien fließen mit ihren
+ *    tatsächlichen Toren ein; nur offene Partien werden simuliert.
+ *  - **Tor-basiert**: offene Partien werden per Poisson aus den erwarteten
+ *    Toren (xG) ausgespielt → Tordifferenz/Tore als FIFA-Tiebreaker.
+ *  - **WM-2026-Format**: 12 Gruppen à 4, Top-2 + 8 beste Gruppendritte → 32er-
+ *    K.-o. (Sechzehntelfinale).
+ *  - **Elo-K.-o.**: jede K.-o.-Partie über die Elo-Siegwahrscheinlichkeit.
+ *
+ * Hinweis: Die K.-o.-Setzung erfolgt nach Stärke (Elo-Seeding), nicht nach der
+ * exakten FIFA-Drittplatzierten-Tabelle — als belastbare Wahrscheinlichkeits-
+ * Näherung. Alles läuft im Browser (kein Server).
  */
-import type { IndexFile, Outcome1x2, PredictionsIndex } from "@wm/shared";
+import type {
+  IndexFile,
+  Outcome1x2,
+  PredictionsIndex,
+  ScoreLine,
+} from "@wm/shared";
 
 export interface SimResult {
   /** teamId → Anteil Simulationen mit Gruppenplatz 1. */
   groupWinner: Map<string, number>;
-  /** teamId → Anteil Top-2 (Weiterkommen ins K.o.). */
+  /** teamId → Anteil, der die K.-o.-Runde erreicht (Top-2 + bester Dritter). */
   advance: Map<string, number>;
-  /** teamId → grobe Titelchance. */
+  /** teamId → Titelchance. */
   title: Map<string, number>;
 }
 
-interface GroupMatch {
-  home: string;
-  away: string;
-  p: Outcome1x2;
-}
+const DEFAULT_ELO = 1500;
+const MAX_GOALS = 9;
 
-function pickOutcome(p: Outcome1x2, rng: () => number): 0 | 1 | 2 {
-  const r = rng();
-  if (r < p.home) return 0; // Heimsieg
-  if (r < p.home + p.draw) return 1; // Remis
-  return 2; // Auswärtssieg
-}
-
-/** Eine einzelne Gruppen-Saison: liefert Punkte/Team. */
-function simulateGroup(
-  matches: GroupMatch[],
-  rng: () => number,
-): Map<string, number> {
-  const pts = new Map<string, number>();
-  const add = (id: string, n: number): void => {
-    pts.set(id, (pts.get(id) ?? 0) + n);
-  };
-  for (const m of matches) {
-    add(m.home, 0);
-    add(m.away, 0);
-    const o = pickOutcome(m.p, rng);
-    if (o === 0) add(m.home, 3);
-    else if (o === 2) add(m.away, 3);
-    else {
-      add(m.home, 1);
-      add(m.away, 1);
-    }
-  }
-  return pts;
-}
+/* ── Hilfsfunktionen ──────────────────────────────────────────────────────── */
 
 /** xorshift-RNG für reproduzierbare, schnelle Simulationen. */
 function makeRng(seed: number): () => number {
@@ -62,16 +46,53 @@ function makeRng(seed: number): () => number {
   };
 }
 
-export function simulateTournament(
-  index: IndexFile,
-  predIndex: PredictionsIndex,
-  runs: number,
-): SimResult {
-  // Gruppen-Matches mit Wahrscheinlichkeiten sammeln.
-  const teamGroup = new Map<string, string>();
-  for (const t of index.teams) teamGroup.set(t.id, t.groupId);
+/** Poisson-Stichprobe (Knuth) für eine Toranzahl aus Erwartungswert λ. */
+function samplePoisson(lambda: number, rng: () => number): number {
+  if (lambda <= 0) return 0;
+  const L = Math.exp(-lambda);
+  let k = 0;
+  let p = 1;
+  do {
+    k++;
+    p *= rng();
+  } while (p > L);
+  return Math.min(k - 1, MAX_GOALS);
+}
 
-  const matchesByGroup = new Map<string, GroupMatch[]>();
+/** Elo-Siegwahrscheinlichkeit von A gegen B. */
+export function eloWinProb(eloA: number, eloB: number): number {
+  return 1 / (1 + 10 ** ((eloB - eloA) / 400));
+}
+
+interface SimMatch {
+  home: string;
+  away: string;
+  p: Outcome1x2;
+  /** Erwartete Tore (falls vorhanden) für die Tor-Simulation. */
+  eg: { home: number; away: number } | null;
+  /** Tatsächliches Ergebnis (falls gespielt). */
+  result: ScoreLine | null;
+}
+
+/** teamId → Elo (Fallback DEFAULT_ELO, falls index noch ohne Elo). */
+function eloMap(index: IndexFile): (id: string) => number {
+  const m = new Map<string, number>();
+  for (const t of index.teams)
+    if (typeof t.elo === "number") m.set(t.id, t.elo);
+  return (id) => m.get(id) ?? DEFAULT_ELO;
+}
+
+/** Gruppen-Teams + Gruppen-Matches aus Index/Prognose aufbereiten. */
+function prepare(index: IndexFile, predIndex: PredictionsIndex) {
+  const teamGroup = new Map<string, string>();
+  const teamsByGroup = new Map<string, string[]>();
+  for (const t of index.teams) {
+    teamGroup.set(t.id, t.groupId);
+    if (!teamsByGroup.has(t.groupId)) teamsByGroup.set(t.groupId, []);
+    teamsByGroup.get(t.groupId)!.push(t.id);
+  }
+
+  const matchesByGroup = new Map<string, SimMatch[]>();
   for (const e of predIndex.entries) {
     if (e.stage !== "group" || !e.probabilities) continue;
     const g = teamGroup.get(e.homeTeamId);
@@ -81,8 +102,165 @@ export function simulateTournament(
       home: e.homeTeamId,
       away: e.awayTeamId,
       p: e.probabilities,
+      eg: e.expectedGoals ?? null,
+      result: e.actualResult ?? null,
     });
   }
+  return { teamsByGroup, matchesByGroup };
+}
+
+/** Spielt eine Partie aus: echtes Ergebnis bevorzugt, sonst Tore aus xG/1X2. */
+function playMatch(m: SimMatch, rng: () => number): { h: number; a: number } {
+  if (m.result) return { h: m.result.home, a: m.result.away };
+  if (m.eg) {
+    return {
+      h: samplePoisson(m.eg.home, rng),
+      a: samplePoisson(m.eg.away, rng),
+    };
+  }
+  // Fallback ohne xG: grobes Ergebnis aus dem 1X2-Ausgang.
+  const r = rng();
+  if (r < m.p.home) return { h: 1, a: 0 };
+  if (r < m.p.home + m.p.draw) return { h: 1, a: 1 };
+  return { h: 0, a: 1 };
+}
+
+interface Standing {
+  id: string;
+  pts: number;
+  gd: number;
+  gf: number;
+}
+
+/** Vergleich nach FIFA-Kriterien: Punkte → Tordifferenz → erzielte Tore. */
+function cmpStanding(a: Standing, b: Standing): number {
+  return b.pts - a.pts || b.gd - a.gd || b.gf - a.gf;
+}
+
+/** Eine Gruppen-Saison → sortierte Tabelle. */
+function simulateGroup(
+  teamIds: string[],
+  matches: SimMatch[],
+  rng: (() => number) | null,
+  eloOf: (id: string) => number,
+): Standing[] {
+  const tbl = new Map<string, Standing>();
+  for (const id of teamIds) tbl.set(id, { id, pts: 0, gd: 0, gf: 0 });
+
+  for (const m of matches) {
+    const home = tbl.get(m.home);
+    const away = tbl.get(m.away);
+    if (!home || !away) continue;
+    // Deterministisch (rng=null): echtes Ergebnis oder gerundete xG.
+    const goals = rng
+      ? playMatch(m, rng)
+      : m.result
+        ? { h: m.result.home, a: m.result.away }
+        : m.eg
+          ? { h: Math.round(m.eg.home), a: Math.round(m.eg.away) }
+          : { h: m.p.home >= m.p.away ? 1 : 0, a: m.p.away > m.p.home ? 1 : 0 };
+    home.gf += goals.h;
+    away.gf += goals.a;
+    home.gd += goals.h - goals.a;
+    away.gd += goals.a - goals.h;
+    if (goals.h > goals.a) home.pts += 3;
+    else if (goals.h < goals.a) away.pts += 3;
+    else {
+      home.pts += 1;
+      away.pts += 1;
+    }
+  }
+
+  const arr = [...tbl.values()];
+  // Gleichstand: Zufalls-Tiebreak (Sim) bzw. Elo-Tiebreak (deterministisch).
+  arr.sort(
+    (a, b) =>
+      cmpStanding(a, b) ||
+      (rng
+        ? rng() - 0.5
+        : eloOf(b.id) - eloOf(a.id) || a.id.localeCompare(b.id)),
+  );
+  return arr;
+}
+
+/* ── K.-o.-Setzung (Seeding) ──────────────────────────────────────────────── */
+
+/** Standard-Setzliste: Seed-Nummern 1..n in Bracket-Slot-Reihenfolge. */
+export function seedSlots(n: number): number[] {
+  let seeds = [1, 2];
+  const rounds = Math.log2(n);
+  for (let r = 1; r < rounds; r++) {
+    const m = seeds.length * 2 + 1;
+    const out: number[] = [];
+    for (const s of seeds) {
+      out.push(s, m - s);
+    }
+    seeds = out;
+  }
+  return seeds;
+}
+
+/** Größte 2er-Potenz ≤ n. */
+function pow2Floor(n: number): number {
+  let p = 1;
+  while (p * 2 <= n) p *= 2;
+  return p;
+}
+
+/** Platziert die Weitergekommenen nach Elo in einen Setz-Baum. */
+function seedByElo(
+  advancers: string[],
+  eloOf: (id: string) => number,
+): string[] {
+  const size = pow2Floor(advancers.length);
+  const ranked = [...advancers]
+    .sort((a, b) => eloOf(b) - eloOf(a))
+    .slice(0, size);
+  return seedSlots(size).map((s) => ranked[s - 1]!);
+}
+
+/** Ermittelt die 32 Weitergekommenen (Top-2 je Gruppe + 8 beste Dritte). */
+function knockoutField(
+  teamsByGroup: Map<string, string[]>,
+  matchesByGroup: Map<string, SimMatch[]>,
+  rng: (() => number) | null,
+  eloOf: (id: string) => number,
+): { winners: string[]; advancers: string[] } {
+  const winners: string[] = [];
+  const runnersUp: string[] = [];
+  const thirds: Standing[] = [];
+  for (const [g, teamIds] of teamsByGroup) {
+    const table = simulateGroup(
+      teamIds,
+      matchesByGroup.get(g) ?? [],
+      rng,
+      eloOf,
+    );
+    if (table[0]) winners.push(table[0].id);
+    if (table[1]) runnersUp.push(table[1].id);
+    if (table[2]) thirds.push(table[2]);
+  }
+  // 8 beste Gruppendritte.
+  const bestThirds = [...thirds]
+    .sort(
+      (a, b) =>
+        cmpStanding(a, b) || (rng ? rng() - 0.5 : eloOf(b.id) - eloOf(a.id)),
+    )
+    .slice(0, 8)
+    .map((s) => s.id);
+  return { winners, advancers: [...winners, ...runnersUp, ...bestThirds] };
+}
+
+/* ── Monte-Carlo-Titelchancen ─────────────────────────────────────────────── */
+
+export function simulateTournament(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+  runs: number,
+): SimResult {
+  const { teamsByGroup, matchesByGroup } = prepare(index, predIndex);
+  const eloOf = eloMap(index);
+  const rng = makeRng(0x9e3779b9 ^ runs);
 
   const groupWinner = new Map<string, number>();
   const advance = new Map<string, number>();
@@ -91,50 +269,30 @@ export function simulateTournament(
     m.set(id, (m.get(id) ?? 0) + 1);
   };
 
-  const rng = makeRng(0x9e3779b9 ^ runs);
-  // Elo-Proxy je Team für die grobe K.-o.-Titelgewichtung.
-  const strength = new Map<string, number>();
-  for (const g of matchesByGroup.values())
-    for (const m of g) {
-      const aw = avgWin(m.p);
-      strength.set(m.home, (strength.get(m.home) ?? 0) + aw.home);
-      strength.set(m.away, (strength.get(m.away) ?? 0) + aw.away);
-    }
-
   for (let i = 0; i < runs; i++) {
-    const advancers: string[] = [];
-    for (const [g, matches] of matchesByGroup) {
-      const pts = simulateGroup(matches, rng);
-      const ranked = [...pts.entries()]
-        // kleiner Zufalls-Tiebreak
-        .sort((a, b) => b[1] - a[1] || rng() - 0.5)
-        .map(([id]) => id);
-      if (ranked[0]) inc(groupWinner, ranked[0]);
-      const top2 = ranked.slice(0, 2);
-      for (const id of top2) {
-        inc(advance, id);
-        advancers.push(id);
+    const { winners, advancers } = knockoutField(
+      teamsByGroup,
+      matchesByGroup,
+      rng,
+      eloOf,
+    );
+    for (const id of winners) inc(groupWinner, id);
+    for (const id of advancers) inc(advance, id);
+
+    // K.-o.-Phase: Elo-Duelle bis zum Champion.
+    let bracket = seedByElo(advancers, eloOf);
+    while (bracket.length > 1) {
+      const next: string[] = [];
+      for (let k = 0; k < bracket.length; k += 2) {
+        const a = bracket[k]!;
+        const b = bracket[k + 1]!;
+        next.push(rng() < eloWinProb(eloOf(a), eloOf(b)) ? a : b);
       }
-      void g;
+      bracket = next;
     }
-    // Titel: gewichtete Lotterie unter den Weiterkommern (Stärke-Proxy).
-    if (advancers.length > 0) {
-      const weights = advancers.map((id) => (strength.get(id) ?? 0.5) ** 3);
-      const total = weights.reduce((s, w) => s + w, 0);
-      let r = rng() * total;
-      let champ = advancers[0]!;
-      for (let k = 0; k < advancers.length; k++) {
-        r -= weights[k]!;
-        if (r <= 0) {
-          champ = advancers[k]!;
-          break;
-        }
-      }
-      inc(title, champ);
-    }
+    if (bracket[0]) inc(title, bracket[0]);
   }
 
-  // In Anteile umrechnen.
   const toRate = (m: Map<string, number>): Map<string, number> => {
     const out = new Map<string, number>();
     for (const [id, c] of m) out.set(id, c / runs);
@@ -147,26 +305,16 @@ export function simulateTournament(
   };
 }
 
-function avgWin(p: Outcome1x2): { home: number; away: number } {
-  return { home: p.home + p.draw / 2, away: p.away + p.draw / 2 };
-}
+/* ── Deterministischer K.-o.-Baum (Tree-Ansicht) ──────────────────────────── */
 
-/* ════════════════════════════════════════════════════════════════════════
-   K.-o.-Baum: EINE simulierte Auslosung (Achtelfinale → Finale)
-   Die 16 stärksten Teams (Stärke-Proxy aus den 1X2-Wahrscheinlichkeiten)
-   werden nach Standard-Setzliste platziert; jede Partie wird einzeln
-   ausgespielt — inkl. plausiblem Ergebnis (im K.-o. immer ein Sieger).
-   ════════════════════════════════════════════════════════════════════════ */
-
-export type KoStage = "round16" | "quarter" | "semi" | "final";
+export type KoStage = "round32" | "round16" | "quarter" | "semi" | "final";
 
 export interface BracketMatch {
   a: string;
   b: string;
   winner: string;
-  /** Getipptes Ergebnis dieser Partie (Sieger strikt mehr Tore). */
   score: { a: number; b: number };
-  /** Siegwahrscheinlichkeit des Siegers (0..1) laut Stärkemodell. */
+  /** Siegwahrscheinlichkeit des Siegers (0..1) laut Elo. */
   winProb: number;
 }
 
@@ -180,87 +328,42 @@ export interface BracketResult {
   champion: string;
 }
 
-const KO_STAGES: KoStage[] = ["round16", "quarter", "semi", "final"];
-// Standard-Setzliste für 16 Plätze: Seed 1 trifft 16, 1 & 2 in versch. Hälften.
-const SEED_ORDER = [1, 16, 8, 9, 5, 12, 4, 13, 3, 14, 6, 11, 7, 10, 2, 15];
+const KO_STAGES: KoStage[] = ["round32", "round16", "quarter", "semi", "final"];
 
-/** Stärke-Proxy je Team aus den Gruppen-1X2-Wahrscheinlichkeiten. */
-function teamStrength(
-  index: IndexFile,
-  predIndex: PredictionsIndex,
-): Map<string, number> {
-  const strength = new Map<string, number>();
-  for (const t of index.teams) strength.set(t.id, 0.5);
-  for (const e of predIndex.entries) {
-    if (e.stage !== "group" || !e.probabilities) continue;
-    const aw = avgWin(e.probabilities);
-    strength.set(e.homeTeamId, (strength.get(e.homeTeamId) ?? 0.5) + aw.home);
-    strength.set(e.awayTeamId, (strength.get(e.awayTeamId) ?? 0.5) + aw.away);
-  }
-  return strength;
-}
-
-/**
- * Siegwahrscheinlichkeit von A gegen B aus dem Stärke-Proxy.
- * Power-Gewichtung (Exponent > 1) schärft den Favoriten-Vorteil, damit klar
- * stärkere Teams realistisch dominieren — statt nahe 50/50 zu wirken.
- */
-const TIE_EXP = 2.2;
-function tieWinProb(sa: number, sb: number): number {
-  const wa = Math.pow(Math.max(sa, 0.01), TIE_EXP);
-  const wb = Math.pow(Math.max(sb, 0.01), TIE_EXP);
-  return wa / (wa + wb);
-}
-
-/**
- * Plausibles, deterministisches K.-o.-Ergebnis aus der Siegwahrscheinlichkeit
- * des Favoriten (kein Zufall → reproduzierbar). edge 0 (knapp) .. 1 (klar).
- */
+/** Plausibles, deterministisches K.-o.-Ergebnis aus der Elo-Siegwahrsch. */
 function koScore(pWin: number): { win: number; lose: number } {
-  const clamp = (v: number, lo: number, hi: number): number =>
-    Math.max(lo, Math.min(hi, v));
-  const edge = clamp((pWin - 0.5) * 2, 0, 1);
-  const gw = clamp(Math.round(1 + edge * 1.8 + 0.4), 1, 4);
-  let gl = clamp(Math.round(0.9 - edge * 1.1 + 0.4), 0, 3);
+  const edge = Math.max(0, Math.min(1, (pWin - 0.5) * 2)); // 0 knapp .. 1 klar
+  const gw = Math.max(1, Math.min(4, Math.round(1 + edge * 1.8 + 0.4)));
+  let gl = Math.max(0, Math.min(3, Math.round(0.9 - edge * 1.1 + 0.4)));
   if (gl >= gw) gl = gw - 1;
   return { win: gw, lose: gl };
 }
 
-/**
- * Deterministischer K.-o.-Baum: die 16 stärksten Teams (Stärke-Proxy aus den
- * Gruppen-1X2) nach Setzliste; je Partie kommt das stärkere Team weiter.
- */
 export function simulateBracket(
   index: IndexFile,
   predIndex: PredictionsIndex,
 ): BracketResult {
-  const strength = teamStrength(index, predIndex);
+  const { teamsByGroup, matchesByGroup } = prepare(index, predIndex);
+  const eloOf = eloMap(index);
 
-  // 16 stärkste Teams ermitteln und nach Setzliste platzieren.
-  const top16 = [...strength.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 16)
-    .map(([id]) => id);
-  if (top16.length < 16) {
-    for (const t of index.teams) {
-      if (top16.length >= 16) break;
-      if (!top16.includes(t.id)) top16.push(t.id);
-    }
-  }
-  let bracket = SEED_ORDER.map((s) => top16[s - 1]!).filter(Boolean);
+  // Deterministisches K.-o.-Feld (rng=null) + Elo-Setzung.
+  const { advancers } = knockoutField(
+    teamsByGroup,
+    matchesByGroup,
+    null,
+    eloOf,
+  );
+  let bracket = seedByElo(advancers, eloOf);
 
   const rounds: BracketRound[] = [];
-  let si = 0;
+  let si = KO_STAGES.length - Math.log2(Math.max(2, bracket.length));
   while (bracket.length > 1) {
     const matches: BracketMatch[] = [];
     const next: string[] = [];
     for (let i = 0; i < bracket.length; i += 2) {
       const a = bracket[i]!;
       const b = bracket[i + 1]!;
-      const sa = strength.get(a) ?? 0.5;
-      const sb = strength.get(b) ?? 0.5;
-      const pA = tieWinProb(sa, sb);
-      // Stärkeres Team kommt weiter (deterministisch).
+      const pA = eloWinProb(eloOf(a), eloOf(b));
       const aWins = pA >= 0.5;
       const winner = aWins ? a : b;
       const winProb = aWins ? pA : 1 - pA;

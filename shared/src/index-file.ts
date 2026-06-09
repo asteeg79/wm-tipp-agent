@@ -23,6 +23,8 @@ export const TeamSummary = z.object({
   code: z.string(),
   logo: z.string().url().optional(),
   groupId: z.string(),
+  /** Aktuelles Elo-Rating (für die clientseitige Turnier-Simulation). */
+  elo: z.number().optional(),
 });
 export type TeamSummary = z.infer<typeof TeamSummary>;
 

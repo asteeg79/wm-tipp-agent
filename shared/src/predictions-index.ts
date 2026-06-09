@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { IsoDateTime, Outcome1x2, ScoreLine, Stage } from "./common.js";
+import { ExpectedGoals } from "./match.js";
 
 /** Genauigkeits-Metriken pro abgeschlossener Partie. */
 export const AccuracyEntry = z.object({
@@ -24,6 +25,8 @@ export const PredictionIndexEntry = z.object({
   predictedScore: ScoreLine.optional(),
   probabilities: Outcome1x2.optional(),
   confidence: z.number().min(0).max(1).optional(),
+  /** Erwartete Tore (Baseline) — für die tor-basierte Gruppensimulation. */
+  expectedGoals: ExpectedGoals.optional(),
   actualResult: ScoreLine.nullable().default(null),
   accuracy: AccuracyEntry.optional(),
 });

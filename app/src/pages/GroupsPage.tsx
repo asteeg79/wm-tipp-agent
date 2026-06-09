@@ -4,6 +4,9 @@ import type { PredictionIndexEntry } from "@wm/shared";
 import { useIndex, usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { MatchRow } from "../components/MatchRow.js";
+import { simulateTournament } from "../lib/simulate.js";
+
+const SIM_RUNS = 5000;
 
 export function GroupsPage() {
   const { t } = useTranslation();
@@ -23,6 +26,17 @@ export function GroupsPage() {
     }
     return m;
   }, [predIndex, teams]);
+
+  // Weiterkommens-/Gruppensieg-Wahrscheinlichkeiten (Monte-Carlo, gecacht).
+  const sim = useMemo(
+    () =>
+      index && predIndex
+        ? simulateTournament(index, predIndex, SIM_RUNS)
+        : null,
+    [index, predIndex],
+  );
+  const pct = (x: number | undefined): string =>
+    x === undefined ? "–" : `${Math.round(x * 100)}%`;
 
   if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
   if (isError || !index) return <p className="text-neg">{t("error")}</p>;
@@ -57,7 +71,12 @@ export function GroupsPage() {
           const groupTeams = g.teamIds
             .map((id) => teams.get(id))
             .filter((x): x is NonNullable<typeof x> => !!x)
-            .sort((a, b) => a.name.localeCompare(b.name));
+            // Nach Weiterkommens-Wahrscheinlichkeit sortieren (sonst alphabetisch).
+            .sort((a, b) =>
+              sim
+                ? (sim.advance.get(b.id) ?? 0) - (sim.advance.get(a.id) ?? 0)
+                : a.name.localeCompare(b.name),
+            );
           let matches = matchesByGroup.get(g.id) ?? [];
           if (teamFilter)
             matches = matches.filter(
@@ -72,10 +91,33 @@ export function GroupsPage() {
               <h3 className="mb-2 font-semibold">
                 {t("groups.group", { id: g.id })}
               </h3>
-              <ul className="mb-3 grid grid-cols-2 gap-1.5 text-sm">
+              <ul className="mb-3 space-y-1 text-sm">
+                {sim && (
+                  <li className="flex items-center justify-between text-[10px] uppercase tracking-wide text-fg-faint">
+                    <span>{t("groups.team")}</span>
+                    <span className="flex gap-3 font-mono">
+                      <span className="w-10 text-right">
+                        {t("bracket.groupWinnerShort")}
+                      </span>
+                      <span className="w-10 text-right">
+                        {t("bracket.advanceShort")}
+                      </span>
+                    </span>
+                  </li>
+                )}
                 {groupTeams.map((tm) => (
-                  <li key={tm.id}>
+                  <li key={tm.id} className="flex items-center justify-between">
                     <TeamBadge team={tm} />
+                    {sim && (
+                      <span className="flex shrink-0 gap-3 font-mono text-xs">
+                        <span className="w-10 text-right text-fg-muted">
+                          {pct(sim.groupWinner.get(tm.id))}
+                        </span>
+                        <span className="w-10 text-right font-semibold text-pos">
+                          {pct(sim.advance.get(tm.id))}
+                        </span>
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>

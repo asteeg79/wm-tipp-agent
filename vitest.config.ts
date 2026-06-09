@@ -14,11 +14,19 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
-    include: ["pipeline/tests/**/*.test.ts", "shared/tests/**/*.test.ts"],
+    include: [
+      "pipeline/tests/**/*.test.ts",
+      "shared/tests/**/*.test.ts",
+      "app/tests/**/*.test.ts",
+    ],
     coverage: {
       provider: "v8",
       reportsDirectory: "./coverage",
-      include: ["pipeline/src/**/*.ts", "shared/src/**/*.ts"],
+      include: [
+        "pipeline/src/**/*.ts",
+        "shared/src/**/*.ts",
+        "app/src/lib/simulate.ts",
+      ],
       // Reine Netzwerk-/Seiteneffekt-Adapter sind vom Coverage-Ziel ausgenommen.
       exclude: [
         "pipeline/src/index.ts",
