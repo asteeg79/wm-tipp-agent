@@ -113,6 +113,36 @@ describe("simulateTournament", () => {
     const r = simulateTournament(index, pred, 2000);
     expect(r.groupWinner.get("A1")!).toBeGreaterThan(0.95);
   });
+
+  it("echtes K.-o.-Feld: ausgeschiedenes Team hat 0 % Titel", () => {
+    const { index, pred } = fixture();
+    // Halbfinale als echtes K.-o.-Feld; A0 (stärkstes Team) verliert real.
+    pred.entries.push(
+      {
+        matchId: "sf1",
+        date: "2026-07-14T00:00:00Z",
+        stage: "semi",
+        homeTeamId: "A0",
+        awayTeamId: "B1",
+        probabilities: { home: 0.6, draw: 0.2, away: 0.2 },
+        actualResult: { home: 0, away: 2 },
+      },
+      {
+        matchId: "sf2",
+        date: "2026-07-14T03:00:00Z",
+        stage: "semi",
+        homeTeamId: "A1",
+        awayTeamId: "B0",
+        probabilities: { home: 0.5, draw: 0.25, away: 0.25 },
+        actualResult: null,
+      },
+    );
+    const r = simulateTournament(index, pred, 2000);
+    expect(r.title.get("A0") ?? 0).toBe(0); // raus → keine Titelchance
+    expect(r.advance.get("A0")).toBe(1); // war aber im K.-o.-Feld
+    const titleSum = [...r.title.values()].reduce((s, x) => s + x, 0);
+    expect(titleSum).toBeGreaterThan(0.95);
+  });
 });
 
 describe("simulateBracket", () => {

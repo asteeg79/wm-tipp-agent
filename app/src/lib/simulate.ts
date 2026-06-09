@@ -251,6 +251,103 @@ function knockoutField(
   return { winners, advancers: [...winners, ...runnersUp, ...bestThirds] };
 }
 
+/* ── Echtes K.-o.-Feld (für Baum UND Titelchancen) ────────────────────────── */
+
+interface RealKoField {
+  /** Teilnehmer der Einstiegsrunde, flach in Bracket-Reihenfolge (2er-Potenz). */
+  entryTeams: string[];
+  /** Reales Ergebnis je ungeordnetem Team-Paar (entscheidende Resultate). */
+  realResult: Map<
+    string,
+    { winner: string; home: string; hg: number; ag: number }
+  >;
+  /** KO_STAGES-Index der Einstiegsrunde (z. B. round32). */
+  startIdx: number;
+  /** Alle Teilnehmer der Einstiegsrunde (für die advance-Quote). */
+  teams: Set<string>;
+}
+
+const pairKey = (a: string, b: string): string => [a, b].sort().join("|");
+
+/**
+ * Liest das ECHTE K.-o.-Feld aus den (aufgelösten) K.-o.-Partien des Index.
+ * `null`, solange keine aufgelösten K.-o.-Partien vorliegen (Platzhalter).
+ */
+function realKoField(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+): RealKoField | null {
+  const teamSet = new Set(index.teams.map((t) => t.id));
+  const byStage = new Map<
+    KoStage,
+    { home: string; away: string; date: string }[]
+  >();
+  const realResult: RealKoField["realResult"] = new Map();
+
+  for (const e of predIndex.entries) {
+    const st = e.stage as KoStage;
+    if (!KO_STAGES.includes(st)) continue; // Gruppe + Platz-3-Spiel ignorieren
+    if (!teamSet.has(e.homeTeamId) || !teamSet.has(e.awayTeamId)) continue; // Platzhalter
+    if (!byStage.has(st)) byStage.set(st, []);
+    byStage.get(st)!.push({
+      home: e.homeTeamId,
+      away: e.awayTeamId,
+      date: e.date,
+    });
+    const res = e.actualResult;
+    if (res && res.home !== res.away) {
+      realResult.set(pairKey(e.homeTeamId, e.awayTeamId), {
+        winner: res.home > res.away ? e.homeTeamId : e.awayTeamId,
+        home: e.homeTeamId,
+        hg: res.home,
+        ag: res.away,
+      });
+    }
+  }
+
+  const present = KO_STAGES.filter((s) => byStage.has(s));
+  if (present.length === 0) return null;
+  const entry = [...byStage.get(present[0]!)!].sort((a, b) =>
+    a.date.localeCompare(b.date),
+  );
+  const entryTeams = entry.flatMap((m) => [m.home, m.away]);
+  // Teilnehmerzahl muss 2er-Potenz sein, sonst lieber die Projektion nutzen.
+  if (
+    entryTeams.length < 2 ||
+    (entryTeams.length & (entryTeams.length - 1)) !== 0
+  ) {
+    return null;
+  }
+  return {
+    entryTeams,
+    realResult,
+    startIdx: KO_STAGES.indexOf(present[0]!),
+    teams: new Set(entryTeams),
+  };
+}
+
+/** Stochastische K.-o.-Simulation über das echte Feld (offene Partien per Elo). */
+function simulateRealKoChampion(
+  field: RealKoField,
+  eloOf: (id: string) => number,
+  rng: () => number,
+): string {
+  let bracket = [...field.entryTeams];
+  while (bracket.length > 1) {
+    const next: string[] = [];
+    for (let i = 0; i < bracket.length; i += 2) {
+      const a = bracket[i]!;
+      const b = bracket[i + 1]!;
+      const real = field.realResult.get(pairKey(a, b));
+      next.push(
+        real ? real.winner : rng() < eloWinProb(eloOf(a), eloOf(b)) ? a : b,
+      );
+    }
+    bracket = next;
+  }
+  return bracket[0]!;
+}
+
 /* ── Monte-Carlo-Titelchancen ─────────────────────────────────────────────── */
 
 export function simulateTournament(
@@ -268,7 +365,34 @@ export function simulateTournament(
   const inc = (m: Map<string, number>, id: string): void => {
     m.set(id, (m.get(id) ?? 0) + 1);
   };
+  const toRate = (m: Map<string, number>): Map<string, number> => {
+    const out = new Map<string, number>();
+    for (const [id, c] of m) out.set(id, c / runs);
+    return out;
+  };
 
+  // Fall A: Echtes K.-o.-Feld vorhanden (Gruppen entschieden) → Gruppensieger
+  // und Qualifikanten stehen fest; Titel aus dem realen K.-o.-Feld simulieren
+  // (gespielte Partien fix, offene per Elo). So fließen echte K.-o.-Ergebnisse
+  // konsistent zum Baum ein (ausgeschiedene Teams → 0 % Titel).
+  const field = realKoField(index, predIndex);
+  if (field) {
+    const { winners } = knockoutField(
+      teamsByGroup,
+      matchesByGroup,
+      null,
+      eloOf,
+    );
+    for (const id of winners) groupWinner.set(id, 1);
+    for (const id of field.teams) advance.set(id, 1);
+    for (let i = 0; i < runs; i++) {
+      inc(title, simulateRealKoChampion(field, eloOf, rng));
+    }
+    return { groupWinner, advance, title: toRate(title) };
+  }
+
+  // Fall B: Noch kein K.-o.-Feld → Gruppen (mit echten Ergebnissen) simulieren,
+  // Feld nach Elo setzen und die K.-o.-Phase per Elo ausspielen.
   for (let i = 0; i < runs; i++) {
     const { winners, advancers } = knockoutField(
       teamsByGroup,
@@ -279,7 +403,6 @@ export function simulateTournament(
     for (const id of winners) inc(groupWinner, id);
     for (const id of advancers) inc(advance, id);
 
-    // K.-o.-Phase: Elo-Duelle bis zum Champion.
     let bracket = seedByElo(advancers, eloOf);
     while (bracket.length > 1) {
       const next: string[] = [];
@@ -293,11 +416,6 @@ export function simulateTournament(
     if (bracket[0]) inc(title, bracket[0]);
   }
 
-  const toRate = (m: Map<string, number>): Map<string, number> => {
-    const out = new Map<string, number>();
-    for (const [id, c] of m) out.set(id, c / runs);
-    return out;
-  };
   return {
     groupWinner: toRate(groupWinner),
     advance: toRate(advance),
@@ -350,55 +468,11 @@ function realBracketRounds(
   predIndex: PredictionsIndex,
   eloOf: (id: string) => number,
 ): BracketResult | null {
-  const teamSet = new Set(index.teams.map((t) => t.id));
-  const byStage = new Map<
-    KoStage,
-    { home: string; away: string; result: ScoreLine | null; date: string }[]
-  >();
-  // Reales Ergebnis je ungeordnetem Team-Paar (90-min-Remis → Sieger via
-  // ET/Pens unbekannt → simulieren).
-  const realResult = new Map<
-    string,
-    { winner: string; home: string; hg: number; ag: number }
-  >();
-  const pairKey = (a: string, b: string): string => [a, b].sort().join("|");
+  const field = realKoField(index, predIndex);
+  if (!field) return null;
+  const { realResult, startIdx } = field;
 
-  for (const e of predIndex.entries) {
-    const st = e.stage as KoStage;
-    if (!KO_STAGES.includes(st)) continue; // Gruppe + Platz-3-Spiel ignorieren
-    if (!teamSet.has(e.homeTeamId) || !teamSet.has(e.awayTeamId)) continue; // Platzhalter
-    if (!byStage.has(st)) byStage.set(st, []);
-    byStage.get(st)!.push({
-      home: e.homeTeamId,
-      away: e.awayTeamId,
-      result: e.actualResult ?? null,
-      date: e.date,
-    });
-    const res = e.actualResult;
-    if (res && res.home !== res.away) {
-      realResult.set(pairKey(e.homeTeamId, e.awayTeamId), {
-        winner: res.home > res.away ? e.homeTeamId : e.awayTeamId,
-        home: e.homeTeamId,
-        hg: res.home,
-        ag: res.away,
-      });
-    }
-  }
-
-  const present = KO_STAGES.filter((s) => byStage.has(s));
-  if (present.length === 0) return null;
-  const startIdx = KO_STAGES.indexOf(present[0]!);
-
-  // Einstiegsrunde = früheste vorhandene K.-o.-Stufe (Paarungen in Datumsfolge).
-  const entry = [...byStage.get(present[0]!)!].sort((a, b) =>
-    a.date.localeCompare(b.date),
-  );
-  let bracket = entry.flatMap((m) => [m.home, m.away]);
-  // Teilnehmerzahl muss 2er-Potenz sein, sonst lieber die Projektion nutzen.
-  if (bracket.length < 2 || (bracket.length & (bracket.length - 1)) !== 0) {
-    return null;
-  }
-
+  let bracket = [...field.entryTeams];
   const rounds: BracketRound[] = [];
   let ri = 0;
   while (bracket.length > 1) {
