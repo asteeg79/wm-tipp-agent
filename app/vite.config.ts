@@ -49,6 +49,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+      // Manifest/SW mit Anmeldedaten laden (crossorigin="use-credentials").
+      // Nötig hinter Cloudflare Access: sonst holt der Browser das Manifest
+      // OHNE Cookie → Access liefert die Login-HTML statt der Icons → Favicon/
+      // PWA-Icon fehlen.
+      useCredentials: true,
       includeAssets: ["favicon.svg"],
       manifest: {
         name: "WM-Tipp-Assistent 2026",
