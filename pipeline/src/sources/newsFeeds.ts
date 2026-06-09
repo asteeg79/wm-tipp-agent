@@ -50,36 +50,96 @@ export const GLOBAL_FEEDS: FeedSource[] = [
 ];
 
 /**
+ * Deutsche Ländernamen für die DE-Suche. Wichtig: Deutsche Fußballartikel
+ * schreiben „Deutschland"/„Frankreich" usw. — die Suche mit dem ENGLISCHEN
+ * Namen („Germany") liefert in deutschen Quellen kaum/falsche Treffer. Fehlt
+ * ein Name hier, wird der englische verwendet (für viele identisch).
+ */
+const GERMAN_NAMES: Record<string, string> = {
+  germany: "Deutschland",
+  france: "Frankreich",
+  spain: "Spanien",
+  italy: "Italien",
+  netherlands: "Niederlande",
+  belgium: "Belgien",
+  croatia: "Kroatien",
+  switzerland: "Schweiz",
+  denmark: "Dänemark",
+  austria: "Österreich",
+  "czech republic": "Tschechien",
+  czechia: "Tschechien",
+  poland: "Polen",
+  norway: "Norwegen",
+  sweden: "Schweden",
+  scotland: "Schottland",
+  turkey: "Türkei",
+  serbia: "Serbien",
+  hungary: "Ungarn",
+  greece: "Griechenland",
+  brazil: "Brasilien",
+  argentina: "Argentinien",
+  colombia: "Kolumbien",
+  morocco: "Marokko",
+  "south africa": "Südafrika",
+  "ivory coast": "Elfenbeinküste",
+  algeria: "Algerien",
+  egypt: "Ägypten",
+  "cape verde": "Kap Verde",
+  "dr congo": "DR Kongo",
+  tunisia: "Tunesien",
+  cameroon: "Kamerun",
+  "south korea": "Südkorea",
+  "saudi arabia": "Saudi-Arabien",
+  qatar: "Katar",
+  iraq: "Irak",
+  jordan: "Jordanien",
+  uzbekistan: "Usbekistan",
+  australia: "Australien",
+  "new zealand": "Neuseeland",
+  canada: "Kanada",
+  mexico: "Mexiko",
+  "united states": "USA",
+  usa: "USA",
+  "bosnia & herzegovina": "Bosnien-Herzegowina",
+};
+
+/** Deutscher Ländername (Fallback: englischer Name). */
+export function germanName(name: string): string {
+  return GERMAN_NAMES[name.toLowerCase()] ?? name;
+}
+
+/**
  * Baut die zwei Google-News-RSS-Such-URLs (DE + EN) für ein Team.
  *
- * Wichtig gegen Fehltreffer: der Teamname wird mit einer **verpflichtenden**
- * Fußball-Begriffsgruppe UND-verknüpft (Leerzeichen = AND bei Google), damit
- * z. B. „Tour de France" (enthält „France", aber keinen Fußballbegriff) nicht
- * mehr matcht. Mehrdeutige Begriffe wie „WM" (auch Rad-/Tennis-WM) werden
- * vermieden; zusätzlich schließen Negativ-Keywords andere Sportarten aus.
+ * - DE-Suche nutzt den **deutschen** Ländernamen (sonst kaum Treffer, s. o.).
+ * - Der Name wird mit einer **verpflichtenden** Fußball-Begriffsgruppe
+ *   UND-verknüpft (Leerzeichen = AND), damit z. B. „Tour de France" (enthält
+ *   „France", aber keinen Fußballbegriff) nicht matcht. Negativ-Keywords
+ *   schließen andere Sportarten + Frauenteams aus.
  */
 export function googleNewsFeeds(teamName: string): FeedSource[] {
-  const q = encodeURIComponent(`"${teamName}"`);
+  const qDe = encodeURIComponent(`"${germanName(teamName)}"`);
+  const qEn = encodeURIComponent(`"${teamName}"`);
   const deFootball = encodeURIComponent(
-    "(Fußball OR Fussball OR Nationalmannschaft OR Länderspiel OR Nationalelf)",
+    "(Fußball OR Fussball OR Nationalmannschaft OR Länderspiel OR Nationalelf OR WM-Kader)",
   );
   const deExclude = encodeURIComponent(
-    "-Radsport -Tour -Tennis -Formel -Basketball -Handball -Olympia -Eishockey",
+    "-Radsport -Tour -Tennis -Formel -Basketball -Handball -Olympia -Eishockey -Frauen",
   );
   const enFootball = encodeURIComponent(
     '(football OR soccer OR "national team")',
   );
   const enExclude = encodeURIComponent(
-    "-cycling -tennis -NFL -NBA -cricket -rugby -F1 -golf",
+    "-cycling -tennis -NFL -NBA -cricket -rugby -F1 -golf -women",
   );
   return [
     {
-      url: `https://news.google.com/rss/search?q=${q}+${deFootball}+${deExclude}&hl=de&gl=DE&ceid=DE:de`,
+      url: `https://news.google.com/rss/search?q=${qDe}+${deFootball}+${deExclude}&hl=de&gl=DE&ceid=DE:de`,
       label: "Google News",
       lang: "de",
     },
     {
-      url: `https://news.google.com/rss/search?q=${q}+${enFootball}+${enExclude}&hl=en-US&gl=US&ceid=US:en`,
+      url: `https://news.google.com/rss/search?q=${qEn}+${enFootball}+${enExclude}&hl=en-US&gl=US&ceid=US:en`,
       label: "Google News",
       lang: "en",
     },

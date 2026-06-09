@@ -13,6 +13,7 @@ import { classifyImpact } from "./impactTag.js";
 import {
   GLOBAL_FEEDS,
   googleNewsFeeds,
+  germanName,
   type NewsLang,
 } from "../sources/newsFeeds.js";
 import { fetchFeed, type RawNewsItem } from "../sources/rss.js";
@@ -87,9 +88,15 @@ export class NewsAggregator {
       perTeam.push(...items.map((it) => ({ ...it, lang: f.lang })));
     }
 
-    // 2) Globale Feeds: nur exakte (wortgenaue) Teamnamen-Treffer.
+    // 2) Globale Feeds: wortgenauer Treffer auf den englischen ODER deutschen
+    //    Teamnamen (deutsche Feeds schreiben „Deutschland" statt „Germany").
     const global = await this.loadGlobal();
-    const matchedGlobal = global.filter((it) => matchesTeam(it, team.name));
+    const deName = germanName(team.name);
+    const matchedGlobal = global.filter(
+      (it) =>
+        matchesTeam(it, team.name) ||
+        (deName !== team.name && matchesTeam(it, deName)),
+    );
 
     // 3) Zusammenführen, dedupen, deutsch-zuerst sortieren, kappen.
     const merged = [...perTeam, ...matchedGlobal];

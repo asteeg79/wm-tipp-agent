@@ -1,5 +1,19 @@
 import { describe, it, expect } from "vitest";
 import { compareNews } from "../src/features/news.js";
+import { germanName } from "../src/sources/newsFeeds.js";
+
+/** Deutsche Ländernamen für die DE-Suche (sonst kaum Treffer). */
+describe("germanName", () => {
+  it("übersetzt bekannte Länder ins Deutsche", () => {
+    expect(germanName("Germany")).toBe("Deutschland");
+    expect(germanName("France")).toBe("Frankreich");
+    expect(germanName("South Korea")).toBe("Südkorea");
+  });
+  it("fällt für unbekannte/identische Namen auf den Originalnamen zurück", () => {
+    expect(germanName("Ghana")).toBe("Ghana");
+    expect(germanName("Panama")).toBe("Panama");
+  });
+});
 
 /** Tests der News-Sortierung: deutschsprachig bevorzugt, dann Aktualität. */
 describe("compareNews", () => {
