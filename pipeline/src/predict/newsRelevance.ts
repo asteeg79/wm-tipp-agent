@@ -9,24 +9,33 @@
  *
  * Sparsamkeit:
  *  - **Genau ein API-Call pro Team** (alle Kandidaten gebündelt, nur Titel).
- *  - Günstiges Modell (config.models.newsFilter, z. B. gpt-4o-mini).
+ *  - Günstiges Modell (config.models.newsFilter, claude-haiku-4-5) mit
+ *    Structured Outputs → garantiert ein JSON-Index-Array, kein Text-Parsen.
  *  - Ergebnis wird per **Inhalts-Hash gecacht** → unveränderte Kandidaten
  *    lösen keinen erneuten Call aus.
  *  - Bei jedem Fehler: Eingabe unverändert zurück (lieber etwas Rauschen als
  *    fehlende News — News sind essenziell für die Bewertung).
  */
 import { createHash } from "node:crypto";
-import OpenAI from "openai";
+import Anthropic from "@anthropic-ai/sdk";
+import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
+import { z } from "zod/v4";
 import { config } from "../../config.js";
 import { cacheGet, cacheSet } from "../io/cache.js";
 import type { NewsRelevanceFilter } from "../features/news.js";
 
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 h
 
+/** Structured-Output-Schema: Indizes der relevanten Schlagzeilen. */
+const RelevanceAnswer = z.object({
+  relevant: z.array(z.number().int().min(0)),
+});
+
 /**
  * Parst die Modellantwort zu einer Menge gültiger Indizes (0-basiert, < n).
  * Akzeptiert ein JSON-Array (`[0,2,5]`) irgendwo in der Antwort; ignoriert
- * Out-of-Range-Werte. Pure Funktion (für Unit-Tests exportiert).
+ * Out-of-Range-Werte. Pure Funktion (für Unit-Tests exportiert) — dient bei
+ * Structured Outputs als zweite Validierungsstufe (Range/Duplikate).
  */
 export function parseRelevantIndices(text: string, n: number): number[] {
   const match = text.match(/\[[\s\S]*?\]/);
@@ -59,22 +68,21 @@ function buildPrompt(teamName: string, titles: string[]): string {
     `Form, Verletzungen, Sperren, Trainer, Taktik, Testspiele, WM-Vorbereitung).`,
     `NICHT relevant: andere Sportarten, andere Länder/Vereine, reine`,
     `Namensgleichheit (z. B. "Tour de France"), Frauen-/Jugendteams, Werbung.`,
-    `Antworte AUSSCHLIESSLICH mit einem JSON-Array der Indizes der relevanten`,
-    `Schlagzeilen, z. B. [0,3,4]. Im Zweifel weglassen.`,
+    `Gib die Indizes der relevanten Schlagzeilen zurück. Im Zweifel weglassen.`,
     ``,
     list,
   ].join("\n");
 }
 
 /**
- * Baut den Filter, wenn ein OpenAI-Key vorhanden ist; sonst `null`
+ * Baut den Filter, wenn ein Anthropic-Key vorhanden ist; sonst `null`
  * (Aufrufer nutzt dann nur die Heuristik).
  */
 export function makeNewsRelevanceFilter(
   apiKey: string | undefined,
 ): NewsRelevanceFilter | null {
   if (!apiKey) return null;
-  const client = new OpenAI({ apiKey });
+  const client = new Anthropic({ apiKey });
   const model = config.models.newsFilter;
 
   return async (teamName, items) => {
@@ -85,14 +93,15 @@ export function makeNewsRelevanceFilter(
     let keep = await cacheGet<number[]>(cacheKey, CACHE_TTL_MS);
     if (keep === null) {
       try {
-        const res = await client.chat.completions.create({
+        const res = await client.messages.parse({
           model,
-          temperature: 0,
-          max_tokens: 256,
+          max_tokens: 512,
           messages: [{ role: "user", content: buildPrompt(teamName, titles) }],
+          output_config: { format: zodOutputFormat(RelevanceAnswer) },
         });
-        const text = res.choices[0]?.message?.content ?? "";
-        keep = parseRelevantIndices(text, items.length);
+        const relevant = res.parsed_output?.relevant ?? [];
+        // Zweite Stufe: Range prüfen, Duplikate entfernen, sortieren.
+        keep = parseRelevantIndices(JSON.stringify(relevant), items.length);
         await cacheSet(cacheKey, keep);
       } catch (err) {
         console.warn(`[news-filter] ${teamName} übersprungen:`, err);

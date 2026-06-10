@@ -205,10 +205,10 @@ export async function buildData(
   // 6) Teams schreiben (inkl. Form + News).
   const newsAggregator = options.withNews ? new NewsAggregator() : null;
   // KI-Relevanzfilter (1 Call/Team, günstiges Modell, gecacht) — nur wenn ein
-  // OpenAI-Key vorhanden ist und nicht via WM_NO_NEWS_AI deaktiviert.
+  // Anthropic-Key vorhanden ist und nicht via WM_NO_NEWS_AI deaktiviert.
   const newsFilter =
     options.withNews && process.env.WM_NO_NEWS_AI !== "1"
-      ? makeNewsRelevanceFilter(process.env.OPENAI_API_KEY)
+      ? makeNewsRelevanceFilter(process.env.ANTHROPIC_API_KEY)
       : null;
   if (newsFilter) console.log("[pipeline] KI-News-Relevanzfilter aktiv");
   for (const team of limitedTeams) {

@@ -150,7 +150,9 @@ export const config: PipelineConfig = {
     // thinking:"disabled" — der Client nutzt adaptive thinking (models.ts).
     claude: "claude-fable-5",
     chatgpt: "gpt-4o",
-    newsFilter: "gpt-4o-mini",
+    // Haiku: günstigstes Claude-Modell — News-Pipeline hängt damit nur noch
+    // am ANTHROPIC_API_KEY (vorher gpt-4o-mini/OpenAI).
+    newsFilter: "claude-haiku-4-5",
   },
   ensemble: {
     confidenceWeighted: true,
