@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T16:37:57.269Z",
+    "generatedAt": "2026-06-10T19:36:40.847Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-10T19:36:40.847Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1166,
-      "draw": 0.1655,
-      "away": 0.7179
+      "home": 0.0955,
+      "draw": 0.15,
+      "away": 0.7545
     },
-    "confidence": 0.7499,
+    "confidence": 0.7724,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,54 +76,55 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.1,
-          "draw": 0.16,
-          "away": 0.74
+          "home": 0.09,
+          "draw": 0.15,
+          "away": 0.76
         },
-        "confidence": 0.68,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509) untermauert klare Favoritenrolle",
-          "Bessere weighted Form (1.638 vs. 1.292) und starke recentForm (2.1) der Schweiz",
-          "Schweiz defensiv stabiler: niedrigerer Gegentorschnitt (1.094) und höhere Clean-Sheet-Rate (0.37)",
-          "Qatar offensiv schwächer (1.459 Tore/Spiel) und anfällig in der Abwehr (1.802 Gegentore)"
+          "Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509)",
+          "Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und höherem gewichteten Formwert",
+          "Schweizer Defensive deutlich stabiler (1.09 Gegentore/Spiel, 37% Clean Sheets vs. 1.80 Gegentore bei Katar)",
+          "Katar mit sehr langer Spielpause (205 Tage), Schweiz mit deutlich aktuellerer Spielpraxis (71 Tage)",
+          "Neutraler Spielort, kein Heimvorteil für Katar; externe Prognose stützt eine noch klarere Schweiz-Favoritenrolle als die Baseline"
         ],
         "risks": [
-          "Qatar war 201 Tage ohne Pflichtspiel – Formstand schwer einschätzbar, Überraschungspotenzial in beide Richtungen",
-          "Neutraler Spielort nimmt der Schweiz keinen Heimvorteil, könnte aber Qatar pseudo-aufwerten",
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit bei Spielcharakteristik",
-          "Schweiz-News irrelevant (Eishockey), keine verwertbaren Ausfall-/Form-Infos"
+          "Keine Head-to-Head-Historie vorhanden, was die Einschätzung direkter Duelle erschwert",
+          "Katar erzielt im Schnitt 1.46 Tore pro Spiel und könnte trotz Außenseiterrolle treffen",
+          "Lange Spielpause Katars kann auch Frische bedeuten; Klimagewöhnung an Turnierbedingungen möglich",
+          "Turnierauftaktspiele bergen erhöhte Unvorhersehbarkeit (Nervosität, taktische Vorsicht)"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.13,
-          "draw": 0.17,
-          "away": 0.7
+          "home": 0.1,
+          "draw": 0.15,
+          "away": 0.75
         },
-        "confidence": 0.84,
+        "confidence": 0.85,
         "keyFactors": [
-          "Switzerland's higher Elo rating",
-          "Switzerland's stronger recent form",
-          "Qatar's lower offensive and defensive stats",
-          "Neutral venue limiting home advantage for Qatar"
+          "Schweiz hat einen deutlich höheren Elo-Wert als Katar.",
+          "Katar hatte eine längere Spielpause von 205 Tagen im Vergleich zu 71 Tagen bei der Schweiz.",
+          "Schweiz hat in den letzten 2 Jahren eine stärkere Form mit einem höheren Weighted Form Score von 1.638 im Vergleich zu 1.292 von Katar.",
+          "Schweiz hat bessere Durchschnittswerte bei erzielten Toren von 2.021 im Vergleich zu 1.459 bei Katar."
         ],
         "risks": [
-          "No direct head-to-head history",
-          "Switzerland has slightly stronger form but any disruption from cross-sport focus is unclear"
+          "Neutraler Spielort ohne Einfluss eines Gastgebervorteils.",
+          "Katar könnte unerwartete taktische Anpassungen vornehmen, da es keine direkten Kopf-an-Kopf-Spiele gibt."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509) untermauert klare Favoritenrolle; Bessere weighted Form (1.638 vs. 1.292) und starke recentForm (2.1) der Schweiz; Schweiz defensiv stabiler: niedrigerer Gegentorschnitt (1.094) und höhere Clean-Sheet-Rate (0.37).",
-    "inputHash": "sha256:e38848504abfa28716255cadf32a68b338fcffb794ae0d0be29e6d1e9e7f8a08"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509); Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und höherem gewichteten Formwert; Schweizer Defensive deutlich stabiler (1.09 Gegentore/Spiel, 37% Clean Sheets vs. 1.80 Gegentore bei Katar).",
+    "inputHash": "sha256:b1c935bded94f7cfd48b017c363212c632c4478c91e05258ca230f6444d21966"
   },
   "predictionHistory": [
     {
@@ -268,21 +269,34 @@
         "away": 0.719
       },
       "confidence": 0.7055
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1166,
+        "draw": 0.1655,
+        "away": 0.7179
+      },
+      "confidence": 0.7499
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T16:37:59.710Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-10T19:39:12.268Z",
+    "bookmakerCount": 22,
     "probabilities": {
-      "home": 0.0701,
-      "draw": 0.1418,
-      "away": 0.7881
+      "home": 0.0696,
+      "draw": 0.14,
+      "away": 0.7904
     },
     "decimal": {
-      "home": 13.6,
-      "draw": 6.73,
-      "away": 1.21
+      "home": 13.63,
+      "draw": 6.78,
+      "away": 1.2
     }
   }
 }

@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T16:37:57.269Z",
+    "generatedAt": "2026-06-10T19:36:40.847Z",
     "home": {
       "teamId": "KOR",
       "elo": 1702,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-10T16:37:57.269Z",
+    "generatedAt": "2026-06-10T19:36:40.847Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3538,
-      "draw": 0.3088,
-      "away": 0.3375
+      "home": 0.3536,
+      "draw": 0.3092,
+      "away": 0.3372
     },
-    "confidence": 0.5544,
+    "confidence": 0.5791,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -87,18 +87,17 @@
         },
         "confidence": 0.42,
         "keyFactors": [
-          "Elo-Vorteil für Südkorea (1702 vs. 1646) spricht gegen die starke Auswärts-Tendenz der Baseline",
-          "Südkoreas bessere jüngste Form (recentForm 1.9 vs. 1.6) stützt eine Korrektur Richtung Heimteam",
-          "Externe Prognose sieht Südkorea leicht vorn (0.364 vs. 0.330), was die Baseline-Anpassung bestätigt",
-          "Tschechiens hoher Toreschnitt (1.957) und bessere Defensivwerte (1.189 Gegentore) halten die Partie eng",
-          "Min-jae Kim im südkoreanischen Kader stabilisiert die Abwehr",
-          "Kein Head-to-Head vorhanden, neutraler Spielort ohne klaren Heimvorteil"
+          "Elo-Vorteil für Südkorea (1702 vs. 1646), der in der Baseline nicht ausreichend abgebildet scheint – die Baseline-Auswärtswahrscheinlichkeit von 0.42 wirkt gegenüber Elo und externer Prognose zu hoch",
+          "Externe Prognose sieht Südkorea leicht vorn (0.358 vs. 0.333), was eine Korrektur Richtung ausgeglichener Partie stützt",
+          "Tschechien mit stärkerer Offensive (1.96 Tore/Spiel) und besserer Defensive (1.19 Gegentore) im 2-Jahres-Schnitt, dafür Südkorea mit besserer jüngster Form (1.9 vs. 1.6)",
+          "Neutraler Spielort ohne Heimvorteil und keine H2H-Historie – Elo und Form sind die verlässlichsten Indikatoren",
+          "Beide Teams mit identischer Pause (71 Tage), kein Rhythmusvorteil"
         ],
         "risks": [
-          "Beide Teams hatten 71 Tage Pause – Rhythmusverlust und unklare Turnierform",
-          "Höhenlage von 1566 m kann beide Teams unterschiedlich beeinflussen",
-          "Tschechiens offensive Effizienz (fast 2 Tore/Spiel) könnte Südkoreas anfällige Defensive (1.348 Gegentore/Spiel) bestrafen",
-          "Baseline und externe Prognose widersprechen sich deutlich, was die Unsicherheit erhöht"
+          "Höhenlage von 1566 m kann beide Teams unvorbereitet treffen, Auswirkung schwer quantifizierbar",
+          "Keine Head-to-Head-Daten vorhanden, taktische Matchup-Effekte unbekannt",
+          "Lange Spielpause (71 Tage) macht aktuelle Formwerte weniger aussagekräftig",
+          "Tschechiens hoher Offensiv-Output (knapp 2 Tore/Spiel) könnte gegen Südkoreas eher durchschnittliche Defensive (1.35 Gegentore/Spiel) durchschlagen"
         ]
       },
       "chatgpt": {
@@ -111,21 +110,21 @@
           "draw": 0.32,
           "away": 0.33
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "South Korea has a slightly higher Elo rating and better recent form compared to Czech Republic.",
-          "Czech Republic scores more on average but also concedes less than South Korea.",
-          "Neutral venue at high altitude, which can reduce both teams' scoring potential.",
-          "No direct head-to-head history to suggest a psychological advantage."
+          "South Korea has a higher Elo rating and better recent form.",
+          "Czech Republic has slightly better offensive statistics.",
+          "Neutral venue at high altitude, which may affect both teams equally.",
+          "No head-to-head history between the two teams."
         ],
         "risks": [
-          "Both teams are playing their first World Cup 2026 match, which may present unexpected dynamics.",
-          "High altitude might affect team performance unpredictably."
+          "Both teams have announced full strength squads, leading to variability in performance.",
+          "Unpredictable impact of high altitude on player performance."
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil für Südkorea (1702 vs. 1646) spricht gegen die starke Auswärts-Tendenz der Baseline; Südkoreas bessere jüngste Form (recentForm 1.9 vs. 1.6) stützt eine Korrektur Richtung Heimteam; Externe Prognose sieht Südkorea leicht vorn (0.364 vs. 0.330), was die Baseline-Anpassung bestätigt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil für Südkorea (1702 vs. 1646), der in der Baseline nicht ausreichend abgebildet scheint – die Baseline-Auswärtswahrscheinlichkeit von 0.42 wirkt gegenüber Elo und externer Prognose zu hoch; Externe Prognose sieht Südkorea leicht vorn (0.358 vs. 0.333), was eine Korrektur Richtung ausgeglichener Partie stützt; Tschechien mit stärkerer Offensive (1.96 Tore/Spiel) und besserer Defensive (1.19 Gegentore) im 2-Jahres-Schnitt, dafür Südkorea mit besserer jüngster Form (1.9 vs. 1.6).",
     "inputHash": "sha256:b90299e1f088d41a2f05b043f44d3d85b8094a91ae1fbd381353d18ac916233b"
   },
   "predictionHistory": [
@@ -362,21 +361,34 @@
         "away": 0.345
       },
       "confidence": 0.5507
+    },
+    {
+      "generatedAt": "2026-06-10T16:37:57.269Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3538,
+        "draw": 0.3088,
+        "away": 0.3375
+      },
+      "confidence": 0.5544
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T16:37:59.710Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-10T19:39:12.268Z",
+    "bookmakerCount": 22,
     "probabilities": {
-      "home": 0.3644,
-      "draw": 0.3052,
-      "away": 0.3304
+      "home": 0.3582,
+      "draw": 0.3085,
+      "away": 0.3333
     },
     "decimal": {
-      "home": 2.63,
-      "draw": 3.14,
-      "away": 2.9
+      "home": 2.67,
+      "draw": 3.1,
+      "away": 2.87
     }
   }
 }
