@@ -15,6 +15,7 @@ import type {
 } from "@wm/shared";
 import { config } from "../../config.js";
 import { normalizeProbs, type LlmPrediction } from "./schema.js";
+import type { EnsembleWeights } from "./ensembleWeights.js";
 
 export interface ModelResult {
   id: "claude" | "chatgpt";
@@ -57,12 +58,17 @@ function round4(x: number): number {
 /**
  * Führt die Modellergebnisse zusammen. Mit beiden Modellen: Ensemble.
  * Mit nur einem Modell: dessen Ergebnis. Mit keinem: Baseline-Fallback.
+ *
+ * @param accWeights optionale Accuracy-Gewichte (computeModelWeights): das
+ *        bisher treffsicherere Modell bekommt mehr Einfluss auf
+ *        Wahrscheinlichkeiten und Score-Wahl.
  */
 export function reconcile(
   results: ModelResult[],
   baseline: Baseline,
   now: Date,
   inputHash: string,
+  accWeights?: EnsembleWeights | null,
 ): Prediction {
   const models: { claude?: ModelPrediction; chatgpt?: ModelPrediction } = {};
   for (const r of results) models[r.id] = toModelPrediction(r.prediction);
@@ -82,11 +88,15 @@ export function reconcile(
   }
 
   const weighted = config.ensemble.confidenceWeighted;
+  // Accuracy-Gewichtung nur anwenden, wenn wirklich BEIDE Modelle antworten —
+  // bei nur einem Modell würde sie dessen Tipp grundlos skalieren.
+  const useAcc = !!accWeights && results.length === 2;
   let wSum = 0;
   const acc = { home: 0, draw: 0, away: 0 };
   for (const r of results) {
     const p = normalizeProbs(r.prediction.probabilities);
-    const w = weighted ? Math.max(0.01, r.prediction.confidence) : 1;
+    let w = weighted ? Math.max(0.01, r.prediction.confidence) : 1;
+    if (useAcc) w *= accWeights!.weights[r.id];
     acc.home += w * p.home;
     acc.draw += w * p.draw;
     acc.away += w * p.away;
@@ -100,7 +110,12 @@ export function reconcile(
 
   // Finaler Score (siehe deriveScore): Modell-Konsens vor knappem Top-Ausgang,
   // Magnitude aus der xG-Baseline statt hartkodiert.
-  const predictedScore = deriveScore(results, probabilities, baseline);
+  const predictedScore = deriveScore(
+    results,
+    probabilities,
+    baseline,
+    useAcc ? accWeights : null,
+  );
 
   // agreement nur sinnvoll bei zwei Modellen.
   const agreement =
@@ -118,7 +133,7 @@ export function reconcile(
     Math.max(0, Math.min(1, meanConf * (0.5 + 0.5 * agreement))),
   );
 
-  return {
+  const prediction: Prediction = {
     generatedAt: now.toISOString(),
     predictedScore,
     probabilities,
@@ -126,9 +141,11 @@ export function reconcile(
     baseline,
     models,
     agreement: round4(agreement),
-    rationale: buildRationale(results, agreement),
+    rationale: buildRationale(results, agreement, useAcc ? accWeights : null),
     inputHash,
   };
+  if (useAcc) prediction.ensembleWeights = accWeights!.weights;
+  return prediction;
 }
 
 type Outcome = "home" | "draw" | "away";
@@ -155,13 +172,14 @@ function outcomeOf(s: ScoreLine): Outcome {
  *     Top-Ausgang ODER ist das Rennen knapp (margin < 0.10) → Konsens nehmen.
  *     (Verhindert, dass ein hauchdünner Wahrscheinlichkeits-Vorsprung den
  *      einhelligen Modell-Tipp kippt — der frühere 2:1-Bug.)
- *  2) Sonst: Score des konfidenzstärkeren Modells, konsistent zum Top-Ausgang
- *     gemacht (Magnitude aus der xG-Baseline).
+ *  2) Sonst: Score des stärksten Modells (Konfidenz × Accuracy-Gewicht),
+ *     konsistent zum Top-Ausgang gemacht (Magnitude aus der xG-Baseline).
  */
 function deriveScore(
   results: ModelResult[],
   p: Outcome1x2,
   baseline: Baseline,
+  accWeights: EnsembleWeights | null,
 ): ScoreLine {
   const { key: topKey, margin } = topOutcome(p);
 
@@ -178,9 +196,9 @@ function deriveScore(
     return consensus;
   }
 
-  const top = results
-    .slice()
-    .sort((a, b) => b.prediction.confidence - a.prediction.confidence)[0]!;
+  const strength = (r: ModelResult): number =>
+    r.prediction.confidence * (accWeights?.weights[r.id] ?? 1);
+  const top = results.slice().sort((a, b) => strength(b) - strength(a))[0]!;
   return makeConsistent(top.prediction.predictedScore, p, baseline);
 }
 
@@ -229,7 +247,11 @@ function confidenceFromProbs(p: Outcome1x2): number {
 }
 
 /** Regelbasierte Prosa-Synthese aus den keyFactors beider Modelle. */
-function buildRationale(results: ModelResult[], agreement: number): string {
+function buildRationale(
+  results: ModelResult[],
+  agreement: number,
+  accWeights: EnsembleWeights | null,
+): string {
   const factors = new Set<string>();
   for (const r of results)
     for (const f of r.prediction.keyFactors) factors.add(f);
@@ -240,8 +262,14 @@ function buildRationale(results: ModelResult[], agreement: number): string {
         ? "Beide Modelle sind sich weitgehend einig."
         : "Die Modelle sind uneinig — Konfidenz entsprechend gedämpft."
       : "Einschätzung auf Basis eines Modells.";
+  // Nur erwähnen, wenn die Gewichtung spürbar von 50/50 abweicht.
+  const w = accWeights?.weights;
+  const weighting =
+    w && Math.abs(w.claude - w.chatgpt) >= 0.1
+      ? ` Gewichtung nach bisheriger Treffsicherheit: Claude ${Math.round(w.claude * 100)} %, ChatGPT ${Math.round(w.chatgpt * 100)} %.`
+      : "";
   const why = topFactors.length
     ? ` Ausschlaggebend: ${topFactors.join("; ")}.`
     : "";
-  return `${accord}${why}`;
+  return `${accord}${weighting}${why}`;
 }

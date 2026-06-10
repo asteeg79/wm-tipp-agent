@@ -44,6 +44,10 @@ import {
   recencyWeight as recencyWeightFor,
 } from "./features/form.js";
 import { makeEnsemble, type Ensemble } from "./predict/index.js";
+import {
+  computeModelWeights,
+  type FinishedWithModels,
+} from "./predict/ensembleWeights.js";
 import { decideRetrigger } from "./predict/retrigger.js";
 import {
   loadExternalPriors,
@@ -323,6 +327,29 @@ interface WriteMatchesResult {
 }
 
 /**
+ * Sammelt aus den BEENDETEN Partien die gespeicherten Einzelmodell-Tipps
+ * (prediction.models) samt Ist-Ergebnis und berechnet daraus die
+ * Accuracy-Gewichte. Liest nur Match-Dateien beendeter Partien.
+ */
+async function collectModelWeights(
+  schedule: NormalizedFixture[],
+): Promise<ReturnType<typeof computeModelWeights>> {
+  const finished: FinishedWithModels[] = [];
+  for (const fx of schedule) {
+    if (!fx.finished || fx.goalsHome === null || fx.goalsAway === null) {
+      continue;
+    }
+    const prev = await readJsonOptional<Match>(matchPath(fx.matchId), Match);
+    if (!prev?.prediction?.models) continue;
+    finished.push({
+      actualResult: { home: fx.goalsHome, away: fx.goalsAway },
+      models: prev.prediction.models,
+    });
+  }
+  return computeModelWeights(finished, config.ensemble.accuracyMinSample);
+}
+
+/**
  * Schreibt die Match-Dokumente. Für anstehende Partien mit bekannter Historie:
  * Feature-Bundle + Baseline (Phase 4); falls KI-Ensemble aktiv und Re-Trigger
  * greift, wird der KI-Tipp berechnet (alter Tipp → predictionHistory).
@@ -339,6 +366,22 @@ async function writeMatches(
   let aiSkipped = 0;
   const matches: Match[] = [];
   const MS_PER_HOUR = 3_600_000;
+
+  // Accuracy-Gewichte (Verbesserung 6): aus den bereits beendeten Partien
+  // den mittleren RPS je Modell bestimmen — das treffsicherere Modell bekommt
+  // bei allen KI-Tipps dieses Laufs mehr Gewicht. Neutral (null), solange die
+  // Stichprobe zu klein ist oder die Gewichtung deaktiviert wurde.
+  const modelWeights =
+    ensemble && config.ensemble.accuracyWeighted
+      ? await collectModelWeights(schedule)
+      : null;
+  if (modelWeights) {
+    const { weights, rpsMean, samples } = modelWeights;
+    console.log(
+      `[predict] Accuracy-Gewichte: Claude ${weights.claude} (RPS ${rpsMean.claude}, n=${samples.claude}) · ` +
+        `ChatGPT ${weights.chatgpt} (RPS ${rpsMean.chatgpt}, n=${samples.chatgpt})`,
+    );
+  }
 
   for (const fx of schedule) {
     const stage: Stage = fx.stage ?? "group";
@@ -449,6 +492,7 @@ async function writeMatches(
               awayNews,
               inputHash,
               now,
+              modelWeights,
               ...(prior ? { marketProbabilities: prior } : {}),
             });
             // Alten KI-Tipp in die Historie schieben.

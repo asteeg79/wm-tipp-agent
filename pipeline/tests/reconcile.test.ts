@@ -101,6 +101,53 @@ describe("reconcile", () => {
     expect(r.models).toBeUndefined();
   });
 
+  it("Accuracy-Gewichte ziehen die Mischung zum treffsichereren Modell", () => {
+    const claudeStark = {
+      weights: { claude: 0.75, chatgpt: 0.25 },
+      rpsMean: { claude: 0.05, chatgpt: 0.3 },
+      samples: { claude: 10, chatgpt: 10 },
+    };
+    // Gleiche Konfidenz, gegensätzliche Tipps → ohne Gewichte symmetrisch.
+    const results = [
+      model("claude", 2, 0, 0.7, 0.2, 0.1, 0.6),
+      model("chatgpt", 0, 2, 0.1, 0.2, 0.7, 0.6),
+    ];
+    const neutral = reconcile(results, baseline, new Date(), "h");
+    const gewichtet = reconcile(
+      results,
+      baseline,
+      new Date(),
+      "h",
+      claudeStark,
+    );
+    expect(neutral.probabilities.home).toBeCloseTo(
+      neutral.probabilities.away,
+      4,
+    );
+    // Claude (home-lastig) dominiert die gewichtete Mischung.
+    expect(gewichtet.probabilities.home).toBeGreaterThan(
+      gewichtet.probabilities.away,
+    );
+    expect(gewichtet.ensembleWeights).toEqual({ claude: 0.75, chatgpt: 0.25 });
+    expect(gewichtet.rationale).toContain("Treffsicherheit");
+    expect(neutral.ensembleWeights).toBeUndefined();
+  });
+
+  it("Accuracy-Gewichte greifen NICHT bei nur einem Modell", () => {
+    const r = reconcile(
+      [model("claude", 2, 0, 0.7, 0.2, 0.1, 0.6)],
+      baseline,
+      new Date(),
+      "h",
+      {
+        weights: { claude: 0.75, chatgpt: 0.25 },
+        rpsMean: { claude: 0.05, chatgpt: 0.3 },
+        samples: { claude: 10, chatgpt: 10 },
+      },
+    );
+    expect(r.ensembleWeights).toBeUndefined();
+  });
+
   it("agreement sinkt bei Uneinigkeit und dämpft die Konfidenz", () => {
     const einig = reconcile(
       [

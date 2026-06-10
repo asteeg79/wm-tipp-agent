@@ -7,6 +7,7 @@ import type { Baseline, FeatureBundle, NewsItem, Prediction } from "@wm/shared";
 import { buildUserMessage } from "./prompt.js";
 import { ChatGptClient, ClaudeClient, type ModelClient } from "./models.js";
 import { reconcile, type ModelResult } from "./reconcile.js";
+import type { EnsembleWeights } from "./ensembleWeights.js";
 
 export interface Ensemble {
   /** Mindestens ein Modell verfügbar? */
@@ -25,6 +26,8 @@ export interface EvaluateInput {
   inputHash: string;
   now: Date;
   marketProbabilities?: { home: number; draw: number; away: number };
+  /** Accuracy-Gewichte aus beendeten Partien (computeModelWeights). */
+  modelWeights?: EnsembleWeights | null;
 }
 
 class EnsembleImpl implements Ensemble {
@@ -68,7 +71,13 @@ class EnsembleImpl implements Ensemble {
       else console.warn("[predict] Modell-Fehler:", s.reason);
     }
 
-    return reconcile(results, input.baseline, input.now, input.inputHash);
+    return reconcile(
+      results,
+      input.baseline,
+      input.now,
+      input.inputHash,
+      input.modelWeights,
+    );
   }
 }
 

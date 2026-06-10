@@ -58,6 +58,13 @@ export const Prediction = z.object({
   models: Models.optional(),
   /** Übereinstimmung der Modelle 0..1. */
   agreement: Probability.optional(),
+  /**
+   * Ensemble-Gewichte nach gemessener Treffsicherheit (mittlerer RPS über
+   * beendete Partien; Summe 1). Nur gesetzt, wenn die Gewichtung aktiv war.
+   */
+  ensembleWeights: z
+    .object({ claude: Probability, chatgpt: Probability })
+    .optional(),
   rationale: z.string().optional(),
   /** Hash des Feature-Bundles für Re-Trigger-Logik. */
   inputHash: z.string().optional(),

@@ -74,6 +74,10 @@ export interface PipelineConfig {
   ensemble: {
     /** Mittelwert konfidenz-gewichten? */
     confidenceWeighted: boolean;
+    /** Modelle nach gemessener Treffsicherheit (RPS) gewichten? */
+    accuracyWeighted: boolean;
+    /** Mindestanzahl bewerteter Partien PRO Modell, bevor gewichtet wird. */
+    accuracyMinSample: number;
   };
   /** openfootball-Provider (gemeinfrei, kein Key). */
   openFootball: {
@@ -150,6 +154,10 @@ export const config: PipelineConfig = {
   },
   ensemble: {
     confidenceWeighted: true,
+    accuracyWeighted: true,
+    // Ab 5 bewerteten Partien je Modell ist der RPS-Mittelwert belastbar
+    // genug; vorher bleibt die Mittelung neutral (50/50).
+    accuracyMinSample: 5,
   },
   openFootball: {
     worldCupBaseUrl:
