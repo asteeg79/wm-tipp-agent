@@ -103,8 +103,9 @@ export class ClaudeClient implements ModelClient {
   }
 
   /** Extrahiert die LlmPrediction aus einer (Batch-)Message-Antwort. */
-  private parseMessage(message: { content: Anthropic.ContentBlock[] }):
-    LlmPrediction {
+  private parseMessage(message: {
+    content: Anthropic.ContentBlock[];
+  }): LlmPrediction {
     const block = message.content.find((b) => b.type === "text");
     if (!block || block.type !== "text") {
       throw new Error("Claude-Antwort ohne Text-Block");
@@ -203,7 +204,10 @@ export class ClaudeClient implements ModelClient {
       }
       return out;
     } catch (err) {
-      console.warn("[predict] Claude-Batch fehlgeschlagen → Direkt-Calls:", err);
+      console.warn(
+        "[predict] Claude-Batch fehlgeschlagen → Direkt-Calls:",
+        err,
+      );
       return this.predictManyDirect(userMessages);
     }
   }

@@ -545,7 +545,9 @@ async function writeMatches(
 
   // Gesammelte fällige Partien gebündelt bewerten (Claude: Batches-API).
   if (pendingAi.length > 0 && ensemble) {
-    console.log(`[predict] ${pendingAi.length} Partien fällig — Bewertung startet`);
+    console.log(
+      `[predict] ${pendingAi.length} Partien fällig — Bewertung startet`,
+    );
     let predictions: Prediction[] | null = null;
     try {
       predictions = await ensemble.evaluateMany(pendingAi.map((p) => p.input));

@@ -1,8 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  makeEnsembleFrom,
-  type EvaluateInput,
-} from "../src/predict/index.js";
+import { makeEnsembleFrom, type EvaluateInput } from "../src/predict/index.js";
 import type { ModelClient } from "../src/predict/models.js";
 import type { LlmPrediction } from "../src/predict/schema.js";
 import type { Baseline } from "@wm/shared";

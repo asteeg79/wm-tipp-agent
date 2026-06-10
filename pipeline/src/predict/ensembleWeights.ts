@@ -77,7 +77,10 @@ export function computeModelWeights(
 
   return {
     weights: { claude: round4(wClaude), chatgpt: round4(1 - wClaude) },
-    rpsMean: { claude: round4(rpsMean.claude), chatgpt: round4(rpsMean.chatgpt) },
+    rpsMean: {
+      claude: round4(rpsMean.claude),
+      chatgpt: round4(rpsMean.chatgpt),
+    },
     samples: { claude: sums.claude.n, chatgpt: sums.chatgpt.n },
   };
 }

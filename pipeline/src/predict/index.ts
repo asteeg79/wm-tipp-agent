@@ -138,7 +138,10 @@ class EnsembleImpl implements Ensemble {
       this.clients.forEach((c, ci) => {
         const r = byClient[ci]![i]!;
         if (r instanceof Error) {
-          console.warn(`[predict] ${c.id} (${input.homeName}–${input.awayName}):`, r.message);
+          console.warn(
+            `[predict] ${c.id} (${input.homeName}–${input.awayName}):`,
+            r.message,
+          );
         } else {
           results.push({ id: c.id, prediction: r });
         }
