@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T10:04:14.587Z",
+    "generatedAt": "2026-06-10T12:24:49.273Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-10T08:51:57.457Z",
+    "generatedAt": "2026-06-10T12:24:49.273Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6089,
-      "draw": 0.2411,
-      "away": 0.15
+      "home": 0.5981,
+      "draw": 0.23,
+      "away": 0.1719
     },
-    "confidence": 0.6705,
+    "confidence": 0.6759,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -78,52 +78,53 @@
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
           "home": 0.62,
           "draw": 0.23,
           "away": 0.15
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Mexiko spielt als Gastgeber faktisch ein Heimspiel (hostAdvantageTeamId MEX), trotz formal neutralem Venue",
-          "Höhenlage von 2240 m (Mexiko-Stadt) ist für Mexiko gewohntes Terrain und benachteiligt Südafrika",
-          "Elo-Vorteil von rund 100 Punkten (1729 vs. 1627) sowie bessere gewichtete Form (1.754 vs. 1.59)",
-          "Mexiko mit deutlich besserer Defensive: 0.797 Gegentore/Spiel und 58.8% Zu-null-Quote",
-          "Externe Prognose (67.8% Heimsieg) stützt eine Anhebung der Baseline zugunsten Mexikos"
+          "Mexiko ist Gastgeber; das Spiel findet faktisch mit Heimvorteil statt (hostAdvantageTeamId: MEX), trotz formal neutralem Venue",
+          "Höhenlage von 2240 m (Mexiko-Stadt) begünstigt das höhengewohnte mexikanische Team deutlich gegenüber Südafrika",
+          "Elo-Vorsprung von ca. 100 Punkten (1729 vs. 1627) zugunsten Mexikos",
+          "Bessere gewichtete Form Mexikos (1.754 vs. 1.59) und deutlich höhere Zu-null-Quote (0.588 vs. 0.484)",
+          "Externe Prognose (0.678 Heimsieg) stützt eine Korrektur der Baseline nach oben für Mexiko",
+          "Mexikos solide Defensive (0.797 Gegentore/Spiel) gegen Südafrikas anfälligere Abwehr (1.009 Gegentore/Spiel)"
         ],
         "risks": [
-          "Kein Head-to-Head-Datenmaterial vorhanden, daher erhöhte Unsicherheit über die direkte Matchup-Dynamik",
-          "Südafrika zeigt solide Offensivwerte (1.556 Tore/Spiel) und gute jüngste Form (1.5), kann also treffen",
-          "Beide Teams 71 Tage ohne Pflichtspiel — Rhythmus- und Abstimmungsprobleme zum Turnierstart möglich",
-          "Eröffnungsspiel-Druck als Gastgeber kann Mexiko hemmen (historisch oft enge Auftaktspiele)"
+          "Keine Head-to-Head-Historie vorhanden, daher höhere Unsicherheit über die direkte Matchup-Dynamik",
+          "Südafrikas jüngste Form (recentForm 1.5) ist leicht besser als die Mexikos (1.4) und der Angriff trifft im Schnitt häufiger (1.556 Tore/Spiel)",
+          "71 Tage ohne Pflichtspiel bei beiden Teams – Eingespieltheit und Rhythmus zum Turnierstart ungewiss",
+          "Erwartungsdruck auf den Gastgeber im Eröffnungsumfeld kann zu nervösem Auftreten führen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "probabilities": {
-          "home": 0.6,
-          "draw": 0.25,
-          "away": 0.15
+          "home": 0.58,
+          "draw": 0.23,
+          "away": 0.19
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Mexico hat einen Vorteil durch die Höhe des Spielorts, mit der die Spieler aufgrund der Heimatsituation vertrauter sind.",
-          "Die jüngsten Leistungen Mexikos deuten auf eine leicht bessere Form hin.",
-          "Kein historischer Head-to-Head-Vergleich verfügbar, aber Mexicos höheres Elo-Rating spricht für sie."
+          "Mexico has higher Elo rating and historical strong performances.",
+          "Mexico has host advantage as match is held at a high altitude neutral venue.",
+          "South Africa has slightly higher recent form score, but Mexico's weighted form is superior."
         ],
         "risks": [
-          "Südafrika hat eine höhere jüngste Torquote, die defensiv kompakt stehende Mannschaften herausfordern könnte.",
-          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil minimiert."
+          "South Africa shows higher goals for average.",
+          "Recent form of both teams is comparable."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko spielt als Gastgeber faktisch ein Heimspiel (hostAdvantageTeamId MEX), trotz formal neutralem Venue; Höhenlage von 2240 m (Mexiko-Stadt) ist für Mexiko gewohntes Terrain und benachteiligt Südafrika; Elo-Vorteil von rund 100 Punkten (1729 vs. 1627) sowie bessere gewichtete Form (1.754 vs. 1.59).",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko ist Gastgeber; das Spiel findet faktisch mit Heimvorteil statt (hostAdvantageTeamId: MEX), trotz formal neutralem Venue; Höhenlage von 2240 m (Mexiko-Stadt) begünstigt das höhengewohnte mexikanische Team deutlich gegenüber Südafrika; Elo-Vorsprung von ca. 100 Punkten (1729 vs. 1627) zugunsten Mexikos.",
     "inputHash": "sha256:83b73d5dac227a314c5d319f517199385ad8a70a7b9143b26680d83c5b5cc5af"
   },
   "predictionHistory": [
@@ -412,11 +413,24 @@
         "away": 0.1543
       },
       "confidence": 0.6953
+    },
+    {
+      "generatedAt": "2026-06-10T08:51:57.457Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6089,
+        "draw": 0.2411,
+        "away": 0.15
+      },
+      "confidence": 0.6705
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T10:05:49.125Z",
+    "updatedAt": "2026-06-10T12:26:27.992Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6782,
