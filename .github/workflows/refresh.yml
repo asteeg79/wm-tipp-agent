@@ -64,3 +64,11 @@ jobs:
         run: |
           echo "::error::Pipeline (${{ inputs.mode }}) endete mit Fehler — letzter gültiger /data-Stand bleibt erhalten."
           exit 1
+
+  # Bei Fehlschlag: GitHub-Issue-Alarm (Label "pipeline-failure", s. _alert.yml).
+  alert:
+    needs: run
+    if: failure()
+    permissions:
+      issues: write
+    uses: ./.github/workflows/_alert.yml
