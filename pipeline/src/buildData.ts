@@ -12,6 +12,7 @@ import {
   type AccuracyEntry,
   type NewsItem,
   type PotentialOpponent,
+  type Prediction,
   type PredictionIndexEntry,
   type ScoreLine,
   type Stage,
@@ -43,7 +44,11 @@ import {
   computeForm,
   recencyWeight as recencyWeightFor,
 } from "./features/form.js";
-import { makeEnsemble, type Ensemble } from "./predict/index.js";
+import {
+  makeEnsemble,
+  type Ensemble,
+  type EvaluateInput,
+} from "./predict/index.js";
 import {
   computeModelWeights,
   type FinishedWithModels,
@@ -367,6 +372,18 @@ async function writeMatches(
   const matches: Match[] = [];
   const MS_PER_HOUR = 3_600_000;
 
+  // Fällige KI-Bewertungen: in der Schleife nur SAMMELN, nach der Schleife
+  // gebündelt bewerten (Claude via Batches-API → 50 % günstiger) und erst
+  // dann die Match-Dateien schreiben.
+  interface PendingAi {
+    match: Match;
+    matchId: string;
+    prev: Match | null;
+    baselinePrediction: Prediction;
+    input: EvaluateInput;
+  }
+  const pendingAi: PendingAi[] = [];
+
   // Accuracy-Gewichte (Verbesserung 6): aus den bereits beendeten Partien
   // den mittleren RPS je Modell bestimmen — das treffsicherere Modell bekommt
   // bei allen KI-Tipps dieses Laufs mehr Gewicht. Neutral (null), solange die
@@ -477,13 +494,20 @@ async function writeMatches(
           now,
         );
         if (decision.shouldEvaluate) {
-          try {
-            // Markt-Anker für die KI: echte Buchmacher-Quoten bevorzugt,
-            // sonst der optionale externe Prior.
-            const prior =
-              match.market?.probabilities ??
-              ctx.externalPriors?.byMatch.get(fx.matchId);
-            const aiPred = await ensemble.evaluate({
+          // Markt-Anker für die KI: echte Buchmacher-Quoten bevorzugt,
+          // sonst der optionale externe Prior.
+          const prior =
+            match.market?.probabilities ??
+            ctx.externalPriors?.byMatch.get(fx.matchId);
+          // NICHT sofort bewerten: fällige Partien werden gesammelt und nach
+          // der Schleife gebündelt bewertet (Claude via Batches-API → 50 %
+          // günstiger). Datei-Write + Zähler folgen ebenfalls erst dann.
+          pendingAi.push({
+            match,
+            matchId: fx.matchId,
+            prev,
+            baselinePrediction,
+            input: {
               homeName: nameById.get(fx.homeTeamId) ?? fx.homeTeamId,
               awayName: nameById.get(fx.awayTeamId) ?? fx.awayTeamId,
               featureBundle,
@@ -494,26 +518,9 @@ async function writeMatches(
               now,
               modelWeights,
               ...(prior ? { marketProbabilities: prior } : {}),
-            });
-            // Alten KI-Tipp in die Historie schieben.
-            if (prev?.prediction?.models) {
-              match.predictionHistory = [
-                ...match.predictionHistory,
-                {
-                  generatedAt: prev.prediction.generatedAt,
-                  predictedScore: prev.prediction.predictedScore,
-                  probabilities: prev.prediction.probabilities,
-                  confidence: prev.prediction.confidence,
-                },
-              ];
-            }
-            match.prediction = aiPred;
-            aiEvaluated++;
-          } catch (err) {
-            console.warn(`[predict] ${fx.matchId} KI fehlgeschlagen:`, err);
-            match.prediction = prev?.prediction ?? baselinePrediction;
-            aiSkipped++;
-          }
+            },
+          });
+          continue;
         } else {
           // Unverändert → vorhandenen Tipp behalten, sonst Baseline.
           match.prediction = prev?.prediction ?? baselinePrediction;
@@ -535,6 +542,44 @@ async function writeMatches(
     matches.push(match);
     written++;
   }
+
+  // Gesammelte fällige Partien gebündelt bewerten (Claude: Batches-API).
+  if (pendingAi.length > 0 && ensemble) {
+    console.log(`[predict] ${pendingAi.length} Partien fällig — Bewertung startet`);
+    let predictions: Prediction[] | null = null;
+    try {
+      predictions = await ensemble.evaluateMany(pendingAi.map((p) => p.input));
+    } catch (err) {
+      console.warn("[predict] Bündel-Bewertung fehlgeschlagen:", err);
+    }
+    for (let i = 0; i < pendingAi.length; i++) {
+      const p = pendingAi[i]!;
+      const aiPred = predictions?.[i];
+      if (aiPred) {
+        // Alten KI-Tipp in die Historie schieben.
+        if (p.prev?.prediction?.models) {
+          p.match.predictionHistory = [
+            ...p.match.predictionHistory,
+            {
+              generatedAt: p.prev.prediction.generatedAt,
+              predictedScore: p.prev.prediction.predictedScore,
+              probabilities: p.prev.prediction.probabilities,
+              confidence: p.prev.prediction.confidence,
+            },
+          ];
+        }
+        p.match.prediction = aiPred;
+        aiEvaluated++;
+      } else {
+        p.match.prediction = p.prev?.prediction ?? p.baselinePrediction;
+        aiSkipped++;
+      }
+      await writeJson(matchPath(p.matchId), Match, p.match);
+      matches.push(p.match);
+      written++;
+    }
+  }
+
   return { written, aiEvaluated, aiSkipped, matches };
 }
 

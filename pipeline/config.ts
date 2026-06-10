@@ -70,6 +70,19 @@ export interface PipelineConfig {
     /** Günstiges Modell für die ressourcenschonende News-Relevanzprüfung. */
     newsFilter: string;
   };
+  /** Message-Batching der Claude-Calls (50 % günstiger, latenztolerant). */
+  batching: {
+    /** Batches-API nutzen? (false → immer Direkt-Calls) */
+    enabled: boolean;
+    /** Ab wie vielen fälligen Partien lohnt ein Batch? */
+    minSize: number;
+    /** Max. Wartezeit auf den Batch; danach cancel + Direkt-Calls. */
+    pollBudgetMs: number;
+    /** Abstand zwischen zwei Status-Abfragen. */
+    pollIntervalMs: number;
+    /** Parallele Direkt-Calls (Fallback-Pfad, schont Rate-Limits). */
+    directConcurrency: number;
+  };
   /** Ensemble-Strategie. */
   ensemble: {
     /** Mittelwert konfidenz-gewichten? */
@@ -153,6 +166,17 @@ export const config: PipelineConfig = {
     // Haiku: günstigstes Claude-Modell — News-Pipeline hängt damit nur noch
     // am ANTHROPIC_API_KEY (vorher gpt-4o-mini/OpenAI).
     newsFilter: "claude-haiku-4-5",
+  },
+  batching: {
+    enabled: true,
+    // Ab 3 Partien spart der Batch spürbar; 1–2 Partien (typischer
+    // Stunden-Lauf) bleiben Direkt-Calls — keine unnötige Latenz.
+    minSize: 3,
+    // 10 min Budget: kleine Batches sind meist in Minuten fertig; danach
+    // garantiert der Fallback, dass die Tipps noch im selben Lauf landen.
+    pollBudgetMs: 10 * 60_000,
+    pollIntervalMs: 15_000,
+    directConcurrency: 4,
   },
   ensemble: {
     confidenceWeighted: true,

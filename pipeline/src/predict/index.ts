@@ -5,8 +5,15 @@
  */
 import type { Baseline, FeatureBundle, NewsItem, Prediction } from "@wm/shared";
 import { buildUserMessage } from "./prompt.js";
-import { ChatGptClient, ClaudeClient, type ModelClient } from "./models.js";
+import {
+  ChatGptClient,
+  ClaudeClient,
+  mapLimit,
+  type ModelClient,
+} from "./models.js";
+import { config } from "../../config.js";
 import { reconcile, type ModelResult } from "./reconcile.js";
+import type { LlmPrediction } from "./schema.js";
 import type { EnsembleWeights } from "./ensembleWeights.js";
 
 export interface Ensemble {
@@ -14,6 +21,13 @@ export interface Ensemble {
   readonly active: boolean;
   readonly modelIds: string[];
   evaluate(input: EvaluateInput): Promise<Prediction>;
+  /**
+   * Bewertet viele Partien in einem Rutsch: Claude bündelt via
+   * Message-Batches-API (50 % günstiger), ChatGPT läuft parallel direkt.
+   * Liefert je Eingabe IMMER eine Prediction (Modellfehler → die übrigen
+   * Modelle bzw. Baseline tragen, wie bei evaluate()).
+   */
+  evaluateMany(inputs: EvaluateInput[]): Promise<Prediction[]>;
 }
 
 export interface EvaluateInput {
@@ -79,6 +93,70 @@ class EnsembleImpl implements Ensemble {
       input.modelWeights,
     );
   }
+
+  async evaluateMany(inputs: EvaluateInput[]): Promise<Prediction[]> {
+    const messages = inputs.map((input) =>
+      buildUserMessage({
+        homeName: input.homeName,
+        awayName: input.awayName,
+        featureBundle: input.featureBundle,
+        baseline: input.baseline,
+        homeNews: input.homeNews,
+        awayNews: input.awayNews,
+        ...(input.marketProbabilities
+          ? { marketProbabilities: input.marketProbabilities }
+          : {}),
+      }),
+    );
+
+    // Je Client alle Antworten einsammeln (Batch wenn unterstützt, sonst
+    // parallele Direkt-Calls). Ein Client-Totalausfall liefert Errors je Item.
+    const byClient = await Promise.all(
+      this.clients.map(async (c): Promise<(LlmPrediction | Error)[]> => {
+        try {
+          if (c.predictMany) return await c.predictMany(messages);
+          return await mapLimit(
+            messages,
+            config.batching.directConcurrency,
+            (msg) =>
+              c
+                .predict(msg)
+                .catch((e: unknown) =>
+                  e instanceof Error ? e : new Error(String(e)),
+                ),
+          );
+        } catch (err) {
+          const e = err instanceof Error ? err : new Error(String(err));
+          return messages.map(() => e);
+        }
+      }),
+    );
+
+    // Pro Partie reconcilen — exakt dieselbe Semantik wie evaluate().
+    return inputs.map((input, i) => {
+      const results: ModelResult[] = [];
+      this.clients.forEach((c, ci) => {
+        const r = byClient[ci]![i]!;
+        if (r instanceof Error) {
+          console.warn(`[predict] ${c.id} (${input.homeName}–${input.awayName}):`, r.message);
+        } else {
+          results.push({ id: c.id, prediction: r });
+        }
+      });
+      return reconcile(
+        results,
+        input.baseline,
+        input.now,
+        input.inputHash,
+        input.modelWeights,
+      );
+    });
+  }
+}
+
+/** Test-Factory: Ensemble aus beliebigen (auch Fake-)Clients bauen. */
+export function makeEnsembleFrom(clients: ModelClient[]): Ensemble {
+  return new EnsembleImpl(clients);
 }
 
 /** Baut das Ensemble aus den env-Keys (graceful: ohne Key → inaktiv). */
