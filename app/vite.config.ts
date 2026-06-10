@@ -92,14 +92,21 @@ export default defineConfig({
         globIgnores: ["**/version.json"],
         runtimeCaching: [
           {
+            // Tipps/Ergebnisse: online IMMER frisch vom Netz (NetworkFirst),
+            // damit neue Tipps sofort überall sichtbar sind und nicht der alte
+            // Cache-Stand gezeigt wird. Der Cache dient nur als Offline-/
+            // Timeout-Fallback. (Vorher StaleWhileRevalidate → zeigte zuerst
+            // den alten Stand, das Dashboard hing dem Match-Detail hinterher.)
             urlPattern: ({ url }) => url.pathname.includes("/data/"),
-            handler: "StaleWhileRevalidate",
+            handler: "NetworkFirst",
             options: {
               cacheName: "wm-data",
+              networkTimeoutSeconds: 4,
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 60 * 60 * 24 * 7,
               },
+              cacheableResponse: { statuses: [0, 200] },
             },
           },
           {

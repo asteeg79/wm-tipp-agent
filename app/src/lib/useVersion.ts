@@ -7,7 +7,8 @@
  *  1. vite-plugin-pwa: neuer Service Worker verfügbar (needRefresh).
  *  2. Poller auf /version.json (erkennt neuen Deploy auch unabhängig vom SW).
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { useRegisterSW } from "virtual:pwa-register/react";
 
 // Vom Vite-`define` zur Build-Zeit injiziert.
@@ -74,6 +75,10 @@ export function useVersion(): VersionState {
   });
 
   const [latest, setLatest] = useState<ServerVersion | null>(null);
+  const queryClient = useQueryClient();
+  // Merkt sich den zuletzt verarbeiteten Server-Commit, damit pro neuem Deploy
+  // nur EINMAL refetcht wird (nicht bei jedem 60-s-Poll).
+  const handledCommit = useRef<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -104,6 +109,17 @@ export function useVersion(): VersionState {
     latest.commit !== APP_COMMIT &&
     APP_COMMIT !== "dev" &&
     latest.version >= APP_VERSION;
+
+  // Neuer Deploy erkannt → alle Daten-Queries einmalig invalidieren, damit
+  // Tipps/Ergebnisse sofort frisch nachgeladen werden (NetworkFirst liefert
+  // den neuen Stand), ohne dass der Nutzer erst „Aktualisieren" drücken muss.
+  // Der Update-Banner bleibt für das eigentliche Code-Update bestehen.
+  useEffect(() => {
+    if (!versionMismatch || latest === null) return;
+    if (handledCommit.current === latest.commit) return;
+    handledCommit.current = latest.commit;
+    void queryClient.invalidateQueries();
+  }, [versionMismatch, latest, queryClient]);
 
   const update = (): void => {
     // Service Worker übernehmen lassen; reload erfolgt automatisch.

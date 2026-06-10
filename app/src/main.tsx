@@ -16,11 +16,17 @@ import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/jetbrains-mono/700.css";
 import "./index.css";
 
+// Daten (Tipps/Ergebnisse) sollen zeitnah aktuell sein, ohne bei jedem
+// Render zu flackern: kurze staleTime + Refetch bei Fokus/Reconnect. So lädt
+// z. B. das Dashboard beim Zurückkehren neue Tipps nach, statt den alten
+// Stand aus dem Cache zu zeigen. Den eigentlichen Netz-Vorrang regelt der
+// Service Worker (NetworkFirst für /data, s. vite.config.ts).
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5,
-      refetchOnWindowFocus: false,
+      staleTime: 1000 * 30,
+      refetchOnWindowFocus: true,
+      refetchOnReconnect: true,
     },
   },
 });
