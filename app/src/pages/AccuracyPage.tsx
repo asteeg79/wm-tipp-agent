@@ -1,7 +1,138 @@
 import { useTranslation } from "react-i18next";
+import type { AccuracyAggregate, ModelComparison } from "@wm/shared";
 import { usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { StatCard } from "../components/StatCard.js";
 import { TeamBadge } from "../components/TeamBadge.js";
+
+const MODEL_LABELS = { claude: "Claude", chatgpt: "ChatGPT" } as const;
+
+/** Karte eines Einzelmodells im Vergleich (Claude bzw. ChatGPT). */
+function ModelCard({
+  model,
+  agg,
+  leads,
+}: {
+  model: keyof typeof MODEL_LABELS;
+  agg: AccuracyAggregate;
+  leads: boolean;
+}) {
+  const { t } = useTranslation();
+  const pct = (x: number | null): string =>
+    x === null ? "–" : `${Math.round(x * 100)}%`;
+  const num = (x: number | null): string => (x === null ? "–" : x.toFixed(3));
+  return (
+    <div
+      className={`rounded-xl border bg-surface/40 p-4 ${
+        leads ? "border-acc/60" : "border-edge"
+      }`}
+    >
+      <div className="flex items-center justify-between gap-2">
+        <h4 className="font-semibold">{MODEL_LABELS[model]}</h4>
+        {leads && (
+          <span className="rounded-full bg-acc/15 px-2 py-0.5 text-xs font-medium text-acc">
+            {t("accuracy.models.leads")}
+          </span>
+        )}
+      </div>
+      <p className="mt-0.5 text-xs text-fg-faint">
+        {agg.finishedCount} {t("accuracy.models.rated")}
+      </p>
+      <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
+        <div>
+          <dt className="text-xs text-fg-muted">{t("accuracy.outcomeRate")}</dt>
+          <dd className="font-mono font-semibold">{pct(agg.outcomeRate)}</dd>
+        </div>
+        <div>
+          <dt className="text-xs text-fg-muted">{t("accuracy.exactRate")}</dt>
+          <dd className="font-mono font-semibold">{pct(agg.exactScoreRate)}</dd>
+        </div>
+        <div>
+          <dt className="text-xs text-fg-muted">{t("accuracy.rps")}</dt>
+          <dd className="font-mono font-semibold">{num(agg.rpsMean)}</dd>
+        </div>
+        <div>
+          <dt className="text-xs text-fg-muted">{t("accuracy.brier")}</dt>
+          <dd className="font-mono font-semibold">{num(agg.brierMean)}</dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
+/** Abschnitt „Modell-Vergleich" — mit eigenem Leer-Zustand vor WM-Start. */
+function ModelComparisonSection({ cmp }: { cmp: ModelComparison | undefined }) {
+  const { t } = useTranslation();
+  const hasData =
+    !!cmp && (cmp.claude.finishedCount > 0 || cmp.chatgpt.finishedCount > 0);
+
+  // Führend = besserer (niedrigerer) RPS; nur küren, wenn beide messbar sind.
+  const leader =
+    hasData && cmp.claude.rpsMean !== null && cmp.chatgpt.rpsMean !== null
+      ? cmp.claude.rpsMean < cmp.chatgpt.rpsMean
+        ? "claude"
+        : cmp.chatgpt.rpsMean < cmp.claude.rpsMean
+          ? "chatgpt"
+          : null
+      : null;
+
+  return (
+    <div>
+      <h3 className="mb-1 font-semibold">{t("accuracy.models.title")}</h3>
+      <p className="mb-2 text-sm text-fg-muted">{t("accuracy.models.intro")}</p>
+      {!hasData ? (
+        <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-6 text-fg-muted">
+          {t("accuracy.models.none")}
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <ModelCard
+              model="claude"
+              agg={cmp.claude}
+              leads={leader === "claude"}
+            />
+            <ModelCard
+              model="chatgpt"
+              agg={cmp.chatgpt}
+              leads={leader === "chatgpt"}
+            />
+          </div>
+          {cmp.weights ? (
+            <div className="rounded-xl border border-edge bg-surface/40 p-4">
+              <p className="mb-2 text-xs text-fg-muted">
+                {t("accuracy.models.weights")}
+              </p>
+              <div className="flex h-3 overflow-hidden rounded-full">
+                <div
+                  className="bg-acc"
+                  style={{ width: `${cmp.weights.claude * 100}%` }}
+                />
+                <div
+                  className="bg-info"
+                  style={{ width: `${cmp.weights.chatgpt * 100}%` }}
+                />
+              </div>
+              <div className="mt-1 flex justify-between text-xs">
+                <span>
+                  Claude {Math.round(cmp.weights.claude * 100)}
+                  {" "}%
+                </span>
+                <span>
+                  ChatGPT {Math.round(cmp.weights.chatgpt * 100)}
+                  {" "}%
+                </span>
+              </div>
+            </div>
+          ) : (
+            <p className="text-xs text-fg-faint">
+              {t("accuracy.models.weightsPending")}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function AccuracyPage() {
   const { t } = useTranslation();
@@ -29,9 +160,12 @@ export function AccuracyPage() {
       </div>
 
       {agg.finishedCount === 0 ? (
-        <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-6 text-fg-muted">
-          {t("accuracy.none")}
-        </div>
+        <>
+          <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-6 text-fg-muted">
+            {t("accuracy.none")}
+          </div>
+          <ModelComparisonSection cmp={data.modelComparison} />
+        </>
       ) : (
         <>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -62,6 +196,8 @@ export function AccuracyPage() {
               accent="amber"
             />
           </div>
+
+          <ModelComparisonSection cmp={data.modelComparison} />
 
           <div>
             <h3 className="mb-2 font-semibold">{t("accuracy.recent")}</h3>

@@ -43,9 +43,28 @@ export const AccuracyAggregate = z.object({
 export type AccuracyAggregate = z.infer<typeof AccuracyAggregate>;
 
 /** data/predictions-index.json */
+/**
+ * Treffsicherheit je Einzelmodell (Claude vs. ChatGPT) + aktuelle
+ * Ensemble-Gewichte — Grundlage für den Modell-Vergleich in der App.
+ */
+export const ModelComparison = z.object({
+  claude: AccuracyAggregate,
+  chatgpt: AccuracyAggregate,
+  /** Aktuelle Accuracy-Gewichte (Summe 1); fehlt, solange Stichprobe klein. */
+  weights: z
+    .object({
+      claude: z.number().min(0).max(1),
+      chatgpt: z.number().min(0).max(1),
+    })
+    .optional(),
+});
+export type ModelComparison = z.infer<typeof ModelComparison>;
+
 export const PredictionsIndex = z.object({
   lastUpdated: IsoDateTime,
   aggregate: AccuracyAggregate,
+  /** Vergleich der Einzelmodelle (fehlt, solange keine Partie beendet ist). */
+  modelComparison: ModelComparison.optional(),
   entries: z.array(PredictionIndexEntry),
 });
 export type PredictionsIndex = z.infer<typeof PredictionsIndex>;

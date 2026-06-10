@@ -50,6 +50,7 @@ import {
   type EvaluateInput,
 } from "./predict/index.js";
 import {
+  computeModelComparison,
   computeModelWeights,
   type FinishedWithModels,
 } from "./predict/ensembleWeights.js";
@@ -646,9 +647,23 @@ async function writePredictionsIndex(
     }),
   );
 
+  // Modell-Vergleich Claude vs. ChatGPT (Accuracy-Seite): Aggregate über die
+  // EIGENEN Tipps jedes Modells + aktuelle Ensemble-Gewichte.
+  const finishedWithModels: FinishedWithModels[] = matches
+    .filter((m) => m.actualResult && m.prediction?.models)
+    .map((m) => ({
+      actualResult: m.actualResult!,
+      models: m.prediction!.models!,
+    }));
+  const modelComparison = computeModelComparison(
+    finishedWithModels,
+    config.ensemble.accuracyMinSample,
+  );
+
   await writeJson(predictionsIndexPath, PredictionsIndex, {
     lastUpdated: nowIso,
     aggregate,
+    ...(modelComparison ? { modelComparison } : {}),
     entries,
   });
   return aggregate.finishedCount;

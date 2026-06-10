@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
+  computeModelComparison,
   computeModelWeights,
   type FinishedWithModels,
 } from "../src/predict/ensembleWeights.js";
@@ -81,5 +82,35 @@ describe("computeModelWeights", () => {
       models: { claude: mp(SHARP_HOME) },
     }));
     expect(computeModelWeights(noChatgpt, 5)).toBeNull();
+  });
+});
+
+describe("computeModelComparison", () => {
+  it("null ohne beendete Partien", () => {
+    expect(computeModelComparison([], 5)).toBeNull();
+  });
+
+  it("liefert je Modell eigene Aggregate (auch unter der Gewichts-Mindestmenge)", () => {
+    // 2 Partien: Claude trifft Tendenz (Heimsieg), ChatGPT liegt daneben.
+    const data = Array.from({ length: 2 }, () =>
+      finished(HOME_WIN, SHARP_HOME, WRONG_AWAY),
+    );
+    const cmp = computeModelComparison(data, 5)!;
+    expect(cmp.claude.finishedCount).toBe(2);
+    expect(cmp.chatgpt.finishedCount).toBe(2);
+    expect(cmp.claude.rpsMean!).toBeLessThan(cmp.chatgpt.rpsMean!);
+    // predictedScore der Fixtures ist 1:0 → Tendenz Heimsieg = Treffer.
+    expect(cmp.claude.outcomeRate).toBe(1);
+    // Unter minSample: keine Gewichte, aber Aggregate vorhanden.
+    expect(cmp.weights).toBeUndefined();
+  });
+
+  it("ab Mindeststichprobe sind die Gewichte enthalten", () => {
+    const data = Array.from({ length: 6 }, () =>
+      finished(HOME_WIN, SHARP_HOME, WRONG_AWAY),
+    );
+    const cmp = computeModelComparison(data, 5)!;
+    expect(cmp.weights).toBeDefined();
+    expect(cmp.weights!.claude).toBeGreaterThan(cmp.weights!.chatgpt);
   });
 });

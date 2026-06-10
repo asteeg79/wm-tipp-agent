@@ -130,6 +130,17 @@ const resources = {
         lower: "niedriger = besser",
         higher: "höher = besser",
         recent: "Letzte Ergebnisse",
+        models: {
+          title: "Modell-Vergleich: Claude vs. ChatGPT",
+          intro:
+            "Welches KI-Modell tippt treffsicherer? Das bessere bekommt automatisch mehr Gewicht im Ensemble.",
+          none: "Erscheint, sobald die ersten Partien beendet sind — ab dann wird jedes Modell einzeln gemessen.",
+          rated: "bewertete Partien",
+          leads: "führt",
+          weights: "Aktuelle Gewichtung im Ensemble",
+          weightsPending:
+            "Gewichtung neutral (50/50), bis genug Partien bewertet sind.",
+        },
       },
       teams: {
         kicker: "48 Teams · zum Öffnen tippen",
@@ -350,6 +361,17 @@ const resources = {
         lower: "lower = better",
         higher: "higher = better",
         recent: "Recent results",
+        models: {
+          title: "Model comparison: Claude vs. ChatGPT",
+          intro:
+            "Which AI model predicts more accurately? The better one automatically gets more weight in the ensemble.",
+          none: "Appears once the first matches finish — each model is then measured individually.",
+          rated: "rated matches",
+          leads: "leads",
+          weights: "Current ensemble weighting",
+          weightsPending:
+            "Weighting stays neutral (50/50) until enough matches are rated.",
+        },
       },
       teams: {
         kicker: "48 teams · tap to open",

@@ -10,8 +10,13 @@
  *  - Glättung (EPS) dämpft extreme Verhältnisse bei sehr kleinem RPS.
  *  - Clamp auf [0.25, 0.75]: kein Modell wird je ganz stummgeschaltet.
  */
-import type { Models, Outcome1x2, ScoreLine } from "@wm/shared";
-import { scoreMatch } from "../features/accuracy.js";
+import type {
+  ModelComparison,
+  Models,
+  Outcome1x2,
+  ScoreLine,
+} from "@wm/shared";
+import { aggregateAccuracy, scoreMatch } from "../features/accuracy.js";
 
 export interface EnsembleWeights {
   /** Normierte Gewichte (Summe 1). */
@@ -87,4 +92,38 @@ export function computeModelWeights(
 
 function round4(x: number): number {
   return Math.round(x * 10000) / 10000;
+}
+
+/**
+ * Vollständiger Modell-Vergleich für die App (Accuracy-Seite): je Modell die
+ * Accuracy-Aggregate über die eigenen Tipps (Score + Wahrscheinlichkeiten)
+ * plus — sofern belastbar — die aktuellen Ensemble-Gewichte.
+ * `null`, solange keine Partie beendet ist.
+ */
+export function computeModelComparison(
+  finished: FinishedWithModels[],
+  minSample: number,
+): ModelComparison | null {
+  if (finished.length === 0) return null;
+
+  const aggFor = (key: ModelKey) =>
+    aggregateAccuracy(
+      finished
+        .filter((f) => f.models[key])
+        .map((f) => ({
+          actualResult: f.actualResult,
+          accuracy: scoreMatch(
+            f.models[key]!.predictedScore,
+            f.models[key]!.probabilities,
+            f.actualResult,
+          ),
+        })),
+    );
+
+  const weights = computeModelWeights(finished, minSample)?.weights;
+  return {
+    claude: aggFor("claude"),
+    chatgpt: aggFor("chatgpt"),
+    ...(weights ? { weights } : {}),
+  };
 }
