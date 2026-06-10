@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T15:38:33.062Z",
+    "generatedAt": "2026-06-10T16:37:57.269Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-10T12:24:49.273Z",
+    "generatedAt": "2026-06-10T16:37:57.269Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5981,
-      "draw": 0.23,
-      "away": 0.1719
+      "home": 0.5782,
+      "draw": 0.2406,
+      "away": 0.1812
     },
-    "confidence": 0.6759,
+    "confidence": 0.6468,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,24 +81,23 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.62,
+          "home": 0.61,
           "draw": 0.23,
-          "away": 0.15
+          "away": 0.16
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Mexiko ist Gastgeber; das Spiel findet faktisch mit Heimvorteil statt (hostAdvantageTeamId: MEX), trotz formal neutralem Venue",
-          "Höhenlage von 2240 m (Mexiko-Stadt) begünstigt das höhengewohnte mexikanische Team deutlich gegenüber Südafrika",
-          "Elo-Vorsprung von ca. 100 Punkten (1729 vs. 1627) zugunsten Mexikos",
-          "Bessere gewichtete Form Mexikos (1.754 vs. 1.59) und deutlich höhere Zu-null-Quote (0.588 vs. 0.484)",
-          "Externe Prognose (0.678 Heimsieg) stützt eine Korrektur der Baseline nach oben für Mexiko",
-          "Mexikos solide Defensive (0.797 Gegentore/Spiel) gegen Südafrikas anfälligere Abwehr (1.009 Gegentore/Spiel)"
+          "Mexiko ist Gastgeber und spielt faktisch ein Heimspiel; der 'neutrale' Spielort in 2240 m Höhe (Mexiko-Stadt/Azteca) ist exakt das gewohnte Terrain der Mexikaner",
+          "Elo-Vorteil von gut 100 Punkten (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59) sprechen für Mexiko",
+          "Mexiko mit starker Defensivbilanz: 0.797 Gegentore pro Spiel und 58.8% Zu-Null-Quote über 34 Spiele",
+          "Externe Prognose (67.8% Heimsieg) stützt eine Anpassung der Baseline nach oben zugunsten Mexikos",
+          "Höhenlage von 2240 m belastet Südafrika physiologisch deutlich stärker, da Mexiko dort regelmäßig spielt"
         ],
         "risks": [
-          "Keine Head-to-Head-Historie vorhanden, daher höhere Unsicherheit über die direkte Matchup-Dynamik",
-          "Südafrikas jüngste Form (recentForm 1.5) ist leicht besser als die Mexikos (1.4) und der Angriff trifft im Schnitt häufiger (1.556 Tore/Spiel)",
-          "71 Tage ohne Pflichtspiel bei beiden Teams – Eingespieltheit und Rhythmus zum Turnierstart ungewiss",
-          "Erwartungsdruck auf den Gastgeber im Eröffnungsumfeld kann zu nervösem Auftreten führen"
+          "Keine Head-to-Head-Historie zwischen beiden Teams – höhere Unsicherheit in der Modellierung",
+          "Südafrika zeigt ordentliche jüngste Form (recentForm 1.5) und überdurchschnittliche Offensive (1.556 Tore/Spiel)",
+          "71 Tage ohne Pflichtspiel bei beiden Teams – Rhythmus und tatsächliche Turnierform schwer einschätzbar",
+          "WM-Eröffnungsdruck als Gastgeber kann Mexiko hemmen, historisch tun sich Gastgeber in Auftaktspielen teils schwer"
         ]
       },
       "chatgpt": {
@@ -107,24 +106,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.58,
-          "draw": 0.23,
-          "away": 0.19
+          "home": 0.55,
+          "draw": 0.25,
+          "away": 0.2
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Mexico has higher Elo rating and historical strong performances.",
-          "Mexico has host advantage as match is held at a high altitude neutral venue.",
-          "South Africa has slightly higher recent form score, but Mexico's weighted form is superior."
+          "Mexico's higher Elo rating and weighted form advantage",
+          "Mexico's strong defensive record with a higher clean sheet rate",
+          "Mexico benefiting from familiarity with high altitude conditions"
         ],
         "risks": [
-          "South Africa shows higher goals for average.",
-          "Recent form of both teams is comparable."
+          "South Africa's recent form is slightly better than Mexico's",
+          "Neutral venue could mitigate some of Mexico's home advantage"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko ist Gastgeber; das Spiel findet faktisch mit Heimvorteil statt (hostAdvantageTeamId: MEX), trotz formal neutralem Venue; Höhenlage von 2240 m (Mexiko-Stadt) begünstigt das höhengewohnte mexikanische Team deutlich gegenüber Südafrika; Elo-Vorsprung von ca. 100 Punkten (1729 vs. 1627) zugunsten Mexikos.",
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko ist Gastgeber und spielt faktisch ein Heimspiel; der 'neutrale' Spielort in 2240 m Höhe (Mexiko-Stadt/Azteca) ist exakt das gewohnte Terrain der Mexikaner; Elo-Vorteil von gut 100 Punkten (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59) sprechen für Mexiko; Mexiko mit starker Defensivbilanz: 0.797 Gegentore pro Spiel und 58.8% Zu-Null-Quote über 34 Spiele.",
     "inputHash": "sha256:83b73d5dac227a314c5d319f517199385ad8a70a7b9143b26680d83c5b5cc5af"
   },
   "predictionHistory": [
@@ -426,11 +425,24 @@
         "away": 0.15
       },
       "confidence": 0.6705
+    },
+    {
+      "generatedAt": "2026-06-10T12:24:49.273Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5981,
+        "draw": 0.23,
+        "away": 0.1719
+      },
+      "confidence": 0.6759
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T15:40:10.514Z",
+    "updatedAt": "2026-06-10T16:37:59.709Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6782,
