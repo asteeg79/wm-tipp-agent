@@ -7,20 +7,15 @@
  *  - rps:           Ranked Probability Score (ordinaler Ausgang)
  * sowie die Aggregate über alle bewerteten Partien.
  */
-import type {
-  AccuracyAggregate,
-  AccuracyEntry,
-  Outcome1x2,
-  ScoreLine,
+import {
+  outcomeOf,
+  type AccuracyAggregate,
+  type AccuracyEntry,
+  type OutcomeKey,
+  type Outcome1x2,
+  type ScoreLine,
 } from "@wm/shared";
-
-type OutcomeKey = "home" | "draw" | "away";
-
-function outcomeOf(score: ScoreLine): OutcomeKey {
-  if (score.home > score.away) return "home";
-  if (score.home < score.away) return "away";
-  return "draw";
-}
+import { round } from "../util/math.js";
 
 /**
  * Multi-Class-Brier-Score: Σ (p_i − o_i)^2 über die 3 Ausgänge.
@@ -77,10 +72,10 @@ export function scoreMatch(
     exactScoreHit,
     outcomeHit,
     brier: probabilities
-      ? round4(brierScore(probabilities, actualOutcome))
+      ? round(brierScore(probabilities, actualOutcome), 4)
       : null,
     rps: probabilities
-      ? round4(rankedProbabilityScore(probabilities, actualOutcome))
+      ? round(rankedProbabilityScore(probabilities, actualOutcome), 4)
       : null,
   };
 }
@@ -123,13 +118,9 @@ export function aggregateAccuracy(
 
   return {
     finishedCount: n,
-    exactScoreRate: round4(exact / n),
-    outcomeRate: round4(outcome / n),
-    brierMean: brierN > 0 ? round4(brierSum / brierN) : null,
-    rpsMean: rpsN > 0 ? round4(rpsSum / rpsN) : null,
+    exactScoreRate: round(exact / n, 4),
+    outcomeRate: round(outcome / n, 4),
+    brierMean: brierN > 0 ? round(brierSum / brierN, 4) : null,
+    rpsMean: rpsN > 0 ? round(rpsSum / rpsN, 4) : null,
   };
-}
-
-function round4(x: number): number {
-  return Math.round(x * 10000) / 10000;
 }

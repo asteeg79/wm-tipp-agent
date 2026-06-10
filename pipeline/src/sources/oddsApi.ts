@@ -13,6 +13,7 @@ import type { MarketOdds } from "@wm/shared";
 import { config } from "../../config.js";
 import { cacheGet, cacheSet } from "../io/cache.js";
 import { fetchText } from "./http.js";
+import { alnumKey } from "../util/text.js";
 
 interface OddsOutcome {
   name: string;
@@ -34,19 +35,9 @@ export interface OddsEvent {
   bookmakers: OddsBookmaker[];
 }
 
-/** Normalisiert einen Teamnamen für den Abgleich (kleinschreibung, ohne
- *  Diakritika/Sonderzeichen). "Bosnia & Herzegovina" → "bosniaherzegovina". */
-function norm(s: string): string {
-  return s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]/g, "");
-}
-
 /** Schlüssel einer Partie (Heim|Auswärts) für die Map. */
 export function oddsKey(homeName: string, awayName: string): string {
-  return `${norm(homeName)}|${norm(awayName)}`;
+  return `${alnumKey(homeName)}|${alnumKey(awayName)}`;
 }
 
 function median(xs: number[]): number {
@@ -67,7 +58,7 @@ export function deriveMarket(ev: OddsEvent): MarketOdds | null {
     const h2h = bk.markets?.find((m) => m.key === "h2h");
     if (!h2h) continue;
     const find = (name: string): number | undefined =>
-      h2h.outcomes.find((o) => norm(o.name) === norm(name))?.price;
+      h2h.outcomes.find((o) => alnumKey(o.name) === alnumKey(name))?.price;
     const ph = find(ev.home_team);
     const pa = find(ev.away_team);
     const pd = h2h.outcomes.find((o) => /^draw$/i.test(o.name))?.price;

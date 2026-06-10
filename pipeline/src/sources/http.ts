@@ -1,3 +1,4 @@
+import { sleep } from "../util/async.js";
 /**
  * Schlanker HTTP-JSON-Client mit exponentiellem Backoff für 429/5xx.
  * Wird von den Providern genutzt; respektiert Rate-Limits (Abschnitt 10.3).
@@ -10,9 +11,6 @@ export interface FetchJsonOptions {
   /** Optionaler Timeout pro Versuch (ms). */
   timeoutMs?: number;
 }
-
-const sleep = (ms: number): Promise<void> =>
-  new Promise((r) => setTimeout(r, ms));
 
 /**
  * Holt eine Textressource. Gibt bei 404 `null` zurück (für optionale Dateien),

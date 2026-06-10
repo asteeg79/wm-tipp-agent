@@ -6,13 +6,16 @@
  *  - agreement = 1 − mittlere abs. Differenz der Wahrscheinlichkeiten
  *  - rationale = regelbasierte Prosa-Synthese aus keyFactors
  */
-import type {
-  Baseline,
-  ModelPrediction,
-  Outcome1x2,
-  Prediction,
-  ScoreLine,
+import {
+  outcomeOf,
+  type Baseline,
+  type ModelPrediction,
+  type Outcome1x2,
+  type OutcomeKey,
+  type Prediction,
+  type ScoreLine,
 } from "@wm/shared";
+import { confidenceFromProbs, round } from "../util/math.js";
 import { config } from "../../config.js";
 import { normalizeProbs, type LlmPrediction } from "./schema.js";
 import type { EnsembleWeights } from "./ensembleWeights.js";
@@ -49,10 +52,6 @@ function agreementOf(a: Outcome1x2, b: Outcome1x2): number {
       Math.abs(a.away - b.away)) /
     3;
   return Math.max(0, Math.min(1, 1 - mad));
-}
-
-function round4(x: number): number {
-  return Math.round(x * 10000) / 10000;
 }
 
 /**
@@ -103,9 +102,9 @@ export function reconcile(
     wSum += w;
   }
   const probabilities: Outcome1x2 = {
-    home: round4(acc.home / wSum),
-    draw: round4(acc.draw / wSum),
-    away: round4(acc.away / wSum),
+    home: round(acc.home / wSum, 4),
+    draw: round(acc.draw / wSum, 4),
+    away: round(acc.away / wSum, 4),
   };
 
   // Finaler Score (siehe deriveScore): Modell-Konsens vor knappem Top-Ausgang,
@@ -129,8 +128,9 @@ export function reconcile(
   // Konfidenz: Mittelwert der Modell-Konfidenzen, bei Uneinigkeit gedämpft.
   const meanConf =
     results.reduce((s, r) => s + r.prediction.confidence, 0) / results.length;
-  const confidence = round4(
+  const confidence = round(
     Math.max(0, Math.min(1, meanConf * (0.5 + 0.5 * agreement))),
+    4,
   );
 
   const prediction: Prediction = {
@@ -140,7 +140,7 @@ export function reconcile(
     confidence,
     baseline,
     models,
-    agreement: round4(agreement),
+    agreement: round(agreement, 4),
     rationale: buildRationale(results, agreement, useAcc ? accWeights : null),
     inputHash,
   };
@@ -148,22 +148,15 @@ export function reconcile(
   return prediction;
 }
 
-type Outcome = "home" | "draw" | "away";
-
 /** Top-1X2-Ausgang + Vorsprung zum zweitwahrscheinlichsten. */
-function topOutcome(p: Outcome1x2): { key: Outcome; margin: number } {
-  const arr: Array<[Outcome, number]> = [
+function topOutcome(p: Outcome1x2): { key: OutcomeKey; margin: number } {
+  const arr: Array<[OutcomeKey, number]> = [
     ["home", p.home],
     ["draw", p.draw],
     ["away", p.away],
   ];
   arr.sort((a, b) => b[1] - a[1]);
   return { key: arr[0]![0], margin: arr[0]![1] - arr[1]![1] };
-}
-
-/** Ausgang eines konkreten Score. */
-function outcomeOf(s: ScoreLine): Outcome {
-  return s.home > s.away ? "home" : s.home < s.away ? "away" : "draw";
 }
 
 /**
@@ -239,11 +232,6 @@ function scoreFromProbs(p: Outcome1x2, baseline?: Baseline): ScoreLine {
   if (top === p.home) return { home: 2, away: 1 };
   if (top === p.away) return { home: 1, away: 2 };
   return { home: 1, away: 1 };
-}
-
-function confidenceFromProbs(p: Outcome1x2): number {
-  const max = Math.max(p.home, p.draw, p.away);
-  return round4(Math.max(0, Math.min(1, (max - 1 / 3) / (1 - 1 / 3))));
 }
 
 /** Regelbasierte Prosa-Synthese aus den keyFactors beider Modelle. */

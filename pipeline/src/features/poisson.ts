@@ -5,6 +5,7 @@
  * + das wahrscheinlichste plausible Ergebnis ab. Rein deterministisch.
  */
 import { config } from "../../config.js";
+import { round } from "../util/math.js";
 import type { FormMetrics } from "./form.js";
 
 export interface BaselineResult {
@@ -152,19 +153,12 @@ export function poissonBaseline(
         : bestDraw.score;
 
   return {
-    expectedGoals: { home: round2(lambdaHome), away: round2(lambdaAway) },
+    expectedGoals: { home: round(lambdaHome, 2), away: round(lambdaAway, 2) },
     probabilities: {
-      home: round4(probs.home),
-      draw: round4(probs.draw),
-      away: round4(probs.away),
+      home: round(probs.home, 4),
+      draw: round(probs.draw, 4),
+      away: round(probs.away, 4),
     },
     mostLikelyScore,
   };
-}
-
-function round2(x: number): number {
-  return Math.round(x * 100) / 100;
-}
-function round4(x: number): number {
-  return Math.round(x * 10000) / 10000;
 }

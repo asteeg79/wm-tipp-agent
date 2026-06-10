@@ -5,12 +5,8 @@
  */
 import type { Baseline, FeatureBundle, NewsItem, Prediction } from "@wm/shared";
 import { buildUserMessage } from "./prompt.js";
-import {
-  ChatGptClient,
-  ClaudeClient,
-  mapLimit,
-  type ModelClient,
-} from "./models.js";
+import { ChatGptClient, ClaudeClient, type ModelClient } from "./models.js";
+import { mapLimit } from "../util/async.js";
 import { config } from "../../config.js";
 import { reconcile, type ModelResult } from "./reconcile.js";
 import type { LlmPrediction } from "./schema.js";

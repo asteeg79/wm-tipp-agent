@@ -17,6 +17,7 @@ import {
   type NewsLang,
 } from "../sources/newsFeeds.js";
 import { fetchFeed, type RawNewsItem } from "../sources/rss.js";
+import { escapeRe, foldDiacritics } from "../util/text.js";
 
 const FEED_TTL_MS = 60 * 60 * 1000; // 1 h (News sind volatil)
 
@@ -131,18 +132,10 @@ const CANDIDATE_CAP = 30;
  * Teamnamen selten — der primäre Kanal ist die team-spezifische Google-Suche.
  */
 export function matchesTeam(it: RawNewsItem, teamName: string): boolean {
-  const hay = norm(`${it.title} ${it.snippet}`);
-  const name = norm(teamName);
+  const hay = foldDiacritics(`${it.title} ${it.snippet}`);
+  const name = foldDiacritics(teamName);
   const re = new RegExp(`(?:^|[^a-z0-9])${escapeRe(name)}(?:[^a-z0-9]|$)`);
   return re.test(hay);
-}
-
-function norm(s: string): string {
-  return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
-}
-
-function escapeRe(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 /** Dedupe nach normalisierter URL und normalisiertem Titel. */

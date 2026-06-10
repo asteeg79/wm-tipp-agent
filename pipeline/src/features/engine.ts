@@ -3,6 +3,7 @@
  * einem Feature-Bundle + Baseline pro anstehender Partie zusammen.
  * Rein deterministisch und reproduzierbar (keine KI, kein Zufall).
  */
+import { round } from "../util/math.js";
 import { createHash } from "node:crypto";
 import type {
   Baseline,
@@ -46,11 +47,11 @@ function toTeamFeatures(
   return {
     teamId,
     elo: Math.round(elo),
-    weightedForm: round3(form.weightedForm),
-    recentForm: round3(form.recentForm),
-    goalsForAvg: round3(form.goalsForAvg),
-    goalsAgainstAvg: round3(form.goalsAgainstAvg),
-    cleanSheetRate: round3(form.cleanSheetRate),
+    weightedForm: round(form.weightedForm, 3),
+    recentForm: round(form.recentForm, 3),
+    goalsForAvg: round(form.goalsForAvg, 3),
+    goalsAgainstAvg: round(form.goalsAgainstAvg, 3),
+    cleanSheetRate: round(form.cleanSheetRate, 3),
     matchesCount: form.matchesCount,
     daysSinceLastMatch: form.daysSinceLastMatch,
   };
@@ -144,8 +145,4 @@ export function featureHash(bundle: FeatureBundle): string {
   const { generatedAt: _omit, ...stable } = bundle;
   const json = JSON.stringify(stable);
   return "sha256:" + createHash("sha256").update(json).digest("hex");
-}
-
-function round3(x: number): number {
-  return Math.round(x * 1000) / 1000;
 }

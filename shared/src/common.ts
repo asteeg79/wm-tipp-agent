@@ -25,6 +25,16 @@ export const ScoreLine = z.object({
 });
 export type ScoreLine = z.infer<typeof ScoreLine>;
 
+/** 1X2-Tendenz (Schlüssel in Outcome1x2). */
+export type OutcomeKey = "home" | "draw" | "away";
+
+/** Tendenz eines konkreten Ergebnisses (Heimsieg/Remis/Auswärtssieg). */
+export function outcomeOf(score: { home: number; away: number }): OutcomeKey {
+  if (score.home > score.away) return "home";
+  if (score.home < score.away) return "away";
+  return "draw";
+}
+
 /** Turnierphase einer Partie. */
 export const Stage = z.enum([
   "group",

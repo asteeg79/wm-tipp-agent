@@ -17,6 +17,7 @@ import type {
   ScoreLine,
 } from "@wm/shared";
 import { aggregateAccuracy, scoreMatch } from "../features/accuracy.js";
+import { round } from "../util/math.js";
 
 export interface EnsembleWeights {
   /** Normierte Gewichte (Summe 1). */
@@ -81,17 +82,13 @@ export function computeModelWeights(
   wClaude = Math.min(W_MAX, Math.max(W_MIN, wClaude));
 
   return {
-    weights: { claude: round4(wClaude), chatgpt: round4(1 - wClaude) },
+    weights: { claude: round(wClaude, 4), chatgpt: round(1 - wClaude, 4) },
     rpsMean: {
-      claude: round4(rpsMean.claude),
-      chatgpt: round4(rpsMean.chatgpt),
+      claude: round(rpsMean.claude, 4),
+      chatgpt: round(rpsMean.chatgpt, 4),
     },
     samples: { claude: sums.claude.n, chatgpt: sums.chatgpt.n },
   };
-}
-
-function round4(x: number): number {
-  return Math.round(x * 10000) / 10000;
 }
 
 /**

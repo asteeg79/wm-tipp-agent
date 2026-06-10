@@ -122,19 +122,20 @@ const COUNTRIES: Record<string, CountryInfo> = {
   "new zealand": { iso2: "nz", code: "NZL" },
 };
 
-/** Normalisiert einen Ländernamen für den Lookup. */
-function norm(name: string): string {
+/** Trivialer Lookup-Schlüssel (nur trim+lowercase — bewusst KEINE
+ *  Diakritika-Behandlung, die Tabelle ist entsprechend gepflegt). */
+function nameKey(name: string): string {
   return name.trim().toLowerCase();
 }
 
 /** Liefert CountryInfo oder null (unbekannt). */
 export function lookupCountry(name: string): CountryInfo | null {
-  return COUNTRIES[norm(name)] ?? null;
+  return COUNTRIES[nameKey(name)] ?? null;
 }
 
 /** Stabile, URL-taugliche Team-ID aus dem Namen (Fallback-Identität). */
 export function teamSlug(name: string): string {
-  return norm(name)
+  return nameKey(name)
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }

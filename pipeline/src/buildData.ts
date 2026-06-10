@@ -20,6 +20,7 @@ import {
   type TeamSummary,
 } from "@wm/shared";
 import { config } from "../config.js";
+import { confidenceFromProbs, round } from "./util/math.js";
 import { writeJson } from "./io/json.js";
 import {
   indexPath,
@@ -470,7 +471,7 @@ async function writeMatches(
         generatedAt: now.toISOString(),
         predictedScore: mostLikelyScore,
         probabilities: baseline.probabilities,
-        confidence: baselineConfidence(baseline.probabilities),
+        confidence: confidenceFromProbs(baseline.probabilities),
         baseline,
         inputHash,
       };
@@ -586,17 +587,6 @@ async function writeMatches(
   return { written, aiEvaluated, aiSkipped, matches };
 }
 
-/** Grobes Konfidenzmaß aus der Verteilung (max-Wahrscheinlichkeit, skaliert). */
-function baselineConfidence(p: {
-  home: number;
-  draw: number;
-  away: number;
-}): number {
-  const max = Math.max(p.home, p.draw, p.away);
-  // 0.33 (max. Unsicherheit) → 0, 1.0 → 1; linear, gekappt.
-  return Math.max(0, Math.min(1, (max - 1 / 3) / (1 - 1 / 3)));
-}
-
 /**
  * Schreibt predictions-index.json (leichte Match-Liste für die App) inkl.
  * Accuracy je beendeter Partie (Brier/RPS/Trefferquoten) + Aggregate.
@@ -683,7 +673,7 @@ function buildTeam(
   // recencyWeight pro Ergebnis annotieren (für die UI / Transparenz).
   const annotated: TeamResult[] = results.map((r) => ({
     ...r,
-    recencyWeight: round3(recencyWeightFor(r.date, now)),
+    recencyWeight: round(recencyWeightFor(r.date, now), 3),
   }));
 
   const team: Team = {
@@ -696,20 +686,16 @@ function buildTeam(
     results: annotated,
     form: {
       last10Points: Math.round(f.recentForm * config.formWindow),
-      weightedForm: round3(f.weightedForm),
-      goalsForAvg: round3(f.goalsForAvg),
-      goalsAgainstAvg: round3(f.goalsAgainstAvg),
-      cleanSheetRate: round3(f.cleanSheetRate),
+      weightedForm: round(f.weightedForm, 3),
+      goalsForAvg: round(f.goalsForAvg, 3),
+      goalsAgainstAvg: round(f.goalsAgainstAvg, 3),
+      cleanSheetRate: round(f.cleanSheetRate, 3),
     },
     potentialOpponents,
     news,
   };
   if (summary.logo) team.logo = summary.logo;
   return team;
-}
-
-function round3(x: number): number {
-  return Math.round(x * 1000) / 1000;
 }
 
 async function persistProgress(progress: Progress): Promise<void> {
