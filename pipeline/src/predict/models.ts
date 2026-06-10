@@ -4,9 +4,10 @@
  * ungültigem JSON genau 1 Retry mit Korrektur-Hinweis. Keys nur aus env.
  */
 import Anthropic from "@anthropic-ai/sdk";
+import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import OpenAI from "openai";
 import { config } from "../../config.js";
-import { LlmPrediction } from "./schema.js";
+import { LlmPrediction, LlmPredictionRaw } from "./schema.js";
 import { SYSTEM_PROMPT } from "./prompt.js";
 
 export interface ModelClient {
@@ -51,20 +52,29 @@ export class ClaudeClient implements ModelClient {
 
   async predict(userMessage: string): Promise<LlmPrediction> {
     if (!this.client) throw new Error("Claude nicht konfiguriert");
-    const call = async (msg: string): Promise<string> => {
-      const res = await this.client!.messages.create({
+    // Structured Outputs: die API liefert garantiert schema-konformes JSON
+    // (kein Regex-Extrahieren nötig). Adaptives Denken lässt das Modell bei
+    // kniffligen Partien selbstständig länger überlegen; die Denk-Tokens
+    // zählen in max_tokens mit — daher großzügiges Limit.
+    const call = async (msg: string): Promise<LlmPrediction> => {
+      const res = await this.client!.messages.parse({
         model: this.model,
-        max_tokens: 1024,
+        max_tokens: 8000,
+        thinking: { type: "adaptive" },
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: msg }],
+        output_config: { format: zodOutputFormat(LlmPredictionRaw) },
       });
-      const block = res.content.find((b) => b.type === "text");
-      return block && block.type === "text" ? block.text : "";
+      if (!res.parsed_output) {
+        throw new Error("Claude lieferte kein parsebares Structured Output");
+      }
+      // Transform (keyFactors/risks kürzen) über das Vollschema anwenden.
+      return LlmPrediction.parse(res.parsed_output);
     };
     try {
-      return parsePrediction(await call(userMessage));
+      return await call(userMessage);
     } catch {
-      return parsePrediction(await call(`${userMessage}\n\n${RETRY_HINT}`));
+      return call(`${userMessage}\n\n${RETRY_HINT}`);
     }
   }
 }

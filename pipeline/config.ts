@@ -141,7 +141,10 @@ export const config: PipelineConfig = {
   reTriggerMilestonesHours: [72, 24, 3],
   maxNewsPerTeam: 20,
   models: {
-    claude: "claude-opus-4-8",
+    // Claude Fable 5: Anthropics Top-Modell (über Opus). Achtung beim Modell-
+    // Wechsel: Fable 5 akzeptiert kein temperature/top_p und kein explizites
+    // thinking:"disabled" — der Client nutzt adaptive thinking (models.ts).
+    claude: "claude-fable-5",
     chatgpt: "gpt-4o",
     newsFilter: "gpt-4o-mini",
   },
