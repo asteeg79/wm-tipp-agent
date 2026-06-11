@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T20:37:22.896Z",
+    "generatedAt": "2026-06-11T22:31:37.614Z",
     "home": {
       "teamId": "KOR",
       "elo": 1702,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T18:07:03.254Z",
+    "generatedAt": "2026-06-11T22:31:37.614Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3338,
-      "draw": 0.3297,
-      "away": 0.3365
+      "home": 0.3463,
+      "draw": 0.2989,
+      "away": 0.3547
     },
-    "confidence": 0.5402,
+    "confidence": 0.5624,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -87,18 +87,17 @@
         },
         "confidence": 0.42,
         "keyFactors": [
-          "Südkorea hat das höhere Elo-Rating (1702 vs. 1646) und die bessere jüngste Form (recentForm 1.9 vs. 1.6), was die Baseline leicht zugunsten Koreas korrigiert",
-          "Tschechien zeigt mit 1.96 Toren pro Spiel deutlich mehr Offensivkraft und kassiert weniger Gegentore (1.19 vs. 1.35), was die höhere erwartete Torzahl der Baseline stützt",
-          "Die gewichtete Form beider Teams ist nahezu identisch (1.61 vs. 1.67), was auf eine ausgeglichene Partie hindeutet",
-          "Externe Prognose sieht das Spiel deutlich ausgeglichener (36/31/33) als die Elo+Poisson-Baseline, daher Anhebung der Remis-Wahrscheinlichkeit",
-          "Neutrale Spielstätte auf 1566 m Höhe ohne Heimvorteil für eine der beiden Mannschaften",
-          "Keine Head-to-Head-Historie vorhanden, daher keine psychologischen Muster ableitbar"
+          "Südkorea hat das höhere Elo-Rating (1702 vs. 1646) und die bessere jüngste Form (recentForm 1.9 vs. 1.6)",
+          "Tschechien zeigt über die letzten zwei Jahre die stärkeren Tor-Statistiken (1.96 erzielte Tore/Spiel, nur 1.19 Gegentore) und eine leicht bessere gewichtete Form",
+          "Die Elo+Poisson-Baseline sieht Tschechien vorn (0.42), während die externe Prognose Südkorea leicht favorisiert (0.36) — der Konsens deutet auf eine sehr ausgeglichene Partie",
+          "Neutraler Spielort ohne Heimvorteil und keine Head-to-Head-Historie, was die Unsicherheit erhöht",
+          "Berichtete Zweifel an der Form von Heung-min Son schwächen Südkoreas wichtigste Offensivoption leicht"
         ],
         "risks": [
-          "Zweifel um Heung-min Sons Form/Rolle: Fällt Südkoreas Schlüsselspieler ab oder aus, sinkt deren Offensivpotenzial deutlich",
-          "72 Tage Pause bei beiden Teams erschweren die Einschätzung der aktuellen Verfassung erheblich",
-          "Die Höhenlage (1566 m) kann beide Teams unterschiedlich beeinflussen, je nach Vorbereitungsdauer",
-          "Diskrepanz zwischen Baseline (Auswärtssieg favorisiert) und externer Prognose (Heimsieg favorisiert) signalisiert hohe Modellunsicherheit"
+          "Keine H2H-Daten vorhanden, dadurch geringere Verlässlichkeit der Einschätzung",
+          "Beide Teams hatten 72 Tage Pause — die tatsächliche Turnierform ist schwer einzuschätzen",
+          "Höhenlage von 1566 m kann beide Teams unvorhersehbar beeinflussen",
+          "Baseline und externe Prognose widersprechen sich beim Favoriten, was auf hohe Modellunsicherheit hindeutet"
         ]
       },
       "chatgpt": {
@@ -107,24 +106,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
-          "draw": 0.36,
-          "away": 0.31
+          "home": 0.35,
+          "draw": 0.31,
+          "away": 0.34
         },
-        "confidence": 0.69,
+        "confidence": 0.72,
         "keyFactors": [
-          "South Korea's recent form is strong with a 1.9 rating.",
-          "Both teams are playing at a neutral venue with high altitude, potentially affecting European players more.",
-          "South Korea's clean sheet rate of 41.4% is higher compared to Czech Republic's 32%."
+          "South Korea has a slightly better Elo rating than the Czech Republic.",
+          "South Korea's recent form (1.9) is better compared to Czech Republic (1.6).",
+          "Neutral venue; no host advantage.",
+          "High-altitude location may affect both teams similarly, depending on their adaptation."
         ],
         "risks": [
-          "Uncertainty around Heung-min Son's performance affecting South Korea.",
-          "Czech Republic's higher average goals scored at 1.957 could be a threat."
+          "Potential impact of recent concerns about Heung-min Son's performance (South Korea).",
+          "No head-to-head data available between the teams."
         ]
       }
     },
-    "agreement": 0.9467,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea hat das höhere Elo-Rating (1702 vs. 1646) und die bessere jüngste Form (recentForm 1.9 vs. 1.6), was die Baseline leicht zugunsten Koreas korrigiert; Tschechien zeigt mit 1.96 Toren pro Spiel deutlich mehr Offensivkraft und kassiert weniger Gegentore (1.19 vs. 1.35), was die höhere erwartete Torzahl der Baseline stützt; Die gewichtete Form beider Teams ist nahezu identisch (1.61 vs. 1.67), was auf eine ausgeglichene Partie hindeutet.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea hat das höhere Elo-Rating (1702 vs. 1646) und die bessere jüngste Form (recentForm 1.9 vs. 1.6); Tschechien zeigt über die letzten zwei Jahre die stärkeren Tor-Statistiken (1.96 erzielte Tore/Spiel, nur 1.19 Gegentore) und eine leicht bessere gewichtete Form; Die Elo+Poisson-Baseline sieht Tschechien vorn (0.42), während die externe Prognose Südkorea leicht favorisiert (0.36) — der Konsens deutet auf eine sehr ausgeglichene Partie.",
     "inputHash": "sha256:92ae995e384b44507f36f3c7db634828a0c0f1c8d344a59d138294bc2ebaa266"
   },
   "predictionHistory": [
@@ -465,11 +465,24 @@
         "away": 0.3388
       },
       "confidence": 0.59
+    },
+    {
+      "generatedAt": "2026-06-11T18:07:03.254Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3338,
+        "draw": 0.3297,
+        "away": 0.3365
+      },
+      "confidence": 0.5402
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T20:39:18.326Z",
+    "updatedAt": "2026-06-11T22:33:34.843Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3602,
