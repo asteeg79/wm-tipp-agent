@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T22:52:05.670Z",
+    "generatedAt": "2026-06-11T00:19:23.375Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -23,7 +23,7 @@
       "goalsAgainstAvg": 0.797,
       "cleanSheetRate": 0.588,
       "matchesCount": 34,
-      "daysSinceLastMatch": 71
+      "daysSinceLastMatch": 72
     },
     "away": {
       "teamId": "RSA",
@@ -34,7 +34,7 @@
       "goalsAgainstAvg": 1.009,
       "cleanSheetRate": 0.484,
       "matchesCount": 31,
-      "daysSinceLastMatch": 71
+      "daysSinceLastMatch": 72
     },
     "h2h": {
       "played": 0,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-10T22:06:46.762Z",
+    "generatedAt": "2026-06-11T00:19:23.375Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5889,
-      "draw": 0.2456,
-      "away": 0.1656
+      "home": 0.6047,
+      "draw": 0.2327,
+      "away": 0.1627
     },
-    "confidence": 0.6705,
+    "confidence": 0.6578,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,23 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.6,
-          "draw": 0.24,
+          "home": 0.61,
+          "draw": 0.23,
           "away": 0.16
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Mexiko hat einen deutlichen Elo-Vorteil (1729 vs. 1627) und die bessere gewichtete Form (1.754 vs. 1.59)",
-          "Quasi-Heimspiel: Spielort in Höhenlage (2240 m) mit Gastgebervorteil für Mexiko – an Höhe gewöhnt und vom Publikum getragen",
-          "Mexikos starke Defensive mit 58.8% Clean-Sheet-Rate und nur 0.797 Gegentoren pro Spiel spricht für ein Zu-Null-Spiel",
-          "Externe Prognose (68% Heimsieg) stützt eine Anhebung der Baseline zugunsten Mexikos"
+          "Mexiko ist Gastgeber (hostAdvantageTeamId MEX) und spielt faktisch ein Heimspiel trotz formal neutralem Status",
+          "Höhenlage von 2240 m (Estadio Azteca) ist ein erheblicher Vorteil für die höhengewohnten Mexikaner",
+          "Elo-Vorsprung von 102 Punkten (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59)",
+          "Mexikos starke Defensive: 0.797 Gegentore/Spiel und 58.8% Zu-null-Quote",
+          "Externe Prognose (68% Heimsieg) stützt eine Korrektur der Baseline nach oben zugunsten Mexikos"
         ],
         "risks": [
-          "Südafrika zeigt solide aktuelle Form (recentForm 1.5) und einen guten Torschnitt von 1.556 Toren pro Spiel",
-          "Keine Head-to-Head-Historie vorhanden – Unsicherheit über die direkte Matchup-Dynamik",
-          "71 Tage Spielpause bei beiden Teams kann zu Rhythmusverlust und unvorhersehbarer Anfangsphase führen",
-          "Hoher Erwartungsdruck auf den WM-Gastgeber Mexiko kann zu verkrampftem Spiel führen"
+          "Keine Head-to-Head-Historie zwischen beiden Teams, was die Vorhersage unsicherer macht",
+          "Südafrika zeigt solide Offensivwerte (1.556 Tore/Spiel) und gute jüngste Form (recentForm 1.5)",
+          "72 Tage Pause für beide Teams – Rhythmus und Eingespieltheit zum Turnierstart schwer einschätzbar",
+          "Hoher Erwartungsdruck auf Mexiko als Gastgeber kann zu nervösem Start führen"
         ]
       },
       "chatgpt": {
@@ -105,26 +106,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.58,
-          "draw": 0.25,
-          "away": 0.17
+          "home": 0.6,
+          "draw": 0.235,
+          "away": 0.165
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Mexico's higher Elo rating indicates a stronger team overall.",
-          "Mexico's recent form is slightly lower than South Africa's, but its weighted form is higher, indicating better performance over a longer period.",
-          "The match is played at a neutral venue, but the altitude could favor Mexico as they are more accustomed to high-altitude conditions.",
-          "South Africa has a better recent goal-scoring average, but their defense is more vulnerable compared to Mexico's."
+          "Mexico's high altitude favors their playing style due to home conditions advantage despite the neutral venue.",
+          "Higher Elo for Mexico indicating stronger overall performance historically.",
+          "Mexico has a slightly better defensive record with a higher clean sheet rate."
         ],
         "risks": [
-          "South Africa's recent form is marginally better, which could help them spring a surprise.",
-          "No head-to-head history makes it difficult to predict how the teams will match up tactically."
+          "South Africa's recent form is slightly better than Mexico's, suggesting potential for an upset.",
+          "No historical head-to-head to gauge past matchups, introducing uncertainty."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko hat einen deutlichen Elo-Vorteil (1729 vs. 1627) und die bessere gewichtete Form (1.754 vs. 1.59); Quasi-Heimspiel: Spielort in Höhenlage (2240 m) mit Gastgebervorteil für Mexiko – an Höhe gewöhnt und vom Publikum getragen; Mexikos starke Defensive mit 58.8% Clean-Sheet-Rate und nur 0.797 Gegentoren pro Spiel spricht für ein Zu-Null-Spiel.",
-    "inputHash": "sha256:83b73d5dac227a314c5d319f517199385ad8a70a7b9143b26680d83c5b5cc5af"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko ist Gastgeber (hostAdvantageTeamId MEX) und spielt faktisch ein Heimspiel trotz formal neutralem Status; Höhenlage von 2240 m (Estadio Azteca) ist ein erheblicher Vorteil für die höhengewohnten Mexikaner; Elo-Vorsprung von 102 Punkten (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59).",
+    "inputHash": "sha256:d72859379f60006fa07a1e70549a61ed4a24feed39fbbb44ee5c018c1397624b"
   },
   "predictionHistory": [
     {
@@ -464,11 +464,24 @@
         "away": 0.1834
       },
       "confidence": 0.7153
+    },
+    {
+      "generatedAt": "2026-06-10T22:06:46.762Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5889,
+        "draw": 0.2456,
+        "away": 0.1656
+      },
+      "confidence": 0.6705
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T22:52:07.207Z",
+    "updatedAt": "2026-06-11T00:21:15.286Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.6803,

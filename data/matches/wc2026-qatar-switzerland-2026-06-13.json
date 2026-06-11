@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T22:52:05.670Z",
+    "generatedAt": "2026-06-11T00:19:23.375Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.802,
       "cleanSheetRate": 0.25,
       "matchesCount": 28,
-      "daysSinceLastMatch": 205
+      "daysSinceLastMatch": 206
     },
     "away": {
       "teamId": "SUI",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.094,
       "cleanSheetRate": 0.37,
       "matchesCount": 27,
-      "daysSinceLastMatch": 71
+      "daysSinceLastMatch": 72
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-10T22:06:46.762Z",
+    "generatedAt": "2026-06-11T00:19:23.375Z",
     "predictedScore": {
       "home": 1,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0953,
+      "home": 0.0955,
       "draw": 0.15,
-      "away": 0.7547
+      "away": 0.7545
     },
-    "confidence": 0.7475,
+    "confidence": 0.7724,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,17 +86,17 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509)",
-          "Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und stabiler Defensive (1.09 Gegentore/Spiel, 37% Zu-Null-Quote)",
-          "Katar mit anfälliger Abwehr (1.8 Gegentore/Spiel) und langer Spielpause (205 Tage ohne Pflicht-/Testspiel)",
-          "Neutraler Spielort ohne echten Heimvorteil für Katar",
-          "Externe Prognose (79% Schweiz-Sieg) stützt eine Anpassung der Baseline nach oben zugunsten der Schweiz"
+          "Deutlicher Elo-Vorteil der Schweiz (1746 vs. 1509) stützt die Baseline klar zugunsten der Schweiz",
+          "Schweizer Topform: recentForm 2.1 und gewichtete Form 1.638 deutlich über Katars Werten",
+          "Schweiz mit stabiler Defensive (1.09 Gegentore/Spiel, 37% Zu-null-Quote) gegen Katars anfällige Abwehr (1.80 Gegentore/Spiel)",
+          "Neutraler Spielort ohne Gastgebervorteil für Katar – anders als bei der WM 2022",
+          "Externe Prognose (79% Schweiz-Sieg) liegt sogar über der Elo+Poisson-Baseline und rechtfertigt eine leichte Anpassung nach oben"
         ],
         "risks": [
-          "Keine Head-to-Head-Historie vorhanden, direkte Vergleichsdaten fehlen",
-          "Lange Spielpause Katars erschwert die Einschätzung der tatsächlichen Form (möglicher Überraschungseffekt)",
-          "Turnierauftakt-Nervosität oder defensives Bollwerk Katars könnte zu weniger Toren bzw. Remis führen",
-          "Schweiz tut sich historisch gelegentlich schwer gegen tiefstehende Außenseiter"
+          "Katars lange Spielpause (206 Tage) erschwert die Formbewertung – Team könnte ausgeruht oder eingerostet sein",
+          "Keine Head-to-Head-Historie zwischen beiden Teams vorhanden",
+          "WM-Auftaktspiele von Außenseitern gegen Favoriten enden gelegentlich enger als erwartet (Nervosität, defensive Ausrichtung)",
+          "Poisson-Erwartung von 2.5 Toren für die Schweiz könnte gegen tief stehende Katarer überschätzt sein"
         ]
       },
       "chatgpt": {
@@ -109,23 +109,23 @@
           "draw": 0.15,
           "away": 0.75
         },
-        "confidence": 0.8,
+        "confidence": 0.85,
         "keyFactors": [
-          "Switzerland has a much higher ELO rating (1746 vs. 1509).",
-          "Switzerland's recent form is better (2.1) compared to Qatar's (1.2).",
-          "Switzerland played a game more recently than Qatar (71 vs. 205 days ago).",
-          "Switzerland scores more goals on average (2.021) and concedes fewer (1.094) than Qatar (1.459 for, 1.802 against).",
-          "Neutral venue, no host advantage for Qatar."
+          "Switzerland has a higher Elo rating of 1746 compared to Qatar's 1509, indicating stronger overall performance.",
+          "Switzerland's recent form is significantly better with a form rating of 2.1 compared to Qatar's 1.2.",
+          "Qatar has not played in the last 206 days, possibly affecting their match readiness.",
+          "Switzerland has a higher average goals scored per match (2.021) compared to Qatar's 1.459.",
+          "The match is played at a neutral venue, negating any home advantage for Qatar."
         ],
         "risks": [
-          "No head-to-head data between the teams; uncertainty in direct matchup dynamics.",
-          "Potential underestimation of home advantage effects not fully captured."
+          "Qatar's clean sheet rate of 0.25 indicates a chance of defensive improvement.",
+          "Publicly available news did not indicate any last-minute player injuries or suspensions for either team."
         ]
       }
     },
     "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509); Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und stabiler Defensive (1.09 Gegentore/Spiel, 37% Zu-Null-Quote); Katar mit anfälliger Abwehr (1.8 Gegentore/Spiel) und langer Spielpause (205 Tage ohne Pflicht-/Testspiel).",
-    "inputHash": "sha256:b1c935bded94f7cfd48b017c363212c632c4478c91e05258ca230f6444d21966"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Schweiz (1746 vs. 1509) stützt die Baseline klar zugunsten der Schweiz; Schweizer Topform: recentForm 2.1 und gewichtete Form 1.638 deutlich über Katars Werten; Schweiz mit stabiler Defensive (1.09 Gegentore/Spiel, 37% Zu-null-Quote) gegen Katars anfällige Abwehr (1.80 Gegentore/Spiel).",
+    "inputHash": "sha256:144cf48aaec9768d3c966a4a53ad1ba755ea9e54262a6adc39dab5dc33cc0fdf"
   },
   "predictionHistory": [
     {
@@ -296,11 +296,24 @@
         "away": 0.7545
       },
       "confidence": 0.7724
+    },
+    {
+      "generatedAt": "2026-06-10T22:06:46.762Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0953,
+        "draw": 0.15,
+        "away": 0.7547
+      },
+      "confidence": 0.7475
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T22:52:07.208Z",
+    "updatedAt": "2026-06-11T00:21:15.286Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.0696,

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-10T22:52:05.670Z",
+    "generatedAt": "2026-06-11T00:19:23.375Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.639,
       "cleanSheetRate": 0.235,
       "matchesCount": 34,
-      "daysSinceLastMatch": 71
+      "daysSinceLastMatch": 72
     },
     "away": {
       "teamId": "PAR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.059,
       "cleanSheetRate": 0.435,
       "matchesCount": 23,
-      "daysSinceLastMatch": 71
+      "daysSinceLastMatch": 72
     },
     "h2h": {
       "played": 1,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-10T22:06:46.762Z",
+    "generatedAt": "2026-06-11T00:19:23.375Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.516,
-      "draw": 0.2461,
-      "away": 0.238
+      "home": 0.52,
+      "draw": 0.2441,
+      "away": 0.2359
     },
-    "confidence": 0.6759,
+    "confidence": 0.6728,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.51,
-          "draw": 0.27,
-          "away": 0.22
+          "home": 0.52,
+          "draw": 0.25,
+          "away": 0.23
         },
         "confidence": 0.55,
         "keyFactors": [
-          "USA hat Heimvorteil als Gastgeber der WM 2026 trotz neutralem Stadionkontext",
-          "Elo-Vorteil der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419)",
-          "Paraguay erzielt im Schnitt unter einem Tor pro Spiel (0.984), was die Offensivgefahr begrenzt",
-          "Verletzungssorgen bei Paraguay um Schlüsselspieler Julio Enciso laut Kadermeldungen",
-          "H2H spricht knapp für die USA (2:1-Sieg im einzigen Duell)"
+          "USA mit Heimvorteil als Gastgeber der WM 2026 (hostAdvantage), was die Baseline zusätzlich stützt",
+          "Elo-Vorsprung der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419)",
+          "Paraguays Offensive ist schwach (0.98 Tore/Spiel), während die USA durchschnittlich 1.67 Tore erzielen",
+          "Verletzungssorgen bei Paraguay um Julio Enciso, einen ihrer wichtigsten Offensivspieler",
+          "H2H spricht knapp für die USA (1 Spiel, 2:1-Sieg)"
         ],
         "risks": [
-          "Paraguays hohe Clean-Sheet-Quote (43.5%) könnte das US-Angriffsspiel neutralisieren und ein torarmes Remis begünstigen",
-          "USA kassiert im Schnitt 1.6 Gegentore pro Spiel — defensive Anfälligkeit gegen Konter",
-          "Beide Teams hatten 71 Tage Pause; Rhythmus und Abstimmung sind schwer einzuschätzen",
-          "Geringe H2H-Stichprobe (nur 1 Spiel) hat kaum Aussagekraft"
+          "Paraguay verfügt über eine stabile Defensive (43.5% Clean-Sheet-Rate, nur 1.06 Gegentore/Spiel), was ein torarmes Spiel oder Remis begünstigen könnte",
+          "USA kassieren relativ viele Gegentore (1.64/Spiel) und haben eine niedrige Clean-Sheet-Rate (23.5%)",
+          "Beide Teams hatten 72 Tage Pause seit dem letzten Spiel – Formaussagen sind dadurch weniger verlässlich",
+          "Kleine H2H-Stichprobe (nur 1 Spiel) hat geringe Aussagekraft"
         ]
       },
       "chatgpt": {
@@ -106,25 +106,24 @@
         },
         "probabilities": {
           "home": 0.52,
-          "draw": 0.23,
-          "away": 0.25
+          "draw": 0.24,
+          "away": 0.24
         },
-        "confidence": 0.82,
+        "confidence": 0.8,
         "keyFactors": [
-          "USA spielt auf neutralem Gelände, hat aber durch den Gastgeberstatus einen geringen Vorteil.",
-          "Paraguay hat einige Verletzungssorgen, insbesondere um den Spieler Enciso.",
-          "Die Form der USA ist leicht besser als die von Paraguay.",
-          "Bisheriger direkter Vergleich spricht für die USA."
+          "USA spielt nahezu in einem Heimspiel-Kontext (neutrale Spielstätte, aber Gastgeberland)",
+          "USA mit besserer aktueller Form (weightedForm: 1.517 vs. 1.419)",
+          "Verletzung bei Paraguay (Mainz-Schreck Enciso von Bedeutung)"
         ],
         "risks": [
-          "Paraguay hat eine gute Defensivbilanz mit einer relativ hohen Clean-Sheet-Rate.",
-          "Das Spiel ist auf neutralem Boden, was traditionelle Heimvorteile ausschließt."
+          "Beide Teams haben seit 72 Tagen keinen Wettkampf mehr bestritten",
+          "Hohe Cleansheet-Rate von Paraguay (0.435)"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA hat Heimvorteil als Gastgeber der WM 2026 trotz neutralem Stadionkontext; Elo-Vorteil der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419); Paraguay erzielt im Schnitt unter einem Tor pro Spiel (0.984), was die Offensivgefahr begrenzt.",
-    "inputHash": "sha256:d4e25cee1a58d5b9d9212f53acf683f4e4177ed21ce192d4820e72dd2e673c2a"
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heimvorteil als Gastgeber der WM 2026 (hostAdvantage), was die Baseline zusätzlich stützt; Elo-Vorsprung der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419); Paraguays Offensive ist schwach (0.98 Tore/Spiel), während die USA durchschnittlich 1.67 Tore erzielen.",
+    "inputHash": "sha256:3b7ffe894991ca7312d8a2e139082a98390ba6f4368b67af1664e84c965c7b6f"
   },
   "predictionHistory": [
     {
@@ -360,11 +359,24 @@
         "away": 0.2357
       },
       "confidence": 0.6528
+    },
+    {
+      "generatedAt": "2026-06-10T22:06:46.762Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.516,
+        "draw": 0.2461,
+        "away": 0.238
+      },
+      "confidence": 0.6759
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-10T22:52:07.208Z",
+    "updatedAt": "2026-06-11T00:21:15.286Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.492,
