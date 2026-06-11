@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T04:06:02.998Z",
+    "generatedAt": "2026-06-11T05:52:54.425Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T00:19:23.375Z",
+    "generatedAt": "2026-06-11T05:52:54.425Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
       "home": 0.52,
-      "draw": 0.2441,
-      "away": 0.2359
+      "draw": 0.2488,
+      "away": 0.2312
     },
-    "confidence": 0.6728,
+    "confidence": 0.6208,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,22 @@
         },
         "probabilities": {
           "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "draw": 0.26,
+          "away": 0.22
         },
         "confidence": 0.55,
         "keyFactors": [
-          "USA mit Heimvorteil als Gastgeber der WM 2026 (hostAdvantage), was die Baseline zusätzlich stützt",
-          "Elo-Vorsprung der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419)",
-          "Paraguays Offensive ist schwach (0.98 Tore/Spiel), während die USA durchschnittlich 1.67 Tore erzielen",
-          "Verletzungssorgen bei Paraguay um Julio Enciso, einen ihrer wichtigsten Offensivspieler",
-          "H2H spricht knapp für die USA (1 Spiel, 2:1-Sieg)"
+          "Elo-Vorteil der USA (1676 vs. 1644) plus Heim-/Gastgebervorteil trotz neutralem Stadion-Flag (hostAdvantageTeamId USA)",
+          "Bessere gewichtete Form der USA (1.517 vs. 1.419) und höherer Torschnitt (1.67 vs. 0.98 Tore pro Spiel)",
+          "Paraguays starke Defensive (nur 1.06 Gegentore/Spiel, 43.5% Zu-null-Quote) hält das Spiel eng",
+          "Verletzungssorgen um Julio Enciso schwächen Paraguays Offensive zusätzlich",
+          "H2H spricht knapp für die USA (2:1-Sieg im einzigen Duell)"
         ],
         "risks": [
-          "Paraguay verfügt über eine stabile Defensive (43.5% Clean-Sheet-Rate, nur 1.06 Gegentore/Spiel), was ein torarmes Spiel oder Remis begünstigen könnte",
-          "USA kassieren relativ viele Gegentore (1.64/Spiel) und haben eine niedrige Clean-Sheet-Rate (23.5%)",
-          "Beide Teams hatten 72 Tage Pause seit dem letzten Spiel – Formaussagen sind dadurch weniger verlässlich",
-          "Kleine H2H-Stichprobe (nur 1 Spiel) hat geringe Aussagekraft"
+          "72 Tage ohne Pflichtspiel bei beiden Teams – Formaussagen mit Unsicherheit behaftet",
+          "USA-Defensive anfällig (1.64 Gegentore/Spiel, nur 23.5% Zu-null-Quote) – Paraguay kann mit wenig Chancen treffen",
+          "Paraguays kompakte Spielweise erhöht die Remis-Wahrscheinlichkeit (externe Prognose sieht 28% Draw)",
+          "Kleine Stichprobe bei Paraguay (23 Spiele) und nur ein direktes Duell als H2H-Basis"
         ]
       },
       "chatgpt": {
@@ -109,20 +109,20 @@
           "draw": 0.24,
           "away": 0.24
         },
-        "confidence": 0.8,
+        "confidence": 0.7,
         "keyFactors": [
-          "USA spielt nahezu in einem Heimspiel-Kontext (neutrale Spielstätte, aber Gastgeberland)",
-          "USA mit besserer aktueller Form (weightedForm: 1.517 vs. 1.419)",
-          "Verletzung bei Paraguay (Mainz-Schreck Enciso von Bedeutung)"
+          "USA spielt an einem neutralen Spielort, aber als Co-Gastgeber mit einem leichten Vorteil.",
+          "Paraguay hat einige Verletzungssorgen, die ihre Offensivstärke beeinflussen können.",
+          "USA hat einen leichten Vorsprung in den Elo-Ratings und in der jüngsten Form."
         ],
         "risks": [
-          "Beide Teams haben seit 72 Tagen keinen Wettkampf mehr bestritten",
-          "Hohe Cleansheet-Rate von Paraguay (0.435)"
+          "Paraguay hat eine höhere Quote zur Erzielung eines Zu-null-Spiels als die USA.",
+          "Die Prognosen der externen Vorhersagen haben eine etwas höhere Unentschieden-Wahrscheinlichkeit."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heimvorteil als Gastgeber der WM 2026 (hostAdvantage), was die Baseline zusätzlich stützt; Elo-Vorsprung der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419); Paraguays Offensive ist schwach (0.98 Tore/Spiel), während die USA durchschnittlich 1.67 Tore erzielen.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil der USA (1676 vs. 1644) plus Heim-/Gastgebervorteil trotz neutralem Stadion-Flag (hostAdvantageTeamId USA); Bessere gewichtete Form der USA (1.517 vs. 1.419) und höherer Torschnitt (1.67 vs. 0.98 Tore pro Spiel); Paraguays starke Defensive (nur 1.06 Gegentore/Spiel, 43.5% Zu-null-Quote) hält das Spiel eng.",
     "inputHash": "sha256:3b7ffe894991ca7312d8a2e139082a98390ba6f4368b67af1664e84c965c7b6f"
   },
   "predictionHistory": [
@@ -372,11 +372,24 @@
         "away": 0.238
       },
       "confidence": 0.6759
+    },
+    {
+      "generatedAt": "2026-06-11T00:19:23.375Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.52,
+        "draw": 0.2441,
+        "away": 0.2359
+      },
+      "confidence": 0.6728
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T04:07:56.606Z",
+    "updatedAt": "2026-06-11T05:54:50.471Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.4907,

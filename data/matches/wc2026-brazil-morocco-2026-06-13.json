@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T04:06:02.998Z",
+    "generatedAt": "2026-06-11T05:52:54.425Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T00:19:23.375Z",
+    "generatedAt": "2026-06-11T05:52:54.425Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3078,
-      "draw": 0.2578,
-      "away": 0.4343
+      "home": 0.3383,
+      "draw": 0.3491,
+      "away": 0.3126
     },
-    "confidence": 0.5673,
+    "confidence": 0.5443,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -87,44 +87,43 @@
         "confidence": 0.45,
         "keyFactors": [
           "Marokko hat das höhere Elo-Rating (1892 vs. 1844) und eine deutlich bessere gewichtete Form (2.585 vs. 1.791)",
-          "Marokkos Defensive ist außergewöhnlich stabil: nur 0.274 Gegentore pro Spiel und 70.6% Zu-Null-Quote über 34 Spiele",
-          "Brasilien ist von mehreren Verletzungen betroffen (Neymar-Rückkehr unwahrscheinlich, Wesley fällt aus, weitere Nachnominierungen nötig)",
-          "Die Elo+Poisson-Baseline sieht Marokko klar vorne (48% vs. 26%), gestützt durch die Formdaten",
-          "Neutraler Spielort ohne Heimvorteil für Brasilien, kein Head-to-Head-Vorlauf"
+          "Marokkos Defensive ist herausragend: nur 0.274 Gegentore pro Spiel und 70.6% Zu-Null-Quote in 34 Spielen",
+          "Brasilien hat personelle Sorgen: Neymars WM-Auftakt ist laut Berichten unwahrscheinlich und ein weiterer WM-Ausfall erzwang eine Nachnominierung",
+          "Marokkos Kader steht weitgehend komplett mit Schlüsselspielern wie Hakimi und El Khannouss",
+          "Neutrales Stadion ohne Heimvorteil für Brasilien — die Baseline-Wahrscheinlichkeiten (48% Marokko) spiegeln die Daten wider",
+          "Marokko erzielt im Schnitt mehr Tore (2.011 vs. 1.814) bei deutlich weniger Gegentoren"
         ],
         "risks": [
-          "Das externe Forecast-Modell sieht Brasilien mit 57.8% deutlich vorne – große Modell-Divergenz erhöht die Unsicherheit",
-          "Trainerbeben bei Marokko kurz vor der WM könnte die Stabilität und Form des Teams beeinträchtigen",
-          "Marokko verliert wohl einen verletzten Angreifer, was die Offensivkraft (2.011 Tore/Spiel) schwächen kann",
-          "Beide Teams hatten 72 Tage Spielpause – Formdaten könnten veraltet sein"
+          "Die externe Prognose sieht Brasilien klar vorne (57.8%), was auf eine mögliche Überschätzung von Marokkos Form in der Baseline hindeutet — Marokkos Bilanz stammt teils gegen schwächere Gegner",
+          "Brasiliens individuelle Kaderqualität und Turniererfahrung können statistische Formwerte übertreffen",
+          "Ein verletzter marokkanischer Angreifer fehlt wohl bei der WM, was die Offensivkraft mindern könnte",
+          "Beide Teams hatten 72 Tage Pause — Formwerte vor der Pause sind weniger aussagekräftig"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.25,
-          "away": 0.45
+          "home": 0.35,
+          "draw": 0.4,
+          "away": 0.25
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Morocco has a stronger Elo rating compared to Brazil.",
-          "Morocco's recent form is significantly better than Brazil's.",
-          "Brazil missing key players such as Neymar and Wesley due to injuries.",
-          "Morocco has a high clean sheet rate of 0.706."
+          "Brazil without Neymar for the opener",
+          "Both teams are playing at a neutral venue",
+          "Morocco's strong recent form and defensive record"
         ],
         "risks": [
-          "Neutral venue might affect both teams' typical performance.",
-          "Morocco's recent coaching change could impact team dynamics.",
-          "Brazil's potential to outperform due to historical strength in tournaments."
+          "Impact of individual Brazilian players stepping up in Neymar's absence",
+          "Potential for tactical changes from both sides that are hard to predict"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko hat das höhere Elo-Rating (1892 vs. 1844) und eine deutlich bessere gewichtete Form (2.585 vs. 1.791); Marokkos Defensive ist außergewöhnlich stabil: nur 0.274 Gegentore pro Spiel und 70.6% Zu-Null-Quote über 34 Spiele; Brasilien ist von mehreren Verletzungen betroffen (Neymar-Rückkehr unwahrscheinlich, Wesley fällt aus, weitere Nachnominierungen nötig).",
+    "agreement": 0.8933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko hat das höhere Elo-Rating (1892 vs. 1844) und eine deutlich bessere gewichtete Form (2.585 vs. 1.791); Marokkos Defensive ist herausragend: nur 0.274 Gegentore pro Spiel und 70.6% Zu-Null-Quote in 34 Spielen; Brasilien hat personelle Sorgen: Neymars WM-Auftakt ist laut Berichten unwahrscheinlich und ein weiterer WM-Ausfall erzwang eine Nachnominierung.",
     "inputHash": "sha256:4ec661a1fe743fddbc6e34897d8e95ba301a3f83e5f5461036e99da037971765"
   },
   "predictionHistory": [
@@ -296,11 +295,24 @@
         "away": 0.4333
       },
       "confidence": 0.592
+    },
+    {
+      "generatedAt": "2026-06-11T00:19:23.375Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3078,
+        "draw": 0.2578,
+        "away": 0.4343
+      },
+      "confidence": 0.5673
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T04:07:56.606Z",
+    "updatedAt": "2026-06-11T05:54:50.472Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.5778,
