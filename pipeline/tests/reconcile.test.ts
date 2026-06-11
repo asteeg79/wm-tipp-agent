@@ -50,6 +50,43 @@ describe("reconcile", () => {
     expect(r.predictedScore).toEqual({ home: 1, away: 1 });
   });
 
+  it("REGRESSION Brasilien–Marokko: knappes Rennen überstimmt KEINEN Modell-Tipp", () => {
+    // Echte Daten vom 13.06.: Claude 1:2 (Marokko), ChatGPT 1:1 (Remis) mit
+    // höherer Konfidenz. Gemischt führte "Heimsieg" mit nur 37,7 % zu 31,9 %
+    // (margin 0.058) — die Konsistenz-Regel erzwang per xG ein 3:2 für
+    // Brasilien, das KEIN Modell getippt hatte. Erwartet: Score des
+    // konfidenzstärkeren Modells (1:1) bleibt unangetastet.
+    const r = reconcile(
+      [
+        model("claude", 1, 2, 0.34, 0.27, 0.39, 0.48),
+        model("chatgpt", 1, 1, 0.4, 0.35, 0.25, 0.75),
+      ],
+      {
+        ...baseline,
+        probabilities: { home: 0.2597, draw: 0.2597, away: 0.4806 },
+        expectedGoals: { home: 1.03, away: 1.5 },
+      },
+      new Date(),
+      "h",
+    );
+    expect(r.predictedScore).toEqual({ home: 1, away: 1 });
+  });
+
+  it("klarer Top-Ausgang (margin ≥ 0.10) erzwingt weiterhin Konsistenz", () => {
+    // Stärkeres Modell tippt 1:1, aber BEIDE sehen klar Heimsieg →
+    // Konsistenz-Regel darf den Remis-Tipp zum Heimsieg korrigieren.
+    const r = reconcile(
+      [
+        model("claude", 1, 1, 0.62, 0.22, 0.16, 0.8),
+        model("chatgpt", 2, 0, 0.68, 0.18, 0.14, 0.6),
+      ],
+      { ...baseline, expectedGoals: { home: 1.9, away: 0.8 } },
+      new Date(),
+      "h",
+    );
+    expect(r.predictedScore.home).toBeGreaterThan(r.predictedScore.away);
+  });
+
   it("klarer Heimfavorit: Heimsieg bleibt erhalten", () => {
     const r = reconcile(
       [

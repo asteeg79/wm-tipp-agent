@@ -160,13 +160,23 @@ function topOutcome(p: Outcome1x2): { key: OutcomeKey; margin: number } {
 }
 
 /**
+ * Unterhalb dieses Vorsprungs gilt das 1X2-Rennen als "zu knapp", um einen
+ * Modell-Score zu überstimmen (gilt für Konsens UND Nicht-Konsens).
+ */
+const CLOSE_MARGIN = 0.1;
+
+/**
  * Leitet den finalen Score ab:
  *  1) Nennen BEIDE Modelle denselben Score (Konsens) und passt der zum
- *     Top-Ausgang ODER ist das Rennen knapp (margin < 0.10) → Konsens nehmen.
- *     (Verhindert, dass ein hauchdünner Wahrscheinlichkeits-Vorsprung den
- *      einhelligen Modell-Tipp kippt — der frühere 2:1-Bug.)
- *  2) Sonst: Score des stärksten Modells (Konfidenz × Accuracy-Gewicht),
- *     konsistent zum Top-Ausgang gemacht (Magnitude aus der xG-Baseline).
+ *     Top-Ausgang ODER ist das Rennen knapp (margin < CLOSE_MARGIN) →
+ *     Konsens nehmen. (Verhindert, dass ein hauchdünner Wahrscheinlichkeits-
+ *     Vorsprung den einhelligen Modell-Tipp kippt — der frühere 2:1-Bug.)
+ *  2) Sonst: Score des stärksten Modells (Konfidenz × Accuracy-Gewicht).
+ *     Ist das Rennen knapp, bleibt dieser Score UNANGETASTET — die
+ *     Konsistenz-Regel darf nur bei klarem Top-Ausgang überstimmen.
+ *     (Brasilien-Marokko-Fall: Modelle tippten 1:2 und 1:1, aber ein
+ *      37,7%-zu-31,9%-Mikro-Vorsprung erzwang per xG ein 3:2 für Brasilien —
+ *      einen Ausgang, den KEIN Modell getippt hatte.)
  */
 function deriveScore(
   results: ModelResult[],
@@ -185,13 +195,14 @@ function deriveScore(
       ? results[0]!.prediction.predictedScore
       : null;
 
-  if (consensus && (outcomeOf(consensus) === topKey || margin < 0.1)) {
+  if (consensus && (outcomeOf(consensus) === topKey || margin < CLOSE_MARGIN)) {
     return consensus;
   }
 
   const strength = (r: ModelResult): number =>
     r.prediction.confidence * (accWeights?.weights[r.id] ?? 1);
   const top = results.slice().sort((a, b) => strength(b) - strength(a))[0]!;
+  if (margin < CLOSE_MARGIN) return top.prediction.predictedScore;
   return makeConsistent(top.prediction.predictedScore, p, baseline);
 }
 
