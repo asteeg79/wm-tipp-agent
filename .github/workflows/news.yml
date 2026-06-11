@@ -1,9 +1,10 @@
 name: News Refresh
 
 # News für alle Teams + globale Feeds, alle 3 Stunden. KEINE KI → günstig.
+# Krumme Minute: voller-Stunden-Slots werden von GitHub am ehesten verworfen.
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "11 */3 * * *"
   workflow_dispatch:
 
 concurrency:

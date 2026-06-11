@@ -2,9 +2,10 @@ name: KI-Tipps täglich
 
 # Einmal täglich: KI bewertet alle Partien mit Anpfiff in den nächsten 72 h
 # (predict-Modus, Fenster WM_AI_WINDOW_HOURS = 72 default).
+# Krumme Minute: voller-Stunden-Slots werden von GitHub am ehesten verworfen.
 on:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "23 5 * * *"
   workflow_dispatch:
 
 concurrency:
