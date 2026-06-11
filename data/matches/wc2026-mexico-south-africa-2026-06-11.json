@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T05:52:54.425Z",
+    "generatedAt": "2026-06-11T09:11:36.096Z",
     "home": {
       "teamId": "MEX",
       "elo": 1729,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T00:19:23.375Z",
+    "generatedAt": "2026-06-11T09:11:36.096Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6047,
-      "draw": 0.2327,
-      "away": 0.1627
+      "home": 0.5811,
+      "draw": 0.2358,
+      "away": 0.1831
     },
-    "confidence": 0.6578,
+    "confidence": 0.7228,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -78,7 +78,7 @@
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
           "home": 0.61,
@@ -87,17 +87,16 @@
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Mexiko ist Gastgeber (hostAdvantageTeamId MEX) und spielt faktisch ein Heimspiel trotz formal neutralem Status",
-          "Höhenlage von 2240 m (Estadio Azteca) ist ein erheblicher Vorteil für die höhengewohnten Mexikaner",
-          "Elo-Vorsprung von 102 Punkten (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59)",
-          "Mexikos starke Defensive: 0.797 Gegentore/Spiel und 58.8% Zu-null-Quote",
-          "Externe Prognose (68% Heimsieg) stützt eine Korrektur der Baseline nach oben zugunsten Mexikos"
+          "Elo-Vorteil Mexikos (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59)",
+          "Heimvorteil als Gastgeber: Spiel in Mexiko auf 2240 m Höhe (Azteca-Effekt), an den Mexiko gewöhnt ist",
+          "Externes Forecast-Modell sieht Mexiko deutlich stärker (67,7%) als die Elo+Poisson-Baseline (53,1%)",
+          "Mexiko mit solider Defensive (0.797 Gegentore/Spiel, 58,8% Zu-Null-Quote)"
         ],
         "risks": [
-          "Keine Head-to-Head-Historie zwischen beiden Teams, was die Vorhersage unsicherer macht",
-          "Südafrika zeigt solide Offensivwerte (1.556 Tore/Spiel) und gute jüngste Form (recentForm 1.5)",
-          "72 Tage Pause für beide Teams – Rhythmus und Eingespieltheit zum Turnierstart schwer einschätzbar",
-          "Hoher Erwartungsdruck auf Mexiko als Gastgeber kann zu nervösem Start führen"
+          "Kein Head-to-Head-Datenmaterial vorhanden, daher höhere Unsicherheit",
+          "Südafrika offensiv durchaus gefährlich (1.556 Tore/Spiel) und hochmotiviert zum WM-Start",
+          "Beide Teams 72 Tage ohne Pflichtspiel – Formaussagen mit Vorsicht zu genießen",
+          "Eröffnungsdruck als Gastgeber kann Mexiko hemmen, worauf auch der eigene Trainer hinweist"
         ]
       },
       "chatgpt": {
@@ -106,24 +105,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.6,
-          "draw": 0.235,
-          "away": 0.165
+          "home": 0.56,
+          "draw": 0.24,
+          "away": 0.2
         },
-        "confidence": 0.7,
+        "confidence": 0.85,
         "keyFactors": [
-          "Mexico's high altitude favors their playing style due to home conditions advantage despite the neutral venue.",
-          "Higher Elo for Mexico indicating stronger overall performance historically.",
-          "Mexico has a slightly better defensive record with a higher clean sheet rate."
+          "Mexico's higher Elo rating of 1729 compared to South Africa's 1627",
+          "Mexico's strong clean sheet rate of 0.588",
+          "Mexico has host advantage due to familiarity with playing at altitude",
+          "Neutral venue reduces traditional home advantage, but benefits Mexico"
         ],
         "risks": [
-          "South Africa's recent form is slightly better than Mexico's, suggesting potential for an upset.",
-          "No historical head-to-head to gauge past matchups, introducing uncertainty."
+          "South Africa's recent form is slightly better than Mexico's",
+          "Motivational news boosts South Africa's morale"
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko ist Gastgeber (hostAdvantageTeamId MEX) und spielt faktisch ein Heimspiel trotz formal neutralem Status; Höhenlage von 2240 m (Estadio Azteca) ist ein erheblicher Vorteil für die höhengewohnten Mexikaner; Elo-Vorsprung von 102 Punkten (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59).",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil Mexikos (1729 vs. 1627) und bessere gewichtete Form (1.754 vs. 1.59); Heimvorteil als Gastgeber: Spiel in Mexiko auf 2240 m Höhe (Azteca-Effekt), an den Mexiko gewöhnt ist; Externes Forecast-Modell sieht Mexiko deutlich stärker (67,7%) als die Elo+Poisson-Baseline (53,1%).",
     "inputHash": "sha256:d72859379f60006fa07a1e70549a61ed4a24feed39fbbb44ee5c018c1397624b"
   },
   "predictionHistory": [
@@ -477,11 +477,24 @@
         "away": 0.1656
       },
       "confidence": 0.6705
+    },
+    {
+      "generatedAt": "2026-06-11T00:19:23.375Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6047,
+        "draw": 0.2327,
+        "away": 0.1627
+      },
+      "confidence": 0.6578
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T05:54:50.471Z",
+    "updatedAt": "2026-06-11T09:13:44.178Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.6774,

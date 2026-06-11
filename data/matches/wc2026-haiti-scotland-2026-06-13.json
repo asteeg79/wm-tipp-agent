@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T05:52:54.425Z",
+    "generatedAt": "2026-06-11T09:11:36.096Z",
     "home": {
       "teamId": "HAI",
       "elo": 1576,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T05:52:54.425Z",
+    "generatedAt": "2026-06-11T09:11:36.096Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2588,
+      "home": 0.2084,
       "draw": 0.25,
-      "away": 0.4912
+      "away": 0.5416
     },
-    "confidence": 0.6208,
+    "confidence": 0.6506,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.27,
+          "home": 0.22,
           "draw": 0.25,
-          "away": 0.48
+          "away": 0.53
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Elo-Werte nahezu identisch (1576 vs. 1586), aber externes Forecast-Modell sieht Schottland deutlich vorne (62%)",
-          "Schottland mit besserer aktueller Form (recentForm 1.6 vs. 1.3) und stärkerem Kader um McTominay und Robertson",
-          "Neutraler Spielort reduziert den in der Baseline implizierten Heimvorteil Haitis erheblich",
-          "Schottlands höhere Kaderqualität und Turniererfahrung auf Top-Niveau (erste WM seit 1998, aber Spieler aus Topligen)",
-          "Haiti mit solider gewichteter Form (1.488) und guter Defensivquote (Clean-Sheet-Rate 0.409), was ein knappes Spiel wahrscheinlich macht"
+          "Neutrales Stadion: Der in der Elo+Poisson-Baseline implizit enthaltene Heimvorteil für Haiti entfällt, was die Baseline deutlich zugunsten Schottlands korrigiert",
+          "Externe Prognose sieht Schottland klar vorne (62%), was auf eine höhere individuelle Kaderqualität hindeutet (zahlreiche Spieler aus Top-Ligen wie McTominay, Robertson, Gilmour)",
+          "Schottlands aktuelle Form (recentForm 1.6) ist besser als die von Haiti (1.3), trotz leicht höherer gewichteter Langzeitform Haitis",
+          "Elo-Werte nahezu identisch (1576 vs. 1586), daher bleibt das Spiel grundsätzlich eng",
+          "Haiti zeigt solide Defensivwerte (cleanSheetRate 0.409, nur 1.09 Gegentore/Spiel), was ein knappes Ergebnis wahrscheinlich macht"
         ],
         "risks": [
-          "Verletzung von Billy Gilmour könnte Schottlands Mittelfeld schwächen (laut News verletzt im WM-Test)",
-          "Kein Head-to-Head-Datenmaterial vorhanden, hohe Unsicherheit über Matchup-Dynamik",
-          "72 Tage Spielpause bei beiden Teams – Formdaten könnten veraltet sein",
-          "Haitis Offensivstärke (1.66 Tore/Spiel) gegen Schottlands anfällige Defensive (1.28 Gegentore/Spiel, nur 28% Clean Sheets)"
+          "Keine Head-to-Head-Historie vorhanden, was die Vorhersage unsicherer macht",
+          "72 Tage Pause bei beiden Teams: Rhythmus- und Fitnesszustand zum Turnierstart schwer einschätzbar",
+          "Haitis erste WM-Teilnahme seit 52 Jahren kann sowohl zusätzliche Motivation als auch fehlende Turniererfahrung bedeuten",
+          "Große Diskrepanz zwischen Baseline (Haiti leicht favorisiert) und externer Prognose (Schottland klar favorisiert) erhöht die Modellunsicherheit"
         ]
       },
       "chatgpt": {
@@ -105,25 +105,24 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
+          "home": 0.2,
           "draw": 0.25,
-          "away": 0.5
+          "away": 0.55
         },
-        "confidence": 0.7,
+        "confidence": 0.76,
         "keyFactors": [
-          "Scotland's improved recent form with a rating of 1.6 compared to Haiti's 1.3.",
-          "Billy Gilmour's injury may slightly impact Scotland but does not significantly sway the balance in favor of Haiti.",
-          "Elo ratings are close, with Scotland having a slight edge (1586 vs 1576).",
-          "Neutral venue does not provide a home advantage for either team."
+          "Scotland has a slightly higher Elo rating and better recent form compared to Haiti.",
+          "The match is played at a neutral venue, which diminishes any potential home advantage.",
+          "Haiti is returning to the World Cup after a long absence, which might impact performance under pressure."
         ],
         "risks": [
-          "Scotland's injury to a key player like Gilmour could have unforeseen impacts on performance.",
-          "No historical head-to-head data to guide predictions further."
+          "Haiti's high goalsForAvg and cleanSheetRate could challenge Scotland.",
+          "The teams have never played against each other, leading to unpredictable dynamics."
         ]
       }
     },
     "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Werte nahezu identisch (1576 vs. 1586), aber externes Forecast-Modell sieht Schottland deutlich vorne (62%); Schottland mit besserer aktueller Form (recentForm 1.6 vs. 1.3) und stärkerem Kader um McTominay und Robertson; Neutraler Spielort reduziert den in der Baseline implizierten Heimvorteil Haitis erheblich.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Neutrales Stadion: Der in der Elo+Poisson-Baseline implizit enthaltene Heimvorteil für Haiti entfällt, was die Baseline deutlich zugunsten Schottlands korrigiert; Externe Prognose sieht Schottland klar vorne (62%), was auf eine höhere individuelle Kaderqualität hindeutet (zahlreiche Spieler aus Top-Ligen wie McTominay, Robertson, Gilmour); Schottlands aktuelle Form (recentForm 1.6) ist besser als die von Haiti (1.3), trotz leicht höherer gewichteter Langzeitform Haitis.",
     "inputHash": "sha256:92367de92057c5a62587f7afa02dbc85019b8543c53707e908e4497d110378f1"
   },
   "predictionHistory": [
@@ -282,11 +281,24 @@
         "away": 0.3787
       },
       "confidence": 0.5694
+    },
+    {
+      "generatedAt": "2026-06-11T05:52:54.425Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2588,
+        "draw": 0.25,
+        "away": 0.4912
+      },
+      "confidence": 0.6208
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T05:54:50.472Z",
+    "updatedAt": "2026-06-11T09:13:44.179Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.1579,
