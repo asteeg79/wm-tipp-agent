@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { formatPercent } from "../lib/format.js";
 
 /** Konfidenz-Badge mit Farbskala (rot/gelb/grün). */
 export function ConfidenceBadge({ value }: { value: number }) {
   const { t } = useTranslation();
-  const pct = Math.round(value * 100);
   const cls =
     value >= 0.6
       ? "bg-emerald-500/15 text-pos ring-emerald-500/30"
@@ -14,7 +14,7 @@ export function ConfidenceBadge({ value }: { value: number }) {
     <span
       className={`rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${cls}`}
     >
-      {t("match.confidence")} {pct}%
+      {t("match.confidence")} {formatPercent(value)}
     </span>
   );
 }

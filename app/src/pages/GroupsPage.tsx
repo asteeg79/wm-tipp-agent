@@ -1,3 +1,4 @@
+import { formatPercent } from "../lib/format.js";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { PredictionIndexEntry } from "@wm/shared";
@@ -35,8 +36,6 @@ export function GroupsPage() {
         : null,
     [index, predIndex],
   );
-  const pct = (x: number | undefined): string =>
-    x === undefined ? "–" : `${Math.round(x * 100)}%`;
 
   if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
   if (isError || !index) return <p className="text-neg">{t("error")}</p>;
@@ -116,10 +115,10 @@ export function GroupsPage() {
                     {sim && (
                       <span className="flex shrink-0 gap-3 font-mono text-xs">
                         <span className="w-10 text-right text-fg-muted">
-                          {pct(sim.groupWinner.get(tm.id))}
+                          {formatPercent(sim.groupWinner.get(tm.id))}
                         </span>
                         <span className="w-10 text-right font-semibold text-pos">
-                          {pct(sim.advance.get(tm.id))}
+                          {formatPercent(sim.advance.get(tm.id))}
                         </span>
                       </span>
                     )}

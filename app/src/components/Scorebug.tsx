@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { PredictionIndexEntry, TeamSummary } from "@wm/shared";
+import { formatPercent } from "../lib/format.js";
 
 /** Countdown bis Anpfiff (tickt jede Sekunde). */
 function useCountdown(iso: string): string {
@@ -49,17 +50,13 @@ function ProbBar({ p }: { p: { home: number; draw: number; away: number } }) {
     <div>
       <div className="flex h-3 overflow-hidden rounded-sm bg-surface-2">
         {seg.map(([k, v, c]) => (
-          <div
-            key={k}
-            className={c}
-            style={{ width: `${Math.round(v * 100)}%` }}
-          />
+          <div key={k} className={c} style={{ width: formatPercent(v) }} />
         ))}
       </div>
       <div className="mt-1.5 flex justify-between font-mono text-[11px] text-fg-soft">
         {seg.map(([k, v]) => (
           <span key={k}>
-            <span className="font-bold">{k}</span> {Math.round(v * 100)}%
+            <span className="font-bold">{k}</span> {formatPercent(v)}
           </span>
         ))}
       </div>
@@ -130,7 +127,7 @@ export function Scorebug({ entry, teams }: Props) {
             <Gauge value={entry.confidence} />
           </div>
           <span className="font-mono text-sm font-bold text-acc">
-            {Math.round(entry.confidence * 100)}%
+            {formatPercent(entry.confidence)}
           </span>
         </div>
       )}

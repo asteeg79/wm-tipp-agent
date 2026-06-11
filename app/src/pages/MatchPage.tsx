@@ -4,7 +4,7 @@ import { useMatch, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { ProbabilityBar } from "../components/ProbabilityBar.js";
 import { ConfidenceBadge } from "../components/ConfidenceBadge.js";
-import { formatKickoff } from "../lib/format.js";
+import { formatKickoff, formatPercent } from "../lib/format.js";
 
 export function MatchPage() {
   const { matchId } = useParams();
@@ -96,7 +96,7 @@ export function MatchPage() {
                 {t("match.modelComparison")}
                 {pred.agreement !== undefined && (
                   <span className="ml-2 normal-case text-fg-muted">
-                    {t("match.agreement")}: {Math.round(pred.agreement * 100)}%
+                    {t("match.agreement")}: {formatPercent(pred.agreement)}
                   </span>
                 )}
               </div>
@@ -119,9 +119,9 @@ export function MatchPage() {
                 <div className="mb-2">
                   <span className="text-fg-faint">Baseline:</span>{" "}
                   <span className="font-mono text-fg-soft">
-                    {pct(pred.baseline.probabilities.home)} /{" "}
-                    {pct(pred.baseline.probabilities.draw)} /{" "}
-                    {pct(pred.baseline.probabilities.away)}
+                    {formatPercent(pred.baseline.probabilities.home)} /{" "}
+                    {formatPercent(pred.baseline.probabilities.draw)} /{" "}
+                    {formatPercent(pred.baseline.probabilities.away)}
                   </span>
                 </div>
               )}
@@ -177,7 +177,7 @@ export function MatchPage() {
                       </span>
                       <span className="font-mono">
                         {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
-                        {Math.round(h.confidence * 100)}%
+                        {formatPercent(h.confidence)}
                       </span>
                     </li>
                   ))}
@@ -267,10 +267,10 @@ export function MatchPage() {
                   <div key={k}>
                     <div className="text-fg-faint">{t(k)}</div>
                     <div className="font-mono text-pos">
-                      {t("market.us")} {pct(ours)}
+                      {t("market.us")} {formatPercent(ours)}
                     </div>
                     <div className="font-mono text-fg-muted">
-                      {t("market.market")} {pct(mkt)}
+                      {t("market.market")} {formatPercent(mkt)}
                     </div>
                   </div>
                 ))}
@@ -286,8 +286,6 @@ export function MatchPage() {
     </div>
   );
 }
-
-const pct = (x: number): string => `${Math.round(x * 100)}%`;
 
 function WhySection({
   models,
@@ -355,8 +353,9 @@ function ModelCol({
         {m.predictedScore.home}:{m.predictedScore.away}
       </div>
       <div className="text-xs text-fg-faint">
-        {pct(m.probabilities.home)} / {pct(m.probabilities.draw)} /{" "}
-        {pct(m.probabilities.away)} · {pct(m.confidence)}
+        {formatPercent(m.probabilities.home)} /{" "}
+        {formatPercent(m.probabilities.draw)} /{" "}
+        {formatPercent(m.probabilities.away)} · {formatPercent(m.confidence)}
       </div>
     </div>
   );

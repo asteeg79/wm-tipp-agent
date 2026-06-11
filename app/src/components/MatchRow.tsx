@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import type { PredictionIndexEntry, TeamSummary } from "@wm/shared";
 import { useTranslation } from "react-i18next";
 import { TeamBadge } from "./TeamBadge.js";
-import { formatKickoff } from "../lib/format.js";
+import { formatKickoff, formatPercent } from "../lib/format.js";
 
 interface Props {
   entry: PredictionIndexEntry;
@@ -38,7 +38,7 @@ export function MatchRow({ entry, teams }: Props) {
   let rightCell: string;
   if (r) rightCell = t("match.finished");
   else if (entry.confidence !== undefined)
-    rightCell = `${Math.round(entry.confidence * 100)}%`;
+    rightCell = formatPercent(entry.confidence);
   else rightCell = t("overview.tipSoon");
 
   return (

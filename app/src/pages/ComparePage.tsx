@@ -1,3 +1,4 @@
+import { formatPercent } from "../lib/format.js";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useIndex, useTeam } from "../lib/data.js";
@@ -100,7 +101,7 @@ export function ComparePage() {
 
 function fmt(v: number | undefined, dec?: number, pct?: boolean): string {
   if (v === undefined) return "–";
-  if (pct) return `${Math.round(v * 100)}%`;
+  if (pct) return formatPercent(v);
   return dec ? v.toFixed(dec) : String(v);
 }
 

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import type { AccuracyAggregate, ModelComparison } from "@wm/shared";
 import { usePredictionsIndex, useTeamsMap } from "../lib/data.js";
+import { formatDecimal, formatPercent } from "../lib/format.js";
 import { StatCard } from "../components/StatCard.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 
@@ -17,9 +18,6 @@ function ModelCard({
   leads: boolean;
 }) {
   const { t } = useTranslation();
-  const pct = (x: number | null): string =>
-    x === null ? "–" : `${Math.round(x * 100)}%`;
-  const num = (x: number | null): string => (x === null ? "–" : x.toFixed(3));
   return (
     <div
       className={`rounded-xl border bg-surface/40 p-4 ${
@@ -40,19 +38,27 @@ function ModelCard({
       <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
         <div>
           <dt className="text-xs text-fg-muted">{t("accuracy.outcomeRate")}</dt>
-          <dd className="font-mono font-semibold">{pct(agg.outcomeRate)}</dd>
+          <dd className="font-mono font-semibold">
+            {formatPercent(agg.outcomeRate)}
+          </dd>
         </div>
         <div>
           <dt className="text-xs text-fg-muted">{t("accuracy.exactRate")}</dt>
-          <dd className="font-mono font-semibold">{pct(agg.exactScoreRate)}</dd>
+          <dd className="font-mono font-semibold">
+            {formatPercent(agg.exactScoreRate)}
+          </dd>
         </div>
         <div>
           <dt className="text-xs text-fg-muted">{t("accuracy.rps")}</dt>
-          <dd className="font-mono font-semibold">{num(agg.rpsMean)}</dd>
+          <dd className="font-mono font-semibold">
+            {formatDecimal(agg.rpsMean)}
+          </dd>
         </div>
         <div>
           <dt className="text-xs text-fg-muted">{t("accuracy.brier")}</dt>
-          <dd className="font-mono font-semibold">{num(agg.brierMean)}</dd>
+          <dd className="font-mono font-semibold">
+            {formatDecimal(agg.brierMean)}
+          </dd>
         </div>
       </dl>
     </div>
@@ -113,14 +119,8 @@ function ModelComparisonSection({ cmp }: { cmp: ModelComparison | undefined }) {
                 />
               </div>
               <div className="mt-1 flex justify-between text-xs">
-                <span>
-                  Claude {Math.round(cmp.weights.claude * 100)}
-                  {" "}%
-                </span>
-                <span>
-                  ChatGPT {Math.round(cmp.weights.chatgpt * 100)}
-                  {" "}%
-                </span>
+                <span>Claude {formatPercent(cmp.weights.claude)}</span>
+                <span>ChatGPT {formatPercent(cmp.weights.chatgpt)}</span>
               </div>
             </div>
           ) : (
@@ -143,9 +143,6 @@ export function AccuracyPage() {
   if (isError || !data) return <p className="text-neg">{t("error")}</p>;
 
   const agg = data.aggregate;
-  const pct = (x: number | null): string =>
-    x === null ? "–" : `${Math.round(x * 100)}%`;
-  const num = (x: number | null): string => (x === null ? "–" : x.toFixed(3));
 
   const finishedEntries = data.entries
     .filter((e) => e.actualResult && e.accuracy)
@@ -175,23 +172,23 @@ export function AccuracyPage() {
             />
             <StatCard
               label={t("accuracy.outcomeRate")}
-              value={pct(agg.outcomeRate)}
+              value={formatPercent(agg.outcomeRate)}
               accent="emerald"
             />
             <StatCard
               label={t("accuracy.exactRate")}
-              value={pct(agg.exactScoreRate)}
+              value={formatPercent(agg.exactScoreRate)}
               accent="sky"
             />
             <StatCard
               label={t("accuracy.brier")}
-              value={num(agg.brierMean)}
+              value={formatDecimal(agg.brierMean)}
               hint={t("accuracy.lower")}
               accent="amber"
             />
             <StatCard
               label={t("accuracy.rps")}
-              value={num(agg.rpsMean)}
+              value={formatDecimal(agg.rpsMean)}
               hint={t("accuracy.lower")}
               accent="amber"
             />

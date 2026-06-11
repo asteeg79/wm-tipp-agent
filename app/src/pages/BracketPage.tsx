@@ -1,3 +1,4 @@
+import { formatPercent } from "../lib/format.js";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { TeamSummary } from "@wm/shared";
@@ -155,7 +156,7 @@ function BracketCell({
       {/* Siegwahrscheinlichkeit des Favoriten/Siegers laut Stärkemodell */}
       <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2 px-2 py-0.5">
         <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
-          {Math.round(m.winProb * 100)}%
+          {formatPercent(m.winProb)}
         </span>
       </div>
     </div>
@@ -226,8 +227,6 @@ function OddsTable({ teams }: { teams: Map<string, TeamSummary> }) {
       .sort((a, b) => b.title - a.title);
   }, [index, predIndex]);
 
-  const pct = (x: number): string => `${(x * 100).toFixed(1)}%`;
-
   return (
     <div className="space-y-4">
       <div className="overflow-hidden rounded-xl border border-edge bg-surface/40">
@@ -259,13 +258,13 @@ function OddsTable({ teams }: { teams: Map<string, TeamSummary> }) {
                   <TeamBadge team={teams.get(r.id)} fallbackId={r.id} />
                 </td>
                 <td className="px-1 py-1.5 text-right font-mono text-xs tabular-nums text-fg-muted">
-                  {pct(r.groupWinner)}
+                  {formatPercent(r.groupWinner, 1)}
                 </td>
                 <td className="px-1 py-1.5 text-right font-mono text-xs tabular-nums text-info">
-                  {pct(r.advance)}
+                  {formatPercent(r.advance, 1)}
                 </td>
                 <td className="px-1.5 py-1.5 text-right font-mono text-xs font-bold tabular-nums text-acc">
-                  {pct(r.title)}
+                  {formatPercent(r.title, 1)}
                 </td>
               </tr>
             ))}
