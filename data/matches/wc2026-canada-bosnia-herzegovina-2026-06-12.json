@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T16:05:14.842Z",
+    "generatedAt": "2026-06-11T18:07:03.254Z",
     "home": {
       "teamId": "CAN",
       "elo": 1696,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T14:41:41.716Z",
+    "generatedAt": "2026-06-11T18:07:03.254Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4976,
-      "draw": 0.2824,
-      "away": 0.22
+      "home": 0.5357,
+      "draw": 0.26,
+      "away": 0.2043
     },
-    "confidence": 0.6167,
+    "confidence": 0.6329,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,49 +80,50 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
+          "home": 0.53,
           "draw": 0.26,
-          "away": 0.22
+          "away": 0.21
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Kanada hat klaren Elo-Vorteil (1696 vs. 1575) und leicht bessere gewichtete Form (1.623 vs. 1.445)",
-          "Heimvorteil als WM-Gastgeber trotz formal neutralem Spielort",
-          "Kanadas starke Defensive (0.606 Gegentore/Spiel, 53.6% Zu-null-Quote) trifft auf Bosniens anfällige Abwehr (1.272 Gegentore/Spiel, nur 19% Zu-null-Quote)",
-          "Bosniens offensive Stärke (1.738 Tore/Spiel) spricht gegen ein Zu-null-Spiel Kanadas und für mindestens ein Gegentor",
-          "Keine H2H-Historie, daher stützt sich die Einschätzung primär auf Elo, Form und Kontext"
+          "Elo-Vorteil Kanadas (1696 vs. 1575) und bessere gewichtete Form (1.62 vs. 1.45)",
+          "Heim-/Gastgebervorteil für Kanada trotz formal neutralem Venue (hostAdvantageTeamId CAN)",
+          "Starke kanadische Defensive: nur 0.61 Gegentore im Schnitt und 53.6% Zu-Null-Quote",
+          "Bosniens offensive Stärke (1.74 Tore/Spiel) spricht für ein Gegentor, aber schwache Defensive (1.27 Gegentore, nur 19% Clean Sheets)",
+          "Externe Prognose stützt leichte Anhebung der Kanada-Siegwahrscheinlichkeit gegenüber der Baseline"
         ],
         "risks": [
-          "Bosniens erfahrener Angriff um Dzeko kann Kanadas Defensive vor Probleme stellen",
-          "72 Tage Pause für beide Teams erschwert die Einschätzung der aktuellen Form",
-          "Keine direkten Vergleichsspiele zwischen beiden Teams als Referenz",
-          "WM-Debüt-Druck für den kanadischen Gastgeber könnte sich negativ auswirken"
+          "Unruhe um Alphonso Davies (Fitness-/Abstellungsdiskussion mit Bayern) könnte Kanadas Offensive schwächen",
+          "Kein Head-to-Head-Datenmaterial vorhanden, erhöhte Unsicherheit",
+          "72 Tage Spielpause bei beiden Teams – Rhythmusverlust und unklare Frische",
+          "Bosniens Offensivkraft um Dzeko kann Kanadas Defensive bei einem frühen Gegentor unter Druck setzen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
-          "draw": 0.3,
-          "away": 0.22
+          "home": 0.54,
+          "draw": 0.26,
+          "away": 0.2
         },
-        "confidence": 0.7,
+        "confidence": 0.72,
         "keyFactors": [
-          "Canada with host advantage at a neutral venue",
-          "Bosnia & Herzegovina recent squad announcements showing Bundesliga experience",
-          "Canada recent form slightly higher than Bosnia & Herzegovina"
+          "Kanada hat Heimvorteil trotz neutralem Spielort, da Gastgeber.",
+          "Kanadas Abwehrstärke zeigt sich in einer hohen Quote an Gegentor-freien Spielen.",
+          "Kanadas Form ist leicht besser als die von Bosnien.",
+          "Bosnien hat einen erfahrenen Kader mit Spielern aus Spitzenligen wie der Bundesliga."
         ],
         "risks": [
-          "No head-to-head history between the teams",
-          "Bosnia & Herzegovina's Bundesliga-experienced players could have an impact"
+          "Mögliche Unruhe um Alphonso Davies könnte Kanadas Konzentration beeinträchtigen.",
+          "Bosniens Erfahrung im Kader mit Spielern wie Dzeko könnte sich als Vorteil erweisen."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada hat klaren Elo-Vorteil (1696 vs. 1575) und leicht bessere gewichtete Form (1.623 vs. 1.445); Heimvorteil als WM-Gastgeber trotz formal neutralem Spielort; Kanadas starke Defensive (0.606 Gegentore/Spiel, 53.6% Zu-null-Quote) trifft auf Bosniens anfällige Abwehr (1.272 Gegentore/Spiel, nur 19% Zu-null-Quote).",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil Kanadas (1696 vs. 1575) und bessere gewichtete Form (1.62 vs. 1.45); Heim-/Gastgebervorteil für Kanada trotz formal neutralem Venue (hostAdvantageTeamId CAN); Starke kanadische Defensive: nur 0.61 Gegentore im Schnitt und 53.6% Zu-Null-Quote.",
     "inputHash": "sha256:7b8f2c17374075a754d1f899fa2a984d9f0ad23c4067a34a4023740334402983"
   },
   "predictionHistory": [
@@ -450,11 +451,24 @@
         "away": 0.2087
       },
       "confidence": 0.6308
+    },
+    {
+      "generatedAt": "2026-06-11T14:41:41.716Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4976,
+        "draw": 0.2824,
+        "away": 0.22
+      },
+      "confidence": 0.6167
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T16:06:40.498Z",
+    "updatedAt": "2026-06-11T18:09:00.125Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5238,

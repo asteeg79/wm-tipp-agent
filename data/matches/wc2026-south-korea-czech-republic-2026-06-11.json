@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-11T16:05:14.842Z",
+    "generatedAt": "2026-06-11T18:07:03.254Z",
     "home": {
       "teamId": "KOR",
       "elo": 1702,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-11T14:41:41.716Z",
+    "generatedAt": "2026-06-11T18:07:03.254Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3463,
-      "draw": 0.315,
-      "away": 0.3388
+      "home": 0.3338,
+      "draw": 0.3297,
+      "away": 0.3365
     },
-    "confidence": 0.59,
+    "confidence": 0.5402,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -82,23 +82,23 @@
         },
         "probabilities": {
           "home": 0.34,
-          "draw": 0.29,
-          "away": 0.37
+          "draw": 0.28,
+          "away": 0.38
         },
-        "confidence": 0.45,
+        "confidence": 0.42,
         "keyFactors": [
-          "Elo-Vorteil für Südkorea (1702 vs. 1646) widerspricht der Baseline-Tendenz zugunsten Tschechiens, daher Anpassung Richtung ausgeglichener Partie",
-          "Tschechien mit stärkerem Torverhältnis im Schnitt (1.96 erzielt, 1.19 kassiert) gegenüber Südkoreas 1.34/1.35",
-          "Südkorea mit besserer jüngster Form (recentForm 1.9 vs. 1.6), gewichtete Form nahezu identisch",
-          "Externe Prognose sieht Südkorea leicht vorn, was die Baseline relativiert — Mittelung beider Quellen ergibt enges Spiel",
-          "Keine H2H-Historie vorhanden, neutraler Spielort ohne Heimvorteil",
-          "Höhenlage von 1566 m als gleichwirkender Faktor für beide Teams, beide mit 72 Tagen Pause vergleichbar vorbereitet"
+          "Südkorea hat das höhere Elo-Rating (1702 vs. 1646) und die bessere jüngste Form (recentForm 1.9 vs. 1.6), was die Baseline leicht zugunsten Koreas korrigiert",
+          "Tschechien zeigt mit 1.96 Toren pro Spiel deutlich mehr Offensivkraft und kassiert weniger Gegentore (1.19 vs. 1.35), was die höhere erwartete Torzahl der Baseline stützt",
+          "Die gewichtete Form beider Teams ist nahezu identisch (1.61 vs. 1.67), was auf eine ausgeglichene Partie hindeutet",
+          "Externe Prognose sieht das Spiel deutlich ausgeglichener (36/31/33) als die Elo+Poisson-Baseline, daher Anhebung der Remis-Wahrscheinlichkeit",
+          "Neutrale Spielstätte auf 1566 m Höhe ohne Heimvorteil für eine der beiden Mannschaften",
+          "Keine Head-to-Head-Historie vorhanden, daher keine psychologischen Muster ableitbar"
         ],
         "risks": [
-          "Zweifel an der Verfügbarkeit/Form von Heung-min Son laut Berichten könnten Südkoreas Offensive deutlich schwächen",
-          "Lange Spielpause (72 Tage) für beide Teams macht Formeinschätzungen unsicher",
-          "Baseline und externe Prognose widersprechen sich in der Favoritenrolle, was die Vorhersageunsicherheit erhöht",
-          "Keine direkten Vergleichsdaten (H2H) verfügbar"
+          "Zweifel um Heung-min Sons Form/Rolle: Fällt Südkoreas Schlüsselspieler ab oder aus, sinkt deren Offensivpotenzial deutlich",
+          "72 Tage Pause bei beiden Teams erschweren die Einschätzung der aktuellen Verfassung erheblich",
+          "Die Höhenlage (1566 m) kann beide Teams unterschiedlich beeinflussen, je nach Vorbereitungsdauer",
+          "Diskrepanz zwischen Baseline (Auswärtssieg favorisiert) und externer Prognose (Heimsieg favorisiert) signalisiert hohe Modellunsicherheit"
         ]
       },
       "chatgpt": {
@@ -107,27 +107,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.33,
-          "away": 0.32
+          "home": 0.33,
+          "draw": 0.36,
+          "away": 0.31
         },
-        "confidence": 0.75,
+        "confidence": 0.69,
         "keyFactors": [
-          "Both teams have similar recent form with no distinct competitive advantage.",
-          "Neutral venue at a high altitude could affect performance, but no team has host-advantage.",
-          "South Korea's Heung-min Son's recent form slightly under scrutiny, but still capable.",
-          "Czech Republic has a higher average goalscoring rate but concedes more than South Korea.",
-          "No historical encounters between the two teams."
+          "South Korea's recent form is strong with a 1.9 rating.",
+          "Both teams are playing at a neutral venue with high altitude, potentially affecting European players more.",
+          "South Korea's clean sheet rate of 41.4% is higher compared to Czech Republic's 32%."
         ],
         "risks": [
-          "High altitude might unpredictably affect both teams' performances.",
-          "Potential impact on team cohesion from any internal pressure on Heung-min Son.",
-          "Lack of head-to-head data introduces uncertainty in assessing direct competitive dynamics."
+          "Uncertainty around Heung-min Son's performance affecting South Korea.",
+          "Czech Republic's higher average goals scored at 1.957 could be a threat."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil für Südkorea (1702 vs. 1646) widerspricht der Baseline-Tendenz zugunsten Tschechiens, daher Anpassung Richtung ausgeglichener Partie; Tschechien mit stärkerem Torverhältnis im Schnitt (1.96 erzielt, 1.19 kassiert) gegenüber Südkoreas 1.34/1.35; Südkorea mit besserer jüngster Form (recentForm 1.9 vs. 1.6), gewichtete Form nahezu identisch.",
+    "agreement": 0.9467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea hat das höhere Elo-Rating (1702 vs. 1646) und die bessere jüngste Form (recentForm 1.9 vs. 1.6), was die Baseline leicht zugunsten Koreas korrigiert; Tschechien zeigt mit 1.96 Toren pro Spiel deutlich mehr Offensivkraft und kassiert weniger Gegentore (1.19 vs. 1.35), was die höhere erwartete Torzahl der Baseline stützt; Die gewichtete Form beider Teams ist nahezu identisch (1.61 vs. 1.67), was auf eine ausgeglichene Partie hindeutet.",
     "inputHash": "sha256:92ae995e384b44507f36f3c7db634828a0c0f1c8d344a59d138294bc2ebaa266"
   },
   "predictionHistory": [
@@ -455,11 +452,24 @@
         "away": 0.3763
       },
       "confidence": 0.598
+    },
+    {
+      "generatedAt": "2026-06-11T14:41:41.716Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3463,
+        "draw": 0.315,
+        "away": 0.3388
+      },
+      "confidence": 0.59
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-11T16:06:40.498Z",
+    "updatedAt": "2026-06-11T18:09:00.125Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3602,
