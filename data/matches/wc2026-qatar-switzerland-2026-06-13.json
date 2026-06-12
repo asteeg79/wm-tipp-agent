@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T20:24:51.117Z",
+    "generatedAt": "2026-06-12T21:03:54.788Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T20:24:51.117Z",
+    "generatedAt": "2026-06-12T21:03:54.788Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 3
     },
     "probabilities": {
-      "home": 0.0955,
-      "draw": 0.1819,
-      "away": 0.7226
+      "home": 0.0956,
+      "draw": 0.1544,
+      "away": 0.75
     },
-    "confidence": 0.7621,
+    "confidence": 0.7874,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,7 +76,7 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
@@ -86,44 +86,44 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Schweiz deutlich stärker (Elo 1746 vs 1509) und in besserer Form (recentForm 2.1 vs 1.2)",
-          "Schweiz mit besserer Defensive (cleanSheetRate 0.37, gegen 1.09 Gegentore) und Offensive (2.02 Tore/Spiel)",
-          "Katar mit hoher Gegentorquote (1.80) und nur 25% Clean Sheets",
-          "Neutraler Spielort ohne Heimvorteil für Katar",
-          "Baseline und externe Prognose sehen klar die Schweiz vorne"
+          "Schweiz mit deutlich höherem Elo (1746 vs 1509) und stärkerer gewichteter Form (1.638 vs 1.292)",
+          "Bessere Defensive der Schweiz (Gegentore 1.094, Clean-Sheet-Rate 0.37) gegenüber anfälliger Katar-Abwehr (1.802 Gegentore)",
+          "Schweiz aktuell in starker Verfassung (recentForm 2.1) und nur 73 Tage seit letztem Spiel",
+          "Neutraler Spielort ohne Heimvorteil für Katar"
         ],
         "risks": [
-          "Katar mit 207 Tagen Pause - Spielrhythmus und Fitness unklar",
-          "Neuer Trainer Lopetegui bei Katar könnte taktische Veränderungen bringen",
-          "Kein direkter H2H-Vergleich vorhanden",
-          "Unterschätzung des Außenseiters bei Turnierspielen möglich"
+          "Katar hatte 207 Tage Pause - Spielrhythmus und Fitness schwer einzuschätzen",
+          "Kein H2H-Datenmaterial vorhanden",
+          "Mögliche Rotation/Unterschätzung seitens der Schweiz",
+          "Trainerwechsel bei Katar (Lopetegui) könnte taktische Veränderungen bringen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 3
         },
         "probabilities": {
           "home": 0.1,
-          "draw": 0.2,
-          "away": 0.7
+          "draw": 0.15,
+          "away": 0.75
         },
-        "confidence": 0.85,
+        "confidence": 0.88,
         "keyFactors": [
-          "Switzerland has a significantly higher Elo rating (1746) compared to Qatar (1509).",
-          "Switzerland's recent form is better (2.1) than Qatar's (1.2).",
-          "Qatar has not played a match in the last 207 days, which may affect their match fitness.",
-          "Neutral venue; no host advantage for Qatar."
+          "Switzerland has a higher Elo rating (1746) compared to Qatar (1509)",
+          "Recent form favors Switzerland with a score of 2.1 against Qatar's 1.2",
+          "Switzerland's offensive average is stronger with 2.021 goals per match",
+          "Qatar has not played a match in the last 207 days, compared to Switzerland's 73 days",
+          "Neutral venue minimizes potential advantage for Qatar"
         ],
         "risks": [
-          "The long break for Qatar might lead to an unexpected form on match day.",
-          "No direct head-to-head history makes potential matchup surprises possible."
+          "Qatar's unpredictable performance due to lack of recent matches",
+          "Neutral venue could introduce variability"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz deutlich stärker (Elo 1746 vs 1509) und in besserer Form (recentForm 2.1 vs 1.2); Schweiz mit besserer Defensive (cleanSheetRate 0.37, gegen 1.09 Gegentore) und Offensive (2.02 Tore/Spiel); Katar mit hoher Gegentorquote (1.80) und nur 25% Clean Sheets.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit deutlich höherem Elo (1746 vs 1509) und stärkerer gewichteter Form (1.638 vs 1.292); Bessere Defensive der Schweiz (Gegentore 1.094, Clean-Sheet-Rate 0.37) gegenüber anfälliger Katar-Abwehr (1.802 Gegentore); Schweiz aktuell in starker Verfassung (recentForm 2.1) und nur 73 Tage seit letztem Spiel.",
     "inputHash": "sha256:ce3a12246133328f2e45a0b5fbafd3dcf50a5cb5c12fa59bdb2f381a68fe749b"
   },
   "predictionHistory": [
@@ -568,11 +568,24 @@
         "away": 0.7225
       },
       "confidence": 0.7867
+    },
+    {
+      "generatedAt": "2026-06-12T20:24:51.117Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.0955,
+        "draw": 0.1819,
+        "away": 0.7226
+      },
+      "confidence": 0.7621
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T20:24:51.445Z",
+    "updatedAt": "2026-06-12T21:03:55.264Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.069,

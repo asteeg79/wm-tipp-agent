@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T20:24:51.117Z",
+    "generatedAt": "2026-06-12T21:03:54.788Z",
     "home": {
       "teamId": "ESP",
       "elo": 1974,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T20:24:51.117Z",
+    "generatedAt": "2026-06-12T21:03:54.788Z",
     "predictedScore": {
       "home": 3,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.8296,
-      "draw": 0.1052,
-      "away": 0.0652
+      "home": 0.85,
+      "draw": 0.1,
+      "away": 0.05
     },
-    "confidence": 0.8046,
+    "confidence": 0.86,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,48 +80,50 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.84,
+          "home": 0.85,
           "draw": 0.1,
-          "away": 0.06
+          "away": 0.05
         },
-        "confidence": 0.78,
+        "confidence": 0.8,
         "keyFactors": [
-          "Großer Elo-Unterschied (1974 vs. 1608) und klar überlegene Offensivwerte Spaniens (xG 2.68 vs. 0.77)",
-          "Sehr starke gewichtete Form und niedrige Gegentorquote Spaniens (cleanSheetRate 0.48, goalsAgainst 0.70)",
-          "Externe Prognose stützt klare Favoritenrolle Spaniens (0.88)",
-          "Spanien individuell und in der Kaderbreite deutlich überlegen"
+          "Großer Elo-Unterschied (1974 vs 1608) zugunsten Spaniens",
+          "Starke Form Spaniens (gewichtete Form 2.33, Tore 2.68 erwartet)",
+          "Spaniens hohe Offensivkraft (2.675 Tore/Spiel) und solide Defensive (0.7 Gegentore)",
+          "Kein direktes H2H, aber klare Klassendifferenz",
+          "Externes Modell sieht Spanien noch deutlicher (0.88) als Baseline"
         ],
         "risks": [
-          "Kap Verde defensiv robust und mit ordentlicher Form (recentForm 2.1), kann tiefe Defensive stellen",
-          "Lange Spielpause Kap Verdes (242 Tage) erschwert Formeinschätzung",
-          "Neutraler Spielort nimmt Spanien potenziellen Heimvorteil",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit beim genauen Ergebnis"
+          "Kap Verde defensiv kompakt (Clean-Sheet-Rate 0.44), könnte tief stehen",
+          "Lange Spielpause Kap Verdes (242 Tage) und Spaniens (73 Tage) erschwert Formeinschätzung",
+          "Turnierdruck/frühe Gruppenphase kann zu vorsichtigem spanischen Spiel führen",
+          "Standardsituationen Kap Verdes als Außenseiterchance"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.82,
-          "draw": 0.11,
-          "away": 0.07
+          "home": 0.85,
+          "draw": 0.1,
+          "away": 0.05
         },
-        "confidence": 0.84,
+        "confidence": 0.92,
         "keyFactors": [
-          "Spain has a strong recent form with a higher recent form rating compared to Cape Verde.",
-          "Cape Verde has not played any matches in the last 242 days, which might affect their match fitness.",
-          "Both teams have no head-to-head history, making Spain's superior Elo rating a stronger indicator.",
-          "The neutral venue eliminates a home advantage for either team."
+          "Spain's higher Elo rating",
+          "Recent form favors Spain",
+          "Cape Verde's last match was 242 days ago, indicating possible lack of match fitness",
+          "Neutral venue slightly reduces Spain's potential home advantage"
         ],
         "risks": [
-          "Cape Verde's unknown potential due to lack of recent matches can result in unpredictable performance."
+          "No recent head-to-head data between the teams",
+          "Impact of neutral venue on usual performance"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1974 vs. 1608) und klar überlegene Offensivwerte Spaniens (xG 2.68 vs. 0.77); Sehr starke gewichtete Form und niedrige Gegentorquote Spaniens (cleanSheetRate 0.48, goalsAgainst 0.70); Externe Prognose stützt klare Favoritenrolle Spaniens (0.88).",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1974 vs 1608) zugunsten Spaniens; Starke Form Spaniens (gewichtete Form 2.33, Tore 2.68 erwartet); Spaniens hohe Offensivkraft (2.675 Tore/Spiel) und solide Defensive (0.7 Gegentore).",
     "inputHash": "sha256:11079d54a7b15ad83bc1071181b84d16dffac3d7e1bbdda43deea9022c85f4fc"
   },
   "predictionHistory": [
@@ -384,11 +386,24 @@
         "away": 0.0589
       },
       "confidence": 0.8217
+    },
+    {
+      "generatedAt": "2026-06-12T20:24:51.117Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.8296,
+        "draw": 0.1052,
+        "away": 0.0652
+      },
+      "confidence": 0.8046
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T20:24:51.445Z",
+    "updatedAt": "2026-06-12T21:03:55.265Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8803,
