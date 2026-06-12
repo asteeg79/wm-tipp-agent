@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "home": {
       "teamId": "NED",
       "elo": 1825,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4212,
-      "draw": 0.2988,
-      "away": 0.28
+      "home": 0.4548,
+      "draw": 0.2809,
+      "away": 0.2643
     },
-    "confidence": 0.6392,
+    "confidence": 0.5673,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.27,
+          "home": 0.46,
+          "draw": 0.26,
           "away": 0.28
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Elo-Vorteil der Niederlande (1825 vs. 1768) stützt die Favoritenrolle laut Baseline",
-          "Niederlande mit starker Offensive (2,53 Tore/Spiel im Schnitt) und guter jüngster Form (2,4 Punkte/Spiel)",
-          "Japan mit herausragender Defensivbilanz (0,36 Gegentore/Spiel, 58% Zu-Null-Quote), was das erwartete niederländische Toraufkommen dämpft",
-          "Japans gewichtete Form (2,202) liegt leicht über der der Niederlande (2,095)",
-          "Neutraler Spielort ohne Heimvorteil und keine H2H-Historie – Baseline-Heimwahrscheinlichkeit leicht nach unten korrigiert"
+          "Niederlande mit höherem Elo (1825 vs. 1768) und starker Offensive (2,53 Tore/Spiel)",
+          "Japan mit besserer gewichteter Form (2,202 vs. 2,095) und herausragender Defensive (0,36 Gegentore/Spiel, 58% Clean Sheets)",
+          "Neutraler Spielort ohne Heimvorteil reduziert den Baseline-Vorteil der Niederlande leicht",
+          "Niederlande-Kader mit 15 Premier-League-Profis, aber Ausfall von Frimpong auf der rechten Außenbahn",
+          "Keine Head-to-Head-Historie vorhanden, was die Unsicherheit erhöht"
         ],
         "risks": [
-          "Verletzung des niederländischen Stammtorwarts; Ersatz Flekken ist erfahren, aber die Umstellung birgt Unsicherheit",
-          "73 Tage Spielpause bei beiden Teams – Formwerte könnten veraltet sein",
-          "Keine direkten Vergleiche (H2H) vorhanden, taktische Matchup-Unsicherheit hoch",
-          "Japans niedrige Gegentorquote könnte gegen schwächere Gegner entstanden sein und gegen Top-Offensiven weniger belastbar sein"
+          "Japans extrem niedrige Gegentorquote könnte das niederländische xG (1,65) deutlich drücken",
+          "73 Tage Spielpause bei beiden Teams – Rhythmus- und Fitnessfragen für beide Seiten",
+          "Japans disziplinierte Spielweise und europäisch geprägter Kader könnten ein Unentschieden oder eine Überraschung begünstigen",
+          "Fehlende H2H-Daten machen die Modellkalibrierung weniger verlässlich"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.32,
-          "away": 0.28
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.75,
+        "confidence": 0.6,
         "keyFactors": [
-          "Niederlande haben verletzungsbedingte Torwartsorgen",
-          "Japan hat starke defensive Form mit einer hohen Clean Sheet Rate",
-          "Japan hat kürzlich einen neuen Co-Trainer, was positive Auswirkungen haben könnte."
+          "Niederlande weist eine höhere Elo-Zahl und bessere Durchschnittswerte bei erzielten Toren auf.",
+          "Japan hat eine starke Defensive mit einer hohen Clean Sheet Rate.",
+          "Beide Teams zeigen starke jüngste Form, keine direkten Head-to-Head-Daten vorhanden.",
+          "Neutraler Spielort eliminiert Heimvorteil."
         ],
         "risks": [
-          "Unklarheit über die Leistung des Ersatztorwarts der Niederlande",
-          "Fehlende Head-to-Head-Daten für direkten Vergleich"
+          "Japan könnte von disziplinierter Stärke und europäischen Starspielern profitieren.",
+          "Fehlen von Frimpong könnte sich auf die niederländische Defensive auswirken."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil der Niederlande (1825 vs. 1768) stützt die Favoritenrolle laut Baseline; Niederlande mit starker Offensive (2,53 Tore/Spiel im Schnitt) und guter jüngster Form (2,4 Punkte/Spiel); Japan mit herausragender Defensivbilanz (0,36 Gegentore/Spiel, 58% Zu-Null-Quote), was das erwartete niederländische Toraufkommen dämpft.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs. 1768) und starker Offensive (2,53 Tore/Spiel); Japan mit besserer gewichteter Form (2,202 vs. 2,095) und herausragender Defensive (0,36 Gegentore/Spiel, 58% Clean Sheets); Neutraler Spielort ohne Heimvorteil reduziert den Baseline-Vorteil der Niederlande leicht.",
     "inputHash": "sha256:54d6ae2f22c34bbf4bca3d7ec1f7f1ac5a4b96ba4f26a1e628e4037898b7d516"
   },
   "predictionHistory": [
@@ -294,21 +295,34 @@
         "away": 0.28
       },
       "confidence": 0.6495
+    },
+    {
+      "generatedAt": "2026-06-12T05:09:30.490Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4212,
+        "draw": 0.2988,
+        "away": 0.28
+      },
+      "confidence": 0.6392
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T05:09:30.891Z",
-    "bookmakerCount": 23,
+    "updatedAt": "2026-06-12T09:16:57.620Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4762,
-      "draw": 0.2672,
-      "away": 0.2565
+      "home": 0.4784,
+      "draw": 0.2658,
+      "away": 0.2558
     },
     "decimal": {
-      "home": 2.02,
+      "home": 2,
       "draw": 3.6,
-      "away": 3.75
+      "away": 3.74
     }
   }
 }

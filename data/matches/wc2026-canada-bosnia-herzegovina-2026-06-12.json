@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "home": {
       "teamId": "CAN",
       "elo": 1696,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.472,
-      "draw": 0.282,
-      "away": 0.246
+      "home": 0.4542,
+      "draw": 0.2873,
+      "away": 0.2585
     },
-    "confidence": 0.6167,
+    "confidence": 0.6435,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,19 +84,19 @@
           "draw": 0.27,
           "away": 0.27
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Elo-Vorteil Kanadas (1696 vs. 1575) und Heim-/Gastgebervorteil als WM-Co-Ausrichter stützen die Baseline",
-          "Kanadas starke Defensivwerte (0.61 Gegentore/Spiel, 53.6% Zu-null-Quote) gegen Bosniens anfällige Abwehr (1.27 Gegentore/Spiel, nur 19% Zu-null-Quote)",
-          "Bestätigter Ausfall von Alphonso Davies schwächt Kanadas Offensive und linke Seite erheblich – Baseline wurde daher zugunsten Bosniens korrigiert",
-          "Bosniens überdurchschnittliche Offensivproduktion (1.74 Tore/Spiel) mit erfahrenen Bundesliga-Profis um Dzeko spricht für mindestens ein Auswärtstor",
-          "Beide Teams mit ähnlich langer Pause (73 Tage), kein Frische-Vorteil"
+          "Elo-Vorteil Kanadas (1696 vs. 1575) und bessere gewichtete Form (1.62 vs. 1.45)",
+          "Heim-/Gastgebervorteil für Kanada trotz formal neutralem Spielort",
+          "Starke kanadische Defensive: nur 0.61 Gegentore im Schnitt und 53.6% Zu-null-Quote",
+          "Bosnien mit hoher Offensivproduktion (1.74 Tore/Spiel), aber sehr anfälliger Defensive (1.27 Gegentore, nur 19% Clean Sheets)",
+          "Ausfall von Alphonso Davies schwächt Kanadas Offensive und Flügelspiel deutlich"
         ],
         "risks": [
-          "Kein Head-to-Head-Datenmaterial vorhanden – hohe Unsicherheit über die direkte Matchup-Dynamik",
-          "Davies-Ausfall könnte Kanadas Offensivleistung stärker mindern als modelliert",
-          "Bosniens Offensivstärke (1.74 Tore/Spiel) könnte Kanadas Defensive überraschen, Außenseitersieg nicht ausgeschlossen",
-          "Lange Spielpause beider Teams (73 Tage) macht aktuelle Formwerte weniger verlässlich"
+          "Davies-Ausfall ist schwer zu quantifizieren und könnte Kanada stärker treffen als angenommen",
+          "Keine Head-to-Head-Daten zwischen beiden Teams vorhanden",
+          "73 Tage Spielpause bei beiden Teams erschwert Formbewertung",
+          "Bosniens Offensivkraft um Dzeko kann Kanadas Abwehr bei einem Standardfehler bestrafen"
         ]
       },
       "chatgpt": {
@@ -105,24 +105,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
-          "draw": 0.29,
-          "away": 0.23
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Alphonso Davies' injury is a significant blow for Canada, affecting their attacking potential.",
-          "Bosnia & Herzegovina is bringing experienced players like Dzeko, potentially offsetting the venue advantage for Canada.",
-          "Neutral venue reduces Canada's host advantage."
+          "Fehlen von Alphonso Davies für Kanada",
+          "Neutrales Spielfeld, kein Heimvorteil",
+          "Bosnien setzt stark auf Bundesliga-erfahrene Spieler"
         ],
         "risks": [
-          "Uncertainty in Canada's squad reaction to playing without key player Davies.",
-          "Potential for Bosnia's experienced Bundesliga players to overperform."
+          "Unbekanntes direktes Duell, da noch nie gegeneinander gespielt",
+          "Unklare Auswirkungen der Abwesenheit von Davies auf Kanadas Spielstil"
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil Kanadas (1696 vs. 1575) und Heim-/Gastgebervorteil als WM-Co-Ausrichter stützen die Baseline; Kanadas starke Defensivwerte (0.61 Gegentore/Spiel, 53.6% Zu-null-Quote) gegen Bosniens anfällige Abwehr (1.27 Gegentore/Spiel, nur 19% Zu-null-Quote); Bestätigter Ausfall von Alphonso Davies schwächt Kanadas Offensive und linke Seite erheblich – Baseline wurde daher zugunsten Bosniens korrigiert.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Vorteil Kanadas (1696 vs. 1575) und bessere gewichtete Form (1.62 vs. 1.45); Heim-/Gastgebervorteil für Kanada trotz formal neutralem Spielort; Starke kanadische Defensive: nur 0.61 Gegentore im Schnitt und 53.6% Zu-null-Quote.",
     "inputHash": "sha256:bd2423da75aecf01010ab3b4772d5a9143fb0e93a8b0b1f4177c7329c7460be4"
   },
   "predictionHistory": [
@@ -502,21 +502,34 @@
         "away": 0.2369
       },
       "confidence": 0.6413
+    },
+    {
+      "generatedAt": "2026-06-12T05:09:30.490Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.472,
+        "draw": 0.282,
+        "away": 0.246
+      },
+      "confidence": 0.6167
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T05:09:30.891Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-12T09:16:57.620Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.5224,
-      "draw": 0.2693,
-      "away": 0.2083
+      "home": 0.5198,
+      "draw": 0.2723,
+      "away": 0.2079
     },
     "decimal": {
-      "home": 1.83,
+      "home": 1.86,
       "draw": 3.55,
-      "away": 4.59
+      "away": 4.65
     }
   }
 }

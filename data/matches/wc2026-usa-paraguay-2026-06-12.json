@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.52,
-      "draw": 0.2442,
-      "away": 0.2358
+      "home": 0.5031,
+      "draw": 0.2527,
+      "away": 0.2442
     },
-    "confidence": 0.6478,
+    "confidence": 0.6413,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "home": 0.48,
+          "draw": 0.27,
+          "away": 0.25
         },
         "confidence": 0.55,
         "keyFactors": [
-          "USA als Gastgeber mit De-facto-Heimvorteil trotz formal neutralem Spielort",
-          "Elo-Vorteil der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419)",
-          "Paraguays geringe Offensivproduktion (0.98 Tore/Spiel) limitiert das Sieg-Potenzial",
-          "Verletzungssorgen um Julio Enciso schwächen Paraguays Offensive zusätzlich",
-          "Einziges H2H-Duell ging mit 2:1 an die USA"
+          "USA mit Heimvorteil als Gastgeber (hostAdvantageTeamId: USA) trotz formal neutralem Spielort",
+          "Leichter Elo-Vorsprung der USA (1676 vs. 1644) und etwas bessere gewichtete Form (1.517 vs. 1.419)",
+          "Paraguay bangt laut News um den verletzten Julio Enciso, einen wichtigen Offensivspieler",
+          "Paraguays geringe Offensivproduktion (0.984 Tore/Spiel) spricht gegen mehrere Gegentore für die USA",
+          "H2H spricht knapp für die USA (1 Spiel, 2:1-Sieg)"
         ],
         "risks": [
-          "Paraguay ist defensiv stabil (43.5% Clean-Sheet-Quote, nur 1.06 Gegentore/Spiel) und könnte ein knappes Spiel erzwingen",
-          "USA kassiert relativ viele Gegentore (1.64/Spiel) und hat nur 23.5% Clean Sheets",
-          "Lange Spielpause (73 Tage) bei beiden Teams erhöht die Unsicherheit über die aktuelle Form",
-          "Kleine Stichprobe im direkten Vergleich (nur 1 Spiel)"
+          "Paraguay ist defensiv sehr stabil (43,5% Zu-null-Quote, nur 1.06 Gegentore/Spiel) und kann das Spiel eng gestalten",
+          "USA-Defensive anfällig (1.64 Gegentore/Spiel, nur 23,5% Zu-null-Quote) – ein Gegentor ist wahrscheinlich",
+          "Beide Teams 73 Tage ohne Pflichtspiel – Formaussagen mit Unsicherheit behaftet",
+          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert die Aussagekraft"
         ]
       },
       "chatgpt": {
@@ -111,19 +111,18 @@
         },
         "confidence": 0.75,
         "keyFactors": [
-          "USA hat leicht höheren Elo-Wert",
-          "USA zeigt bessere jüngste Form",
-          "Paraguay hat wichtige Verletzung von Enciso",
-          "USA spielt in neutralem, aber relativ vertrautem Umfeld als Gastgeberland"
+          "USA spielt gut bei hoher gewichteter Form und Heimvorteil",
+          "Verletzung eines wichtigen paraguayischen Spielers (Enciso)",
+          "Neutraler Spielort mit 'host advantage' für USA"
         ],
         "risks": [
-          "USA's defensive Schwächen mit hoher Gegentorquote",
-          "Paraguay hat deutlich bessere Clean-Sheet-Rate"
+          "USA hat durchwachsene Defensivwerte",
+          "Paraguays höhere Sauberkeitsquote in den letzten Spielen"
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA als Gastgeber mit De-facto-Heimvorteil trotz formal neutralem Spielort; Elo-Vorteil der USA (1676 vs. 1644) und leicht bessere gewichtete Form (1.517 vs. 1.419); Paraguays geringe Offensivproduktion (0.98 Tore/Spiel) limitiert das Sieg-Potenzial.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heimvorteil als Gastgeber (hostAdvantageTeamId: USA) trotz formal neutralem Spielort; Leichter Elo-Vorsprung der USA (1676 vs. 1644) und etwas bessere gewichtete Form (1.517 vs. 1.419); Paraguay bangt laut News um den verletzten Julio Enciso, einen wichtigen Offensivspieler.",
     "inputHash": "sha256:f48101dd7aa108f3e7d5204edfb631c99842350762d7af087650d47aebc9ced8"
   },
   "predictionHistory": [
@@ -477,21 +476,34 @@
         "away": 0.2256
       },
       "confidence": 0.6188
+    },
+    {
+      "generatedAt": "2026-06-12T05:09:30.490Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.52,
+        "draw": 0.2442,
+        "away": 0.2358
+      },
+      "confidence": 0.6478
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T05:09:30.891Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-12T09:16:57.620Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.4953,
-      "draw": 0.2771,
-      "away": 0.2276
+      "home": 0.4634,
+      "draw": 0.2907,
+      "away": 0.2459
     },
     "decimal": {
-      "home": 1.93,
-      "draw": 3.45,
-      "away": 4.2
+      "home": 2.07,
+      "draw": 3.3,
+      "away": 3.9
     }
   }
 }

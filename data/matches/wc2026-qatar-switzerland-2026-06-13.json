@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T05:09:30.490Z",
+    "generatedAt": "2026-06-12T09:14:49.979Z",
     "predictedScore": {
       "home": 1,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0955,
-      "draw": 0.15,
-      "away": 0.7545
+      "home": 0.091,
+      "draw": 0.1665,
+      "away": 0.7426
     },
-    "confidence": 0.7724,
+    "confidence": 0.7621,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,24 +80,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.09,
+          "home": 0.08,
           "draw": 0.15,
-          "away": 0.76
+          "away": 0.77
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorteil der Schweiz (1746 vs. 1509)",
-          "Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und besserer gewichteter Form",
-          "Schweiz offensiv stärker (2.02 Tore/Spiel) und defensiv deutlich stabiler (1.09 Gegentore, 37% Clean Sheets)",
-          "Katar mit 207 Tagen ohne Pflichtspiel — erheblicher Rhythmusnachteil gegenüber der Schweiz (73 Tage)",
-          "Neutraler Spielort ohne Gastgebervorteil für Katar",
-          "Externe Prognose stützt eine noch stärkere Gewichtung zugunsten der Schweiz als die Elo+Poisson-Baseline"
+          "Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509)",
+          "Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und stabiler Defensive (1.09 Gegentore/Spiel, 37% Zu-null-Quote)",
+          "Katar kassiert im Schnitt 1.8 Gegentore pro Spiel bei nur 25% Zu-null-Quote",
+          "Neutraler Spielort ohne Heimvorteil für Katar; externer Forecast stützt die Schweiz noch stärker als die Elo+Poisson-Baseline",
+          "Katar hat seit 207 Tagen kein Pflicht-/Länderspiel bestritten – fehlender Rhythmus"
         ],
         "risks": [
-          "Keine Head-to-Head-Historie verfügbar — direkte Vergleichsdaten fehlen",
-          "Katars lange Pause könnte auch gezielte Vorbereitung bedeuten, Formstand schwer einschätzbar",
-          "WM-Turnierspiele können durch defensive Ausrichtung des Außenseiters enger verlaufen als die xG-Werte nahelegen",
-          "Schweiz neigt historisch dazu, gegen tiefstehende Außenseiter Chancen liegen zu lassen"
+          "Keine Head-to-Head-Daten vorhanden, dadurch höhere Unsicherheit",
+          "Lange Spielpause Katars könnte auch gezielte WM-Vorbereitung bedeuten, nicht zwingend Formverlust",
+          "Turnierauftaktspiele sind oft vorsichtig geführt und torärmer als erwartet",
+          "Schweiz neigt historisch zu schwankenden Leistungen gegen tiefstehende Außenseiter"
         ]
       },
       "chatgpt": {
@@ -107,24 +106,24 @@
         },
         "probabilities": {
           "home": 0.1,
-          "draw": 0.15,
-          "away": 0.75
+          "draw": 0.18,
+          "away": 0.72
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Switzerland's higher Elo rating indicates stronger recent performance.",
-          "Switzerland's recent form is significantly better than Qatar's.",
-          "Switzerland has a higher average goals scored and a better clean sheet rate.",
-          "Qatar has not played a match in over 200 days, potentially affecting match fitness."
+          "Schweiz hat einen höheren Elo-Wert als Katar, was ihre allgemein stärkere Leistung indiziert.",
+          "Die Formkurve der Schweiz ist besser als die von Katar, basierend auf den recentForm-Werten.",
+          "Schweiz hat eine kürzere Zeit seit dem letzten Spiel, was eine bessere Match-Fitness suggeriert.",
+          "Basierend auf den Durchschnittswerten erzielt die Schweiz mehr Tore pro Spiel und hat eine höhere Clean Sheet Rate."
         ],
         "risks": [
-          "Neutral venue may reduce the impact of Switzerland's advantage.",
-          "Potential unpredictability due to absence of direct head-to-head encounters."
+          "Da es keine direkten Aufeinandertreffen zwischen den beiden Teams gibt, fehlen Vergleichsdaten.",
+          "Das Spiel findet auf neutralem Boden statt, was potenziell die Heim- und Auswärtsvorteile ausgleicht."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Schweiz (1746 vs. 1509); Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und besserer gewichteter Form; Schweiz offensiv stärker (2.02 Tore/Spiel) und defensiv deutlich stabiler (1.09 Gegentore, 37% Clean Sheets).",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung der Schweiz (1746 vs. 1509); Schweiz mit klar besserer aktueller Form (recentForm 2.1 vs. 1.2) und stabiler Defensive (1.09 Gegentore/Spiel, 37% Zu-null-Quote); Katar kassiert im Schnitt 1.8 Gegentore pro Spiel bei nur 25% Zu-null-Quote.",
     "inputHash": "sha256:ce3a12246133328f2e45a0b5fbafd3dcf50a5cb5c12fa59bdb2f381a68fe749b"
   },
   "predictionHistory": [
@@ -413,21 +412,34 @@
         "away": 0.7426
       },
       "confidence": 0.7621
+    },
+    {
+      "generatedAt": "2026-06-12T05:09:30.490Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0955,
+        "draw": 0.15,
+        "away": 0.7545
+      },
+      "confidence": 0.7724
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T05:09:30.891Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-12T09:16:57.620Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.0687,
-      "draw": 0.1426,
-      "away": 0.7887
+      "home": 0.0636,
+      "draw": 0.1413,
+      "away": 0.7951
     },
     "decimal": {
-      "home": 14,
+      "home": 15,
       "draw": 6.75,
-      "away": 1.22
+      "away": 1.2
     }
   }
 }
