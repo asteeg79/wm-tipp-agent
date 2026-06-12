@@ -1,11 +1,27 @@
 {
-  "lastUpdated": "2026-06-12T10:40:19.224Z",
+  "lastUpdated": "2026-06-12T11:59:46.636Z",
   "aggregate": {
-    "finishedCount": 0,
-    "exactScoreRate": null,
-    "outcomeRate": null,
-    "brierMean": null,
-    "rpsMean": null
+    "finishedCount": 2,
+    "exactScoreRate": 0,
+    "outcomeRate": 0.5,
+    "brierMean": 0.4914,
+    "rpsMean": 0.2059
+  },
+  "modelComparison": {
+    "claude": {
+      "finishedCount": 2,
+      "exactScoreRate": 0.5,
+      "outcomeRate": 0.5,
+      "brierMean": 0.4436,
+      "rpsMean": 0.1876
+    },
+    "chatgpt": {
+      "finishedCount": 2,
+      "exactScoreRate": 0,
+      "outcomeRate": 0,
+      "brierMean": 0.545,
+      "rpsMean": 0.2275
+    }
   },
   "entries": [
     {
@@ -28,7 +44,16 @@
         "home": 1.55,
         "away": 0.88
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 2,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.3399,
+        "rps": 0.1343
+      }
     },
     {
       "matchId": "wc2026-south-korea-czech-republic-2026-06-11",
@@ -50,7 +75,16 @@
         "home": 1.3,
         "away": 1.5
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 2,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.6429,
+        "rps": 0.2775
+      }
     },
     {
       "matchId": "wc2026-canada-bosnia-herzegovina-2026-06-12",
@@ -63,11 +97,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.4542,
-        "draw": 0.2873,
-        "away": 0.2585
+        "home": 0.4954,
+        "draw": 0.2888,
+        "away": 0.2158
       },
-      "confidence": 0.6435,
+      "confidence": 0.637,
       "expectedGoals": {
         "home": 1.53,
         "away": 0.94
@@ -85,11 +119,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.5031,
-        "draw": 0.2527,
-        "away": 0.2442
+        "home": 0.5073,
+        "draw": 0.2542,
+        "away": 0.2385
       },
-      "confidence": 0.6413,
+      "confidence": 0.6435,
       "expectedGoals": {
         "home": 1.71,
         "away": 1.17
@@ -108,10 +142,10 @@
       },
       "probabilities": {
         "home": 0.091,
-        "draw": 0.1665,
-        "away": 0.7426
+        "draw": 0.15,
+        "away": 0.759
       },
-      "confidence": 0.7621,
+      "confidence": 0.7698,
       "expectedGoals": {
         "home": 0.98,
         "away": 2.5
@@ -129,11 +163,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.4839,
-        "draw": 0.2604,
-        "away": 0.2557
+        "home": 0.5138,
+        "draw": 0.2479,
+        "away": 0.2382
       },
-      "confidence": 0.5386,
+      "confidence": 0.5382,
       "expectedGoals": {
         "home": 1.03,
         "away": 1.5
@@ -152,10 +186,10 @@
       },
       "probabilities": {
         "home": 0.2458,
-        "draw": 0.2788,
-        "away": 0.4754
+        "draw": 0.2615,
+        "away": 0.4927
       },
-      "confidence": 0.637,
+      "confidence": 0.6435,
       "expectedGoals": {
         "home": 1.38,
         "away": 1.28
@@ -173,11 +207,11 @@
         "away": 2
       },
       "probabilities": {
-        "home": 0.2113,
-        "draw": 0.2456,
-        "away": 0.5431
+        "home": 0.2112,
+        "draw": 0.2444,
+        "away": 0.5444
       },
-      "confidence": 0.6237,
+      "confidence": 0.6208,
       "expectedGoals": {
         "home": 1.03,
         "away": 1.68
@@ -192,14 +226,14 @@
       "awayTeamId": "CUW",
       "predictedScore": {
         "home": 3,
-        "away": 0
+        "away": 1
       },
       "probabilities": {
-        "home": 0.85,
-        "draw": 0.0955,
-        "away": 0.0545
+        "home": 0.8546,
+        "draw": 0.0954,
+        "away": 0.05
       },
-      "confidence": 0.8173,
+      "confidence": 0.8372,
       "expectedGoals": {
         "home": 1.93,
         "away": 1.27
@@ -213,15 +247,15 @@
       "homeTeamId": "NED",
       "awayTeamId": "JPN",
       "predictedScore": {
-        "home": 2,
+        "home": 1,
         "away": 1
       },
       "probabilities": {
-        "home": 0.4548,
-        "draw": 0.2809,
-        "away": 0.2643
+        "home": 0.394,
+        "draw": 0.3148,
+        "away": 0.2912
       },
-      "confidence": 0.5673,
+      "confidence": 0.6042,
       "expectedGoals": {
         "home": 1.65,
         "away": 1.13
@@ -239,11 +273,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.3888,
-        "draw": 0.335,
-        "away": 0.2763
+        "home": 0.3638,
+        "draw": 0.3185,
+        "away": 0.3177
       },
-      "confidence": 0.586,
+      "confidence": 0.5791,
       "expectedGoals": {
         "home": 1.31,
         "away": 0.76
@@ -261,11 +295,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.3538,
-        "draw": 0.285,
-        "away": 0.3613
+        "home": 0.3333,
+        "draw": 0.295,
+        "away": 0.3717
       },
-      "confidence": 0.592,
+      "confidence": 0.58,
       "expectedGoals": {
         "home": 1.23,
         "away": 1.71

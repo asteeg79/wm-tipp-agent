@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T10:40:19.224Z",
+    "generatedAt": "2026-06-12T11:59:46.636Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T09:14:49.979Z",
+    "generatedAt": "2026-06-12T11:59:46.636Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4839,
-      "draw": 0.2604,
-      "away": 0.2557
+      "home": 0.5138,
+      "draw": 0.2479,
+      "away": 0.2382
     },
-    "confidence": 0.5386,
+    "confidence": 0.5382,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,19 +84,20 @@
           "draw": 0.28,
           "away": 0.36
         },
-        "confidence": 0.4,
+        "confidence": 0.42,
         "keyFactors": [
-          "Marokko hat das höhere Elo-Rating (1892 vs. 1844) und eine deutlich bessere gewichtete Form (2.585 vs. 1.791)",
-          "Marokkos Defensive ist herausragend: nur 0.274 Gegentore pro Spiel und 70.6% Zu-Null-Quote über 34 Spiele",
-          "Brasilien bleibt mit hoher individueller Qualität und solider Offensivleistung (1.814 Tore pro Spiel) ein Topfavorit, was der externe Forecast (0.585) widerspiegelt",
-          "Mehrere verletzungsbedingte Ausfälle bei Marokko (zwei Stammspieler abgereist, ein Angreifer verpasst wohl die WM) schwächen den Form-Vorteil ab",
-          "Neutraler Spielort ohne Heimvorteil und keine Head-to-Head-Historie sprechen für eine ausgeglichene Partie"
+          "Marokko hat laut Daten das höhere Elo (1892 vs. 1844) und deutlich bessere gewichtete Form (2.585 vs. 1.791)",
+          "Marokkos Defensive ist herausragend: nur 0.274 Gegentore im Schnitt und 70.6% Zu-Null-Quote über 34 Spiele",
+          "Die statistische Baseline favorisiert Marokko klar (48% vs. 26%), während die externe Prognose Brasilien vorne sieht (58%) – die Wahrheit liegt vermutlich dazwischen",
+          "Gemeldete Verletzungen bei Marokko (zwei Stammspieler abgereist, ein Angreifer verpasst wohl die WM) schwächen den Baseline-Vorteil Marokkos spürbar",
+          "Neutraler Spielort und kein Head-to-Head: keine klare Heim- oder Erfahrungskante für eine Seite",
+          "Beide Teams hatten 73 Tage Pause – kein Frische-Vorteil"
         ],
         "risks": [
-          "Stark divergierende Signale: Baseline favorisiert Marokko (0.48), externer Forecast Brasilien (0.58) – hohe Modellunsicherheit",
-          "Ausmaß der marokkanischen Verletzungsausfälle ist nicht vollständig quantifizierbar",
-          "Beide Teams kommen aus 73 Tagen Spielpause – tatsächliche Turnierform schwer einschätzbar",
-          "Keine direkten Vergleichsspiele (H2H: 0) als Referenz vorhanden"
+          "Starke Divergenz zwischen Baseline (pro Marokko) und externer Prognose (pro Brasilien) erhöht die Unsicherheit erheblich",
+          "Unklarer tatsächlicher Einfluss der marokkanischen Verletzungsausfälle auf die Startelf",
+          "Lange Spielpause (73 Tage) macht aktuelle Formwerte weniger aussagekräftig",
+          "Kein direkter Vergleich (0 H2H-Spiele) vorhanden, taktische Matchup-Effekte schwer einschätzbar"
         ]
       },
       "chatgpt": {
@@ -105,24 +106,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
-          "away": 0.2
+          "home": 0.6,
+          "draw": 0.23,
+          "away": 0.17
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Morocco has two key player injuries.",
-          "Brazil's recent form is strong with 1.7 weighted form.",
-          "Neutral venue with no host advantage.",
-          "Brazil has higher goals for average and competitive recent performances."
+          "Brasilien hat eine starke Form und gute offensive Statistiken mit einem hohen Torschnitt.",
+          "Marokko hat aktuell mehrere Verletzungen bei Schlüsselspielern, die die Teamleistung beeinträchtigen könnten.",
+          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil eliminiert.",
+          "Brasilien genießt trotz etwas niedrigerer Elo einen Vertrauensvorschuss durch die hohe allgemeine Leistung."
         ],
         "risks": [
-          "Morocco's strong clean sheet rate and high recent form."
+          "Marokkos starke Defensive und hoher Clean-Sheet-Wert könnte Brasilien Schwierigkeiten bereiten.",
+          "Brasiliens geringere Elo-Wertung im Vergleich zu Marokko könnte ein unterschätztes Risiko darstellen."
         ]
       }
     },
-    "agreement": 0.8733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko hat das höhere Elo-Rating (1892 vs. 1844) und eine deutlich bessere gewichtete Form (2.585 vs. 1.791); Marokkos Defensive ist herausragend: nur 0.274 Gegentore pro Spiel und 70.6% Zu-Null-Quote über 34 Spiele; Brasilien bleibt mit hoher individueller Qualität und solider Offensivleistung (1.814 Tore pro Spiel) ein Topfavorit, was der externe Forecast (0.585) widerspiegelt.",
+    "agreement": 0.84,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko hat laut Daten das höhere Elo (1892 vs. 1844) und deutlich bessere gewichtete Form (2.585 vs. 1.791); Marokkos Defensive ist herausragend: nur 0.274 Gegentore im Schnitt und 70.6% Zu-Null-Quote über 34 Spiele; Die statistische Baseline favorisiert Marokko klar (48% vs. 26%), während die externe Prognose Brasilien vorne sieht (58%) – die Wahrheit liegt vermutlich dazwischen.",
     "inputHash": "sha256:2b51716e1f1b05ad2d299ceb6c764caaf10b0d310a77a92f1d0a0153b36a0b37"
   },
   "predictionHistory": [
@@ -411,11 +413,24 @@
         "away": 0.2875
       },
       "confidence": 0.5413
+    },
+    {
+      "generatedAt": "2026-06-12T09:14:49.979Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4839,
+        "draw": 0.2604,
+        "away": 0.2557
+      },
+      "confidence": 0.5386
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T10:42:11.299Z",
+    "updatedAt": "2026-06-12T12:01:47.913Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.5848,
