@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T17:13:55.597Z",
+    "generatedAt": "2026-06-12T17:40:31.568Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T15:50:07.760Z",
+    "generatedAt": "2026-06-12T17:40:31.568Z",
     "predictedScore": {
       "home": 2,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.5,
-      "draw": 0.2577,
-      "away": 0.2423
+      "home": 0.5563,
+      "draw": 0.2581,
+      "away": 0.1856
     },
-    "confidence": 0.6218,
+    "confidence": 0.6233,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,45 +84,44 @@
           "draw": 0.27,
           "away": 0.31
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Externe Prognose sieht Brasilien klar vorne (58%), während die Elo+Poisson-Baseline Marokko favorisiert – die Wahrheit liegt vermutlich dazwischen",
-          "Marokko hat formal die bessere gewichtete Form (2.585 vs. 1.791) und eine herausragende Defensive (0.274 Gegentore/Spiel, 70% Zu-null-Quote)",
-          "Gemeldete Verletzungen bei Marokko: zwei Stammspieler mussten verletzt abreisen, zusätzlich fällt wohl ein Angreifer für die WM aus – das schwächt die Baseline-Erwartung für Marokko deutlich",
-          "Brasilien verfügt über höhere individuelle Kaderqualität und -tiefe, um Ausfälle zu kompensieren; unter Carlo Ancelotti stabilisierte Leistungen",
-          "Neutrales Stadion ohne klaren Heimvorteil, keine direkten H2H-Daten als Anker"
+          "Marokko zeigt starke gewichtete Form (2.585) und exzellente Defensive (0.274 Gegentore, 70,6% Clean Sheets) sowie leicht höhere Elo (1892 vs. 1844)",
+          "Brasilien mit solider Offensive (1.814 Tore/Spiel) und stabiler Defensive (0.892 Gegentore, 40% Clean Sheets)",
+          "Verletzungsschock bei Marokko: zwei Stammspieler reisen verletzt ab, zusätzlich fällt ein Angreifer für die WM aus – schwächt vor allem die Offensive",
+          "Externe Prognose sieht Brasilien klar vorne (0.587), während die Elo/Poisson-Baseline Marokko favorisiert – die Verletzungen rechtfertigen eine Korrektur Richtung Brasilien",
+          "Neutraler Spielort, kein Heimvorteil, beide Teams gleich lange Pause (73 Tage)"
         ],
         "risks": [
-          "Marokkos außergewöhnliche Form und Defensivstärke (nur 0.274 Gegentore im Schnitt) könnte trotz Verletzungen ausreichen, um Brasilien zu neutralisieren",
-          "73 Tage Pause für beide Teams – Formdaten könnten veraltet sein, tatsächlicher Turnierrhythmus unklar",
-          "Genaues Ausmaß und Identität der verletzten marokkanischen Stammspieler ist aus den Daten nicht eindeutig ableitbar",
-          "Brasiliens niedrigere gewichtete Form (1.791) deutet auf Inkonsistenz hin; externe Prognose könnte Reputation überbewerten"
+          "Marokkos Defensive ist trotz Ausfällen sehr stabil und könnte ein torarmes Spiel erzwingen",
+          "Genaues Ausmaß der marokkanischen Verletzungen und deren Bedeutung für die Startelf unklar",
+          "Kein direktes H2H vorhanden – hohe Unsicherheit in der Einschätzung",
+          "Große Divergenz zwischen Baseline und externer Prognose erhöht das Fehlerrisiko"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.65,
           "draw": 0.25,
-          "away": 0.2
+          "away": 0.1
         },
         "confidence": 0.8,
         "keyFactors": [
-          "Brazil has a strong recent form with an average recent form rating of 1.7 and a solid defensive record of conceding only 0.892 goals per game.",
-          "Morocco is affected by significant injuries, with key players missing the tournament, impacting their attacking options.",
-          "Neutral venue mitigates any home advantage, but favors in-form teams like Brazil over injury-hit Morocco."
+          "Brazil's generally strong performance with recent form and average goals for and against.",
+          "Morocco's high number of clean sheets and form, potentially offset by key injuries.",
+          "Neutral venue eliminates home advantage for either team."
         ],
         "risks": [
-          "Morocco's overall strong recent form and a higher Elo rating could lead to an upset if remaining players perform optimally.",
-          "Neutral venue conditions can lead to unpredictable match dynamics."
+          "Impact of Morocco's injuries on team performance is uncertain."
         ]
       }
     },
-    "agreement": 0.9133,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Externe Prognose sieht Brasilien klar vorne (58%), während die Elo+Poisson-Baseline Marokko favorisiert – die Wahrheit liegt vermutlich dazwischen; Marokko hat formal die bessere gewichtete Form (2.585 vs. 1.791) und eine herausragende Defensive (0.274 Gegentore/Spiel, 70% Zu-null-Quote); Gemeldete Verletzungen bei Marokko: zwei Stammspieler mussten verletzt abreisen, zusätzlich fällt wohl ein Angreifer für die WM aus – das schwächt die Baseline-Erwartung für Marokko deutlich.",
+    "agreement": 0.8467,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko zeigt starke gewichtete Form (2.585) und exzellente Defensive (0.274 Gegentore, 70,6% Clean Sheets) sowie leicht höhere Elo (1892 vs. 1844); Brasilien mit solider Offensive (1.814 Tore/Spiel) und stabiler Defensive (0.892 Gegentore, 40% Clean Sheets); Verletzungsschock bei Marokko: zwei Stammspieler reisen verletzt ab, zusätzlich fällt ein Angreifer für die WM aus – schwächt vor allem die Offensive.",
     "inputHash": "sha256:2b51716e1f1b05ad2d299ceb6c764caaf10b0d310a77a92f1d0a0153b36a0b37"
   },
   "predictionHistory": [
@@ -437,19 +436,32 @@
         "away": 0.2382
       },
       "confidence": 0.5382
+    },
+    {
+      "generatedAt": "2026-06-12T15:50:07.760Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5,
+        "draw": 0.2577,
+        "away": 0.2423
+      },
+      "confidence": 0.6218
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T17:15:54.609Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-12T17:40:32.361Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.5848,
-      "draw": 0.2474,
-      "away": 0.1678
+      "home": 0.587,
+      "draw": 0.2461,
+      "away": 0.1669
     },
     "decimal": {
-      "home": 1.65,
+      "home": 1.63,
       "draw": 3.9,
       "away": 5.75
     }
