@@ -8,12 +8,14 @@
   // Reiner Cron-Worker — keine öffentliche URL nötig (und keine angreifbare).
   "workers_dev": false,
   "triggers": {
-    // Stündlich zur Minute :03 (UTC, exakt) — bewusst versetzt zu den
+    // Stündlich zur Minute :03 (UTC, exakt), aber NICHT zwischen 0 und
+    // 6 Uhr deutscher Zeit: Jun/Jul = CEST = UTC+2, also UTC-Stunden 4-21
+    // (06:03-23:03 deutscher Zeit). Minute :03 ist bewusst versetzt zu den
     // GitHub-Fallback-Slots (:07/:22/:37/:52). Die Begrenzung auf Juni/Juli
     // macht der Worker-Code selbst (Monats-Guard) — Cloudflares
     // Schedules-API lehnt Monats-Felder im Cron ab. KI-Kosten entstehen nur
     // für fällige Partien (Retrigger-Logik).
-    "crons": ["3 * * * *"],
+    "crons": ["3 4-21 * * *"],
   },
   "observability": { "enabled": true },
 }
