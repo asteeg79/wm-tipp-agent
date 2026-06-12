@@ -4,7 +4,7 @@ name: News Refresh
 # Krumme Minute: voller-Stunden-Slots werden von GitHub am ehesten verworfen.
 on:
   schedule:
-    - cron: "11 */3 * * *"
+    - cron: "11 */2 * * *" # alle 2 h — News-Läufe aktualisieren auch Ergebnisse
   workflow_dispatch:
 
 concurrency:

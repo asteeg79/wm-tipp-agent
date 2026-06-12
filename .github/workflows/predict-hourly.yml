@@ -9,7 +9,7 @@ name: KI-Tipps stündlich (T-3h)
 # pro Stunde als Redundanz; die Retrigger-Logik verhindert doppelte KI-Kosten.
 on:
   schedule:
-    - cron: "17,47 * * 6,7 *"
+    - cron: "7,22,37,52 * * 6,7 *" # 4 Slots/h — Repo ist public, Minuten unbegrenzt
   workflow_dispatch:
 
 concurrency:
