@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T19:20:23.661Z",
+    "generatedAt": "2026-06-12T20:03:56.261Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T19:20:23.661Z",
+    "generatedAt": "2026-06-12T20:03:56.261Z",
     "predictedScore": {
-      "home": 2,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5016,
-      "draw": 0.2588,
-      "away": 0.2396
+      "home": 0.3957,
+      "draw": 0.2872,
+      "away": 0.317
     },
-    "confidence": 0.6021,
+    "confidence": 0.6019,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,53 +76,53 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.44,
+          "home": 0.39,
           "draw": 0.27,
-          "away": 0.29
+          "away": 0.34
         },
-        "confidence": 0.55,
+        "confidence": 0.52,
         "keyFactors": [
-          "Marokko mit starker Form (weightedForm 2.585) und exzellenter Defensive (gegen 0.274, CS-Rate 0.706) sowie höherem Elo (1892 vs 1844)",
-          "Brasilien mit solider Offensive (1.81 Tore/Spiel) und ordentlicher Form (weightedForm 1.791)",
-          "Externe Prognose sieht Brasilien klar vorne (0.587), während Baseline Marokko favorisiert – Kompromiss nötig",
-          "Mehrere Verletzungsmeldungen bei Marokko: zwei Stammspieler reisen verletzt ab, zusätzlich ein Angreifer fällt aus",
-          "Neutraler Spielort ohne Heimvorteil, beide Teams mit gleich langer Pause (73 Tage)"
+          "Marokko zeigt herausragende Defensivwerte (GegentoreØ 0.27, Clean-Sheet-Rate 0.71) und die stärkere gewichtete Form (2.585) sowie minimal höheres Elo (1892 vs 1844)",
+          "Brasilien mit solider Offensive (1.81 ToreØ) und hoher individueller Qualität, externer Marktforecast sieht Brasilien klar vorn (0.587)",
+          "Neutraler Spielort ohne Heimvorteil für beide Teams",
+          "Beide Teams gleich lange Pause (73 Tage), keine Frische-/Müdigkeitsverzerrung"
         ],
         "risks": [
-          "Marokkos Defensivstärke könnte Brasilien trotz Ausfällen frustrieren und ein 0:0/1:0 ermöglichen",
-          "Ausmaß der marokkanischen Verletzungen unklar – falls Ersatz gut funktioniert, kippt das Spiel",
-          "Kein H2H-Datensatz vorhanden, erhöhte Unsicherheit",
-          "Lange Spielpause kann Rhythmusprobleme bei beiden Teams verursachen"
+          "Verletzungsschock bei Marokko: zwei Stammspieler reisen verletzt ab, zusätzlich ein Angreifer fraglich – schwächt die marokkanische Stärke spürbar",
+          "Große Diskrepanz zwischen Baseline (Marokko-Favorit) und externem Forecast (Brasilien-Favorit) erhöht Prognoseunsicherheit",
+          "Kein H2H-Vergleichswert vorhanden",
+          "Unsicherheit um Brasiliens Offensivführung (Neymar-Diskussion) kann Leistung beeinflussen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
-          "away": 0.2
+          "home": 0.4,
+          "draw": 0.3,
+          "away": 0.3
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Morocco has two key players injured, affecting their performance.",
-          "Brazil's historical strong form and offensive capabilities.",
-          "Neutral venue, eliminating any home advantage."
+          "Morocco's recent weighted form and high clean sheet rate improve their defensive expectations.",
+          "Brazil's offensive capabilities are balanced by their slightly lower form and internal issues with Neymar.",
+          "Morocco has key player injuries which may impact their scoring potential.",
+          "The match is being played at a neutral venue, removing usual home advantage."
         ],
         "risks": [
-          "Morocco's recent strong form and high clean sheet rate.",
-          "Brazil's potential match rustiness due to 73 days since last match."
+          "Uncertainty regarding Brazil's team morale and performance due to internal issues.",
+          "Potential impact of Morocco's injuries which might be mitigated by unknown substitutions or tactical changes."
         ]
       }
     },
-    "agreement": 0.9267,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko mit starker Form (weightedForm 2.585) und exzellenter Defensive (gegen 0.274, CS-Rate 0.706) sowie höherem Elo (1892 vs 1844); Brasilien mit solider Offensive (1.81 Tore/Spiel) und ordentlicher Form (weightedForm 1.791); Externe Prognose sieht Brasilien klar vorne (0.587), während Baseline Marokko favorisiert – Kompromiss nötig.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko zeigt herausragende Defensivwerte (GegentoreØ 0.27, Clean-Sheet-Rate 0.71) und die stärkere gewichtete Form (2.585) sowie minimal höheres Elo (1892 vs 1844); Brasilien mit solider Offensive (1.81 ToreØ) und hoher individueller Qualität, externer Marktforecast sieht Brasilien klar vorn (0.587); Neutraler Spielort ohne Heimvorteil für beide Teams.",
     "inputHash": "sha256:2b51716e1f1b05ad2d299ceb6c764caaf10b0d310a77a92f1d0a0153b36a0b37"
   },
   "predictionHistory": [
@@ -528,11 +528,24 @@
         "away": 0.2583
       },
       "confidence": 0.572
+    },
+    {
+      "generatedAt": "2026-06-12T19:20:23.661Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5016,
+        "draw": 0.2588,
+        "away": 0.2396
+      },
+      "confidence": 0.6021
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T19:20:24.099Z",
+    "updatedAt": "2026-06-12T20:05:33.619Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.587,

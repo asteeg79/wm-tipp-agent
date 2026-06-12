@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T19:20:23.661Z",
+    "generatedAt": "2026-06-12T20:03:56.261Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T19:20:23.661Z",
+    "generatedAt": "2026-06-12T20:03:56.261Z",
     "predictedScore": {
       "home": 3,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.8367,
-      "draw": 0.1144,
-      "away": 0.0489
+      "home": 0.8093,
+      "draw": 0.1314,
+      "away": 0.0593
     },
-    "confidence": 0.8019,
+    "confidence": 0.8288,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,47 +81,48 @@
         },
         "probabilities": {
           "home": 0.82,
-          "draw": 0.12,
-          "away": 0.06
+          "draw": 0.11,
+          "away": 0.07
         },
-        "confidence": 0.72,
+        "confidence": 0.78,
         "keyFactors": [
-          "Großer Elo-Unterschied (Germany 1822 vs Curaçao 1637) und deutlich höhere individuelle Klasse",
-          "Externe Prognose sieht Germany mit ~92% klar vorne, was die zu konservative Elo+Poisson-Baseline relativiert",
-          "Germany mit starker gewichteter Form (2.37) und hoher Offensivproduktion (2.57 Tore/Spiel)",
-          "Curaçao seit 206 Tagen ohne Pflichtspiel – fehlende Spielpraxis und Rhythmus"
+          "Deutschland deutlich stärker eingestuft (Elo 1822 vs 1637) und in starker Form (weightedForm 2.371, 2.57 Tore/Spiel)",
+          "Externe Prognose sieht Deutschland klar vorne (0.92), Baseline (0.53) erscheint zu vorsichtig gegen einen klaren Klassenunterschied",
+          "Curaçaos defensive Werte stammen vermutlich aus deutlich schwächerem Wettbewerbsumfeld (CONCACAF) und sind nicht auf Topniveau übertragbar",
+          "Nagelsmann scheint mit etablierter Aufstellung (Pavlovic, Nmecha) und Neuer-Entscheidung planbar aufzustellen"
         ],
         "risks": [
-          "Curaçao defensiv solide (cleanSheetRate 0.55, nur 0.62 Gegentore) und könnte tief stehen",
-          "Lange Pause beider Teams (Germany 74 Tage) kann Rhythmusprobleme verursachen",
-          "Torwartwechsel/Rotation laut News könnte Defensivstabilität kurzfristig beeinflussen",
-          "Keine H2H-Daten – Unsicherheit bei der direkten Einschätzung"
+          "Curaçao seit 206 Tagen ohne Pflichtspiel – Formstand schwer einschätzbar, könnte überraschen oder kalt erwischt werden",
+          "Kein H2H vorhanden, Datenbasis für direkten Vergleich fehlt",
+          "Neutraler Spielort nimmt Deutschland möglichen Heimvorteil",
+          "Mögliche Rotation/Experimente bei Deutschland könnten Ergebnis knapper gestalten"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.85,
-          "draw": 0.11,
-          "away": 0.04
+          "home": 0.8,
+          "draw": 0.15,
+          "away": 0.05
         },
         "confidence": 0.9,
         "keyFactors": [
-          "Germany's higher Elo rating and superior recent form",
-          "Curaçao's long time since last match (206 days)",
-          "Neutral venue reducing potential home advantage"
+          "Germany's significant Elo rating advantage over Curaçao",
+          "Germany's higher weighted and recent form compared to Curaçao",
+          "External forecast heavily favors Germany",
+          "Germany's high average goals scored rate"
         ],
         "risks": [
-          "Potential impact of Neuer's absence in goal for Germany",
-          "Uncertainty due to no prior head-to-head matchups"
+          "Neutral venue, which could reduce typical advantages for Germany",
+          "Curaçao's higher clean sheet rate than Germany"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (Germany 1822 vs Curaçao 1637) und deutlich höhere individuelle Klasse; Externe Prognose sieht Germany mit ~92% klar vorne, was die zu konservative Elo+Poisson-Baseline relativiert; Germany mit starker gewichteter Form (2.37) und hoher Offensivproduktion (2.57 Tore/Spiel).",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland deutlich stärker eingestuft (Elo 1822 vs 1637) und in starker Form (weightedForm 2.371, 2.57 Tore/Spiel); Externe Prognose sieht Deutschland klar vorne (0.92), Baseline (0.53) erscheint zu vorsichtig gegen einen klaren Klassenunterschied; Curaçaos defensive Werte stammen vermutlich aus deutlich schwächerem Wettbewerbsumfeld (CONCACAF) und sind nicht auf Topniveau übertragbar.",
     "inputHash": "sha256:39d156dac92db71c30e789a3330efdf2bed45c96508ae64ab4a700c5ab5f5508"
   },
   "predictionHistory": [
@@ -449,11 +450,24 @@
         "away": 0.059
       },
       "confidence": 0.792
+    },
+    {
+      "generatedAt": "2026-06-12T19:20:23.661Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.8367,
+        "draw": 0.1144,
+        "away": 0.0489
+      },
+      "confidence": 0.8019
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T19:20:24.100Z",
+    "updatedAt": "2026-06-12T20:05:33.619Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.9204,
