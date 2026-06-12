@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T19:00:22.539Z",
+    "generatedAt": "2026-06-12T19:20:23.661Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T19:00:22.539Z",
+    "generatedAt": "2026-06-12T19:20:23.661Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.496,
-      "draw": 0.2492,
-      "away": 0.2548
+      "home": 0.4962,
+      "draw": 0.2592,
+      "away": 0.2446
     },
-    "confidence": 0.6146,
+    "confidence": 0.6435,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
+          "home": 0.48,
           "draw": 0.27,
-          "away": 0.26
+          "away": 0.25
         },
         "confidence": 0.6,
         "keyFactors": [
           "USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419)",
-          "Heimturnier-Vorteil für USA (hostAdvantageTeamId USA), trotz formal neutralem Venue",
-          "USA offensiv stärker (goalsForAvg 1.668 vs 0.984)",
-          "Paraguay defensiv solide mit hoher Clean-Sheet-Rate (0.435) und niedrigem Gegentorschnitt (1.059)",
-          "H2H knapp zugunsten USA (2:1)"
+          "USA als Gastgeber mit Heimvorteil trotz neutralem Venue",
+          "Höhere Offensivproduktion der USA (goalsForAvg 1.668 vs 0.984)",
+          "H2H knapp zugunsten USA (1 Sieg, 2:1)"
         ],
         "risks": [
-          "Paraguays Defensivstärke könnte das US-Offensivspiel ausbremsen und ein knappes/unentschiedenes Ergebnis begünstigen",
-          "USA schwache Clean-Sheet-Rate (0.235) und hoher Gegentorschnitt (1.639) – anfällig hinten",
-          "Lange Pause (73 Tage ohne Spiel) für beide Teams – Rhythmusunsicherheit",
-          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
+          "Paraguay defensiv stark (cleanSheetRate 0.435 vs 0.235), kann Spiel eng halten",
+          "Schwache USA-Defensive (goalsAgainstAvg 1.639) anfällig für Konter",
+          "Lange Pause (73 Tage ohne Spiel) bei beiden Teams erhöht Unsicherheit",
+          "Paraguay kann mit kompakter Spielweise Punkt holen"
         ]
       },
       "chatgpt": {
@@ -105,24 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.23,
-          "away": 0.25
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "USA hat Heimvorteil als Gastgeber",
-          "USA bessere jüngste Form",
-          "USA gewann letztes direktes Duell"
+          "Die USA haben einen leichten Heimvorteil, da das Turnier im eigenen Land ausgetragen wird.",
+          "Stärkere Offensivleistung der USA mit einem durchschnittlichen Wert von 1.668 Toren pro Spiel.",
+          "Die USA haben im direkten Duell gegen Paraguay bereits einmal gewonnen.",
+          "Paraguays geringerer Durchschnitt an erzielten Toren (0.984) im Vergleich zu den USA."
         ],
         "risks": [
-          "Paraguay hat höhere Rate an Spiel ohne Gegentor",
-          "Spiel findet auf neutralem Platz statt"
+          "Paraguays Clean Sheet Rate ist mit 0.435 höher, was auf eine starke Defensive hinweist.",
+          "Spielt im neutralen Gelände, was den Heimvorteil leicht abschwächen könnte."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419); Heimturnier-Vorteil für USA (hostAdvantageTeamId USA), trotz formal neutralem Venue; USA offensiv stärker (goalsForAvg 1.668 vs 0.984).",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419); USA als Gastgeber mit Heimvorteil trotz neutralem Venue; Höhere Offensivproduktion der USA (goalsForAvg 1.668 vs 0.984).",
     "inputHash": "sha256:f48101dd7aa108f3e7d5204edfb631c99842350762d7af087650d47aebc9ced8"
   },
   "predictionHistory": [
@@ -593,11 +593,24 @@
         "away": 0.25
       },
       "confidence": 0.693
+    },
+    {
+      "generatedAt": "2026-06-12T19:00:22.539Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.496,
+        "draw": 0.2492,
+        "away": 0.2548
+      },
+      "confidence": 0.6146
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T19:00:22.934Z",
+    "updatedAt": "2026-06-12T19:20:24.099Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4585,
