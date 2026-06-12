@@ -1,4 +1,4 @@
-import { formatPercent } from "../lib/format.js";
+import { formatPercent, pointsFor } from "../lib/format.js";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { PredictionIndexEntry } from "@wm/shared";
@@ -37,6 +37,34 @@ export function GroupsPage() {
     [index, predIndex],
   );
 
+  // Echte Gruppen-Tabelle aus den IST-Ergebnissen (nur Gruppenspiele):
+  // Spiele, Tore, Gegentore, Punkte je Team.
+  const standingsByTeam = useMemo(() => {
+    const m = new Map<
+      string,
+      { played: number; gf: number; ga: number; pts: number }
+    >();
+    for (const e of predIndex?.entries ?? []) {
+      if (e.stage !== "group" || !e.actualResult) continue;
+      const r = e.actualResult;
+      const sides = [
+        [e.homeTeamId, r.home, r.away],
+        [e.awayTeamId, r.away, r.home],
+      ] as const;
+      for (const [id, gf, ga] of sides) {
+        const s = m.get(id) ?? { played: 0, gf: 0, ga: 0, pts: 0 };
+        s.played++;
+        s.gf += gf;
+        s.ga += ga;
+        s.pts += pointsFor(gf, ga);
+        m.set(id, s);
+      }
+    }
+    return m;
+  }, [predIndex]);
+
+  const NULL_STANDING = { played: 0, gf: 0, ga: 0, pts: 0 };
+
   if (isLoading) return <p className="text-fg-muted">{t("loading")}</p>;
   if (isError || !index) return <p className="text-neg">{t("error")}</p>;
 
@@ -67,15 +95,25 @@ export function GroupsPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         {visibleGroups.map((g) => {
+          const standingOf = (id: string) =>
+            standingsByTeam.get(id) ?? NULL_STANDING;
           const groupTeams = g.teamIds
             .map((id) => teams.get(id))
             .filter((x): x is NonNullable<typeof x> => !!x)
-            // Nach Weiterkommens-Wahrscheinlichkeit sortieren (sonst alphabetisch).
-            .sort((a, b) =>
-              sim
+            // FIFA-Sortierung nach IST-Ergebnissen: Punkte → Tordifferenz →
+            // erzielte Tore; bei Gleichstand (z. B. vor dem 1. Spieltag)
+            // entscheidet die simulierte Weiterkommens-Wahrscheinlichkeit.
+            .sort((a, b) => {
+              const sa = standingOf(a.id);
+              const sb = standingOf(b.id);
+              if (sb.pts !== sa.pts) return sb.pts - sa.pts;
+              const gdDiff = sb.gf - sb.ga - (sa.gf - sa.ga);
+              if (gdDiff !== 0) return gdDiff;
+              if (sb.gf !== sa.gf) return sb.gf - sa.gf;
+              return sim
                 ? (sim.advance.get(b.id) ?? 0) - (sim.advance.get(a.id) ?? 0)
-                : a.name.localeCompare(b.name),
-            );
+                : a.name.localeCompare(b.name);
+            });
           let matches = matchesByGroup.get(g.id) ?? [];
           if (teamFilter)
             matches = matches.filter(
@@ -91,39 +129,58 @@ export function GroupsPage() {
                 {t("groups.group", { id: g.id })}
               </h3>
               <ul className="mb-3 space-y-1 text-sm">
-                {sim && (
-                  <li className="flex items-center justify-between text-[10px] uppercase tracking-wide text-fg-faint">
-                    <span>{t("groups.team")}</span>
-                    <span className="flex gap-3 font-mono">
-                      <span className="w-10 text-right">
-                        {t("bracket.groupWinnerShort")}
-                      </span>
-                      <span className="w-10 text-right">
-                        {t("bracket.advanceShort")}
-                      </span>
-                    </span>
-                  </li>
-                )}
-                {groupTeams.map((tm) => (
-                  <li
-                    key={tm.id}
-                    className="flex items-center justify-between gap-2"
-                  >
-                    <span className="min-w-0 flex-1">
-                      <TeamBadge team={tm} />
-                    </span>
+                <li className="flex items-center justify-between gap-2 text-[10px] uppercase tracking-wide text-fg-faint">
+                  <span className="w-4 shrink-0" />
+                  <span className="min-w-0 flex-1">{t("groups.team")}</span>
+                  <span className="flex shrink-0 gap-2 font-mono">
+                    <span className="w-10 text-right">{t("groups.goals")}</span>
+                    <span className="w-7 text-right">{t("groups.pts")}</span>
                     {sim && (
-                      <span className="flex shrink-0 gap-3 font-mono text-xs">
-                        <span className="w-10 text-right text-fg-muted">
-                          {formatPercent(sim.groupWinner.get(tm.id))}
+                      <>
+                        <span className="hidden w-10 text-right sm:block">
+                          {t("bracket.groupWinnerShort")}
                         </span>
-                        <span className="w-10 text-right font-semibold text-pos">
-                          {formatPercent(sim.advance.get(tm.id))}
+                        <span className="w-10 text-right">
+                          {t("bracket.advanceShort")}
                         </span>
-                      </span>
+                      </>
                     )}
-                  </li>
-                ))}
+                  </span>
+                </li>
+                {groupTeams.map((tm, pos) => {
+                  const s = standingOf(tm.id);
+                  return (
+                    <li
+                      key={tm.id}
+                      className="flex items-center justify-between gap-2"
+                    >
+                      <span className="w-4 shrink-0 text-right font-mono text-xs text-fg-faint">
+                        {pos + 1}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <TeamBadge team={tm} />
+                      </span>
+                      <span className="flex shrink-0 gap-2 font-mono text-xs">
+                        <span className="w-10 text-right text-fg-muted">
+                          {s.gf}:{s.ga}
+                        </span>
+                        <span className="w-7 text-right font-semibold">
+                          {s.pts}
+                        </span>
+                        {sim && (
+                          <>
+                            <span className="hidden w-10 text-right text-fg-muted sm:block">
+                              {formatPercent(sim.groupWinner.get(tm.id))}
+                            </span>
+                            <span className="w-10 text-right font-semibold text-pos">
+                              {formatPercent(sim.advance.get(tm.id))}
+                            </span>
+                          </>
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
               {matches.length > 0 && (
                 <div className="space-y-1">

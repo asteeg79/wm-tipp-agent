@@ -54,6 +54,8 @@ const resources = {
         filterTeam: "Team filtern",
         all: "Alle",
         team: "Team",
+        goals: "Tore",
+        pts: "Pkt",
       },
       team: {
         results: "Ergebnisse (letzte 2 Jahre)",
@@ -289,6 +291,8 @@ const resources = {
         filterTeam: "Filter team",
         all: "All",
         team: "Team",
+        goals: "Goals",
+        pts: "Pts",
       },
       team: {
         results: "Results (last 2 years)",
