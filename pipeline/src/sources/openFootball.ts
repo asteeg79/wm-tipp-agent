@@ -19,7 +19,11 @@ import type {
   TournamentProvider,
 } from "./types.js";
 
-const TTL_MS = 6 * 60 * 60 * 1000; // 6 h (Datei wird täglich aktualisiert)
+// Kurze TTL: Während des Turniers trägt diese Datei die ERGEBNISSE — ein
+// langer Cache (vorher 6 h, via Actions-Cache über Läufe hinweg konserviert)
+// hielt beendete Spiele stundenlang zurück. Die Datei ist klein; einmal pro
+// Lauf frisch zu holen kostet praktisch nichts.
+const TTL_MS = 10 * 60 * 1000; // 10 min
 
 interface OfMatch {
   round: string;
