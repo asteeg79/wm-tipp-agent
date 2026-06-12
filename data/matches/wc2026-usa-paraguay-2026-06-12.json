@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T18:40:23.262Z",
+    "generatedAt": "2026-06-12T19:00:22.539Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T18:40:23.262Z",
+    "generatedAt": "2026-06-12T19:00:22.539Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4976,
-      "draw": 0.2524,
-      "away": 0.25
+      "home": 0.496,
+      "draw": 0.2492,
+      "away": 0.2548
     },
-    "confidence": 0.693,
+    "confidence": 0.6146,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,21 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
+          "home": 0.47,
           "draw": 0.27,
-          "away": 0.25
+          "away": 0.26
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
           "USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419)",
-          "USA als Gastgeber mit Heimvorteil trotz formal neutralem Venue",
-          "Höhere Offensivproduktion der USA (goalsForAvg 1.668 vs 0.984)",
-          "Baseline und externe Prognose sehen beide USA leicht favorisiert"
+          "Heimturnier-Vorteil für USA (hostAdvantageTeamId USA), trotz formal neutralem Venue",
+          "USA offensiv stärker (goalsForAvg 1.668 vs 0.984)",
+          "Paraguay defensiv solide mit hoher Clean-Sheet-Rate (0.435) und niedrigem Gegentorschnitt (1.059)",
+          "H2H knapp zugunsten USA (2:1)"
         ],
         "risks": [
-          "Paraguay defensiv stabil (cleanSheetRate 0.435 vs 0.235) und kann tief stehen",
-          "USA defensiv anfällig (goalsAgainstAvg 1.639) - Kontertore möglich",
-          "Lange Pause (73 Tage) für beide Teams kann Rhythmus beeinträchtigen",
+          "Paraguays Defensivstärke könnte das US-Offensivspiel ausbremsen und ein knappes/unentschiedenes Ergebnis begünstigen",
+          "USA schwache Clean-Sheet-Rate (0.235) und hoher Gegentorschnitt (1.639) – anfällig hinten",
+          "Lange Pause (73 Tage ohne Spiel) für beide Teams – Rhythmusunsicherheit",
           "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft"
         ]
       },
@@ -104,24 +105,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.51,
-          "draw": 0.24,
+          "home": 0.52,
+          "draw": 0.23,
           "away": 0.25
         },
-        "confidence": 0.82,
+        "confidence": 0.65,
         "keyFactors": [
-          "USA hat Heimvorteil trotz neutralem Austragungsort.",
-          "USA zeigt aktuell bessere Form (1.6) im Vergleich zu Paraguay (1.4).",
-          "USA hat kürzlich eine strategische Stärkung des Teams angekündigt."
+          "USA hat Heimvorteil als Gastgeber",
+          "USA bessere jüngste Form",
+          "USA gewann letztes direktes Duell"
         ],
         "risks": [
-          "Neutraler Spielort könnte Heimvorteil abschwächen.",
-          "Paraguay besitzt eine bessere Defensivstatistik mit einer höheren Clean-Sheet-Rate."
+          "Paraguay hat höhere Rate an Spiel ohne Gegentor",
+          "Spiel findet auf neutralem Platz statt"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419); USA als Gastgeber mit Heimvorteil trotz formal neutralem Venue; Höhere Offensivproduktion der USA (goalsForAvg 1.668 vs 0.984).",
+    "agreement": 0.9667,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und besserer gewichteter Form (1.517 vs 1.419); Heimturnier-Vorteil für USA (hostAdvantageTeamId USA), trotz formal neutralem Venue; USA offensiv stärker (goalsForAvg 1.668 vs 0.984).",
     "inputHash": "sha256:f48101dd7aa108f3e7d5204edfb631c99842350762d7af087650d47aebc9ced8"
   },
   "predictionHistory": [
@@ -579,11 +580,24 @@
         "away": 0.2392
       },
       "confidence": 0.59
+    },
+    {
+      "generatedAt": "2026-06-12T18:40:23.262Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4976,
+        "draw": 0.2524,
+        "away": 0.25
+      },
+      "confidence": 0.693
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T18:40:23.693Z",
+    "updatedAt": "2026-06-12T19:00:22.934Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4585,

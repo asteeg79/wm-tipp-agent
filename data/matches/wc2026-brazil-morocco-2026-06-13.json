@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T18:40:23.262Z",
+    "generatedAt": "2026-06-12T19:00:22.539Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T18:40:23.262Z",
+    "generatedAt": "2026-06-12T19:00:22.539Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.475,
-      "draw": 0.2583,
-      "away": 0.2667
+      "home": 0.4542,
+      "draw": 0.2875,
+      "away": 0.2583
     },
-    "confidence": 0.564,
+    "confidence": 0.572,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.37,
+          "home": 0.39,
           "draw": 0.27,
-          "away": 0.36
+          "away": 0.34
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Marokko zeigt die stärkere gewichtete Form (2.59 vs. 1.79) und eine herausragende Defensive (Gegentorschnitt 0.27, Clean-Sheet-Rate 0.71)",
-          "Brasilien mit solider Offensive (1.81 Tore/Spiel) und ausgeglichener Form, externe Prognose sieht Brasilien klar vorne (0.587)",
-          "Beide Teams mit identischer Pause (73 Tage), neutraler Spielort ohne Heimvorteil",
-          "Elo nahezu ausgeglichen (BRA 1844 vs. MAR 1892), kein H2H-Verlauf vorhanden"
+          "Marokko zeigt herausragende Form (gewichtet 2.585) und exzellente Defensive (0.274 Gegentore/Spiel, 70.6% Zu-Null) sowie leicht höheren Elo (1892 vs 1844)",
+          "Brasilien mit solider Offensive (1.814 Tore/Spiel) und stabiler Form (1.791), profitiert von Star-Qualität und Turniererfahrung",
+          "Verletzungsschock bei Marokko: zwei Stammspieler reisen verletzt ab, zusätzlich ein Angreifer fraglich – schwächt insbesondere die Offensivkraft",
+          "Neutraler Spielort ohne Heimvorteil für beide Teams",
+          "Externe Prognose sieht Brasilien klar vorne (0.587), während die Elo+Poisson-Baseline Marokko favorisiert – große Diskrepanz"
         ],
         "risks": [
-          "Verletzungsschock bei Marokko: zwei Stammspieler reisen verletzt ab plus ein verletzter Angreifer schwächen die sonst dominante Defensive/Offensive",
-          "Diskrepanz zwischen Baseline (Marokko favorisiert) und externer Prognose (Brasilien favorisiert) erhöht Unsicherheit",
-          "Marokkos starke Defensivwerte könnten ein torarmes Remis begünstigen",
-          "Individuelle Klasse Brasiliens kann Spiel in einem Moment entscheiden"
+          "Stark divergierende Prognosequellen (Baseline pro Marokko, externe Prognose pro Brasilien) erhöhen Unsicherheit",
+          "Ausmaß der marokkanischen Verletzungen schwer einzuschätzen – könnte die Defensivstärke stärker treffen als angenommen",
+          "Kein H2H-Datenmaterial vorhanden",
+          "Lange Pause (73 Tage) für beide Teams kann Form und Rhythmus beeinflussen"
         ]
       },
       "chatgpt": {
@@ -104,25 +105,24 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
+          "home": 0.5,
+          "draw": 0.3,
           "away": 0.2
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Morocco has key player injuries affecting squad strength.",
-          "Brazil's recent form is slightly lower but they maintain strong offensive capability.",
-          "Neutral venue, no host advantage.",
-          "Morocco's recent form advantage is countered by squad injuries."
+          "Brazil's strong historical performance and recent good form",
+          "Morocco's current higher Elo rating but significantly impacted by injuries",
+          "Neutral venue removes any home advantage"
         ],
         "risks": [
-          "Predicting outcome of a team with high Elo but key injuries is uncertain.",
-          "Both teams have not faced each other before, increasing unpredictability."
+          "Morocco's high weighted form indicates potential for strong performance",
+          "Neutral venue can introduce unpredictability in game outcome"
         ]
       }
     },
-    "agreement": 0.88,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko zeigt die stärkere gewichtete Form (2.59 vs. 1.79) und eine herausragende Defensive (Gegentorschnitt 0.27, Clean-Sheet-Rate 0.71); Brasilien mit solider Offensive (1.81 Tore/Spiel) und ausgeglichener Form, externe Prognose sieht Brasilien klar vorne (0.587); Beide Teams mit identischer Pause (73 Tage), neutraler Spielort ohne Heimvorteil.",
+    "agreement": 0.9067,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko zeigt herausragende Form (gewichtet 2.585) und exzellente Defensive (0.274 Gegentore/Spiel, 70.6% Zu-Null) sowie leicht höheren Elo (1892 vs 1844); Brasilien mit solider Offensive (1.814 Tore/Spiel) und stabiler Form (1.791), profitiert von Star-Qualität und Turniererfahrung; Verletzungsschock bei Marokko: zwei Stammspieler reisen verletzt ab, zusätzlich ein Angreifer fraglich – schwächt insbesondere die Offensivkraft.",
     "inputHash": "sha256:2b51716e1f1b05ad2d299ceb6c764caaf10b0d310a77a92f1d0a0153b36a0b37"
   },
   "predictionHistory": [
@@ -502,11 +502,24 @@
         "away": 0.272
       },
       "confidence": 0.6083
+    },
+    {
+      "generatedAt": "2026-06-12T18:40:23.262Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.475,
+        "draw": 0.2583,
+        "away": 0.2667
+      },
+      "confidence": 0.564
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T18:40:23.693Z",
+    "updatedAt": "2026-06-12T19:00:22.934Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.587,
