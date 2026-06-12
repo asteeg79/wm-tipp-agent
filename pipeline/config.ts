@@ -158,10 +158,12 @@ export const config: PipelineConfig = {
   reTriggerMilestonesHours: [72, 24, 3],
   maxNewsPerTeam: 20,
   models: {
-    // Claude Fable 5: Anthropics Top-Modell (über Opus). Achtung beim Modell-
-    // Wechsel: Fable 5 akzeptiert kein temperature/top_p und kein explizites
-    // thinking:"disabled" — der Client nutzt adaptive thinking (models.ts).
-    claude: "claude-fable-5",
+    // Claude Opus 4.8 ($5/$25 pro MTok — halb so teuer wie Fable 5, bewusste
+    // Kosten-Entscheidung). Achtung beim Modell-Wechsel: Opus 4.7+ akzeptiert
+    // kein temperature/top_p und kein budget_tokens — der Client nutzt
+    // adaptive thinking + Structured Outputs (models.ts), beides identisch
+    // zu Fable 5 unterstützt.
+    claude: "claude-opus-4-8",
     chatgpt: "gpt-4o",
     // Haiku: günstigstes Claude-Modell — News-Pipeline hängt damit nur noch
     // am ANTHROPIC_API_KEY (vorher gpt-4o-mini/OpenAI).
