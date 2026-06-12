@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T20:24:05.309Z",
+    "generatedAt": "2026-06-12T20:24:51.117Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T20:03:56.261Z",
+    "generatedAt": "2026-06-12T20:24:51.117Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4636,
-      "draw": 0.2864,
+      "home": 0.5024,
+      "draw": 0.2476,
       "away": 0.25
     },
-    "confidence": 0.6336,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,43 +86,40 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "USA mit Heimvorteil (Gastgeber) und höherem Elo (1676 vs 1644)",
-          "Bessere gewichtete Form der USA (1.517 vs 1.419) und höhere Offensivproduktion (1.668 vs 0.984 Tore/Spiel)",
-          "Baseline und externe Prognose sehen beide USA leicht favorisiert",
-          "Pochettino-Ära und WM-Debüt unter neuem Trainer als Motivationsfaktor"
+          "USA mit höherem Elo (1676 vs 1644) und Heim-/Gastgebervorteil trotz neutralem Venue",
+          "Bessere Offensive der USA (goalsForAvg 1.668 vs 0.984) und stärkere aktuelle Form (weightedForm 1.517 vs 1.419)",
+          "Pochettino-Ära beim USMNT mit WM-Debüt sorgt für zusätzliche Motivation und Heimrückhalt"
         ],
         "risks": [
-          "Paraguay defensiv stabil (Clean-Sheet-Rate 0.435) – könnte ein torarmes Spiel erzwingen",
-          "Externe Prognose sieht höhere Remis-Wahrscheinlichkeit (0.296)",
-          "Lange Pause beider Teams (73 Tage) erschwert Formeinschätzung",
-          "USA mit schwacher eigener Defensive (Gegentore 1.639/Spiel, Clean-Sheet nur 0.235)"
+          "Paraguay defensiv sehr stabil (cleanSheetRate 0.435, niedrige Gegentorquote) – kann das Spiel eng halten",
+          "Beide Teams 73 Tage ohne Pflichtspiel – Rhythmusunsicherheit könnte Ergebnis verzerren",
+          "Hohe Remis-Wahrscheinlichkeit laut externem Forecast (0.2962) bei kompakter paraguayischer Spielweise"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.3,
+          "home": 0.52,
+          "draw": 0.23,
           "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.74,
         "keyFactors": [
-          "USA hat einen leichten Elo-Vorsprung und spielt mit Gastgebervorteil",
-          "Paraguays bessere Defensivleistung, höhere Clean-Sheet-Rate",
-          "Beide Teams zuletzt gleichagil, was die Form angeht",
-          "Spielen auf neutralem Boden minimiert Heimvorteil für die USA"
+          "USA hat Host-Advantage als Gastgeberland der WM",
+          "USA zeigt eine stärkere jüngste Form als Paraguay",
+          "Bereitschafts- und Eröffnungsnervosität berücksichtigt"
         ],
         "risks": [
-          "Eventuelle psychologische Faktoren aufgrund von politischen Ereignissen bei der Eröffnungszeremonie",
-          "Unbestätigte Hinweise auf potenziell veränderte taktische Ausrichtungen wie spekuliert in Medien"
+          "Beide Teams hatten seit 73 Tagen kein Spiel, was für Unsicherheiten sorgen kann",
+          "Neutraler Spielort könnte Host-Advantage etwas neutralisieren"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heimvorteil (Gastgeber) und höherem Elo (1676 vs 1644); Bessere gewichtete Form der USA (1.517 vs 1.419) und höhere Offensivproduktion (1.668 vs 0.984 Tore/Spiel); Baseline und externe Prognose sehen beide USA leicht favorisiert.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1676 vs 1644) und Heim-/Gastgebervorteil trotz neutralem Venue; Bessere Offensive der USA (goalsForAvg 1.668 vs 0.984) und stärkere aktuelle Form (weightedForm 1.517 vs 1.419); Pochettino-Ära beim USMNT mit WM-Debüt sorgt für zusätzliche Motivation und Heimrückhalt.",
     "inputHash": "sha256:f48101dd7aa108f3e7d5204edfb631c99842350762d7af087650d47aebc9ced8"
   },
   "predictionHistory": [
@@ -619,11 +616,24 @@
         "away": 0.2446
       },
       "confidence": 0.6435
+    },
+    {
+      "generatedAt": "2026-06-12T20:03:56.261Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4636,
+        "draw": 0.2864,
+        "away": 0.25
+      },
+      "confidence": 0.6336
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T20:24:05.764Z",
+    "updatedAt": "2026-06-12T20:24:51.445Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4585,
