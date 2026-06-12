@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T22:09:20.801Z",
+    "generatedAt": "2026-06-12T23:03:53.672Z",
     "home": {
       "teamId": "HAI",
       "elo": 1576,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T22:09:20.801Z",
+    "generatedAt": "2026-06-12T23:03:53.672Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2423,
-      "draw": 0.2542,
-      "away": 0.5035
+      "home": 0.3059,
+      "draw": 0.254,
+      "away": 0.4401
     },
-    "confidence": 0.6262,
+    "confidence": 0.6713,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.3,
+          "home": 0.27,
           "draw": 0.26,
-          "away": 0.44
+          "away": 0.47
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Schottland verfügt über das individuell stärkere Personal mit Premier-League-Spielern wie McTominay und Robertson, was die externe Prognose klar zugunsten Schottlands (0.61) verschiebt",
-          "Elo nahezu ausgeglichen (HAI 1576 vs SCO 1586), aber externe Marktdaten und Kaderqualität sprechen gegen die leicht heimstarke Baseline",
-          "Schottlands bessere jüngste Form (recentForm 1.6 vs 1.3) deutet auf aktuelle Aufwärtstendenz",
-          "Neutraler Spielort eliminiert jeden Heimvorteil für Haiti, was die Baseline-Heimbevorzugung relativiert"
+          "Schottlands Kader mit Premier-League-Stützen wie McTominay und Robertson verleiht mehr individuelle Qualität, was die externe Prognose klar zugunsten Schottlands (0.61) gewichtet",
+          "Schottland mit besserer aktueller Form (recentForm 1.6 vs 1.3)",
+          "Elo nahezu ausgeglichen (HAI 1576 vs SCO 1586), neutraler Spielort ohne Heimvorteil",
+          "Haiti defensiv solider (cleanSheetRate 0.409 vs 0.28, GegentoreAvg 1.092)",
+          "Beide Teams lange ohne Spiel (73 Tage), Rhythmus unsicher"
         ],
         "risks": [
-          "Haiti zeigt defensiv solide Werte (cleanSheetRate 0.409, nur 1.09 Gegentore/Spiel) und könnte das Spiel eng gestalten",
-          "Verletzung von Gilmour schwächt Schottlands Mittelfeld leicht",
-          "Lange Pause beider Teams (73 Tage) erschwert Formeinschätzung",
-          "Kein H2H-Vergleich vorhanden, erhöht Prognoseunsicherheit"
+          "Ausfall von Billy Gilmour schwächt Schottlands Mittelfeld",
+          "Kein H2H-Datensatz vorhanden, hohe Unsicherheit",
+          "Haitis bessere Defensive und gewichtete Form könnten ein knappes Ergebnis oder Remis ermöglichen",
+          "Große Diskrepanz zwischen Baseline (leichter Haiti-Favorit) und externer Prognose (klar Schottland)"
         ]
       },
       "chatgpt": {
@@ -104,25 +105,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
+          "home": 0.33,
           "draw": 0.25,
-          "away": 0.55
+          "away": 0.42
         },
-        "confidence": 0.75,
+        "confidence": 0.82,
         "keyFactors": [
-          "Scotland's recent form is strong, with a recent form index of 1.6 compared to Haiti's 1.3.",
-          "Scotland's team composition includes key players like McTominay and Robertson.",
-          "Scotland's participation in the World Cup for the first time since 1998 boosts morale.",
-          "Gilmour's injury weakens Scotland slightly, but overall squad depth remains solid."
+          "Haiti hat eine leicht bessere gewichtete Form, aber Scotlands aktuelle Form ist höher.",
+          "Scotland hat mit McTominay und Robertson erfahrene Spieler im Kader.",
+          "Neutrale Austragung ohne Heimvorteil für eines der Teams.",
+          "Schottland hat einen verletzungsbedingten Ausfall von Gilmour."
         ],
         "risks": [
-          "The match is played at a neutral venue, minimizing home advantage.",
-          "Lack of head-to-head history adds uncertainty to outcome prediction."
+          "Erschwerte Prognose durch erstmals offizielles Aufeinandertreffen beider Teams.",
+          "Mögliche taktische Anpassungen durch neutralen Spielort."
         ]
       }
     },
-    "agreement": 0.9267,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schottland verfügt über das individuell stärkere Personal mit Premier-League-Spielern wie McTominay und Robertson, was die externe Prognose klar zugunsten Schottlands (0.61) verschiebt; Elo nahezu ausgeglichen (HAI 1576 vs SCO 1586), aber externe Marktdaten und Kaderqualität sprechen gegen die leicht heimstarke Baseline; Schottlands bessere jüngste Form (recentForm 1.6 vs 1.3) deutet auf aktuelle Aufwärtstendenz.",
+    "agreement": 0.96,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schottlands Kader mit Premier-League-Stützen wie McTominay und Robertson verleiht mehr individuelle Qualität, was die externe Prognose klar zugunsten Schottlands (0.61) gewichtet; Schottland mit besserer aktueller Form (recentForm 1.6 vs 1.3); Elo nahezu ausgeglichen (HAI 1576 vs SCO 1586), neutraler Spielort ohne Heimvorteil.",
     "inputHash": "sha256:f375e83edf8ef713016eefa86082bad215449b5f210e148c79e1988064d167ba"
   },
   "predictionHistory": [
@@ -567,11 +568,24 @@
         "away": 0.5204
       },
       "confidence": 0.6348
+    },
+    {
+      "generatedAt": "2026-06-12T22:09:20.801Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2423,
+        "draw": 0.2542,
+        "away": 0.5035
+      },
+      "confidence": 0.6262
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T22:09:21.132Z",
+    "updatedAt": "2026-06-12T23:03:54.103Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1595,

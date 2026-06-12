@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T22:09:20.801Z",
+    "generatedAt": "2026-06-12T23:03:53.672Z",
     "home": {
       "teamId": "NED",
       "elo": 1825,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T22:09:20.801Z",
+    "generatedAt": "2026-06-12T23:03:53.672Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.47,
-      "draw": 0.266,
-      "away": 0.264
+      "home": 0.4859,
+      "draw": 0.2547,
+      "away": 0.2594
     },
-    "confidence": 0.6827,
+    "confidence": 0.6089,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.26,
           "away": 0.27
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2.53 Tore/Spiel) sowie sehr guter jüngster Form (recentForm 2.4)",
-          "Japan defensiv extrem stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate, was die niederländische Offensive bremsen kann",
-          "Neutraler Spielort ohne Heimvorteil reduziert den nominellen Heimbonus der Niederlande",
-          "Beide Teams gleich lange Pause (73 Tage), keine Kondition-/Rhythmusvorteile"
+          "Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2,53 Tore/Spiel) sowie starker jüngster Form (recentForm 2,4)",
+          "Japan defensiv extrem stabil (nur 0,36 Gegentore/Spiel, 58% Zu-Null-Quote), was die erwarteten Heimtore drückt",
+          "Beide Teams nach 73 Tagen Pause frisch, neutraler Spielort ohne Heimvorteil",
+          "Baseline und externe Prognose stimmen weitgehend überein (~48-49% Heimsieg)"
         ],
         "risks": [
-          "Verletzung des niederländischen Stammtorwarts – Flekken rückt nach, mögliche defensive Unsicherheit",
-          "Kein H2H vorhanden, daher höhere Prognoseunsicherheit",
-          "Japans kompakte Defensive könnte das Spiel in Richtung knappes Ergebnis oder Remis kippen",
-          "Kaderveränderungen (Frimpong fehlt bei NED, neuer Co-Trainer bei JPN) könnten Spielbild beeinflussen"
+          "Verletzung des niederländischen Stammtorwarts (Flekken rückt nach) könnte Defensive schwächen",
+          "Japans starke Defensive kann ein knappes Remis erzwingen",
+          "Kein H2H-Datenmaterial vorhanden, erhöht Unsicherheit",
+          "Japans gute gewichtete Form (2,20) deutet auf möglichen Überraschungserfolg"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.27,
-          "away": 0.26
+          "home": 0.5,
+          "draw": 0.25,
+          "away": 0.25
         },
-        "confidence": 0.82,
+        "confidence": 0.65,
         "keyFactors": [
-          "Netherlands has a slightly higher Elo rating and stronger recent form than Japan.",
-          "Netherlands' average goals for is significantly higher than Japan's.",
-          "Japan has a better defensive record with a higher clean sheet rate.",
-          "The match is played at a neutral venue, eliminating any home advantage.",
-          "Japan's recent form and defensive strength suggest a competitive match despite the Elo difference."
+          "Niederlande zeigt eine hohe Torquote mit durchschnittlich 2.533 Toren pro Spiel.",
+          "Japan hat eine starke Abwehr mit nur durchschnittlich 0.362 Gegentoren pro Spiel.",
+          "Niederlande muss ohne Stammtorwart auskommen, was ihre Defensivleistung beeinträchtigen könnte.",
+          "Niederlande und Japan haben keine direkte Head-to-Head-Historie, neutrales Spielfeld."
         ],
         "risks": [
-          "Dutch starting goalkeeper is injured, which may affect defensive performance.",
-          "No head-to-head history makes it difficult to assess direct competitive balance."
+          "Einfluss der kurzfristigen Änderungen im Kader der Niederlande aufgrund von Verletzungen.",
+          "Japans stabile Defensive könnte überraschend stark auftreten."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2.53 Tore/Spiel) sowie sehr guter jüngster Form (recentForm 2.4); Japan defensiv extrem stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate, was die niederländische Offensive bremsen kann; Neutraler Spielort ohne Heimvorteil reduziert den nominellen Heimbonus der Niederlande.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2,53 Tore/Spiel) sowie starker jüngster Form (recentForm 2,4); Japan defensiv extrem stabil (nur 0,36 Gegentore/Spiel, 58% Zu-Null-Quote), was die erwarteten Heimtore drückt; Beide Teams nach 73 Tagen Pause frisch, neutraler Spielort ohne Heimvorteil.",
     "inputHash": "sha256:54d6ae2f22c34bbf4bca3d7ec1f7f1ac5a4b96ba4f26a1e628e4037898b7d516"
   },
   "predictionHistory": [
@@ -490,11 +489,24 @@
         "away": 0.2592
       },
       "confidence": 0.6305
+    },
+    {
+      "generatedAt": "2026-06-12T22:09:20.801Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.47,
+        "draw": 0.266,
+        "away": 0.264
+      },
+      "confidence": 0.6827
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T22:09:21.133Z",
+    "updatedAt": "2026-06-12T23:03:54.103Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.4803,
