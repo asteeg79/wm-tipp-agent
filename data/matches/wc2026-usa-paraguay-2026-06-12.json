@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T21:03:54.788Z",
+    "generatedAt": "2026-06-12T22:03:55.134Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T21:03:54.788Z",
+    "generatedAt": "2026-06-12T22:03:55.134Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5004,
-      "draw": 0.2579,
-      "away": 0.2418
+      "home": 0.5315,
+      "draw": 0.25,
+      "away": 0.2185
     },
-    "confidence": 0.6883,
+    "confidence": 0.6413,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.27,
-          "away": 0.26
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
         },
-        "confidence": 0.55,
+        "confidence": 0.6,
         "keyFactors": [
-          "USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und höherem Elo (1676 vs 1644)",
-          "Bessere gewichtete Form der USA (1.517 vs 1.419) und höhere Offensivproduktion (1.67 vs 0.98 Tore/Spiel)",
-          "Pochettino-Ära mit klarer Startelf-Planung deutet auf Stabilität hin",
-          "Baseline und externe Prognose stimmen im Favoritenstatus USA überein"
+          "USA als Gastgeber mit Heimvorteil (hostAdvantageTeamId USA) trotz neutralem Venue",
+          "Höhere Elo (1676 vs 1644) und stärkere gewichtete Form (1.517 vs 1.419) der USA",
+          "USA mit deutlich besserem Offensivschnitt (1.668 vs 0.984 Tore/Spiel)",
+          "Paraguay defensiv stabiler (Clean-Sheet-Rate 0.435 vs 0.235), aber offensiv schwach",
+          "Mögliche Schwächung Paraguays durch fraglichen Starspieler vor der WM"
         ],
         "risks": [
-          "Paraguays starke Defensive (Clean-Sheet-Rate 0.435) kann USA-Offensive bremsen und Remis-Wahrscheinlichkeit erhöhen",
-          "Lange Pause (73 Tage ohne Spiel) für beide Teams birgt Rhythmusrisiko",
-          "Schwache USA-Defensive (Clean-Sheet-Rate nur 0.235) anfällig für Konter",
-          "Nur ein H2H-Spiel als Datenbasis, geringe Aussagekraft"
+          "USA defensiv anfällig (nur 0.235 Clean-Sheet-Rate, 1.639 Gegentore/Spiel)",
+          "Paraguays kompakte Defensive könnte ein torarmes Spiel und Remis begünstigen",
+          "Lange Pause beider Teams (73 Tage) erschwert Formprognose",
+          "Unsicherheit über tatsächlichen Ausfall des paraguayischen Starspielers"
         ]
       },
       "chatgpt": {
@@ -104,25 +105,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
+          "home": 0.55,
           "draw": 0.25,
-          "away": 0.23
+          "away": 0.2
         },
-        "confidence": 0.85,
+        "confidence": 0.7,
         "keyFactors": [
-          "USA spielt auf neutralem Boden, jedoch mit Host-Advantage",
-          "USA hat in der jüngeren Vergangenheit eine stärkere Form gezeigt",
-          "H2H-Vorteil für USA beim letzten Treffen",
-          "Paraguays jüngste Form schlechter als die der USA"
+          "Host advantage for USA despite neutral venue",
+          "Paraguay possible injury to key player",
+          "USA has slight historical head-to-head advantage",
+          "USA's weighted and recent form slightly stronger than Paraguay's"
         ],
         "risks": [
-          "Hohe Clean-Sheet-Rate von Paraguay im Vergleich zu den USA",
-          "USA verteidigt nicht besonders stark, wie die Gegentor-Schnittrate zeigt"
+          "Neutral venue reduces potential host advantage",
+          "Injury status of Paraguayan player could change"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und höherem Elo (1676 vs 1644); Bessere gewichtete Form der USA (1.517 vs 1.419) und höhere Offensivproduktion (1.67 vs 0.98 Tore/Spiel); Pochettino-Ära mit klarer Startelf-Planung deutet auf Stabilität hin.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA als Gastgeber mit Heimvorteil (hostAdvantageTeamId USA) trotz neutralem Venue; Höhere Elo (1676 vs 1644) und stärkere gewichtete Form (1.517 vs 1.419) der USA; USA mit deutlich besserem Offensivschnitt (1.668 vs 0.984 Tore/Spiel).",
     "inputHash": "sha256:f48101dd7aa108f3e7d5204edfb631c99842350762d7af087650d47aebc9ced8"
   },
   "predictionHistory": [
@@ -645,11 +646,24 @@
         "away": 0.25
       },
       "confidence": 0.6512
+    },
+    {
+      "generatedAt": "2026-06-12T21:03:54.788Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5004,
+        "draw": 0.2579,
+        "away": 0.2418
+      },
+      "confidence": 0.6883
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T21:03:55.264Z",
+    "updatedAt": "2026-06-12T22:05:39.305Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4585,
