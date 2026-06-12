@@ -16,11 +16,12 @@ export function MatchRow({ entry, teams }: Props) {
   const r = entry.actualResult;
   const tip = entry.predictedScore;
 
-  // Mittlere Score-Spalte: Ist-Ergebnis (fett) > KI-Tipp (gedämpft) > "vs".
+  // Mittlere Score-Spalte: Ist-Ergebnis (fett, grün) > KI-Tipp (gedämpft) > "vs".
+  // Grün (text-pos) unterscheidet echte Resultate sichtbar von Tipps.
   let scoreCell;
   if (r) {
     scoreCell = (
-      <span className="font-semibold">
+      <span className="font-semibold text-pos">
         {r.home}:{r.away}
       </span>
     );
