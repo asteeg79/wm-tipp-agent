@@ -135,9 +135,21 @@ export async function buildData(
   const now = new Date();
   const nowIso = now.toISOString();
 
-  // 1) Turnierstruktur → index.json
+  // 1) Turnierstruktur + Spielplan laden und SANITY-GUARD: Liefert die Quelle
+  // offensichtlich kaputte Daten (Teilausfall, leeres JSON, Format-Bruch),
+  // brechen wir ab, statt den letzten guten /data-Stand zu überschreiben —
+  // der Fehlerlauf löst dann den Issue-Alarm aus. (WM 2026: 48 Teams,
+  // 104 Spiele; Schwellen bewusst mit Luft.)
   const { tournament, groups, teams, rankByTeamId } =
     await tournamentProvider.getTournament();
+  const schedule = await tournamentProvider.getSchedule();
+  if (teams.length < 40 || schedule.length < 70) {
+    throw new Error(
+      `[pipeline] Quelldaten unplausibel (teams=${teams.length}, ` +
+        `matches=${schedule.length}) — Lauf abgebrochen, /data bleibt unverändert`,
+    );
+  }
+
   await writeJson(indexPath, IndexFile, {
     tournament,
     lastUpdated: nowIso,
@@ -147,9 +159,6 @@ export async function buildData(
 
   // 2) Mögliche Gegner ableiten
   const opponentSets = deriveOpponentSets(teams, groups, rankByTeamId);
-
-  // 3) Spielplan laden (Match-Dateien werden nach der Engine geschrieben).
-  const schedule = await tournamentProvider.getSchedule();
 
   const seasons = historySeasons(now, config.historyYears);
   const progress = await readProgress();

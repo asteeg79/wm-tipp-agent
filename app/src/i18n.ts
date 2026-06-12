@@ -190,6 +190,10 @@ const resources = {
         h2h: "Direkte Duelle",
       },
       disclaimer: "Keine Wett- oder Finanzberatung. Tipps ohne Gewähr.",
+      stale: {
+        notice:
+          "Datenstand {{ago}} — die automatische Aktualisierung verzögert sich gerade.",
+      },
       version: {
         label: "Version",
         updateTitle: "Neue Version verfügbar",
@@ -422,6 +426,10 @@ const resources = {
       },
       disclaimer:
         "Not betting or financial advice. Predictions without warranty.",
+      stale: {
+        notice:
+          "Data last updated {{ago}} — automatic refresh is currently delayed.",
+      },
       version: {
         label: "Version",
         updateTitle: "New version available",

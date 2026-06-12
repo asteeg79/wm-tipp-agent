@@ -15,6 +15,7 @@ permissions:
 jobs:
   alert:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/github-script@v8
         with:

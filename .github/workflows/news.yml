@@ -17,6 +17,8 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
+    # Hängende Läufe dürfen die Pipeline-Gruppe nicht blockieren.
+    timeout-minutes: 20
     env:
       WM_MODE: news
     steps:

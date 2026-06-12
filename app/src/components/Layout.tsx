@@ -5,6 +5,7 @@ import { useIndex, useTeamsMap } from "../lib/data.js";
 import { timeAgo } from "../lib/format.js";
 import { useVersion, formatVersion } from "../lib/useVersion.js";
 import { UpdateBanner } from "./UpdateBanner.js";
+import { StaleBanner } from "./StaleBanner.js";
 import { ThemeToggle } from "./ThemeToggle.js";
 import { useFavorites } from "../lib/FavoritesContext.js";
 import { useFavoriteAlerts } from "../lib/useFavoriteAlerts.js";
@@ -38,6 +39,7 @@ export function Layout() {
   return (
     <div className="flex min-h-full flex-col">
       <UpdateBanner v={v} />
+      <StaleBanner />
 
       {/* Matchday-Akzentleiste */}
       <div className="h-1 bg-acc" />

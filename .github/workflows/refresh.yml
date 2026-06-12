@@ -12,6 +12,12 @@ on:
         default: "full"
         type: choice
         options: [news, predict, full]
+  # Externer Trigger (z. B. Cloudflare-Worker-Cron, s. docs/betrieb.md):
+  # POST /repos/<owner>/<repo>/dispatches mit {"event_type":"refresh-data",
+  # "client_payload":{"mode":"predict"}}. repository_dispatch wird — anders
+  # als schedule — NICHT gedrosselt und ist damit der zuverlässige Taktgeber.
+  repository_dispatch:
+    types: [refresh-data]
 
 concurrency:
   group: data-pipeline
@@ -23,8 +29,10 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
+    # Hängende Läufe dürfen die Pipeline-Gruppe nicht blockieren.
+    timeout-minutes: 25
     env:
-      WM_MODE: ${{ inputs.mode }}
+      WM_MODE: ${{ inputs.mode || github.event.client_payload.mode || 'predict' }}
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
