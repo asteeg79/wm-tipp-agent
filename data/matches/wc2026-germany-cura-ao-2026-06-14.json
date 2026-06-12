@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T12:18:50.760Z",
+    "generatedAt": "2026-06-12T15:50:07.760Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T11:59:46.636Z",
+    "generatedAt": "2026-06-12T15:50:07.760Z",
     "predictedScore": {
       "home": 3,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.8546,
-      "draw": 0.0954,
+      "home": 0.85,
+      "draw": 0.1,
       "away": 0.05
     },
-    "confidence": 0.8372,
+    "confidence": 0.865,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,51 +80,51 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.86,
-          "draw": 0.09,
+          "home": 0.85,
+          "draw": 0.1,
           "away": 0.05
         },
         "confidence": 0.78,
         "keyFactors": [
           "Deutliches Elo-Gefälle (1822 vs. 1637) zugunsten Deutschlands",
-          "Externe Prognose (92% Heimsieg) deutet darauf hin, dass die Baseline Deutschlands Stärke stark unterschätzt",
-          "Curaçaos starke Statistiken (0.62 Gegentore/Spiel, 55% Zu-Null-Quote) stammen überwiegend aus Spielen gegen deutlich schwächere CONCACAF-Gegner und sind nicht direkt übertragbar",
-          "Deutschland mit höherer gewichteter Form (2.37 vs. 1.86) und mehr Spielen gegen Top-Gegner",
-          "Curaçao hat 206 Tage Wettbewerbspause – deutlich längere Inaktivität als Deutschland (74 Tage)",
-          "Erstes WM-Turnier für Curaçao – fehlende Erfahrung auf höchstem Niveau"
+          "Externer Forecast (92% Heimsieg) liegt weit über der Baseline und stützt eine starke Korrektur nach oben",
+          "Deutschlands gewichtete Form (2.371) und Torquote (2.57 Tore/Spiel) klar besser als die von Curaçao",
+          "Curaçaos starke Defensivwerte (0.62 Gegentore/Spiel, 55% Zu-Null) stammen überwiegend aus Spielen gegen deutlich schwächere CONCACAF-Gegner",
+          "Curaçao hatte 206 Tage Pause seit dem letzten Pflichtspiel – Rhythmus- und Eingespieltheits-Nachteil",
+          "Kein H2H vorhanden, daher dominieren Elo- und Kaderqualitätsunterschiede die Einschätzung"
         ],
         "risks": [
-          "Neutraler Spielort ohne klassischen Heimvorteil für Deutschland",
-          "Deutschland zeigte in der jüngeren Vergangenheit Schwächen gegen tief stehende, vermeintlich kleinere Gegner",
-          "Curaçao verfügt über erfahrene Trainerführung (Dick Advocaat) und eine kompakte Defensivorganisation",
-          "Kein Head-to-Head-Datenmaterial vorhanden – erhöhte Unsicherheit"
+          "Neutraler Spielort reduziert den klassischen Heimvorteil Deutschlands",
+          "Curaçao unter dem erfahrenen Trainer Dick Advocaat ist taktisch diszipliniert und defensiv kompakt – ein tief stehender Gegner könnte das Ergebnis knapp halten",
+          "Auch Deutschland hatte 74 Tage Spielpause, möglicher langsamer Start ins Turnier",
+          "Deutschlands Gegentorschnitt (1.11) zeigt defensive Anfälligkeit, die ein Konterteam nutzen könnte"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
           "home": 0.85,
           "draw": 0.1,
           "away": 0.05
         },
-        "confidence": 0.9,
+        "confidence": 0.95,
         "keyFactors": [
-          "Germany's higher Elo rating and offensive power with a goals for average of 2.574",
-          "Recent form and competitive record of Germany despite lack of matches",
-          "Curaçao's lower competitive experience against top-tier teams",
-          "Neutral venue limiting home-field advantage but Germany's overall strength remains"
+          "Germany's significantly higher Elo and strong attacking average.",
+          "Curaçao's long gap since last match affects match fitness.",
+          "Neutral venue reduces potential location-based advantages.",
+          "Germany's recent form and quality despite Neuer's injury recovery."
         ],
         "risks": [
-          "Germany's longer period since last match could affect sharpness",
-          "Curaçao's decent clean sheet rate indicating potential defensive resilience"
+          "Potential for lack of match sharpness for Germany due to 74 days since last match.",
+          "Increased defensive stability of Curaçao indicated by their clean sheet rate."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliches Elo-Gefälle (1822 vs. 1637) zugunsten Deutschlands; Externe Prognose (92% Heimsieg) deutet darauf hin, dass die Baseline Deutschlands Stärke stark unterschätzt; Curaçaos starke Statistiken (0.62 Gegentore/Spiel, 55% Zu-Null-Quote) stammen überwiegend aus Spielen gegen deutlich schwächere CONCACAF-Gegner und sind nicht direkt übertragbar.",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliches Elo-Gefälle (1822 vs. 1637) zugunsten Deutschlands; Externer Forecast (92% Heimsieg) liegt weit über der Baseline und stützt eine starke Korrektur nach oben; Deutschlands gewichtete Form (2.371) und Torquote (2.57 Tore/Spiel) klar besser als die von Curaçao.",
     "inputHash": "sha256:39d156dac92db71c30e789a3330efdf2bed45c96508ae64ab4a700c5ab5f5508"
   },
   "predictionHistory": [
@@ -348,11 +348,24 @@
         "away": 0.0545
       },
       "confidence": 0.8173
+    },
+    {
+      "generatedAt": "2026-06-12T11:59:46.636Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.8546,
+        "draw": 0.0954,
+        "away": 0.05
+      },
+      "confidence": 0.8372
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T12:18:51.256Z",
+    "updatedAt": "2026-06-12T15:52:33.775Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.9218,

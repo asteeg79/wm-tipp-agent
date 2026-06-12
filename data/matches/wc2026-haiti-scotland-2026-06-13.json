@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T12:18:50.760Z",
+    "generatedAt": "2026-06-12T15:50:07.760Z",
     "home": {
       "teamId": "HAI",
       "elo": 1576,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T11:59:46.636Z",
+    "generatedAt": "2026-06-12T15:50:07.760Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2458,
-      "draw": 0.2615,
-      "away": 0.4927
+      "home": 0.2632,
+      "draw": 0.2442,
+      "away": 0.4926
     },
-    "confidence": 0.6435,
+    "confidence": 0.6463,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,17 +86,17 @@
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Externe Prognose sieht Schottland deutlich vorne (0.61), während die Elo-Baseline die Teams nahezu gleichauf hat – die Wahrheit liegt eher auf Schottlands Seite, da der Kader (McTominay, Robertson) individuell klar stärker besetzt ist",
-          "Schottlands jüngste Form (recentForm 1.6) ist besser als die von Haiti (1.3), erstmals seit 1998 wieder bei einer WM mit entsprechender Motivation",
-          "Haitis Umfeld ist von erheblicher Unruhe geprägt: Nationaltrainer traut sich wegen Gewalt und Visa-Problemen nicht ins Land – schlechte Vorbereitungsbedingungen",
-          "Neutraler Spielort ohne echten Heimvorteil für Haiti, kein Host-Advantage",
-          "Keine H2H-Historie vorhanden, daher stützen sich Form- und Kaderqualität als Hauptkriterien"
+          "Elo der Teams nahezu gleichauf (1576 vs. 1586), aber externe Prognose sieht Schottland klar vorne (61%)",
+          "Neutraler Spielort: Baseline-Heimvorteil für Haiti muss deutlich reduziert werden",
+          "Schottlands Kader mit erfahrenen Topspielern wie McTominay und Robertson deutlich tiefer besetzt als Haitis",
+          "Schottlands jüngere Form (recentForm 1.6) besser als Haitis (1.3), trotz höherer gewichteter Form Haitis",
+          "Erste WM-Teilnahme Schottlands seit 1998 sorgt für hohe Motivation"
         ],
         "risks": [
-          "Haitis gewichtete Form (1.488) und solide Defensivwerte (Clean-Sheet-Rate 0.409) sind besser als oft wahrgenommen – Überraschungspotenzial vorhanden",
           "Verletzung von Billy Gilmour schwächt Schottlands Mittelfeld",
-          "73 Tage Pause bei beiden Teams – Rhythmus und Eingespieltheit schwer einzuschätzen",
-          "Schottland kassiert relativ viele Gegentore (1.281 pro Spiel), was Haitis Offensive (1.657 Tore pro Spiel) Chancen eröffnen könnte"
+          "Keine Head-to-Head-Historie, daher hohe Unsicherheit",
+          "Haiti zeigt solide Offensivwerte (1.66 Tore/Spiel) und ordentliche Clean-Sheet-Quote (41%)",
+          "Lange Pause von 73 Tagen für beide Teams erschwert Formbewertung"
         ]
       },
       "chatgpt": {
@@ -105,25 +105,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.27,
+          "home": 0.28,
+          "draw": 0.24,
           "away": 0.48
         },
-        "confidence": 0.75,
+        "confidence": 0.76,
         "keyFactors": [
-          "Scotland has a slightly higher Elo rating and recent form advantage.",
-          "Haiti coach has external challenges that may affect the team's preparation.",
-          "Scotland's squad includes key players like McTominay, enhancing their strength.",
-          "Neutral venue diminishes typical home advantage."
+          "Schottland hat eine stärkere aktuelle Form (recentForm 1.6) im Vergleich zu Haiti (recentForm 1.3)",
+          "Schottland hat einen geringfügig besseren Elo-Wert",
+          "Neutrale Spielstätte, daher keine Heimvorteile",
+          "Verletzung eines Schlüsselspielers (Gilmour) könnte Schottlands Spielfluss beeinträchtigen, jedoch sind Führungsfiguren wie McTominay und Robertson dabei"
         ],
         "risks": [
-          "Injury to Gilmour reduces Scotland's midfield options.",
-          "Haiti's offensive average is robust, risking potential upset."
+          "Verletzungen im schottischen Team könnten Einfluss nehmen, wenn weitere Schlüsselspieler ausfallen",
+          "Konditionelle Faktoren nach 73 Tagen Pause unbekannt"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Externe Prognose sieht Schottland deutlich vorne (0.61), während die Elo-Baseline die Teams nahezu gleichauf hat – die Wahrheit liegt eher auf Schottlands Seite, da der Kader (McTominay, Robertson) individuell klar stärker besetzt ist; Schottlands jüngste Form (recentForm 1.6) ist besser als die von Haiti (1.3), erstmals seit 1998 wieder bei einer WM mit entsprechender Motivation; Haitis Umfeld ist von erheblicher Unruhe geprägt: Nationaltrainer traut sich wegen Gewalt und Visa-Problemen nicht ins Land – schlechte Vorbereitungsbedingungen.",
+    "agreement": 0.9733,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo der Teams nahezu gleichauf (1576 vs. 1586), aber externe Prognose sieht Schottland klar vorne (61%); Neutraler Spielort: Baseline-Heimvorteil für Haiti muss deutlich reduziert werden; Schottlands Kader mit erfahrenen Topspielern wie McTominay und Robertson deutlich tiefer besetzt als Haitis.",
     "inputHash": "sha256:f375e83edf8ef713016eefa86082bad215449b5f210e148c79e1988064d167ba"
   },
   "predictionHistory": [
@@ -399,11 +399,24 @@
         "away": 0.4754
       },
       "confidence": 0.637
+    },
+    {
+      "generatedAt": "2026-06-12T11:59:46.636Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2458,
+        "draw": 0.2615,
+        "away": 0.4927
+      },
+      "confidence": 0.6435
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T12:18:51.256Z",
+    "updatedAt": "2026-06-12T15:52:33.775Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1637,
