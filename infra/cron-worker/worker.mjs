@@ -12,7 +12,15 @@
 const REPO = "asteeg79/wm-tipp-agent";
 
 export default {
-  async scheduled(_event, env) {
+  async scheduled(event, env) {
+    // Cloudflares Schedules-API akzeptiert keine Monats-Einschränkung im
+    // Cron-Ausdruck → der Cron läuft ganzjährig, der Guard hier begrenzt
+    // auf das WM-Fenster Juni/Juli.
+    const month = new Date(event.scheduledTime).getUTCMonth() + 1;
+    if (month !== 6 && month !== 7) {
+      console.log(`Monat ${month} außerhalb Jun/Jul — kein Dispatch`);
+      return;
+    }
     const res = await fetch(`https://api.github.com/repos/${REPO}/dispatches`, {
       method: "POST",
       headers: {

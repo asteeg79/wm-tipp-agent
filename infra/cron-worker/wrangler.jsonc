@@ -1,0 +1,19 @@
+// Cloudflare-Worker "wm-tipp-cron" — externer Taktgeber der Daten-Pipeline.
+// Deploy:  npx wrangler deploy   (aus diesem Verzeichnis)
+// Secret:  npx wrangler secret put GITHUB_PAT
+{
+  "name": "wm-tipp-cron",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-06-01",
+  // Reiner Cron-Worker — keine öffentliche URL nötig (und keine angreifbare).
+  "workers_dev": false,
+  "triggers": {
+    // Alle 20 Minuten (UTC, exakt). Die Begrenzung auf Juni/Juli macht der
+    // Worker-Code selbst (Monats-Guard) — Cloudflares Schedules-API lehnt
+    // Monats-Felder im Cron ab. GitHub-Crons bleiben als Fallback; doppelte
+    // Läufe serialisiert die concurrency-Gruppe, KI-Kosten entstehen nur
+    // für fällige Partien (Retrigger-Logik).
+    "crons": ["*/20 * * * *"],
+  },
+  "observability": { "enabled": true },
+}
