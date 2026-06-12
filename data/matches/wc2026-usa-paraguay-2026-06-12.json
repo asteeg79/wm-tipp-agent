@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T17:54:47.483Z",
+    "generatedAt": "2026-06-12T18:00:25.806Z",
     "home": {
       "teamId": "USA",
       "elo": 1676,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T17:54:47.483Z",
+    "generatedAt": "2026-06-12T18:00:25.806Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5015,
-      "draw": 0.2538,
-      "away": 0.2446
+      "home": 0.5062,
+      "draw": 0.2592,
+      "away": 0.2346
     },
-    "confidence": 0.6413,
+    "confidence": 0.6435,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
+          "home": 0.49,
           "draw": 0.27,
-          "away": 0.25
+          "away": 0.24
         },
         "confidence": 0.6,
         "keyFactors": [
-          "USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und besserer gewichteter Form (1.52 vs 1.42)",
-          "USA mit deutlich höherer Offensivproduktion (goalsForAvg 1.67 vs 0.98)",
-          "Paraguay defensiv stabiler (cleanSheetRate 0.44 vs 0.24), kann Spiel eng halten",
-          "H2H knapp zugunsten USA (2:1)",
-          "Verletzungssorgen bei Paraguay (Enciso fraglich) könnten Offensive schwächen"
+          "USA mit Heim-/Gastgebervorteil und höherem Elo (1676 vs. 1644)",
+          "Bessere Offensivwerte der USA (1.67 Tore/Spiel) gegenüber Paraguay (0.98)",
+          "Paraguays starke Defensive (Clean-Sheet-Rate 43,5%) kann Spiel eng halten",
+          "Verletzungssorgen bei Paraguay (Enciso) schwächen die Offensive zusätzlich",
+          "USA mit besserer gewichteter Form (1.517 vs. 1.419)"
         ],
         "risks": [
-          "USA-Defensive anfällig (goalsAgainstAvg 1.64, niedrige CleanSheet-Rate) – Paraguay kann kontern",
-          "Lange Pause beider Teams (73 Tage) erschwert Formprognose",
-          "Paraguays kompakte Defensive kann zu einem knappen oder Remis-Ergebnis führen",
-          "Pochettinos Umbruch/Aufstellung birgt Unsicherheit"
+          "Paraguays kompakte Defensive könnte ein Unentschieden begünstigen",
+          "Schwache USA-Defensive (Clean-Sheet-Rate nur 23,5%) anfällig für Konter",
+          "Beide Teams 73 Tage ohne Spiel - Rhythmusmangel schwer einzuschätzen",
+          "Geringe H2H-Datenbasis (nur 1 Spiel)"
         ]
       },
       "chatgpt": {
@@ -106,25 +106,23 @@
         },
         "probabilities": {
           "home": 0.52,
-          "draw": 0.24,
-          "away": 0.24
+          "draw": 0.25,
+          "away": 0.23
         },
         "confidence": 0.7,
         "keyFactors": [
-          "USA spielt auf neutralem Boden mit host advantage",
-          "USA hat leicht bessere Formwerte und höhere Elo",
-          "Paraguay hat eine wichtige Verletzung",
-          "Head-to-head Vorteil für USA aus vorherigem Spiel"
+          "USA hat in der Vergangenheit gegen Paraguay gewonnen, was psychologisch vorteilhaft sein könnte.",
+          "Heimvorteil für USA, da das Spiel in den USA stattfindet.",
+          "Paraguay könnte durch die Verletzung von Enciso geschwächt sein."
         ],
         "risks": [
-          "Neutraler Spielort könnte Einfluss auf die Dynamik haben",
-          "Letztes Spiel der USA und Paraguay ist lange her (73 Tage)",
-          "Paraguays gute Defensivbilanz (clean sheet rate) könnte eine Rolle spielen"
+          "Paraguay hat eine höhere Clean Sheet Rate als USA.",
+          "Spiel findet auf neutralem Boden statt, was den Heimvorteil teilweise neutralisieren könnte."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und besserer gewichteter Form (1.52 vs 1.42); USA mit deutlich höherer Offensivproduktion (goalsForAvg 1.67 vs 0.98); Paraguay defensiv stabiler (cleanSheetRate 0.44 vs 0.24), kann Spiel eng halten.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil und höherem Elo (1676 vs. 1644); Bessere Offensivwerte der USA (1.67 Tore/Spiel) gegenüber Paraguay (0.98); Paraguays starke Defensive (Clean-Sheet-Rate 43,5%) kann Spiel eng halten.",
     "inputHash": "sha256:f48101dd7aa108f3e7d5204edfb631c99842350762d7af087650d47aebc9ced8"
   },
   "predictionHistory": [
@@ -543,11 +541,24 @@
         "away": 0.2346
       },
       "confidence": 0.6435
+    },
+    {
+      "generatedAt": "2026-06-12T17:54:47.483Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5015,
+        "draw": 0.2538,
+        "away": 0.2446
+      },
+      "confidence": 0.6413
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T17:54:47.897Z",
+    "updatedAt": "2026-06-12T18:00:27.207Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4585,
