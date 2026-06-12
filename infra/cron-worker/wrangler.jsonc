@@ -8,12 +8,12 @@
   // Reiner Cron-Worker — keine öffentliche URL nötig (und keine angreifbare).
   "workers_dev": false,
   "triggers": {
-    // Alle 20 Minuten (UTC, exakt). Die Begrenzung auf Juni/Juli macht der
-    // Worker-Code selbst (Monats-Guard) — Cloudflares Schedules-API lehnt
-    // Monats-Felder im Cron ab. GitHub-Crons bleiben als Fallback; doppelte
-    // Läufe serialisiert die concurrency-Gruppe, KI-Kosten entstehen nur
+    // Stündlich zur Minute :03 (UTC, exakt) — bewusst versetzt zu den
+    // GitHub-Fallback-Slots (:07/:22/:37/:52). Die Begrenzung auf Juni/Juli
+    // macht der Worker-Code selbst (Monats-Guard) — Cloudflares
+    // Schedules-API lehnt Monats-Felder im Cron ab. KI-Kosten entstehen nur
     // für fällige Partien (Retrigger-Logik).
-    "crons": ["*/20 * * * *"],
+    "crons": ["3 * * * *"],
   },
   "observability": { "enabled": true },
 }
