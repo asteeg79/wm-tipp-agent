@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import type { PredictionHistoryEntry, ScoreLine } from "@wm/shared";
 import { useMatch, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { ProbabilityBar } from "../components/ProbabilityBar.js";
@@ -149,50 +151,17 @@ export function MatchPage() {
             </div>
           )}
 
-          {/* Tipp-Verlauf: aktueller Lauf (oben, "jetzt") + frühere Läufe. */}
-          {(() => {
-            const timeline = [
-              {
-                generatedAt: pred.generatedAt,
-                predictedScore: pred.predictedScore,
-                confidence: pred.confidence,
-                current: true,
-              },
-              ...[...match.predictionHistory].reverse().map((h) => ({
-                generatedAt: h.generatedAt,
-                predictedScore: h.predictedScore,
-                confidence: h.confidence,
-                current: false,
-              })),
-            ];
-            return (
-              <div className="border-t border-edge pt-3">
-                <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
-                  {t("match.timeline")}
-                </div>
-                <ul className="space-y-1 text-sm">
-                  {timeline.map((h, i) => (
-                    <li
-                      key={i}
-                      className={`flex justify-between ${
-                        h.current ? "font-semibold text-fg" : "text-fg-muted"
-                      }`}
-                    >
-                      <span>
-                        {h.current && <span className="mr-1 text-acc">●</span>}
-                        {formatKickoff(h.generatedAt)}
-                        {h.current ? ` · ${t("match.timelineNow")}` : ""}
-                      </span>
-                      <span className="font-mono">
-                        {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
-                        {formatPercent(h.confidence)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })()}
+          {/* Tipp-Verlauf: aktueller Lauf (oben, "jetzt") + frühere Läufe,
+              seitenweise blätterbar (kann bei oft bewerteten Spielen lang
+              werden). */}
+          <PredictionTimeline
+            current={{
+              generatedAt: pred.generatedAt,
+              predictedScore: pred.predictedScore,
+              confidence: pred.confidence,
+            }}
+            history={match.predictionHistory}
+          />
 
           {/* Fließtext-Einschätzung steht jetzt oben; hier nur noch der
               Baseline-Hinweis, wenn (noch) kein KI-Tipp vorliegt. */}
@@ -302,6 +271,94 @@ export function MatchPage() {
           </p>
         </div>
       )}
+    </div>
+  );
+}
+
+/**
+ * Tipp-Verlauf mit Blättern: aktueller Lauf zuerst (●), dann frühere Läufe
+ * (neueste zuerst). Bei oft neu bewerteten Spielen wird die Liste lang —
+ * daher seitenweise (PAGE_SIZE) mit ‹ / › und "Seite x/y".
+ */
+const PAGE_SIZE = 6;
+
+function PredictionTimeline({
+  current,
+  history,
+}: {
+  current: {
+    generatedAt: string;
+    predictedScore: ScoreLine;
+    confidence: number;
+  };
+  history: PredictionHistoryEntry[];
+}) {
+  const { t } = useTranslation();
+  const [page, setPage] = useState(0);
+
+  const entries = [
+    { ...current, current: true },
+    ...[...history].reverse().map((h) => ({ ...h, current: false })),
+  ];
+  const pages = Math.ceil(entries.length / PAGE_SIZE);
+  const clamped = Math.min(page, pages - 1);
+  const slice = entries.slice(
+    clamped * PAGE_SIZE,
+    clamped * PAGE_SIZE + PAGE_SIZE,
+  );
+
+  return (
+    <div className="border-t border-edge pt-3">
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-xs uppercase tracking-wide text-fg-faint">
+          {t("match.timeline")}
+        </span>
+        {pages > 1 && (
+          <span className="flex items-center gap-2 text-xs text-fg-muted">
+            <button
+              type="button"
+              onClick={() => setPage(clamped - 1)}
+              disabled={clamped === 0}
+              aria-label={t("timeline.prev")}
+              className="rounded px-1.5 py-0.5 enabled:hover:bg-surface-2 disabled:opacity-30"
+            >
+              ‹
+            </button>
+            <span className="font-mono">
+              {clamped + 1}/{pages}
+            </span>
+            <button
+              type="button"
+              onClick={() => setPage(clamped + 1)}
+              disabled={clamped >= pages - 1}
+              aria-label={t("timeline.next")}
+              className="rounded px-1.5 py-0.5 enabled:hover:bg-surface-2 disabled:opacity-30"
+            >
+              ›
+            </button>
+          </span>
+        )}
+      </div>
+      <ul className="space-y-1 text-sm">
+        {slice.map((h, i) => (
+          <li
+            key={`${h.generatedAt}-${i}`}
+            className={`flex justify-between ${
+              h.current ? "font-semibold text-fg" : "text-fg-muted"
+            }`}
+          >
+            <span>
+              {h.current && <span className="mr-1 text-acc">●</span>}
+              {formatKickoff(h.generatedAt)}
+              {h.current ? ` · ${t("match.timelineNow")}` : ""}
+            </span>
+            <span className="font-mono">
+              {h.predictedScore.home}:{h.predictedScore.away} ·{" "}
+              {formatPercent(h.confidence)}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

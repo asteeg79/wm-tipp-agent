@@ -113,6 +113,10 @@ const resources = {
         newsTitle: "News zur Partie",
         newsEmpty: "Keine relevanten News zu dieser Partie.",
       },
+      timeline: {
+        prev: "Neuere",
+        next: "Ältere",
+      },
       market: {
         title: "Buchmacher-Quoten",
         bookmakers: "Buchmacher",
@@ -352,6 +356,10 @@ const resources = {
         assessment: "AI assessment",
         newsTitle: "Match news",
         newsEmpty: "No relevant news for this match.",
+      },
+      timeline: {
+        prev: "Newer",
+        next: "Older",
       },
       market: {
         title: "Bookmaker odds",
