@@ -1,26 +1,30 @@
 {
-  "lastUpdated": "2026-06-13T21:36:21.904Z",
+  "lastUpdated": "2026-06-13T23:20:16.672Z",
   "aggregate": {
-    "finishedCount": 4,
+    "finishedCount": 5,
     "exactScoreRate": 0,
-    "outcomeRate": 0.5,
-    "brierMean": 0.5309,
-    "rpsMean": 0.1728
+    "outcomeRate": 0.4,
+    "brierMean": 0.685,
+    "rpsMean": 0.1961
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 4,
-      "exactScoreRate": 0.25,
-      "outcomeRate": 0.5,
-      "brierMean": 0.5333,
-      "rpsMean": 0.172
+      "finishedCount": 5,
+      "exactScoreRate": 0.2,
+      "outcomeRate": 0.4,
+      "brierMean": 0.6882,
+      "rpsMean": 0.1961
     },
     "chatgpt": {
-      "finishedCount": 4,
-      "exactScoreRate": 0.25,
-      "outcomeRate": 0.5,
-      "brierMean": 0.5375,
-      "rpsMean": 0.1772
+      "finishedCount": 5,
+      "exactScoreRate": 0.2,
+      "outcomeRate": 0.4,
+      "brierMean": 0.689,
+      "rpsMean": 0.199
+    },
+    "weights": {
+      "claude": 0.5029,
+      "chatgpt": 0.4971
     }
   },
   "entries": [
@@ -168,7 +172,16 @@
         "home": 0.98,
         "away": 2.5
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 1.3015,
+        "rps": 0.2895
+      }
     },
     {
       "matchId": "wc2026-brazil-morocco-2026-06-13",
