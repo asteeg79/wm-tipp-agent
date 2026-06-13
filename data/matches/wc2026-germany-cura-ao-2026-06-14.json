@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T05:03:51.554Z",
+    "generatedAt": "2026-06-13T06:03:50.636Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T05:03:51.554Z",
+    "generatedAt": "2026-06-13T06:03:50.636Z",
     "predictedScore": {
       "home": 3,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.7224,
-      "draw": 0.1921,
-      "away": 0.0855
+      "home": 0.8365,
+      "draw": 0.1045,
+      "away": 0.059
     },
-    "confidence": 0.6888,
+    "confidence": 0.8118,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,50 +80,48 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.8,
-          "draw": 0.13,
+          "home": 0.82,
+          "draw": 0.11,
           "away": 0.07
         },
-        "confidence": 0.7,
+        "confidence": 0.74,
         "keyFactors": [
-          "Deutliche Elo- und Qualitätsdifferenz (GER 1822 vs CUW 1637) spricht klar für Deutschland",
-          "Starke Offensive Deutschlands (2,57 Tore/Spiel) und solide Defensive (Gegentor 1,11, Clean-Sheet-Rate 0,41)",
-          "Externes Modell sieht Deutschland mit über 90% klar favorisiert, was die zu konservative Elo+Poisson-Baseline nach oben korrigiert",
-          "Neuer-Comeback im Tor stabilisiert die deutsche Abwehr",
-          "Curaçao mit 207 Tagen ohne Pflichtspiel – Rhythmus- und Wettkampfnachteil"
+          "Großer Elo-Unterschied (1822 vs 1637) und klar stärkere gewichtete Form Deutschlands",
+          "Hohe Offensivproduktion Deutschlands (2.57 Tore/Spiel) gegen unterklassigen Gegner",
+          "Externe Prognose sieht Deutschland bei 92% Siegwahrscheinlichkeit, Baseline unterschätzt die Heimstärke",
+          "Stabilisierte Torwartsituation mit Neuer-Comeback bringt defensive Sicherheit"
         ],
         "risks": [
-          "Curaçao zeigte zuletzt defensive Stabilität (Clean-Sheet-Rate 0,55) und könnte tief stehen",
-          "Kein direkter H2H-Vergleich verfügbar – Unsicherheit über Spielverlauf",
-          "Neutraler Spielort nimmt Deutschland möglichen Heimvorteil",
-          "Lange Pause Deutschlands (75 Tage) könnte Spielrhythmus beeinträchtigen"
+          "Curaçao mit hoher Clean-Sheet-Rate (0.55) und niedrigem Gegentorschnitt – könnte kompakt verteidigen",
+          "Lange Spielpause Curaçaos (207 Tage) erschwert Formeinschätzung",
+          "Mögliche Rotation/Experimentier-Aufstellung Deutschlands (Pavlovic, Nmecha) könnte Effizienz mindern",
+          "Neutraler Spielort ohne klaren Heimvorteil"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.25,
-          "away": 0.1
+          "home": 0.85,
+          "draw": 0.1,
+          "away": 0.05
         },
-        "confidence": 0.75,
+        "confidence": 0.9,
         "keyFactors": [
-          "Germany has a higher Elo rating and form index compared to Curaçao.",
-          "Germany's recent form and goal-scoring record are stronger than Curaçao's.",
-          "Neutral venue reduces potential home advantage for Germany.",
-          "The inclusion of Neuer and a focus on youth in the squad may strengthen Germany's defense."
+          "Significant Elo rating difference in favor of Germany",
+          "Curacao's long inactivity with 207 days since last match",
+          "Germany's offensive form with a high goals per match average",
+          "Neutral venue minimizes potential Curacao advantages"
         ],
         "risks": [
-          "Curaçao's high clean sheet rate could reduce Germany's scoring opportunities.",
-          "Germany's long break since last match could affect team cohesion and performance."
+          "Uncertainty with Germany's goalkeeper situation and potential lineup changes"
         ]
       }
     },
-    "agreement": 0.9,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliche Elo- und Qualitätsdifferenz (GER 1822 vs CUW 1637) spricht klar für Deutschland; Starke Offensive Deutschlands (2,57 Tore/Spiel) und solide Defensive (Gegentor 1,11, Clean-Sheet-Rate 0,41); Externes Modell sieht Deutschland mit über 90% klar favorisiert, was die zu konservative Elo+Poisson-Baseline nach oben korrigiert.",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1822 vs 1637) und klar stärkere gewichtete Form Deutschlands; Hohe Offensivproduktion Deutschlands (2.57 Tore/Spiel) gegen unterklassigen Gegner; Externe Prognose sieht Deutschland bei 92% Siegwahrscheinlichkeit, Baseline unterschätzt die Heimstärke.",
     "inputHash": "sha256:0236e9b8e73d040916f440af9096261a83993271de411eaa67f86cb61169bfd5"
   },
   "predictionHistory": [
@@ -633,11 +631,24 @@
         "away": 0.0814
       },
       "confidence": 0.7711
+    },
+    {
+      "generatedAt": "2026-06-13T05:03:51.554Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7224,
+        "draw": 0.1921,
+        "away": 0.0855
+      },
+      "confidence": 0.6888
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T05:03:52.169Z",
+    "updatedAt": "2026-06-13T06:05:35.399Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.9204,
