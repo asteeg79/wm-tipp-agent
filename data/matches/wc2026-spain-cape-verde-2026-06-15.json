@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T01:03:53.524Z",
+    "generatedAt": "2026-06-13T02:03:50.995Z",
     "home": {
       "teamId": "ESP",
       "elo": 1974,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T01:03:53.524Z",
+    "generatedAt": "2026-06-13T02:03:50.995Z",
     "predictedScore": {
       "home": 3,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.8426,
-      "draw": 0.1043,
-      "away": 0.053
+      "home": 0.8148,
+      "draw": 0.1152,
+      "away": 0.07
     },
-    "confidence": 0.7943,
+    "confidence": 0.7226,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,42 +86,42 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Klarer Elo-Vorsprung Spaniens (1974 vs. 1608)",
-          "Spaniens starke Offensive (2,68 erwartete Tore) und solide Defensive (xGA 0,77)",
-          "Hohe gewichtete Form Spaniens (2,33) mit guter Clean-Sheet-Rate",
-          "Externe Prognose bestätigt deutliche Favoritenrolle Spaniens (0,88)"
+          "Spanien deutlich stärker (Elo 1974 vs 1608) und bessere gewichtete Form (2.327 vs 1.977)",
+          "Hohe Offensivkraft Spaniens (2.675 Tore/Spiel) gegen solide, aber unterlegene Abwehr Kap Verdes",
+          "Externe Prognose stützt klare Favoritenrolle Spaniens (87,9%)",
+          "Kap Verde defensiv ordentlich (Clean-Sheet-Rate 0.435), aber qualitativ unterlegen"
         ],
         "risks": [
-          "Kap Verde mit ordentlicher Offensive (1,67 Tore/Spiel) kann Treffer erzielen",
-          "Lange Wettkampfpause beider Teams (Spanien 74 Tage, Kap Verde 243 Tage) erschwert Formeinschätzung",
-          "Neutraler Spielort nimmt Spanien etwaigen Heimvorteil",
+          "Kap Verde lange ohne Spiel (243 Tage) – Formstand schwer einzuschätzen",
+          "Spanien 74 Tage Pause könnte Rhythmusprobleme bringen",
+          "Neutraler Spielort nimmt Heimvorteil",
           "Keine H2H-Daten verfügbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 3,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.86,
-          "draw": 0.1,
-          "away": 0.04
+          "home": 0.81,
+          "draw": 0.12,
+          "away": 0.07
         },
-        "confidence": 0.91,
+        "confidence": 0.75,
         "keyFactors": [
-          "Spain's high Elo rating and recent form superiority",
-          "Cape Verde's long gap since last match (243 days)",
-          "Spain's strong attack averaging 2.675 goals per match"
+          "Spain's higher elo rating and stronger form with a recent form score of 2.4.",
+          "Cape Verde's long break of 243 days since last match, possibly affecting performance.",
+          "Spain's significantly higher goals for average (2.675) compared to Cape Verde (1.673)."
         ],
         "risks": [
-          "Neutral venue could negate home advantage",
-          "No historical head-to-head data available"
+          "Spain's last match was 74 days ago, which may affect match sharpness.",
+          "The neutral venue might reduce Spain's expected dominance."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Klarer Elo-Vorsprung Spaniens (1974 vs. 1608); Spaniens starke Offensive (2,68 erwartete Tore) und solide Defensive (xGA 0,77); Hohe gewichtete Form Spaniens (2,33) mit guter Clean-Sheet-Rate.",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich stärker (Elo 1974 vs 1608) und bessere gewichtete Form (2.327 vs 1.977); Hohe Offensivkraft Spaniens (2.675 Tore/Spiel) gegen solide, aber unterlegene Abwehr Kap Verdes; Externe Prognose stützt klare Favoritenrolle Spaniens (87,9%).",
     "inputHash": "sha256:1eca7ded4da5c427fa161128505cd1e5cb27049ad53279bf66787e4f427e3791"
   },
   "predictionHistory": [
@@ -475,20 +475,33 @@
         "away": 0.059
       },
       "confidence": 0.8118
+    },
+    {
+      "generatedAt": "2026-06-13T01:03:53.524Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8426,
+        "draw": 0.1043,
+        "away": 0.053
+      },
+      "confidence": 0.7943
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T01:05:39.309Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-13T02:03:51.668Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.8803,
-      "draw": 0.0828,
+      "home": 0.8791,
+      "draw": 0.0841,
       "away": 0.0369
     },
     "decimal": {
       "home": 1.09,
-      "draw": 11.59,
+      "draw": 11.4,
       "away": 26
     }
   }
