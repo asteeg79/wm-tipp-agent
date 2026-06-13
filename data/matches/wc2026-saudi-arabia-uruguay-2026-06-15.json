@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T04:47:46.712Z",
+    "generatedAt": "2026-06-13T05:03:51.554Z",
     "home": {
       "teamId": "KSA",
       "elo": 1572,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T04:41:38.238Z",
+    "generatedAt": "2026-06-13T05:03:51.554Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1466,
-      "draw": 0.2207,
-      "away": 0.6328
+      "home": 0.1911,
+      "draw": 0.2756,
+      "away": 0.5333
     },
-    "confidence": 0.7032,
+    "confidence": 0.6683,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,50 +80,51 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.17,
-          "draw": 0.25,
-          "away": 0.58
+          "home": 0.18,
+          "draw": 0.27,
+          "away": 0.55
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Uruguay deutlich höheres Elo (1677 vs 1572) und bessere gewichtete Form (1.397 vs 1.259)",
-          "Uruguay defensiv stärker: niedrigere Gegentore (0.832 vs 1.315) und höhere Clean-Sheet-Rate (0.517 vs 0.471)",
-          "Uruguays bessere jüngste Form (recentForm 1.6 vs 1.2)",
-          "Neutraler Spielort, kein Heimvorteil für Saudi-Arabien",
-          "Baseline und externe Prognose sehen beide Uruguay klar vorne"
+          "Uruguay deutlich höheres Elo (1677 vs 1572) und bessere gewichtete sowie aktuelle Form (1.397/1.6 vs 1.259/1.2)",
+          "Uruguays starke Defensive (GegentoreØ 0.832, Clean-Sheet-Rate 0.517) gegenüber wackliger saudischer Abwehr (1.315 Gegentore/Spiel)",
+          "Beide Teams offensiv zurückhaltend (niedrige expectedGoals), spricht für knappes, torarmes Spiel",
+          "Neutraler Spielort eliminiert Heimvorteil für Saudi-Arabien",
+          "Externe Prognose sieht Uruguay noch klarer vorne (0.669)"
         ],
         "risks": [
-          "Kein H2H-Datensatz vorhanden, erhöhte Unsicherheit",
-          "Beide Teams 74 Tage ohne Spiel – mögliche Rhythmusprobleme",
-          "Saudi-Arabien defensiv anfällig, könnte aber kompakt verteidigen und Remis erzwingen",
-          "Uruguays Kader ohne Suárez und möglicher Trainerumbruch könnten Leistung beeinflussen"
+          "Kein H2H-Verlauf vorhanden, daher hohe Unsicherheit im direkten Vergleich",
+          "Fehlen von Luis Suárez und möglicher Trainerumbruch könnten Uruguays Offensive schwächen",
+          "Lange Pause (74 Tage ohne Spiel) für beide Teams erschwert Formeinschätzung",
+          "Saudi-Arabien kann als Außenseiter defensiv kompakt stehen und ein Remis erzwingen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.13,
-          "draw": 0.2,
-          "away": 0.67
+          "home": 0.2,
+          "draw": 0.28,
+          "away": 0.52
         },
-        "confidence": 0.85,
+        "confidence": 0.75,
         "keyFactors": [
-          "Uruguay's superior Elo rating and recent form",
-          "Uruguay's defensive strength with higher clean sheet rate",
-          "Absence of Luis Suárez might impact Uruguay minimally due to depth",
-          "Neutral venue reduces any potential home advantage for Saudi Arabia"
+          "Uruguay hat ein höheres Elo-Rating (1677 vs. 1572) als Saudi Arabia.",
+          "Uruguay hat in den letzten Spielen eine bessere Form (1.6) im Vergleich zu Saudi Arabia (1.2).",
+          "Uruguay besitzt eine bessere Defensivstatistik mit einem niedrigeren Gegentorschnitt (0.832) im Vergleich zu Saudi Arabia (1.315).",
+          "Saudi Arabia zeigt eine schlechtere offensive Leistung mit einem durchschnittlichen Torerzielungswert von 0.874, verglichen mit Uruguays 0.91."
         ],
         "risks": [
-          "Possible motivational impact from lack of historical matches between the teams",
-          "Potential tactical changes with new line-ups and absence of veteran players in Uruguay"
+          "Keine direkte Head-to-Head-Historie zur Beurteilung zwischen den beiden Teams.",
+          "Spielort auf neutralem Boden, was den Heim- und Auswärtsfaktor relativiert.",
+          "Voraussichtliches Fehlen von Luis Suárez könnte die Offensivkraft Uruguays mindern."
         ]
       }
     },
-    "agreement": 0.94,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höheres Elo (1677 vs 1572) und bessere gewichtete Form (1.397 vs 1.259); Uruguay defensiv stärker: niedrigere Gegentore (0.832 vs 1.315) und höhere Clean-Sheet-Rate (0.517 vs 0.471); Uruguays bessere jüngste Form (recentForm 1.6 vs 1.2).",
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höheres Elo (1677 vs 1572) und bessere gewichtete sowie aktuelle Form (1.397/1.6 vs 1.259/1.2); Uruguays starke Defensive (GegentoreØ 0.832, Clean-Sheet-Rate 0.517) gegenüber wackliger saudischer Abwehr (1.315 Gegentore/Spiel); Beide Teams offensiv zurückhaltend (niedrige expectedGoals), spricht für knappes, torarmes Spiel.",
     "inputHash": "sha256:f1478d716755e0b10515134404bbca1c9b67754cc19fdb9ff236c6d4780c8ed9"
   },
   "predictionHistory": [
@@ -399,11 +400,24 @@
         "away": 0.5573
       },
       "confidence": 0.7029
+    },
+    {
+      "generatedAt": "2026-06-13T04:41:38.238Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1466,
+        "draw": 0.2207,
+        "away": 0.6328
+      },
+      "confidence": 0.7032
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T04:47:47.040Z",
+    "updatedAt": "2026-06-13T05:03:52.169Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1181,
