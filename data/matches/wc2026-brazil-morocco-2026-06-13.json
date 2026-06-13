@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-12T23:54:45.262Z",
+    "generatedAt": "2026-06-13T00:03:52.369Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.892,
       "cleanSheetRate": 0.4,
       "matchesCount": 25,
-      "daysSinceLastMatch": 73
+      "daysSinceLastMatch": 74
     },
     "away": {
       "teamId": "MAR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.274,
       "cleanSheetRate": 0.706,
       "matchesCount": 34,
-      "daysSinceLastMatch": 73
+      "daysSinceLastMatch": 74
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-12T23:54:45.262Z",
+    "generatedAt": "2026-06-13T00:03:52.369Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.346,
-      "draw": 0.3786,
-      "away": 0.2754
+      "home": 0.3625,
+      "draw": 0.3167,
+      "away": 0.3208
     },
-    "confidence": 0.5901,
+    "confidence": 0.566,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.31,
           "draw": 0.27,
-          "away": 0.39
+          "away": 0.42
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Marokko zeigt deutlich stärkere gewichtete Form (2.585) und eine herausragende Defensive (GA 0.274, Clean-Sheet-Rate 70.6%), zudem leicht höheres Elo (1892 vs 1844)",
-          "Brasilien verliert mit Neymar seinen wichtigsten Offensivspieler durch Verletzung, was die Kreativität und xG schwächt",
-          "Neutraler Spielort ohne Heimvorteil für Brasilien",
-          "Baseline (Elo+Poisson) sieht Marokko klar vorne (0.48), während externe Prognose Brasilien favorisiert (0.587) – starke Diskrepanz spricht für ausgeglicheneres Bild"
+          "Marokko mit höherem Elo (1892) und deutlich stärkerer gewichteter Form (2.585 vs 1.791)",
+          "Marokkos herausragende Defensive (0.274 Gegentore/Spiel, 70.6% Zu-Null) erschwert Brasilien das Toreschießen",
+          "Neymar fällt bei Brasilien verletzt aus und schwächt die Offensive",
+          "Neutraler Spielort ohne Heimvorteil für Brasilien"
         ],
         "risks": [
-          "Auch Marokko hat Verletzungssorgen: zwei Stammspieler und ein Angreifer fallen aus, was die Offensivstärke mindert",
-          "Externe Prognose und Baseline widersprechen sich deutlich, hohe Unsicherheit",
-          "Kein H2H vorhanden, lange Spielpause (73 Tage) bei beiden erschwert Formeinschätzung",
-          "Brasilianische Einzelqualität kann trotz Neymar-Ausfall jederzeit ein Spiel drehen"
+          "Externe Prognose sieht Brasilien klar vorne (0.587) und widerspricht der Elo/Poisson-Baseline stark",
+          "Verletzungssorgen auch bei Marokko (zwei Stammspieler und ein Angreifer fallen aus) könnten die Offensive schwächen",
+          "Kein H2H-Verlauf vorhanden, hohe Unsicherheit",
+          "Brasiliens individuelle Klasse kann das Spiel trotz Neymar-Ausfall jederzeit drehen"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.45,
-          "away": 0.2
+          "home": 0.4,
+          "draw": 0.35,
+          "away": 0.25
         },
-        "confidence": 0.76,
+        "confidence": 0.7,
         "keyFactors": [
-          "Neymar fehlt verletzt für Brasilien",
-          "Morokko hat zwei verletzte Stammspieler",
-          "Neutraler Spielort ohne Heimvorteil"
+          "Morocco has a higher Elo rating and better recent form",
+          "Brazil is missing Neymar due to injury",
+          "Morocco also has key injuries affecting squad depth",
+          "Both teams have had a significant break since last matches"
         ],
         "risks": [
-          "Keine vorherigen direkten Begegnungen",
-          "Beide Teams mit starken Defensivleistungen in letzter Zeit"
+          "Neutral venue could level playing field",
+          "First-ever meeting between teams",
+          "Brazil's potential to compensate for missing Neymar with depth",
+          "Uncertainty around Morocco's performance without injured players"
         ]
       }
     },
-    "agreement": 0.8733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko zeigt deutlich stärkere gewichtete Form (2.585) und eine herausragende Defensive (GA 0.274, Clean-Sheet-Rate 70.6%), zudem leicht höheres Elo (1892 vs 1844); Brasilien verliert mit Neymar seinen wichtigsten Offensivspieler durch Verletzung, was die Kreativität und xG schwächt; Neutraler Spielort ohne Heimvorteil für Brasilien.",
-    "inputHash": "sha256:2b51716e1f1b05ad2d299ceb6c764caaf10b0d310a77a92f1d0a0153b36a0b37"
+    "agreement": 0.8867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko mit höherem Elo (1892) und deutlich stärkerer gewichteter Form (2.585 vs 1.791); Marokkos herausragende Defensive (0.274 Gegentore/Spiel, 70.6% Zu-Null) erschwert Brasilien das Toreschießen; Neymar fällt bei Brasilien verletzt aus und schwächt die Offensive.",
+    "inputHash": "sha256:8c09c03d39c9d72026cfecee2b10cf096421acac96b21c3e14d1a28a285f7df2"
   },
   "predictionHistory": [
     {
@@ -618,11 +621,24 @@
         "away": 0.3083
       },
       "confidence": 0.572
+    },
+    {
+      "generatedAt": "2026-06-12T23:54:45.262Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.346,
+        "draw": 0.3786,
+        "away": 0.2754
+      },
+      "confidence": 0.5901
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-12T23:54:45.605Z",
+    "updatedAt": "2026-06-13T00:03:56.675Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.587,
