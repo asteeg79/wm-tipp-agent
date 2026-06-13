@@ -15,6 +15,9 @@ export default tseslint.config(
       "**/coverage/**",
       "data/**",
       "app/public/**",
+      // Cloudflare-Worker: eigene Worker-Runtime-Globals (fetch/console),
+      // wird separat via wrangler deployt — nicht Teil des App/Pipeline-Lints.
+      "infra/**",
       "**/*.config.js",
       "**/*.config.ts",
     ],
