@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T17:43:35.381Z",
+    "generatedAt": "2026-06-13T18:04:18.427Z",
     "home": {
       "teamId": "BRA",
       "elo": 1844,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T06:03:50.636Z",
+    "generatedAt": "2026-06-13T18:04:18.427Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.35,
-      "draw": 0.3208,
-      "away": 0.3292
+      "home": 0.3619,
+      "draw": 0.3162,
+      "away": 0.3219
     },
-    "confidence": 0.586,
+    "confidence": 0.6132,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,26 +77,25 @@
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.28,
-          "away": 0.37
+          "home": 0.31,
+          "draw": 0.27,
+          "away": 0.42
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Marokko statistisch stark: höherer Elo (1892 vs 1844), exzellente Defensive (Gegentore 0.274/Spiel, Clean-Sheet-Rate 70.6%) und beste gewichtete Form (2.585)",
-          "Brasilien mit solider Offensive (1.814 Tore/Spiel), aber schwächerer Form (1.791) und nur 40% Clean Sheets",
-          "Baseline (Elo+Poisson) sieht Marokko leicht vorn, externe Prognose dagegen klar Brasilien – die Wahrheit liegt dazwischen",
-          "Neutraler Spielort ohne Heimvorteil für Brasilien",
-          "Keine H2H-Historie verfügbar"
+          "Marokko zeigt überragende gewichtete Form (2.585) und exzellente Defensive (nur 0.274 Gegentore/Spiel, 70.6% Zu-null-Quote)",
+          "Höherer Elo-Wert Marokkos (1892 vs. 1844) trotz Auswärtsrolle auf neutralem Platz",
+          "Neymar fällt verletzt aus – signifikante Schwächung der brasilianischen Offensive",
+          "Baseline (Elo+Poisson) sieht Marokko als Favorit (Sieg 48%), was zu Marokkos Defensivstärke passt"
         ],
         "risks": [
-          "Neymar fällt verletzt für Brasilien aus – schwächt die Offensive deutlich",
-          "Marokko verliert laut News zwei Stammspieler und einen Angreifer verletzt – beidseitige Schwächung relativiert die Form",
-          "Starke Divergenz zwischen Baseline und externer Prognose erhöht die Unsicherheit",
-          "Lange Pause (74 Tage) bei beiden Teams kann Rhythmus beeinflussen"
+          "Externer Forecast widerspricht der Baseline deutlich und favorisiert Brasilien stark (57%) – hohe Modellunsicherheit",
+          "Brasilien verfügt über große individuelle Klasse und kann auch ohne Neymar Spiele drehen",
+          "Keine H2H-Daten vorhanden, daher schwer kalkulierbares Kräfteverhältnis",
+          "Lange Pause (74 Tage) für beide Teams kann Form und Rhythmus verzerren"
         ]
       },
       "chatgpt": {
@@ -105,25 +104,25 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
+          "home": 0.4,
           "draw": 0.35,
-          "away": 0.3
+          "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Neymar's injury weakens Brazil's attack",
-          "Morocco has a strong defensive record with high clean sheet rate",
-          "Brazilian recent form is lower compared to Morocco's recent form",
-          "Neutral venue mitigates home advantage for Brazil"
+          "Neutral venue minimizes geographical advantage.",
+          "Brazil missing key player Neymar due to injury, impacting their offensive strength.",
+          "Morocco in excellent recent form and defensive consistency with a high clean sheet rate.",
+          "Head-to-head history is non-existent, so no psychological advantage for either team."
         ],
         "risks": [
-          "Morocco's injuries to key players may impact their performance",
-          "No historical head-to-head matches to gauge relative team dynamics"
+          "Potential underestimation of Brazil's squad depth even without Neymar.",
+          "Morocco's performance consistency at high-pressure tournaments remains untested in this matchup."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko statistisch stark: höherer Elo (1892 vs 1844), exzellente Defensive (Gegentore 0.274/Spiel, Clean-Sheet-Rate 70.6%) und beste gewichtete Form (2.585); Brasilien mit solider Offensive (1.814 Tore/Spiel), aber schwächerer Form (1.791) und nur 40% Clean Sheets; Baseline (Elo+Poisson) sieht Marokko leicht vorn, externe Prognose dagegen klar Brasilien – die Wahrheit liegt dazwischen.",
+    "agreement": 0.8867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko zeigt überragende gewichtete Form (2.585) und exzellente Defensive (nur 0.274 Gegentore/Spiel, 70.6% Zu-null-Quote); Höherer Elo-Wert Marokkos (1892 vs. 1844) trotz Auswärtsrolle auf neutralem Platz; Neymar fällt verletzt aus – signifikante Schwächung der brasilianischen Offensive.",
     "inputHash": "sha256:8c09c03d39c9d72026cfecee2b10cf096421acac96b21c3e14d1a28a285f7df2"
   },
   "predictionHistory": [
@@ -724,21 +723,34 @@
         "away": 0.3592
       },
       "confidence": 0.596
+    },
+    {
+      "generatedAt": "2026-06-13T06:03:50.636Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.35,
+        "draw": 0.3208,
+        "away": 0.3292
+      },
+      "confidence": 0.586
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T17:43:35.795Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-13T18:04:19.030Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.5654,
-      "draw": 0.2598,
-      "away": 0.1748
+      "home": 0.5738,
+      "draw": 0.2546,
+      "away": 0.1716
     },
     "decimal": {
-      "home": 1.7,
-      "draw": 3.7,
-      "away": 5.5
+      "home": 1.67,
+      "draw": 3.78,
+      "away": 5.6
     }
   }
 }
