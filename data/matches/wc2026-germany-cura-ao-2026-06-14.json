@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T09:32:52.606Z",
+    "generatedAt": "2026-06-13T10:03:54.452Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T06:03:50.636Z",
+    "generatedAt": "2026-06-13T10:03:54.452Z",
     "predictedScore": {
       "home": 3,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8365,
-      "draw": 0.1045,
-      "away": 0.059
+      "home": 0.8361,
+      "draw": 0.1046,
+      "away": 0.0593
     },
-    "confidence": 0.8118,
+    "confidence": 0.8316,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.11,
           "away": 0.07
         },
-        "confidence": 0.74,
+        "confidence": 0.78,
         "keyFactors": [
-          "Großer Elo-Unterschied (1822 vs 1637) und klar stärkere gewichtete Form Deutschlands",
-          "Hohe Offensivproduktion Deutschlands (2.57 Tore/Spiel) gegen unterklassigen Gegner",
-          "Externe Prognose sieht Deutschland bei 92% Siegwahrscheinlichkeit, Baseline unterschätzt die Heimstärke",
-          "Stabilisierte Torwartsituation mit Neuer-Comeback bringt defensive Sicherheit"
+          "Deutlicher Elo- und Qualitätsvorsprung Deutschlands (1822 vs 1637) mit starker gewichteter Form (2.371) und hoher Torproduktion (2.57 Tore/Spiel)",
+          "Externe Prognose sieht Deutschland klar bei ~92% Siegwahrscheinlichkeit, was die zu vorsichtige Baseline nach oben korrigiert",
+          "Curaçao mit 207 Tagen ohne Spiel deutlich aus dem Rhythmus, während Deutschland nach Pause individuell überlegen bleibt",
+          "Stabile Defensive Deutschlands (Gegentorschnitt 1.11, Clean-Sheet-Rate 0.41) gegen einen Außenseiter"
         ],
         "risks": [
-          "Curaçao mit hoher Clean-Sheet-Rate (0.55) und niedrigem Gegentorschnitt – könnte kompakt verteidigen",
-          "Lange Spielpause Curaçaos (207 Tage) erschwert Formeinschätzung",
-          "Mögliche Rotation/Experimentier-Aufstellung Deutschlands (Pavlovic, Nmecha) könnte Effizienz mindern",
-          "Neutraler Spielort ohne klaren Heimvorteil"
+          "Personelle Wechsel/Rotation bei Deutschland (Neuer-Entscheidung, Pavlovic/Nmecha) könnten Abstimmung beeinträchtigen",
+          "Curaçao zeigt defensiv solide Werte (Clean-Sheet-Rate 0.55) und könnte tief stehen und auf Konter lauern",
+          "Lange Spielpause beider Teams erhöht die Unsicherheit über Tagesform",
+          "Unterschätzung des Außenseiters durch favorisiertes Team möglich"
         ]
       },
       "chatgpt": {
@@ -110,18 +110,18 @@
         },
         "confidence": 0.9,
         "keyFactors": [
-          "Significant Elo rating difference in favor of Germany",
-          "Curacao's long inactivity with 207 days since last match",
-          "Germany's offensive form with a high goals per match average",
-          "Neutral venue minimizes potential Curacao advantages"
+          "Germany's higher Elo score and strong attacking average with 2.574 goals per match",
+          "Curaçao has not played in 207 days, potentially affecting match readiness",
+          "Neutral venue negates any home advantage for either team",
+          "Germany's recent form is notably stronger than Curaçao's"
         ],
         "risks": [
-          "Uncertainty with Germany's goalkeeper situation and potential lineup changes"
+          "Curaçao's clean sheet rate of 0.55 indicates defensive resilience which could disrupt scoring expectations"
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1822 vs 1637) und klar stärkere gewichtete Form Deutschlands; Hohe Offensivproduktion Deutschlands (2.57 Tore/Spiel) gegen unterklassigen Gegner; Externe Prognose sieht Deutschland bei 92% Siegwahrscheinlichkeit, Baseline unterschätzt die Heimstärke.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo- und Qualitätsvorsprung Deutschlands (1822 vs 1637) mit starker gewichteter Form (2.371) und hoher Torproduktion (2.57 Tore/Spiel); Externe Prognose sieht Deutschland klar bei ~92% Siegwahrscheinlichkeit, was die zu vorsichtige Baseline nach oben korrigiert; Curaçao mit 207 Tagen ohne Spiel deutlich aus dem Rhythmus, während Deutschland nach Pause individuell überlegen bleibt.",
     "inputHash": "sha256:0236e9b8e73d040916f440af9096261a83993271de411eaa67f86cb61169bfd5"
   },
   "predictionHistory": [
@@ -644,20 +644,33 @@
         "away": 0.0855
       },
       "confidence": 0.6888
+    },
+    {
+      "generatedAt": "2026-06-13T06:03:50.636Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8365,
+        "draw": 0.1045,
+        "away": 0.059
+      },
+      "confidence": 0.8118
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T09:34:44.404Z",
+    "updatedAt": "2026-06-13T10:03:55.161Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.9204,
-      "draw": 0.0563,
-      "away": 0.0233
+      "home": 0.9211,
+      "draw": 0.0555,
+      "away": 0.0234
     },
     "decimal": {
       "home": 1.04,
-      "draw": 17,
+      "draw": 17.25,
       "away": 41
     }
   }
