@@ -104,7 +104,13 @@ describe("decideRetrigger — Zeit-Milestones [24, 4]", () => {
   it("T-24h-Milestone wird fällig, wenn letzter Tipp davor lag", () => {
     // Letzter Tipp bei T-40h, jetzt T-23h → 24h-Milestone überschritten.
     const match = matchWithTip("2026-06-19T02:00:00Z");
-    const d = decideRetrigger(match, "h1", [], [], new Date("2026-06-19T19:00:00Z"));
+    const d = decideRetrigger(
+      match,
+      "h1",
+      [],
+      [],
+      new Date("2026-06-19T19:00:00Z"),
+    );
     expect(d.shouldEvaluate).toBe(true);
     expect(d.reason).toContain("T-24h");
   });
@@ -112,7 +118,13 @@ describe("decideRetrigger — Zeit-Milestones [24, 4]", () => {
   it("kein Milestone offen (Tipp lag bereits unter 24h) → keine Neubewertung", () => {
     // Letzter Tipp bei T-20h, jetzt T-18h → 24h schon abgehakt, 4h noch fern.
     const match = matchWithTip("2026-06-19T22:00:00Z");
-    const d = decideRetrigger(match, "h1", [], [], new Date("2026-06-20T00:00:00Z"));
+    const d = decideRetrigger(
+      match,
+      "h1",
+      [],
+      [],
+      new Date("2026-06-20T00:00:00Z"),
+    );
     expect(d.shouldEvaluate).toBe(false);
   });
 });

@@ -80,8 +80,7 @@ export function decideRetrigger(
     : 0;
   const freshMaterial = [...homeNews, ...awayNews].some(
     (n) =>
-      n.impactTag !== "none" &&
-      new Date(n.publishedAt).getTime() > lastGenMs,
+      n.impactTag !== "none" && new Date(n.publishedAt).getTime() > lastGenMs,
   );
   if (freshMaterial) {
     return { shouldEvaluate: true, reason: "neue materielle News" };
