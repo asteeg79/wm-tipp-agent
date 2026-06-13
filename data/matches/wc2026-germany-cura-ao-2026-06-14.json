@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T16:04:17.529Z",
+    "generatedAt": "2026-06-13T17:04:27.105Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T16:04:17.529Z",
+    "generatedAt": "2026-06-13T17:04:27.105Z",
     "predictedScore": {
       "home": 3,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8365,
-      "draw": 0.109,
-      "away": 0.0545
+      "home": 0.85,
+      "draw": 0.1,
+      "away": 0.05
     },
-    "confidence": 0.8118,
+    "confidence": 0.865,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.82,
-          "draw": 0.12,
-          "away": 0.06
+          "home": 0.85,
+          "draw": 0.1,
+          "away": 0.05
         },
-        "confidence": 0.74,
+        "confidence": 0.78,
         "keyFactors": [
-          "Deutliches Elo-Übergewicht für Deutschland (1822 vs. 1637) und starke gewichtete Form (2.371) mit hoher Offensivproduktion (2.574 Tore/Spiel)",
-          "Externe Prognose sieht Deutschland klar vorne (0.92), Baseline (0.53) erscheint zu konservativ und wird nach oben korrigiert",
-          "Curaçao mit langer Spielpause (207 Tage) und damit fraglichem Rhythmus, aber defensiv solide (CS-Rate 0.55, nur 0.621 Gegentore)",
-          "Neutraler Spielort nimmt Deutschland keinen Heimvorteil, dennoch klar überlegene individuelle Qualität"
+          "Germany deutlich höhere Elo (1822 vs 1637) und stärkere gewichtete Form (2.371 vs 1.857)",
+          "Hohe Offensivkraft Deutschlands (2.574 Tore/Spiel) gegen ein qualitativ klar unterlegenes Curaçao",
+          "Externe Prognose sieht Deutschland mit 92% als überlegenen Favoriten, was die Baseline nach oben korrigiert",
+          "Curaçao mit 207 Tagen ohne Pflichtspiel — fehlende Spielrhythmus/Wettkampfhärte"
         ],
         "risks": [
-          "Mögliche Personalfragen/Unruhe um Torwartposition (Neuer-Entscheidung) könnten Stabilität beeinflussen",
-          "Curaçaos lange Pause macht Formstand schwer einschätzbar – könnte überraschend kompakt stehen",
-          "Defensiv disziplinierte Außenseiter können bei deutscher Chancenverwertungsschwäche ein engeres Ergebnis erzwingen",
-          "Kein H2H-Datenmaterial vorhanden, erhöht Prognoseunsicherheit"
+          "Curaçao mit guter defensiver Bilanz (0.621 Gegentore, 55% Clean Sheets) könnte kompakt stehen und das Ergebnis niedrig halten",
+          "Lange Pause beider Teams (75 bzw. 207 Tage) erschwert Formeinschätzung",
+          "Mögliche Rotation/Ausfälle im DFB-Kader laut News könnten Schlagkraft mindern",
+          "Kein Head-to-Head vorhanden, daher erhöhte Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -108,22 +108,21 @@
           "draw": 0.1,
           "away": 0.05
         },
-        "confidence": 0.9,
+        "confidence": 0.95,
         "keyFactors": [
-          "Germany's significantly higher Elo rating compared to Curaçao",
-          "Germany's recent form and offensive strength",
-          "Curaçao has not played a match for 207 days, which might affect their sharpness",
-          "Neutral venue, eliminating home advantage for both teams",
-          "Curaçao's coach experience under Dick Advocaat, but age could factor into adaptability"
+          "Germany has significantly higher Elo rating and superior recent form.",
+          "Curaçao has not played for 207 days, which might affect match readiness.",
+          "Germany's recent goal-scoring average is higher, suggesting offensive strength.",
+          "Neutral venue mitigates potential home advantage for Germany."
         ],
         "risks": [
-          "Potential uncertainties regarding Germany’s lineup choices affecting performance",
-          "Possible underestimation of Curaçao’s defensive strength given their clean sheet rate"
+          "Potential impact of Curaçao's high clean sheet rate.",
+          "Possible complacency from Germany due to perceived difference in team strength."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliches Elo-Übergewicht für Deutschland (1822 vs. 1637) und starke gewichtete Form (2.371) mit hoher Offensivproduktion (2.574 Tore/Spiel); Externe Prognose sieht Deutschland klar vorne (0.92), Baseline (0.53) erscheint zu konservativ und wird nach oben korrigiert; Curaçao mit langer Spielpause (207 Tage) und damit fraglichem Rhythmus, aber defensiv solide (CS-Rate 0.55, nur 0.621 Gegentore).",
+    "agreement": 1,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany deutlich höhere Elo (1822 vs 1637) und stärkere gewichtete Form (2.371 vs 1.857); Hohe Offensivkraft Deutschlands (2.574 Tore/Spiel) gegen ein qualitativ klar unterlegenes Curaçao; Externe Prognose sieht Deutschland mit 92% als überlegenen Favoriten, was die Baseline nach oben korrigiert.",
     "inputHash": "sha256:0236e9b8e73d040916f440af9096261a83993271de411eaa67f86cb61169bfd5"
   },
   "predictionHistory": [
@@ -685,11 +684,24 @@
         "away": 0.059
       },
       "confidence": 0.8118
+    },
+    {
+      "generatedAt": "2026-06-13T16:04:17.529Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8365,
+        "draw": 0.109,
+        "away": 0.0545
+      },
+      "confidence": 0.8118
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T16:05:56.100Z",
+    "updatedAt": "2026-06-13T17:05:59.939Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.9211,
