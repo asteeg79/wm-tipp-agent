@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T04:03:54.066Z",
+    "generatedAt": "2026-06-13T04:41:38.238Z",
     "home": {
       "teamId": "NED",
       "elo": 1825,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T04:03:54.066Z",
+    "generatedAt": "2026-06-13T04:41:38.238Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4754,
-      "draw": 0.2673,
-      "away": 0.2573
+      "home": 0.4752,
+      "draw": 0.2652,
+      "away": 0.2597
     },
-    "confidence": 0.6958,
+    "confidence": 0.6258,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,50 +80,50 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.51,
-          "draw": 0.25,
-          "away": 0.24
+          "home": 0.47,
+          "draw": 0.26,
+          "away": 0.27
         },
-        "confidence": 0.6,
+        "confidence": 0.61,
         "keyFactors": [
-          "Niederlande mit höherem Elo (1825 vs 1768) und stärkerer Offensive (goalsForAvg 2.53 vs 1.69)",
-          "Sehr gute aktuelle Form beider Teams, NED recentForm 2.4 leicht über JPN",
-          "Japan verliert Kapitän und defensiven Dreh- und Angelpunkt Wataru Endo verletzungsbedingt – schwächt Mittelfeldstabilität",
-          "Japans starke Defensive (cleanSheetRate 0.583, goalsAgainstAvg 0.362) hält das Spiel potenziell eng",
-          "Baseline und externer Forecast stimmen weitgehend überein und stützen Heimvorteil-neutrales NED-Favoritentum"
+          "Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2.53 Tore/Spiel) sowie guter jüngster Form (recentForm 2.4)",
+          "Japan defensiv extrem stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate, was den NED-Vorteil dämpft",
+          "Neutraler Spielort ohne Heimvorteil relativiert die nominelle Heimrolle der Niederlande",
+          "Beide Teams mit langer Pause (74 Tage) – Rhythmusfragen auf beiden Seiten ähnlich",
+          "Japans gute gewichtete Form (2.202) macht das Team gefährlicher als der Elo-Unterschied vermuten lässt"
         ],
         "risks": [
-          "Neutraler Spielort eliminiert echten Heimvorteil der Niederlande",
-          "Japans kompakte Defensive könnte ein Unentschieden erzwingen",
-          "Hitze laut Koeman könnte niederländischen Offensivfußball bremsen",
-          "Frimpong fehlt im NED-Kader – mögliche Schwächung der Außenbahn"
+          "Verletzung des niederländischen Stammtorwarts (Flekken rückt nach) könnte die defensive Stabilität schwächen",
+          "Japans kompakte Defensive kann das Spiel eng und torarm halten – erhöhtes Remis-Risiko",
+          "Kein Head-to-Head-Verlauf vorhanden, daher höhere Unsicherheit im direkten Vergleich",
+          "Fehlen von Frimpong im NED-Kader schwächt offensive Außenbahn-Optionen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.28,
-          "away": 0.27
+          "home": 0.48,
+          "draw": 0.27,
+          "away": 0.25
         },
-        "confidence": 0.82,
+        "confidence": 0.65,
         "keyFactors": [
-          "Niederlande hat mit 15 Premier-League-Profis eine starke Mannschaft, aber Frimpong fehlt.",
-          "Japan hat Verletzungsprobleme, insbesondere durch den Ausfall des Kapitäns Wataru Endo.",
-          "Beide Teams haben eine ähnlich gute Form, aber Japans höhere Clean-Sheet-Rate könnte den Ausschlag geben.",
-          "Spiel findet auf neutralem Boden statt, was keinen Vorteil für eines der Teams bietet."
+          "Netherlands has slightly higher Elo rating.",
+          "Netherlands' recent form shows a strong offensive capability with high goalsForAvg.",
+          "Japan has a strong defensive record with a better cleanSheetRate.",
+          "Neutral venue reduces typical home advantage."
         ],
         "risks": [
-          "Unbekannter Einfluss der WM-Hitze auf Niederlande, laut Trainer Koeman.",
-          "Die Verletzung von Japans Kapitän könnte das Team emotional belasten."
+          "Netherlands' first-choice goalkeeper is injured, which may impact defense.",
+          "Japan's recent form is solid, indicating a potential for an upset."
         ]
       }
     },
-    "agreement": 0.96,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs 1768) und stärkerer Offensive (goalsForAvg 2.53 vs 1.69); Sehr gute aktuelle Form beider Teams, NED recentForm 2.4 leicht über JPN; Japan verliert Kapitän und defensiven Dreh- und Angelpunkt Wataru Endo verletzungsbedingt – schwächt Mittelfeldstabilität.",
+    "agreement": 0.9867,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1825 vs 1768) und starker Offensive (2.53 Tore/Spiel) sowie guter jüngster Form (recentForm 2.4); Japan defensiv extrem stabil: nur 0.36 Gegentore/Spiel und 58% Clean-Sheet-Rate, was den NED-Vorteil dämpft; Neutraler Spielort ohne Heimvorteil relativiert die nominelle Heimrolle der Niederlande.",
     "inputHash": "sha256:11001e3f68814c0b5e54badeeb09d1f7941aade5ef4b6a25766992f6912dfa5b"
   },
   "predictionHistory": [
@@ -581,11 +581,24 @@
         "away": 0.2458
       },
       "confidence": 0.7076
+    },
+    {
+      "generatedAt": "2026-06-13T04:03:54.066Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4754,
+        "draw": 0.2673,
+        "away": 0.2573
+      },
+      "confidence": 0.6958
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T04:04:17.146Z",
+    "updatedAt": "2026-06-13T04:43:00.685Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4835,
