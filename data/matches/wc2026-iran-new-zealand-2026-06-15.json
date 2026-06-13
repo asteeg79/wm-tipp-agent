@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T00:03:52.369Z",
+    "generatedAt": "2026-06-13T01:03:53.524Z",
     "home": {
       "teamId": "IRN",
       "elo": 1730,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-13T01:03:53.524Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5026,
-      "draw": 0.2456,
-      "away": 0.2518
+      "home": 0.5067,
+      "draw": 0.24,
+      "away": 0.2533
     },
-    "confidence": 0.6539,
+    "confidence": 0.6683,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.48,
+          "home": 0.49,
           "draw": 0.24,
-          "away": 0.28
+          "away": 0.27
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "Iran mit deutlich höherem Elo (1730 vs 1641) und stärkerer gewichteter Form (1.814 vs 1.235)",
-          "Iran offensiv effizienter (goalsForAvg 2.271) bei solider Defensive (goalsAgainstAvg 0.908)",
-          "Beide Teams mit gleichwertiger jüngster Form (recentForm 1.9), was Neuseeland kompetitiv macht",
-          "Neutraler Spielort eliminiert Heimvorteil und stützt leichte Korrektur der Heim-Wahrscheinlichkeit nach unten gegenüber externem Forecast"
+          "Iran höhere Elo (1730 vs 1641) und stärkere gewichtete Form (1.814 vs 1.235)",
+          "Iran defensiv solide (0.908 Gegentore/Spiel) und torgefährlich (2.271 Tore/Spiel)",
+          "Externe Prognose favorisiert Iran deutlicher (0.52 vs 0.20)",
+          "Beide Teams mit identischer recentForm (1.9), Neuseeland mit guter Clean-Sheet-Quote (0.563)"
         ],
         "risks": [
-          "Neuseeland mit höherer Clean-Sheet-Rate (0.563), kann Spiel defensiv eng gestalten und Remis erzwingen",
-          "Lange Pausen beider Teams (Iran 67, Neuseeland 200 Tage) erhöhen Unsicherheit über aktuelle Spielform",
-          "Kein H2H-Datensatz vorhanden, daher keine direkte Vergleichsbasis",
-          "Geringe Spielanzahl bei Neuseeland (16) macht Formwerte volatiler"
+          "Neuseeland lange ohne Pflichtspiel (207 Tage) – Form schwer einschätzbar",
+          "Iran 74 Tage Pause plus Quartier-/Visa-Unruhe könnte Vorbereitung beeinträchtigen",
+          "Keine H2H-Daten verfügbar",
+          "Neutraler Spielort nimmt Iran möglichen Heimvorteil"
         ]
       },
       "chatgpt": {
@@ -105,25 +105,25 @@
         },
         "probabilities": {
           "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "draw": 0.24,
+          "away": 0.24
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Iran hat in den letzten Spielen mit einem guten Torverhältnis überzeugt und eine starke Form gezeigt.",
-          "Iran hat einen stabilen defensiven Rekord mit einer sauberen Weste in 46% der Spiele.",
-          "New Zealand kommt aus einer langen Spielpause (200 Tage seit dem letzten Spiel), was ihre Matchpraxis beeinträchtigen könnte.",
-          "Iran hat einen höheren Elo-Wert, was ihre Gesamtstärke bestätigt."
+          "Iran hat eine stärkere Elo-Bewertung (1730 zu 1641).",
+          "Iran hat eine überlegene gewichtete Form und ein besseres durchschnittliches Torverhältnis.",
+          "Neuseeland hat seit 207 Tagen kein Spiel bestritten, was ein Nachteil ist.",
+          "Neutrale Spielstätte, ohne spezifischen Heimatvorteil."
         ],
         "risks": [
-          "Kein Head-to-Head zwischen den Teams, was die direkte Vergleichbarkeit erschwert.",
-          "Spiel findet auf neutralem Boden statt, was den Heimvorteil eliminiert."
+          "Visumprobleme der iranischen Mannschaft könnten die Moral beeinflussen.",
+          "Die Mannschaften haben keine Head-to-Head-Historie, was die Vorhersage erschwert."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Iran mit deutlich höherem Elo (1730 vs 1641) und stärkerer gewichteter Form (1.814 vs 1.235); Iran offensiv effizienter (goalsForAvg 2.271) bei solider Defensive (goalsAgainstAvg 0.908); Beide Teams mit gleichwertiger jüngster Form (recentForm 1.9), was Neuseeland kompetitiv macht.",
-    "inputHash": "sha256:55b5778caa699950a30b2e0f34b65cf3dd2cbb29ce54ed283bd3d91310525d2f"
+    "agreement": 0.98,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Iran höhere Elo (1730 vs 1641) und stärkere gewichtete Form (1.814 vs 1.235); Iran defensiv solide (0.908 Gegentore/Spiel) und torgefährlich (2.271 Tore/Spiel); Externe Prognose favorisiert Iran deutlicher (0.52 vs 0.20).",
+    "inputHash": "sha256:bf17f3f5cdd70c84387ec7f82aadb3b17706a703334b6f85eff8cfea52bf4f4d"
   },
   "predictionHistory": [
     {
@@ -255,11 +255,24 @@
         "away": 0.2462
       },
       "confidence": 0.6517
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5026,
+        "draw": 0.2456,
+        "away": 0.2518
+      },
+      "confidence": 0.6539
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T00:03:56.676Z",
+    "updatedAt": "2026-06-13T01:05:39.309Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5246,
