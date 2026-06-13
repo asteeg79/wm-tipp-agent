@@ -67,10 +67,12 @@ function ProbBar({ p }: { p: { home: number; draw: number; away: number } }) {
 interface Props {
   entry: PredictionIndexEntry;
   teams: Map<string, TeamSummary>;
+  /** Text oben links (Default: „Heute im Fokus"). */
+  label?: string;
 }
 
 /** Broadcast-„Scorebug": großer KI-Tipp, Konfidenz-Gauge, 1X2, Countdown. */
-export function Scorebug({ entry, teams }: Props) {
+export function Scorebug({ entry, teams, label }: Props) {
   const { t } = useTranslation();
   const home = teams.get(entry.homeTeamId);
   const away = teams.get(entry.awayTeamId);
@@ -84,7 +86,7 @@ export function Scorebug({ entry, teams }: Props) {
     >
       <div className="flex items-center justify-between border-b border-edge bg-surface-2 px-4 py-2.5">
         <span className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
-          {t("overview.featured")}
+          {label ?? t("overview.featured")}
         </span>
         <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-acc">
           T- {cd}

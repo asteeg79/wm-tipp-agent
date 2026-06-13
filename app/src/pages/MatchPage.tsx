@@ -377,35 +377,40 @@ function WhySection({
   }
   if (factors.size === 0 && risks.size === 0) return null;
   return (
-    <div className="border-t border-edge pt-3">
-      <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
+    <details className="group border-t border-edge pt-3">
+      {/* Einklappbar: die Prosa-Einschätzung oben fasst die Faktoren bereits
+          zusammen — Details nur bei Bedarf. */}
+      <summary className="flex cursor-pointer list-none items-center justify-between text-xs uppercase tracking-wide text-fg-faint hover:text-fg-muted">
         {t("match.whyTitle")}
+        <span className="transition-transform group-open:rotate-90">›</span>
+      </summary>
+      <div className="mt-2">
+        {factors.size > 0 && (
+          <div className="mb-2">
+            <div className="text-xs font-medium text-pos">
+              {t("match.keyFactors")}
+            </div>
+            <ul className="ml-4 list-disc text-sm text-fg-soft">
+              {[...factors].slice(0, 5).map((f, i) => (
+                <li key={i}>{f}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {risks.size > 0 && (
+          <div>
+            <div className="text-xs font-medium text-warn">
+              {t("match.risks")}
+            </div>
+            <ul className="ml-4 list-disc text-sm text-fg-soft">
+              {[...risks].slice(0, 4).map((rk, i) => (
+                <li key={i}>{rk}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
-      {factors.size > 0 && (
-        <div className="mb-2">
-          <div className="text-xs font-medium text-pos">
-            {t("match.keyFactors")}
-          </div>
-          <ul className="ml-4 list-disc text-sm text-fg-soft">
-            {[...factors].slice(0, 5).map((f, i) => (
-              <li key={i}>{f}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {risks.size > 0 && (
-        <div>
-          <div className="text-xs font-medium text-warn">
-            {t("match.risks")}
-          </div>
-          <ul className="ml-4 list-disc text-sm text-fg-soft">
-            {[...risks].slice(0, 4).map((rk, i) => (
-              <li key={i}>{rk}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+    </details>
   );
 }
 

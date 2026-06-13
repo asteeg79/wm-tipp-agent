@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { MatchCard } from "../components/MatchCard.js";
 import { Scorebug } from "../components/Scorebug.js";
+import { formatKickoff } from "../lib/format.js";
 
 export function HomePage() {
   const { t } = useTranslation();
@@ -48,12 +49,17 @@ export function HomePage() {
       {featured && <Scorebug entry={featured} teams={teams} />}
 
       {rest.length > 0 && (
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="font-mono text-[11px] font-semibold uppercase tracking-wider text-fg-faint">
             {t("overview.upcoming")}
           </h3>
           {rest.map((e) => (
-            <MatchCard key={e.matchId} entry={e} teams={teams} />
+            <Scorebug
+              key={e.matchId}
+              entry={e}
+              teams={teams}
+              label={formatKickoff(e.date)}
+            />
           ))}
         </div>
       )}
