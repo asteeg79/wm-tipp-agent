@@ -155,7 +155,10 @@ export const config: PipelineConfig = {
     vsEuropeanDefenseBonus: 0.96,
     majorNationBoost: 1.03,
   },
-  reTriggerMilestonesHours: [72, 24, 3],
+  // Zwei geplante Neubewertungen pro Spiel (1 Tag / ~4 h vorher). Der frühere
+  // T-72h-Tipp brachte am wenigsten und kostete am meisten (Spiel lange im
+  // Fenster). Genügt für gute, aktuelle Prognosen.
+  reTriggerMilestonesHours: [24, 4],
   maxNewsPerTeam: 20,
   models: {
     // Claude Opus 4.8 ($5/$25 pro MTok — halb so teuer wie Fable 5, bewusste

@@ -1,15 +1,11 @@
-name: KI-Tipps stündlich (T-3h)
+name: KI-Tipps stündlich (T-4h)
 
-# Stündlich (Jun/Jul): predict-Modus. 72h-Fenster + Re-Trigger (T-72/24/3h,
-# inputHash, materielle News) bewerten NUR fällige Partien neu → ~3h vor
-# Anpfiff. Unveränderte werden übersprungen (kein KI-Call).
-# WICHTIG: krumme Minuten statt voller Stunde — GitHub verwirft/verzögert
-# Scheduled Runs bei Last, am stärksten im :00-Slot (am 11.06. liefen die
-# "stündlichen" Läufe real nur alle 4-5 h → T-3h-Tipps verpasst). Zwei Slots
-# pro Stunde als Redundanz; die Retrigger-Logik verhindert doppelte KI-Kosten.
+# Predict-Modus (36h-Fenster + Re-Trigger). Der reguläre Stundentakt läuft
+# über den Cloudflare-Worker (repository_dispatch → refresh.yml), der —
+# anders als GitHub-schedule — exakt und ungedrosselt ist und nachts (0-6 Uhr
+# dt. Zeit) pausiert. Dieser GitHub-Cron ist daher ABGESCHALTET (Kosten:
+# vermied die 4-fache Redundanz pro Stunde); nur noch manuell auslösbar.
 on:
-  schedule:
-    - cron: "7,22,37,52 * * 6,7 *" # 4 Slots/h — Repo ist public, Minuten unbegrenzt
   workflow_dispatch:
 
 concurrency:

@@ -1,15 +1,16 @@
 # Betriebskonzept — WM-Tipp-Assistent 2026
 
-Stand: 12.06.2026 (WM läuft). Dieses Dokument beschreibt alle automatischen
-Jobs, ihre Aufgaben, Frequenzen und Schutzmechanismen — und wie man die
-Daten-Frische im Turnierbetrieb sicherstellt.
+Stand: 13.06.2026 (WM läuft). Dieses Dokument beschreibt alle automatischen
+Jobs, ihre Aufgaben, Frequenzen und Schutzmechanismen — und wie die
+Daten-Frische im Turnierbetrieb sichergestellt und die KI-Kosten begrenzt
+werden.
 
 ## Datenarten & Aktualitätsbedarf
 
 | Datenart | Quelle | Zeitkritik | Mechanismus |
 |---|---|---|---|
 | Ergebnisse + Spielplan | openfootball `worldcup.json` | **hoch** (Spieltage) | jeder Pipeline-Lauf, Cache-TTL 10 min |
-| KI-Tipps (Claude Fable 5 + ChatGPT) | Anthropic/OpenAI | mittel (Milestones T-72/24/3 h) | `predict`-Läufe; Retrigger-Logik; Claude via Batches-API |
+| KI-Tipps (Claude Opus 4.8 + ChatGPT) | Anthropic/OpenAI | mittel (Milestones T-24/4 h) | `predict`-Läufe; Retrigger-Logik; Claude via Batches-API |
 | News je Team | Google News RSS + kicker/Sportschau/… | niedrig (Stunden) | `news`-Läufe alle 3 h; KI-Relevanzfilter (Haiku) |
 | Buchmacher-Quoten | The Odds API | niedrig | TTL 8 h, Stopp nach Finale (Quota-Schutz, ~138 Credits gesamt) |
 | Accuracy/Modell-Vergleich/Gewichte | abgeleitet | — | fällt bei jedem Lauf aus Ergebnissen + Tipps ab |
@@ -17,21 +18,66 @@ Daten-Frische im Turnierbetrieb sicherstellt.
 Wichtig: **Auch `news`-Läufe aktualisieren Ergebnisse** (voller Datenlauf,
 nur ohne KI-Tipps) — jeder gelaufene Job bringt also frische Resultate.
 
+## Taktung — wer stößt was an
+
+Der **Cloudflare-Worker** (`infra/cron-worker/`) ist der primäre Taktgeber:
+sein Cron ist exakt und wird — anders als GitHub-`schedule` — nicht
+gedrosselt. Er feuert `repository_dispatch` (`event_type: refresh-data`,
+`mode: predict`) an `refresh.yml`.
+
+- **Cron:** `3 4-21 * * *` (UTC) → **stündlich um :03, 06:03–23:03 deutscher
+  Zeit**. Nachts (0–6 Uhr dt. Zeit) bewusst keine Anstöße.
+- **Monats-Guard** im Worker-Code begrenzt zusätzlich auf Juni/Juli
+  (Cloudflares Schedules-API akzeptiert keine Monats-Felder im Cron).
+- **GitHub-`schedule`** ist als zusätzlicher Best-effort-Fallback nur noch
+  für `news` und `predict-daily` aktiv; der frühere `predict-hourly`-Cron
+  ist **abgeschaltet** (vermied die 4-fache Redundanz pro Stunde).
+
 ## Jobs (GitHub Actions)
 
 | Workflow | Trigger | Aufgabe |
 |---|---|---|
-| `predict-hourly` | Cron `17,47 * * 6,7 *` | Tipps für fällige Partien (Milestones/News/Datenänderung) + Ergebnisse |
-| `predict-daily` | Cron `23 5 * * *` | Backstop: voller predict-Lauf (72-h-Fenster) |
+| `refresh` | **`repository_dispatch`** (Cloudflare) / manuell | Primärer predict-Lauf: Tipps für fällige Partien + Ergebnisse |
+| `predict-daily` | Cron `23 5 * * *` | Backstop: voller predict-Lauf |
+| `predict-hourly` | nur noch `workflow_dispatch` (Cron aus) | manueller predict-Lauf bei Bedarf |
 | `news` | Cron `11 */3 * * *` | News + Ergebnisse (ohne KI) |
-| `refresh` | manuell / **`repository_dispatch`** | beliebiger Modus; externer Taktgeber-Anschluss |
-| `ci` | Push/PR (Code) | Typecheck + 95 Tests + Format |
+| `ci` | Push/PR (Code) | Typecheck + Tests + Format |
 | `_alert` | `failure()` der Daten-Jobs | GitHub-Issue `pipeline-failure` (dedupliziert) |
+
+## Kosten-Kontrolle der KI-Calls
+
+Jeder KI-Tipp = 1 Claude- + 1 ChatGPT-Call. Mehrere Stellschrauben begrenzen
+die Anzahl drastisch (eine teure Partie wurde anfangs 46× neu bewertet —
+behoben):
+
+1. **KI-Fenster 36 h** (`WM_AI_WINDOW_HOURS`, Default 36): Nur Partien mit
+   Anpfiff in ≤ 36 h werden überhaupt bewertet. Weiter entfernte Spiele
+   kosten nichts (ihr Tipp ändert sich ohnehin kaum).
+2. **Retrigger-Logik** (`predict/retrigger.ts`) — ein Spiel im Fenster wird
+   nur neu bewertet, wenn:
+   - noch kein KI-Tipp existiert (Erstbewertung), **oder**
+   - sich der Feature-Hash ändert (echtes neues Ergebnis/Daten), **oder**
+   - eine **neue** materielle News (Verletzung/Sperre/Trainer) *nach* dem
+     letzten Tipp erschien — nicht jede tagelang im Feed stehende
+     Schlagzeile (das war der frühere Kostentreiber), **oder**
+   - ein **Zeit-Milestone** überschritten wird: **T-24 h** und **T-4 h**.
+   → Pro Spiel typisch ~3–4 Bewertungen über die gesamte Laufzeit
+   (Erst-Tipp + 2 Milestones + ggf. echte News) statt einer pro Lauf.
+3. **Batches-API:** Ab 3 fälligen Partien bündelt Claude über die
+   Message-Batches-API → **−50 %** auf die Claude-Calls.
+4. **Modell:** `claude-opus-4-8` ($5/$25 pro MTok) statt des teureren
+   Fable 5 ($10/$50) — bewusste Kosten-Entscheidung (`config.ts`).
+5. **Odds-Quota:** TTL 8 h + Stopp nach dem Finale.
+
+> Frequenz erhöhen heißt **nicht** automatisch mehr Kosten: Läufe, in denen
+> kein Spiel einen Milestone überschreitet und keine neue News vorliegt,
+> verursachen **null** KI-Calls. Die Taktung muss nur fein genug sein, um die
+> Milestones (T-24/4 h) zeitnah zu treffen — der Stundentakt genügt dafür.
 
 ## Schutzmechanismen
 
 1. **Job-Timeouts** (15–25 min): Ein hängender Lauf kann die
-   `data-pipeline`-Concurrency-Gruppe nicht mehr stundenlang blockieren.
+   `data-pipeline`-Concurrency-Gruppe nicht stundenlang blockieren.
 2. **Sanity-Guard** (`buildData`): unplausible Quelldaten (< 40 Teams,
    < 70 Spiele) brechen den Lauf ab, statt `/data` zu überschreiben.
 3. **Git-Race-Schutz**: `git pull --rebase -X theirs` — Konflikte in
@@ -40,76 +86,30 @@ nur ohne KI-Tipps) — jeder gelaufene Job bringt also frische Resultate.
    Issue → GitHub-Benachrichtigung.
 5. **Frische-Banner in der App**: Datenstand > 3 h alt → sichtbarer Hinweis
    (stilles Veralten fällt sofort auf).
-6. **Kosten-Gates**: KI nur im 72-h-Fenster + Retrigger-Milestones; Claude
-   gebündelt über die Batches-API (−50 %); Odds-Quota-TTL + Enddatum.
 
-## Bekanntes Risiko: GitHub-Cron-Drosselung
+## Cloudflare-Worker — Setup & Wartung
 
-GitHub behandelt `schedule` als *best effort*. Beobachtung (11.–12.06.):
-unabhängig von der Anzahl Cron-Slots wurden für dieses **private** Repo nur
-**~5–6 Schedule-Läufe pro Tag und Workflow** zugestellt (Lücken bis 5 h).
-Krumme Minuten und mehr Slots erhöhen den Durchsatz NICHT zuverlässig.
-
-**Nicht gedrosselt** sind dagegen `workflow_dispatch` und
-`repository_dispatch`. Daraus folgen die beiden Lösungswege:
-
-### Option A (empfohlen): Externer Taktgeber → `repository_dispatch`
-
-Ein Cloudflare Worker (kostenlos, Cron-Trigger sind dort exakt) stößt die
-Pipeline an. `refresh.yml` hat den Anschluss bereits (`event_type:
-refresh-data`).
-
-1. **Fine-grained PAT erstellen** (github.com → Settings → Developer
-   settings): nur dieses Repo, Permission **Contents: Read & Write**
-   *(für repository_dispatch nötig)*. Ablauf z. B. 31.07.2026.
-2. **Worker anlegen** (dash.cloudflare.com → Workers & Pages → Create):
-
-   ```js
-   export default {
-     async scheduled(event, env) {
-       await fetch(
-         "https://api.github.com/repos/asteeg79/wm-tipp-agent/dispatches",
-         {
-           method: "POST",
-           headers: {
-             Authorization: `Bearer ${env.GITHUB_PAT}`,
-             Accept: "application/vnd.github+json",
-             "User-Agent": "wm-tipp-cron",
-           },
-           body: JSON.stringify({
-             event_type: "refresh-data",
-             client_payload: { mode: "predict" },
-           }),
-         },
-       );
-     },
-   };
-   ```
-
-3. **Secret setzen**: Worker → Settings → Variables → `GITHUB_PAT`
-   (Encrypt). *Den PAT nie im Chat oder Code ablegen.*
-4. **Cron-Trigger**: Worker → Settings → Triggers → Cron, z. B.
-   `*/30 12-23,0-6 * 6,7 *` (alle 30 min während der Spielzeit-Stunden UTC,
-   nur Juni/Juli). Die GitHub-Crons bleiben als Fallback aktiv;
-   doppelte Läufe serialisiert die Concurrency-Gruppe, KI-Kosten entstehen
-   nur für fällige Partien.
-
-**Hinweis Actions-Minuten (privates Repo, Free-Tier 2 000 min/Monat):**
-alle 30 min × ~4 min Laufzeit ≈ 3 800 min/Monat → über dem Free-Limit.
-Entweder Taktung auf 45–60 min strecken, das Repo **public** machen
-(unbegrenzte Minuten, bessere Cron-Priorität) oder Billing aktivieren.
-
-### Option B: Repo public machen
-
-Public Repos haben unbegrenzte Actions-Minuten und erfahrungsgemäß
-zuverlässigere Schedule-Zustellung. Voraussetzung: keine lizenzierten
-Inhalte im Repo (GS-Zahlen sind ohnehin ausgeschlossen), Keys liegen nur
-in GitHub Secrets. Entscheidung liegt beim Betreiber.
-
-### Soforthilfe (jederzeit)
+Code & Config liegen versioniert in `infra/cron-worker/`
+(`worker.mjs`, `wrangler.jsonc`). Deploy aus diesem Verzeichnis:
 
 ```sh
-gh workflow run refresh.yml -f mode=predict   # ungedrosselter Sofort-Lauf
+npx wrangler deploy                 # Worker + Cron-Trigger ausrollen
+npx wrangler secret put GITHUB_PAT  # Token setzen (interaktiv, nie im Code)
+npx wrangler tail                   # Live-Logs (Dispatch-Status)
+```
+
+**`GITHUB_PAT`**: fine-grained PAT, nur dieses Repo, Permission
+**Contents: Read & Write** (für `repository_dispatch` nötig), Ablauf
+31.07.2026 (nach dem Finale — kein Verlängerungsbedarf). Liegt ausschließlich
+als verschlüsseltes Worker-Secret vor.
+
+**Takt ändern:** `crons` in `wrangler.jsonc` anpassen + `wrangler deploy`.
+Das Juni/Juli-Fenster steckt im Worker-Code (Monats-Guard), nicht im Cron.
+
+### Soforthilfe (jederzeit, ungedrosselt)
+
+```sh
+gh workflow run refresh.yml -f mode=predict   # sofortiger predict-Lauf
 ```
 
 ## Troubleshooting
@@ -117,6 +117,7 @@ gh workflow run refresh.yml -f mode=predict   # ungedrosselter Sofort-Lauf
 | Symptom | Prüfen | Ursache/Behebung |
 |---|---|---|
 | Ergebnisse fehlen | openfootball-Quelle MIT Cache-Buster: `curl ".../worldcup.json?t=$(date +%s)"` | CDN/Cache stale; Lauf anstoßen |
-| Tipps veraltet | `gh run list` — kamen Läufe? | Cron-Drosselung → Soforthilfe/Option A |
+| Tipps veraltet | `gh run list` — kamen Dispatch-Läufe? `wrangler tail` | Worker-Cron/Secret prüfen; Soforthilfe nutzen |
+| KI-Kosten zu hoch | `predictionHistory`-Länge je Match (sollte einstellig sein) | Retrigger-Leck? Fenster/Milestones in `config.ts` enger stellen |
 | Lauf rot | Issue `pipeline-failure` + `gh run view <id> --log-failed` | je nach Log; Daten bleiben beim letzten guten Stand |
 | App zeigt alte Daten | Frische-Banner? Versions-Footer? | 60-s-Poll + NetworkFirst holen automatisch; einmal neu laden |

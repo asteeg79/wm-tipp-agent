@@ -91,10 +91,12 @@ async function main(): Promise<void> {
   //  - "full":    News + KI ohne Fenster-Limit (alle Partien; teuer).
   // Default: "predict".
   const mode = resolveMode();
-  // KI-Fenster (Std.) konfigurierbar über WM_AI_WINDOW_HOURS, Default 72.
+  // KI-Fenster (Std.) konfigurierbar über WM_AI_WINDOW_HOURS, Default 36.
+  // Weiter entfernte Spiele werden nicht vorab bewertet (Tipp ändert sich
+  // kaum, kostet aber bei jedem Lauf) — passt zum 24h-Milestone.
   const windowEnv = Number(process.env.WM_AI_WINDOW_HOURS);
   const aiWindowHours =
-    Number.isFinite(windowEnv) && windowEnv > 0 ? windowEnv : 72;
+    Number.isFinite(windowEnv) && windowEnv > 0 ? windowEnv : 36;
 
   // Test-Overrides bleiben erhalten.
   const withNews = process.env.WM_NO_NEWS !== "1";

@@ -79,9 +79,13 @@ Der Tipp entsteht in drei Stufen (Details: [`docs/ki-bewertung.md`](docs/ki-bewe
    Gewicht, gemessen am laufenden RPS über beendete Spiele), Konsens- und
    Knapp-Rennen-Regeln für den finalen Ergebnistipp, regelbasierte Begründung.
 
-**Kosten-Steuerung:** KI-Bewertungen nur im 72-h-Fenster vor Anpfiff und nur
-bei Bedarf (Re-Trigger-Milestones T-72/24/3 h, geänderte Eingangsdaten oder
-materielle News); unveränderte Partien verursachen keine Modell-Calls.
+**Kosten-Steuerung:** KI-Bewertungen nur im **36-h-Fenster** vor Anpfiff und
+nur bei Bedarf — Re-Trigger-Milestones **T-24/4 h**, geänderte Eingangsdaten
+oder **neue** materielle News (erschienen nach dem letzten Tipp). Unveränderte
+Partien verursachen keine Modell-Calls; Claude wird ab 3 fälligen Partien über
+die Batches-API gebündelt (−50 %). So bekommt jedes Spiel typisch ~3–4
+Bewertungen über seine Laufzeit statt einer pro Lauf. Details:
+[`docs/betrieb.md`](docs/betrieb.md).
 
 ## Qualitätsmessung
 
@@ -103,12 +107,15 @@ Männer-Nationalmannschaft gefiltert; eine Heuristik vergibt Impact-Tags
 
 | Workflow | Trigger | Aufgabe |
 |---|---|---|
-| `predict-hourly` | Cron 4×/h (Jun/Jul) | Tipps für fällige Partien + Ergebnisse |
-| `predict-daily` | Cron täglich | Backstop: voller Predict-Lauf (72-h-Fenster) |
-| `news` | Cron alle 2 h | News + Ergebnisse (ohne KI) |
-| `refresh` | manuell / `repository_dispatch` | beliebiger Modus, externer Taktgeber |
+| `refresh` | **`repository_dispatch`** (Cloudflare-Cron, stündlich, nachts pausiert) / manuell | Primärer Predict-Lauf: Tipps für fällige Partien + Ergebnisse |
+| `predict-daily` | Cron täglich | Backstop: voller Predict-Lauf |
+| `news` | Cron alle 3 h | News + Ergebnisse (ohne KI) |
+| `predict-hourly` | nur manuell (`workflow_dispatch`) | Predict-Lauf bei Bedarf |
 | `ci` | Push/PR | Typecheck, Tests, Format |
 | `_alert` | bei Fehlschlag | GitHub-Issue `pipeline-failure` |
+
+Der **Cloudflare-Worker** (`infra/cron-worker/`) ist der primäre, exakte und
+ungedrosselte Taktgeber (GitHub-`schedule` ist nur Best-effort-Fallback).
 
 Schutzmechanismen (Job-Timeouts, Sanity-Guard gegen kaputte Quelldaten,
 Git-Race-Auflösung, Frische-Banner in der App) und Troubleshooting:
@@ -127,8 +134,9 @@ pnpm lint         # ESLint
 pnpm pipeline     # Daten-Pipeline lokal (liest .env)
 ```
 
-Pipeline-Modi: `WM_MODE=news` (ohne KI), `predict` (KI im 72-h-Fenster,
-Default), `full` (KI für alle Partien). Lokal `.env` aus `.env.example`
+Pipeline-Modi: `WM_MODE=news` (ohne KI), `predict` (KI im 36-h-Fenster,
+Default; via `WM_AI_WINDOW_HOURS` anpassbar), `full` (KI für alle Partien).
+Lokal `.env` aus `.env.example`
 anlegen — die echte `.env` ist gitignored.
 
 ### Secrets (GitHub → Settings → Secrets → Actions)

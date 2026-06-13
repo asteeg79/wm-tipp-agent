@@ -6,8 +6,14 @@
  * Neu bewerten, wenn MINDESTENS eine Bedingung zutrifft:
  *  - noch kein KI-Tipp vorhanden (nur Baseline)
  *  - inputHash des Feature-Bundles hat sich geändert (neues Ergebnis/Daten)
- *  - materielle News (impactTag != none) bei einem der Teams
- *  - Zeit-Milestone erreicht (T-72h / T-24h / T-3h vor Anpfiff)
+ *  - NEUE materielle News (impactTag != none, erschienen NACH dem letzten Tipp)
+ *  - Zeit-Milestone erreicht (T-24h / T-4h vor Anpfiff)
+ *
+ * Wichtig zur Kosten-Kontrolle: Die News-Bedingung prüft die Aktualität der
+ * Schlagzeile gegen den Zeitpunkt des letzten Tipps. Sonst würde dieselbe
+ * (tagelang im Feed stehende) Verletzungsmeldung bei JEDEM Lauf eine teure
+ * Neubewertung auslösen — der frühere Kostentreiber (ein Spiel wurde 46×
+ * neu bewertet).
  */
 import type { Match, NewsItem } from "@wm/shared";
 import { config } from "../../config.js";
@@ -66,11 +72,19 @@ export function decideRetrigger(
   if (currentInputHash && prevHash && currentInputHash !== prevHash) {
     return { shouldEvaluate: true, reason: "Feature-Bundle geändert" };
   }
-  const material = [...homeNews, ...awayNews].some(
-    (n) => n.impactTag !== "none",
+  // Nur NEUE materielle News (nach dem letzten Tipp erschienen) zählen —
+  // sonst löst eine tagelang im Feed stehende Schlagzeile bei jedem Lauf
+  // eine Neubewertung aus (der frühere Kostentreiber).
+  const lastGenMs = match.prediction?.generatedAt
+    ? new Date(match.prediction.generatedAt).getTime()
+    : 0;
+  const freshMaterial = [...homeNews, ...awayNews].some(
+    (n) =>
+      n.impactTag !== "none" &&
+      new Date(n.publishedAt).getTime() > lastGenMs,
   );
-  if (material) {
-    return { shouldEvaluate: true, reason: "materielle News" };
+  if (freshMaterial) {
+    return { shouldEvaluate: true, reason: "neue materielle News" };
   }
   const { reached, milestone } = milestoneReached(match, now);
   if (reached) {
