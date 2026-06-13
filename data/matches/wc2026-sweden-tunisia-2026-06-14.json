@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T03:03:50.337Z",
+    "generatedAt": "2026-06-13T04:03:54.066Z",
     "home": {
       "teamId": "SWE",
       "elo": 1599,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T03:03:50.337Z",
+    "generatedAt": "2026-06-13T04:03:54.066Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3083,
-      "draw": 0.2583,
-      "away": 0.4333
+      "home": 0.304,
+      "draw": 0.352,
+      "away": 0.344
     },
-    "confidence": 0.592,
+    "confidence": 0.6,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,47 +81,51 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.27,
+          "home": 0.31,
+          "draw": 0.28,
           "away": 0.41
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Tunesien hat höheres Elo (1672 vs 1599) und die deutlich bessere Defensive (Gegentore-Schnitt 0.75, Clean-Sheet-Rate 50%)",
-          "Tunesiens gewichtete Form (1.895) und jüngste Form (1.7) liegen über den schwedischen Werten",
-          "Neutraler Spielort ohne Heimvorteil für Schweden",
-          "Schweden bietet mehr Offensivpotenzial (1.91 Tore/Spiel), aber wackelige Abwehr (1.64 Gegentore/Spiel)"
+          "Tunesien hat höheres Elo (1672 vs 1599) und stärkere gewichtete Form (1.895 vs 1.639)",
+          "Tunesiens Defensive ist deutlich solider (0.752 Gegentore/Spiel, 50% Zu-Null) als Schwedens (1.638 Gegentore, 21.7% Zu-Null)",
+          "Neutraler Spielort ohne Heimvorteil relativiert die Heimnominierung Schwedens",
+          "Schweden hat leicht höhere Offensivproduktion (1.91 vs 1.647 Tore/Spiel)"
         ],
         "risks": [
-          "Baseline (Tunesien favorisiert) und externe Prognose (Schweden favorisiert) widersprechen sich stark – hohe Modellunsicherheit",
-          "Mögliche Unruhe im tunesischen Lager laut Moral-News könnte Leistung beeinträchtigen",
-          "Kein H2H vorhanden, lange Pause (74 Tage) für beide erschwert Formeinschätzung",
-          "Schwedens Offensive könnte tunesische Defensive überraschen"
+          "Externe Prognose widerspricht der Baseline klar und favorisiert Schweden (0.50)",
+          "Keine H2H-Daten vorhanden, hohe Unsicherheit",
+          "Mögliche interne Unruhe bei Tunesien (Moral-Meldung) könnte Leistung beeinträchtigen",
+          "Lange Pause von 74 Tagen für beide Teams erschwert Formeinschätzung"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
           "home": 0.3,
-          "draw": 0.25,
-          "away": 0.45
+          "draw": 0.4,
+          "away": 0.3
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Tuneisiens Elo-Wert ist höher als der Schwedens.",
-          "Tunisias jüngste Form ist etwas stärker als die Schwedens.",
-          "Tunesien hat mit einer hohen Quote von weißen Westen (0.5) eine starke Verteidigung."
+          "Sweden has a slightly lower Elo rating but maintains decent form with a recent history of scoring.",
+          "Tunisia has a stronger defense with a higher clean sheet rate.",
+          "No head-to-head history between the teams to influence predictions.",
+          "Neutral venue negates any potential home advantage.",
+          "Morale issue in the Tunisian camp could impact performance."
         ],
         "risks": [
-          "Mögliche Auswirkungen des Eklats um KSC-Talent auf die Moral des tunesischen Teams."
+          "Sweden's defense leaks goals, which Tunisia could exploit.",
+          "The effect of Tunisia’s morale issues on team performance is uncertain.",
+          "Neutral venue factors such as altitude might affect performance unpredictably."
         ]
       }
     },
-    "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tunesien hat höheres Elo (1672 vs 1599) und die deutlich bessere Defensive (Gegentore-Schnitt 0.75, Clean-Sheet-Rate 50%); Tunesiens gewichtete Form (1.895) und jüngste Form (1.7) liegen über den schwedischen Werten; Neutraler Spielort ohne Heimvorteil für Schweden.",
+    "agreement": 0.92,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tunesien hat höheres Elo (1672 vs 1599) und stärkere gewichtete Form (1.895 vs 1.639); Tunesiens Defensive ist deutlich solider (0.752 Gegentore/Spiel, 50% Zu-Null) als Schwedens (1.638 Gegentore, 21.7% Zu-Null); Neutraler Spielort ohne Heimvorteil relativiert die Heimnominierung Schwedens.",
     "inputHash": "sha256:da7dc3b90ee2094bde33b5b89d003181f59da6112c8fd094c5980a313a555944"
   },
   "predictionHistory": [
@@ -553,11 +557,24 @@
         "away": 0.378
       },
       "confidence": 0.6104
+    },
+    {
+      "generatedAt": "2026-06-13T03:03:50.337Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3083,
+        "draw": 0.2583,
+        "away": 0.4333
+      },
+      "confidence": 0.592
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T03:05:40.708Z",
+    "updatedAt": "2026-06-13T04:04:17.146Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.5031,

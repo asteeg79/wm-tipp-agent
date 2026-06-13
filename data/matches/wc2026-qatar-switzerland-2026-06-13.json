@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T03:03:50.337Z",
+    "generatedAt": "2026-06-13T04:03:54.066Z",
     "home": {
       "teamId": "QAT",
       "elo": 1509,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T03:03:50.337Z",
+    "generatedAt": "2026-06-13T04:03:54.066Z",
     "predictedScore": {
       "home": 1,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0951,
-      "draw": 0.1804,
-      "away": 0.7245
+      "home": 0.0954,
+      "draw": 0.1546,
+      "away": 0.75
     },
-    "confidence": 0.7228,
+    "confidence": 0.7824,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,7 +76,7 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
@@ -86,17 +86,17 @@
         },
         "confidence": 0.72,
         "keyFactors": [
-          "Switzerland deutlich stärker: Elo 1746 vs. 1509 und bessere gewichtete Form (1.638 vs. 1.292)",
-          "Schweiz mit starker jüngster Form (recentForm 2.1) und solider Defensive (Gegentore-Schnitt 1.094, Clean-Sheet-Rate 0.37)",
-          "Katar offensiv und defensiv schwächer (Gegentore-Schnitt 1.802, Clean-Sheet-Rate nur 0.25)",
-          "Externe Prognose stützt klare Schweizer Favoritenrolle (0.79)",
-          "Neutraler Spielort ohne Heimvorteil für Katar"
+          "Switzerland deutlich stärker (Elo 1746 vs 1509) und in besserer Form (recentForm 2.1 vs 1.2)",
+          "Schweiz mit besserer Defensive (GA 1.094, CleanSheet 0.37) und Offensive (GF 2.021)",
+          "Baseline und externe Prognose sehen klaren Favoriten Schweiz (70-79%)",
+          "Qatar mit instabilem Umfeld: vier Trainerwechsel in kurzer Zeit",
+          "Neutraler Spielort, kein Heimvorteil für Qatar"
         ],
         "risks": [
-          "Katars lange Pause (208 Tage ohne Spiel) kann Form schwer einschätzbar machen",
-          "Trainer-/Kaderunruhe bei Katar (mehrere Trainerwechsel) erhöht Unsicherheit",
-          "Schweizer Pause von 74 Tagen könnte Rhythmus beeinträchtigen",
-          "Kein Head-to-Head als Referenz vorhanden"
+          "Qatar 208 Tage ohne Pflichtspiel - Formstand schwer einzuschätzen",
+          "Keine direkte H2H-Historie vorhanden",
+          "Schweiz könnte bei früher Führung Tempo herausnehmen",
+          "Trainerwechsel bei Qatar könnten taktisch überraschen"
         ]
       },
       "chatgpt": {
@@ -106,24 +106,24 @@
         },
         "probabilities": {
           "home": 0.1,
-          "draw": 0.2,
-          "away": 0.7
+          "draw": 0.15,
+          "away": 0.75
         },
-        "confidence": 0.75,
+        "confidence": 0.85,
         "keyFactors": [
-          "Switzerland's higher Elo rating",
-          "Switzerland's superior recent form",
-          "Qatar's instability due to multiple coach changes",
-          "Neutral venue mitigates home advantage for Qatar"
+          "Switzerland has a significantly higher Elo rating than Qatar.",
+          "Switzerland's recent form is stronger than Qatar's.",
+          "Qatar has experienced four recent coaching changes, which could disrupt team performance.",
+          "Switzerland played more recently, suggesting better match readiness."
         ],
         "risks": [
-          "Longer period since Qatar's last match could impact team form",
-          "Lack of head-to-head history"
+          "Neutral venue reduces home advantage impact for Qatar.",
+          "Lack of head-to-head history introduces uncertainty in matchup predictions."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland deutlich stärker: Elo 1746 vs. 1509 und bessere gewichtete Form (1.638 vs. 1.292); Schweiz mit starker jüngster Form (recentForm 2.1) und solider Defensive (Gegentore-Schnitt 1.094, Clean-Sheet-Rate 0.37); Katar offensiv und defensiv schwächer (Gegentore-Schnitt 1.802, Clean-Sheet-Rate nur 0.25).",
+    "agreement": 0.9933,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland deutlich stärker (Elo 1746 vs 1509) und in besserer Form (recentForm 2.1 vs 1.2); Schweiz mit besserer Defensive (GA 1.094, CleanSheet 0.37) und Offensive (GF 2.021); Baseline und externe Prognose sehen klaren Favoriten Schweiz (70-79%).",
     "inputHash": "sha256:30b83fa034270083c3c55fcc5ede0daa1a856803c524d91018fdffc246e168b3"
   },
   "predictionHistory": [
@@ -685,11 +685,24 @@
         "away": 0.7729
       },
       "confidence": 0.7595
+    },
+    {
+      "generatedAt": "2026-06-13T03:03:50.337Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0951,
+        "draw": 0.1804,
+        "away": 0.7245
+      },
+      "confidence": 0.7228
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T03:05:40.707Z",
+    "updatedAt": "2026-06-13T04:04:17.145Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.0667,

@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T03:03:50.337Z",
+    "generatedAt": "2026-06-13T04:03:54.066Z",
     "home": {
       "teamId": "HAI",
       "elo": 1576,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T03:03:50.337Z",
+    "generatedAt": "2026-06-13T04:03:54.066Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2868,
-      "draw": 0.25,
-      "away": 0.4632
+      "home": 0.2712,
+      "draw": 0.2585,
+      "away": 0.4704
     },
-    "confidence": 0.6188,
+    "confidence": 0.6348,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.27,
-          "draw": 0.25,
-          "away": 0.48
+          "home": 0.3,
+          "draw": 0.27,
+          "away": 0.43
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Schottland mit stärkerem Spielermaterial (McTominay, Robertson) und besserer jüngster Form (recentForm 1.6 vs 1.3)",
-          "Externe Prognose sieht Schottland klar vorne (0.61), was die Baseline-Heimtendenz relativiert",
-          "Neutraler Spielort eliminiert Heimvorteil für Haiti",
-          "Haiti defensiv solide (cleanSheetRate 0.41, GegentoreAvg 1.09), kann das Spiel eng halten"
+          "Schottland mit stärkerer jüngster Form (recentForm 1.6 vs. 1.3) und leicht höherem Elo (1586 vs. 1576)",
+          "Neutraler Spielort eliminiert den Heimvorteil Haitis und stützt die externe Prognose, die Schottland klar favorisiert (0.61)",
+          "Schottlands erfahrene Führungsspieler McTominay und Robertson im Kader, erstmals seit 1998 wieder bei der WM",
+          "Haiti defensiv solide (cleanSheetRate 0.41, GegentoreAvg 1.09) und torgefährlich (1.66 Tore/Spiel)"
         ],
         "risks": [
-          "Verletzung von Gilmour schwächt Schottlands Mittelfeld leicht",
-          "Kein H2H-Vergleich vorhanden, hohe Unsicherheit",
-          "Lange Pause (74 Tage) für beide Teams kann Rhythmus beeinträchtigen",
-          "Haitis Offensive (goalsForAvg 1.66) könnte für Überraschung sorgen"
+          "Ausfall von Billy Gilmour (Verletzung) schwächt Schottlands Mittelfeld",
+          "Kein Head-to-Head-Datensatz vorhanden – hohe Unsicherheit",
+          "Lange Pause beider Teams (74 Tage) erschwert Formeinschätzung",
+          "Haitis offensive Stärke könnte bei Schottlands schwächerer Defensive (cleanSheetRate 0.28) für Punkte sorgen"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,25 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.3,
+          "home": 0.25,
           "draw": 0.25,
-          "away": 0.45
+          "away": 0.5
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Heimteam Haiti in den letzten Spielen durchschnittlich stärkere offensive Leistung (1.657 Tore/Spiel) im Vergleich zu Schottland (1.367).",
-          "Schottlands verletzter Spieler Gilmour könnte die Teamstärke beeinflussen.",
-          "Neutraler Spielort ohne Heimvorteil.",
-          "Kein direktes Head-to-Head-Vergleich; Spielverlauf bleibt unvorhersehbar."
+          "Scotland has a slightly higher recent form rating (1.6) compared to Haiti (1.3).",
+          "Scotland's player Gilmour is reported injured, which could affect their overall strength.",
+          "The match is played at a neutral venue, which eliminates home advantage.",
+          "Haiti's clean sheet rate is significantly higher (0.409) compared to Scotland (0.28), indicating a stronger defense."
         ],
         "risks": [
-          "Fehlende direkte Begegnungen zwischen den Teams; Unsicherheit über Reaktion auf Spielstil.",
-          "Gilmours absenteer Einfluss auf Schottlands defensive Stabilität unklar."
+          "Potential impact of Gilmour's injury on Scotland's performance.",
+          "Neutral venue can often lead to unpredictable match outcomes."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schottland mit stärkerem Spielermaterial (McTominay, Robertson) und besserer jüngster Form (recentForm 1.6 vs 1.3); Externe Prognose sieht Schottland klar vorne (0.61), was die Baseline-Heimtendenz relativiert; Neutraler Spielort eliminiert Heimvorteil für Haiti.",
+    "agreement": 0.9533,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schottland mit stärkerer jüngster Form (recentForm 1.6 vs. 1.3) und leicht höherem Elo (1586 vs. 1576); Neutraler Spielort eliminiert den Heimvorteil Haitis und stützt die externe Prognose, die Schottland klar favorisiert (0.61); Schottlands erfahrene Führungsspieler McTominay und Robertson im Kader, erstmals seit 1998 wieder bei der WM.",
     "inputHash": "sha256:611505aaf33b26aedc2c1fb2875d9092d0279e38f8e96e070078a4e2601f2bbf"
   },
   "predictionHistory": [
@@ -645,11 +645,24 @@
         "away": 0.4432
       },
       "confidence": 0.6125
+    },
+    {
+      "generatedAt": "2026-06-13T03:03:50.337Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2868,
+        "draw": 0.25,
+        "away": 0.4632
+      },
+      "confidence": 0.6188
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T03:05:40.707Z",
+    "updatedAt": "2026-06-13T04:04:17.146Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1599,
