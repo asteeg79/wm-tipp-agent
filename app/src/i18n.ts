@@ -109,6 +109,9 @@ const resources = {
         timeline: "Tipp-Verlauf",
         timelineNow: "aktueller Lauf",
         aiTip: "KI-Tipp (Claude + ChatGPT)",
+        assessment: "KI-Einschätzung",
+        newsTitle: "News zur Partie",
+        newsEmpty: "Keine relevanten News zu dieser Partie.",
       },
       market: {
         title: "Buchmacher-Quoten",
@@ -346,6 +349,9 @@ const resources = {
         timeline: "Tip timeline",
         timelineNow: "current run",
         aiTip: "AI tip (Claude + ChatGPT)",
+        assessment: "AI assessment",
+        newsTitle: "Match news",
+        newsEmpty: "No relevant news for this match.",
       },
       market: {
         title: "Bookmaker odds",

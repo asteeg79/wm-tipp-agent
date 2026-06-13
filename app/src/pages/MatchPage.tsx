@@ -4,6 +4,7 @@ import { useMatch, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { ProbabilityBar } from "../components/ProbabilityBar.js";
 import { ConfidenceBadge } from "../components/ConfidenceBadge.js";
+import { MatchNews } from "../components/MatchNews.js";
 import { formatKickoff, formatPercent } from "../lib/format.js";
 
 export function MatchPage() {
@@ -78,6 +79,13 @@ export function MatchPage() {
               <ConfidenceBadge value={pred.confidence} />
             </div>
           </div>
+
+          {/* KI-Einschätzung sofort sichtbar (prominent statt versteckt unten). */}
+          {pred.rationale && (
+            <p className="border-l-2 border-acc/60 pl-3 text-sm leading-relaxed text-fg-soft">
+              {pred.rationale}
+            </p>
+          )}
 
           <div>
             <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
@@ -186,15 +194,26 @@ export function MatchPage() {
             );
           })()}
 
-          <p className="border-t border-edge pt-3 text-xs text-fg-faint">
-            {pred.rationale ?? t("match.baselineNote")}
-          </p>
+          {/* Fließtext-Einschätzung steht jetzt oben; hier nur noch der
+              Baseline-Hinweis, wenn (noch) kein KI-Tipp vorliegt. */}
+          {!pred.rationale && (
+            <p className="border-t border-edge pt-3 text-xs text-fg-faint">
+              {t("match.baselineNote")}
+            </p>
+          )}
         </div>
       ) : (
         <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-4 text-sm text-fg-muted">
           {t("match.predictionSoon")}
         </div>
       )}
+
+      {/* News zur Partie (beide Teams zusammengeführt, materielle zuerst) */}
+      <MatchNews
+        homeTeamId={match.homeTeamId}
+        awayTeamId={match.awayTeamId}
+        teams={teams}
+      />
 
       {/* Buchmacher-Quoten (nur wenn Odds-Quelle aktiv) */}
       {match.market && (
