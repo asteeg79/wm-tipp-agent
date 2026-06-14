@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-13T23:20:16.672Z",
+    "generatedAt": "2026-06-14T04:04:21.992Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.106,
       "cleanSheetRate": 0.407,
       "matchesCount": 27,
-      "daysSinceLastMatch": 75
+      "daysSinceLastMatch": 76
     },
     "away": {
       "teamId": "CUW",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.621,
       "cleanSheetRate": 0.55,
       "matchesCount": 20,
-      "daysSinceLastMatch": 207
+      "daysSinceLastMatch": 208
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T19:04:20.418Z",
+    "generatedAt": "2026-06-14T04:04:21.992Z",
     "predictedScore": {
       "home": 3,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7826,
-      "draw": 0.1474,
-      "away": 0.07
+      "home": 0.7819,
+      "draw": 0.1272,
+      "away": 0.0909
     },
-    "confidence": 0.7765,
+    "confidence": 0.7569,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.82,
-          "draw": 0.11,
-          "away": 0.07
+          "home": 0.8200000000000001,
+          "draw": 0.10000000000000002,
+          "away": 0.08000000000000002
         },
-        "confidence": 0.74,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutschland deutlich höhere Elo (1822 vs 1637) und stärkere gewichtete Form (2.37 vs 1.86)",
-          "Hohe Offensivkraft Deutschlands (2.57 Tore/Spiel) gegen klare Klassen- und Kaderüberlegenheit",
-          "Externe Prognose sieht Deutschland als klaren Favoriten (0.92), Baseline unterschätzt die Differenz deutlich",
-          "Curaçao seit 207 Tagen ohne Pflichtspiel — fehlende Spielpraxis und Wettkampfrhythmus"
+          "Deutliches Elo-Übergewicht Deutschlands (1822 vs. 1637) und stärkere gewichtete Form (2.37 vs. 1.86)",
+          "Hohe Offensivkraft Deutschlands (2.57 Tore/Spiel) gegen einen Außenseiter",
+          "Externe Prognose sieht Deutschland klar bei ~92% – Baseline wirkt deutlich zu vorsichtig",
+          "Curaçao mit sehr langer Pause (208 Tage ohne Spiel), möglicher Rhythmus- und Wettbewerbsnachteil",
+          "Nagelsmann setzt laut News auf etablierte Offensivkräfte (Musiala u.a.)"
         ],
         "risks": [
-          "Curaçao defensiv solide (Clean-Sheet-Rate 0.55), kann tief stehen und kompakt verteidigen",
-          "Kein direkter H2H-Vergleich vorhanden — Unsicherheit über taktisches Matchup",
-          "Lange Pause Deutschlands (75 Tage) könnte Anfangsphase beeinträchtigen",
-          "Bei frühem Rückstand könnte Deutschland nachlässig werden und ein Gegentor zulassen"
+          "Curaçao zeigt defensiv solide Werte (0.62 Gegentore/Spiel, 55% Clean Sheets) – könnte tief stehen",
+          "Kein direkter H2H-Vergleich vorhanden, Unsicherheit über tatsächliche Spielstärke Curaçaos",
+          "Neutraler Spielort ohne Heimvorteil für Deutschland",
+          "Mögliche Rotation/Personalentscheidungen Deutschlands könnten Schärfe nehmen"
         ]
       },
       "chatgpt": {
@@ -105,24 +106,30 @@
         },
         "probabilities": {
           "home": 0.75,
-          "draw": 0.18,
-          "away": 0.07
+          "draw": 0.15,
+          "away": 0.1
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Germany's higher Elo rating and stronger team form",
-          "Curaçao's extended absence from competitive matches",
-          "Germany's recent roster decisions and depth of squad"
+          "Germany's higher Elo rating",
+          "Germany's strong offensive with a goalsForAvg of 2.574",
+          "Curaçao has not played a match in 208 days",
+          "Neutral venue reducing home advantage",
+          "Germany's higher historical performance"
         ],
         "risks": [
-          "Neutral venue could mitigate some of Germany's advantage",
-          "Curaçao's ability to perform defensively, reflected in a high clean sheet rate"
+          "Germany's recent form is lower than weighted form",
+          "Curaçao's higher clean sheet rate could lead to defensive surprises"
         ]
       }
     },
     "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland deutlich höhere Elo (1822 vs 1637) und stärkere gewichtete Form (2.37 vs 1.86); Hohe Offensivkraft Deutschlands (2.57 Tore/Spiel) gegen klare Klassen- und Kaderüberlegenheit; Externe Prognose sieht Deutschland als klaren Favoriten (0.92), Baseline unterschätzt die Differenz deutlich.",
-    "inputHash": "sha256:0236e9b8e73d040916f440af9096261a83993271de411eaa67f86cb61169bfd5"
+    "ensembleWeights": {
+      "claude": 0.5043,
+      "chatgpt": 0.4957
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliches Elo-Übergewicht Deutschlands (1822 vs. 1637) und stärkere gewichtete Form (2.37 vs. 1.86); Hohe Offensivkraft Deutschlands (2.57 Tore/Spiel) gegen einen Außenseiter; Externe Prognose sieht Deutschland klar bei ~92% – Baseline wirkt deutlich zu vorsichtig.",
+    "inputHash": "sha256:1db4253f50543a211cc076540773b73c13de94e213bffb6c09e970e82b7ca48a"
   },
   "predictionHistory": [
     {
@@ -709,21 +716,34 @@
         "away": 0.05
       },
       "confidence": 0.865
+    },
+    {
+      "generatedAt": "2026-06-13T19:04:20.418Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7826,
+        "draw": 0.1474,
+        "away": 0.07
+      },
+      "confidence": 0.7765
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-13T23:21:55.576Z",
-    "bookmakerCount": 23,
+    "updatedAt": "2026-06-14T04:06:08.515Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.9232,
+      "home": 0.9227,
       "draw": 0.0533,
-      "away": 0.0234
+      "away": 0.024
     },
     "decimal": {
       "home": 1.04,
       "draw": 18,
-      "away": 41
+      "away": 40
     }
   }
 }

@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-13T23:20:16.672Z",
+  "lastUpdated": "2026-06-14T04:04:21.992Z",
   "aggregate": {
-    "finishedCount": 5,
-    "exactScoreRate": 0,
-    "outcomeRate": 0.4,
-    "brierMean": 0.685,
-    "rpsMean": 0.1961
+    "finishedCount": 7,
+    "exactScoreRate": 0.1429,
+    "outcomeRate": 0.5714,
+    "brierMean": 0.6627,
+    "rpsMean": 0.1887
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 5,
-      "exactScoreRate": 0.2,
-      "outcomeRate": 0.4,
-      "brierMean": 0.6882,
-      "rpsMean": 0.1961
+      "finishedCount": 7,
+      "exactScoreRate": 0.1429,
+      "outcomeRate": 0.4286,
+      "brierMean": 0.674,
+      "rpsMean": 0.1884
     },
     "chatgpt": {
-      "finishedCount": 5,
-      "exactScoreRate": 0.2,
-      "outcomeRate": 0.4,
-      "brierMean": 0.689,
-      "rpsMean": 0.199
+      "finishedCount": 7,
+      "exactScoreRate": 0.2857,
+      "outcomeRate": 0.5714,
+      "brierMean": 0.6621,
+      "rpsMean": 0.1925
     },
     "weights": {
-      "claude": 0.5029,
-      "chatgpt": 0.4971
+      "claude": 0.5043,
+      "chatgpt": 0.4957
     }
   },
   "entries": [
@@ -203,7 +203,16 @@
         "home": 1.03,
         "away": 1.5
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": true,
+        "outcomeHit": true,
+        "brier": 0.7022,
+        "rps": 0.1173
+      }
     },
     {
       "matchId": "wc2026-haiti-scotland-2026-06-13",
@@ -225,7 +234,16 @@
         "home": 1.38,
         "away": 1.28
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 0,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.5115,
+        "rps": 0.2234
+      }
     },
     {
       "matchId": "wc2026-australia-turkey-2026-06-13",
@@ -260,11 +278,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.7826,
-        "draw": 0.1474,
-        "away": 0.07
+        "home": 0.7819,
+        "draw": 0.1272,
+        "away": 0.0909
       },
-      "confidence": 0.7765,
+      "confidence": 0.7569,
       "expectedGoals": {
         "home": 1.93,
         "away": 1.27
@@ -282,11 +300,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.4305,
-        "draw": 0.3108,
-        "away": 0.2587
+        "home": 0.4308,
+        "draw": 0.3148,
+        "away": 0.2544
       },
-      "confidence": 0.6451,
+      "confidence": 0.6473,
       "expectedGoals": {
         "home": 1.65,
         "away": 1.13
@@ -304,11 +322,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.3708,
-        "draw": 0.3333,
-        "away": 0.2958
+        "home": 0.3966,
+        "draw": 0.3234,
+        "away": 0.28
       },
-      "confidence": 0.59,
+      "confidence": 0.6019,
       "expectedGoals": {
         "home": 1.31,
         "away": 0.76
@@ -323,14 +341,14 @@
       "awayTeamId": "TUN",
       "predictedScore": {
         "home": 1,
-        "away": 1
+        "away": 2
       },
       "probabilities": {
-        "home": 0.3159,
-        "draw": 0.3113,
-        "away": 0.3728
+        "home": 0.3088,
+        "draw": 0.2588,
+        "away": 0.4324
       },
-      "confidence": 0.5937,
+      "confidence": 0.5673,
       "expectedGoals": {
         "home": 1.23,
         "away": 1.71
@@ -348,9 +366,9 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.82,
-        "draw": 0.1155,
-        "away": 0.0645
+        "home": 0.8249,
+        "draw": 0.1151,
+        "away": 0.06
       },
       "confidence": 0.8223,
       "expectedGoals": {
