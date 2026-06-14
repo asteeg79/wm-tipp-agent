@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-14T21:36:39.813Z",
+  "lastUpdated": "2026-06-14T23:36:31.173Z",
   "aggregate": {
-    "finishedCount": 9,
-    "exactScoreRate": 0.1111,
-    "outcomeRate": 0.5556,
-    "brierMean": 0.6342,
-    "rpsMean": 0.2017
+    "finishedCount": 10,
+    "exactScoreRate": 0.1,
+    "outcomeRate": 0.5,
+    "brierMean": 0.642,
+    "rpsMean": 0.1938
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 9,
-      "exactScoreRate": 0.1111,
-      "outcomeRate": 0.4444,
-      "brierMean": 0.6444,
-      "rpsMean": 0.2017
+      "finishedCount": 10,
+      "exactScoreRate": 0.1,
+      "outcomeRate": 0.4,
+      "brierMean": 0.6617,
+      "rpsMean": 0.1958
     },
     "chatgpt": {
-      "finishedCount": 9,
-      "exactScoreRate": 0.2222,
-      "outcomeRate": 0.5556,
-      "brierMean": 0.6326,
-      "rpsMean": 0.2044
+      "finishedCount": 10,
+      "exactScoreRate": 0.2,
+      "outcomeRate": 0.6,
+      "brierMean": 0.6339,
+      "rpsMean": 0.1951
     },
     "weights": {
-      "claude": 0.5026,
-      "chatgpt": 0.4974
+      "claude": 0.4993,
+      "chatgpt": 0.5007
     }
   },
   "entries": [
@@ -327,7 +327,16 @@
         "home": 1.65,
         "away": 1.13
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 2,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.7129,
+        "rps": 0.1234
+      }
     },
     {
       "matchId": "wc2026-ivory-coast-ecuador-2026-06-14",
