@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-14T09:55:07.826Z",
+    "generatedAt": "2026-06-14T10:04:29.798Z",
     "home": {
       "teamId": "KSA",
       "elo": 1572,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-13T06:03:50.636Z",
+    "generatedAt": "2026-06-14T10:04:29.798Z",
     "predictedScore": {
       "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1627,
-      "draw": 0.2584,
-      "away": 0.5789
+      "home": 0.146,
+      "draw": 0.2303,
+      "away": 0.6237
     },
-    "confidence": 0.7228,
+    "confidence": 0.6697,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,19 +84,18 @@
           "draw": 0.27,
           "away": 0.55
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Uruguay mit klar höherem Elo (1677 vs 1572) und besserer gewichteter sowie aktueller Form (1.397/1.6 vs 1.259/1.2)",
-          "Defensivstärke Uruguays: niedrigerer Gegentorschnitt (0.832) und höhere Clean-Sheet-Rate (0.517) gegenüber Saudi-Arabien (1.315 / 0.471)",
-          "Externe Prognose stützt klare Favoritenrolle Uruguays (0.669) und liegt sogar über der Baseline",
-          "Beide Teams torarm in der Offensive (xG niedrig), daher knappes, defensiv geprägtes Spiel zu erwarten",
-          "Neutraler Spielort ohne Heimvorteil für Saudi-Arabien"
+          "Uruguay höhere Elo (1677 vs 1572) und bessere gewichtete sowie aktuelle Form (1.397/1.6 vs 1.259/1.2)",
+          "Uruguay defensiv stärker: niedrigerer Gegentorschnitt (0.832 vs 1.315) und höhere Clean-Sheet-Rate (0.517 vs 0.471)",
+          "Neutraler Spielort ohne Heimvorteil für Saudi-Arabien",
+          "Baseline und externe Prognose sehen beide klar Uruguay vorn"
         ],
         "risks": [
-          "Lange Pause beider Teams (74 Tage) kann Rhythmusverlust und unvorhersehbare Frühphase bedeuten",
-          "Kein H2H-Datensatz vorhanden, daher erhöhte Unsicherheit",
-          "Mögliche Kader-/Personalfragen bei Uruguay (Trainerwechsel-Spekulationen, Suarez-Comeback-Thema) könnten Stabilität beeinflussen",
-          "Geringe Toranzahl erwartet – ein einziges Standardtor oder Konter kann das Ergebnis kippen, auch Richtung Remis"
+          "Beide Teams torschwach (geringe goalsForAvg), Spiel könnte knapp/0:0 enden",
+          "Lange Pause (75 Tage) für beide könnte Form unberechenbar machen",
+          "Kein H2H-Datenmaterial vorhanden",
+          "Kaderumbruch Uruguay (ohne Suárez, möglicher Trainerwechsel nach WM) könnte Leistung beeinflussen"
         ]
       },
       "chatgpt": {
@@ -105,26 +104,30 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.15,
-          "draw": 0.25,
-          "away": 0.6
+          "home": 0.12,
+          "draw": 0.2,
+          "away": 0.68
         },
-        "confidence": 0.85,
+        "confidence": 0.8,
         "keyFactors": [
-          "Uruguay hat einen höheren Elo-Wert und stärkere recentForm als Saudi-Arabien.",
-          "Übereinstimmende externe Prognosen, die Uruguay als Favoriten sehen.",
-          "Uruguays durchschnittliche Gegentore pro Spiel sind geringer als die von Saudi-Arabien.",
-          "Neutrale Spielfläche ohne Vorteil für Saudi-Arabien."
+          "Uruguay hat eine höhere Elo-Bewertung (1677) als Saudi Arabien (1572), was auf eine stärkere Mannschaft hindeutet.",
+          "Uruguays jüngste Form ist besser (1.6) im Vergleich zu Saudi Arabien (1.2).",
+          "Uruguay hat eine bessere Defensivleistung mit niedrigeren Gegentoren im Durchschnitt (0.832 vs. 1.315 von Saudi Arabien).",
+          "Uruguay spielt in Bestform, trotz des Fehlens von Suárez, hat aber einen starken Kader mit jungen Talenten wie Zalazar."
         ],
         "risks": [
-          "Uruguay könnte durch interne Turbulenzen beeinflusst werden, da ein Trainerwechsel nach der WM möglich ist.",
-          "Fehlen eines Head-to-Head-Vergleichs, was zu Unsicherheiten bei der Performance-Prognose beider Teams führen könnte."
+          "Wenn auch nicht wahrscheinlich, könnte das Spiel an einem neutralen Ort Überraschungen liefern.",
+          "Demotivierende Nachrichten; Trainerlegende von Uruguay könnte nach der WM zurücktreten, was die Teamleistung beeinflussen könnte."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay mit klar höherem Elo (1677 vs 1572) und besserer gewichteter sowie aktueller Form (1.397/1.6 vs 1.259/1.2); Defensivstärke Uruguays: niedrigerer Gegentorschnitt (0.832) und höhere Clean-Sheet-Rate (0.517) gegenüber Saudi-Arabien (1.315 / 0.471); Externe Prognose stützt klare Favoritenrolle Uruguays (0.669) und liegt sogar über der Baseline.",
-    "inputHash": "sha256:f1478d716755e0b10515134404bbca1c9b67754cc19fdb9ff236c6d4780c8ed9"
+    "agreement": 0.9133,
+    "ensembleWeights": {
+      "claude": 0.5043,
+      "chatgpt": 0.4957
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay höhere Elo (1677 vs 1572) und bessere gewichtete sowie aktuelle Form (1.397/1.6 vs 1.259/1.2); Uruguay defensiv stärker: niedrigerer Gegentorschnitt (0.832 vs 1.315) und höhere Clean-Sheet-Rate (0.517 vs 0.471); Neutraler Spielort ohne Heimvorteil für Saudi-Arabien.",
+    "inputHash": "sha256:aac7f364c34ae21c37dbcb932d0c4eb52ce78c82e0b7733e280dc3b4a62a34b1"
   },
   "predictionHistory": [
     {
@@ -425,11 +428,24 @@
         "away": 0.5333
       },
       "confidence": 0.6683
+    },
+    {
+      "generatedAt": "2026-06-13T06:03:50.636Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1627,
+        "draw": 0.2584,
+        "away": 0.5789
+      },
+      "confidence": 0.7228
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-14T09:56:39.540Z",
+    "updatedAt": "2026-06-14T10:04:31.552Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.117,
