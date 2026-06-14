@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-14T12:14:03.546Z",
+  "lastUpdated": "2026-06-14T13:03:31.286Z",
   "aggregate": {
-    "finishedCount": 7,
-    "exactScoreRate": 0.1429,
-    "outcomeRate": 0.5714,
-    "brierMean": 0.6627,
-    "rpsMean": 0.1887
+    "finishedCount": 8,
+    "exactScoreRate": 0.125,
+    "outcomeRate": 0.5,
+    "brierMean": 0.7011,
+    "rpsMean": 0.2222
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 7,
-      "exactScoreRate": 0.1429,
-      "outcomeRate": 0.4286,
-      "brierMean": 0.674,
-      "rpsMean": 0.1884
+      "finishedCount": 8,
+      "exactScoreRate": 0.125,
+      "outcomeRate": 0.375,
+      "brierMean": 0.712,
+      "rpsMean": 0.2221
     },
     "chatgpt": {
-      "finishedCount": 7,
-      "exactScoreRate": 0.2857,
-      "outcomeRate": 0.5714,
-      "brierMean": 0.6621,
-      "rpsMean": 0.1925
+      "finishedCount": 8,
+      "exactScoreRate": 0.25,
+      "outcomeRate": 0.5,
+      "brierMean": 0.6999,
+      "rpsMean": 0.2254
     },
     "weights": {
-      "claude": 0.5043,
-      "chatgpt": 0.4957
+      "claude": 0.503,
+      "chatgpt": 0.497
     }
   },
   "entries": [
@@ -265,7 +265,16 @@
         "home": 1.03,
         "away": 1.68
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 2,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.9699,
+        "rps": 0.4564
+      }
     },
     {
       "matchId": "wc2026-germany-cura-ao-2026-06-14",
@@ -278,11 +287,11 @@
         "away": 0
       },
       "probabilities": {
-        "home": 0.82,
-        "draw": 0.1218,
-        "away": 0.0582
+        "home": 0.8637,
+        "draw": 0.0836,
+        "away": 0.0527
       },
-      "confidence": 0.7647,
+      "confidence": 0.7981,
       "expectedGoals": {
         "home": 1.93,
         "away": 1.27
@@ -432,11 +441,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.4954,
+        "home": 0.5,
         "draw": 0.25,
-        "away": 0.2546
+        "away": 0.25
       },
-      "confidence": 0.6478,
+      "confidence": 0.675,
       "expectedGoals": {
         "home": 1.83,
         "away": 1.53
