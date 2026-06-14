@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-14T18:03:33.383Z",
+    "generatedAt": "2026-06-14T19:03:39.700Z",
     "home": {
       "teamId": "CIV",
       "elo": 1753,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-14T11:03:39.484Z",
+    "generatedAt": "2026-06-14T19:03:39.700Z",
     "predictedScore": {
       "home": 1,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.4677,
-      "draw": 0.304,
-      "away": 0.2283
+      "home": 0.377,
+      "draw": 0.332,
+      "away": 0.291
     },
-    "confidence": 0.6083,
+    "confidence": 0.6027,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,53 +80,53 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.42,
+          "home": 0.41,
           "draw": 0.31,
-          "away": 0.27
+          "away": 0.28
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Ivory Coast zeigt klar bessere gewichtete Form (2.27 vs 1.48) und höhere Offensivproduktion (2.07 Tore/Spiel)",
-          "Beide Teams defensiv stabil mit niedrigen Gegentorwerten (CIV 0.56, ECU 0.53) und hohen Clean-Sheet-Raten",
-          "Sehr enge Elo-Werte (1753 vs 1747) sprechen für ausgeglichene Partie",
-          "Neutraler Spielort eliminiert Heimvorteil",
-          "Externes Forecast favorisiert Ecuador deutlich, was die optimistische Baseline relativiert"
+          "Ivory Coast zeigt deutlich stärkere gewichtete Form (2.27 vs 1.48) und höhere Offensivproduktion (2.07 vs 0.90 Tore/Spiel)",
+          "Beide Teams mit nahezu identischem Elo (1753 vs 1747) und solider Defensive (Gegentore ~0.53)",
+          "Neutraler Spielort eliminiert Heimvorteil, was die Baseline zugunsten der Elfenbeinküste relativiert",
+          "Ecuador defensiv stabil (CleanSheet-Rate 0.52), aber offensiv harmlos"
         ],
         "risks": [
-          "Kein Head-to-Head verfügbar – begrenzte Vergleichsdaten",
-          "Starke Divergenz zwischen Elo-Baseline (Heimfavorit) und externem Forecast (Auswärtsfavorit)",
-          "Lange Pause (75 Tage) bei beiden Teams kann Form und Rhythmus beeinflussen",
-          "Ecuadors niedrige Torausbeute könnte ein torarmes Spiel begünstigen"
+          "Externe Prognose sieht Ecuador klar vorne (0.37 vs 0.30) – starke Divergenz zur Elo-Baseline",
+          "Keine direkte H2H-Historie verfügbar, erhöht Unsicherheit",
+          "Lange Pause (75 Tage) bei beiden Teams kann Rhythmus beeinträchtigen",
+          "Kaderzusammensetzung/News kaum belastbar, keine konkreten Ausfälle bekannt"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.3,
-          "away": 0.2
+          "home": 0.35,
+          "draw": 0.35,
+          "away": 0.3
         },
-        "confidence": 0.75,
+        "confidence": 0.68,
         "keyFactors": [
-          "Ivory Coast hat eine bessere gewichtete Form und ein höheres Torverhältnis.",
-          "Beide Teams hatten keine direkten Begegnungen, was die Einschätzung neutral hält.",
-          "Das Spiel findet auf neutralem Boden statt, daher keine Heimvorteile."
+          "Ivory Coast hat eine stärkere Form und höhere durchschnittliche Tore pro Spiel.",
+          "Ecuador hat einen ähnlichen Elo-Wert, was auf ein ausgeglichenes Match hinweist.",
+          "Kein Head-to-Head macht den direkten Vergleich schwerer.",
+          "Das Spiel wird auf neutralem Boden gespielt, keine Stimmungsvorteile."
         ],
         "risks": [
-          "Beide Teams haben lange nicht gespielt, was unvorhergesehene Formänderungen bedeuten kann.",
-          "Ecuador hat einen ähnlichen Elo-Wert und könnte mit strategischen Anpassungen das Ergebnis beeinflussen."
+          "Beide Teams haben eine ähnliche defensive Stabilität, was die Wahrscheinlichkeit geringer Punkte erhöhen könnte.",
+          "Beide Mannschaften sind seit mehr als 70 Tagen ohne Spielpraxis."
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.96,
     "ensembleWeights": {
-      "claude": 0.5043,
-      "chatgpt": 0.4957
+      "claude": 0.503,
+      "chatgpt": 0.497
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ivory Coast zeigt klar bessere gewichtete Form (2.27 vs 1.48) und höhere Offensivproduktion (2.07 Tore/Spiel); Beide Teams defensiv stabil mit niedrigen Gegentorwerten (CIV 0.56, ECU 0.53) und hohen Clean-Sheet-Raten; Sehr enge Elo-Werte (1753 vs 1747) sprechen für ausgeglichene Partie.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ivory Coast zeigt deutlich stärkere gewichtete Form (2.27 vs 1.48) und höhere Offensivproduktion (2.07 vs 0.90 Tore/Spiel); Beide Teams mit nahezu identischem Elo (1753 vs 1747) und solider Defensive (Gegentore ~0.53); Neutraler Spielort eliminiert Heimvorteil, was die Baseline zugunsten der Elfenbeinküste relativiert.",
     "inputHash": "sha256:6e7310fc3cf6590f99d5a91bd4d1f658f179d4af1c432ce2b5f61629d17c63fd"
   },
   "predictionHistory": [
@@ -610,11 +610,24 @@
         "away": 0.28
       },
       "confidence": 0.6019
+    },
+    {
+      "generatedAt": "2026-06-14T11:03:39.484Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.4677,
+        "draw": 0.304,
+        "away": 0.2283
+      },
+      "confidence": 0.6083
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-14T18:03:33.840Z",
+    "updatedAt": "2026-06-14T19:05:20.123Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2967,

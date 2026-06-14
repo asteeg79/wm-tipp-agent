@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-14T18:03:33.383Z",
+    "generatedAt": "2026-06-14T19:03:39.700Z",
     "home": {
       "teamId": "BEL",
       "elo": 1744,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-14T07:04:18.495Z",
+    "generatedAt": "2026-06-14T19:03:39.700Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5278,
-      "draw": 0.2467,
-      "away": 0.2255
+      "home": 0.5336,
+      "draw": 0.24,
+      "away": 0.2264
     },
-    "confidence": 0.6083,
+    "confidence": 0.666,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.23,
-          "away": 0.27
+          "home": 0.51,
+          "draw": 0.24,
+          "away": 0.25
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Belgien in starker Offensivform (5:0 gegen Tunesien, goalsForAvg 2.91) und Lukaku zurück nach Verletzung",
-          "Ägypten mit sehr stabiler Defensive (cleanSheetRate 0.571, nur 0.41 Gegentore/Spiel) und leicht höherem Elo (1770 vs 1744)",
-          "Externe Prognose sieht Belgien klar vorn (0.59), Baseline ebenfalls Heimvorteil trotz neutralem Spielort",
-          "Beide Teams gleiche Pause (75 Tage), keine H2H-Historie"
+          "Belgiens hohe Offensivproduktion (goalsForAvg 2.91) und starke Form (Fünf-Tore-Gala gegen Tunesien)",
+          "Lukakus Comeback stärkt Belgiens Angriff",
+          "Ägypten mit exzellenter Defensive (goalsAgainstAvg 0.41, cleanSheetRate 0.57) und leicht höherem Elo (1770)",
+          "Externe Prognose favorisiert Belgien deutlicher (0.59) als Baseline",
+          "Salah einsatzbereit erhöht Ägyptens Torgefahr"
         ],
         "risks": [
-          "Ägyptens kompakte Abwehr könnte Belgiens Tore deutlich limitieren und ein Remis/Low-Score-Ergebnis begünstigen",
-          "Lukakus Fitness nach langer Pause ungewiss",
-          "Neutraler Spielort nimmt Belgien echten Heimvorteil",
-          "Fehlende direkte Vergleichsdaten erhöhen Unsicherheit"
+          "Ägyptens kompakte Defensive könnte Belgiens xG drücken und ein engeres Ergebnis erzwingen",
+          "Kein H2H-Verlauf, daher höhere Unsicherheit",
+          "Neutraler Spielort nimmt Belgien jeglichen Heimvorteil",
+          "Lange Pause (75 Tage) für beide Teams kann Rhythmus beeinträchtigen"
         ]
       },
       "chatgpt": {
@@ -105,27 +106,27 @@
         },
         "probabilities": {
           "home": 0.55,
-          "draw": 0.26,
-          "away": 0.19
+          "draw": 0.24,
+          "away": 0.21
         },
-        "confidence": 0.7,
+        "confidence": 0.8,
         "keyFactors": [
-          "Belgium's recent morale boost with a high-scoring win against Tunisia.",
-          "Return of Lukaku from a long injury, boosting Belgium's attacking options.",
-          "Egypt's strong defensive record with a high clean sheet rate."
+          "Belgium's recent form is strong, highlighted by a high number of goals scored in recent matches.",
+          "Lukaku's return and scoring form boost Belgium's attacking prospects.",
+          "Egypt's solid defense is counterbalanced by their generally lower attacking output."
         ],
         "risks": [
-          "Neutral venue reduces potential advantages for Belgium.",
-          "Egypt's slightly higher Elo rating compared to Belgium."
+          "Both teams have not faced each other before, introducing uncertainty.",
+          "Neutral venue conditions might negate some home advantage."
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.9733,
     "ensembleWeights": {
-      "claude": 0.5043,
-      "chatgpt": 0.4957
+      "claude": 0.503,
+      "chatgpt": 0.497
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien in starker Offensivform (5:0 gegen Tunesien, goalsForAvg 2.91) und Lukaku zurück nach Verletzung; Ägypten mit sehr stabiler Defensive (cleanSheetRate 0.571, nur 0.41 Gegentore/Spiel) und leicht höherem Elo (1770 vs 1744); Externe Prognose sieht Belgien klar vorn (0.59), Baseline ebenfalls Heimvorteil trotz neutralem Spielort.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgiens hohe Offensivproduktion (goalsForAvg 2.91) und starke Form (Fünf-Tore-Gala gegen Tunesien); Lukakus Comeback stärkt Belgiens Angriff; Ägypten mit exzellenter Defensive (goalsAgainstAvg 0.41, cleanSheetRate 0.57) und leicht höherem Elo (1770).",
     "inputHash": "sha256:cbf58b317e31b7bad6af567b24ab808b31a51e25c8d0cb12d0327e57896c59f0"
   },
   "predictionHistory": [
@@ -492,11 +493,24 @@
         "away": 0.2444
       },
       "confidence": 0.6777
+    },
+    {
+      "generatedAt": "2026-06-14T07:04:18.495Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5278,
+        "draw": 0.2467,
+        "away": 0.2255
+      },
+      "confidence": 0.6083
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-14T18:03:33.840Z",
+    "updatedAt": "2026-06-14T19:05:20.123Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5928,
