@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-14T15:57:17.511Z",
+    "generatedAt": "2026-06-14T16:03:31.487Z",
     "home": {
       "teamId": "GER",
       "elo": 1822,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-14T14:03:36.816Z",
+    "generatedAt": "2026-06-14T16:03:31.487Z",
     "predictedScore": {
       "home": 3,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7955,
-      "draw": 0.1134,
-      "away": 0.0911
+      "home": 0.7455,
+      "draw": 0.1545,
+      "away": 0.1
     },
-    "confidence": 0.7574,
+    "confidence": 0.7724,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,27 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 3,
-          "away": 1
+          "home": 2,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.79,
-          "draw": 0.13,
-          "away": 0.08
+          "home": 0.74,
+          "draw": 0.16,
+          "away": 0.1
         },
-        "confidence": 0.68,
+        "confidence": 0.7,
         "keyFactors": [
           "Deutliche Elo-Differenz (1822 vs. 1637) zugunsten Deutschlands",
-          "Starke Offensivform Deutschlands (2,57 Tore/Spiel, gewichtete Form 2,37)",
-          "Externe Prognose sieht Deutschland als sehr klaren Favoriten (0,927)",
-          "Curaçao seit 208 Tagen ohne Spiel – mögliche Wettkampfträgheit"
+          "Starke Heim-/Gesamtform Deutschlands (weightedForm 2.37, 2.57 Tore/Spiel)",
+          "Externe Prognose sieht Deutschland klar vorne (0.927), korrigiert die zu vorsichtige Baseline nach oben",
+          "Curaçao mit sehr langer Pause (208 Tage ohne Spiel) - mögliche Rhythmusdefizite",
+          "Qualitatives und individuelles Niveau klar auf deutscher Seite"
         ],
         "risks": [
-          "Curaçao defensiv stabil (0,62 Gegentore/Spiel, 55% Clean Sheets) – könnte das Ergebnis eng halten",
-          "Keine H2H-Daten verfügbar, Curaçao schwer einzuschätzen",
-          "Lange Spielpause beider Teams (76 bzw. 208 Tage) erhöht Unsicherheit",
-          "Neutraler Spielort ohne Heimvorteil für Deutschland"
+          "Curaçao zeigt defensiv gute Werte (cleanSheetRate 0.55, nur 0.62 Gegentore) - könnte kompakt stehen",
+          "Kein H2H-Vergleich vorhanden, Unsicherheit über tatsächliche Stärke Curaçaos",
+          "Lange Pause Deutschlands (76 Tage) könnte Spielfluss zu Beginn beeinträchtigen",
+          "Frühes Auftaktspiel - Nervosität und Tagesform schwer kalkulierbar"
         ]
       },
       "chatgpt": {
@@ -104,29 +105,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.8,
-          "draw": 0.1,
+          "home": 0.75,
+          "draw": 0.15,
           "away": 0.1
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Germany's significantly higher Elo rating and goal-scoring potential.",
-          "Germany's recent form being reasonable despite some criticism.",
-          "Curaçao's long period without matches possibly affecting match readiness."
+          "Germany's significantly higher Elo score and historical team strength",
+          "Substantial difference in recent match fitness; Germany's shorter hiatus",
+          "Curacao's solid clean sheet rate despite playing against ostensibly weaker opponents"
         ],
         "risks": [
-          "Germany's recent public criticism may influence team morale.",
-          "Curaçao's strong defense indicated by clean sheet rate of 0.55 could pose challenges.",
-          "Neutral venue reducing Germany's typical home advantage."
+          "Neutral venue eliminates home advantage for Germany",
+          "Both teams have not played against each other previously"
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9933,
     "ensembleWeights": {
       "claude": 0.503,
       "chatgpt": 0.497
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliche Elo-Differenz (1822 vs. 1637) zugunsten Deutschlands; Starke Offensivform Deutschlands (2,57 Tore/Spiel, gewichtete Form 2,37); Externe Prognose sieht Deutschland als sehr klaren Favoriten (0,927).",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliche Elo-Differenz (1822 vs. 1637) zugunsten Deutschlands; Starke Heim-/Gesamtform Deutschlands (weightedForm 2.37, 2.57 Tore/Spiel); Externe Prognose sieht Deutschland klar vorne (0.927), korrigiert die zu vorsichtige Baseline nach oben.",
     "inputHash": "sha256:1db4253f50543a211cc076540773b73c13de94e213bffb6c09e970e82b7ca48a"
   },
   "predictionHistory": [
@@ -766,11 +766,24 @@
         "away": 0.0527
       },
       "confidence": 0.7981
+    },
+    {
+      "generatedAt": "2026-06-14T14:03:36.816Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7955,
+        "draw": 0.1134,
+        "away": 0.0911
+      },
+      "confidence": 0.7574
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-14T15:59:00.353Z",
+    "updatedAt": "2026-06-14T16:03:31.838Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.927,
