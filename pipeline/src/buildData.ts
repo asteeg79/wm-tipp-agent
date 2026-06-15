@@ -447,7 +447,12 @@ async function writeMatches(
       (ctx.odds.has(oddsKey(awayName, homeName))
         ? swapMarket(ctx.odds.get(oddsKey(awayName, homeName))!)
         : undefined);
+    // Markt persistieren: liegen aktuelle Quoten vor, diese nehmen; sonst den
+    // zuletzt bekannten Snapshot behalten. The Odds API liefert nach Anpfiff
+    // keine Quoten mehr — ohne diesen Fallback ginge der Markt für beendete
+    // Spiele verloren (und damit die "wir vs. Markt"-Auswertung).
     if (market) match.market = market;
+    else if (prev?.market) match.market = prev.market;
 
     const homeResults = resultsByTeam.get(fx.homeTeamId);
     const awayResults = resultsByTeam.get(fx.awayTeamId);
@@ -624,6 +629,10 @@ async function writePredictionsIndex(
         if (pred.baseline?.expectedGoals) {
           entry.expectedGoals = pred.baseline.expectedGoals;
         }
+      }
+      // Markt-Snapshot für den "wir vs. Markt"-Vergleich in der Bilanz.
+      if (m.market?.probabilities) {
+        entry.marketProbabilities = m.market.probabilities;
       }
       // Accuracy nur für beendete Partien mit Tipp.
       if (m.actualResult && pred) {

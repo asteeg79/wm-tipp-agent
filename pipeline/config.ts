@@ -91,6 +91,13 @@ export interface PipelineConfig {
     accuracyWeighted: boolean;
     /** Mindestanzahl bewerteter Partien PRO Modell, bevor gewichtet wird. */
     accuracyMinSample: number;
+    /**
+     * Gewicht der Buchmacher-Quoten in der finalen Wahrscheinlichkeit, wenn
+     * Markt vorhanden: final = marketWeight·Markt + (1−marketWeight)·Ensemble.
+     * 0 = Markt ignorieren (nur KI), 1 = nur Markt. Der Markt ist der beste
+     * verfügbare Einzel-Schätzer → spürbares Gewicht sinnvoll.
+     */
+    marketWeight: number;
   };
   /** openfootball-Provider (gemeinfrei, kein Key). */
   openFootball: {
@@ -136,7 +143,11 @@ export const config: PipelineConfig = {
   homeFieldAdvantageElo: 65,
   elo: {
     initial: 1500,
-    k: 40,
+    // K von 40→20 gesenkt: bei ~2 Jahren Historie driftete das Rating mit
+    // K=40 + Tordifferenz-Faktor zu weit vom (guten) FIFA-Seed weg und blähte
+    // Teams auf, die viele schwache Gegner hoch schlugen (Konföderations-Bias,
+    // z. B. Tunesien > Schweden). K=20 lässt den Seed stärker tragen.
+    k: 20,
     goalDifferenceFactor: true,
   },
   poisson: {
@@ -189,6 +200,10 @@ export const config: PipelineConfig = {
     // Ab 5 bewerteten Partien je Modell ist der RPS-Mittelwert belastbar
     // genug; vorher bleibt die Mittelung neutral (50/50).
     accuracyMinSample: 5,
+    // Markt zur Hälfte einmischen, wenn Quoten vorliegen — der Markt war in
+    // der Rückschau der beste Einzel-Schätzer (wir lagen mehrfach gegen ihn
+    // daneben, z. B. Schweden–Tunesien).
+    marketWeight: 0.5,
   },
   openFootball: {
     worldCupBaseUrl:

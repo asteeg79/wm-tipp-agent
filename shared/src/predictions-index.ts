@@ -27,6 +27,8 @@ export const PredictionIndexEntry = z.object({
   confidence: z.number().min(0).max(1).optional(),
   /** Erwartete Tore (Baseline) — für die tor-basierte Gruppensimulation. */
   expectedGoals: ExpectedGoals.optional(),
+  /** Buchmacher-1X2 (Snapshot) — für den "wir vs. Markt"-Vergleich. */
+  marketProbabilities: Outcome1x2.optional(),
   actualResult: ScoreLine.nullable().default(null),
   accuracy: AccuracyEntry.optional(),
 });

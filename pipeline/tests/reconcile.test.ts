@@ -207,4 +207,45 @@ describe("reconcile", () => {
     expect(einig.agreement!).toBeGreaterThan(uneinig.agreement!);
     expect(uneinig.confidence).toBeLessThan(einig.confidence);
   });
+
+  it("Markt wird in die finale Wahrscheinlichkeit gemischt (50/50)", () => {
+    // Beide Modelle sehen klar Auswärts (0.2/0.2/0.6), Markt sieht klar Heim
+    // (0.6/0.2/0.2). Bei marketWeight 0.5 → final ~ ausgeglichen, Heim hoch.
+    const market = { home: 0.6, draw: 0.2, away: 0.2 };
+    const ohne = reconcile(
+      [
+        model("claude", 0, 2, 0.2, 0.2, 0.6, 0.6),
+        model("chatgpt", 0, 2, 0.2, 0.2, 0.6, 0.6),
+      ],
+      baseline,
+      new Date(),
+      "h",
+      null,
+    );
+    const mit = reconcile(
+      [
+        model("claude", 0, 2, 0.2, 0.2, 0.6, 0.6),
+        model("chatgpt", 0, 2, 0.2, 0.2, 0.6, 0.6),
+      ],
+      baseline,
+      new Date(),
+      "h",
+      null,
+      market,
+    );
+    // Ohne Markt: Auswärts klar vorn. Mit Markt: Heim deutlich angehoben.
+    expect(ohne.probabilities.away).toBeGreaterThan(ohne.probabilities.home);
+    expect(mit.probabilities.home).toBeGreaterThan(ohne.probabilities.home);
+    // 0.5·0.6 + 0.5·0.2 = 0.4 Heim erwartet.
+    expect(mit.probabilities.home).toBeCloseTo(0.4, 2);
+    expect(mit.rationale).toContain("Marktquoten");
+  });
+
+  it("Markt mischt auch in den Baseline-Fallback (kein KI-Modell)", () => {
+    const market = { home: 0.7, draw: 0.2, away: 0.1 };
+    const r = reconcile([], baseline, new Date(), "h", null, market);
+    // baseline.home=0.39, market.home=0.7 → 0.5·0.7+0.5·0.39 ≈ 0.545
+    expect(r.probabilities.home).toBeCloseTo(0.545, 2);
+    expect(r.predictedScore.home).toBeGreaterThan(r.predictedScore.away);
+  });
 });

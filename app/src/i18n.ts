@@ -150,6 +150,19 @@ const resources = {
           weightsPending:
             "Gewichtung neutral (50/50), bis genug Partien bewertet sind.",
         },
+        market: {
+          title: "Wir vs. Markt",
+          intro:
+            "Schlagen unsere Tipps die Buchmacher-Quoten? Verglichen über beendete Partien, für die Quoten vorlagen.",
+          sub: "{{n}} Partien mit Quoten",
+          us: "Wir",
+          market: "Markt",
+          hitRate: "1X2-Treffer",
+          rps: "RPS ∅",
+          beat: "Wir liegen vor dem Markt 🎯",
+          behind: "Der Markt liegt vorn",
+          tie: "Gleichauf mit dem Markt",
+        },
       },
       teams: {
         kicker: "48 Teams · zum Öffnen tippen",
@@ -393,6 +406,19 @@ const resources = {
           weights: "Current ensemble weighting",
           weightsPending:
             "Weighting stays neutral (50/50) until enough matches are rated.",
+        },
+        market: {
+          title: "Us vs. market",
+          intro:
+            "Do our tips beat the bookmaker odds? Compared over finished matches that had odds.",
+          sub: "{{n}} matches with odds",
+          us: "Us",
+          market: "Market",
+          hitRate: "1X2 hits",
+          rps: "RPS avg",
+          beat: "We're ahead of the market 🎯",
+          behind: "The market is ahead",
+          tie: "Level with the market",
         },
       },
       teams: {

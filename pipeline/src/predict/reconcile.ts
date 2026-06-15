@@ -55,12 +55,39 @@ function agreementOf(a: Outcome1x2, b: Outcome1x2): number {
 }
 
 /**
+ * Mischt Buchmacher-Wahrscheinlichkeiten in eine Verteilung ein (sofern Markt
+ * vorhanden und marketWeight > 0): final = mw·Markt + (1−mw)·probs, renormiert.
+ * Der Markt ist der beste verfügbare Einzel-Schätzer.
+ */
+function blendMarket(
+  probs: Outcome1x2,
+  market: Outcome1x2 | null | undefined,
+): Outcome1x2 {
+  const mw = config.ensemble.marketWeight;
+  if (!market || mw <= 0) return probs;
+  const m = normalizeProbs(market);
+  const mixed = {
+    home: mw * m.home + (1 - mw) * probs.home,
+    draw: mw * m.draw + (1 - mw) * probs.draw,
+    away: mw * m.away + (1 - mw) * probs.away,
+  };
+  const n = normalizeProbs(mixed);
+  return {
+    home: round(n.home, 4),
+    draw: round(n.draw, 4),
+    away: round(n.away, 4),
+  };
+}
+
+/**
  * Führt die Modellergebnisse zusammen. Mit beiden Modellen: Ensemble.
  * Mit nur einem Modell: dessen Ergebnis. Mit keinem: Baseline-Fallback.
+ * Liegen Buchmacher-Quoten vor, werden sie in die finale Verteilung gemischt.
  *
  * @param accWeights optionale Accuracy-Gewichte (computeModelWeights): das
  *        bisher treffsicherere Modell bekommt mehr Einfluss auf
  *        Wahrscheinlichkeiten und Score-Wahl.
+ * @param market optionale Buchmacher-1X2-Wahrscheinlichkeiten (de-vig).
  */
 export function reconcile(
   results: ModelResult[],
@@ -68,20 +95,23 @@ export function reconcile(
   now: Date,
   inputHash: string,
   accWeights?: EnsembleWeights | null,
+  market?: Outcome1x2 | null,
 ): Prediction {
   const models: { claude?: ModelPrediction; chatgpt?: ModelPrediction } = {};
   for (const r of results) models[r.id] = toModelPrediction(r.prediction);
 
-  // Kein Modell verfügbar → Baseline unverändert übernehmen.
+  // Kein Modell verfügbar → Baseline (mit Markt gemischt, falls vorhanden).
   if (results.length === 0) {
+    const probs = blendMarket(baseline.probabilities, market);
     return {
       generatedAt: now.toISOString(),
-      predictedScore: scoreFromProbs(baseline.probabilities, baseline),
-      probabilities: baseline.probabilities,
-      confidence: confidenceFromProbs(baseline.probabilities),
+      predictedScore: scoreFromProbs(probs, baseline),
+      probabilities: probs,
+      confidence: confidenceFromProbs(probs),
       baseline,
-      rationale:
-        "Kein KI-Modell verfügbar — deterministische Baseline (Elo+Poisson).",
+      rationale: market
+        ? "Kein KI-Modell verfügbar — Baseline (Elo+Poisson) mit Marktquoten gemischt."
+        : "Kein KI-Modell verfügbar — deterministische Baseline (Elo+Poisson).",
       inputHash,
     };
   }
@@ -101,11 +131,13 @@ export function reconcile(
     acc.away += w * p.away;
     wSum += w;
   }
-  const probabilities: Outcome1x2 = {
+  const ensembleProbs: Outcome1x2 = {
     home: round(acc.home / wSum, 4),
     draw: round(acc.draw / wSum, 4),
     away: round(acc.away / wSum, 4),
   };
+  // Markt einmischen (bester Einzel-Schätzer), falls Quoten vorliegen.
+  const probabilities = blendMarket(ensembleProbs, market);
 
   // Finaler Score (siehe deriveScore): Modell-Konsens vor knappem Top-Ausgang,
   // Magnitude aus der xG-Baseline statt hartkodiert.
@@ -141,7 +173,11 @@ export function reconcile(
     baseline,
     models,
     agreement: round(agreement, 4),
-    rationale: buildRationale(results, agreement, useAcc ? accWeights : null),
+    rationale:
+      buildRationale(results, agreement, useAcc ? accWeights : null) +
+      (market
+        ? ` Marktquoten zu ${Math.round(config.ensemble.marketWeight * 100)} % eingemischt.`
+        : ""),
     inputHash,
   };
   if (useAcc) prediction.ensembleWeights = accWeights!.weights;

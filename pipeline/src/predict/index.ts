@@ -87,6 +87,7 @@ class EnsembleImpl implements Ensemble {
       input.now,
       input.inputHash,
       input.modelWeights,
+      input.marketProbabilities ?? null,
     );
   }
 
@@ -148,6 +149,7 @@ class EnsembleImpl implements Ensemble {
         input.now,
         input.inputHash,
         input.modelWeights,
+        input.marketProbabilities ?? null,
       );
     });
   }

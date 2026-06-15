@@ -1,9 +1,121 @@
 import { useTranslation } from "react-i18next";
-import type { AccuracyAggregate, ModelComparison } from "@wm/shared";
+import {
+  outcomeOf,
+  type AccuracyAggregate,
+  type ModelComparison,
+  type Outcome1x2,
+  type PredictionIndexEntry,
+} from "@wm/shared";
 import { usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { formatDecimal, formatPercent } from "../lib/format.js";
 import { StatCard } from "../components/StatCard.js";
 import { TeamBadge } from "../components/TeamBadge.js";
+
+/** Ranked Probability Score (ordinal home<draw<away); niedriger = besser. */
+function rps(p: Outcome1x2, actual: "home" | "draw" | "away"): number {
+  const order = ["home", "draw", "away"] as const;
+  const o = {
+    home: actual === "home" ? 1 : 0,
+    draw: actual === "draw" ? 1 : 0,
+    away: actual === "away" ? 1 : 0,
+  };
+  let cp = 0,
+    co = 0,
+    s = 0;
+  for (let i = 0; i < order.length - 1; i++) {
+    const k = order[i]!;
+    cp += p[k];
+    co += o[k];
+    s += (cp - co) ** 2;
+  }
+  return s / (order.length - 1);
+}
+
+/** Wahrscheinlichster 1X2-Ausgang einer Verteilung. */
+function topOutcome(p: Outcome1x2): "home" | "draw" | "away" {
+  if (p.home >= p.draw && p.home >= p.away) return "home";
+  return p.draw >= p.away ? "draw" : "away";
+}
+
+/**
+ * „Wir vs. Markt": vergleicht unsere Tipps mit den Buchmacher-Quoten über die
+ * beendeten Partien, für die ein Markt-Snapshot vorliegt. Trefferquote
+ * (Verteilungs-Favorit) + mittlerer RPS, jeweils identisch berechnet → faire
+ * Gegenüberstellung. Rendert nichts, solange keine solchen Partien existieren.
+ */
+function MarketBenchmark({ entries }: { entries: PredictionIndexEntry[] }) {
+  const { t } = useTranslation();
+  const rows = entries.filter(
+    (e) => e.actualResult && e.marketProbabilities && e.probabilities,
+  );
+  if (rows.length === 0) return null;
+
+  let ourHit = 0,
+    mktHit = 0,
+    ourRps = 0,
+    mktRps = 0;
+  for (const e of rows) {
+    const ao = outcomeOf(e.actualResult!);
+    if (topOutcome(e.probabilities!) === ao) ourHit++;
+    if (topOutcome(e.marketProbabilities!) === ao) mktHit++;
+    ourRps += rps(e.probabilities!, ao);
+    mktRps += rps(e.marketProbabilities!, ao);
+  }
+  const n = rows.length;
+  const ourRpsM = ourRps / n;
+  const mktRpsM = mktRps / n;
+  // Urteil primär über den RPS (eigentlicher Prognose-Score).
+  const verdict =
+    Math.abs(ourRpsM - mktRpsM) < 0.002
+      ? t("accuracy.market.tie")
+      : ourRpsM < mktRpsM
+        ? t("accuracy.market.beat")
+        : t("accuracy.market.behind");
+
+  return (
+    <div className="rounded-xl border border-edge bg-surface/40 p-4">
+      <h3 className="font-semibold">{t("accuracy.market.title")}</h3>
+      <p className="mt-0.5 text-xs text-fg-muted">
+        {t("accuracy.market.intro")}
+      </p>
+      <p className="mt-0.5 text-xs text-fg-faint">
+        {t("accuracy.market.sub", { n })}
+      </p>
+      <div className="mt-3 grid grid-cols-[1fr_auto_auto] items-center gap-x-4 gap-y-2 text-sm">
+        <span />
+        <span className="text-right text-xs font-medium text-acc">
+          {t("accuracy.market.us")}
+        </span>
+        <span className="text-right text-xs font-medium text-fg-muted">
+          {t("accuracy.market.market")}
+        </span>
+
+        <span className="text-xs text-fg-muted">
+          {t("accuracy.market.hitRate")}
+        </span>
+        <span className="text-right font-mono font-semibold">
+          {formatPercent(ourHit / n)}
+        </span>
+        <span className="text-right font-mono text-fg-muted">
+          {formatPercent(mktHit / n)}
+        </span>
+
+        <span className="text-xs text-fg-muted">
+          {t("accuracy.market.rps")} ({t("accuracy.lower")})
+        </span>
+        <span className="text-right font-mono font-semibold">
+          {formatDecimal(ourRpsM)}
+        </span>
+        <span className="text-right font-mono text-fg-muted">
+          {formatDecimal(mktRpsM)}
+        </span>
+      </div>
+      <p className="mt-3 border-t border-edge pt-2 text-sm font-medium">
+        {verdict}
+      </p>
+    </div>
+  );
+}
 
 const MODEL_LABELS = { claude: "Claude", chatgpt: "ChatGPT" } as const;
 
@@ -195,6 +307,8 @@ export function AccuracyPage() {
           </div>
 
           <ModelComparisonSection cmp={data.modelComparison} />
+
+          <MarketBenchmark entries={data.entries} />
 
           <div>
             <h3 className="mb-2 font-semibold">{t("accuracy.recent")}</h3>

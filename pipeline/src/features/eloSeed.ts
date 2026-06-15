@@ -42,6 +42,7 @@ export const ELO_SEED: Record<string, number> = {
   SEN: 1645,
   JPN: 1640,
   DEN: 1630,
+  SWE: 1625, // fehlte zuvor → startete bei 1500 (zu tief; reales Niveau ~oberes Mittelfeld)
   IRN: 1625,
   KOR: 1620,
   ECU: 1610,

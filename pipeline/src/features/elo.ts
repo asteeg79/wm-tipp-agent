@@ -21,13 +21,18 @@ export interface EloGame {
   neutral: boolean;
 }
 
-/** Tordifferenz-Multiplikator G (World-Football-Elo). */
+/**
+ * Tordifferenz-Multiplikator G (World-Football-Elo), gedeckelt bei 1.75:
+ * Kantersiege gegen schwache Gegner sollen das Rating nicht überproportional
+ * aufblähen (trug zum Konföderations-Bias bei). 1.75 entspricht dem bisherigen
+ * Wert bei Tordifferenz 3.
+ */
 function goalMultiplier(goalDiff: number): number {
   if (!config.elo.goalDifferenceFactor) return 1;
   const d = Math.abs(goalDiff);
   if (d <= 1) return 1;
   if (d === 2) return 1.5;
-  return (11 + d) / 8;
+  return Math.min((11 + d) / 8, 1.75);
 }
 
 /** Erwartungswert für Team A gegen B. */
