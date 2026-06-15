@@ -288,8 +288,16 @@ export async function buildData(
     );
   }
 
-  // Buchmacher-Quoten (optional; nur mit ODDS_API_KEY, gecacht).
-  const odds = await loadOdds();
+  // Buchmacher-Quoten (optional; nur mit ODDS_API_KEY, gecacht). Stunden bis
+  // zum nächsten Anpfiff bestimmen die Cache-TTL: nahe am Anpfiff frischer.
+  const MS_H = 3_600_000;
+  const upcomingHours = schedule
+    .filter((fx) => !fx.finished && fx.dateTime)
+    .map((fx) => (new Date(fx.dateTime!).getTime() - now.getTime()) / MS_H)
+    .filter((h) => h >= 0);
+  const minHoursToKickoff =
+    upcomingHours.length > 0 ? Math.min(...upcomingHours) : null;
+  const odds = await loadOdds(minHoursToKickoff);
   if (odds.size > 0) {
     console.log(`[pipeline] Buchmacher-Quoten geladen: ${odds.size} Partien`);
   }

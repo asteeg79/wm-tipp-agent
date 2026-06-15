@@ -123,6 +123,13 @@ export interface PipelineConfig {
     regions: string;
     /** Cache-TTL in Stunden (begrenzt Credit-Verbrauch, Free-Tier 500/Monat). */
     ttlHours: number;
+    /**
+     * Liegt der nächste Anpfiff innerhalb dieser Stunden, gilt die kürzere
+     * `nearTtlHours` — Quoten bewegen sich kurz vor Anpfiff am stärksten.
+     */
+    nearKickoffHours: number;
+    /** Kürzere Cache-TTL (Std.) im Anpfiff-Fenster. */
+    nearTtlHours: number;
     /** Ab diesem Zeitpunkt (UTC) keine Quoten mehr abrufen (WM vorbei). */
     untilDate: string;
   };
@@ -219,8 +226,13 @@ export const config: PipelineConfig = {
   odds: {
     sport: "soccer_fifa_world_cup",
     regions: "eu",
-    // 8h → max 3 Abrufe/Tag. WM 2026 (11.06.–19.07.): ~138 Credits gesamt.
+    // 8h Standard → max 3 Abrufe/Tag, wenn kein Spiel naht.
     ttlHours: 8,
+    // Im 6h-Fenster vor dem nächsten Anpfiff alle 1,5h frisch (Quoten bewegen
+    // sich dann am stärksten). Budget bleibt klein: ~4 Extra-Abrufe je
+    // Spieltag → WM-gesamt deutlich unter dem Free-Tier (500/Monat).
+    nearKickoffHours: 6,
+    nearTtlHours: 1.5,
     // Nach dem Finale (19.07.2026) keine Abrufe mehr → keine "Leer"-Credits.
     untilDate: "2026-07-20T00:00:00Z",
   },

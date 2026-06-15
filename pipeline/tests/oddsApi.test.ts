@@ -3,9 +3,29 @@ import {
   oddsKey,
   swapMarket,
   deriveMarket,
+  effectiveOddsTtlHours,
   type OddsEvent,
 } from "../src/sources/oddsApi.js";
+import { config } from "../config.js";
 import type { MarketOdds } from "@wm/shared";
+
+/** Anpfiffabhängige Cache-TTL: nahe am Anpfiff kürzer, sonst Standard. */
+describe("effectiveOddsTtlHours", () => {
+  const { ttlHours, nearTtlHours, nearKickoffHours } = config.odds;
+  it("kein Spiel anstehend → Standard-TTL", () => {
+    expect(effectiveOddsTtlHours(null)).toBe(ttlHours);
+  });
+  it("nächster Anpfiff weit weg → Standard-TTL", () => {
+    expect(effectiveOddsTtlHours(nearKickoffHours + 1)).toBe(ttlHours);
+  });
+  it("nächster Anpfiff im Fenster → kurze TTL", () => {
+    expect(effectiveOddsTtlHours(nearKickoffHours - 0.5)).toBe(nearTtlHours);
+    expect(effectiveOddsTtlHours(0.5)).toBe(nearTtlHours);
+  });
+  it("negative Stunden (Anpfiff vorbei) → Standard-TTL", () => {
+    expect(effectiveOddsTtlHours(-3)).toBe(ttlHours);
+  });
+});
 
 /** Tests des Odds-Service: Namens-Normierung, De-vig-Mathematik, Heim/Auswärts-Tausch. */
 describe("oddsKey", () => {

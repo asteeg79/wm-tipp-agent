@@ -90,23 +90,42 @@ export function deriveMarket(ev: OddsEvent): MarketOdds | null {
 }
 
 /**
+ * Effektive Cache-TTL (Std.): nahe am nächsten Anpfiff (≤ nearKickoffHours)
+ * die kürzere nearTtlHours, sonst die Standard-ttlHours. Pure Funktion
+ * (für Unit-Tests exportiert).
+ */
+export function effectiveOddsTtlHours(
+  minHoursToKickoff: number | null,
+): number {
+  const { ttlHours, nearKickoffHours, nearTtlHours } = config.odds;
+  if (minHoursToKickoff === null || minHoursToKickoff < 0) return ttlHours;
+  return minHoursToKickoff <= nearKickoffHours ? nearTtlHours : ttlHours;
+}
+
+/**
  * Lädt die Buchmacher-Quoten je Partie, gekeyt über `oddsKey(home, away)`.
  * Gibt eine leere Map zurück, wenn kein Key gesetzt ist oder der Abruf scheitert.
+ *
+ * @param minHoursToKickoff Stunden bis zum nächsten Anpfiff (null = keins
+ *        anstehend). Steuert die Cache-TTL: nahe am Anpfiff frischere Quoten.
  */
-export async function loadOdds(): Promise<Map<string, MarketOdds>> {
+export async function loadOdds(
+  minHoursToKickoff: number | null = null,
+): Promise<Map<string, MarketOdds>> {
   const apiKey = process.env.ODDS_API_KEY;
   if (!apiKey) {
     console.log("[odds] kein ODDS_API_KEY → Buchmacher-Quoten übersprungen");
     return new Map();
   }
-  const { sport, regions, ttlHours, untilDate } = config.odds;
+  const { sport, regions, untilDate } = config.odds;
 
   // Nach dem WM-Finale keine Abrufe mehr (spart "Leer"-Credits).
   if (untilDate && Date.now() > new Date(untilDate).getTime()) {
     console.log(`[odds] nach ${untilDate} → WM beendet, keine Quoten-Abrufe`);
     return new Map();
   }
-  const ttlMs = ttlHours * 60 * 60 * 1000;
+  const ttlH = effectiveOddsTtlHours(minHoursToKickoff);
+  const ttlMs = ttlH * 60 * 60 * 1000;
   const cacheKey = `odds:${sport}:${regions}:h2h`;
 
   let events = await cacheGet<OddsEvent[]>(cacheKey, ttlMs);
@@ -131,7 +150,8 @@ export async function loadOdds(): Promise<Map<string, MarketOdds>> {
     }
     await cacheSet(cacheKey, events);
     console.log(
-      `[odds] ${events.length} Partien frisch von The Odds API (1 Credit verbraucht)`,
+      `[odds] ${events.length} Partien frisch von The Odds API ` +
+        `(1 Credit, TTL ${ttlH}h${ttlH < config.odds.ttlHours ? " — anpfiffnah" : ""})`,
     );
   } else {
     console.log(`[odds] ${events.length} Partien aus Cache (kein Credit)`);
