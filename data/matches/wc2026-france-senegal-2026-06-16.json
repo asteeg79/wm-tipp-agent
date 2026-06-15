@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-15T18:46:12.540Z",
+    "generatedAt": "2026-06-15T19:03:49.442Z",
     "home": {
       "teamId": "FRA",
       "elo": 1874,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-15T16:03:43.882Z",
+    "generatedAt": "2026-06-15T19:03:49.442Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5952,
-      "draw": 0.2303,
-      "away": 0.1745
+      "home": 0.61,
+      "draw": 0.2278,
+      "away": 0.1622
     },
-    "confidence": 0.6907,
+    "confidence": 0.6863,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,21 +81,22 @@
         },
         "probabilities": {
           "home": 0.52,
-          "draw": 0.24,
-          "away": 0.24
+          "draw": 0.23,
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Frankreich hat klaren Elo-Vorteil (1874 vs. 1768) und höhere Offensivpower (goalsForAvg 2.34)",
-          "Externe Prognose sieht Frankreich deutlich vorne (0.65), was die Elo+Poisson-Baseline nach oben korrigiert",
-          "Beide Teams in starker Form (weightedForm ~2.44), Senegal aber mit exzellenter Defensive (cleanSheetRate 0.647, nur 0.61 Gegentore/Spiel)",
-          "Neutraler Spielort ohne Heimvorteil, lange Pause für beide (~77 Tage) gleicht Belastung aus"
+          "Frankreich mit höherem Elo (1874 vs 1768) und stärkster Offensive (2.34 Tore/Spiel)",
+          "Beide Teams in exzellenter Form (weightedForm ~2.44), aber Frankreichs individuelle Klasse mit Mbappé gibt Ausschlag",
+          "Externe Prognose deutlich pro Frankreich (0.655), zieht Baseline nach oben",
+          "Senegals starke Defensive (0.61 Gegentore, 64.7% Clean Sheets) macht hohes Ergebnis unwahrscheinlich",
+          "Neutraler Spielort ohne Heimvorteil"
         ],
         "risks": [
-          "Senegals starke Defensive könnte ein knappes oder torarmes Spiel erzwingen",
-          "Keine H2H-Daten verfügbar, daher höhere Unsicherheit",
-          "Lange Spielpause kann Rhythmus beider Teams beeinträchtigen",
-          "Senegal mit individueller Qualität durchaus für eine Überraschung gut"
+          "Senegals defensive Stabilität könnte das Spiel eng halten – Remis möglich",
+          "Reise-/Vertragsstreit um Senegals Trainer könnte Teamharmonie stören (oder als Motivation wirken)",
+          "Lange Pause beider Teams (~77 Tage) erschwert Formeinschätzung",
+          "Kein H2H-Verlauf verfügbar erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -104,29 +105,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.6,
           "draw": 0.25,
-          "away": 0.2
+          "away": 0.15
         },
         "confidence": 0.8,
         "keyFactors": [
-          "Frankreich hat eine höhere Elo-Zahl und allgemein bessere individuelle Spielerqualität.",
-          "Frankreich hat eine hohe Tordurchschnittsrate bei den letzten Spielen.",
-          "Neutraler Spielort vermindert Heimvorteil, aber favorisiert stärkere Teams leicht.",
-          "Sowohl Frankreich als auch Senegal haben keine direkten H2H-Begegnungen, was den Einfluss von Überraschungsfaktoren reduziert."
+          "Frankreich hat einen stärkeren Elo-Wert als Senegal, was auf ihre höhere Qualität hindeutet.",
+          "Beide Teams haben in ihren letzten Spielen eine ähnliche Form gezeigt, jedoch hat Frankreich eine leicht höhere Torausbeute.",
+          "Frankreichs Trainer Deschamps beendet seine Trainertätigkeit nach der WM, was die Mannschaft zusätzlich motivieren könnte.",
+          "Der Skandal um den senegalesischen Trainer könnte die Vorbereitung und Atmosphäre im Team negativ beeinflussen."
         ],
         "risks": [
-          "Senegal hat ebenfalls eine starke jüngste Form mit zahlreichen Toren pro Spiel.",
-          "Frankreichs Trainerwechsel nach der WM könnte Unsicherheiten schaffen."
+          "Beide Teams haben starke offensive Fähigkeiten, was unvorhersehbare Spielausgänge zulässt.",
+          "Neutraler Spielort neutralisiert den Heimvorteil, was den Ausgang des Spiels unberechenbar macht.",
+          "Konkurrenzfähige Form von Senegal, die ähnliche Ergebnisse wie Frankreich in letzter Zeit erzielt hat."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.9333,
     "ensembleWeights": {
-      "claude": 0.5054,
-      "chatgpt": 0.4946
+      "claude": 0.5053,
+      "chatgpt": 0.4947
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich hat klaren Elo-Vorteil (1874 vs. 1768) und höhere Offensivpower (goalsForAvg 2.34); Externe Prognose sieht Frankreich deutlich vorne (0.65), was die Elo+Poisson-Baseline nach oben korrigiert; Beide Teams in starker Form (weightedForm ~2.44), Senegal aber mit exzellenter Defensive (cleanSheetRate 0.647, nur 0.61 Gegentore/Spiel). Marktquoten zu 50 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit höherem Elo (1874 vs 1768) und stärkster Offensive (2.34 Tore/Spiel); Beide Teams in exzellenter Form (weightedForm ~2.44), aber Frankreichs individuelle Klasse mit Mbappé gibt Ausschlag; Externe Prognose deutlich pro Frankreich (0.655), zieht Baseline nach oben. Marktquoten zu 50 % eingemischt.",
     "inputHash": "sha256:671a4d8e6b0a868eb1097b0cfa3a0374f3de7909ef625c4b26778ec0af6f3642"
   },
   "predictionHistory": [
@@ -311,11 +313,24 @@
         "away": 0.1852
       },
       "confidence": 0.666
+    },
+    {
+      "generatedAt": "2026-06-15T16:03:43.882Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5952,
+        "draw": 0.2303,
+        "away": 0.1745
+      },
+      "confidence": 0.6907
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-15T18:46:13.007Z",
+    "updatedAt": "2026-06-15T19:03:49.884Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6552,
