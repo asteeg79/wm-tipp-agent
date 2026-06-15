@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-15T15:03:43.448Z",
+    "generatedAt": "2026-06-15T16:03:43.882Z",
     "home": {
       "teamId": "AUT",
       "elo": 1693,
@@ -50,79 +50,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-15T16:03:43.882Z",
     "predictedScore": {
-      "home": 3,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7456,
-      "draw": 0.1544,
-      "away": 0.1
+      "home": 0.71,
+      "draw": 0.176,
+      "away": 0.1141
     },
-    "confidence": 0.7076,
+    "confidence": 0.7473,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.7717,
-        "draw": 0.1385,
-        "away": 0.0897
+        "home": 0.7307,
+        "draw": 0.157,
+        "away": 0.1122
       },
       "expectedGoals": {
-        "home": 2.78,
-        "away": 0.87
+        "home": 2.6,
+        "away": 0.93
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
-        },
-        "probabilities": {
-          "home": 0.74,
-          "draw": 0.16,
-          "away": 0.1
-        },
-        "confidence": 0.62,
-        "keyFactors": [
-          "Deutlicher Elo-Vorsprich Österreichs (1748 vs. 1529)",
-          "Starke gewichtete Form Österreichs (2.284) gegenüber Jordanien (1.07)",
-          "Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei nur 0.65 Gegentoren",
-          "Jordaniens defensive Anfälligkeit (1.54 Gegentore/Spiel)"
-        ],
-        "risks": [
-          "Mögliche verletzungsbedingte Ausfälle bei Österreich (Karl, weiterer Spieler) könnten Offensiv-/Stabilität schwächen",
-          "Neutraler Spielort ohne Heimvorteil",
-          "Keine H2H-Historie, hohe Unsicherheit über tatsächliches Kräfteverhältnis",
-          "Jordaniens überraschend gute Clean-Sheet-Rate (0.361) könnte zu engerem Spiel führen"
-        ]
-      },
-      "chatgpt": {
-        "predictedScore": {
           "home": 3,
           "away": 1
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.15,
-          "away": 0.1
+          "home": 0.73,
+          "draw": 0.16,
+          "away": 0.11
         },
-        "confidence": 0.8,
+        "confidence": 0.7,
         "keyFactors": [
-          "Austria's higher Elo rating and strong recent form",
-          "Neutral venue reduces home advantage but Austria still stronger",
-          "Injuries affecting Austria, but not significantly enough to alter dominance"
+          "Österreich deutlich höhere Elo (1693 vs 1544) und stärkere gewichtete Form (2.28 vs 1.07)",
+          "Hohe Offensivkraft Österreichs (2.56 Tore/Spiel) gegen anfällige jordanische Defensive (1.54 Gegentore/Spiel)",
+          "Rangnick bleibt als Trainer (Absage an AC Mailand) - Kontinuität auf der Bank",
+          "Jordanien als WM-Debütant ohne große individuelle Klasse im Kader"
         ],
         "risks": [
-          "Lack of head-to-head data introducing uncertainty",
-          "Potential underestimation of Jordan's performance under World Cup pressure"
+          "Lange Pause beider Teams (76 Tage) kann Rhythmus beeinträchtigen",
+          "Neutraler Spielort nimmt Österreich Heimvorteil",
+          "Jordanien defensiv solide (Clean-Sheet-Rate 0.36), könnte tief stehen und kontern",
+          "Keine H2H-Daten verfügbar - erhöhte Unsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.19,
+          "away": 0.13
+        },
+        "confidence": 0.82,
+        "keyFactors": [
+          "Österreich hat insgesamt bessere Form, höhere Elo-Wertung und bessere Durchschnittswerte sowohl im Angriff als auch in der Verteidigung.",
+          "Jordanien hat keine namhaften Stars im Kader, was ihre Offensivkraft verringern könnte.",
+          "Neutraler Spielort ohne Heimvorteil für eines der beiden Teams."
+        ],
+        "risks": [
+          "Österreichs relative Unerfahrenheit bei neutralem Spielort.",
+          "Mögliche Überraschungen durch Jordaniens Motivation als WM-Debütant."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprich Österreichs (1748 vs. 1529); Starke gewichtete Form Österreichs (2.284) gegenüber Jordanien (1.07); Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei nur 0.65 Gegentoren.",
-    "inputHash": "sha256:ef2f9f96eb729841052f75c2c830db8a1c0d9d04492b90e7107d48f47628abe2"
+    "agreement": 0.9667,
+    "ensembleWeights": {
+      "claude": 0.5054,
+      "chatgpt": 0.4946
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Österreich deutlich höhere Elo (1693 vs 1544) und stärkere gewichtete Form (2.28 vs 1.07); Hohe Offensivkraft Österreichs (2.56 Tore/Spiel) gegen anfällige jordanische Defensive (1.54 Gegentore/Spiel); Rangnick bleibt als Trainer (Absage an AC Mailand) - Kontinuität auf der Bank. Marktquoten zu 50 % eingemischt.",
+    "inputHash": "sha256:4e1e0b3af0754234d9891c0e3b7bd104c8d01dece1638391596a5c6acfa0618d"
   },
   "predictionHistory": [
     {
@@ -254,21 +258,34 @@
         "away": 0.1106
       },
       "confidence": 0.6468
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7456,
+        "draw": 0.1544,
+        "away": 0.1
+      },
+      "confidence": 0.7076
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-15T15:03:43.892Z",
+    "updatedAt": "2026-06-15T16:05:40.905Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.7184,
-      "draw": 0.1755,
-      "away": 0.1062
+      "home": 0.7167,
+      "draw": 0.1759,
+      "away": 0.1074
     },
     "decimal": {
       "home": 1.33,
-      "draw": 5.45,
-      "away": 9
+      "draw": 5.42,
+      "away": 8.88
     }
   }
 }
