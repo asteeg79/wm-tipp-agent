@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-15T12:41:29.482Z",
+    "generatedAt": "2026-06-15T13:03:42.489Z",
     "home": {
       "teamId": "ARG",
       "elo": 1894,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-15T13:03:42.489Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6376,
-      "draw": 0.21,
-      "away": 0.1524
+      "home": 0.6437,
+      "draw": 0.2157,
+      "away": 0.1406
     },
-    "confidence": 0.7178,
+    "confidence": 0.7015,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4995,
-        "draw": 0.2404,
-        "away": 0.2601
+        "home": 0.5393,
+        "draw": 0.2317,
+        "away": 0.229
       },
       "expectedGoals": {
-        "home": 1.69,
-        "away": 1.15
+        "home": 1.8,
+        "away": 1.09
       }
     },
     "models": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.62,
-          "draw": 0.21,
-          "away": 0.17
+          "home": 0.605,
+          "draw": 0.215,
+          "away": 0.18
         },
-        "confidence": 0.6,
+        "confidence": 0.66,
         "keyFactors": [
-          "Argentinien mit deutlich höherem Elo (1905 vs 1767) und starker gewichteter Form (2.55)",
-          "Sehr stabile Defensive Argentiniens (Gegentor-Schnitt 0.40, Clean-Sheet-Rate 63%)",
-          "Externe Prognose sieht Argentinien klar vorne (0.68), was Anhebung über Baseline rechtfertigt",
-          "Beide Teams mit identischer recentForm (2.5), aber Argentinien offensiv (2.52 Tore/Spiel) und defensiv überlegen",
-          "Algerien dennoch offensivstark (2.34 Tore/Spiel) und in guter Form, daher Auswärtstor wahrscheinlich"
+          "Argentinien deutlich höheres Elo (1894 vs 1697) und Titelverteidiger-Status",
+          "Starke Defensive Argentiniens (GA 0.399, Clean-Sheet 63%) gegen Algeriens GA 0.55",
+          "Beide Teams in guter Form (weightedForm ARG 2.553, ALG 2.384), aber ARG offensiv stärker (GF 2.521)",
+          "Externer Forecast sieht ARG noch deutlicher vorne (0.685)"
         ],
         "risks": [
-          "Unsicherheit über Messi-Teilnahme laut News könnte Argentiniens Offensivkraft mindern",
-          "Kein H2H-Datensatz vorhanden, erschwert Einschätzung der direkten Begegnung",
-          "Neutraler Spielort nimmt potenziellen Heimvorteil, Baseline-Heimbonus relativiert",
-          "Algeriens hohe Torproduktion kann bei Defensivpatzern Argentiniens zu Punktverlust führen"
+          "Algerien offensiv durchaus gefährlich (GF 2.335), kann treffen",
+          "Lange Pause beider Teams (76 Tage) - Rhythmusfrage",
+          "Kein H2H-Vergleich vorhanden",
+          "Kaderumstellungen ARG (Senesi ersetzt Balerdi) könnten Defensive beeinflussen"
         ]
       },
       "chatgpt": {
@@ -105,26 +104,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.21,
-          "away": 0.14
+          "home": 0.6,
+          "draw": 0.23,
+          "away": 0.17
         },
-        "confidence": 0.85,
+        "confidence": 0.75,
         "keyFactors": [
-          "Argentina's high Elo rating indicates superior strength.",
-          "Argentina's clean sheet rate is notably high at 0.63.",
-          "Recent form is equally strong for both teams but Argentina has stronger historical performance.",
-          "Neutral venue, no home advantage."
+          "Argentina's higher Elo rating and strong clean sheet rate.",
+          "Argentina is a title defender, carrying morale and motivation.",
+          "Both teams have had an equal number of days since the last match, with no recent competitive head-to-head."
         ],
         "risks": [
-          "Potential absence of Messi could impact Argentina's attacking strength.",
-          "Algeria's ability to score goals averaging 2.335 might challenge Argentina's defenses."
+          "Neutral venue may level the playing field slightly.",
+          "Algeria's decent recent form and scoring ability.",
+          "Potential impact of team adjustments in Argentina's squad."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit deutlich höherem Elo (1905 vs 1767) und starker gewichteter Form (2.55); Sehr stabile Defensive Argentiniens (Gegentor-Schnitt 0.40, Clean-Sheet-Rate 63%); Externe Prognose sieht Argentinien klar vorne (0.68), was Anhebung über Baseline rechtfertigt.",
-    "inputHash": "sha256:cb26b67a13640831c7388522b168eff7a0e876c063ad5f0a352c461bfdfed603"
+    "agreement": 0.99,
+    "ensembleWeights": {
+      "claude": 0.5054,
+      "chatgpt": 0.4946
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich höheres Elo (1894 vs 1697) und Titelverteidiger-Status; Starke Defensive Argentiniens (GA 0.399, Clean-Sheet 63%) gegen Algeriens GA 0.55; Beide Teams in guter Form (weightedForm ARG 2.553, ALG 2.384), aber ARG offensiv stärker (GF 2.521). Marktquoten zu 50 % eingemischt.",
+    "inputHash": "sha256:8e7e49b8f76cd7ed6bdf40d896cfff24051963a3edeb66e31adb486649ec6895"
   },
   "predictionHistory": [
     {
@@ -269,11 +272,24 @@
         "away": 0.1669
       },
       "confidence": 0.7191
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6376,
+        "draw": 0.21,
+        "away": 0.1524
+      },
+      "confidence": 0.7178
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-15T12:43:23.265Z",
+    "updatedAt": "2026-06-15T13:03:42.891Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.685,
