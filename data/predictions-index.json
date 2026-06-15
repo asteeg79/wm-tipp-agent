@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-14T23:36:31.173Z",
+  "lastUpdated": "2026-06-15T04:03:38.042Z",
   "aggregate": {
-    "finishedCount": 10,
-    "exactScoreRate": 0.1,
-    "outcomeRate": 0.5,
-    "brierMean": 0.642,
-    "rpsMean": 0.1938
+    "finishedCount": 11,
+    "exactScoreRate": 0.0909,
+    "outcomeRate": 0.4545,
+    "brierMean": 0.6367,
+    "rpsMean": 0.1977
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 10,
-      "exactScoreRate": 0.1,
-      "outcomeRate": 0.4,
-      "brierMean": 0.6617,
-      "rpsMean": 0.1958
+      "finishedCount": 11,
+      "exactScoreRate": 0.0909,
+      "outcomeRate": 0.3636,
+      "brierMean": 0.649,
+      "rpsMean": 0.1974
     },
     "chatgpt": {
-      "finishedCount": 10,
-      "exactScoreRate": 0.2,
-      "outcomeRate": 0.6,
-      "brierMean": 0.6339,
-      "rpsMean": 0.1951
+      "finishedCount": 11,
+      "exactScoreRate": 0.1818,
+      "outcomeRate": 0.5455,
+      "brierMean": 0.634,
+      "rpsMean": 0.2006
     },
     "weights": {
-      "claude": 0.4993,
-      "chatgpt": 0.5007
+      "claude": 0.5033,
+      "chatgpt": 0.4967
     }
   },
   "entries": [
@@ -358,7 +358,16 @@
         "home": 1.31,
         "away": 0.76
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.583,
+        "rps": 0.2364
+      }
     },
     {
       "matchId": "wc2026-sweden-tunisia-2026-06-14",
@@ -393,11 +402,11 @@
         "away": 0
       },
       "probabilities": {
-        "home": 0.8409,
+        "home": 0.8364,
         "draw": 0.1045,
-        "away": 0.0545
+        "away": 0.0591
       },
-      "confidence": 0.8145,
+      "confidence": 0.8118,
       "expectedGoals": {
         "home": 2.68,
         "away": 0.77
@@ -415,11 +424,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.5336,
-        "draw": 0.24,
-        "away": 0.2264
+        "home": 0.5359,
+        "draw": 0.2294,
+        "away": 0.2347
       },
-      "confidence": 0.666,
+      "confidence": 0.6485,
       "expectedGoals": {
         "home": 1.77,
         "away": 1.27
@@ -434,14 +443,14 @@
       "awayTeamId": "URU",
       "predictedScore": {
         "home": 0,
-        "away": 2
+        "away": 1
       },
       "probabilities": {
-        "home": 0.146,
-        "draw": 0.2303,
-        "away": 0.6237
+        "home": 0.1627,
+        "draw": 0.2585,
+        "away": 0.5788
       },
-      "confidence": 0.6697,
+      "confidence": 0.7228,
       "expectedGoals": {
         "home": 0.83,
         "away": 1.33
@@ -459,11 +468,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.5,
-        "draw": 0.25,
-        "away": 0.25
+        "home": 0.479,
+        "draw": 0.239,
+        "away": 0.2821
       },
-      "confidence": 0.675,
+      "confidence": 0.666,
       "expectedGoals": {
         "home": 1.83,
         "away": 1.53
