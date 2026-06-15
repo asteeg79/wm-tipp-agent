@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-15T06:03:39.431Z",
+    "generatedAt": "2026-06-15T07:03:37.649Z",
     "home": {
       "teamId": "FRA",
       "elo": 1904,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-15T07:03:37.649Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5083,
-      "draw": 0.2583,
-      "away": 0.2333
+      "home": 0.523,
+      "draw": 0.25,
+      "away": 0.227
     },
-    "confidence": 0.58,
+    "confidence": 0.6615,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,27 +76,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.27,
-          "away": 0.28
+          "home": 0.49,
+          "draw": 0.25,
+          "away": 0.26
         },
-        "confidence": 0.5,
+        "confidence": 0.6,
         "keyFactors": [
-          "Frankreich höchstes Elo (1904) und Top-Form (weightedForm 2.43) mit starker Offensive (2.34 Tore/Spiel)",
-          "Senegal nahezu gleichwertige Form (weightedForm 2.44) und defensiv extrem stabil (0.61 Gegentore, 64.7% Clean Sheets)",
-          "Neutraler Spielort eliminiert klassischen Heimvorteil",
-          "Senegals starke Defensive dürfte Frankreichs erwartete Tore drücken",
-          "Beide Teams mit gleicher recentForm (2.5) und ähnlicher Ruhephase vor dem Spiel"
+          "Frankreich höher eingestuft (Elo 1904 vs 1828) und auf neutralem Platz leicht favorisiert",
+          "Beide Teams in starker Form (weightedForm ~2.44), nahezu gleichauf in der Offensive",
+          "Senegal mit sehr stabiler Defensive (cleanSheetRate 0.647, GegentoreØ 0.614) – dürfte das Spiel eng halten",
+          "Externe Prognose sieht Frankreich deutlich stärker (0.65), Baseline konservativer (0.43) – Mittelweg gewählt"
         ],
         "risks": [
-          "Kein Head-to-Head verfügbar, hohe Unsicherheit bei direktem Vergleich",
-          "Externe Prognose (66% Frankreich) weicht stark von Baseline ab",
-          "Keine konkreten Verletzungs-/Sperren-News, nur Kader-Übersichten",
-          "Senegals individuelle Qualität in der Offensive könnte Frankreichs Defensive überraschen"
+          "Berichteter Vertrags-/Reisestreit um Senegals Trainer könnte interne Unruhe oder Ausfälle bedeuten",
+          "Kein H2H-Datensatz vorhanden – erhöhte Unsicherheit",
+          "Lange Pause beider Teams (~77 Tage) erschwert Formeinschätzung",
+          "Senegals starke Abwehr kann ein knappes, torarmes Ergebnis oder Remis erzwingen"
         ]
       },
       "chatgpt": {
@@ -109,22 +108,25 @@
           "draw": 0.25,
           "away": 0.2
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "France has a slightly higher Elo rating and a similarly strong recent form compared to Senegal.",
-          "Senegal maintains a good defensive record with a higher clean sheet rate than France.",
-          "No historical head-to-head matchups, making outcomes less predictable.",
-          "Neutral venue reduces potential home advantage influences."
+          "France has a slightly higher Elo rating and strong recent form.",
+          "Senegal's recent internal issues with their coach and travel complications.",
+          "Neutral venue, eliminating home advantage."
         ],
         "risks": [
-          "Both teams have not played recently (over two months), which can affect current form assessment.",
-          "Senegal's strong recent form and defensive record make them a solid opponent."
+          "Both teams have an equally strong form and goal-scoring capability.",
+          "Senegal's strong defensive record with a higher clean sheet rate."
         ]
       }
     },
-    "agreement": 0.9333,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich höchstes Elo (1904) und Top-Form (weightedForm 2.43) mit starker Offensive (2.34 Tore/Spiel); Senegal nahezu gleichwertige Form (weightedForm 2.44) und defensiv extrem stabil (0.61 Gegentore, 64.7% Clean Sheets); Neutraler Spielort eliminiert klassischen Heimvorteil.",
-    "inputHash": "sha256:5555c4861bec875f9e09da48a4db1d8efe101cbe9410d2af77ad23118f3ffae2"
+    "agreement": 0.96,
+    "ensembleWeights": {
+      "claude": 0.5054,
+      "chatgpt": 0.4946
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich höher eingestuft (Elo 1904 vs 1828) und auf neutralem Platz leicht favorisiert; Beide Teams in starker Form (weightedForm ~2.44), nahezu gleichauf in der Offensive; Senegal mit sehr stabiler Defensive (cleanSheetRate 0.647, GegentoreØ 0.614) – dürfte das Spiel eng halten.",
+    "inputHash": "sha256:1a1e41d23252764cd26df4d9bb8c649e9d720dde6c614d2aba12b05f5e9e4bed"
   },
   "predictionHistory": [
     {
@@ -269,11 +271,24 @@
         "away": 0.2305
       },
       "confidence": 0.6473
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5083,
+        "draw": 0.2583,
+        "away": 0.2333
+      },
+      "confidence": 0.58
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-15T06:03:40.284Z",
+    "updatedAt": "2026-06-15T07:05:16.924Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6529,
