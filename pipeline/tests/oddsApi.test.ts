@@ -4,6 +4,7 @@ import {
   swapMarket,
   deriveMarket,
   effectiveOddsTtlHours,
+  isPlausibleMarket,
   type OddsEvent,
 } from "../src/sources/oddsApi.js";
 import { config } from "../config.js";
@@ -92,6 +93,46 @@ describe("deriveMarket (de-vig)", () => {
   it("ohne h2h-Markt → null", () => {
     const empty: OddsEvent = { ...ev, bookmakers: [] };
     expect(deriveMarket(empty)).toBeNull();
+  });
+
+  it("verwirft unplausible In-Play-Linie (Remis als Favorit) → null", () => {
+    // Spätes 0:0: Remis 1.09 (Favorit), Sieg 8 / 43.5 — wie Spanien–Kap Verde.
+    const inplay: OddsEvent = {
+      home_team: "Spain",
+      away_team: "Cape Verde",
+      commence_time: "2026-06-15T16:00:00Z",
+      bookmakers: [
+        {
+          key: "bk1",
+          title: "BK1",
+          markets: [
+            {
+              key: "h2h",
+              outcomes: [
+                { name: "Spain", price: 8 },
+                { name: "Cape Verde", price: 43.5 },
+                { name: "Draw", price: 1.09 },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+    expect(deriveMarket(inplay)).toBeNull();
+  });
+});
+
+describe("isPlausibleMarket", () => {
+  it("normaler Markt (Favorit + ~25% Remis) → plausibel", () => {
+    expect(isPlausibleMarket({ home: 0.6, draw: 0.25, away: 0.15 })).toBe(true);
+  });
+  it("Remis > 50% → unplausibel (In-Play/Fehl-Linie)", () => {
+    expect(isPlausibleMarket({ home: 0.12, draw: 0.86, away: 0.02 })).toBe(
+      false,
+    );
+  });
+  it("Remis knapp Favorit, aber ≤ 50% → noch plausibel (konservativ)", () => {
+    expect(isPlausibleMarket({ home: 0.3, draw: 0.4, away: 0.3 })).toBe(true);
   });
 });
 

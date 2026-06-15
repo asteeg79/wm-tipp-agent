@@ -47,6 +47,17 @@ function median(xs: number[]): number {
 }
 
 /**
+ * Plausibilitäts-Check eines (de-vig-)1X2-Markts: In realen VOR-Anpfiff-Märkten
+ * liegt das Remis nie über ~50 % (Maximum real ~35 %). Eine solche Verteilung
+ * deutet auf eine In-Play-Aufnahme (z. B. spätes 0:0) oder eine Fehl-Linie hin
+ * → verwerfen. Bewusst konservativ (nur das physikalisch Unmögliche), um keine
+ * legitimen Linien zu verlieren. Pure Funktion (für Unit-Tests exportiert).
+ */
+export function isPlausibleMarket(p: { draw: number }): boolean {
+  return p.draw <= 0.5;
+}
+
+/**
  * Leitet aus einem Odds-Event die de-vig-1X2-Wahrscheinlichkeiten ab.
  * Exportiert für Unit-Tests (reine Funktion, keine Seiteneffekte).
  */
@@ -80,11 +91,14 @@ export function deriveMarket(ev: OddsEvent): MarketOdds | null {
   const sum = iH + iD + iA;
   const r = (x: number): number => Math.round((x / sum) * 10000) / 10000;
   const r2 = (x: number): number => Math.round(x * 100) / 100;
+  const probabilities = { home: r(iH), draw: r(iD), away: r(iA) };
+  // Unplausible (z. B. In-Play-)Linien verwerfen, statt sie zu speichern.
+  if (!isPlausibleMarket(probabilities)) return null;
   return {
     source: "The Odds API",
     updatedAt: new Date().toISOString(),
     bookmakerCount: home.length,
-    probabilities: { home: r(iH), draw: r(iD), away: r(iA) },
+    probabilities,
     decimal: { home: r2(dH), draw: r2(dD), away: r2(dA) },
   };
 }
@@ -158,7 +172,13 @@ export async function loadOdds(
   }
 
   const map = new Map<string, MarketOdds>();
+  const nowMs = Date.now();
   for (const ev of events) {
+    // Nur VOR-Anpfiff-Quoten: bereits angepfiffene/laufende Spiele liefern
+    // In-Play-Linien (z. B. spätes 0:0 → Remis ~1.09), die den Markt verfälschen.
+    if (ev.commence_time && new Date(ev.commence_time).getTime() <= nowMs) {
+      continue;
+    }
     const od = deriveMarket(ev);
     if (od) map.set(oddsKey(ev.home_team, ev.away_team), od);
   }

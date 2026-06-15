@@ -60,7 +60,12 @@ import {
   loadExternalPriors,
   type ExternalPriors,
 } from "./sources/externalPriors.js";
-import { loadOdds, oddsKey, swapMarket } from "./sources/oddsApi.js";
+import {
+  isPlausibleMarket,
+  loadOdds,
+  oddsKey,
+  swapMarket,
+} from "./sources/oddsApi.js";
 import type { MarketOdds } from "@wm/shared";
 import { readJsonOptional } from "./io/json.js";
 import { aggregateAccuracy, scoreMatch } from "./features/accuracy.js";
@@ -458,9 +463,13 @@ async function writeMatches(
     // Markt persistieren: liegen aktuelle Quoten vor, diese nehmen; sonst den
     // zuletzt bekannten Snapshot behalten. The Odds API liefert nach Anpfiff
     // keine Quoten mehr — ohne diesen Fallback ginge der Markt für beendete
-    // Spiele verloren (und damit die "wir vs. Markt"-Auswertung).
+    // Spiele verloren (und damit die "wir vs. Markt"-Auswertung). Einen früher
+    // gespeicherten unplausiblen Snapshot (z. B. alte In-Play-Linie) dabei
+    // verwerfen.
     if (market) match.market = market;
-    else if (prev?.market) match.market = prev.market;
+    else if (prev?.market && isPlausibleMarket(prev.market.probabilities)) {
+      match.market = prev.market;
+    }
 
     const homeResults = resultsByTeam.get(fx.homeTeamId);
     const awayResults = resultsByTeam.get(fx.awayTeamId);
