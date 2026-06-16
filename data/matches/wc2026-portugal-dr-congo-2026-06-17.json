@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T06:03:37.984Z",
+    "generatedAt": "2026-06-16T07:03:46.001Z",
     "home": {
       "teamId": "POR",
       "elo": 1777,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-16T05:03:38.021Z",
+    "generatedAt": "2026-06-16T07:03:46.001Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6707,
-      "draw": 0.1907,
-      "away": 0.1386
+      "home": 0.6771,
+      "draw": 0.1943,
+      "away": 0.1287
     },
-    "confidence": 0.6993,
+    "confidence": 0.7301,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,23 +77,26 @@
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
           "home": 0.62,
           "draw": 0.21,
           "away": 0.17
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Portugal höhere Elo (1777 vs 1640) und stärkere Offensive (2,32 Tore/Spiel) gegenüber DR Kongo",
-          "Externe Prognose sieht Portugal klar vorne (0,75), was die Baseline nach oben korrigiert",
-          "Neutraler Spielort relativiert klassischen Heimvorteil leicht zugunsten DR Kongo"
+          "Portugal mit klar höherem Elo (1777 vs 1640) und stärkerer Offensive (2,32 Tore/Spiel vs 1,42)",
+          "Neutraler Spielort, kein Heimvorteil für Portugal, dämpft die Baseline leicht",
+          "DR Kongo zeigt überraschend gute defensive Werte (0,48 Gegentore/Spiel, 54,5% Clean-Sheet-Rate) und solide Form (gewichtete Form 2,23)",
+          "Externe Prognose deutlich Portugal-lastig (0,75), Baseline moderater (0,55) – realistischer Mittelwert angesetzt",
+          "Individuelle Klasse und Turniererfahrung sprechen für Portugal"
         ],
         "risks": [
-          "DR Kongo defensiv sehr stabil (0,48 Gegentore/Spiel, 54,5% Clean Sheets) und mit guter gewichteter Form (2,229) – kann das Spiel eng halten",
-          "Keine H2H-Daten vorhanden, Einschätzung beruht stark auf Form/Elo",
-          "Lange Spielpause (77 Tage) für beide Teams erschwert Formprognose"
+          "DR Kongos starke Defensive könnte das Spiel eng halten und ein knappes Ergebnis ermöglichen",
+          "Lange Pause beider Teams (77 Tage) erschwert Formeinschätzung",
+          "Kein H2H-Vergleich vorhanden, erhöht Prognoseunsicherheit",
+          "Kaderzusammensetzungen noch nicht final geklärt (WM-Kader-Meldungen)"
         ]
       },
       "chatgpt": {
@@ -102,30 +105,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5750000000000001,
-          "draw": 0.22000000000000003,
-          "away": 0.20500000000000002
+          "home": 0.6,
+          "draw": 0.23,
+          "away": 0.17
         },
-        "confidence": 0.82,
+        "confidence": 0.85,
         "keyFactors": [
-          "Portugal hat leicht stärkere aktuelle Form mit Elo von 1777 gegenüber DR Kongo mit 1640.",
-          "Portugals Tordurchschnitt ist höher (2.32) als der von DR Kongo (1.42).",
-          "DR Kongo zeigt starke defensive Werte mit einem Gegentorschnitt von 0.482 und einer Clean Sheet Rate von 0.545.",
-          "Spiel findet auf neutralem Boden statt, daher kein Heimvorteil für Portugal."
+          "Portugal hat einen höheren Elo-Wert als DR Congo und eine stark offensive Form mit 2.32 Toren im Durchschnitt.",
+          "DR Congo zeigt starke defensive Leistungen mit einer höheren Clean-Sheet-Rate als Portugal.",
+          "Keine direkten Begegnungen zwischen den Teams, daher weniger historische Daten verfügbar."
         ],
         "risks": [
-          "Keine direkte Head-to-Head-Historie zwischen den beiden Teams verfügbar.",
-          "Beide Teams haben seit 77 Tagen kein Spiel mehr bestritten, was Unvorhersehbarkeiten bringen kann.",
-          "Rückkehr nach 52 Jahren bei der WM könnte DR Kongo zusätzliche Motivation verleihen."
+          "Der Austragungsort ist neutral, was mögliche host- oder venue-spezifische Vorteile eliminiert.",
+          "Trotz Portugals starkem Kader gibt es keine spezifischen Verletzungsberichte oder Trainingsrückschläge bei DR Congo, die ihre Form beeinflussen könnten."
         ]
       }
     },
-    "agreement": 0.97,
+    "agreement": 0.9867,
     "ensembleWeights": {
       "claude": 0.5055,
       "chatgpt": 0.4945
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal höhere Elo (1777 vs 1640) und stärkere Offensive (2,32 Tore/Spiel) gegenüber DR Kongo; Externe Prognose sieht Portugal klar vorne (0,75), was die Baseline nach oben korrigiert; Neutraler Spielort relativiert klassischen Heimvorteil leicht zugunsten DR Kongo. Marktquoten zu 50 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit klar höherem Elo (1777 vs 1640) und stärkerer Offensive (2,32 Tore/Spiel vs 1,42); Neutraler Spielort, kein Heimvorteil für Portugal, dämpft die Baseline leicht; DR Kongo zeigt überraschend gute defensive Werte (0,48 Gegentore/Spiel, 54,5% Clean-Sheet-Rate) und solide Form (gewichtete Form 2,23). Marktquoten zu 50 % eingemischt.",
     "inputHash": "sha256:291c495ec81ec6f8fa40d7c900ad6b8f6011dfb2459c53ee9b420cbdecc419d7"
   },
   "predictionHistory": [
@@ -284,20 +285,33 @@
         "away": 0.1956
       },
       "confidence": 0.6683
+    },
+    {
+      "generatedAt": "2026-06-16T05:03:38.021Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6707,
+        "draw": 0.1907,
+        "away": 0.1386
+      },
+      "confidence": 0.6993
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T06:03:38.390Z",
-    "bookmakerCount": 22,
+    "updatedAt": "2026-06-16T07:06:04.806Z",
+    "bookmakerCount": 23,
     "probabilities": {
-      "home": 0.7471,
-      "draw": 0.1657,
-      "away": 0.0873
+      "home": 0.7456,
+      "draw": 0.167,
+      "away": 0.0874
     },
     "decimal": {
       "home": 1.29,
-      "draw": 5.8,
+      "draw": 5.76,
       "away": 11
     }
   }
