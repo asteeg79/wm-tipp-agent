@@ -10,7 +10,7 @@ werden.
 | Datenart | Quelle | Zeitkritik | Mechanismus |
 |---|---|---|---|
 | Ergebnisse + Spielplan | openfootball `worldcup.json` | **hoch** (Spieltage) | jeder Pipeline-Lauf, Cache-TTL 10 min |
-| KI-Tipps (Claude Opus 4.8 + ChatGPT) | Anthropic/OpenAI | mittel (Milestones T-24/4 h) | `predict`-Läufe; Retrigger-Logik; Claude via Batches-API |
+| KI-Tipps (Claude Opus 4.8 + ChatGPT) | Anthropic/OpenAI | mittel (Milestones T-24/12/4 h) | `predict`-Läufe; Retrigger-Logik; Claude via Batches-API |
 | News je Team | Google News RSS + kicker/Sportschau/… | niedrig (Stunden) | `news`-Läufe alle 3 h; KI-Relevanzfilter (Haiku) |
 | Buchmacher-Quoten | The Odds API | niedrig | TTL 8 h, Stopp nach Finale (Quota-Schutz, ~138 Credits gesamt) |
 | Accuracy/Modell-Vergleich/Gewichte | abgeleitet | — | fällt bei jedem Lauf aus Ergebnissen + Tipps ab |
@@ -26,7 +26,9 @@ gedrosselt. Er feuert `repository_dispatch` (`event_type: refresh-data`,
 `mode: predict`) an `refresh.yml`.
 
 - **Cron:** `3 4-21 * * *` (UTC) → **stündlich um :03, 06:03–23:03 deutscher
-  Zeit**. Nachts (0–6 Uhr dt. Zeit) bewusst keine Anstöße.
+  Zeit**. Nachts (0–6 Uhr dt. Zeit) bewusst keine Anstöße. Damit Nacht- und
+  Frühspiele dennoch rechtzeitig einen finalen Tipp bekommen, deckt das
+  T-12h-Milestone (s. u.) sie bei den Abendläufen bis 23:03 Uhr ab.
 - **Monats-Guard** im Worker-Code begrenzt zusätzlich auf Juni/Juli
   (Cloudflares Schedules-API akzeptiert keine Monats-Felder im Cron).
 - **GitHub-`schedule`** ist als zusätzlicher Best-effort-Fallback nur noch
@@ -60,9 +62,12 @@ behoben):
    - eine **neue** materielle News (Verletzung/Sperre/Trainer) *nach* dem
      letzten Tipp erschien — nicht jede tagelang im Feed stehende
      Schlagzeile (das war der frühere Kostentreiber), **oder**
-   - ein **Zeit-Milestone** überschritten wird: **T-24 h** und **T-4 h**.
+   - ein **Zeit-Milestone** überschritten wird: **T-24 h**, **T-12 h** und
+     **T-4 h**. Das T-12h-Milestone sorgt dafür, dass nachts/früh anpfeifende
+     Spiele ihren (quasi finalen) Tipp noch bei den Abendläufen erhalten —
+     vor der nächtlichen Cron-Pause und damit vor dem Schlafengehen.
    → Pro Spiel typisch ~3–4 Bewertungen über die gesamte Laufzeit
-   (Erst-Tipp + 2 Milestones + ggf. echte News) statt einer pro Lauf.
+   (Erst-Tipp + 3 Milestones + ggf. echte News) statt einer pro Lauf.
 3. **Batches-API:** Ab 3 fälligen Partien bündelt Claude über die
    Message-Batches-API → **−50 %** auf die Claude-Calls.
 4. **Modell:** `claude-opus-4-8` ($5/$25 pro MTok) statt des teureren
@@ -72,7 +77,7 @@ behoben):
 > Frequenz erhöhen heißt **nicht** automatisch mehr Kosten: Läufe, in denen
 > kein Spiel einen Milestone überschreitet und keine neue News vorliegt,
 > verursachen **null** KI-Calls. Die Taktung muss nur fein genug sein, um die
-> Milestones (T-24/4 h) zeitnah zu treffen — der Stundentakt genügt dafür.
+> Milestones (T-24/12/4 h) zeitnah zu treffen — der Stundentakt genügt dafür.
 
 ## Schutzmechanismen
 

@@ -173,10 +173,13 @@ export const config: PipelineConfig = {
     vsEuropeanDefenseBonus: 0.96,
     majorNationBoost: 1.03,
   },
-  // Zwei geplante Neubewertungen pro Spiel (1 Tag / ~4 h vorher). Der frühere
-  // T-72h-Tipp brachte am wenigsten und kostete am meisten (Spiel lange im
-  // Fenster). Genügt für gute, aktuelle Prognosen.
-  reTriggerMilestonesHours: [24, 4],
+  // Geplante Neubewertungen: 1 Tag / ~12 h / ~4 h vor Anpfiff.
+  // Das 12-h-Milestone deckt die nächtliche Cron-Pause (0–6 Uhr dt. Zeit) ab:
+  // Spiele, die nachts oder früh am Morgen anpfeifen, hätten ihr T-4h-Update
+  // mitten in der Pause — durch das 12-h-Milestone bekommen sie ihren (quasi
+  // finalen) Tipp noch bei den Abendläufen bis 23:03 Uhr, also vor dem
+  // Schlafengehen. Tagsüber kommt zusätzlich das T-4h-Update.
+  reTriggerMilestonesHours: [24, 12, 4],
   maxNewsPerTeam: 20,
   models: {
     // Claude Opus 4.8 ($5/$25 pro MTok — halb so teuer wie Fable 5, bewusste

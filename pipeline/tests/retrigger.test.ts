@@ -100,7 +100,7 @@ describe("decideRetrigger — News-Aktualität", () => {
   });
 });
 
-describe("decideRetrigger — Zeit-Milestones [24, 4]", () => {
+describe("decideRetrigger — Zeit-Milestones [24, 12, 4]", () => {
   it("T-24h-Milestone wird fällig, wenn letzter Tipp davor lag", () => {
     // Letzter Tipp bei T-40h, jetzt T-23h → 24h-Milestone überschritten.
     const match = matchWithTip("2026-06-19T02:00:00Z");
@@ -115,15 +115,26 @@ describe("decideRetrigger — Zeit-Milestones [24, 4]", () => {
     expect(d.reason).toContain("T-24h");
   });
 
-  it("kein Milestone offen (Tipp lag bereits unter 24h) → keine Neubewertung", () => {
-    // Letzter Tipp bei T-20h, jetzt T-18h → 24h schon abgehakt, 4h noch fern.
-    const match = matchWithTip("2026-06-19T22:00:00Z");
+  it("T-12h-Milestone deckt Nacht-/Frühspiele am Abend ab (vor der Cron-Pause)", () => {
+    // Anpfiff KICKOFF (T0). Letzter Tipp lag bei T-24h; beim Abendlauf ~T-11h
+    // (vor der Nachtpause) MUSS der quasi finale Tipp fallen, weil das
+    // T-4h-Update sonst mitten in die pausierten Nachtstunden fiele.
+    const match = matchWithTip("2026-06-19T18:00:00Z"); // Tipp = T-24h
+    const abendlauf = new Date("2026-06-20T07:00:00Z"); // T-11h
+    const d = decideRetrigger(match, "h1", [], [], abendlauf);
+    expect(d.shouldEvaluate).toBe(true);
+    expect(d.reason).toContain("T-12h");
+  });
+
+  it("kein Milestone offen (Tipp lag bereits unter 12h, 4h fern) → keine Neubewertung", () => {
+    // Letzter Tipp bei T-10h, jetzt T-8h → 24h und 12h abgehakt, 4h noch fern.
+    const match = matchWithTip("2026-06-20T08:00:00Z"); // Tipp = T-10h
     const d = decideRetrigger(
       match,
       "h1",
       [],
       [],
-      new Date("2026-06-20T00:00:00Z"),
+      new Date("2026-06-20T10:00:00Z"), // T-8h
     );
     expect(d.shouldEvaluate).toBe(false);
   });
