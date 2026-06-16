@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T12:03:41.282Z",
+    "generatedAt": "2026-06-16T13:03:41.475Z",
     "home": {
       "teamId": "ENG",
       "elo": 1815,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-16T08:03:40.872Z",
+    "generatedAt": "2026-06-16T13:03:41.475Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5343,
-      "draw": 0.2489,
-      "away": 0.2169
+      "home": 0.477,
+      "draw": 0.2914,
+      "away": 0.2316
     },
-    "confidence": 0.7277,
+    "confidence": 0.5372,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,56 +76,58 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.24,
+          "home": 0.47,
+          "draw": 0.27,
           "away": 0.26
         },
-        "confidence": 0.62,
+        "confidence": 0.5,
         "keyFactors": [
-          "England mit herausragender Defensive (0.52 Gegentore/Spiel, 55% Weiße Westen) und stabiler gewichteter Form",
-          "Kroatien offensiv stärker (2.21 Tore/Spiel) und in jüngster Form leicht besser (recentForm 2.5), aber defensiv anfälliger (1.10 Gegentore, nur 35% Clean Sheets)",
-          "Höheres Elo und externe Prognose (0.557) stützen England als Favorit",
-          "Neutraler Spielort relativiert klassischen Heimvorteil leicht"
+          "Englands sehr starke Defensive (0,52 Gegentore/Spiel, 55% Zu-Null-Quote) limitiert Kroatiens gefährlichen Angriff",
+          "Kroatien mit leicht besserer gewichteter Form (2,10 vs 2,03) und starker Offensive (2,21 Tore/Spiel)",
+          "Markt sieht England klarer vorn (0,56), Baseline moderater (0,46) – beides bestätigt leichten England-Vorteil",
+          "Neutraler Spielort, kein Heimvorteil – gleicht Kräfteverhältnis weiter an",
+          "Beide Teams seit 77 Tagen ohne Pflichtspiel, Rhythmusfrage offen"
         ],
         "risks": [
-          "Kroatiens variable Offensive kann Englands Abwehr fordern und für Tore sorgen",
-          "Beide Teams 77 Tage ohne Spiel – mögliche Rhythmusschwankungen",
-          "Keine Head-to-Head-Daten verfügbar, daher erhöhte Unsicherheit",
-          "Unklare Kaderlage/Trainersituation (Gerüchte) könnten Leistungsniveau beeinflussen"
+          "Kroatiens Routine und Offensivqualität kann Englands Defensive durchbrechen",
+          "Turnierspiele oft torarm – kompaktes Remis sehr realistisch",
+          "Kaderspekulationen/Trainernews bei England unklar, mögliche Verunsicherung",
+          "Kein H2H-Datenmaterial vorhanden, höhere Prognoseunsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.25,
-          "away": 0.23
+          "home": 0.42,
+          "draw": 0.34,
+          "away": 0.24
         },
-        "confidence": 0.85,
+        "confidence": 0.6,
         "keyFactors": [
-          "Englands neuer Trainer möglicherweise Pep Guardiola, was einen positiven Einfluss auf das Team haben könnte.",
-          "England zeigt eine stabile defensive Leistung mit einer hohen Clean-Sheet-Rate von 0.552.",
-          "Kroatien hat eine aktuelle Verletzung von Romelu Lukaku in der Nationalmannschaft, die die Torerzielungsfähigkeit beeinträchtigen könnte."
+          "Beide Teams zeigen starke aktuelle Form mit nur unwesentlichen Unterschieden.",
+          "England hat eine hervorragende Abwehrbilanz mit einem niedrigen Gegentorschnitt.",
+          "Kroatien hat einen leicht besseren Angriff mit einer höheren Torquote pro Spiel.",
+          "Neuer England-Trainer könnte kurzfristige Unsicherheit bringen."
         ],
         "risks": [
-          "Kroatien zeigt starke aktuelle Form mit einem Trefferdurchschnitt von 2.205 Toren pro Spiel.",
-          "Das Spiel wird auf neutralem Boden ausgetragen, was den Heimvorteil für England neutralisiert."
+          "Der mögliche Trainerwechsel bei England könnte die Teamdynamik beeinflussen.",
+          "Unentschieden in neutralen Standorten wahrscheinlicher, insbesondere in der Gruppenphase."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9533,
     "ensembleWeights": {
       "claude": 0.5055,
       "chatgpt": 0.4945
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit herausragender Defensive (0.52 Gegentore/Spiel, 55% Weiße Westen) und stabiler gewichteter Form; Kroatien offensiv stärker (2.21 Tore/Spiel) und in jüngster Form leicht besser (recentForm 2.5), aber defensiv anfälliger (1.10 Gegentore, nur 35% Clean Sheets); Höheres Elo und externe Prognose (0.557) stützen England als Favorit. Marktquoten zu 50 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Englands sehr starke Defensive (0,52 Gegentore/Spiel, 55% Zu-Null-Quote) limitiert Kroatiens gefährlichen Angriff; Kroatien mit leicht besserer gewichteter Form (2,10 vs 2,03) und starker Offensive (2,21 Tore/Spiel); Markt sieht England klarer vorn (0,56), Baseline moderater (0,46) – beides bestätigt leichten England-Vorteil. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:35e58b295d2489fc543375075d314067b71b961546872dd11cfbd2d2c142d406"
   },
   "predictionHistory": [
@@ -284,21 +286,34 @@
         "away": 0.2399
       },
       "confidence": 0.6641
+    },
+    {
+      "generatedAt": "2026-06-16T08:03:40.872Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5343,
+        "draw": 0.2489,
+        "away": 0.2169
+      },
+      "confidence": 0.7277
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T12:03:41.787Z",
+    "updatedAt": "2026-06-16T13:05:39.216Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.557,
-      "draw": 0.2521,
-      "away": 0.1909
+      "home": 0.5562,
+      "draw": 0.2532,
+      "away": 0.1905
     },
     "decimal": {
-      "home": 1.72,
+      "home": 1.73,
       "draw": 3.8,
-      "away": 5.02
+      "away": 5.05
     }
   }
 }
