@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T14:03:48.000Z",
+    "generatedAt": "2026-06-16T15:03:53.045Z",
     "home": {
       "teamId": "FRA",
       "elo": 1874,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-16T07:03:46.001Z",
+    "generatedAt": "2026-06-16T15:03:53.045Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.5864,
-      "draw": 0.2199,
-      "away": 0.1938
+      "home": 0.5709,
+      "draw": 0.2382,
+      "away": 0.1909
     },
-    "confidence": 0.6982,
+    "confidence": 0.592,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,57 +76,57 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.23,
-          "away": 0.27
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
         },
-        "confidence": 0.62,
+        "confidence": 0.5,
         "keyFactors": [
-          "Frankreich höhere Elo (1874 vs 1768) und individuelle Klasse eines Kaders im Wert von über 1,5 Mrd. Euro",
-          "Beide Teams in starker Form (weightedForm ~2.44), Senegal mit exzellenter Defensive (Gegentorschnitt 0.614, Clean-Sheet-Rate 0.647)",
-          "Frankreichs Offensive sehr stark (2.34 Tore/Spiel), aber Senegal defensiv stabiler als typische Gegner",
-          "Externe Prognose deutlich pro-Frankreich (0.6448), Baseline konservativer (0.4555) – Anpassung leicht nach oben",
+          "Frankreich höhere Elo (1874 vs 1768) und Favoritenrolle laut Markt (0.66)",
+          "Senegal mit sehr guter Defensive (cleanSheetRate 0.647, nur 0.61 Gegentore/Spiel) und starker Form",
+          "Beide Teams in ähnlich guter gewichteter Form (~2.44), beide treffsicher",
           "Neutraler Spielort, kein Heimvorteil für Frankreich"
         ],
         "risks": [
-          "Senegals starke Defensive könnte das Spiel offenhalten und Frankreichs xG drücken",
-          "Lange Pause beider Teams (77–79 Tage) erschwert Formeinschätzung",
-          "Kein H2H-Verlauf vorhanden – hohe Unsicherheit",
-          "Senegal hat individuell ebenfalls Topspieler und kann mit Konter-/Standardsituationen punkten"
+          "Senegals kompakte Defensive kann Frankreich frustrieren und ein Remis/Überraschung ermöglichen",
+          "Lange Pause beider Teams (~78 Tage) erschwert Formprognose",
+          "Keine H2H-Daten als Referenz",
+          "Markt deutlich optimistischer für Frankreich als statistische Baseline - Unsicherheit über reale Stärke"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "probabilities": {
           "home": 0.55,
-          "draw": 0.22,
-          "away": 0.23
+          "draw": 0.25,
+          "away": 0.2
         },
-        "confidence": 0.8,
+        "confidence": 0.7,
         "keyFactors": [
-          "France has a higher Elo rating and player market value compared to Senegal.",
-          "Recent forms are similar but France's high-profile players may provide a slight edge.",
-          "The match will be played at a neutral venue, negating home advantage."
+          "Frankreich hat leichte individuelle Vorteile basierend auf ihrem höheren Elo-Rating.",
+          "Die Erfahrung im Kader und gute Form von Frankreich könnten den Unterschied machen.",
+          "Frankreichs höhere Torquote und Defensivstärke im Vergleich zu Senegal."
         ],
         "risks": [
-          "Both teams show strong recent form and goal-scoring abilities, indicating a competitive match.",
-          "France's coach may be focused on his final mission, potentially increasing pressure on the team."
+          "Senegal hat eine starke Defensive mit hoher Clean Sheet Rate.",
+          "Neutrale Spielstätte könnte den Vorteil für den Favoriten mindern.",
+          "Keine direkten H2H-Spiele, was Unsicherheit über direkte Vergleichsbasis schafft."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5055,
       "chatgpt": 0.4945
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich höhere Elo (1874 vs 1768) und individuelle Klasse eines Kaders im Wert von über 1,5 Mrd. Euro; Beide Teams in starker Form (weightedForm ~2.44), Senegal mit exzellenter Defensive (Gegentorschnitt 0.614, Clean-Sheet-Rate 0.647); Frankreichs Offensive sehr stark (2.34 Tore/Spiel), aber Senegal defensiv stabiler als typische Gegner. Marktquoten zu 50 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich höhere Elo (1874 vs 1768) und Favoritenrolle laut Markt (0.66); Senegal mit sehr guter Defensive (cleanSheetRate 0.647, nur 0.61 Gegentore/Spiel) und starker Form; Beide Teams in ähnlich guter gewichteter Form (~2.44), beide treffsicher. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:efcf205f07b2bccfd6acc14cd12e006ff897f8a45d6d2160c22e39733eef61b8"
   },
   "predictionHistory": [
@@ -350,21 +350,34 @@
         "away": 0.1884
       },
       "confidence": 0.6578
+    },
+    {
+      "generatedAt": "2026-06-16T07:03:46.001Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5864,
+        "draw": 0.2199,
+        "away": 0.1938
+      },
+      "confidence": 0.6982
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T14:04:48.574Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-16T15:06:12.071Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.6587,
-      "draw": 0.2105,
-      "away": 0.1308
+      "home": 0.6591,
+      "draw": 0.2106,
+      "away": 0.1303
     },
     "decimal": {
       "home": 1.47,
       "draw": 4.6,
-      "away": 7.4
+      "away": 7.44
     }
   }
 }
