@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T11:32:53.428Z",
+    "generatedAt": "2026-06-16T12:03:41.282Z",
     "home": {
       "teamId": "AUT",
       "elo": 1693,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-16T04:03:42.971Z",
+    "generatedAt": "2026-06-16T12:03:41.282Z",
     "predictedScore": {
-      "home": 3,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7283,
-      "draw": 0.1661,
-      "away": 0.1056
+      "home": 0.7087,
+      "draw": 0.1792,
+      "away": 0.112
     },
-    "confidence": 0.7698,
+    "confidence": 0.75,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,44 +80,43 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.73,
-          "draw": 0.16,
+          "home": 0.72,
+          "draw": 0.17,
           "away": 0.11
         },
-        "confidence": 0.7,
+        "confidence": 0.66,
         "keyFactors": [
-          "Österreich deutlich höheres Elo (1693 vs 1544) und stärkere gewichtete Form (2.28 vs 1.07)",
-          "Hohe Offensivkraft Österreichs (2.56 Tore/Spiel) gegen schwächere jordanische Defensive (1.54 Gegentore/Spiel)",
-          "Rangnick bleibt Trainer und sagt AC Mailand ab - Stabilität auf der Trainerbank",
-          "Jordanien als WM-Debütant mit weniger namhaftem Kader"
+          "Österreich klar stärker laut Elo (1693 vs 1544) und gewichteter Form (2.28 vs 1.07)",
+          "Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei nur 0.65 Gegentoren",
+          "Jordaniens schwache jüngste Form (recentForm 0.9) und ausgeglichene Bilanz (1.62:1.54)",
+          "Baseline und externe Prognose decken sich weitgehend (~0.71-0.73 Heimsieg)"
         ],
         "risks": [
           "Neutraler Spielort nimmt Österreich den Heimvorteil",
-          "Jordanien hat solide Clean-Sheet-Rate (0.361) und kann defensiv kompakt stehen",
-          "Lange Pause (77 Tage) für beide Teams - Rhythmusfragen",
-          "Kein H2H-Vergleich verfügbar"
+          "Lange Pause (77 Tage) für beide kann Rhythmus beeinträchtigen",
+          "Kein H2H-Datensatz, Jordaniens solide Clean-Sheet-Rate (0.36) könnte überraschen",
+          "Mögliche taktische Defensivausrichtung Jordaniens kann Tore reduzieren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 3,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.15,
-          "away": 0.1
+          "home": 0.7000000000000001,
+          "draw": 0.18000000000000002,
+          "away": 0.12000000000000001
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Austria hat eine starke jüngste Form mit durchschnittlich 2.5 Punkten.",
-          "Österreichs Abwehr ist solide mit einem Gegentorschnitt von 0.646.",
-          "Jordanien hat eine schwache jüngste Form mit nur 0.9 Punkten.",
-          "Österreich hält in der Regel mehr Tore als Jordanien."
+          "Starke Form von Österreich in den letzten Spielen",
+          "Neutraler Spielort ohne Heimvorteil",
+          "Österreich klare Favoriten aufgrund höherem Elo und besserer Form"
         ],
         "risks": [
-          "Spiel wird auf neutralem Boden ausgetragen, was Heimvorteil neutralisiert.",
-          "Austria hat seit 77 Tagen kein Spiel absolviert, was den Spielrhythmus beeinträchtigen könnte."
+          "Fehlende Head-to-Head-Vergleiche machen Vorhersage unsicherer",
+          "Jordanien hat passable defensive Stabilität bei gegnerischen Angriffen"
         ]
       }
     },
@@ -126,7 +125,7 @@
       "claude": 0.5055,
       "chatgpt": 0.4945
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Österreich deutlich höheres Elo (1693 vs 1544) und stärkere gewichtete Form (2.28 vs 1.07); Hohe Offensivkraft Österreichs (2.56 Tore/Spiel) gegen schwächere jordanische Defensive (1.54 Gegentore/Spiel); Rangnick bleibt Trainer und sagt AC Mailand ab - Stabilität auf der Trainerbank. Marktquoten zu 50 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Österreich klar stärker laut Elo (1693 vs 1544) und gewichteter Form (2.28 vs 1.07); Hohe Offensivproduktion Österreichs (2.56 Tore/Spiel) bei nur 0.65 Gegentoren; Jordaniens schwache jüngste Form (recentForm 0.9) und ausgeglichene Bilanz (1.62:1.54). Marktquoten zu 50 % eingemischt.",
     "inputHash": "sha256:7b002e8c53b4ba71da2bc9703549d3fd08d705ce7c3e117a5aa195746715e0f2"
   },
   "predictionHistory": [
@@ -285,11 +284,24 @@
         "away": 0.1141
       },
       "confidence": 0.7473
+    },
+    {
+      "generatedAt": "2026-06-16T04:03:42.971Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7283,
+        "draw": 0.1661,
+        "away": 0.1056
+      },
+      "confidence": 0.7698
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T11:34:44.485Z",
+    "updatedAt": "2026-06-16T12:03:41.787Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.7086,
