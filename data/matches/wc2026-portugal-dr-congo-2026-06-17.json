@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T04:03:42.971Z",
+    "generatedAt": "2026-06-16T05:03:38.021Z",
     "home": {
       "teamId": "POR",
       "elo": 1777,
@@ -50,52 +50,50 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-16T05:03:38.021Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5911,
-      "draw": 0.2133,
-      "away": 0.1956
+      "home": 0.6707,
+      "draw": 0.1907,
+      "away": 0.1386
     },
-    "confidence": 0.6683,
+    "confidence": 0.6993,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.5141,
-        "draw": 0.2497,
-        "away": 0.2361
+        "home": 0.5457,
+        "draw": 0.2417,
+        "away": 0.2126
       },
       "expectedGoals": {
-        "home": 1.6,
-        "away": 1
+        "home": 1.68,
+        "away": 0.95
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.58,
-          "draw": 0.23,
-          "away": 0.19
+          "home": 0.62,
+          "draw": 0.21,
+          "away": 0.17
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Portugal mit klar höherem Elo (1793 vs. 1705) und starker Offensive (2,32 Tore/Spiel)",
-          "Baseline (51% Heimsieg) erscheint angesichts der Qualitätsdifferenz und Offensivkraft etwas zu niedrig; externe Prognose (75%) wohl zu optimistisch – Kompromiss nach oben korrigiert",
-          "DR Congo defensiv sehr solide (0,48 Gegentore/Spiel, 54,5% Clean-Sheet-Rate) – begrenzt die Heim-xG",
-          "DR Congo mit guter gewichteter Form (2,23) trotz schwächerer Offensive"
+          "Portugal höhere Elo (1777 vs 1640) und stärkere Offensive (2,32 Tore/Spiel) gegenüber DR Kongo",
+          "Externe Prognose sieht Portugal klar vorne (0,75), was die Baseline nach oben korrigiert",
+          "Neutraler Spielort relativiert klassischen Heimvorteil leicht zugunsten DR Kongo"
         ],
         "risks": [
-          "Lange Pause beider Teams (67 Tage) erschwert Formeinschätzung",
-          "Keine H2H-Daten vorhanden – erhöhte Unsicherheit",
-          "Starke Defensive der DR Congo könnte für ein knappes oder torarmes Spiel sorgen",
-          "Keine belastbaren materiellen News zu Ausfällen/Kader – Aufstellungsrisiko unklar"
+          "DR Kongo defensiv sehr stabil (0,48 Gegentore/Spiel, 54,5% Clean Sheets) und mit guter gewichteter Form (2,229) – kann das Spiel eng halten",
+          "Keine H2H-Daten vorhanden, Einschätzung beruht stark auf Form/Elo",
+          "Lange Spielpause (77 Tage) für beide Teams erschwert Formprognose"
         ]
       },
       "chatgpt": {
@@ -104,27 +102,31 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.6,
-          "draw": 0.2,
-          "away": 0.2
+          "home": 0.5750000000000001,
+          "draw": 0.22000000000000003,
+          "away": 0.20500000000000002
         },
-        "confidence": 0.75,
+        "confidence": 0.82,
         "keyFactors": [
-          "Portugal hat eine höhere offensive Stärke mit einem Durchschnitt von 2.32 Toren pro Spiel.",
-          "DR Congo zeigt eine starke defensive Leistung mit einer Gegentorquote von 0.482.",
-          "Portugal's Elo-Rating von 1793 ist überlegen gegenüber DR Congo's 1705.",
-          "Aktuelle Form von DR Congo ist leicht besser als Portugal, beeinflusst das Spiel jedoch weniger.",
-          "Das Spiel findet auf neutralem Boden statt, was beide Teams betrifft."
+          "Portugal hat leicht stärkere aktuelle Form mit Elo von 1777 gegenüber DR Kongo mit 1640.",
+          "Portugals Tordurchschnitt ist höher (2.32) als der von DR Kongo (1.42).",
+          "DR Kongo zeigt starke defensive Werte mit einem Gegentorschnitt von 0.482 und einer Clean Sheet Rate von 0.545.",
+          "Spiel findet auf neutralem Boden statt, daher kein Heimvorteil für Portugal."
         ],
         "risks": [
-          "Keine direkten Head-to-Head-Vergleiche vorhanden.",
-          "Unklarer Einfluss der berichteten materiellen News auf Portugal's Teamkohezion."
+          "Keine direkte Head-to-Head-Historie zwischen den beiden Teams verfügbar.",
+          "Beide Teams haben seit 77 Tagen kein Spiel mehr bestritten, was Unvorhersehbarkeiten bringen kann.",
+          "Rückkehr nach 52 Jahren bei der WM könnte DR Kongo zusätzliche Motivation verleihen."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit klar höherem Elo (1793 vs. 1705) und starker Offensive (2,32 Tore/Spiel); Baseline (51% Heimsieg) erscheint angesichts der Qualitätsdifferenz und Offensivkraft etwas zu niedrig; externe Prognose (75%) wohl zu optimistisch – Kompromiss nach oben korrigiert; DR Congo defensiv sehr solide (0,48 Gegentore/Spiel, 54,5% Clean-Sheet-Rate) – begrenzt die Heim-xG.",
-    "inputHash": "sha256:0804c493a02b230e9c2deeaa5ab887ee144330cc9611efc76e1f3ec7d66d9c53"
+    "agreement": 0.97,
+    "ensembleWeights": {
+      "claude": 0.5055,
+      "chatgpt": 0.4945
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal höhere Elo (1777 vs 1640) und stärkere Offensive (2,32 Tore/Spiel) gegenüber DR Kongo; Externe Prognose sieht Portugal klar vorne (0,75), was die Baseline nach oben korrigiert; Neutraler Spielort relativiert klassischen Heimvorteil leicht zugunsten DR Kongo. Marktquoten zu 50 % eingemischt.",
+    "inputHash": "sha256:291c495ec81ec6f8fa40d7c900ad6b8f6011dfb2459c53ee9b420cbdecc419d7"
   },
   "predictionHistory": [
     {
@@ -269,11 +271,24 @@
         "away": 0.1931
       },
       "confidence": 0.6428
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5911,
+        "draw": 0.2133,
+        "away": 0.1956
+      },
+      "confidence": 0.6683
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T04:05:43.134Z",
+    "updatedAt": "2026-06-16T05:03:38.466Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.7471,
