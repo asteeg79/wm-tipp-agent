@@ -38,7 +38,11 @@ import type {
 import { computeH2h, deriveOpponentSets } from "./features/opponents.js";
 import { NewsAggregator } from "./features/news.js";
 import { makeNewsRelevanceFilter } from "./predict/newsRelevance.js";
-import { computeEloRatings, gamesFromHistories } from "./features/elo.js";
+import {
+  computeEloRatings,
+  gamesFromHistories,
+  type EloGame,
+} from "./features/elo.js";
 import { ELO_SEED } from "./features/eloSeed.js";
 import { runEngine, featureHash } from "./features/engine.js";
 import {
@@ -208,8 +212,48 @@ export async function buildData(
     }
   }
 
-  // 5) Globale Elo-Ratings aus der gesamten Historie (FIFA-Seed als Startwert).
-  const eloRatings = computeEloRatings(gamesFromHistories(historyByTeam));
+  // 4b) Bereits gespielte WM-Partien sind die AKTUELLSTEN Daten — der
+  // History-Provider (openfootball internationals) kennt sie nicht. Daher hier
+  // in Elo UND Form/Results beider Teams einspeisen (recency-gewichtet wirken
+  // sie automatisch am stärksten). Quelle: schedule (worldcup.json).
+  const wcEloGames: EloGame[] = [];
+  for (const fx of schedule) {
+    if (!fx.finished || fx.goalsHome === null || fx.goalsAway === null)
+      continue;
+    wcEloGames.push({
+      date: fx.date,
+      homeId: fx.homeTeamId,
+      awayId: fx.awayTeamId,
+      homeGoals: fx.goalsHome,
+      awayGoals: fx.goalsAway,
+      neutral: fx.neutral,
+    });
+    for (const home of [true, false]) {
+      const teamId = home ? fx.homeTeamId : fx.awayTeamId;
+      const oppId = home ? fx.awayTeamId : fx.homeTeamId;
+      const list = resultsByTeam.get(teamId);
+      if (!list) continue; // Team ohne geladene Historie → keine Form-Basis
+      if (list.some((r) => r.matchId === fx.matchId)) continue; // idempotent
+      list.push({
+        matchId: fx.matchId,
+        date: fx.date,
+        competition: "FIFA World Cup 2026",
+        home,
+        opponentId: oppId,
+        opponentName: nameById.get(oppId) ?? oppId,
+        goalsFor: home ? fx.goalsHome : fx.goalsAway,
+        goalsAgainst: home ? fx.goalsAway : fx.goalsHome,
+        venue: fx.neutral ? "neutral" : home ? "home" : "away",
+        isVsPotentialWcOpponent: true, // echter WM-Gegner → voll gewichtet
+      });
+    }
+  }
+
+  // 5) Globale Elo-Ratings aus Historie + bereits gespielten WM-Partien.
+  const eloRatings = computeEloRatings([
+    ...gamesFromHistories(historyByTeam),
+    ...wcEloGames,
+  ]);
   // Fallback für Teams ganz ohne Historie: Seed, sonst config.elo.initial.
   const eloOf = (id: string): number =>
     eloRatings.get(id) ?? ELO_SEED[id] ?? config.elo.initial;

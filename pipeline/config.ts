@@ -207,10 +207,10 @@ export const config: PipelineConfig = {
     // Ab 5 bewerteten Partien je Modell ist der RPS-Mittelwert belastbar
     // genug; vorher bleibt die Mittelung neutral (50/50).
     accuracyMinSample: 5,
-    // Markt zur Hälfte einmischen, wenn Quoten vorliegen — der Markt war in
-    // der Rückschau der beste Einzel-Schätzer (wir lagen mehrfach gegen ihn
-    // daneben, z. B. Schweden–Tunesien).
-    marketWeight: 0.5,
+    // Markt mit 30 % einmischen: er ist ein guter Anker, soll die eigenständige
+    // KI-Meinung aber NICHT dominieren (bewusst von 0.5 gesenkt). Der Markt
+    // fließt zusätzlich weich über den System-Prompt ein.
+    marketWeight: 0.3,
   },
   openFootball: {
     worldCupBaseUrl:

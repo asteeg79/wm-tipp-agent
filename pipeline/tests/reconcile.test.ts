@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { reconcile, type ModelResult } from "../src/predict/reconcile.js";
+import { config } from "../config.js";
 import type { Baseline } from "@wm/shared";
 
 /**
@@ -208,9 +209,9 @@ describe("reconcile", () => {
     expect(uneinig.confidence).toBeLessThan(einig.confidence);
   });
 
-  it("Markt wird in die finale Wahrscheinlichkeit gemischt (50/50)", () => {
+  it("Markt wird in die finale Wahrscheinlichkeit gemischt", () => {
     // Beide Modelle sehen klar Auswärts (0.2/0.2/0.6), Markt sieht klar Heim
-    // (0.6/0.2/0.2). Bei marketWeight 0.5 → final ~ ausgeglichen, Heim hoch.
+    // (0.6/0.2/0.2). Der Markt hebt die Heim-Wahrscheinlichkeit an.
     const market = { home: 0.6, draw: 0.2, away: 0.2 };
     const ohne = reconcile(
       [
@@ -233,19 +234,21 @@ describe("reconcile", () => {
       null,
       market,
     );
-    // Ohne Markt: Auswärts klar vorn. Mit Markt: Heim deutlich angehoben.
+    // Ohne Markt: Auswärts klar vorn. Mit Markt: Heim angehoben.
     expect(ohne.probabilities.away).toBeGreaterThan(ohne.probabilities.home);
     expect(mit.probabilities.home).toBeGreaterThan(ohne.probabilities.home);
-    // 0.5·0.6 + 0.5·0.2 = 0.4 Heim erwartet.
-    expect(mit.probabilities.home).toBeCloseTo(0.4, 2);
+    // final = mw·0.6 + (1-mw)·0.2 (Ensemble-Heim = 0.2).
+    const mw = config.ensemble.marketWeight;
+    expect(mit.probabilities.home).toBeCloseTo(mw * 0.6 + (1 - mw) * 0.2, 2);
     expect(mit.rationale).toContain("Marktquoten");
   });
 
   it("Markt mischt auch in den Baseline-Fallback (kein KI-Modell)", () => {
     const market = { home: 0.7, draw: 0.2, away: 0.1 };
     const r = reconcile([], baseline, new Date(), "h", null, market);
-    // baseline.home=0.39, market.home=0.7 → 0.5·0.7+0.5·0.39 ≈ 0.545
-    expect(r.probabilities.home).toBeCloseTo(0.545, 2);
+    // final = mw·0.7 + (1-mw)·baseline.home(0.39).
+    const mw = config.ensemble.marketWeight;
+    expect(r.probabilities.home).toBeCloseTo(mw * 0.7 + (1 - mw) * 0.39, 2);
     expect(r.predictedScore.home).toBeGreaterThan(r.predictedScore.away);
   });
 });
