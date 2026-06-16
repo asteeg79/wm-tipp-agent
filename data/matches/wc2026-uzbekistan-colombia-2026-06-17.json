@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T13:03:41.475Z",
+    "generatedAt": "2026-06-16T14:03:48.000Z",
     "home": {
       "teamId": "UZB",
       "elo": 1620,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-16T14:03:48.000Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2544,
-      "draw": 0.2288,
-      "away": 0.5168
+      "home": 0.1741,
+      "draw": 0.2321,
+      "away": 0.5939
     },
-    "confidence": 0.6188,
+    "confidence": 0.598,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2965,
-        "draw": 0.2484,
-        "away": 0.4551
+        "home": 0.2828,
+        "draw": 0.2461,
+        "away": 0.4711
       },
       "expectedGoals": {
-        "home": 1.22,
-        "away": 1.58
+        "home": 1.2,
+        "away": 1.61
       }
     },
     "models": {
@@ -81,23 +81,21 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.26,
+          "home": 0.21,
           "draw": 0.24,
-          "away": 0.5
+          "away": 0.55
         },
-        "confidence": 0.55,
+        "confidence": 0.5,
         "keyFactors": [
-          "Colombia mit deutlich höherem Elo (1775 vs 1676) und stärkerer recentForm (1.8)",
-          "Colombia mit höherer Offensivkraft (goalsForAvg 1.95) gegenüber Uzbekistan (1.51)",
-          "Uzbekistan defensiv stabil (cleanSheetRate 0.625, goalsAgainstAvg 0.893), kann Spiel eng halten",
-          "Neutraler Spielort ohne Heimvorteil für Uzbekistan",
-          "Externe Prognose stark pro Colombia (0.67), stützt Verschiebung gegenüber Baseline"
+          "Kolumbien deutlich höhere Elo (1743 vs 1620) und stärkere Offensive (1.95 Tore/Spiel)",
+          "Kolumbien mit erfahrenem Kader (James Rodriguez 3. WM) und besserer recentForm (1.8)",
+          "Usbekistan defensiv solide (0.89 Gegentore, 62.5% Clean Sheets), aber WM-Neuling"
         ],
         "risks": [
-          "Höhenlage (2240m) könnte beide Teams beeinflussen, Effekt unklar",
-          "Uzbekistan seit 131 Tagen ohne Spiel – Spielrhythmus fraglich",
-          "Neuer Trainer Cannavaro bei Uzbekistan – taktische Unsicherheit",
-          "Unruhen/Verletzungen-News in Kolumbien könnten Kaderlage tangieren"
+          "Usbekistan steht als Außenseiter womöglich tief und kompakt – knappes Ergebnis oder Remis möglich",
+          "Lange Spielpause Usbekistans (141 Tage) erschwert Formeinschätzung",
+          "Höhenlage (2240 m) und neutraler Ort können Spielverlauf unberechenbar machen",
+          "Markt sieht Kolumbien klarer vorne (0.70) als die Baseline – mögliches Unterschätzen Kolumbiens"
         ]
       },
       "chatgpt": {
@@ -106,25 +104,31 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.22,
-          "away": 0.53
+          "home": 0.2,
+          "draw": 0.25,
+          "away": 0.55
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Colombia's higher Elo rating and goal-scoring ability",
-          "Uzbekistan's strong defensive record and form over the past 2 years",
-          "Both teams are playing at a neutral site with high altitude, negating any home advantage"
+          "Colombia hat einen höheren Elo-Wert und zeigt eine bessere aktuelle Form.",
+          "Uzbekistans hohe Clean Sheet Rate könnte defensive Stabilität bieten.",
+          "Der Spielort auf hoher Höhe könnte beeinflussend sein, aber kolumbianische Spieler sind solche Bedingungen teilweise gewohnt.",
+          "Keine Head-to-Head-Daten, was die Analyse aus objektiven Daten erschwert."
         ],
         "risks": [
-          "Uzbekistan's recent form slump could negatively affect their performance",
-          "Colombia's squad uncertainties due to reported injuries"
+          "Uzbekistan hat seit längerer Zeit kein Spiel bestritten, was die Formanalyse erschwert.",
+          "Der neutrale Spielort reduziert eventuelle Heim- oder Auswärtsvorteile.",
+          "Die Baseline und externe Marktquote weichen stark ab, was Unsicherheiten bezüglich der Leistung erwartet."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia mit deutlich höherem Elo (1775 vs 1676) und stärkerer recentForm (1.8); Colombia mit höherer Offensivkraft (goalsForAvg 1.95) gegenüber Uzbekistan (1.51); Uzbekistan defensiv stabil (cleanSheetRate 0.625, goalsAgainstAvg 0.893), kann Spiel eng halten.",
-    "inputHash": "sha256:b65fe31842805da4840dee2a31f1acceaaad52506daa1d1084663d20806c52e0"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5055,
+      "chatgpt": 0.4945
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kolumbien deutlich höhere Elo (1743 vs 1620) und stärkere Offensive (1.95 Tore/Spiel); Kolumbien mit erfahrenem Kader (James Rodriguez 3. WM) und besserer recentForm (1.8); Usbekistan defensiv solide (0.89 Gegentore, 62.5% Clean Sheets), aber WM-Neuling. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:cf7f42b93152e1b2bbd0d439edb30d9a1a7766311ac36a467be203e107031a8b"
   },
   "predictionHistory": [
     {
@@ -269,11 +273,24 @@
         "away": 0.4838
       },
       "confidence": 0.6435
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2544,
+        "draw": 0.2288,
+        "away": 0.5168
+      },
+      "confidence": 0.6188
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T13:05:39.216Z",
+    "updatedAt": "2026-06-16T14:04:48.575Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1037,
