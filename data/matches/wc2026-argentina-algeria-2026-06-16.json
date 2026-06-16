@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T20:03:41.834Z",
+    "generatedAt": "2026-06-16T21:03:38.337Z",
     "home": {
       "teamId": "ARG",
       "elo": 1894,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-16T18:03:35.135Z",
+    "generatedAt": "2026-06-16T21:03:38.337Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.629,
-      "draw": 0.2236,
-      "away": 0.1474
+      "home": 0.631,
+      "draw": 0.218,
+      "away": 0.151
     },
-    "confidence": 0.6804,
+    "confidence": 0.6534,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,51 +81,52 @@
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.23,
-          "away": 0.17
+          "draw": 0.22,
+          "away": 0.18
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Argentinien klar stärker: Elo 1894 vs. 1697, exzellente Defensive (GA 0.40, Clean-Sheet-Rate 63%) und hohe Offensivproduktion (2.5 Tore/Spiel)",
-          "Markt sieht Argentinien noch deutlicher vorne (0.67) als die Baseline (0.54) – ich positioniere mich dazwischen",
-          "Beide Teams in guter Form (weightedForm ~2.5), Algerien aber als Außenseiter eher tief und kompakt",
-          "Argentinien als amtierender Weltmeister mit individueller Klasse über alle Mannschaftsteile"
+          "Argentinien deutlich höhere Elo (1894 vs. 1697) und Weltmeister-Qualität",
+          "Sehr starke Defensive Argentiniens (GegentoreAvg 0.40, Clean-Sheet-Rate 0.63)",
+          "Hohe Offensivkraft (xG 1.8) gegen eine solide, aber durchlässigere algerische Abwehr",
+          "Markt sieht Argentinien klar vorn (0.67), Baseline etwas zurückhaltender (0.54)"
         ],
         "risks": [
-          "Algerien hat eine ordentliche Offensive (GF 2.34) und kann bei Standards/Kontern stechen",
-          "Gruppenphasen-Auftakt oft vorsichtig und torarm – Favorit tut sich gegen tiefe Defensive schwer",
-          "Kein H2H-Datenwert vorhanden, lange Pause (77 Tage) könnte Rhythmus beeinträchtigen",
-          "Bei früher algerischer Führung droht ein zähes, knappes Spiel mit Remis-Potenzial"
+          "Algerien ist offensiv gefährlich (GoalsForAvg 2.34) und kann bei Kontern treffen",
+          "WM-Auftaktspiele oft vorsichtig und torarm, Außenseiter steht tief",
+          "Lange Pause (77 Tage) für beide Teams kann Rhythmusprobleme bringen",
+          "Kein H2H-Datensatz verfügbar, erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "probabilities": {
-          "home": 0.62,
-          "draw": 0.23,
+          "home": 0.63,
+          "draw": 0.22,
           "away": 0.15
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Argentinien hat eine herausragende Defensiv- und Offensivbilanz mit hoher Torquote und häufigen Spielen ohne Gegentor.",
-          "Algerien hat eine ordentliche Form, jedoch schwächeres Elo-Rating und geringere Qualität im Vergleich zu Argentinien.",
-          "Neutraler Spielort mindert potenzielle Vorteile, der die höhere individuelle Qualität Argentiniens hervorhebt."
+          "Argentina hat einen deutlich höheren Elo-Wert als Algerien.",
+          "Argentinien hat über ein Jahr keine Spiele verloren und weist eine sehr starke Defensive auf.",
+          "Algerien hat solide Leistung in jüngster Zeit gezeigt, ist jedoch defensiv anfälliger im Vergleich zu Argentinien.",
+          "Keine Heim- oder Auswärtseffekte aufgrund des neutralen Spielorts."
         ],
         "risks": [
-          "Gruppenspiele sind oft enger als erwartet, was zu einem möglichen Unentschieden führen könnte.",
-          "Keine direkten Begegnungen zuvor, was taktische Überraschungen möglich macht."
+          "Weltmeisterschaften sind unvorhersehbar, insbesondere in neutralen Spielen.",
+          "Eingeschränkte Daten zu Head-to-Head, da kein direkter Vergleich vorliegt."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.5055,
       "chatgpt": 0.4945
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar stärker: Elo 1894 vs. 1697, exzellente Defensive (GA 0.40, Clean-Sheet-Rate 63%) und hohe Offensivproduktion (2.5 Tore/Spiel); Markt sieht Argentinien noch deutlicher vorne (0.67) als die Baseline (0.54) – ich positioniere mich dazwischen; Beide Teams in guter Form (weightedForm ~2.5), Algerien aber als Außenseiter eher tief und kompakt. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich höhere Elo (1894 vs. 1697) und Weltmeister-Qualität; Sehr starke Defensive Argentiniens (GegentoreAvg 0.40, Clean-Sheet-Rate 0.63); Hohe Offensivkraft (xG 1.8) gegen eine solide, aber durchlässigere algerische Abwehr. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:1ed1f1ed0ab8353a51a5c019371dd5538f74321c267dacced3575fb2fc33b1ef"
   },
   "predictionHistory": [
@@ -336,20 +337,33 @@
         "away": 0.1462
       },
       "confidence": 0.7027
+    },
+    {
+      "generatedAt": "2026-06-16T18:03:35.135Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.629,
+        "draw": 0.2236,
+        "away": 0.1474
+      },
+      "confidence": 0.6804
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T20:05:26.910Z",
+    "updatedAt": "2026-06-16T21:03:38.883Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.6673,
-      "draw": 0.2126,
-      "away": 0.1201
+      "home": 0.6667,
+      "draw": 0.2133,
+      "away": 0.12
     },
     "decimal": {
       "home": 1.44,
-      "draw": 4.52,
+      "draw": 4.5,
       "away": 8
     }
   }
