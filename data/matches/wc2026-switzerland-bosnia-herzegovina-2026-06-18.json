@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T18:31:40.932Z",
+    "generatedAt": "2026-06-17T19:03:51.015Z",
     "home": {
       "teamId": "SUI",
       "elo": 1703,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-17T07:03:34.574Z",
+    "generatedAt": "2026-06-17T19:03:51.015Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.5698,
-      "draw": 0.2405,
-      "away": 0.1897
+      "home": 0.576,
+      "draw": 0.2398,
+      "away": 0.1841
     },
-    "confidence": 0.6279,
+    "confidence": 0.588,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,20 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.56,
           "draw": 0.24,
-          "away": 0.21
+          "away": 0.2
         },
-        "confidence": 0.56,
+        "confidence": 0.58,
         "keyFactors": [
-          "Schweiz mit klarem Elo-Vorteil (1703 vs 1546) und stärkerer jüngerer Form (recentForm 1.9 vs 1.4)",
-          "Bessere Defensivwerte der Schweiz (1.08 Gegentore, 35,7% Zu-Null) gegenüber Bosnien (1.21, nur 18,2%)",
-          "Markt sieht Schweiz deutlich vorne (0.62), stützt Baseline-Favoritenrolle",
-          "Neutraler Spielort relativiert klassischen Heimvorteil leicht"
+          "Schweiz mit deutlich höherem Elo (1703 vs 1546) und besserer gewichteter sowie aktueller Form",
+          "Höhere Torquote (1.81 vs 1.58) und bessere Defensive (1.08 Gegentore, 35.7% Clean Sheets) der Schweiz",
+          "Markt sieht die Schweiz klar vorn (0.625), was die Baseline nach oben korrigiert"
         ],
         "risks": [
-          "Bosnien mit ordentlicher Offensive (1.58 Tore/Spiel) kann auf neutralem Platz treffen",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "WM-Gruppenspiele oft vorsichtig/torarm — knappes Remis möglich",
-          "Außenseiter könnte tief stehen und Schweiz das Toreschießen erschweren"
+          "Bosnien steht in WM-Gruppenspielen häufig tief und kompakt, was knappe Ergebnisse begünstigt",
+          "Neutraler Spielort nimmt der Schweiz den Heimvorteil",
+          "BIH besitzt offensive Qualität (1.58 Tore/Spiel) und kann kontern, schwache Schweizer Defensivkonstanz möglich"
         ]
       },
       "chatgpt": {
@@ -108,17 +106,16 @@
           "draw": 0.25,
           "away": 0.2
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Switzerland has a higher Elo rating and recent form than Bosnia & Herzegovina.",
-          "Switzerland's clean sheet rate is significantly higher than Bosnia & Herzegovina's.",
-          "Switzerland has a better recent record in goal scoring and defensive strength.",
-          "No head-to-head history; performance based on current form.",
-          "Match at neutral venue, no host advantage."
+          "Schweiz hat eine bessere Elo-Bewertung und stärkere aktuelle Form.",
+          "Schweiz hat eine höhere durchschnittliche Torquote sowohl offensiv als auch defensiv.",
+          "Neutraler Spielort minimiert den Einfluss von Heimspielvorteilen.",
+          "Keine Head-to-Head-Daten vorhanden, was Überraschungen begünstigen könnte."
         ],
         "risks": [
-          "First World Cup match for both teams could lead to cautious play.",
-          "High variance in tournament settings might affect expected performance."
+          "Bosnien & Herzegowina könnte unterschätzt werden due zu ihrer unauffälligen Spielweise.",
+          "Erstes WM-Spiel, was tendenziell zu vorsichtigem und defensivem Spiel führt."
         ]
       }
     },
@@ -127,7 +124,7 @@
       "claude": 0.5052,
       "chatgpt": 0.4948
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit klarem Elo-Vorteil (1703 vs 1546) und stärkerer jüngerer Form (recentForm 1.9 vs 1.4); Bessere Defensivwerte der Schweiz (1.08 Gegentore, 35,7% Zu-Null) gegenüber Bosnien (1.21, nur 18,2%); Markt sieht Schweiz deutlich vorne (0.62), stützt Baseline-Favoritenrolle. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit deutlich höherem Elo (1703 vs 1546) und besserer gewichteter sowie aktueller Form; Höhere Torquote (1.81 vs 1.58) und bessere Defensive (1.08 Gegentore, 35.7% Clean Sheets) der Schweiz; Markt sieht die Schweiz klar vorn (0.625), was die Baseline nach oben korrigiert. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:ceb8f72205269991bf86cb2ec4130087079b5e418bd3a1e3aeb9d3ac7b0c6d28"
   },
   "predictionHistory": [
@@ -286,21 +283,34 @@
         "away": 0.2094
       },
       "confidence": 0.6336
+    },
+    {
+      "generatedAt": "2026-06-17T07:03:34.574Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5698,
+        "draw": 0.2405,
+        "away": 0.1897
+      },
+      "confidence": 0.6279
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T18:33:36.999Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-17T19:03:51.864Z",
+    "bookmakerCount": 23,
     "probabilities": {
-      "home": 0.6237,
-      "draw": 0.2272,
-      "away": 0.1491
+      "home": 0.6251,
+      "draw": 0.2277,
+      "away": 0.1471
     },
     "decimal": {
       "home": 1.53,
       "draw": 4.2,
-      "away": 6.4
+      "away": 6.5
     }
   }
 }
