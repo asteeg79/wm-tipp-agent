@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-16T23:46:31.034Z",
+    "generatedAt": "2026-06-17T04:03:40.558Z",
     "home": {
       "teamId": "GHA",
       "elo": 1536,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.557,
       "cleanSheetRate": 0.318,
       "matchesCount": 22,
-      "daysSinceLastMatch": 78
+      "daysSinceLastMatch": 79
     },
     "away": {
       "teamId": "PAN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.012,
       "cleanSheetRate": 0.303,
       "matchesCount": 33,
-      "daysSinceLastMatch": 77
+      "daysSinceLastMatch": 78
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-16T11:03:41.362Z",
+    "generatedAt": "2026-06-17T04:03:40.558Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3879,
-      "draw": 0.2872,
-      "away": 0.3249
+      "home": 0.363,
+      "draw": 0.3068,
+      "away": 0.3303
     },
-    "confidence": 0.5802,
+    "confidence": 0.4867,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.32,
-          "draw": 0.28,
+          "home": 0.31,
+          "draw": 0.29,
           "away": 0.4
         },
-        "confidence": 0.48,
+        "confidence": 0.4,
         "keyFactors": [
-          "Panama mit höherem Elo (1602 vs 1536) und besserer gewichteter Form (1.79 vs 1.19)",
-          "Panamas stabile Defensive (Gegentore 1.01/Spiel) gegenüber Ghanas anfälliger Abwehr (1.56)",
-          "Neutraler Spielort ohne Heimvorteil für Ghana",
-          "Negative Stimmungslage bei Ghana laut News (Wirbel um Einreise eines Stars)",
-          "Externe Prognose sieht Ghana vorne, Baseline klar bei Panama – starke Diskrepanz"
+          "Panama mit höherem Elo (1602 vs 1536) und deutlich besserer Defensive (1.01 Gegentore/Spiel, weighted form 1.79)",
+          "Ghana defensiv anfällig (1.56 Gegentore/Spiel, nur 31.8% Zu-Null) und schwächere gewichtete Form (1.19)",
+          "Neutraler Spielort relativiert die im Markt eingepreiste Heimstärke Ghanas",
+          "WM-Gruppenphase mit kompakten, vorsichtigen Spielen erhöht Remis-Wahrscheinlichkeit"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, hohe Unsicherheit",
-          "Externe Prognose widerspricht Baseline deutlich",
-          "Kaderfragen/Nominierungen auf beiden Seiten noch unklar",
-          "Ghanas zuletzt bessere recentForm (1.6) könnte Aufwärtstrend andeuten"
+          "Markt sieht Ghana klar vorne (0.43) – Abweichung von der externen Einschätzung birgt Unsicherheit",
+          "Ghana-Star evtl. wegen Einreiseproblematik fraglich – Auswirkung auf Offensivkraft unklar",
+          "Kein Head-to-Head-Datensatz vorhanden, geringe Datentiefe",
+          "Tagesform und Einzelaktionen können enges Spiel kippen"
         ]
       },
       "chatgpt": {
@@ -105,30 +104,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.33,
+          "away": 0.32
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Panama hat eine leichte Elo-Vorteil gegenüber Ghana.",
-          "Ghanas Form ist im Aufwärtstrend, aber es gibt externe Störungen durch den wegfallenden Star.",
-          "Neutrale Spielstätte, kein Vorteil für ein Team.",
-          "Keine vorherigen Head-to-Head-Begegnungen für Vergleich."
+          "Panama hat einen höheren Elo-Wert, aber Ghana zeigt eine starke jüngste Form.",
+          "Ghanas Form wird möglicherweise durch moralische Fragen beeinflusst.",
+          "Beide Mannschaften haben ähnliche Trefferquoten und Abwehrfähigkeiten.",
+          "Es gibt kein direktes H2H-Vergangenheit als Referenz."
         ],
         "risks": [
-          "Fehlende Starspieler bei Ghana könnte die Teammoral beeinflussen.",
-          "Ghanas letzter Erfolg kam gegen vergleichsweise schwächere Teams."
+          "Unsicherheit durch Neuheitenheuristik, da dies das erste H2H-Spiel ist.",
+          "Mögliche Auswirkungen von Ghanas Einreisedebakel auf die Teamleistung."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.9467,
     "ensembleWeights": {
-      "claude": 0.5055,
-      "chatgpt": 0.4945
+      "claude": 0.5052,
+      "chatgpt": 0.4948
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Panama mit höherem Elo (1602 vs 1536) und besserer gewichteter Form (1.79 vs 1.19); Panamas stabile Defensive (Gegentore 1.01/Spiel) gegenüber Ghanas anfälliger Abwehr (1.56); Neutraler Spielort ohne Heimvorteil für Ghana. Marktquoten zu 50 % eingemischt.",
-    "inputHash": "sha256:377292215a3abaf22d9cb12693536479c2294d738ace47aa383d9b78f0fda62a"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Panama mit höherem Elo (1602 vs 1536) und deutlich besserer Defensive (1.01 Gegentore/Spiel, weighted form 1.79); Ghana defensiv anfällig (1.56 Gegentore/Spiel, nur 31.8% Zu-Null) und schwächere gewichtete Form (1.19); Neutraler Spielort relativiert die im Markt eingepreiste Heimstärke Ghanas. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:79c6bfbe3aa8db40bb93a2ce77d8f3299bee2d6b15a83455dfced0a5ba2de7da"
   },
   "predictionHistory": [
     {
@@ -286,11 +285,24 @@
         "away": 0.442
       },
       "confidence": 0.6208
+    },
+    {
+      "generatedAt": "2026-06-16T11:03:41.362Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3879,
+        "draw": 0.2872,
+        "away": 0.3249
+      },
+      "confidence": 0.5802
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-16T23:48:14.243Z",
+    "updatedAt": "2026-06-17T04:06:05.507Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.431,
