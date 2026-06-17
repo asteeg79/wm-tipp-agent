@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T10:07:37.401Z",
+    "generatedAt": "2026-06-17T11:03:42.519Z",
     "home": {
       "teamId": "GHA",
       "elo": 1536,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-17T07:03:34.574Z",
+    "generatedAt": "2026-06-17T11:03:42.519Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3603,
-      "draw": 0.3132,
-      "away": 0.3265
+      "home": 0.3529,
+      "draw": 0.3125,
+      "away": 0.3346
     },
-    "confidence": 0.441,
+    "confidence": 0.3963,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
+          "home": 0.31,
           "draw": 0.29,
-          "away": 0.38
+          "away": 0.4
         },
-        "confidence": 0.4,
+        "confidence": 0.42,
         "keyFactors": [
-          "Panama hat höheren Elo (1602 vs 1536) und die deutlich bessere Defensive (Gegentore 1,01 vs 1,56) sowie stärkere gewichtete Form (1,79 vs 1,19)",
-          "Neutraler Spielort ohne Heimvorteil für Ghana",
-          "Baseline sieht Panama klar vorn, der Markt dagegen Ghana – die Wahrheit liegt dazwischen",
-          "Beide Teams mit ähnlicher recentForm (1,6 vs 1,7), kein klar überlegenes Team"
+          "Panama mit höherem Elo (1602 vs 1536) und stärkerer gewichteter Form (1.79 vs 1.19)",
+          "Panamas deutlich bessere Defensive (Gegentore-Schnitt 1.01 vs 1.57) spricht für ein kompaktes, torarmes Spiel",
+          "Beide Teams etwa gleiche Pausenlänge (~78-79 Tage), neutraler Spielort ohne Heimvorteil",
+          "Markt sieht Ghana leicht vorne, was statistisch von der Baseline und den Defensivwerten nicht klar gestützt wird"
         ],
         "risks": [
-          "Ghanas individuelle Offensivqualität kann jederzeit ein torarmes Spiel entscheiden",
-          "Mögliche Unruhe im Ghana-Lager (Einreise-/Moral-Meldung) als Störfaktor",
-          "Starke Markt-Diskrepanz zur Baseline erhöht die Unsicherheit",
-          "Kein H2H-Datenpunkt vorhanden"
+          "Widersprüchliche Signale: Baseline favorisiert Panama, Buchmacher favorisieren Ghana",
+          "Berichte um verweigerte Einreise eines Ghana-Stars könnten Kader/Moral beeinflussen (unsicher)",
+          "Kein H2H-Verlauf vorhanden, hohe Unsicherheit",
+          "WM-Gruppenauftakt oft vorsichtig und torarm – Remis durchaus möglich"
         ]
       },
       "chatgpt": {
@@ -104,29 +104,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
+          "home": 0.35,
           "draw": 0.35,
-          "away": 0.32
+          "away": 0.3
         },
-        "confidence": 0.5,
+        "confidence": 0.4,
         "keyFactors": [
-          "Panama hat einen höheren Elo-Wert, aber Ghana hat eine annähernd gleichwertige Form, was die Chancen ausgleicht.",
-          "Beide Mannschaften weisen ähnliche Defensivstatistiken auf, was auf ein defensiv diszipliniertes Spiel hindeutet.",
-          "Externes Marktmodell favorisiert leicht Ghana, was auf eine engere Partie als in der Baseline hindeutet."
+          "Ghana's recent form shows improvement; however, morale issue regarding player inclusion.",
+          "Panama's slightly higher Elo and form advantage balanced by neutral venue.",
+          "No head-to-head history between teams; increases uncertainty."
         ],
         "risks": [
-          "Moralische und organisatorische Probleme im ghanaischen Kader könnten die Leistung beeinträchtigen.",
-          "Kein direkter Head-to-Head-Vergleich vorhanden, was die Bewertung unsicherer macht.",
-          "Turnierauftakt kann zu taktisch defensiver Herangehensweise beider Teams führen, was wenige Torchancen ermöglicht."
+          "Ghana's morale affected by off-field issues may impact performance.",
+          "Panama has been defensively stable, lower expected goals against."
         ]
       }
     },
-    "agreement": 0.96,
+    "agreement": 0.9333,
     "ensembleWeights": {
       "claude": 0.5052,
       "chatgpt": 0.4948
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Panama hat höheren Elo (1602 vs 1536) und die deutlich bessere Defensive (Gegentore 1,01 vs 1,56) sowie stärkere gewichtete Form (1,79 vs 1,19); Neutraler Spielort ohne Heimvorteil für Ghana; Baseline sieht Panama klar vorn, der Markt dagegen Ghana – die Wahrheit liegt dazwischen. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Panama mit höherem Elo (1602 vs 1536) und stärkerer gewichteter Form (1.79 vs 1.19); Panamas deutlich bessere Defensive (Gegentore-Schnitt 1.01 vs 1.57) spricht für ein kompaktes, torarmes Spiel; Beide Teams etwa gleiche Pausenlänge (~78-79 Tage), neutraler Spielort ohne Heimvorteil. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:79c6bfbe3aa8db40bb93a2ce77d8f3299bee2d6b15a83455dfced0a5ba2de7da"
   },
   "predictionHistory": [
@@ -311,21 +310,34 @@
         "away": 0.3303
       },
       "confidence": 0.4867
+    },
+    {
+      "generatedAt": "2026-06-17T07:03:34.574Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3603,
+        "draw": 0.3132,
+        "away": 0.3265
+      },
+      "confidence": 0.441
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T10:07:52.924Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-17T11:04:27.217Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4085,
-      "draw": 0.2966,
-      "away": 0.2948
+      "home": 0.4079,
+      "draw": 0.2974,
+      "away": 0.2947
     },
     "decimal": {
-      "home": 2.36,
+      "home": 2.37,
       "draw": 3.25,
-      "away": 3.27
+      "away": 3.28
     }
   }
 }
