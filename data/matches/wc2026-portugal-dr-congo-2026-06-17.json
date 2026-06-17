@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T09:03:43.193Z",
+    "generatedAt": "2026-06-17T10:03:35.815Z",
     "home": {
       "teamId": "POR",
       "elo": 1777,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-17T05:03:33.900Z",
+    "generatedAt": "2026-06-17T10:03:35.815Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6714,
-      "draw": 0.1974,
-      "away": 0.1312
+      "home": 0.6558,
+      "draw": 0.2097,
+      "away": 0.1345
     },
-    "confidence": 0.6457,
+    "confidence": 0.6478,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,20 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.63,
+          "home": 0.62,
           "draw": 0.22,
-          "away": 0.15
+          "away": 0.16
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Portugal mit deutlich höherer Elo (1777 vs 1640) und starker Offensive (2.32 Tore/Spiel)",
-          "Markt sieht Portugal klar vorne (74%), Baseline konservativer (55%) - eigene Einschätzung dazwischen",
-          "DR Kongo defensiv sehr stabil (0.48 Gegentore/Spiel, 54% Clean Sheets), kann tief stehen und Favorit erschweren",
-          "Beide Teams mit guter aktueller Form, aber Portugals individuelle Klasse überwiegt"
+          "Portugal mit deutlich höherem Elo (1777 vs 1640) und starker Offensive (2.32 Tore/Spiel)",
+          "Markt sieht Portugal klar vorne (0.74), Baseline etwas zurückhaltender (0.55)",
+          "DR Kongo defensiv robust (0.48 Gegentore/Spiel, 54,5% Zu-null) – kompakte Spielweise zu erwarten"
         ],
         "risks": [
-          "DR Kongos starke Defensive könnte ein torarmes Spiel und Remis-Tendenz begünstigen",
-          "Lange Pause (78 Tage ohne Spiel) könnte Rhythmus beider Teams beeinträchtigen",
-          "Kein H2H-Datenpunkt vorhanden - Unsicherheit bei direktem Vergleich",
-          "Außenseiter steht oft kompakt, Favorit tut sich schwer beim Durchbrechen (WM-Gruppenphase)"
+          "Trainerwechsel bei Portugal könnte für Unruhe/Anpassungsprobleme sorgen",
+          "Kongos kompakte Defensive kann ein torarmes Spiel und Remis-Tendenz erzwingen",
+          "Keine H2H-Daten und WM-Auftaktspiele oft vorsichtig/torarm"
         ]
       },
       "chatgpt": {
@@ -104,28 +102,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
+          "home": 0.62,
+          "draw": 0.23,
           "away": 0.15
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Portugal hat einen höheren Elo-Wert und zeigt starke Form mit hoher Torausbeute.",
-          "DR Congo hat eine gute defensive Statistik, kann aber gegen offensivstärkere Teams unter Druck geraten.",
-          "Kein Head-to-Head-Vergleich verfügbar, neutraler Spielort relativiert Heimvorteil."
+          "Portugal hat historisch stärkeren Kader und höhere Elo-Wertung.",
+          "DR Congo hat eine bemerkenswerte Defensivstatistik mit einer höheren Clean Sheet Rate.",
+          "Portugal hat kürzlich einen Trainerwechsel vollzogen, was ihre Vorbereitung beeinflussen könnte.",
+          "Keine direkten Begegnungen zuvor, keine Erfahrungswerte im direkten Vergleich."
         ],
         "risks": [
-          "Formstärke von DR Congo könnte Portugal vor Herausforderungen stellen.",
-          "Vorsichtiger Beginn in der WM-Gruppenphase könnte zu einem torärmeren Spiel führen."
+          "Portugal könnte aufgrund des Trainerwechsels strategisch unvorbereitet sein.",
+          "Neutraler Spielort mindert potenziellen Heimvorteil für Portugal.",
+          "DR Congo hat eine gute recent Form, was das Spiel potenziell enger macht."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9933,
     "ensembleWeights": {
       "claude": 0.5052,
       "chatgpt": 0.4948
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit deutlich höherer Elo (1777 vs 1640) und starker Offensive (2.32 Tore/Spiel); Markt sieht Portugal klar vorne (74%), Baseline konservativer (55%) - eigene Einschätzung dazwischen; DR Kongo defensiv sehr stabil (0.48 Gegentore/Spiel, 54% Clean Sheets), kann tief stehen und Favorit erschweren. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit deutlich höherem Elo (1777 vs 1640) und starker Offensive (2.32 Tore/Spiel); Markt sieht Portugal klar vorne (0.74), Baseline etwas zurückhaltender (0.55); DR Kongo defensiv robust (0.48 Gegentore/Spiel, 54,5% Zu-null) – kompakte Spielweise zu erwarten. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:7d5eba2b91c1b37fcf4617b5ec840be7349477b06696c49b709e33906c3c6b8f"
   },
   "predictionHistory": [
@@ -336,11 +336,24 @@
         "away": 0.1382
       },
       "confidence": 0.6357
+    },
+    {
+      "generatedAt": "2026-06-17T05:03:33.900Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6714,
+        "draw": 0.1974,
+        "away": 0.1312
+      },
+      "confidence": 0.6457
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T09:03:55.499Z",
+    "updatedAt": "2026-06-17T10:05:26.408Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.7394,
