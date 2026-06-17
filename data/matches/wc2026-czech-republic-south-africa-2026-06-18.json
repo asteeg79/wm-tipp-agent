@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T16:01:38.496Z",
+    "generatedAt": "2026-06-17T16:04:04.376Z",
     "home": {
       "teamId": "CZE",
       "elo": 1611,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-17T04:03:40.558Z",
+    "generatedAt": "2026-06-17T16:04:04.376Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4677,
-      "draw": 0.2927,
-      "away": 0.2396
+      "home": 0.4552,
+      "draw": 0.2936,
+      "away": 0.2512
     },
-    "confidence": 0.4867,
+    "confidence": 0.4947,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,19 @@
           "draw": 0.27,
           "away": 0.26
         },
-        "confidence": 0.5,
+        "confidence": 0.42,
         "keyFactors": [
-          "Tschechien mit leicht höherem Elo (1611 vs 1586) und Heim-/Baseline-Vorteil",
-          "Südafrika defensiv stabiler (Clean-Sheet-Rate 0.469 vs 0.308, weniger Gegentore)",
-          "Beide Teams in ähnlicher Form (gewichtete Form ~1.32), kein klarer Favorit",
-          "Markt sieht Tschechien deutlicher vorne (0.54), Baseline moderater (0.45)"
+          "Sehr enges Elo-Niveau (CZE 1611 vs RSA 1586) und nahezu identische gewichtete Form deuten auf eine ausgeglichene Partie",
+          "Tschechien mit leicht höherer Offensivproduktion (1,76 Tore/Spiel) und Heimstatus-Erwartung des Marktes (0,54)",
+          "Südafrika defensiv stabiler (Clean-Sheet-Rate 0,47, nur 1,18 Gegentore/Spiel), was Tschechiens Offensive bremsen kann",
+          "Neutraler Spielort ohne Heimvorteil relativiert die Favoritenrolle",
+          "WM-Gruppenphasen-Kontext: kompakte Außenseiter und torarme Auftaktspiele begünstigen knappe Resultate"
         ],
         "risks": [
-          "Kein H2H-Datensatz vorhanden, hohe Unsicherheit",
-          "Südafrikas kompakte Defensive kann tschechische Überlegenheit neutralisieren – Remis-Gefahr",
-          "Gruppenphasen-Spiele oft torarm und vorsichtig",
-          "Mögliche Rotation/Verletzungen ohne aktuelle News nicht erfasst"
+          "Keine H2H-Daten vorhanden, dadurch erhöhte Unsicherheit über das Aufeinandertreffen der Spielstile",
+          "Südafrikas starke Defensive könnte ein Remis oder eine Überraschung wahrscheinlicher machen als die Baseline",
+          "Markt und Poisson-Baseline weichen deutlich voneinander ab (0,54 vs 0,45), was Prognoseunsicherheit signalisiert",
+          "Mögliche unberücksichtigte Aufstellungs- oder Rotationsentscheidungen im Turnierkontext"
         ]
       },
       "chatgpt": {
@@ -104,29 +105,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.35,
-          "away": 0.25
+          "home": 0.38,
+          "draw": 0.34,
+          "away": 0.28
         },
-        "confidence": 0.5,
+        "confidence": 0.6,
         "keyFactors": [
-          "Elo-Ratings der beiden Teams sind ähnlich, kein klarer Favorit.",
-          "Beide Teams haben eine vergleichbare, positive Form.",
-          "Neutrales Spielfeld ohne Heimvorteil.",
-          "Ähnliche durchschnittliche Torausbeute."
+          "Czech Republic has slightly higher Elo rating indicating marginal strength.",
+          "South Africa has a higher clean sheet rate than Czech Republic.",
+          "Both teams have relatively balanced and recent positive form.",
+          "Match is on neutral ground, no home advantage."
         ],
         "risks": [
-          "Keine Head-to-Head-Historie zwischen den Teams.",
-          "Toranzahl in möglichen Auftakt- oder Gruppenspielen typischerweise niedriger."
+          "No head-to-head data available to directly compare the teams against each other."
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.94,
     "ensembleWeights": {
       "claude": 0.5052,
       "chatgpt": 0.4948
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Tschechien mit leicht höherem Elo (1611 vs 1586) und Heim-/Baseline-Vorteil; Südafrika defensiv stabiler (Clean-Sheet-Rate 0.469 vs 0.308, weniger Gegentore); Beide Teams in ähnlicher Form (gewichtete Form ~1.32), kein klarer Favorit. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr enges Elo-Niveau (CZE 1611 vs RSA 1586) und nahezu identische gewichtete Form deuten auf eine ausgeglichene Partie; Tschechien mit leicht höherer Offensivproduktion (1,76 Tore/Spiel) und Heimstatus-Erwartung des Marktes (0,54); Südafrika defensiv stabiler (Clean-Sheet-Rate 0,47, nur 1,18 Gegentore/Spiel), was Tschechiens Offensive bremsen kann. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:22ed339dbb8a2908bf5c697c08ab7d2e56efb1b1f33d3867451b3085dfe74515"
   },
   "predictionHistory": [
@@ -272,11 +272,24 @@
         "away": 0.3072
       },
       "confidence": 0.5714
+    },
+    {
+      "generatedAt": "2026-06-17T04:03:40.558Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4677,
+        "draw": 0.2927,
+        "away": 0.2396
+      },
+      "confidence": 0.4867
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T16:03:29.456Z",
+    "updatedAt": "2026-06-17T16:04:04.707Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5433,

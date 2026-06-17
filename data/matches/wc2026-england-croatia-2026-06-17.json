@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T16:01:38.496Z",
+    "generatedAt": "2026-06-17T16:04:04.376Z",
     "home": {
       "teamId": "ENG",
       "elo": 1815,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-17T13:03:35.575Z",
+    "generatedAt": "2026-06-17T16:04:04.376Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4999,
-      "draw": 0.2916,
-      "away": 0.2085
+      "home": 0.4974,
+      "draw": 0.273,
+      "away": 0.2296
     },
-    "confidence": 0.5578,
+    "confidence": 0.5427,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,25 +77,26 @@
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.5,
+          "home": 0.49,
           "draw": 0.26,
-          "away": 0.24
+          "away": 0.25
         },
         "confidence": 0.55,
         "keyFactors": [
-          "England mit herausragender Defensive (GA 0.52, Clean-Sheet-Rate 55%) und höherem Elo (1815 vs 1747)",
-          "Markt sieht England klarer vorne (0.56) als die Baseline (0.46), Mittelwert spricht für moderaten Favoriten England",
-          "Kroatien offensiv stark (GF 2.21, recentForm 2.5), aber defensiv anfällig (GA 1.10, Clean-Sheet nur 35%)",
-          "Neutraler Spielort, kein Heimvorteil – relativiert Englands nominellen Heimstatus"
+          "England mit sehr starker Defensive (Gegentorschnitt 0,52, Clean-Sheet-Rate 0,55) und höherem Elo (1815 vs 1747)",
+          "Kroatien mit starker Offensivform (recentForm 2,5; 2,2 Tore/Spiel), aber anfälligerer Abwehr (1,10 Gegentore)",
+          "Markt sieht England klar vorn (0,56), Baseline moderater (0,46) – beide favorisieren England",
+          "Neutraler Spielort ohne Heimvorteil, kein H2H-Bezug vorhanden",
+          "Beide Teams gleich lange ohne Spiel (78 Tage) – mögliche Turnier-Auftakt-Vorsicht"
         ],
         "risks": [
-          "Gruppenphasen-Auftakt oft vorsichtig und torarm – Remis realistisch",
-          "Englands Kaderverzicht auf Foden, Palmer & Alexander-Arnold könnte Offensivkreativität schwächen",
-          "Kroatiens Erfahrung und Konterstärke kann Englands Favoritenrolle kippen",
-          "Lange Pause beider Teams (78 Tage) erschwert Formeinschätzung"
+          "England fehlen offensive Schlüsselspieler (Foden, Palmer, Alexander-Arnold) laut Kaderentscheidung Tuchels",
+          "Kroatiens starke Offensivform könnte Englands Defensive trotzdem fordern",
+          "WM-Auftaktspiele oft torarm und vorsichtig – Remis-Gefahr erhöht",
+          "Kurzfristige Kaderänderung (Chalobah für Livramento) deutet Unruhe in der Abwehr an"
         ]
       },
       "chatgpt": {
@@ -105,29 +106,27 @@
         },
         "probabilities": {
           "home": 0.45,
-          "draw": 0.35,
-          "away": 0.2
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.55,
         "keyFactors": [
-          "Beide Mannschaften zeigen gute Form: England weightedForm 2.032, Kroatien 2.103.",
-          "England mit solider Defensivkraft: 0.522 Gegentore pro Spiel, cleanSheetRate 0.552.",
-          "Kroatien hat torgefährlichen Angriff: 2.205 Tore im Schnitt.",
-          "Neutraler Spielort ohne Hosting-Vorteil für England."
+          "England hat eine hohe Elo-Zahl und gute Form, jedoch fehlen einige Schlüsselspieler im Kader.",
+          "Kroatien zeigt aktuell eine starke Form und erzielt im Durchschnitt mehr Tore, hat jedoch eine geringere Defensivleistung.",
+          "Die Begegnung findet auf neutralem Boden statt, was Heimvorteil relativiert."
         ],
         "risks": [
-          "Erstes Head-to-Head, keine direkten Vergleichswerte.",
-          "Änderungen im englischen Kader - Tuchel hat junge Spieler gestrichen.",
-          "Kroatien könnte durch letzte Nominierungen im Kader einen Motivationsschub haben."
+          "Fehlende Spieler bei England könnten die Mannschaftsleistung beeinträchtigen.",
+          "Turnierauftaktspiel könnte zu einem eher vorsichtigen Spiel führen."
         ]
       }
     },
-    "agreement": 0.94,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5052,
       "chatgpt": 0.4948
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit herausragender Defensive (GA 0.52, Clean-Sheet-Rate 55%) und höherem Elo (1815 vs 1747); Markt sieht England klarer vorne (0.56) als die Baseline (0.46), Mittelwert spricht für moderaten Favoriten England; Kroatien offensiv stark (GF 2.21, recentForm 2.5), aber defensiv anfällig (GA 1.10, Clean-Sheet nur 35%). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit sehr starker Defensive (Gegentorschnitt 0,52, Clean-Sheet-Rate 0,55) und höherem Elo (1815 vs 1747); Kroatien mit starker Offensivform (recentForm 2,5; 2,2 Tore/Spiel), aber anfälligerer Abwehr (1,10 Gegentore); Markt sieht England klar vorn (0,56), Baseline moderater (0,46) – beide favorisieren England. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:18fffbe1d4f8622260a943c771e6063547e1f79e510c8a6fa99a15270183dc58"
   },
   "predictionHistory": [
@@ -416,11 +415,24 @@
         "away": 0.2302
       },
       "confidence": 0.5673
+    },
+    {
+      "generatedAt": "2026-06-17T13:03:35.575Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4999,
+        "draw": 0.2916,
+        "away": 0.2085
+      },
+      "confidence": 0.5578
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T16:03:29.455Z",
+    "updatedAt": "2026-06-17T16:04:04.707Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.5608,
