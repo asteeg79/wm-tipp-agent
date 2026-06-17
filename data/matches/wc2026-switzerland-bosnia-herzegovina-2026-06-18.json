@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T06:03:37.977Z",
+    "generatedAt": "2026-06-17T07:03:34.574Z",
     "home": {
       "teamId": "SUI",
       "elo": 1703,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-17T07:03:34.574Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.5659,
-      "draw": 0.2247,
-      "away": 0.2094
+      "home": 0.5698,
+      "draw": 0.2405,
+      "away": 0.1897
     },
-    "confidence": 0.6336,
+    "confidence": 0.6279,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.5397,
-        "draw": 0.2231,
-        "away": 0.2372
+        "home": 0.5024,
+        "draw": 0.2376,
+        "away": 0.2599
       },
       "expectedGoals": {
-        "home": 1.9,
-        "away": 1.19
+        "home": 1.72,
+        "away": 1.17
       }
     },
     "models": {
@@ -81,50 +81,54 @@
         },
         "probabilities": {
           "home": 0.55,
-          "draw": 0.23,
-          "away": 0.22
+          "draw": 0.24,
+          "away": 0.21
         },
-        "confidence": 0.6,
+        "confidence": 0.56,
         "keyFactors": [
-          "Switzerland mit deutlich höherem Elo (1746 vs 1575) und stärkerer gewichteter Form (1.638 vs 1.445)",
-          "Bessere Defensive der Schweiz (1.094 Gegentore vs 1.272) und höhere Clean-Sheet-Rate (0.37 vs 0.19)",
-          "Höhere Offensivproduktion der Schweiz (2.021 vs 1.738 Tore/Spiel) und starke jüngste Form (recentForm 2.1)",
-          "Baseline und externe Prognose decken sich weitgehend zugunsten der Schweiz"
+          "Schweiz mit klarem Elo-Vorteil (1703 vs 1546) und stärkerer jüngerer Form (recentForm 1.9 vs 1.4)",
+          "Bessere Defensivwerte der Schweiz (1.08 Gegentore, 35,7% Zu-Null) gegenüber Bosnien (1.21, nur 18,2%)",
+          "Markt sieht Schweiz deutlich vorne (0.62), stützt Baseline-Favoritenrolle",
+          "Neutraler Spielort relativiert klassischen Heimvorteil leicht"
         ],
         "risks": [
-          "Neutraler Spielort reduziert klassischen Heimvorteil der Schweiz",
-          "Bosniens Offensive (1.738 Tore/Spiel) kann die anfällige Schweizer Defensive (cleanSheetRate nur 0.37) treffen",
-          "Lange Pause (67 Tage seit letztem Spiel) könnte Rhythmus beider Teams beeinträchtigen",
-          "Keine H2H-Daten verfügbar, Personalmeldungen unklar/teils irrelevant"
+          "Bosnien mit ordentlicher Offensive (1.58 Tore/Spiel) kann auf neutralem Platz treffen",
+          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
+          "WM-Gruppenspiele oft vorsichtig/torarm — knappes Remis möglich",
+          "Außenseiter könnte tief stehen und Schweiz das Toreschießen erschweren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.58,
-          "draw": 0.22,
+          "home": 0.55,
+          "draw": 0.25,
           "away": 0.2
         },
-        "confidence": 0.68,
+        "confidence": 0.7,
         "keyFactors": [
-          "Switzerland has a stronger Elo rating (1746 vs 1575)",
-          "Switzerland shows better weighted (1.638) and recent form (2.1) compared to Bosnia & Herzegovina (1.445 and 1.6)",
-          "Higher goal-scoring average for Switzerland (2.021) compared to Bosnia & Herzegovina (1.738)",
-          "Bosnia & Herzegovina lacks key offensive players according to recent news"
+          "Switzerland has a higher Elo rating and recent form than Bosnia & Herzegovina.",
+          "Switzerland's clean sheet rate is significantly higher than Bosnia & Herzegovina's.",
+          "Switzerland has a better recent record in goal scoring and defensive strength.",
+          "No head-to-head history; performance based on current form.",
+          "Match at neutral venue, no host advantage."
         ],
         "risks": [
-          "Game is at a neutral venue, negating any home advantage",
-          "Both teams have not played each other before, adding uncertainty",
-          "Relatively small difference between baseline and external forecast suggesting some prediction variability"
+          "First World Cup match for both teams could lead to cautious play.",
+          "High variance in tournament settings might affect expected performance."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit deutlich höherem Elo (1746 vs 1575) und stärkerer gewichteter Form (1.638 vs 1.445); Bessere Defensive der Schweiz (1.094 Gegentore vs 1.272) und höhere Clean-Sheet-Rate (0.37 vs 0.19); Höhere Offensivproduktion der Schweiz (2.021 vs 1.738 Tore/Spiel) und starke jüngste Form (recentForm 2.1).",
-    "inputHash": "sha256:d72fbe6447de83250c3e44eae3a109864b097a23c3b197beddb992a03b4e2a10"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5052,
+      "chatgpt": 0.4948
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit klarem Elo-Vorteil (1703 vs 1546) und stärkerer jüngerer Form (recentForm 1.9 vs 1.4); Bessere Defensivwerte der Schweiz (1.08 Gegentore, 35,7% Zu-Null) gegenüber Bosnien (1.21, nur 18,2%); Markt sieht Schweiz deutlich vorne (0.62), stützt Baseline-Favoritenrolle. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:ceb8f72205269991bf86cb2ec4130087079b5e418bd3a1e3aeb9d3ac7b0c6d28"
   },
   "predictionHistory": [
     {
@@ -269,11 +273,24 @@
         "away": 0.21
       },
       "confidence": 0.6728
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5659,
+        "draw": 0.2247,
+        "away": 0.2094
+      },
+      "confidence": 0.6336
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T06:03:40.542Z",
+    "updatedAt": "2026-06-17T07:05:23.192Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6161,
