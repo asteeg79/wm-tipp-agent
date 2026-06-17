@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T20:03:34.572Z",
+    "generatedAt": "2026-06-17T21:03:42.384Z",
     "home": {
       "teamId": "CZE",
       "elo": 1611,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-17T16:04:04.376Z",
+    "generatedAt": "2026-06-17T21:03:42.384Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4552,
-      "draw": 0.2936,
-      "away": 0.2512
+      "home": 0.4831,
+      "draw": 0.2772,
+      "away": 0.2397
     },
-    "confidence": 0.4947,
+    "confidence": 0.5445,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,26 +77,25 @@
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
           "home": 0.47,
           "draw": 0.27,
           "away": 0.26
         },
-        "confidence": 0.42,
+        "confidence": 0.45,
         "keyFactors": [
-          "Sehr enges Elo-Niveau (CZE 1611 vs RSA 1586) und nahezu identische gewichtete Form deuten auf eine ausgeglichene Partie",
-          "Tschechien mit leicht höherer Offensivproduktion (1,76 Tore/Spiel) und Heimstatus-Erwartung des Marktes (0,54)",
-          "Südafrika defensiv stabiler (Clean-Sheet-Rate 0,47, nur 1,18 Gegentore/Spiel), was Tschechiens Offensive bremsen kann",
-          "Neutraler Spielort ohne Heimvorteil relativiert die Favoritenrolle",
-          "WM-Gruppenphasen-Kontext: kompakte Außenseiter und torarme Auftaktspiele begünstigen knappe Resultate"
+          "Elo-Werte eng beieinander (CZE 1611 vs RSA 1586), aber leichter Vorteil Tschechien",
+          "Tschechien mit höherem Torpotenzial (xG 1.58 vs 1.24) und besserer Offensivform",
+          "Südafrika defensiv stark (Clean-Sheet-Rate 0.47, niedriger Gegentorschnitt) – kompaktes Auftreten erwartbar",
+          "Markt sieht Tschechien klarer vorn (0.54), Baseline etwas zurückhaltender (0.45)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, dadurch erhöhte Unsicherheit über das Aufeinandertreffen der Spielstile",
-          "Südafrikas starke Defensive könnte ein Remis oder eine Überraschung wahrscheinlicher machen als die Baseline",
-          "Markt und Poisson-Baseline weichen deutlich voneinander ab (0,54 vs 0,45), was Prognoseunsicherheit signalisiert",
-          "Mögliche unberücksichtigte Aufstellungs- oder Rotationsentscheidungen im Turnierkontext"
+          "Sehr ausgeglichene Form beider Teams (weightedForm nahezu identisch) erhöht Remis-/Außenseiterchance",
+          "Defensivstärke Südafrikas kann Auftaktspiel torarm und knapp halten",
+          "Keine H2H-Daten – schwer kalkulierbarer Stilvergleich",
+          "Mögliche Trainersperre auf südafrikanischer Seite mit unklarer Auswirkung auf Coaching"
         ]
       },
       "chatgpt": {
@@ -105,28 +104,27 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.34,
-          "away": 0.28
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.65,
         "keyFactors": [
-          "Czech Republic has slightly higher Elo rating indicating marginal strength.",
-          "South Africa has a higher clean sheet rate than Czech Republic.",
-          "Both teams have relatively balanced and recent positive form.",
-          "Match is on neutral ground, no home advantage."
+          "Czech Republic's slightly higher Elo rating.",
+          "South Africa's coach is suspended, potentially affecting team preparation and in-game decisions.",
+          "Both teams show similar recent form, and this is a neutral venue match."
         ],
         "risks": [
-          "No head-to-head data available to directly compare the teams against each other."
+          "South Africa could be motivated to perform well despite the absence of their coach."
         ]
       }
     },
-    "agreement": 0.94,
+    "agreement": 0.98,
     "ensembleWeights": {
-      "claude": 0.5052,
-      "chatgpt": 0.4948
+      "claude": 0.5054,
+      "chatgpt": 0.4946
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr enges Elo-Niveau (CZE 1611 vs RSA 1586) und nahezu identische gewichtete Form deuten auf eine ausgeglichene Partie; Tschechien mit leicht höherer Offensivproduktion (1,76 Tore/Spiel) und Heimstatus-Erwartung des Marktes (0,54); Südafrika defensiv stabiler (Clean-Sheet-Rate 0,47, nur 1,18 Gegentore/Spiel), was Tschechiens Offensive bremsen kann. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elo-Werte eng beieinander (CZE 1611 vs RSA 1586), aber leichter Vorteil Tschechien; Tschechien mit höherem Torpotenzial (xG 1.58 vs 1.24) und besserer Offensivform; Südafrika defensiv stark (Clean-Sheet-Rate 0.47, niedriger Gegentorschnitt) – kompaktes Auftreten erwartbar. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:22ed339dbb8a2908bf5c697c08ab7d2e56efb1b1f33d3867451b3085dfe74515"
   },
   "predictionHistory": [
@@ -285,21 +283,34 @@
         "away": 0.2396
       },
       "confidence": 0.4867
+    },
+    {
+      "generatedAt": "2026-06-17T16:04:04.376Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4552,
+        "draw": 0.2936,
+        "away": 0.2512
+      },
+      "confidence": 0.4947
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T20:05:22.503Z",
-    "bookmakerCount": 23,
+    "updatedAt": "2026-06-17T21:04:34.217Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.5479,
-      "draw": 0.2523,
-      "away": 0.1998
+      "home": 0.541,
+      "draw": 0.253,
+      "away": 0.206
     },
     "decimal": {
-      "home": 1.75,
-      "draw": 3.8,
-      "away": 4.8
+      "home": 1.77,
+      "draw": 3.78,
+      "away": 4.64
     }
   }
 }
