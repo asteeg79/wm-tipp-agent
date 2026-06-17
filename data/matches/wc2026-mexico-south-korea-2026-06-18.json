@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-17T12:03:45.821Z",
+    "generatedAt": "2026-06-17T13:03:35.575Z",
     "home": {
       "teamId": "MEX",
       "elo": 1702,
@@ -51,52 +51,53 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-17T13:03:35.575Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4807,
-      "draw": 0.2788,
-      "away": 0.2406
+      "home": 0.4633,
+      "draw": 0.2938,
+      "away": 0.2429
     },
-    "confidence": 0.6017,
+    "confidence": 0.5445,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.5189,
-        "draw": 0.2612,
-        "away": 0.2199
+        "home": 0.5227,
+        "draw": 0.2578,
+        "away": 0.2196
       },
       "expectedGoals": {
-        "home": 1.5,
-        "away": 0.88
+        "home": 1.53,
+        "away": 0.89
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.515,
-          "draw": 0.255,
-          "away": 0.23
+          "home": 0.47,
+          "draw": 0.28,
+          "away": 0.25
         },
-        "confidence": 0.58,
+        "confidence": 0.5,
         "keyFactors": [
-          "Mexiko mit höherem Elo (1729) und Heim-/Hostvorteil als Gastgeberland der WM 2026",
-          "Höhenlage (1566 m) begünstigt das an die Bedingungen gewöhnte Mexiko",
-          "Mexiko defensiv stabiler: Clean-Sheet-Rate 0.588 vs. 0.414, geringere Gegentore (0.797 vs. 1.348)",
-          "Bessere gewichtete Form Mexikos (1.754 vs. 1.610)"
+          "Mexico mit leichtem Elo-Vorteil (1702 vs 1685) und faktischem Heim-/Host-Vorteil sowie Höhenlage (1566m) als Plus",
+          "Mexikos defensive Stabilität (Gegentore 0,69/Spiel, Clean-Sheet-Rate 60%) gegenüber Koreas anfälligerer Abwehr (1,28 Gegentore, 40% Clean Sheets)",
+          "Südkorea mit minimal besserer aktueller Form (recentForm 1,9 vs 1,6) und solider Offensive (1,47 Tore/Spiel)",
+          "Einziges H2H endete 2:2 – beide Teams offensiv ebenbürtig",
+          "Beide Teams ausgeruht (6 Tage Pause)"
         ],
         "risks": [
-          "Südkorea mit starker aktueller Recent-Form (1.9 vs. 1.4) und leicht höherem Torschnitt",
-          "Einziges H2H endete 2:2 - Südkorea durchaus konkurrenzfähig",
-          "Lange Pause (67 Tage) für beide Teams erschwert Formeinschätzung",
-          "Kaum belastbare News, die eine starke Korrektur der Baseline rechtfertigen"
+          "Sehr enges Elo-Duell – Ausgang offen, Unentschieden klar im Spiel",
+          "Koreas Offensivkraft kann Mexikos Abwehr knacken und für Auswärtspunkte sorgen",
+          "Gruppenphasen-Auftaktspiele oft torarm und vorsichtig",
+          "Höhenvorteil weniger relevant, falls Korea akklimatisiert ist"
         ]
       },
       "chatgpt": {
@@ -106,25 +107,29 @@
         },
         "probabilities": {
           "home": 0.45,
-          "draw": 0.3,
-          "away": 0.25
+          "draw": 0.31,
+          "away": 0.24
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Mexico has a slightly higher Elo rating and plays with a host advantage.",
-          "Both teams have been inactive for a similar period (67 days), minimizing rust impact.",
-          "Mexico's defensive capabilities (clean sheet rate of 0.588) could counter South Korea's recent offensive form.",
-          "Neutral venue and altitude may slightly favor Mexico."
+          "Mexico has a slight Elo advantage and playing in a higher altitude which they might adapt to better than South Korea.",
+          "Mexico's recent form is slightly less impressive than South Korea's.",
+          "Both teams have a reasonable goal-scoring capability with Mexico's defense being stronger.",
+          "Neutral venue reduces typical home advantage for Mexico."
         ],
         "risks": [
-          "South Korea's recent form is superior (1.9) compared to Mexico's (1.4), suggesting potential for an upset.",
-          "Changes in South Korea's team dynamics (news of a key striker's move) may affect performance."
+          "South Korea's recent form could lead to a stronger performance than historical data suggests.",
+          "The impact of altitude might be overestimated if South Korea adapts well."
         ]
       }
     },
-    "agreement": 0.9567,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko mit höherem Elo (1729) und Heim-/Hostvorteil als Gastgeberland der WM 2026; Höhenlage (1566 m) begünstigt das an die Bedingungen gewöhnte Mexiko; Mexiko defensiv stabiler: Clean-Sheet-Rate 0.588 vs. 0.414, geringere Gegentore (0.797 vs. 1.348).",
-    "inputHash": "sha256:d3b887ddb17e56c4a07595e28efc0607efb7074df654f44ae58ac3ee0ed71f89"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5052,
+      "chatgpt": 0.4948
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit leichtem Elo-Vorteil (1702 vs 1685) und faktischem Heim-/Host-Vorteil sowie Höhenlage (1566m) als Plus; Mexikos defensive Stabilität (Gegentore 0,69/Spiel, Clean-Sheet-Rate 60%) gegenüber Koreas anfälligerer Abwehr (1,28 Gegentore, 40% Clean Sheets); Südkorea mit minimal besserer aktueller Form (recentForm 1,9 vs 1,6) und solider Offensive (1,47 Tore/Spiel). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:6e68be467833fa0f56a7106819f8243b12452bd56a7d294dc721dfd11769497e"
   },
   "predictionHistory": [
     {
@@ -256,21 +261,34 @@
         "away": 0.2246
       },
       "confidence": 0.6237
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4807,
+        "draw": 0.2788,
+        "away": 0.2406
+      },
+      "confidence": 0.6017
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-17T12:04:40.705Z",
+    "updatedAt": "2026-06-17T13:04:51.071Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4768,
-      "draw": 0.2868,
-      "away": 0.2363
+      "home": 0.473,
+      "draw": 0.2882,
+      "away": 0.2388
     },
     "decimal": {
-      "home": 2,
-      "draw": 3.33,
-      "away": 4.04
+      "home": 2.02,
+      "draw": 3.32,
+      "away": 4
     }
   }
 }
