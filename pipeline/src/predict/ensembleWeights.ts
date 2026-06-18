@@ -10,12 +10,7 @@
  *  - Glättung (EPS) dämpft extreme Verhältnisse bei sehr kleinem RPS.
  *  - Clamp auf [0.25, 0.75]: kein Modell wird je ganz stummgeschaltet.
  */
-import type {
-  ModelComparison,
-  Models,
-  Outcome1x2,
-  ScoreLine,
-} from "@wm/shared";
+import type { ModelComparison, Models, ScoreLine } from "@wm/shared";
 import { aggregateAccuracy, scoreMatch } from "../features/accuracy.js";
 import { round } from "../util/math.js";
 import { config } from "../../config.js";
