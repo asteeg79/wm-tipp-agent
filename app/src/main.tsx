@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";
+// Vite/React-SPA → React-Subpfad (NICHT /next; das ist für Next.js und bricht
+// hier den Build, weil es next/navigation voraussetzt).
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { router } from "./router.js";
 import { FavoritesProvider } from "./lib/FavoritesContext.js";
 import { ThemeProvider } from "./lib/ThemeContext.js";
@@ -37,6 +41,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ThemeProvider>
         <FavoritesProvider>
           <RouterProvider router={router} />
+          <Analytics />
+          <SpeedInsights />
         </FavoritesProvider>
       </ThemeProvider>
     </QueryClientProvider>
