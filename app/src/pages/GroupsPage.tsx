@@ -5,8 +5,13 @@ import type { PredictionIndexEntry } from "@wm/shared";
 import { useIndex, usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { MatchRow } from "../components/MatchRow.js";
-import { simulateTournament } from "../lib/simulate.js";
-import { NextRound } from "../components/NextRound.js";
+import {
+  hasWc2026Structure,
+  projectBracket,
+  simulateTournament,
+  type KoStage,
+} from "../lib/simulate.js";
+import { PhasePairings } from "../components/PhasePairings.js";
 
 const SIM_RUNS = 5000;
 
@@ -16,6 +21,7 @@ export function GroupsPage() {
   const { data: predIndex } = usePredictionsIndex();
   const teams = useTeamsMap();
   const [teamFilter, setTeamFilter] = useState("");
+  const [tab, setTab] = useState<"groups" | KoStage>("groups");
 
   // Match-Liste je Gruppe (Gruppe = Gruppe des Heimteams).
   const matchesByGroup = useMemo(() => {
@@ -37,6 +43,21 @@ export function GroupsPage() {
         : null,
     [index, predIndex],
   );
+
+  // Projiziertes K.-o.-Bracket (nur bei voller WM-Struktur) für die Phasen-Tabs.
+  const proj = useMemo(
+    () =>
+      index && predIndex && hasWc2026Structure(index)
+        ? projectBracket(index, predIndex)
+        : null,
+    [index, predIndex],
+  );
+
+  // Sind alle Gruppenspiele gespielt? → endgültige statt projizierte Paarungen.
+  const groupsDone = useMemo(() => {
+    const gg = (predIndex?.entries ?? []).filter((e) => e.stage === "group");
+    return gg.length > 0 && gg.every((e) => !!e.actualResult);
+  }, [predIndex]);
 
   // Echte Gruppen-Tabelle aus den IST-Ergebnissen (nur Gruppenspiele):
   // Spiele, Tore, Gegentore, Punkte je Team.
@@ -76,131 +97,188 @@ export function GroupsPage() {
     ? index.groups.filter((g) => g.teamIds.includes(teamFilter))
     : index.groups;
 
+  const showGroups = tab === "groups" || !proj;
+
   return (
     <section className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-bold">{t("groups.title")}</h2>
-        <select
-          value={teamFilter}
-          onChange={(e) => setTeamFilter(e.target.value)}
-          className="rounded-md border border-edge-strong bg-surface px-2 py-1 text-sm"
-        >
-          <option value="">{t("groups.all")}</option>
-          {sortedTeams.map((tm) => (
-            <option key={tm.id} value={tm.id}>
-              {tm.name}
-            </option>
+        {showGroups && (
+          <select
+            value={teamFilter}
+            onChange={(e) => setTeamFilter(e.target.value)}
+            className="rounded-md border border-edge-strong bg-surface px-2 py-1 text-sm"
+          >
+            <option value="">{t("groups.all")}</option>
+            {sortedTeams.map((tm) => (
+              <option key={tm.id} value={tm.id}>
+                {tm.name}
+              </option>
+            ))}
+          </select>
+        )}
+      </div>
+
+      {/* Phasen-Tabs (nur mit voller WM-K.-o.-Struktur) */}
+      {proj && (
+        <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1">
+          <PhaseTab
+            label={t("groups.phaseGroups")}
+            active={tab === "groups"}
+            onClick={() => setTab("groups")}
+          />
+          {proj.rounds.map((r) => (
+            <PhaseTab
+              key={r.stage}
+              label={t(`bracket.rounds.${r.stage}`)}
+              active={tab === r.stage}
+              onClick={() => setTab(r.stage)}
+            />
           ))}
-        </select>
-      </div>
+        </div>
+      )}
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {visibleGroups.map((g) => {
-          const standingOf = (id: string) =>
-            standingsByTeam.get(id) ?? NULL_STANDING;
-          const groupTeams = g.teamIds
-            .map((id) => teams.get(id))
-            .filter((x): x is NonNullable<typeof x> => !!x)
-            // FIFA-Sortierung nach IST-Ergebnissen: Punkte → Tordifferenz →
-            // erzielte Tore; bei Gleichstand (z. B. vor dem 1. Spieltag)
-            // entscheidet die Elo — identisch zum Tiebreak der Folgerunden-
-            // Projektion (NextRound), damit Tabelle und Paarungen konsistent
-            // dieselbe Reihenfolge ergeben.
-            .sort((a, b) => {
-              const sa = standingOf(a.id);
-              const sb = standingOf(b.id);
-              if (sb.pts !== sa.pts) return sb.pts - sa.pts;
-              const gdDiff = sb.gf - sb.ga - (sa.gf - sa.ga);
-              if (gdDiff !== 0) return gdDiff;
-              if (sb.gf !== sa.gf) return sb.gf - sa.gf;
-              return (
-                (b.elo ?? 1500) - (a.elo ?? 1500) || a.id.localeCompare(b.id)
+      {!showGroups && proj ? (
+        <PhasePairings
+          proj={proj}
+          stage={tab as KoStage}
+          teams={teams}
+          groupsDone={groupsDone}
+        />
+      ) : (
+        <div className="grid gap-4 md:grid-cols-2">
+          {visibleGroups.map((g) => {
+            const standingOf = (id: string) =>
+              standingsByTeam.get(id) ?? NULL_STANDING;
+            const groupTeams = g.teamIds
+              .map((id) => teams.get(id))
+              .filter((x): x is NonNullable<typeof x> => !!x)
+              // FIFA-Sortierung nach IST-Ergebnissen: Punkte → Tordifferenz →
+              // erzielte Tore; bei Gleichstand (z. B. vor dem 1. Spieltag)
+              // entscheidet die Elo — identisch zum Tiebreak der Folgerunden-
+              // Projektion (NextRound), damit Tabelle und Paarungen konsistent
+              // dieselbe Reihenfolge ergeben.
+              .sort((a, b) => {
+                const sa = standingOf(a.id);
+                const sb = standingOf(b.id);
+                if (sb.pts !== sa.pts) return sb.pts - sa.pts;
+                const gdDiff = sb.gf - sb.ga - (sa.gf - sa.ga);
+                if (gdDiff !== 0) return gdDiff;
+                if (sb.gf !== sa.gf) return sb.gf - sa.gf;
+                return (
+                  (b.elo ?? 1500) - (a.elo ?? 1500) || a.id.localeCompare(b.id)
+                );
+              });
+            let matches = matchesByGroup.get(g.id) ?? [];
+            if (teamFilter)
+              matches = matches.filter(
+                (m) =>
+                  m.homeTeamId === teamFilter || m.awayTeamId === teamFilter,
               );
-            });
-          let matches = matchesByGroup.get(g.id) ?? [];
-          if (teamFilter)
-            matches = matches.filter(
-              (m) => m.homeTeamId === teamFilter || m.awayTeamId === teamFilter,
-            );
 
-          return (
-            <div
-              key={g.id}
-              className="min-w-0 overflow-hidden rounded-xl border border-edge bg-surface/40 p-4"
-            >
-              <h3 className="mb-2 font-semibold">
-                {t("groups.group", { id: g.id })}
-              </h3>
-              <ul className="mb-3 space-y-1 text-sm">
-                <li className="flex items-center justify-between gap-2 text-[10px] uppercase tracking-wide text-fg-faint">
-                  <span className="w-4 shrink-0" />
-                  <span className="min-w-0 flex-1">{t("groups.team")}</span>
-                  <span className="flex shrink-0 gap-2 font-mono">
-                    <span className="w-10 text-right">{t("groups.goals")}</span>
-                    <span className="w-7 text-right">{t("groups.pts")}</span>
-                    {sim && (
-                      <>
-                        <span className="hidden w-10 text-right sm:block">
-                          {t("bracket.groupWinnerShort")}
-                        </span>
-                        <span className="w-10 text-right">
-                          {t("bracket.advanceShort")}
-                        </span>
-                      </>
-                    )}
-                  </span>
-                </li>
-                {groupTeams.map((tm, pos) => {
-                  const s = standingOf(tm.id);
-                  return (
-                    <li
-                      key={tm.id}
-                      className="flex items-center justify-between gap-2"
-                    >
-                      <span className="w-4 shrink-0 text-right font-mono text-xs text-fg-faint">
-                        {pos + 1}
+            return (
+              <div
+                key={g.id}
+                className="min-w-0 overflow-hidden rounded-xl border border-edge bg-surface/40 p-4"
+              >
+                <h3 className="mb-2 font-semibold">
+                  {t("groups.group", { id: g.id })}
+                </h3>
+                <ul className="mb-3 space-y-1 text-sm">
+                  <li className="flex items-center justify-between gap-2 text-[10px] uppercase tracking-wide text-fg-faint">
+                    <span className="w-4 shrink-0" />
+                    <span className="min-w-0 flex-1">{t("groups.team")}</span>
+                    <span className="flex shrink-0 gap-2 font-mono">
+                      <span className="w-10 text-right">
+                        {t("groups.goals")}
                       </span>
-                      <span className="min-w-0 flex-1">
-                        <TeamBadge team={tm} />
-                      </span>
-                      <span className="flex shrink-0 gap-2 font-mono text-xs">
-                        <span className="w-10 text-right text-fg-muted">
-                          {s.gf}:{s.ga}
+                      <span className="w-7 text-right">{t("groups.pts")}</span>
+                      {sim && (
+                        <>
+                          <span className="hidden w-10 text-right sm:block">
+                            {t("bracket.groupWinnerShort")}
+                          </span>
+                          <span className="w-10 text-right">
+                            {t("bracket.advanceShort")}
+                          </span>
+                        </>
+                      )}
+                    </span>
+                  </li>
+                  {groupTeams.map((tm, pos) => {
+                    const s = standingOf(tm.id);
+                    return (
+                      <li
+                        key={tm.id}
+                        className="flex items-center justify-between gap-2"
+                      >
+                        <span className="w-4 shrink-0 text-right font-mono text-xs text-fg-faint">
+                          {pos + 1}
                         </span>
-                        <span className="w-7 text-right font-semibold">
-                          {s.pts}
+                        <span className="min-w-0 flex-1">
+                          <TeamBadge team={tm} />
                         </span>
-                        {sim && (
-                          <>
-                            <span className="hidden w-10 text-right text-fg-muted sm:block">
-                              {formatPercent(sim.groupWinner.get(tm.id))}
-                            </span>
-                            <span className="w-10 text-right font-semibold text-pos">
-                              {formatPercent(sim.advance.get(tm.id))}
-                            </span>
-                          </>
-                        )}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-              {matches.length > 0 && (
-                <div className="space-y-1">
-                  <div className="text-xs uppercase tracking-wide text-fg-faint">
-                    {t("groups.matches")}
+                        <span className="flex shrink-0 gap-2 font-mono text-xs">
+                          <span className="w-10 text-right text-fg-muted">
+                            {s.gf}:{s.ga}
+                          </span>
+                          <span className="w-7 text-right font-semibold">
+                            {s.pts}
+                          </span>
+                          {sim && (
+                            <>
+                              <span className="hidden w-10 text-right text-fg-muted sm:block">
+                                {formatPercent(sim.groupWinner.get(tm.id))}
+                              </span>
+                              <span className="w-10 text-right font-semibold text-pos">
+                                {formatPercent(sim.advance.get(tm.id))}
+                              </span>
+                            </>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                {matches.length > 0 && (
+                  <div className="space-y-1">
+                    <div className="text-xs uppercase tracking-wide text-fg-faint">
+                      {t("groups.matches")}
+                    </div>
+                    {matches.map((e) => (
+                      <MatchRow key={e.matchId} entry={e} teams={teams} />
+                    ))}
                   </div>
-                  {matches.map((e) => (
-                    <MatchRow key={e.matchId} entry={e} teams={teams} />
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <NextRound index={index} predIndex={predIndex} teams={teams} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </section>
+  );
+}
+
+/** Ein Phasen-Tab (Chip) der Gruppen-Seite. */
+function PhaseTab({
+  label,
+  active,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`shrink-0 rounded-md px-3 py-1.5 text-sm font-semibold transition-colors ${
+        active
+          ? "bg-acc text-canvas"
+          : "bg-surface-2 text-fg-soft hover:text-fg"
+      }`}
+    >
+      {label}
+    </button>
   );
 }

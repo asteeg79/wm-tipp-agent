@@ -56,6 +56,7 @@ const resources = {
         team: "Team",
         goals: "Tore",
         pts: "Pkt",
+        phaseGroups: "Gruppen",
         nextRound: "So geht's weiter — Sechzehntelfinale",
         nextRoundProjected:
           "Projektion nach aktuellem Gruppenstand. Sieger & Zweite stehen je Gruppe fest, sobald entschieden; die 8 besten Dritten sind plausibel zugeordnet.",
@@ -326,6 +327,7 @@ const resources = {
         team: "Team",
         goals: "Goals",
         pts: "Pts",
+        phaseGroups: "Groups",
         nextRound: "What's next — Round of 32",
         nextRoundProjected:
           "Projection from the current group standings. Winners & runners-up are fixed per group once decided; the 8 best third-placed teams are assigned plausibly.",
