@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T16:03:53.262Z",
+    "generatedAt": "2026-06-18T17:04:16.949Z",
     "home": {
       "teamId": "USA",
       "elo": 1667,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-18T07:03:58.519Z",
+    "generatedAt": "2026-06-18T17:04:16.949Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.484,
-      "draw": 0.2775,
-      "away": 0.2385
+      "home": 0.5292,
+      "draw": 0.2511,
+      "away": 0.2197
     },
-    "confidence": 0.4737,
+    "confidence": 0.59,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,51 +81,51 @@
         },
         "probabilities": {
           "home": 0.47,
-          "draw": 0.26,
-          "away": 0.27
+          "draw": 0.27,
+          "away": 0.26
         },
-        "confidence": 0.42,
+        "confidence": 0.5,
         "keyFactors": [
-          "USA mit Heim-/Gastgebervorteil (WM 2026 in den USA) und solider Form, vom Markt klar favorisiert (0.60)",
-          "Australien defensiv sehr stabil (Gegentorschnitt 0.77, Clean-Sheet-Rate 0.56) und in starker aktueller Form (recentForm 1.9, jüngst 2:0 gegen Türkei)",
-          "Elo nahezu gleichauf (1667 vs 1658) – kein klarer Klassenunterschied",
-          "USA mit anfälliger Defensive (Gegentorschnitt 1.54, Clean-Sheet nur 0.23), was Australiens kompakter Konterstil ausnutzen kann"
+          "USA mit Heim-/Gastgebervorteil (hostAdvantage USA) und leicht höherem Elo (1667 vs 1658)",
+          "Australien defensiv sehr stabil: Clean-Sheet-Rate 0.56 und nur 0.77 Gegentore im Schnitt, zuletzt 2:0 gegen die Türkei (gute Form, recentForm 1.9)",
+          "USA mit mehr Offensivpower (2.03 Tore/Spiel), aber anfälliger Defensive (1.54 Gegentore, CS-Rate nur 0.23)",
+          "Markt sieht USA klarer vorn (0.60), Baseline deutlich zurückhaltender (0.45) – Wahrheit liegt dazwischen"
         ],
         "risks": [
-          "Australiens kompakte Defensive kann das Spiel torarm und ausgeglichen halten – Remis realistisch",
-          "Markt überschätzt USA evtl. wegen Heimvorteil; Baseline deutlich vorsichtiger",
-          "WM-Gruppenspiel-Kontext: Außenseiter steht oft tief, Favorit tut sich schwer",
-          "Verletzungslage/Aufstellung Australien (Yildiz-Meldung bezieht sich auf Türkei, nicht relevant) unsicher"
+          "Australiens kompakte Defensive könnte ein torarmes Remis oder eine Überraschung begünstigen",
+          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft",
+          "Mögliche Rotation/Taktik in WM-Gruppenphase erhöht Remis-Wahrscheinlichkeit",
+          "USA-Defensivschwäche könnte von Australiens Kontern bestraft werden"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.41,
-          "draw": 0.33,
-          "away": 0.26
+          "home": 0.52,
+          "draw": 0.26,
+          "away": 0.22
         },
-        "confidence": 0.55,
+        "confidence": 0.7,
         "keyFactors": [
-          "USA hat einen leichten Heimvorteil aufgrund des Turnierorts in Nordamerika.",
-          "Australien hat eine starke Abwehr mit einer hohen Clean-Sheet-Rate.",
-          "Australien zeigte eine gute Form mit einem 2:0 gegen die Türkei."
+          "Host advantage for USA as World Cup co-host.",
+          "Australia has a strong recent form and defense but is dealing with injury concerns.",
+          "USA's historical head-to-head advantage in their only meeting."
         ],
         "risks": [
-          "Unklarheit über Form von Kenan Yildiz beeinflusst Australiens Angriffsstärke.",
-          "USA zeigt sich torgefährlich mit einem hohen Tor-Durchschnitt, aber auch anfällig in der Verteidigung."
+          "Australia's defensive strength could limit USA's scoring.",
+          "Neutral venue reduces typical home advantage effects."
         ]
       }
     },
-    "agreement": 0.9533,
+    "agreement": 0.9667,
     "ensembleWeights": {
-      "claude": 0.5076,
-      "chatgpt": 0.4924
+      "claude": 0.4849,
+      "chatgpt": 0.5151
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (WM 2026 in den USA) und solider Form, vom Markt klar favorisiert (0.60); Australien defensiv sehr stabil (Gegentorschnitt 0.77, Clean-Sheet-Rate 0.56) und in starker aktueller Form (recentForm 1.9, jüngst 2:0 gegen Türkei); Elo nahezu gleichauf (1667 vs 1658) – kein klarer Klassenunterschied. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantage USA) und leicht höherem Elo (1667 vs 1658); Australien defensiv sehr stabil: Clean-Sheet-Rate 0.56 und nur 0.77 Gegentore im Schnitt, zuletzt 2:0 gegen die Türkei (gute Form, recentForm 1.9); USA mit mehr Offensivpower (2.03 Tore/Spiel), aber anfälliger Defensive (1.54 Gegentore, CS-Rate nur 0.23). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:dc72bcf5fa88bfc30a41c2f30020284f7113d7c0c25d55e2a610ebe72312bf43"
   },
   "predictionHistory": [
@@ -284,11 +284,24 @@
         "away": 0.2485
       },
       "confidence": 0.6457
+    },
+    {
+      "generatedAt": "2026-06-18T07:03:58.519Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.484,
+        "draw": 0.2775,
+        "away": 0.2385
+      },
+      "confidence": 0.4737
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T16:04:01.439Z",
+    "updatedAt": "2026-06-18T17:06:03.863Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5974,
