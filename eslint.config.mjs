@@ -46,5 +46,10 @@ export default tseslint.config(
     files: ["pipeline/**/*.ts", "shared/**/*.ts", "scripts/**/*.mjs"],
     languageOptions: { globals: { ...globals.node } },
   },
+  {
+    // Vercel Edge Middleware: Web-Globals (Request/Response/Headers) + process.
+    files: ["app/middleware.ts"],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+  },
   prettier,
 );
