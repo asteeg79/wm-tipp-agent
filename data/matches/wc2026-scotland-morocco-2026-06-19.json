@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T09:48:53.605Z",
+    "generatedAt": "2026-06-18T10:03:45.020Z",
     "home": {
       "teamId": "SCO",
       "elo": 1571,
@@ -50,80 +50,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-18T10:03:45.020Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 0,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.2002,
-      "draw": 0.2091,
-      "away": 0.5907
+      "home": 0.1816,
+      "draw": 0.2538,
+      "away": 0.5646
     },
-    "confidence": 0.6599,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.0979,
-        "draw": 0.1779,
-        "away": 0.7242
+        "home": 0.1471,
+        "draw": 0.2261,
+        "away": 0.6268
       },
       "expectedGoals": {
-        "home": 0.66,
-        "away": 2.18
+        "home": 0.72,
+        "away": 1.78
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 0,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.14,
-          "draw": 0.22,
-          "away": 0.64
+          "home": 0.16,
+          "draw": 0.25,
+          "away": 0.59
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Marokkos (1892 vs. 1586) und überlegene gewichtete Form (2.585 vs. 1.301)",
-          "Marokkos herausragende Defensive: nur 0.274 Gegentore pro Spiel und 70.6% Clean-Sheet-Rate",
-          "Schottlands schwache Defensivwerte (1.281 Gegentore/Spiel, nur 28% Clean Sheets) erschweren das Toreschießen gegen MAR",
-          "Neutraler Spielort entfernt jeglichen Heimvorteil für Schottland"
+          "Marokko deutlich höher eingestuft (Elo 1813 vs. 1571) und in starker Form (weightedForm 2.37)",
+          "Sehr stabile marokkanische Defensive: nur 0.37 Gegentore/Spiel, 68,6% Clean-Sheet-Rate",
+          "Schottland mit moderater Offensive (1.29 Tore/Spiel) und schwacher Abwehr gegen Top-Gegner",
+          "Neutraler Spielort eliminiert Heimvorteil für Schottland"
         ],
         "risks": [
-          "Schottlands gute jüngste Form (recentForm 1.6) könnte für eine Überraschung oder ein knappes Ergebnis sorgen",
-          "Mögliche Moral-/Disziplinprobleme bei Marokko (News-Eklat um Infantino) könnten Leistung beeinträchtigen",
-          "Lange Pause beider Teams (67 Tage) erhöht Unsicherheit über aktuelle Spielform",
-          "Kein H2H-Verlauf vorhanden, daher keine direkte Vergleichsbasis"
+          "Schottland steht als Außenseiter oft tief und kompakt - knappes Ergebnis oder Remis möglich",
+          "WM-Gruppenspiele sind häufig vorsichtig und torarm",
+          "Kein H2H-Verlauf vorhanden, erhöhte Unsicherheit",
+          "Marokko könnte sich an einer defensiven schottischen Mannschaft die Zähne ausbeißen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 2
+          "home": 0,
+          "away": 1
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.2,
+          "home": 0.2,
+          "draw": 0.25,
           "away": 0.55
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Morocco's superior Elo rating and recent form give them a strong edge.",
-          "Morocco's goals against average indicates a tight defense.",
-          "Scotland has a higher recent form compared to their weighted form, indicating an improvement.",
-          "Neutral venue negates home advantage."
+          "Morocco has a significantly higher Elo rating (1813 vs 1571).",
+          "Morocco's recent form is stronger (2.2 vs 1.9) and they have been more efficient with a higher goals for average and better defensive record.",
+          "Scotland's goal scoring and defensive capabilities are weaker compared to Morocco's robust defensive stats."
         ],
         "risks": [
-          "Potential morale impact on Morocco due to recent news controversy.",
-          "No head-to-head history between the teams adds uncertainty."
+          "Neutral venue might minimize any potential home advantage impact.",
+          "Scotland's recent matches showed decent form which might lead to an unexpected performance."
         ]
       }
     },
-    "agreement": 0.9267,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Marokkos (1892 vs. 1586) und überlegene gewichtete Form (2.585 vs. 1.301); Marokkos herausragende Defensive: nur 0.274 Gegentore pro Spiel und 70.6% Clean-Sheet-Rate; Schottlands schwache Defensivwerte (1.281 Gegentore/Spiel, nur 28% Clean Sheets) erschweren das Toreschießen gegen MAR.",
-    "inputHash": "sha256:ecf34876f584137a16cd271d766877e95a5d87aac86f08b6eccf71b94a2260fa"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.4849,
+      "chatgpt": 0.5151
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko deutlich höher eingestuft (Elo 1813 vs. 1571) und in starker Form (weightedForm 2.37); Sehr stabile marokkanische Defensive: nur 0.37 Gegentore/Spiel, 68,6% Clean-Sheet-Rate; Schottland mit moderater Offensive (1.29 Tore/Spiel) und schwacher Abwehr gegen Top-Gegner. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:d60323f31f1f5724f7df1b72a7c175525ad09385f47a0feafb78828cd08b56e4"
   },
   "predictionHistory": [
     {
@@ -268,21 +271,34 @@
         "away": 0.5696
       },
       "confidence": 0.6651
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2002,
+        "draw": 0.2091,
+        "away": 0.5907
+      },
+      "confidence": 0.6599
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T09:48:54.004Z",
+    "updatedAt": "2026-06-18T10:03:46.289Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.1841,
-      "draw": 0.2641,
-      "away": 0.5518
+      "home": 0.181,
+      "draw": 0.2628,
+      "away": 0.5562
     },
     "decimal": {
-      "home": 5.2,
-      "draw": 3.63,
-      "away": 1.74
+      "home": 5.3,
+      "draw": 3.65,
+      "away": 1.73
     }
   }
 }
