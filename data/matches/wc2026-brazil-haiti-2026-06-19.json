@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T12:03:50.308Z",
+    "generatedAt": "2026-06-18T13:03:44.146Z",
     "home": {
       "teamId": "BRA",
       "elo": 1814,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-18T13:03:44.146Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7863,
-      "draw": 0.1327,
-      "away": 0.0811
+      "home": 0.7944,
+      "draw": 0.1352,
+      "away": 0.0704
     },
-    "confidence": 0.7154,
+    "confidence": 0.7893,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.6074,
-        "draw": 0.2172,
-        "away": 0.1754
+        "home": 0.5936,
+        "draw": 0.2314,
+        "away": 0.175
       },
       "expectedGoals": {
-        "home": 1.92,
-        "away": 0.92
+        "home": 1.77,
+        "away": 0.84
       }
     },
     "models": {
@@ -81,21 +81,21 @@
         },
         "probabilities": {
           "home": 0.74,
-          "draw": 0.15,
-          "away": 0.11
+          "draw": 0.16,
+          "away": 0.1
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1576) untermauert klare Favoritenrolle",
-          "Bessere gewichtete Form Brasiliens (1.791 vs. 1.488) und höhere Offensivqualität",
-          "Externe Prognose sieht Brasilien noch klarer (0.89), was eine Aufwärtskorrektur der Baseline rechtfertigt",
-          "Brasiliens defensive Stabilität (Gegentore 0.892, Clean-Sheet-Rate 0.40) gegenüber schwächerer Haiti-Abwehr"
+          "Deutlicher Elo-Vorsprung Brasiliens (1814 vs. 1540) und bessere gewichtete Form (1.62 vs. 1.19)",
+          "Brasiliens höhere Offensivkraft (1.77 erwartete Tore) bei solider Defensive",
+          "Markt sieht Brasilien als klaren Favoriten (87%), was den Baseline-Wert nach oben korrigiert",
+          "Haiti als Außenseiter dürfte tief und kompakt stehen, was klare Siege erschwert"
         ],
         "risks": [
-          "Lange Pause beider Teams (67 Tage ohne Spiel) kann Rhythmus und Frische beeinträchtigen",
-          "Neutraler Spielort nimmt Brasilien einen möglichen Heimvorteil",
-          "Personelle Unsicherheiten rund um Neymar/Ancelotti laut News könnten Brasiliens Offensive schwächen",
-          "Haiti zeigt mit Clean-Sheet-Rate 0.409 defensive Solidität und könnte tief stehen"
+          "Verletzungssorgen/Unsicherheit um Neymar und Kritik an Trainer Ancelotti könnten Brasilien destabilisieren",
+          "Tief stehender Außenseiter Haiti kann ein torarmes, knappes Ergebnis erzwingen",
+          "Auftakt-/Gruppenspiele oft vorsichtiger als Einzelstärke vermuten lässt",
+          "Kein H2H-Datensatz erhöht die Unsicherheit der Einschätzung"
         ]
       },
       "chatgpt": {
@@ -104,27 +104,30 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.82,
-          "draw": 0.12,
-          "away": 0.06
+          "home": 0.78,
+          "draw": 0.15,
+          "away": 0.07
         },
-        "confidence": 0.85,
+        "confidence": 0.9,
         "keyFactors": [
-          "Brazil has a significantly higher Elo rating of 1844 compared to Haiti's 1576.",
-          "Brazil's weighted form and recent form are both superior to Haiti's.",
-          "Brazil's clean sheet rate is slightly lower, but their goals for average is higher.",
-          "No head-to-head record, but Brazil's overall history suggests dominance.",
-          "External forecasts are heavily favoring Brazil with 89.32% probability."
+          "Brasilien hat einen deutlich höheren Elo-Wert als Haiti.",
+          "Brasilien glänzt durch eine starke offensive Leistung, während Haiti defensiv schwächer aufgestellt ist.",
+          "Neymars Rückkehr ins Training könnte ein psychologischer Schub für Brasilien sein.",
+          "Neutraler Spielort minimiert den Heimvorteil."
         ],
         "risks": [
-          "Neutral venue minimizes any potential home advantage for Brazil.",
-          "Haiti's recent form has shown some resilience with a positive weighted form."
+          "Trainer Carlo Ancelotti steht in der Kritik, was die Teamdynamik von Brasilien beeinflussen könnte.",
+          "Anhaltende Unsicherheit über Neymars vollständige Spielbereitschaft."
         ]
       }
     },
-    "agreement": 0.9467,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Brasiliens (1844 vs. 1576) untermauert klare Favoritenrolle; Bessere gewichtete Form Brasiliens (1.791 vs. 1.488) und höhere Offensivqualität; Externe Prognose sieht Brasilien noch klarer (0.89), was eine Aufwärtskorrektur der Baseline rechtfertigt.",
-    "inputHash": "sha256:6b29977561cd5f80e288bdeb499d140477f46fd41ac3e8097aeb985c4a601b4e"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.4849,
+      "chatgpt": 0.5151
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Brasiliens (1814 vs. 1540) und bessere gewichtete Form (1.62 vs. 1.19); Brasiliens höhere Offensivkraft (1.77 erwartete Tore) bei solider Defensive; Markt sieht Brasilien als klaren Favoriten (87%), was den Baseline-Wert nach oben korrigiert. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:a0145b420bd1a2b80f5274152f5748db079c609fe391ae1b19a76425a2344436"
   },
   "predictionHistory": [
     {
@@ -269,11 +272,24 @@
         "away": 0.079
       },
       "confidence": 0.7698
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7863,
+        "draw": 0.1327,
+        "away": 0.0811
+      },
+      "confidence": 0.7154
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T12:05:40.518Z",
+    "updatedAt": "2026-06-18T13:03:44.544Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8675,
