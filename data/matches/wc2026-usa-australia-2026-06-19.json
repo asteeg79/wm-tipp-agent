@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T06:03:51.937Z",
+    "generatedAt": "2026-06-18T07:03:58.519Z",
     "home": {
       "teamId": "USA",
       "elo": 1667,
@@ -50,81 +50,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-18T07:03:58.519Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5015,
-      "draw": 0.25,
-      "away": 0.2485
+      "home": 0.484,
+      "draw": 0.2775,
+      "away": 0.2385
     },
-    "confidence": 0.6457,
+    "confidence": 0.4737,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4573,
-        "draw": 0.2384,
-        "away": 0.3042
+        "home": 0.4491,
+        "draw": 0.2357,
+        "away": 0.3152
       },
       "expectedGoals": {
-        "home": 1.68,
-        "away": 1.33
+        "home": 1.7,
+        "away": 1.39
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.49,
-          "draw": 0.25,
-          "away": 0.26
+          "home": 0.47,
+          "draw": 0.26,
+          "away": 0.27
         },
-        "confidence": 0.55,
+        "confidence": 0.42,
         "keyFactors": [
-          "USA mit Gastgebervorteil (hostAdvantageTeamId USA) trotz neutralem Spielort und höherer Elo (1676 vs. 1666)",
-          "USA bessere Offensive (goalsForAvg 1.668 vs. 1.257) stützt höhere Heim-xG der Baseline",
-          "Australien defensiv stabil (cleanSheetRate 0.542, goalsAgainstAvg 1.08), kann USA-Angriff bremsen",
-          "Externer Forecast sieht USA klar vorne (0.544), leichte Aufwertung der Heimwahrscheinlichkeit gegenüber Baseline"
+          "USA mit Heim-/Gastgebervorteil (WM 2026 in den USA) und solider Form, vom Markt klar favorisiert (0.60)",
+          "Australien defensiv sehr stabil (Gegentorschnitt 0.77, Clean-Sheet-Rate 0.56) und in starker aktueller Form (recentForm 1.9, jüngst 2:0 gegen Türkei)",
+          "Elo nahezu gleichauf (1667 vs 1658) – kein klarer Klassenunterschied",
+          "USA mit anfälliger Defensive (Gegentorschnitt 1.54, Clean-Sheet nur 0.23), was Australiens kompakter Konterstil ausnutzen kann"
         ],
         "risks": [
-          "Australien lange ohne Spiel (200 Tage seit letztem Match) – Form und Rhythmus schwer einzuschätzen",
-          "Verletzungsnews bei USA (Karl-Ausfall, Ouedraogo-Ersatz) könnten Offensivqualität schwächen",
-          "Unruhige Stimmung im Gastgeberland (Morale-News) als möglicher Belastungsfaktor",
-          "Nur 1 H2H-Spiel – sehr dünne direkte Vergleichsbasis"
+          "Australiens kompakte Defensive kann das Spiel torarm und ausgeglichen halten – Remis realistisch",
+          "Markt überschätzt USA evtl. wegen Heimvorteil; Baseline deutlich vorsichtiger",
+          "WM-Gruppenspiel-Kontext: Außenseiter steht oft tief, Favorit tut sich schwer",
+          "Verletzungslage/Aufstellung Australien (Yildiz-Meldung bezieht sich auf Türkei, nicht relevant) unsicher"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.51,
-          "draw": 0.25,
-          "away": 0.24
+          "home": 0.41,
+          "draw": 0.33,
+          "away": 0.26
         },
-        "confidence": 0.75,
+        "confidence": 0.55,
         "keyFactors": [
-          "USA hat Heimvorteil als Gastgeber trotz neutralem Spielort",
-          "Australien hat eine längere Spielpause von 200 Tagen",
-          "USA's jüngste Form etwas schwächer nach Verletzungsnachrichten",
-          "Australien mit besserer jüngster Form und hoher Clean Sheet Rate"
+          "USA hat einen leichten Heimvorteil aufgrund des Turnierorts in Nordamerika.",
+          "Australien hat eine starke Abwehr mit einer hohen Clean-Sheet-Rate.",
+          "Australien zeigte eine gute Form mit einem 2:0 gegen die Türkei."
         ],
         "risks": [
-          "Mögliche Auswirkungen der Verletzungen im US-Team",
-          "Unklarheiten bei der Stimmung und dem teaminternen Klima in den USA",
-          "Neutrale Lokalität könnte den Heimvorteil der USA dämpfen"
+          "Unklarheit über Form von Kenan Yildiz beeinflusst Australiens Angriffsstärke.",
+          "USA zeigt sich torgefährlich mit einem hohen Tor-Durchschnitt, aber auch anfällig in der Verteidigung."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Gastgebervorteil (hostAdvantageTeamId USA) trotz neutralem Spielort und höherer Elo (1676 vs. 1666); USA bessere Offensive (goalsForAvg 1.668 vs. 1.257) stützt höhere Heim-xG der Baseline; Australien defensiv stabil (cleanSheetRate 0.542, goalsAgainstAvg 1.08), kann USA-Angriff bremsen.",
-    "inputHash": "sha256:b08f9b9c7665fad1fc16488dfce751804eec4d6b1d2b825b8d4cecb3947ff814"
+    "agreement": 0.9533,
+    "ensembleWeights": {
+      "claude": 0.5076,
+      "chatgpt": 0.4924
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (WM 2026 in den USA) und solider Form, vom Markt klar favorisiert (0.60); Australien defensiv sehr stabil (Gegentorschnitt 0.77, Clean-Sheet-Rate 0.56) und in starker aktueller Form (recentForm 1.9, jüngst 2:0 gegen Türkei); Elo nahezu gleichauf (1667 vs 1658) – kein klarer Klassenunterschied. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:dc72bcf5fa88bfc30a41c2f30020284f7113d7c0c25d55e2a610ebe72312bf43"
   },
   "predictionHistory": [
     {
@@ -269,11 +271,24 @@
         "away": 0.2492
       },
       "confidence": 0.6435
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5015,
+        "draw": 0.25,
+        "away": 0.2485
+      },
+      "confidence": 0.6457
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T06:05:29.897Z",
+    "updatedAt": "2026-06-18T07:05:47.968Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5951,
