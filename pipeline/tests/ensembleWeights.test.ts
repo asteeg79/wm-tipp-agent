@@ -29,6 +29,11 @@ function finished(
   };
 }
 
+/** Einzelmodell-Tipp mit frei wählbarem predictedScore (für Trefferquote). */
+function mpScore(probabilities: Outcome1x2, score: ScoreLine): ModelPrediction {
+  return { ...mp(probabilities), predictedScore: score };
+}
+
 const HOME_WIN: ScoreLine = { home: 2, away: 0 };
 const SHARP_HOME: Outcome1x2 = { home: 0.8, draw: 0.15, away: 0.05 };
 const WRONG_AWAY: Outcome1x2 = { home: 0.1, draw: 0.2, away: 0.7 };
@@ -38,6 +43,23 @@ describe("computeModelWeights", () => {
   it("null bei zu kleiner Stichprobe (Mindestanzahl pro Modell)", () => {
     const data = [finished(HOME_WIN, SHARP_HOME, WRONG_AWAY)];
     expect(computeModelWeights(data, 5)).toBeNull();
+  });
+
+  it("Blend: bei gleichem RPS gewinnt die bessere Trefferquote mehr Gewicht", () => {
+    // Beide Modelle identische Wahrscheinlichkeiten (gleicher RPS) — nur der
+    // getippte Score unterscheidet sich: ChatGPT trifft die Tendenz (Heimsieg),
+    // Claude nicht. Reine RPS-Gewichtung gäbe 50/50; der Blend muss ChatGPT
+    // bevorzugen.
+    const data: FinishedWithModels[] = Array.from({ length: 6 }, () => ({
+      actualResult: HOME_WIN,
+      models: {
+        claude: mpScore(NEUTRAL, { home: 0, away: 1 }), // Auswärts → daneben
+        chatgpt: mpScore(NEUTRAL, { home: 1, away: 0 }), // Heim → Treffer
+      },
+    }));
+    const w = computeModelWeights(data, 5)!;
+    expect(w.weights.chatgpt).toBeGreaterThan(w.weights.claude);
+    expect(w.weights.claude + w.weights.chatgpt).toBeCloseTo(1, 6);
   });
 
   it("treffsicheres Modell bekommt mehr Gewicht; Summe 1", () => {

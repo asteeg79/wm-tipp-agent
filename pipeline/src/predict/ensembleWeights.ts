@@ -18,6 +18,7 @@ import type {
 } from "@wm/shared";
 import { aggregateAccuracy, scoreMatch } from "../features/accuracy.js";
 import { round } from "../util/math.js";
+import { config } from "../../config.js";
 
 export interface EnsembleWeights {
   /** Normierte Gewichte (Summe 1). */
@@ -36,6 +37,8 @@ export interface FinishedWithModels {
 
 /** Glättung: verhindert Gewichts-Explosion, wenn ein RPS nahe 0 liegt. */
 const EPS = 0.05;
+/** Glättung der Trefferquoten-Mischung (verhindert 0/0 bei lauter Fehltipps). */
+const HIT_EPS = 0.05;
 /** Unter-/Obergrenze je Gewicht — kein Modell fällt komplett raus. */
 const W_MIN = 0.25;
 const W_MAX = 0.75;
@@ -43,7 +46,11 @@ const W_MAX = 0.75;
 type ModelKey = "claude" | "chatgpt";
 
 /**
- * Berechnet die Ensemble-Gewichte aus beendeten Partien.
+ * Berechnet die Ensemble-Gewichte aus beendeten Partien — als BLEND aus zwei
+ * Maßen, damit beide Sichtweisen einfließen:
+ *  - RPS (Güte der gesamten Wahrscheinlichkeitsverteilung, kleiner = besser),
+ *  - Tendenz-Trefferquote des Tipps (was Nutzer auf der Bilanz sehen).
+ * Anteil über config.ensemble.rpsWeight (Default 0.6 RPS / 0.4 Treffer).
  * Liefert `null`, wenn die Datenlage (noch) keine belastbare Gewichtung
  * hergibt — der Aufrufer bleibt dann bei der neutralen Mittelung.
  */
@@ -51,18 +58,24 @@ export function computeModelWeights(
   finished: FinishedWithModels[],
   minSample: number,
 ): EnsembleWeights | null {
-  const sums: Record<ModelKey, { rps: number; n: number }> = {
-    claude: { rps: 0, n: 0 },
-    chatgpt: { rps: 0, n: 0 },
+  const sums: Record<ModelKey, { rps: number; hits: number; n: number }> = {
+    claude: { rps: 0, hits: 0, n: 0 },
+    chatgpt: { rps: 0, hits: 0, n: 0 },
   };
 
   for (const f of finished) {
     for (const key of ["claude", "chatgpt"] as const) {
-      const probs: Outcome1x2 | undefined = f.models[key]?.probabilities;
-      if (!probs) continue;
-      const { rps } = scoreMatch(undefined, probs, f.actualResult);
-      if (rps === null) continue;
-      sums[key].rps += rps;
+      const mp = f.models[key];
+      if (!mp) continue;
+      // predictedScore mitgeben → outcomeHit (Tendenz des sichtbaren Tipps).
+      const acc = scoreMatch(
+        mp.predictedScore,
+        mp.probabilities,
+        f.actualResult,
+      );
+      if (acc.rps === null) continue;
+      sums[key].rps += acc.rps;
+      sums[key].hits += acc.outcomeHit ? 1 : 0;
       sums[key].n++;
     }
   }
@@ -74,11 +87,22 @@ export function computeModelWeights(
     claude: sums.claude.rps / sums.claude.n,
     chatgpt: sums.chatgpt.rps / sums.chatgpt.n,
   };
+  const hitRate = {
+    claude: sums.claude.hits / sums.claude.n,
+    chatgpt: sums.chatgpt.hits / sums.chatgpt.n,
+  };
 
-  // Inverse-RPS-Gewichtung mit Glättung, dann normieren und clampen.
-  const rawClaude = 1 / (rpsMean.claude + EPS);
-  const rawChatgpt = 1 / (rpsMean.chatgpt + EPS);
-  let wClaude = rawClaude / (rawClaude + rawChatgpt);
+  // Claudes Anteil je Maß (jeweils 0..1, Summe mit ChatGPT = 1).
+  // RPS: invers (kleiner = besser), mit Glättung. Treffer: direkt, mit Glättung.
+  const invC = 1 / (rpsMean.claude + EPS);
+  const invG = 1 / (rpsMean.chatgpt + EPS);
+  const rpsShareClaude = invC / (invC + invG);
+  const hitShareClaude =
+    (hitRate.claude + HIT_EPS) /
+    (hitRate.claude + hitRate.chatgpt + 2 * HIT_EPS);
+
+  const rpsW = config.ensemble.rpsWeight;
+  let wClaude = rpsW * rpsShareClaude + (1 - rpsW) * hitShareClaude;
   wClaude = Math.min(W_MAX, Math.max(W_MIN, wClaude));
 
   return {

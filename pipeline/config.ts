@@ -92,6 +92,12 @@ export interface PipelineConfig {
     /** Mindestanzahl bewerteter Partien PRO Modell, bevor gewichtet wird. */
     accuracyMinSample: number;
     /**
+     * Anteil des RPS in der Modell-Gewichtung (Rest = Tendenz-Trefferquote).
+     * 1 = nur RPS (reine Wahrscheinlichkeits-Güte), 0 = nur Trefferquote.
+     * Default 0.6 → RPS dominiert leicht, die sichtbaren Treffer zählen mit.
+     */
+    rpsWeight: number;
+    /**
      * Gewicht der Buchmacher-Quoten in der finalen Wahrscheinlichkeit, wenn
      * Markt vorhanden: final = marketWeight·Markt + (1−marketWeight)·Ensemble.
      * 0 = Markt ignorieren (nur KI), 1 = nur Markt. Der Markt ist der beste
@@ -207,9 +213,13 @@ export const config: PipelineConfig = {
   ensemble: {
     confidenceWeighted: true,
     accuracyWeighted: true,
-    // Ab 5 bewerteten Partien je Modell ist der RPS-Mittelwert belastbar
-    // genug; vorher bleibt die Mittelung neutral (50/50).
+    // Ab 5 bewerteten Partien je Modell ist die Gewichtung belastbar genug;
+    // vorher bleibt die Mittelung neutral (50/50).
     accuracyMinSample: 5,
+    // Gewichtung = 60 % RPS (Wahrscheinlichkeits-Güte) + 40 % Tendenz-
+    // Trefferquote — so zählen die sichtbaren Treffer mit, ohne die
+    // Kalibrierung zu ignorieren.
+    rpsWeight: 0.6,
     // Markt mit 30 % einmischen: er ist ein guter Anker, soll die eigenständige
     // KI-Meinung aber NICHT dominieren (bewusst von 0.5 gesenkt). Der Markt
     // fließt zusätzlich weich über den System-Prompt ein.
