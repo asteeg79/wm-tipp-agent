@@ -533,7 +533,15 @@ export function simulateBracket(
   const real = realBracketRounds(index, predIndex, eloOf);
   if (real) return real;
 
-  // 2) Sonst: K.-o.-Feld aus den (ergebnisbasierten) Gruppen projizieren und
+  // 2) Vor der K.-o.-Phase: das ECHTE WM-2026-Schema aus dem Gruppenstand
+  //    projizieren (Sieger A trifft Zweiter B …), sofern die volle Struktur da
+  //    ist — sonst (z. B. Tests) der generische Elo-Setz-Fallback unten.
+  if (hasWc2026Structure(index)) {
+    const { rounds, champion } = projectBracket(index, predIndex);
+    if (rounds.length > 0) return { rounds, champion };
+  }
+
+  // 3) Fallback: K.-o.-Feld aus den (ergebnisbasierten) Gruppen projizieren und
   //    nach Elo setzen.
   const { teamsByGroup, matchesByGroup } = prepare(index, predIndex);
   const { advancers } = knockoutField(
@@ -572,4 +580,283 @@ export function simulateBracket(
   }
 
   return { rounds, champion: bracket[0]! };
+}
+
+/* ── Echtes WM-2026-K.-o.-Gerüst + Projektion aus dem Gruppenstand ─────────── */
+
+/**
+ * Herkunft eines K.-o.-Startplatzes (Sechzehntelfinale):
+ *  - `winner`/`runnerUp`: Erst-/Zweitplatzierter einer Gruppe (exakt aus dem
+ *    aktuellen/projizierten Tabellenstand ableitbar),
+ *  - `third`: bester Dritter aus EINER der erlaubten Gruppen (FIFA verteilt die
+ *    8 besten Dritten auf feste Slots; wir projizieren plausibel per Matching).
+ */
+export type SlotSource =
+  | { kind: "winner"; group: string }
+  | { kind: "runnerUp"; group: string }
+  | { kind: "third"; groups: string[] };
+
+/** Ein Startplatz im Sechzehntelfinale: entweder ein Gruppenslot … */
+type Feed = { from: number } | { slot: SlotSource };
+
+interface TieSpec {
+  num: number;
+  stage: KoStage;
+  a: Feed;
+  b: Feed;
+}
+
+const w = (group: string): Feed => ({ slot: { kind: "winner", group } });
+const ru = (group: string): Feed => ({ slot: { kind: "runnerUp", group } });
+const th = (...groups: string[]): Feed => ({ slot: { kind: "third", groups } });
+const W = (from: number): Feed => ({ from });
+
+/**
+ * Offizielles WM-2026-Bracket (Spiel-Nr. 73–104 aus openfootball worldcup.json,
+ * Spiel 103 = Platz 3 ausgelassen). Slot-Codes wie „1E" / „2C" / „3 aus
+ * A/B/C/D/F" sind fest verdrahtet — nur die konkreten Teams ergeben sich aus
+ * dem Tabellenstand.
+ */
+const WC2026_BRACKET: TieSpec[] = [
+  { num: 73, stage: "round32", a: ru("A"), b: ru("B") },
+  { num: 74, stage: "round32", a: w("E"), b: th("A", "B", "C", "D", "F") },
+  { num: 75, stage: "round32", a: w("F"), b: ru("C") },
+  { num: 76, stage: "round32", a: w("C"), b: ru("F") },
+  { num: 77, stage: "round32", a: w("I"), b: th("C", "D", "F", "G", "H") },
+  { num: 78, stage: "round32", a: ru("E"), b: ru("I") },
+  { num: 79, stage: "round32", a: w("A"), b: th("C", "E", "F", "H", "I") },
+  { num: 80, stage: "round32", a: w("L"), b: th("E", "H", "I", "J", "K") },
+  { num: 81, stage: "round32", a: w("D"), b: th("B", "E", "F", "I", "J") },
+  { num: 82, stage: "round32", a: w("G"), b: th("A", "E", "H", "I", "J") },
+  { num: 83, stage: "round32", a: ru("K"), b: ru("L") },
+  { num: 84, stage: "round32", a: w("H"), b: ru("J") },
+  { num: 85, stage: "round32", a: w("B"), b: th("E", "F", "G", "I", "J") },
+  { num: 86, stage: "round32", a: w("J"), b: ru("H") },
+  { num: 87, stage: "round32", a: w("K"), b: th("D", "E", "I", "J", "L") },
+  { num: 88, stage: "round32", a: ru("D"), b: ru("G") },
+  { num: 89, stage: "round16", a: W(74), b: W(77) },
+  { num: 90, stage: "round16", a: W(73), b: W(75) },
+  { num: 91, stage: "round16", a: W(76), b: W(78) },
+  { num: 92, stage: "round16", a: W(79), b: W(80) },
+  { num: 93, stage: "round16", a: W(83), b: W(84) },
+  { num: 94, stage: "round16", a: W(81), b: W(82) },
+  { num: 95, stage: "round16", a: W(86), b: W(88) },
+  { num: 96, stage: "round16", a: W(85), b: W(87) },
+  { num: 97, stage: "quarter", a: W(89), b: W(90) },
+  { num: 98, stage: "quarter", a: W(93), b: W(94) },
+  { num: 99, stage: "quarter", a: W(91), b: W(92) },
+  { num: 100, stage: "quarter", a: W(95), b: W(96) },
+  { num: 101, stage: "semi", a: W(97), b: W(98) },
+  { num: 102, stage: "semi", a: W(99), b: W(100) },
+  { num: 104, stage: "final", a: W(101), b: W(102) },
+];
+
+const TIE_BY_NUM = new Map(WC2026_BRACKET.map((t) => [t.num, t]));
+/** Alle Gruppen, die das Gerüst erwartet (A…L) → Plausibilitäts-Guard. */
+const SKELETON_GROUPS = [
+  ...new Set(
+    WC2026_BRACKET.flatMap((t) =>
+      [t.a, t.b].flatMap((f) =>
+        "slot" in f
+          ? f.slot.kind === "third"
+            ? f.slot.groups
+            : [f.slot.group]
+          : [],
+      ),
+    ),
+  ),
+];
+
+/** Sammelt die Sechzehntelfinal-Nummern im Tiefe-zuerst-Baumlauf (Anzeige). */
+function r32Leaves(num: number): number[] {
+  const t = TIE_BY_NUM.get(num)!;
+  if ("slot" in t.a) return [num];
+  return [
+    ...r32Leaves((t.a as { from: number }).from),
+    ...r32Leaves((t.b as { from: number }).from),
+  ];
+}
+const LEAF_ORDER = r32Leaves(104);
+/** Sortier-Schlüssel je Spiel = Position des linkesten R32-Spiels im Baum. */
+const orderKey = (num: number): number =>
+  LEAF_ORDER.indexOf(r32Leaves(num)[0]!);
+
+export interface ProjectedSide {
+  /** Aufgelöstes Team (kann fehlen, falls Slot nicht zuordenbar). */
+  teamId: string | null;
+  source: SlotSource;
+  /** Bei `third`: die Gruppe des projizierten Dritten. */
+  thirdGroup?: string;
+}
+
+export interface ProjectedR32 {
+  num: number;
+  a: ProjectedSide;
+  b: ProjectedSide;
+}
+
+export interface ProjectedBracket {
+  rounds: BracketRound[];
+  champion: string;
+  /** Die 16 Sechzehntelfinal-Paarungen (nach Spiel-Nr.) mit Herkunft. */
+  round32: ProjectedR32[];
+}
+
+/** Deterministische Tabelle je Gruppe aus dem aktuellen Stand. */
+function projectedStandings(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+): Map<string, Standing[]> {
+  const { teamsByGroup, matchesByGroup } = prepare(index, predIndex);
+  const eloOf = eloMap(index);
+  const out = new Map<string, Standing[]>();
+  for (const [g, ids] of teamsByGroup) {
+    out.set(g, simulateGroup(ids, matchesByGroup.get(g) ?? [], null, eloOf));
+  }
+  return out;
+}
+
+/**
+ * Verteilt die besten Gruppendritten per bipartitem Matching (Kuhn) auf ihre
+ * erlaubten Slots → Map Spiel-Nr. → teamId. Plausible Projektion, keine exakte
+ * FIFA-Kombinationstabelle.
+ */
+function assignThirds(
+  thirds: { id: string; group: string }[],
+  slots: { num: number; groups: string[] }[],
+): Map<number, string> {
+  const thirdOfSlot = new Map<number, string>();
+  const slotOfThird = new Map<string, number>();
+  const groupsOf = (num: number) => slots.find((s) => s.num === num)!.groups;
+
+  const augment = (
+    slotNum: number,
+    slotGroups: string[],
+    seen: Set<string>,
+  ): boolean => {
+    for (const candidate of thirds) {
+      if (!slotGroups.includes(candidate.group) || seen.has(candidate.id))
+        continue;
+      seen.add(candidate.id);
+      const taken = slotOfThird.get(candidate.id);
+      if (taken === undefined || augment(taken, groupsOf(taken), seen)) {
+        thirdOfSlot.set(slotNum, candidate.id);
+        slotOfThird.set(candidate.id, slotNum);
+        return true;
+      }
+    }
+    return false;
+  };
+
+  for (const s of slots) augment(s.num, s.groups, new Set());
+  return thirdOfSlot;
+}
+
+/**
+ * Projiziert das vollständige K.-o.-Bracket nach dem ECHTEN WM-2026-Schema aus
+ * dem aktuellen Gruppenstand: Sieger/Zweite exakt, beste 8 Dritte plausibel
+ * verteilt; offene K.-o.-Partien per Elo-Favorit (wie der Baum sonst auch).
+ */
+export function projectBracket(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+): ProjectedBracket {
+  const eloOf = eloMap(index);
+  const standings = projectedStandings(index, predIndex);
+
+  // Beste 8 Gruppendritte (FIFA-Kriterien, Elo als Tiebreak).
+  const thirds = [...standings.entries()]
+    .map(([group, table]) => (table[2] ? { ...table[2], group } : null))
+    .filter((x): x is Standing & { group: string } => !!x)
+    .sort((a, b) => cmpStanding(a, b) || eloOf(b.id) - eloOf(a.id))
+    .slice(0, 8)
+    .map((s) => ({ id: s.id, group: s.group }));
+  const thirdGroupOf = new Map(thirds.map((t) => [t.id, t.group]));
+
+  // Dritt-Slots aus dem Gerüst + Zuordnung.
+  const thirdSlots = WC2026_BRACKET.filter((t) => t.stage === "round32")
+    .map((t) => {
+      const f = [t.a, t.b].find(
+        (x): x is { slot: SlotSource } =>
+          "slot" in x && x.slot.kind === "third",
+      );
+      return f && f.slot.kind === "third"
+        ? { num: t.num, groups: f.slot.groups }
+        : null;
+    })
+    .filter((x): x is { num: number; groups: string[] } => !!x);
+  const thirdByTie = assignThirds(thirds, thirdSlots);
+
+  const teamOfSlot = (num: number, s: SlotSource): string | null => {
+    if (s.kind === "winner") return standings.get(s.group)?.[0]?.id ?? null;
+    if (s.kind === "runnerUp") return standings.get(s.group)?.[1]?.id ?? null;
+    return thirdByTie.get(num) ?? null;
+  };
+  const sideInfo = (num: number, f: Feed): ProjectedSide | null => {
+    if (!("slot" in f)) return null;
+    const teamId = teamOfSlot(num, f.slot);
+    const tg = teamId ? thirdGroupOf.get(teamId) : undefined;
+    return {
+      teamId,
+      source: f.slot,
+      ...(f.slot.kind === "third" && tg ? { thirdGroup: tg } : {}),
+    };
+  };
+
+  // Baum rekursiv auflösen (memoisiert).
+  const cache = new Map<number, BracketMatch | null>();
+  const resolveSide = (num: number, f: Feed): string | null =>
+    "from" in f
+      ? (resolveTie(f.from)?.winner ?? null)
+      : teamOfSlot(num, f.slot);
+  const resolveTie = (num: number): BracketMatch | null => {
+    if (cache.has(num)) return cache.get(num)!;
+    const t = TIE_BY_NUM.get(num)!;
+    const a = resolveSide(num, t.a);
+    const b = resolveSide(num, t.b);
+    const m =
+      a && b
+        ? (() => {
+            const pA = eloWinProb(eloOf(a), eloOf(b));
+            const aWins = pA >= 0.5;
+            const winProb = aWins ? pA : 1 - pA;
+            const { win, lose } = koScore(winProb);
+            return {
+              a,
+              b,
+              winner: aWins ? a : b,
+              winProb,
+              score: { a: aWins ? win : lose, b: aWins ? lose : win },
+            } satisfies BracketMatch;
+          })()
+        : null;
+    cache.set(num, m);
+    return m;
+  };
+
+  const rounds: BracketRound[] = KO_STAGES.map((stage) => ({
+    stage,
+    matches: WC2026_BRACKET.filter((t) => t.stage === stage)
+      .sort((x, y) => orderKey(x.num) - orderKey(y.num))
+      .map((t) => resolveTie(t.num))
+      .filter((m): m is BracketMatch => !!m),
+  })).filter((r) => r.matches.length > 0);
+
+  const round32: ProjectedR32[] = WC2026_BRACKET.filter(
+    (t) => t.stage === "round32",
+  )
+    .sort((a, b) => a.num - b.num)
+    .map((t) => ({
+      num: t.num,
+      a: sideInfo(t.num, t.a)!,
+      b: sideInfo(t.num, t.b)!,
+    }));
+
+  return { rounds, champion: resolveTie(104)?.winner ?? "", round32 };
+}
+
+/** Hat der Index die volle WM-2026-Gruppenstruktur (A…L)? */
+export function hasWc2026Structure(index: IndexFile): boolean {
+  const present = new Set(index.teams.map((t) => t.groupId));
+  return SKELETON_GROUPS.every((g) => present.has(g));
 }

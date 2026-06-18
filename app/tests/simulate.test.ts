@@ -2,6 +2,8 @@ import { describe, it, expect } from "vitest";
 import {
   simulateTournament,
   simulateBracket,
+  projectBracket,
+  hasWc2026Structure,
   eloWinProb,
   seedSlots,
 } from "../src/lib/simulate.js";
@@ -81,6 +83,109 @@ function fixture(): { index: IndexFile; pred: PredictionsIndex } {
     } as unknown as PredictionsIndex,
   };
 }
+
+/** 12-Gruppen-Fixture (A…L à 4): Reihenfolge je Gruppe rein über Elo (i=0 top). */
+function fixture12(): { index: IndexFile; pred: PredictionsIndex } {
+  const groups = "ABCDEFGHIJKL".split("");
+  const teams = groups.flatMap((g, gi) =>
+    [0, 1, 2, 3].map((i) => ({
+      id: `${g}${i}`,
+      name: `${g}${i}`,
+      code: `${g}${i}`,
+      groupId: g,
+      elo: 1900 - gi * 30 - i * 5, // A0 stärkstes; je Gruppe i=0 vorn
+    })),
+  );
+  const entries: PredictionsIndex["entries"] = [];
+  for (const g of groups) {
+    const ids = [0, 1, 2, 3].map((i) => `${g}${i}`);
+    for (let a = 0; a < 4; a++)
+      for (let b = a + 1; b < 4; b++)
+        entries.push({
+          matchId: `${ids[a]}-${ids[b]}`,
+          date: "2026-06-12T00:00:00Z",
+          stage: "group",
+          homeTeamId: ids[a]!,
+          awayTeamId: ids[b]!,
+          probabilities: { home: 1 / 3, draw: 1 / 3, away: 1 / 3 },
+          // Gleiche xG → lauter Remis → Tabelle entscheidet sich über Elo.
+          expectedGoals: { home: 1, away: 1 },
+          actualResult: null,
+        });
+  }
+  return {
+    index: {
+      tournament: { name: "T", startDate: "2026-06-11", endDate: "2026-07-19" },
+      lastUpdated: "2026-06-09T00:00:00Z",
+      groups: groups.map((g) => ({
+        id: g,
+        teamIds: [0, 1, 2, 3].map((i) => `${g}${i}`),
+      })),
+      teams,
+    } as unknown as IndexFile,
+    pred: {
+      lastUpdated: "2026-06-09T00:00:00Z",
+      aggregate: {
+        finishedCount: 0,
+        exactScoreRate: null,
+        outcomeRate: null,
+        brierMean: null,
+        rpsMean: null,
+      },
+      entries,
+    } as unknown as PredictionsIndex,
+  };
+}
+
+describe("projectBracket (echtes WM-2026-Schema)", () => {
+  it("16 Sechzehntelfinal-Paarungen; Sieger/Zweite exakt aus dem Stand", () => {
+    const { index, pred } = fixture12();
+    expect(hasWc2026Structure(index)).toBe(true);
+    const { round32 } = projectBracket(index, pred);
+    expect(round32).toHaveLength(16);
+
+    // Spiel 73 = Zweiter A vs Zweiter B; Spiel 79 = Sieger A vs Dritter.
+    const tie73 = round32.find((t) => t.num === 73)!;
+    expect(tie73.a.source).toEqual({ kind: "runnerUp", group: "A" });
+    expect(tie73.a.teamId).toBe("A1");
+    expect(tie73.b.teamId).toBe("B1");
+    const tie79 = round32.find((t) => t.num === 79)!;
+    expect(tie79.a.source).toEqual({ kind: "winner", group: "A" });
+    expect(tie79.a.teamId).toBe("A0");
+    expect(tie79.b.source.kind).toBe("third");
+  });
+
+  it("alle 8 Dritt-Slots werden plausibel besetzt (gültige Gruppe)", () => {
+    const { index, pred } = fixture12();
+    const { round32 } = projectBracket(index, pred);
+    for (const tie of round32) {
+      for (const side of [tie.a, tie.b]) {
+        if (side.source.kind !== "third") continue;
+        expect(side.teamId).not.toBeNull();
+        // Zugeordnete Gruppe muss in der erlaubten Liste des Slots stehen.
+        expect(side.thirdGroup).toBeTruthy();
+        expect(side.source.groups).toContain(side.thirdGroup);
+        // Der Dritte ist tatsächlich ein Gruppendritter (…2).
+        expect(side.teamId!.endsWith("2")).toBe(true);
+      }
+    }
+  });
+
+  it("simulateBracket nutzt vor der K.-o.-Phase das echte Schema (R32 zuerst)", () => {
+    const { index, pred } = fixture12();
+    const b = simulateBracket(index, pred);
+    expect(b.rounds[0]!.stage).toBe("round32");
+    expect(b.rounds[0]!.matches).toHaveLength(16);
+    expect(b.rounds.map((r) => r.stage)).toEqual([
+      "round32",
+      "round16",
+      "quarter",
+      "semi",
+      "final",
+    ]);
+    expect(b.champion).toBeTruthy();
+  });
+});
 
 describe("simulateTournament", () => {
   it("Wahrscheinlichkeiten sind plausibel (Titel summiert ~1)", () => {

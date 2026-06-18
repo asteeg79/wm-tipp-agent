@@ -56,6 +56,12 @@ const resources = {
         team: "Team",
         goals: "Tore",
         pts: "Pkt",
+        nextRound: "So geht's weiter — Sechzehntelfinale",
+        nextRoundProjected:
+          "Projektion nach aktuellem Gruppenstand. Sieger & Zweite stehen je Gruppe fest, sobald entschieden; die 8 besten Dritten sind plausibel zugeordnet.",
+        nextRoundFinal:
+          "Sechzehntelfinal-Paarungen nach dem echten WM-Schema (Sieger A trifft Zweiter B …).",
+        vs: "gegen",
       },
       team: {
         results: "Ergebnisse (letzte 2 Jahre)",
@@ -186,10 +192,10 @@ const resources = {
         odds: "Titelchancen",
         groupWinnerShort: "Grp.",
         advanceShort: "K.o.",
-        draw16: "Sechzehntelfinale (32) · Setzung nach Elo",
+        draw16: "Sechzehntelfinale (32)",
         champion: "Simulierter Weltmeister",
         treeNote:
-          "Gruppen mit echten Ergebnissen + Tor-Simulation der offenen Partien (FIFA-Tiebreaker). K.-o.-Feld = Top-2 je Gruppe + 8 beste Dritte, nach Elo gesetzt; je Partie kommt das stärkere Team weiter (% = Elo-Siegwahrscheinlichkeit).",
+          "Paarungen nach dem echten WM-Schema aus dem Gruppenstand (Sieger A trifft Zweiter B …, 8 beste Dritte plausibel verteilt). Je K.-o.-Partie kommt das stärkere Team weiter (% = Elo-Siegwahrscheinlichkeit); gespielte Spiele zählen real.",
         rounds: {
           round32: "Sechzehntelfinale",
           round16: "Achtelfinale",
@@ -198,6 +204,13 @@ const resources = {
           final: "Finale",
         },
         note: "Vereinfachte Simulation auf Basis der aktuellen 1X2-Wahrscheinlichkeiten (Gruppenphase). K.-o.-Phase ab feststehenden Paarungen.",
+        source: {
+          winner: "Sieger {{group}}",
+          runnerUp: "Zweiter {{group}}",
+          third: "3. {{group}}",
+          thirdOpen: "bester Dritter",
+        },
+        roundSel: "Runde",
       },
       compare: {
         title: "Team-Vergleich",
@@ -313,6 +326,12 @@ const resources = {
         team: "Team",
         goals: "Goals",
         pts: "Pts",
+        nextRound: "What's next — Round of 32",
+        nextRoundProjected:
+          "Projection from the current group standings. Winners & runners-up are fixed per group once decided; the 8 best third-placed teams are assigned plausibly.",
+        nextRoundFinal:
+          "Round-of-32 pairings following the real World Cup bracket (Winner A plays Runner-up B …).",
+        vs: "vs",
       },
       team: {
         results: "Results (last 2 years)",
@@ -443,10 +462,10 @@ const resources = {
         odds: "Title odds",
         groupWinnerShort: "Grp.",
         advanceShort: "KO",
-        draw16: "Round of 32 · seeded by Elo",
+        draw16: "Round of 32",
         champion: "Simulated champion",
         treeNote:
-          "Groups use real results + goal simulation of open matches (FIFA tiebreakers). Knockout field = top 2 per group + 8 best third-placed, seeded by Elo; the stronger team advances each tie (% = Elo win probability).",
+          "Pairings follow the real World Cup bracket from the group standings (Winner A plays Runner-up B …, 8 best third-placed assigned plausibly). The stronger team advances each tie (% = Elo win probability); played matches count for real.",
         rounds: {
           round32: "Round of 32",
           round16: "Round of 16",
@@ -455,6 +474,13 @@ const resources = {
           final: "Final",
         },
         note: "Simplified simulation from current 1X2 probabilities (group stage). Knockout once pairings are set.",
+        source: {
+          winner: "Winner {{group}}",
+          runnerUp: "Runner-up {{group}}",
+          third: "3rd {{group}}",
+          thirdOpen: "best third",
+        },
+        roundSel: "Round",
       },
       compare: {
         title: "Team comparison",

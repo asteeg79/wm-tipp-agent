@@ -6,6 +6,7 @@ import { useIndex, usePredictionsIndex, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { MatchRow } from "../components/MatchRow.js";
 import { simulateTournament } from "../lib/simulate.js";
+import { NextRound } from "../components/NextRound.js";
 
 const SIM_RUNS = 5000;
 
@@ -196,6 +197,8 @@ export function GroupsPage() {
           );
         })}
       </div>
+
+      <NextRound index={index} predIndex={predIndex} teams={teams} />
     </section>
   );
 }

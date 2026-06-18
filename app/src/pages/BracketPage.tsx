@@ -63,6 +63,7 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
   const { t } = useTranslation();
   const { data: index } = useIndex();
   const { data: predIndex } = usePredictionsIndex();
+  const [roundIdx, setRoundIdx] = useState(0);
   const bracket = useMemo(() => {
     if (!index || !predIndex) return null;
     return simulateBracket(index, predIndex);
@@ -70,6 +71,8 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
 
   if (!bracket) return null;
   const champ = teams.get(bracket.champion);
+  const mobileRound =
+    bracket.rounds[Math.min(roundIdx, bracket.rounds.length - 1)];
 
   return (
     <div className="space-y-3">
@@ -97,8 +100,39 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
         </div>
       </div>
 
-      {/* Scrollbarer Baum: Spalten je Runde, vertikal verteilt */}
-      <div className="overflow-x-auto pb-1">
+      {/* Mobil: Runden-Umschalter + eine Runde als Karten-Stapel */}
+      <div className="space-y-3 sm:hidden">
+        <div className="flex flex-wrap gap-1.5">
+          {bracket.rounds.map((rnd, i) => (
+            <button
+              key={rnd.stage}
+              onClick={() => setRoundIdx(i)}
+              className={`rounded-md px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider transition-colors ${
+                i === roundIdx
+                  ? "bg-acc text-canvas"
+                  : "bg-surface-2 text-fg-soft"
+              }`}
+            >
+              {t(`bracket.rounds.${rnd.stage}`)}
+            </button>
+          ))}
+        </div>
+        {mobileRound && (
+          <div className="space-y-2">
+            {mobileRound.matches.map((m, i) => (
+              <BracketCell
+                key={i}
+                m={m}
+                teams={teams}
+                final={mobileRound.stage === "final"}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Desktop: scrollbarer Baum, Spalten je Runde, vertikal verteilt */}
+      <div className="hidden overflow-x-auto pb-1 sm:block">
         <div className="flex gap-4" style={{ minWidth: "min-content" }}>
           {bracket.rounds.map((rnd) => (
             <div key={rnd.stage} className="flex min-w-[150px] flex-col">
