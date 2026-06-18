@@ -64,6 +64,8 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
   const { data: index } = useIndex();
   const { data: predIndex } = usePredictionsIndex();
   const [roundIdx, setRoundIdx] = useState(0);
+  // Mobile Darstellung: Baum (scrollbare Spalten, Default) ODER Runden-Tabs.
+  const [mobileMode, setMobileMode] = useState<"tree" | "rounds">("tree");
   const bracket = useMemo(() => {
     if (!index || !predIndex) return null;
     return simulateBracket(index, predIndex);
@@ -100,8 +102,25 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
         </div>
       </div>
 
-      {/* Mobil: Runden-Umschalter + eine Runde als Karten-Stapel */}
-      <div className="space-y-3 sm:hidden">
+      {/* Mobil: Umschalter Baum ↔ Runden (Default Baum); Desktop immer Baum. */}
+      <div className="inline-flex rounded-lg border border-edge bg-surface-2 p-1 sm:hidden">
+        {(["tree", "rounds"] as const).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMobileMode(m)}
+            className={`rounded-md px-3 py-1 text-sm font-semibold transition-colors ${
+              mobileMode === m ? "bg-acc text-canvas" : "text-fg-soft"
+            }`}
+          >
+            {m === "tree" ? t("bracket.viewTree") : t("bracket.viewRounds")}
+          </button>
+        ))}
+      </div>
+
+      {/* Mobil + Runden-Modus: Runden-Umschalter + eine Runde als Karten-Stapel */}
+      <div
+        className={`space-y-3 sm:hidden ${mobileMode === "rounds" ? "block" : "hidden"}`}
+      >
         <div className="flex flex-wrap gap-1.5">
           {bracket.rounds.map((rnd, i) => (
             <button
@@ -131,8 +150,10 @@ function TreeView({ teams }: { teams: Map<string, TeamSummary> }) {
         )}
       </div>
 
-      {/* Desktop: scrollbarer Baum, Spalten je Runde, vertikal verteilt */}
-      <div className="hidden overflow-x-auto pb-1 sm:block">
+      {/* Baum: scrollbare Spalten je Runde. Desktop immer, mobil im Baum-Modus. */}
+      <div
+        className={`overflow-x-auto pb-1 sm:block ${mobileMode === "tree" ? "block" : "hidden"}`}
+      >
         <div className="flex gap-4" style={{ minWidth: "min-content" }}>
           {bracket.rounds.map((rnd) => (
             <div key={rnd.stage} className="flex min-w-[150px] flex-col">
