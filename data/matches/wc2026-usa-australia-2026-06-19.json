@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T18:34:44.217Z",
+    "generatedAt": "2026-06-18T19:03:50.876Z",
     "home": {
       "teamId": "USA",
       "elo": 1667,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-18T17:04:16.949Z",
+    "generatedAt": "2026-06-18T19:03:50.876Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.5292,
-      "draw": 0.2511,
-      "away": 0.2197
+      "home": 0.5183,
+      "draw": 0.2685,
+      "away": 0.2132
     },
-    "confidence": 0.59,
+    "confidence": 0.586,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.47,
+          "home": 0.46,
           "draw": 0.27,
-          "away": 0.26
+          "away": 0.27
         },
         "confidence": 0.5,
         "keyFactors": [
-          "USA mit Heim-/Gastgebervorteil (hostAdvantage USA) und leicht höherem Elo (1667 vs 1658)",
-          "Australien defensiv sehr stabil: Clean-Sheet-Rate 0.56 und nur 0.77 Gegentore im Schnitt, zuletzt 2:0 gegen die Türkei (gute Form, recentForm 1.9)",
-          "USA mit mehr Offensivpower (2.03 Tore/Spiel), aber anfälliger Defensive (1.54 Gegentore, CS-Rate nur 0.23)",
-          "Markt sieht USA klarer vorn (0.60), Baseline deutlich zurückhaltender (0.45) – Wahrheit liegt dazwischen"
+          "USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und solider Form bei guter Offensive (2.03 Tore/Spiel)",
+          "Australien defensiv sehr stabil: nur 0.77 Gegentore/Spiel und 56% Zu-Null-Quote, zuletzt 2:0-Sieg gegen die Türkei",
+          "Sehr ähnliche Elo-Werte (1667 vs 1658) und gute Form beider Teams sprechen für ein enges Spiel",
+          "Markt sieht USA klar vorne (0.60), Baseline nur 0.45 — Australiens Defensivstärke rechtfertigt eine Korrektur Richtung enger"
         ],
         "risks": [
-          "Australiens kompakte Defensive könnte ein torarmes Remis oder eine Überraschung begünstigen",
-          "Geringe H2H-Datenbasis (nur 1 Spiel) limitiert Aussagekraft",
-          "Mögliche Rotation/Taktik in WM-Gruppenphase erhöht Remis-Wahrscheinlichkeit",
-          "USA-Defensivschwäche könnte von Australiens Kontern bestraft werden"
+          "USA-Abwehr anfällig (1.54 Gegentore/Spiel, nur 23% Zu-Null) — Australien kann kontern",
+          "Geringe H2H-Datenbasis (nur 1 Spiel) und kleine Stichprobe bei Australien (25 Spiele)",
+          "Mögliche Rotation/Vorsicht in WM-Gruppenphase könnte torärmeres Ergebnis begünstigen",
+          "Markt deutlich USA-lastig — bei Heimstärke könnte ein klarer USA-Sieg entstehen"
         ]
       },
       "chatgpt": {
@@ -104,28 +104,29 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.52,
-          "draw": 0.26,
-          "away": 0.22
+          "home": 0.5,
+          "draw": 0.3,
+          "away": 0.2
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Host advantage for USA as World Cup co-host.",
-          "Australia has a strong recent form and defense but is dealing with injury concerns.",
-          "USA's historical head-to-head advantage in their only meeting."
+          "USA hat Heimvorteil als Gastgebernation, auch bei neutralem Spielort.",
+          "Australien hat kürzlich gewonnen, aber potenzielle Verletzungsprobleme.",
+          "USA erzielt tendenziell mehr Tore und hat eine bessere Form als vor der WM.",
+          "ExternalForecast sieht USA als klaren Favoriten."
         ],
         "risks": [
-          "Australia's defensive strength could limit USA's scoring.",
-          "Neutral venue reduces typical home advantage effects."
+          "Australiens Defensivstärke und hohe Clean Sheet-Rate.",
+          "Turnier-und Auftaktspiel: mögliche Torsicherheit und taktische Vorsicht auf beiden Seiten."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.9533,
     "ensembleWeights": {
-      "claude": 0.4849,
-      "chatgpt": 0.5151
+      "claude": 0.476,
+      "chatgpt": 0.524
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantage USA) und leicht höherem Elo (1667 vs 1658); Australien defensiv sehr stabil: Clean-Sheet-Rate 0.56 und nur 0.77 Gegentore im Schnitt, zuletzt 2:0 gegen die Türkei (gute Form, recentForm 1.9); USA mit mehr Offensivpower (2.03 Tore/Spiel), aber anfälliger Defensive (1.54 Gegentore, CS-Rate nur 0.23). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und solider Form bei guter Offensive (2.03 Tore/Spiel); Australien defensiv sehr stabil: nur 0.77 Gegentore/Spiel und 56% Zu-Null-Quote, zuletzt 2:0-Sieg gegen die Türkei; Sehr ähnliche Elo-Werte (1667 vs 1658) und gute Form beider Teams sprechen für ein enges Spiel. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:dc72bcf5fa88bfc30a41c2f30020284f7113d7c0c25d55e2a610ebe72312bf43"
   },
   "predictionHistory": [
@@ -297,11 +298,24 @@
         "away": 0.2385
       },
       "confidence": 0.4737
+    },
+    {
+      "generatedAt": "2026-06-18T17:04:16.949Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5292,
+        "draw": 0.2511,
+        "away": 0.2197
+      },
+      "confidence": 0.59
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T18:36:31.135Z",
+    "updatedAt": "2026-06-18T19:03:51.317Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5977,
