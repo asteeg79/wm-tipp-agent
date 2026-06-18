@@ -103,7 +103,9 @@ export function GroupsPage() {
             .filter((x): x is NonNullable<typeof x> => !!x)
             // FIFA-Sortierung nach IST-Ergebnissen: Punkte → Tordifferenz →
             // erzielte Tore; bei Gleichstand (z. B. vor dem 1. Spieltag)
-            // entscheidet die simulierte Weiterkommens-Wahrscheinlichkeit.
+            // entscheidet die Elo — identisch zum Tiebreak der Folgerunden-
+            // Projektion (NextRound), damit Tabelle und Paarungen konsistent
+            // dieselbe Reihenfolge ergeben.
             .sort((a, b) => {
               const sa = standingOf(a.id);
               const sb = standingOf(b.id);
@@ -111,9 +113,9 @@ export function GroupsPage() {
               const gdDiff = sb.gf - sb.ga - (sa.gf - sa.ga);
               if (gdDiff !== 0) return gdDiff;
               if (sb.gf !== sa.gf) return sb.gf - sa.gf;
-              return sim
-                ? (sim.advance.get(b.id) ?? 0) - (sim.advance.get(a.id) ?? 0)
-                : a.name.localeCompare(b.name);
+              return (
+                (b.elo ?? 1500) - (a.elo ?? 1500) || a.id.localeCompare(b.id)
+              );
             });
           let matches = matchesByGroup.get(g.id) ?? [];
           if (teamFilter)

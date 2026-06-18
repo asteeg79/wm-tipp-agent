@@ -155,6 +155,25 @@ describe("projectBracket (echtes WM-2026-Schema)", () => {
     expect(tie79.b.source.kind).toBe("third");
   });
 
+  it("aktueller Gruppenerster bleibt Sieger — auch mit schwacher Elo (kein Durchsimulieren)", () => {
+    const { index, pred } = fixture12();
+    // C3 (schwächste Elo der Gruppe) schlägt C0 real → 3 Pkt, klar vorne.
+    // Restspiele offen: früher projizierte das Modell C3 nach unten (Bug).
+    const game = pred.entries.find(
+      (e) => e.homeTeamId === "C0" && e.awayTeamId === "C3",
+    )!;
+    game.actualResult = { home: 0, away: 2 };
+    const { round32 } = projectBracket(index, pred);
+    // Spiel 76 = Sieger C vs Zweiter F.
+    const tie76 = round32.find((t) => t.num === 76)!;
+    expect(tie76.a.source).toEqual({ kind: "winner", group: "C" });
+    expect(tie76.a.teamId).toBe("C3");
+    // C3 darf NICHT als Dritter irgendwo auftauchen.
+    for (const tie of round32)
+      for (const side of [tie.a, tie.b])
+        if (side.source.kind === "third") expect(side.teamId).not.toBe("C3");
+  });
+
   it("alle 8 Dritt-Slots werden plausibel besetzt (gültige Gruppe)", () => {
     const { index, pred } = fixture12();
     const { round32 } = projectBracket(index, pred);

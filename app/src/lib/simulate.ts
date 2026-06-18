@@ -702,8 +702,14 @@ export interface ProjectedBracket {
   round32: ProjectedR32[];
 }
 
-/** Deterministische Tabelle je Gruppe aus dem aktuellen Stand. */
-function projectedStandings(
+/**
+ * Tabelle je Gruppe nach dem AKTUELLEN Stand: nur bereits gespielte Partien
+ * zählen (Punkte → Tordiff → Tore, Elo als Tiebreak bei Gleichstand). Bewusst
+ * KEINE Durchsimulation der offenen Spiele — sonst würde ein aktueller
+ * Gruppenerster, dem das Modell die Restspiele „verliert", als Dritter
+ * einsortiert (inkonsistent zur Tabelle auf der Gruppen-Seite).
+ */
+function currentStandings(
   index: IndexFile,
   predIndex: PredictionsIndex,
 ): Map<string, Standing[]> {
@@ -711,7 +717,35 @@ function projectedStandings(
   const eloOf = eloMap(index);
   const out = new Map<string, Standing[]>();
   for (const [g, ids] of teamsByGroup) {
-    out.set(g, simulateGroup(ids, matchesByGroup.get(g) ?? [], null, eloOf));
+    const tbl = new Map<string, Standing>(
+      ids.map((id) => [id, { id, pts: 0, gd: 0, gf: 0 }]),
+    );
+    for (const m of matchesByGroup.get(g) ?? []) {
+      if (!m.result) continue; // nur gespielte Partien
+      const home = tbl.get(m.home);
+      const away = tbl.get(m.away);
+      if (!home || !away) continue;
+      const { home: hg, away: ag } = m.result;
+      home.gf += hg;
+      away.gf += ag;
+      home.gd += hg - ag;
+      away.gd += ag - hg;
+      if (hg > ag) home.pts += 3;
+      else if (hg < ag) away.pts += 3;
+      else {
+        home.pts += 1;
+        away.pts += 1;
+      }
+    }
+    out.set(
+      g,
+      [...tbl.values()].sort(
+        (a, b) =>
+          cmpStanding(a, b) ||
+          eloOf(b.id) - eloOf(a.id) ||
+          a.id.localeCompare(b.id),
+      ),
+    );
   }
   return out;
 }
@@ -762,7 +796,7 @@ export function projectBracket(
   predIndex: PredictionsIndex,
 ): ProjectedBracket {
   const eloOf = eloMap(index);
-  const standings = projectedStandings(index, predIndex);
+  const standings = currentStandings(index, predIndex);
 
   // Beste 8 Gruppendritte (FIFA-Kriterien, Elo als Tiebreak).
   const thirds = [...standings.entries()]
