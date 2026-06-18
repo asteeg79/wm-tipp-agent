@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T10:46:18.873Z",
+    "generatedAt": "2026-06-18T11:03:45.701Z",
     "home": {
       "teamId": "SUI",
       "elo": 1703,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-18T07:03:58.519Z",
+    "generatedAt": "2026-06-18T11:03:45.701Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.5738,
-      "draw": 0.2403,
-      "away": 0.1859
+      "home": 0.5746,
+      "draw": 0.2405,
+      "away": 0.1848
     },
-    "confidence": 0.588,
+    "confidence": 0.6379,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Switzerland deutlich höheres Elo (1703 vs 1546) und stärkere gewichtete sowie aktuelle Form (1.9 vs 1.4)",
-          "Bessere Offensive (1.81 vs 1.58) und Defensive (1.08 gegen vs 1.21) der Schweiz, höhere Clean-Sheet-Rate",
-          "Markt sieht die Schweiz klarer favorisiert (0.62) als die Baseline (0.50)",
-          "Bosnien dennoch torgefährlich (1.58 Tore/Spiel) und kann das Spiel offen halten"
+          "Switzerland deutlich höhere Elo (1703 vs 1546) und bessere gewichtete sowie aktuelle Form (recentForm 1.9 vs 1.4)",
+          "Schweiz mit klar besserer Defensive (GegentoreAvg 1.075, CleanSheet 0.357) gegenüber Bosnien (1.213, 0.182)",
+          "Baseline und Markt sehen beide die Schweiz vorne; Markt mit 0.62 noch deutlicher als Elo+Poisson 0.50",
+          "Erwartete Tore favorisieren Schweiz (1.72 vs 1.17)"
         ],
         "risks": [
-          "Berichte über Spannungen in der Schweizer Kabine könnten die Leistung beeinträchtigen",
-          "Erwartungsdruck und vorsichtiger WM-Auftakt können zu engem, torärmerem Spiel führen",
-          "Kein H2H-Datensatz vorhanden, erhöht Unsicherheit",
-          "Bosniens Offensivkraft könnte für einen Treffer oder ein Remis sorgen"
+          "Bosnien hat eine durchaus torgefährliche Offensive (1.579 ToreAvg) und kann auf neutralem Platz unangenehm werden",
+          "Kein H2H-Wert vorhanden, höhere Unsicherheit in der Einschätzung",
+          "Gruppenphasen-Auftaktspiele oft vorsichtiger und torärmer, Remis-Gefahr bei früher Schweizer Nervosität",
+          "Schweizer Heimvorteil entfällt (neutraler Ort)"
         ]
       },
       "chatgpt": {
@@ -108,25 +108,24 @@
           "draw": 0.25,
           "away": 0.2
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Switzerland has a higher Elo rating and better recent form compared to Bosnia & Herzegovina.",
-          "Despite neutral venue, Switzerland is more experienced in major tournaments.",
-          "Defensive stability with higher clean sheet rate for Switzerland."
+          "Switzerland has a higher Elo rating (1703 vs 1546).",
+          "Switzerland's recent form is stronger (1.9 vs 1.4).",
+          "Neutral venue diminishes home advantage."
         ],
         "risks": [
-          "Tension reports in Switzerland's dressing room could affect performance.",
-          "Neutral venue might reduce potential home advantage for Switzerland.",
-          "Bosnia & Herzegovina's consistency could lead to potential upset or draw."
+          "No head-to-head history between teams.",
+          "Bosnia has a moderate average goals for and against, posing a potential threat."
         ]
       }
     },
     "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.5076,
-      "chatgpt": 0.4924
+      "claude": 0.4849,
+      "chatgpt": 0.5151
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland deutlich höheres Elo (1703 vs 1546) und stärkere gewichtete sowie aktuelle Form (1.9 vs 1.4); Bessere Offensive (1.81 vs 1.58) und Defensive (1.08 gegen vs 1.21) der Schweiz, höhere Clean-Sheet-Rate; Markt sieht die Schweiz klarer favorisiert (0.62) als die Baseline (0.50). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland deutlich höhere Elo (1703 vs 1546) und bessere gewichtete sowie aktuelle Form (recentForm 1.9 vs 1.4); Schweiz mit klar besserer Defensive (GegentoreAvg 1.075, CleanSheet 0.357) gegenüber Bosnien (1.213, 0.182); Baseline und Markt sehen beide die Schweiz vorne; Markt mit 0.62 noch deutlicher als Elo+Poisson 0.50. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:8ebadb549071e88ff43e47c19469da7ed02a3f5b9a4328de53380849cabae9d0"
   },
   "predictionHistory": [
@@ -337,11 +336,24 @@
         "away": 0.1972
       },
       "confidence": 0.6336
+    },
+    {
+      "generatedAt": "2026-06-18T07:03:58.519Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5738,
+        "draw": 0.2403,
+        "away": 0.1859
+      },
+      "confidence": 0.588
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T10:47:59.574Z",
+    "updatedAt": "2026-06-18T11:03:46.094Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6218,
