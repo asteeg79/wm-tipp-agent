@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T15:39:05.718Z",
+    "generatedAt": "2026-06-19T16:03:46.422Z",
     "home": {
       "teamId": "TUN",
       "elo": 1611,
@@ -51,79 +51,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-19T16:03:46.422Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2254,
-      "draw": 0.2746,
-      "away": 0.5
+      "home": 0.1623,
+      "draw": 0.238,
+      "away": 0.5996
     },
-    "confidence": 0.6478,
+    "confidence": 0.6413,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2481,
-        "draw": 0.2743,
-        "away": 0.4776
+        "home": 0.2249,
+        "draw": 0.2364,
+        "away": 0.5387
       },
       "expectedGoals": {
-        "home": 0.91,
-        "away": 1.38
+        "home": 1.04,
+        "away": 1.74
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 1
         },
         "probabilities": {
-          "home": 0.22,
-          "draw": 0.28,
-          "away": 0.5
+          "home": 0.16,
+          "draw": 0.23,
+          "away": 0.61
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Japan mit deutlich höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.202 vs 1.895)",
-          "Japan defensiv sehr stabil: nur 0.362 Gegentore/Spiel und 58.3% Clean-Sheet-Rate",
-          "Tunesien defensiv solide (0.752 Gegentore/Spiel, 50% Clean Sheets), kann das Spiel eng halten",
-          "Neutraler Spielort ohne Heimvorteil für Tunesien"
+          "Japan klar stärker (Elo 1721 vs 1611) und in besserer Form (weightedForm 1.87 vs 1.60)",
+          "Japan defensiv stabil: nur 0.81 Gegentore/Spiel, Clean-Sheet-Rate 0.56",
+          "Tunesien in Trainerchaos nach Debakel/Trainerwechsel, was Instabilität signalisiert",
+          "Markt sieht Japan deutlich vorn (0.63), stützt Baseline-Auswärtsfavorit"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, erhöht Prognoseunsicherheit",
-          "67 Tage seit letztem Spiel beider Teams – Rhythmus schwer einschätzbar",
-          "Tunesiens überdurchschnittliche Form könnte für eine Überraschung sorgen",
-          "Höhe (540m) als geringer, schwer quantifizierbarer Kontextfaktor"
+          "Außenseiter Tunesien könnte tief und kompakt stehen und Japan das Toreschießen erschweren",
+          "Gruppenphasen-Auftaktspiele oft torarm, Remis-Risiko erhöht",
+          "Neutraler Ort, kein H2H-Verlauf als Anker",
+          "Mögliche Stabilisierung Tunesiens durch neuen erfahrenen Trainer (Renard)"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.23,
-          "draw": 0.27,
-          "away": 0.5
+          "home": 0.18,
+          "draw": 0.25,
+          "away": 0.57
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Japan's higher Elo rating compared to Tunisia indicates stronger overall team strength.",
-          "Japan's recent form is slightly better than Tunisia, with more goals scored on average and a better defensive record.",
-          "Neutral venue eliminates any home advantage."
+          "Japan hat eine bessere aktuelle Form und ein höheres Elo-Rating.",
+          "Tunisia hat kürzlich den Trainer nach einem deutlichen Verlust entlassen, was Unsicherheiten schafft.",
+          "Japan hat eine starke Defensivstatistik mit einer hohen Clean-Sheet-Rate."
         ],
         "risks": [
-          "Both teams have the same number of days since their last match, which could imply unpredictability in recent performance.",
-          "The absence of prior head-to-head encounters adds uncertainty to projections."
+          "Tunisias unvorhersehbare Reaktion auf den Trainerwechsel könnte positiv ausfallen.",
+          "Das Spiel findet in einem neutralen Stadion statt, was Überraschungen begünstigen könnte."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan mit deutlich höherem Elo (1768 vs 1672) und stärkerer gewichteter Form (2.202 vs 1.895); Japan defensiv sehr stabil: nur 0.362 Gegentore/Spiel und 58.3% Clean-Sheet-Rate; Tunesien defensiv solide (0.752 Gegentore/Spiel, 50% Clean Sheets), kann das Spiel eng halten.",
-    "inputHash": "sha256:8028b05530416074568f98711accb4fd3df5d8863d4f561b3ad7413293ee3084"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.4885,
+      "chatgpt": 0.5115
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan klar stärker (Elo 1721 vs 1611) und in besserer Form (weightedForm 1.87 vs 1.60); Japan defensiv stabil: nur 0.81 Gegentore/Spiel, Clean-Sheet-Rate 0.56; Tunesien in Trainerchaos nach Debakel/Trainerwechsel, was Instabilität signalisiert. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:5325dadab8c436bf501354a6503cb2372bd18a0b412b98627ce788e28ed17ca4"
   },
   "predictionHistory": [
     {
@@ -255,11 +259,24 @@
         "away": 0.4955
       },
       "confidence": 0.6567
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2254,
+        "draw": 0.2746,
+        "away": 0.5
+      },
+      "confidence": 0.6478
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T15:41:08.789Z",
+    "updatedAt": "2026-06-19T16:03:46.842Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1421,
