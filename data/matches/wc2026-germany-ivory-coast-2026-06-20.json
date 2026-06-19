@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T07:03:45.496Z",
+    "generatedAt": "2026-06-19T08:03:44.773Z",
     "home": {
       "teamId": "GER",
       "elo": 1800,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-19T08:03:44.773Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5282,
-      "draw": 0.2287,
-      "away": 0.2431
+      "home": 0.6049,
+      "draw": 0.2135,
+      "away": 0.1816
     },
-    "confidence": 0.6539,
+    "confidence": 0.6705,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4639,
-        "draw": 0.2328,
-        "away": 0.3033
+        "home": 0.588,
+        "draw": 0.2007,
+        "away": 0.2113
       },
       "expectedGoals": {
-        "home": 1.75,
-        "away": 1.38
+        "home": 2.21,
+        "away": 1.26
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.24,
-          "away": 0.26
+          "home": 0.59,
+          "draw": 0.21,
+          "away": 0.2
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "Deutschland mit höherem Elo (1822 vs 1753) und starker gewichteter Form (2.371)",
-          "Hohe Offensivkraft Deutschlands (2.574 Tore/Spiel) gegen solide aber nicht überragende Abwehr",
-          "Externe Prognose sieht Deutschland deutlich vorne (0.61), stützt leichte Aufwertung gegenüber Baseline",
-          "Neutraler Spielort eliminiert echten Heimvorteil, daher keine Überschätzung der Heimquote"
+          "Germany mit klar höherem Elo (1800 vs 1691) und starker Offensivform (3,49 Tore/Spiel im Schnitt)",
+          "Ivory Coast defensiv sehr stabil (0,47 Gegentore/Spiel, 55,9% Clean Sheets) – könnte tief und kompakt stehen",
+          "Markt (0,626) und Baseline (0,588) sehen Deutschland klar vorne, ohne überwältigende Eindeutigkeit",
+          "Beide Teams gut erholt (5 Tage Pause), neutraler Spielort ohne Heimvorteil"
         ],
         "risks": [
-          "Elfenbeinküste defensiv sehr stabil (cleanSheetRate 0.545, nur 0.558 Gegentore/Spiel) – kann Unentschieden begünstigen",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "Keine substanziellen Personal-News (gelieferte News irrelevant/Eishockey), mögliche unbekannte Ausfälle",
-          "Lange Pause (ca. 68 Tage) beider Teams kann Spielrhythmus beeinträchtigen"
+          "Kompakte, defensivstarke Elfenbeinküste kann Deutschland frustrieren – knappes Ergebnis oder Remis möglich",
+          "WM-Gruppenphase oft vorsichtig und torarm, besonders gegen tiefstehende Außenseiter",
+          "Personaldebatten/Aufstellungsfragen bei Deutschland (Sane-Frage) könnten Offensivabstimmung beeinflussen",
+          "Kein H2H vorhanden – erhöhte Unsicherheit in der Einschätzung"
         ]
       },
       "chatgpt": {
@@ -104,27 +104,29 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.6,
           "draw": 0.22,
-          "away": 0.23
+          "away": 0.18
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Germany's higher Elo rating",
-          "Germany’s strong attack with goalsForAvg of 2.574",
-          "Neutral venue reduces potential advantage",
-          "Ivory Coast has a solid defense with a goalsAgainstAvg of 0.558"
+          "Germany's strong offensive form with high goals for average.",
+          "Ivory Coast's decent defense with a higher clean sheet rate.",
+          "Germany's historic opposition strength reflected in higher Elo rating."
         ],
         "risks": [
-          "Both teams with similar recent weighted form and recent form",
-          "Ivory Coast’s strong clean sheet rate of 0.545",
-          "No head-to-head data available"
+          "Germany's squad cohesion might be affected by recent coaching headlines, impacting performance.",
+          "Ivory Coast's morale might be slightly affected by recent squad issues."
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit höherem Elo (1822 vs 1753) und starker gewichteter Form (2.371); Hohe Offensivkraft Deutschlands (2.574 Tore/Spiel) gegen solide aber nicht überragende Abwehr; Externe Prognose sieht Deutschland deutlich vorne (0.61), stützt leichte Aufwertung gegenüber Baseline.",
-    "inputHash": "sha256:6df83e87bb3bbc3e20541c9ca312929afe3a811bfd290b50cbac2c988caa846b"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.4885,
+      "chatgpt": 0.5115
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit klar höherem Elo (1800 vs 1691) und starker Offensivform (3,49 Tore/Spiel im Schnitt); Ivory Coast defensiv sehr stabil (0,47 Gegentore/Spiel, 55,9% Clean Sheets) – könnte tief und kompakt stehen; Markt (0,626) und Baseline (0,588) sehen Deutschland klar vorne, ohne überwältigende Eindeutigkeit. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:10f2897d1ad88bec5f0e402d1e37e6204cdbfd18518e34e5d9a92e6af8a50463"
   },
   "predictionHistory": [
     {
@@ -256,11 +258,24 @@
         "away": 0.2423
       },
       "confidence": 0.6392
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5282,
+        "draw": 0.2287,
+        "away": 0.2431
+      },
+      "confidence": 0.6539
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T07:05:42.839Z",
+    "updatedAt": "2026-06-19T08:03:45.185Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6264,
