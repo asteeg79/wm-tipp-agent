@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T14:03:55.658Z",
+    "generatedAt": "2026-06-19T15:03:53.629Z",
     "home": {
       "teamId": "TUR",
       "elo": 1654,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T10:03:46.528Z",
+    "generatedAt": "2026-06-19T15:03:53.629Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.4653,
-      "draw": 0.2879,
-      "away": 0.2468
+      "home": 0.4616,
+      "draw": 0.2993,
+      "away": 0.2391
     },
-    "confidence": 0.5445,
+    "confidence": 0.4395,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.48,
+          "home": 0.49,
           "draw": 0.28,
-          "away": 0.24
+          "away": 0.23
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Türkei mit deutlich besserer Form (gewichtete Form 1.81 vs 1.115) und höherem Elo (1654 vs 1588)",
-          "Türkei erzielt mehr Tore (1.55 vs 0.99) und steht offensiv stärker da",
-          "Paraguay defensiv kompakt (Clean-Sheet-Rate 0.42), aber abschlussschwach – typischer Außenseiter, der tief steht",
-          "Muss-Sieg-Charakter für Türkei nach Fehlstart erhöht Risikobereitschaft und Offensivdruck"
+          "Türkei mit höherem Elo (1654 vs 1588), besserer gewichteter Form (1.81 vs 1.12) und mehr Offensivpower (1.55 Tore/Spiel)",
+          "Paraguay defensiv kompakt (Clean-Sheet-Rate 0.42), neigt zu tiefem Block und torarmen Spielen",
+          "Markt sieht Türkei weniger klar (0.47) als Baseline (0.57) – Druck und Unruhe rechtfertigen Korrektur nach unten",
+          "Beide Teams unter Druck (Muss-Sieg-Charakter), was offensivere aber auch fehleranfällige Phasen begünstigen kann"
         ],
         "risks": [
-          "Großer Druck und Unruhe im türkischen Team (Kritik am Trainer, drohendes WM-Aus) kann Nervosität und Fehler begünstigen",
-          "Paraguays tiefe, kompakte Defensive kann türkische Offensive ausbremsen – Remis-Gefahr",
-          "Neutraler Spielort ohne Heimvorteil",
-          "Kein H2H-Datenbestand zur Kalibrierung"
+          "Berichtete Unruhe/Fehlstart bei der Türkei (Trainerkritik, Moralprobleme) könnte Leistung beeinträchtigen",
+          "Paraguays kompakte Defensive kann den Favoriten ausbremsen – erhöhtes Remis-Risiko",
+          "Kein H2H und neutraler Spielort reduzieren Vorhersagesicherheit",
+          "Mögliche Startelf-Rotationen/Personalentscheidungen (Yildiz/Uzun) schwer kalkulierbar"
         ]
       },
       "chatgpt": {
@@ -104,29 +104,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.3,
-          "away": 0.25
+          "home": 0.42,
+          "draw": 0.34,
+          "away": 0.24
         },
-        "confidence": 0.6,
+        "confidence": 0.4,
         "keyFactors": [
-          "Türkei hat höheren Elo-Wert und bessere Form als Paraguay.",
-          "Keine Head-to-Head-Daten vorhanden.",
-          "Türkei spielt unter neutralen Bedingungen ohne Heimvorteil.",
-          "Aktuelle Unruhe und Kritik im türkischen Lager könnte die Leistung beeinträchtigen."
+          "Türkei unter Druck wegen negativem Medienecho und interner Unruhe",
+          "Paraguay mit stabilerer Abwehr, wie die höhere Clean Sheet Rate zeigt",
+          "Beide Teams ähnlich in der jüngsten Formkurve, Türkei leicht besser",
+          "Kein Head-to-Head-Vergleich vorhanden, neutraler Spielort",
+          "Auftaktspiele in Gruppenturnieren tendenziell torarm"
         ],
         "risks": [
-          "Paraguay hat solide Defensivleistung mit einer Clean-Sheet-Rate von 41.7%.",
-          "Türkei könnte durch interne Unruhen und öffentliche Kritik in ihrer Spielweise beeinträchtigt werden."
+          "Ungenauigkeiten bei der Einschätzung, ob Teamunruhe die Türkei mehr beeinflusst",
+          "Einschätzung der Türkei könnte durch Medieneinfluss variabler, als Zahlen es zeigen"
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9533,
     "ensembleWeights": {
       "claude": 0.4885,
       "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit deutlich besserer Form (gewichtete Form 1.81 vs 1.115) und höherem Elo (1654 vs 1588); Türkei erzielt mehr Tore (1.55 vs 0.99) und steht offensiv stärker da; Paraguay defensiv kompakt (Clean-Sheet-Rate 0.42), aber abschlussschwach – typischer Außenseiter, der tief steht. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit höherem Elo (1654 vs 1588), besserer gewichteter Form (1.81 vs 1.12) und mehr Offensivpower (1.55 Tore/Spiel); Paraguay defensiv kompakt (Clean-Sheet-Rate 0.42), neigt zu tiefem Block und torarmen Spielen; Markt sieht Türkei weniger klar (0.47) als Baseline (0.57) – Druck und Unruhe rechtfertigen Korrektur nach unten. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:88bc210f2a7b273a17f5fe4ceff6d6fab766d253a698612ac9595881c320c5f2"
   },
   "predictionHistory": [
@@ -337,21 +338,34 @@
         "away": 0.2421
       },
       "confidence": 0.49
+    },
+    {
+      "generatedAt": "2026-06-19T10:03:46.528Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4653,
+        "draw": 0.2879,
+        "away": 0.2468
+      },
+      "confidence": 0.5445
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T14:05:42.134Z",
+    "updatedAt": "2026-06-19T15:03:54.240Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4678,
-      "draw": 0.282,
-      "away": 0.2502
+      "home": 0.4698,
+      "draw": 0.2805,
+      "away": 0.2497
     },
     "decimal": {
-      "home": 2.07,
-      "draw": 3.43,
-      "away": 3.86
+      "home": 2.06,
+      "draw": 3.45,
+      "away": 3.88
     }
   }
 }
