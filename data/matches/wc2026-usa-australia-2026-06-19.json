@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T22:24:36.836Z",
+    "generatedAt": "2026-06-19T04:03:49.205Z",
     "home": {
       "teamId": "USA",
       "elo": 1667,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.539,
       "cleanSheetRate": 0.229,
       "matchesCount": 35,
-      "daysSinceLastMatch": 6
+      "daysSinceLastMatch": 7
     },
     "away": {
       "teamId": "AUS",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.769,
       "cleanSheetRate": 0.56,
       "matchesCount": 25,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 1,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-18T19:03:50.876Z",
+    "generatedAt": "2026-06-19T04:03:49.205Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.5183,
-      "draw": 0.2685,
-      "away": 0.2132
+      "home": 0.526,
+      "draw": 0.241,
+      "away": 0.233
     },
-    "confidence": 0.586,
+    "confidence": 0.5482,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.46,
-          "draw": 0.27,
-          "away": 0.27
+          "home": 0.49,
+          "draw": 0.25,
+          "away": 0.26
         },
         "confidence": 0.5,
         "keyFactors": [
-          "USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und solider Form bei guter Offensive (2.03 Tore/Spiel)",
-          "Australien defensiv sehr stabil: nur 0.77 Gegentore/Spiel und 56% Zu-Null-Quote, zuletzt 2:0-Sieg gegen die Türkei",
-          "Sehr ähnliche Elo-Werte (1667 vs 1658) und gute Form beider Teams sprechen für ein enges Spiel",
-          "Markt sieht USA klar vorne (0.60), Baseline nur 0.45 — Australiens Defensivstärke rechtfertigt eine Korrektur Richtung enger"
+          "USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) trotz neutralem Spielort und ausgeglichener Elo (1667 vs 1658)",
+          "Markt sieht USA klar vorn (0.597), Baseline moderater (0.449) – realistische Lage dazwischen",
+          "Australien defensiv stark (CleanSheet-Rate 0.56, nur 0.77 Gegentore/Spiel) und gute Form (gewichtete Form 1.91)",
+          "USA offensiv produktiver (2.03 Tore/Spiel), aber anfällig (1.54 Gegentore/Spiel)"
         ],
         "risks": [
-          "USA-Abwehr anfällig (1.54 Gegentore/Spiel, nur 23% Zu-Null) — Australien kann kontern",
-          "Geringe H2H-Datenbasis (nur 1 Spiel) und kleine Stichprobe bei Australien (25 Spiele)",
-          "Mögliche Rotation/Vorsicht in WM-Gruppenphase könnte torärmeres Ergebnis begünstigen",
-          "Markt deutlich USA-lastig — bei Heimstärke könnte ein klarer USA-Sieg entstehen"
+          "Australiens kompakte Defensive kann ein knappes Ergebnis oder Remis erzwingen",
+          "Sehr ausgeglichene Elo-Werte – Ausgang offen, Unentschieden gut möglich",
+          "Unklare News-Lage zu Australien (Verletzungsmeldungen nicht eindeutig zuordenbar)",
+          "Turnier-Auftaktcharakter begünstigt vorsichtige, torarme Spielweise"
         ]
       },
       "chatgpt": {
@@ -105,29 +105,28 @@
         },
         "probabilities": {
           "home": 0.5,
-          "draw": 0.3,
-          "away": 0.2
+          "draw": 0.25,
+          "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "USA hat Heimvorteil als Gastgebernation, auch bei neutralem Spielort.",
-          "Australien hat kürzlich gewonnen, aber potenzielle Verletzungsprobleme.",
-          "USA erzielt tendenziell mehr Tore und hat eine bessere Form als vor der WM.",
-          "ExternalForecast sieht USA als klaren Favoriten."
+          "USA leichte Favoriten durch Heimvorteil, auch bei neutralem Spielort",
+          "Gute Form von Australien könnte USA's Heimvorteil ausgleichen",
+          "Australiens defensive Stärke (hohe Clean Sheet Rate)"
         ],
         "risks": [
-          "Australiens Defensivstärke und hohe Clean Sheet-Rate.",
-          "Turnier-und Auftaktspiel: mögliche Torsicherheit und taktische Vorsicht auf beiden Seiten."
+          "Australiens Verletzungssorgen könnten die Teamleistung beeinträchtigen",
+          "Vorsichtige Spielweise zu Turnierbeginn lässt enges Ergebnis erwarten"
         ]
       }
     },
-    "agreement": 0.9533,
+    "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.476,
-      "chatgpt": 0.524
+      "claude": 0.4885,
+      "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) und solider Form bei guter Offensive (2.03 Tore/Spiel); Australien defensiv sehr stabil: nur 0.77 Gegentore/Spiel und 56% Zu-Null-Quote, zuletzt 2:0-Sieg gegen die Türkei; Sehr ähnliche Elo-Werte (1667 vs 1658) und gute Form beider Teams sprechen für ein enges Spiel. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:dc72bcf5fa88bfc30a41c2f30020284f7113d7c0c25d55e2a610ebe72312bf43"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit Heim-/Gastgebervorteil (hostAdvantageTeamId USA) trotz neutralem Spielort und ausgeglichener Elo (1667 vs 1658); Markt sieht USA klar vorn (0.597), Baseline moderater (0.449) – realistische Lage dazwischen; Australien defensiv stark (CleanSheet-Rate 0.56, nur 0.77 Gegentore/Spiel) und gute Form (gewichtete Form 1.91). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:ed3e6951001b8a0f430df27259e68eba194e2c82c2a64ea5c51bfc51535f1333"
   },
   "predictionHistory": [
     {
@@ -311,11 +310,24 @@
         "away": 0.2197
       },
       "confidence": 0.59
+    },
+    {
+      "generatedAt": "2026-06-18T19:03:50.876Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5183,
+        "draw": 0.2685,
+        "away": 0.2132
+      },
+      "confidence": 0.586
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T22:26:35.109Z",
+    "updatedAt": "2026-06-19T04:05:28.415Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.597,

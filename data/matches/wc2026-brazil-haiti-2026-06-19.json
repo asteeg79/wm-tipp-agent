@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-18T22:24:36.836Z",
+    "generatedAt": "2026-06-19T04:03:49.205Z",
     "home": {
       "teamId": "BRA",
       "elo": 1814,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.916,
       "cleanSheetRate": 0.385,
       "matchesCount": 26,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "HAI",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.074,
       "cleanSheetRate": 0.391,
       "matchesCount": 23,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-18T19:03:50.876Z",
+    "generatedAt": "2026-06-19T04:03:49.205Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7949,
-      "draw": 0.1287,
-      "away": 0.0764
+      "home": 0.8355,
+      "draw": 0.108,
+      "away": 0.0565
     },
-    "confidence": 0.7425,
+    "confidence": 0.7813,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Deutliche Elo-Differenz (1814 vs 1540) und klar bessere gewichtete Form Brasiliens",
-          "Markt sieht Brasilien als sehr klaren Favoriten (0.87), was die zu konservative Baseline nach oben korrigiert",
-          "Brasilien defensiv solide (GA 0.92) und offensiv stärker (xG 1.77 vs 0.84)",
-          "Haiti tritt vermutlich tief und kompakt auf, was knappe Ergebnisse begünstigt"
+          "Großer Klassenunterschied: Brasilien Elo 1814 vs. Haiti 1540",
+          "Brasilien mit stärkerer gewichteter und jüngster Form (1.62 / 1.8 vs. 1.19 / 1.2)",
+          "Höhere Offensivkraft Brasiliens (xG-Baseline 1.77 vs. 0.84)",
+          "Markt sieht Brasilien als klaren Favoriten (87%), deutlich über Baseline"
         ],
         "risks": [
-          "Personelle Unruhe um Brasilien (Neymar-Verletzung, Casemiro-Form, Trainerthema Ancelotti) könnte Leistung dämpfen",
-          "Kompakter Außenseiter kann Brasilien das Toreschießen erschweren – mögliches enges 1:0",
-          "Kein H2H-Datensatz vorhanden, erhöhte Unsicherheit",
-          "Auftakt-/Gruppenspiele oft vorsichtiger und torärmer als erwartet"
+          "Unruhe um Trainer Ancelotti (Krankenhaus, Kritik nach Marokko-Spiel) könnte Vorbereitung stören",
+          "Haiti kann tief und kompakt stehen und Brasilien das Toreschießen erschweren",
+          "Mögliche Rotation/Casemiro-Frage im Mittelfeld",
+          "Auftakt-/Gruppenspiele oft torarm und vorsichtig"
         ]
       },
       "chatgpt": {
@@ -104,29 +104,30 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.75,
-          "draw": 0.15,
-          "away": 0.1
+          "home": 0.85,
+          "draw": 0.1,
+          "away": 0.05
         },
-        "confidence": 0.8,
+        "confidence": 0.9,
         "keyFactors": [
-          "Brasilien hat eine hohe Elo-Bewertung und ist historisch ein starkes Team",
-          "Haiti hat keine belastbaren Ergebnisse gegen Top-Teams wie Brasilien",
-          "Neutraler Spielort verringert eventuell einige Vorteile für Brasilien"
+          "Brasilien hat eine deutlich höhere Elo-Bewertung als Haiti.",
+          "Brasiliens jüngste Form ist stark mit einem Elo von 1814.",
+          "Ancelotti als Trainer steht zwar in der Kritik, aber das ändert wenig an der spielerischen Stärke Brasiliens.",
+          "Verletzungsnews des Trainers könnten das Team kurzfristig beeinflussen, jedoch bleibt die individuelle Klasse des Teams hoch."
         ],
         "risks": [
-          "Trainerverunsicherung und Verletzungsprobleme bei Brasilien könnten sich nachteilig auswirken",
-          "Eventuelles defensives Spiel von Haiti könnte die Toranzahl begrenzen"
+          "Trainer-Krankenhaus-Aufenthalt könnte den Spielverlauf beeinflussen.",
+          "Turnierauftakt könnte zu vorsichtigem Spiel führen."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9533,
     "ensembleWeights": {
-      "claude": 0.476,
-      "chatgpt": 0.524
+      "claude": 0.4885,
+      "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutliche Elo-Differenz (1814 vs 1540) und klar bessere gewichtete Form Brasiliens; Markt sieht Brasilien als sehr klaren Favoriten (0.87), was die zu konservative Baseline nach oben korrigiert; Brasilien defensiv solide (GA 0.92) und offensiv stärker (xG 1.77 vs 0.84). Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:a0145b420bd1a2b80f5274152f5748db079c609fe391ae1b19a76425a2344436"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Klassenunterschied: Brasilien Elo 1814 vs. Haiti 1540; Brasilien mit stärkerer gewichteter und jüngster Form (1.62 / 1.8 vs. 1.19 / 1.2); Höhere Offensivkraft Brasiliens (xG-Baseline 1.77 vs. 0.84). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:d5c7e249051c840e4bd9c80c5c52db02386662db73cc4e9b8e131599629281a3"
   },
   "predictionHistory": [
     {
@@ -297,11 +298,24 @@
         "away": 0.0704
       },
       "confidence": 0.7893
+    },
+    {
+      "generatedAt": "2026-06-18T19:03:50.876Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7949,
+        "draw": 0.1287,
+        "away": 0.0764
+      },
+      "confidence": 0.7425
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-18T22:26:35.109Z",
+    "updatedAt": "2026-06-19T04:05:28.416Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8712,

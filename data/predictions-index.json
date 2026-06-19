@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-18T22:24:36.836Z",
+  "lastUpdated": "2026-06-19T04:03:49.205Z",
   "aggregate": {
-    "finishedCount": 26,
-    "exactScoreRate": 0.0385,
-    "outcomeRate": 0.4615,
-    "brierMean": 0.6277,
-    "rpsMean": 0.1818
+    "finishedCount": 28,
+    "exactScoreRate": 0.0357,
+    "outcomeRate": 0.5,
+    "brierMean": 0.6041,
+    "rpsMean": 0.1773
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 26,
-      "exactScoreRate": 0.0385,
-      "outcomeRate": 0.3462,
-      "brierMean": 0.6299,
-      "rpsMean": 0.1816
+      "finishedCount": 28,
+      "exactScoreRate": 0.0714,
+      "outcomeRate": 0.3929,
+      "brierMean": 0.6074,
+      "rpsMean": 0.1776
     },
     "chatgpt": {
-      "finishedCount": 26,
-      "exactScoreRate": 0.1154,
-      "outcomeRate": 0.4615,
-      "brierMean": 0.6359,
-      "rpsMean": 0.1874
+      "finishedCount": 28,
+      "exactScoreRate": 0.1071,
+      "outcomeRate": 0.4643,
+      "brierMean": 0.6125,
+      "rpsMean": 0.1829
     },
     "weights": {
-      "claude": 0.4783,
-      "chatgpt": 0.5217
+      "claude": 0.4885,
+      "chatgpt": 0.5115
     }
   },
   "entries": [
@@ -924,7 +924,16 @@
         "draw": 0.1719,
         "away": 0.0875
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 6,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.1468,
+        "rps": 0.0566
+      }
     },
     {
       "matchId": "wc2026-mexico-south-korea-2026-06-18",
@@ -951,7 +960,16 @@
         "draw": 0.2897,
         "away": 0.2409
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.4487,
+        "rps": 0.1807
+      }
     },
     {
       "matchId": "wc2026-usa-australia-2026-06-19",
@@ -964,11 +982,11 @@
         "away": 0
       },
       "probabilities": {
-        "home": 0.5183,
-        "draw": 0.2685,
-        "away": 0.2132
+        "home": 0.526,
+        "draw": 0.241,
+        "away": 0.233
       },
-      "confidence": 0.586,
+      "confidence": 0.5482,
       "expectedGoals": {
         "home": 1.7,
         "away": 1.39
@@ -987,15 +1005,15 @@
       "homeTeamId": "SCO",
       "awayTeamId": "MAR",
       "predictedScore": {
-        "home": 0,
+        "home": 1,
         "away": 2
       },
       "probabilities": {
-        "home": 0.1834,
-        "draw": 0.2548,
-        "away": 0.5619
+        "home": 0.182,
+        "draw": 0.2578,
+        "away": 0.5602
       },
-      "confidence": 0.6907,
+      "confidence": 0.6413,
       "expectedGoals": {
         "home": 0.72,
         "away": 1.78
@@ -1018,11 +1036,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.4727,
-        "draw": 0.2853,
-        "away": 0.2421
+        "home": 0.4669,
+        "draw": 0.2915,
+        "away": 0.2416
       },
-      "confidence": 0.5408,
+      "confidence": 0.4477,
       "expectedGoals": {
         "home": 1.79,
         "away": 0.97
@@ -1045,11 +1063,11 @@
         "away": 0
       },
       "probabilities": {
-        "home": 0.7949,
-        "draw": 0.1287,
-        "away": 0.0764
+        "home": 0.8355,
+        "draw": 0.108,
+        "away": 0.0565
       },
-      "confidence": 0.7425,
+      "confidence": 0.7813,
       "expectedGoals": {
         "home": 1.77,
         "away": 0.84
