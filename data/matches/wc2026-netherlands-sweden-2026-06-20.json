@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T16:03:46.422Z",
+    "generatedAt": "2026-06-19T17:03:56.141Z",
     "home": {
       "teamId": "NED",
       "elo": 1787,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T05:03:48.596Z",
+    "generatedAt": "2026-06-19T17:03:56.141Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5176,
-      "draw": 0.2792,
-      "away": 0.2032
+      "home": 0.5507,
+      "draw": 0.2382,
+      "away": 0.2111
     },
-    "confidence": 0.5568,
+    "confidence": 0.5692,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,53 +80,54 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.56,
-          "draw": 0.23,
-          "away": 0.21
+          "home": 0.55,
+          "draw": 0.22,
+          "away": 0.23
         },
-        "confidence": 0.56,
+        "confidence": 0.55,
         "keyFactors": [
-          "Netherlands mit deutlichem Elo-Vorteil (1787 vs 1637) und stabilerer Defensive (GA 1.09 vs 1.50, Clean-Sheet-Rate 0.38 vs 0.21)",
-          "Bessere jüngste Form der Niederlande (recentForm 2.2 vs 1.4)",
-          "Sowohl Baseline als auch Markt sehen die Niederlande klar als Favorit",
-          "Schweden mit gefährlicher Offensive (GF 2.57) – Tore auf beiden Seiten möglich"
+          "Niederlande klar höhere Elo (1787 vs 1637) und stärkere defensive Stabilität (Gegentore 1.09 vs 1.50, Clean-Sheet-Rate 0.38 vs 0.21)",
+          "Bessere aktuelle Form der Oranje (recentForm 2.2 vs 1.4)",
+          "Schweden offensiv durchaus gefährlich (goalsForAvg 2.57), defensiv aber anfällig",
+          "Baseline und Markt stimmen weitgehend überein und sehen Niederlande als Favorit",
+          "Druck auf Oranje: van Dijk fordert klare Siege – hohe Motivation"
         ],
         "risks": [
-          "Ausfall von Quinten Timber (Gehirnerschütterung) schwächt das niederländische Mittelfeld",
-          "Schwedens hohe Offensivproduktion könnte für Gegentore sorgen",
-          "Kein H2H-Datensatz vorhanden – erhöhte Unsicherheit",
-          "Turnierkontext: kompakte Außenseiter-Spielweise kann zu engerem/torärmerem Spiel führen"
+          "Schwedens Offensivpotenzial kann jedes Spiel öffnen – Auswärtstore möglich",
+          "Neutraler Spielort relativiert klassischen Heimvorteil",
+          "Gruppenspiele oft taktisch und torärmer als erwartet",
+          "Kein H2H-Datenmaterial verfügbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.35,
+          "home": 0.55,
+          "draw": 0.25,
           "away": 0.2
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Neutral venue reduces home advantage for Netherlands.",
-          "Recent injury to Quinten Timber in Netherlands squad could disrupt team dynamics.",
-          "Sweden has slightly better recent form, compensating for lower overall form.",
-          "Historical head-to-head data is irrelevant as teams haven't met recently in competitive settings."
+          "Niederlande mit höherem Elo-Wert und besserer gewichteter Form",
+          "Niederlande haben soliden Kader ohne größere Ausfälle",
+          "Schweden mit schwächerer Form und leichteren Trainerproblemen"
         ],
         "risks": [
-          "Undetermined effects of Sweden's coach distraction on team performance.",
-          "Netherlands has strong attack which could exploit Sweden's higher goals against average."
+          "Knappe Unterschiede in der Torbilanz beider Teams, Schweiz erzielte mehr Tore pro Spiel",
+          "Neutraler Spielort eliminiert Heimvorteil",
+          "Eröffnungsspiel könnte zu vorsichtiger Spielweise führen"
         ]
       }
     },
-    "agreement": 0.92,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.4885,
       "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Netherlands mit deutlichem Elo-Vorteil (1787 vs 1637) und stabilerer Defensive (GA 1.09 vs 1.50, Clean-Sheet-Rate 0.38 vs 0.21); Bessere jüngste Form der Niederlande (recentForm 2.2 vs 1.4); Sowohl Baseline als auch Markt sehen die Niederlande klar als Favorit. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande klar höhere Elo (1787 vs 1637) und stärkere defensive Stabilität (Gegentore 1.09 vs 1.50, Clean-Sheet-Rate 0.38 vs 0.21); Bessere aktuelle Form der Oranje (recentForm 2.2 vs 1.4); Schweden offensiv durchaus gefährlich (goalsForAvg 2.57), defensiv aber anfällig. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:b67141c6321b74d4349bdc12f1b566e4eb7b27bb16f4cb3d7d3ed12ed99c8945"
   },
   "predictionHistory": [
@@ -285,21 +286,34 @@
         "away": 0.1427
       },
       "confidence": 0.7277
+    },
+    {
+      "generatedAt": "2026-06-19T05:03:48.596Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5176,
+        "draw": 0.2792,
+        "away": 0.2032
+      },
+      "confidence": 0.5568
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T16:03:46.841Z",
+    "updatedAt": "2026-06-19T17:05:43.986Z",
     "bookmakerCount": 23,
     "probabilities": {
-      "home": 0.5486,
-      "draw": 0.2449,
-      "away": 0.2065
+      "home": 0.5523,
+      "draw": 0.2433,
+      "away": 0.2045
     },
     "decimal": {
-      "home": 1.75,
-      "draw": 3.92,
-      "away": 4.65
+      "home": 1.74,
+      "draw": 3.95,
+      "away": 4.7
     }
   }
 }
