@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T08:03:44.773Z",
+    "generatedAt": "2026-06-19T09:03:44.004Z",
     "home": {
       "teamId": "TUR",
       "elo": 1654,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T06:03:45.586Z",
+    "generatedAt": "2026-06-19T09:03:44.004Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4727,
-      "draw": 0.3041,
-      "away": 0.2232
+      "home": 0.4472,
+      "draw": 0.3107,
+      "away": 0.2421
     },
-    "confidence": 0.5451,
+    "confidence": 0.49,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,27 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.5,
-          "draw": 0.27,
-          "away": 0.23
+          "home": 0.46,
+          "draw": 0.29,
+          "away": 0.25
         },
-        "confidence": 0.52,
+        "confidence": 0.45,
         "keyFactors": [
-          "Türkei mit höherem Elo (1654 vs 1588) und deutlich besserer gewichteter Form (1.81 vs 1.12)",
-          "Paraguay defensiv anfällig mit goalsAgainstAvg 1.69 und nur 0.99 erzielten Toren im Schnitt",
-          "Türkei steht im Muss-Sieg-Modus und wird offensiv mehr riskieren (xG 1.79)",
-          "Paraguay reist mit 1:4-Niederlage gegen USA und schwacher Offensive an"
+          "Türkei ist nach Elo (1654 vs 1588) und Form (gewichtete Form 1.81 vs 1.115) das stärkere Team und steht spielerisch über Paraguay",
+          "Paraguay erzielt wenig Tore (0.99 pro Spiel) und kassiert viele (1.69), verfügt aber über eine solide Clean-Sheet-Rate (0.417) und steht oft tief und kompakt",
+          "Baseline überschätzt Türkei leicht; externer Markt sieht das Spiel deutlich enger (Heim 0.47 statt 0.57), was zum Drucksituation-Kontext passt",
+          "Massive Kritik und Unruhe im türkischen Umfeld nach Fehlstart – mentaler Druck als Muss-Sieg kann lähmen oder mobilisieren",
+          "Neutraler Spielort ohne Heimvorteil, kein H2H-Verlauf vorhanden"
         ],
         "risks": [
-          "Erheblicher Druck und Unruhe im türkischen Lager nach Fehlstart könnte Leistung hemmen",
-          "Paraguays solide Clean-Sheet-Rate (0.42) deutet auf kompaktes Tiefstehen hin - typisch torarmes Turnierspiel",
-          "Kein H2H-Datensatz vorhanden, erhöhte Unsicherheit",
-          "In Muss-Siegen offenes Spiel - Konteranfälligkeit der Türkei könnte Paraguay nutzen"
+          "Türkei unter Druck könnte überhastet agieren und an Paraguays kompakter Defensive scheitern – Remis durchaus möglich",
+          "Paraguay kann mit Kontern und Standards aus einer tiefen Ordnung treffen und das Spiel zu seinen Gunsten kippen",
+          "Psychologischer Faktor (drohendes WM-Aus) schwer kalkulierbar und kann in beide Richtungen wirken",
+          "Torarmes Gruppenspiel mit niedrigem Erwartungswert erhöht Zufallsanteil beim Endergebnis"
         ]
       },
       "chatgpt": {
@@ -104,28 +105,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
+          "home": 0.42,
           "draw": 0.35,
-          "away": 0.2
+          "away": 0.23
         },
-        "confidence": 0.6,
+        "confidence": 0.55,
         "keyFactors": [
-          "Türkei steht unter großem Druck und erfährt negative Medienberichterstattung über ihre Leistung und den Trainer.",
-          "Paraguay hat kürzlich gegen die USA verloren und könnte angeschlagen sein, zeigte jedoch insgesamt eine solide Form in der Verteidigung.",
-          "Beide Teams spielen auf neutralem Boden, was die Voraussetzungen ausgleicht."
+          "Turkey's recent form is better than Paraguay's, but they are under significant morale pressure.",
+          "No head-to-head history to influence predictions.",
+          "Neutral venue negates any home advantage."
         ],
         "risks": [
-          "Mentale Instabilität der Türkei aufgrund von Medien und Drucksituationen.",
-          "Paraguay könnte trotz der jüngsten Niederlage von ihrer Verteidigungsstärke profitieren und den Druck der Türkei ausnutzen."
+          "Turkey is under pressure due to critical morale issues and coach comments.",
+          "The match context and pressure may lead to a cautious game from both teams."
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.96,
     "ensembleWeights": {
       "claude": 0.4885,
       "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit höherem Elo (1654 vs 1588) und deutlich besserer gewichteter Form (1.81 vs 1.12); Paraguay defensiv anfällig mit goalsAgainstAvg 1.69 und nur 0.99 erzielten Toren im Schnitt; Türkei steht im Muss-Sieg-Modus und wird offensiv mehr riskieren (xG 1.79). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei ist nach Elo (1654 vs 1588) und Form (gewichtete Form 1.81 vs 1.115) das stärkere Team und steht spielerisch über Paraguay; Paraguay erzielt wenig Tore (0.99 pro Spiel) und kassiert viele (1.69), verfügt aber über eine solide Clean-Sheet-Rate (0.417) und steht oft tief und kompakt; Baseline überschätzt Türkei leicht; externer Markt sieht das Spiel deutlich enger (Heim 0.47 statt 0.57), was zum Drucksituation-Kontext passt. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:88bc210f2a7b273a17f5fe4ceff6d6fab766d253a698612ac9595881c320c5f2"
   },
   "predictionHistory": [
@@ -310,11 +311,24 @@
         "away": 0.2416
       },
       "confidence": 0.4477
+    },
+    {
+      "generatedAt": "2026-06-19T06:03:45.586Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4727,
+        "draw": 0.3041,
+        "away": 0.2232
+      },
+      "confidence": 0.5451
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T08:03:45.185Z",
+    "updatedAt": "2026-06-19T09:05:33.386Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.4698,
