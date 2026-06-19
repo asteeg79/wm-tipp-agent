@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T09:55:07.438Z",
+    "generatedAt": "2026-06-19T10:03:46.528Z",
     "home": {
       "teamId": "SCO",
       "elo": 1571,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T07:03:45.496Z",
+    "generatedAt": "2026-06-19T10:03:46.528Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1809,
-      "draw": 0.2731,
-      "away": 0.546
+      "home": 0.1817,
+      "draw": 0.2548,
+      "away": 0.5636
     },
-    "confidence": 0.616,
+    "confidence": 0.6413,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,49 +84,49 @@
           "draw": 0.25,
           "away": 0.59
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Marokko deutlich höher eingestuft (Elo 1813 vs 1571) und in starker Form (weightedForm 2.37)",
-          "Exzellente marokkanische Defensive (GegentoreØ 0.37, Clean-Sheet-Rate 0.69) gegen begrenzte schottische Offensive",
-          "Marokkos jüngste Stärke (u.a. überzeugend gegen Brasilien) unterstreicht Favoritenrolle",
+          "Deutlicher Elo-Vorsprung Marokkos (1813 vs. 1571) und überlegene gewichtete Form (2.37 vs. 1.66)",
+          "Marokkos exzellente Defensive: nur 0.37 Gegentore im Schnitt und 68,6% Zu-Null-Spiele",
+          "Schottlands schwächere Offensive (1.29 Tore/Spiel) trifft auf kompakte marokkanische Abwehr",
           "Neutraler Spielort ohne Heimvorteil für Schottland"
         ],
         "risks": [
-          "WM-Gruppenspiele oft taktisch und torarm; Schottland könnte tief und kompakt verteidigen",
-          "Bei kompaktem Außenseiter ist ein Unentschieden realistischer als die reine Stärke vermuten lässt",
-          "Mögliche Rotation/News-Lage in den Kadern nicht vollständig abschätzbar",
-          "Kein H2H-Datenmaterial vorhanden"
+          "WM-Gruppenphase: Außenseiter steht oft tief, Favoriten tun sich schwer durchzubrechen, Remis möglich",
+          "Schottland zuletzt mit kämpferischem Erfolg ('Duselsieg' beim WM-Comeback) und solider Defensive (1.01 Gegentore)",
+          "Keine H2H-Daten als Orientierung vorhanden",
+          "Auftakt-/Gruppenspiele oft vorsichtig und torarm, Marokko könnte rotieren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 2
         },
         "probabilities": {
           "home": 0.2,
-          "draw": 0.3,
-          "away": 0.5
+          "draw": 0.25,
+          "away": 0.55
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Morocco's higher Elo rating and superior recent form compared to Scotland.",
-          "Morocco's strong defensive record with a high clean sheet rate.",
-          "Neutral venue, minimizing any potential home advantage for either team."
+          "Morocco hat einen deutlich höheren Elo-Wert als Schottland.",
+          "Die Form von Marokko ist stärker als die von Schottland.",
+          "Morocco hat eine hohe Clean-Sheet-Rate und kassiert im Durchschnitt weniger Tore."
         ],
         "risks": [
-          "Scotland's higher recent form might suggest underestimation.",
-          "Injuries to Scotland's key players might impact team performance.",
-          "Criticism of Morocco's coach could impact team morale or tactics."
+          "Schottland hat zuletzt einen Sieg errungen, was das Selbstbewusstsein stärken könnte.",
+          "Das Spiel wird in einem neutralen Stadion ausgetragen, was den Einfluss des Heimvorteils mindert.",
+          "Keine historische Head-to-Head-Daten verfügbar, die als Vergleichsbasis dienen könnten."
         ]
       }
     },
-    "agreement": 0.94,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.4885,
       "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko deutlich höher eingestuft (Elo 1813 vs 1571) und in starker Form (weightedForm 2.37); Exzellente marokkanische Defensive (GegentoreØ 0.37, Clean-Sheet-Rate 0.69) gegen begrenzte schottische Offensive; Marokkos jüngste Stärke (u.a. überzeugend gegen Brasilien) unterstreicht Favoritenrolle. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Marokkos (1813 vs. 1571) und überlegene gewichtete Form (2.37 vs. 1.66); Marokkos exzellente Defensive: nur 0.37 Gegentore im Schnitt und 68,6% Zu-Null-Spiele; Schottlands schwächere Offensive (1.29 Tore/Spiel) trifft auf kompakte marokkanische Abwehr. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:2db35f562092777b198fb52245f057ff4b715fbb7bb0dcf4c2adf167996cd39c"
   },
   "predictionHistory": [
@@ -324,11 +324,24 @@
         "away": 0.5602
       },
       "confidence": 0.6413
+    },
+    {
+      "generatedAt": "2026-06-19T07:03:45.496Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.1809,
+        "draw": 0.2731,
+        "away": 0.546
+      },
+      "confidence": 0.616
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T09:55:07.859Z",
+    "updatedAt": "2026-06-19T10:05:37.374Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1809,

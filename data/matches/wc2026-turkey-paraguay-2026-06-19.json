@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T09:55:07.438Z",
+    "generatedAt": "2026-06-19T10:03:46.528Z",
     "home": {
       "teamId": "TUR",
       "elo": 1654,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T09:03:44.004Z",
+    "generatedAt": "2026-06-19T10:03:46.528Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4472,
-      "draw": 0.3107,
-      "away": 0.2421
+      "home": 0.4653,
+      "draw": 0.2879,
+      "away": 0.2468
     },
-    "confidence": 0.49,
+    "confidence": 0.5445,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.46,
-          "draw": 0.29,
-          "away": 0.25
+          "home": 0.48,
+          "draw": 0.28,
+          "away": 0.24
         },
-        "confidence": 0.45,
+        "confidence": 0.5,
         "keyFactors": [
-          "Türkei ist nach Elo (1654 vs 1588) und Form (gewichtete Form 1.81 vs 1.115) das stärkere Team und steht spielerisch über Paraguay",
-          "Paraguay erzielt wenig Tore (0.99 pro Spiel) und kassiert viele (1.69), verfügt aber über eine solide Clean-Sheet-Rate (0.417) und steht oft tief und kompakt",
-          "Baseline überschätzt Türkei leicht; externer Markt sieht das Spiel deutlich enger (Heim 0.47 statt 0.57), was zum Drucksituation-Kontext passt",
-          "Massive Kritik und Unruhe im türkischen Umfeld nach Fehlstart – mentaler Druck als Muss-Sieg kann lähmen oder mobilisieren",
-          "Neutraler Spielort ohne Heimvorteil, kein H2H-Verlauf vorhanden"
+          "Türkei mit deutlich besserer Form (gewichtete Form 1.81 vs 1.115) und höherem Elo (1654 vs 1588)",
+          "Türkei erzielt mehr Tore (1.55 vs 0.99) und steht offensiv stärker da",
+          "Paraguay defensiv kompakt (Clean-Sheet-Rate 0.42), aber abschlussschwach – typischer Außenseiter, der tief steht",
+          "Muss-Sieg-Charakter für Türkei nach Fehlstart erhöht Risikobereitschaft und Offensivdruck"
         ],
         "risks": [
-          "Türkei unter Druck könnte überhastet agieren und an Paraguays kompakter Defensive scheitern – Remis durchaus möglich",
-          "Paraguay kann mit Kontern und Standards aus einer tiefen Ordnung treffen und das Spiel zu seinen Gunsten kippen",
-          "Psychologischer Faktor (drohendes WM-Aus) schwer kalkulierbar und kann in beide Richtungen wirken",
-          "Torarmes Gruppenspiel mit niedrigem Erwartungswert erhöht Zufallsanteil beim Endergebnis"
+          "Großer Druck und Unruhe im türkischen Team (Kritik am Trainer, drohendes WM-Aus) kann Nervosität und Fehler begünstigen",
+          "Paraguays tiefe, kompakte Defensive kann türkische Offensive ausbremsen – Remis-Gefahr",
+          "Neutraler Spielort ohne Heimvorteil",
+          "Kein H2H-Datenbestand zur Kalibrierung"
         ]
       },
       "chatgpt": {
@@ -105,28 +104,29 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.42,
-          "draw": 0.35,
-          "away": 0.23
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
         },
-        "confidence": 0.55,
+        "confidence": 0.6,
         "keyFactors": [
-          "Turkey's recent form is better than Paraguay's, but they are under significant morale pressure.",
-          "No head-to-head history to influence predictions.",
-          "Neutral venue negates any home advantage."
+          "Türkei hat höheren Elo-Wert und bessere Form als Paraguay.",
+          "Keine Head-to-Head-Daten vorhanden.",
+          "Türkei spielt unter neutralen Bedingungen ohne Heimvorteil.",
+          "Aktuelle Unruhe und Kritik im türkischen Lager könnte die Leistung beeinträchtigen."
         ],
         "risks": [
-          "Turkey is under pressure due to critical morale issues and coach comments.",
-          "The match context and pressure may lead to a cautious game from both teams."
+          "Paraguay hat solide Defensivleistung mit einer Clean-Sheet-Rate von 41.7%.",
+          "Türkei könnte durch interne Unruhen und öffentliche Kritik in ihrer Spielweise beeinträchtigt werden."
         ]
       }
     },
-    "agreement": 0.96,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.4885,
       "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei ist nach Elo (1654 vs 1588) und Form (gewichtete Form 1.81 vs 1.115) das stärkere Team und steht spielerisch über Paraguay; Paraguay erzielt wenig Tore (0.99 pro Spiel) und kassiert viele (1.69), verfügt aber über eine solide Clean-Sheet-Rate (0.417) und steht oft tief und kompakt; Baseline überschätzt Türkei leicht; externer Markt sieht das Spiel deutlich enger (Heim 0.47 statt 0.57), was zum Drucksituation-Kontext passt. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Türkei mit deutlich besserer Form (gewichtete Form 1.81 vs 1.115) und höherem Elo (1654 vs 1588); Türkei erzielt mehr Tore (1.55 vs 0.99) und steht offensiv stärker da; Paraguay defensiv kompakt (Clean-Sheet-Rate 0.42), aber abschlussschwach – typischer Außenseiter, der tief steht. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:88bc210f2a7b273a17f5fe4ceff6d6fab766d253a698612ac9595881c320c5f2"
   },
   "predictionHistory": [
@@ -324,11 +324,24 @@
         "away": 0.2232
       },
       "confidence": 0.5451
+    },
+    {
+      "generatedAt": "2026-06-19T09:03:44.004Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4472,
+        "draw": 0.3107,
+        "away": 0.2421
+      },
+      "confidence": 0.49
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T09:55:07.859Z",
+    "updatedAt": "2026-06-19T10:05:37.374Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.4698,
