@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T12:03:52.925Z",
+    "generatedAt": "2026-06-19T13:03:51.367Z",
     "home": {
       "teamId": "BRA",
       "elo": 1814,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T12:03:52.925Z",
+    "generatedAt": "2026-06-19T13:03:51.367Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8248,
-      "draw": 0.1134,
-      "away": 0.0619
+      "home": 0.8042,
+      "draw": 0.1291,
+      "away": 0.0667
     },
-    "confidence": 0.7081,
+    "confidence": 0.7672,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,20 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.74,
-          "draw": 0.16,
-          "away": 0.1
+          "home": 0.78,
+          "draw": 0.13,
+          "away": 0.09
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Brazil klar überlegen: Elo 1814 vs 1540, stärkere Form und Offensive",
-          "Markt sieht Brazil als deutlichen Favoriten (87%), Baseline konservativer",
-          "Brazils gute Defensive (xGA 0.84) und Offensivpotenzial unter Ancelotti"
+          "Brazil deutlich stärker (Elo 1814 vs 1540) und in besserer Form (recentForm 1.8 vs 1.2)",
+          "Markt sieht Brazil als klaren Favoriten (87%), korrigiert Baseline nach oben",
+          "Brazil mit höherem Torpotenzial (xG 1.77) und solider Defensive (GA 0.916)",
+          "Haiti als WM-Debütant dürfte tief und kompakt stehen"
         ],
         "risks": [
-          "Haiti könnte tief und kompakt stehen und Brazil das Durchbrechen erschweren",
-          "WM-Gruppenphase oft vorsichtiger/torärmer als erwartet",
-          "Brazil-Kaderdiskussionen (Casemiro) und mögliche Rotation/Anfangsnervosität"
+          "Außenseiter Haiti könnte mit kompakter Defensive (CleanSheetRate 0.39) Brazil das Toreschießen erschweren",
+          "Auftaktspiele oft vorsichtig und torarm",
+          "Unsicherheiten in Brasiliens Abwehr (Casemiro-Diskussion) könnten Konter zulassen",
+          "Kein H2H-Vergleich verfügbar"
         ]
       },
       "chatgpt": {
@@ -102,30 +104,28 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.85,
-          "draw": 0.1,
-          "away": 0.05
+          "home": 0.77,
+          "draw": 0.16,
+          "away": 0.07
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Elo and recent form strongly favor Brazil.",
-          "Brazil has a higher scoring average and solid defensive record.",
-          "Haiti has never faced Brazil, possibly leading to intimidation factor.",
-          "Brazil's coach Ancelotti experienced in managing high-stakes matches."
+          "Brazil's higher Elo rating and superior recent form compared to Haiti",
+          "Brazil is known for its strong attacking capabilities and Haiti's defense may struggle to contain them",
+          "Neutral venue reduces potential home advantage but Brazil's skill level remains a significant factor"
         ],
         "risks": [
-          "Neutrales Spielfeld kann Überraschungen begünstigen.",
-          "Haiti wird defensiv kompakt stehen und könnte ein frühes Tor verhindern.",
-          "Rotation oder Unterschätzung durch Brasilien möglich."
+          "World Cup context may lead to more cautious play, potentially reducing goal count",
+          "Motivational boost for Haiti due to historic qualification and French coach influence"
         ]
       }
     },
-    "agreement": 0.9267,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.4885,
       "chatgpt": 0.5115
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brazil klar überlegen: Elo 1814 vs 1540, stärkere Form und Offensive; Markt sieht Brazil als deutlichen Favoriten (87%), Baseline konservativer; Brazils gute Defensive (xGA 0.84) und Offensivpotenzial unter Ancelotti. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brazil deutlich stärker (Elo 1814 vs 1540) und in besserer Form (recentForm 1.8 vs 1.2); Markt sieht Brazil als klaren Favoriten (87%), korrigiert Baseline nach oben; Brazil mit höherem Torpotenzial (xG 1.77) und solider Defensive (GA 0.916). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:d5c7e249051c840e4bd9c80c5c52db02386662db73cc4e9b8e131599629281a3"
   },
   "predictionHistory": [
@@ -336,21 +336,34 @@
         "away": 0.0677
       },
       "confidence": 0.7798
+    },
+    {
+      "generatedAt": "2026-06-19T12:03:52.925Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8248,
+        "draw": 0.1134,
+        "away": 0.0619
+      },
+      "confidence": 0.7081
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T12:05:52.414Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-19T13:03:52.186Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.8712,
-      "draw": 0.0871,
-      "away": 0.0417
+      "home": 0.8736,
+      "draw": 0.0878,
+      "away": 0.0386
     },
     "decimal": {
-      "home": 1.1,
+      "home": 1.11,
       "draw": 11,
-      "away": 23
+      "away": 25
     }
   }
 }
