@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T11:03:47.767Z",
+    "generatedAt": "2026-06-19T12:03:52.925Z",
     "home": {
       "teamId": "ECU",
       "elo": 1674,
@@ -50,80 +50,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-19T12:03:52.925Z",
     "predictedScore": {
       "home": 1,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.3864,
-      "draw": 0.3527,
-      "away": 0.2609
+      "home": 0.7096,
+      "draw": 0.1973,
+      "away": 0.0932
     },
-    "confidence": 0.5262,
+    "confidence": 0.6413,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2502,
-        "draw": 0.2982,
-        "away": 0.4517
+        "home": 0.4784,
+        "draw": 0.2533,
+        "away": 0.2683
       },
       "expectedGoals": {
-        "home": 0.82,
-        "away": 1.21
+        "home": 1.55,
+        "away": 1.1
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.27,
-          "away": 0.28
+          "home": 0.63,
+          "draw": 0.23,
+          "away": 0.14
         },
-        "confidence": 0.4,
+        "confidence": 0.55,
         "keyFactors": [
-          "Ecuador hat deutlich höhere Elo (1747 vs 1637) und eine sehr starke Defensive (GA 0.528, Clean-Sheet-Rate 0.519)",
-          "Baseline unterschätzt Ecuador stark; externe Prognose sieht Ecuador klar vorn (0.79) – realistische Korrektur liegt dazwischen",
-          "Curaçao zeigt offensiv beeindruckende Form (GF 2.199, weightedForm 1.857), bleibt aber qualitativ unter Ecuador",
-          "Neutraler Spielort, kein klarer Heimvorteil"
+          "Ecuador deutlich höhere Elo (1674 vs 1565) und sehr solide Defensive (Clean-Sheet-Rate 0.5, nur 0.625 Gegentore im Schnitt)",
+          "Markt sieht Ecuador als klaren Favoriten (0.87), was die Baseline (0.48) als zu niedrig erscheinen lässt",
+          "Curaçao kassiert im Schnitt 2.23 Tore pro Spiel – defensiv anfällig gegen strukturierte Gegner",
+          "Beide Teams gleich ausgeruht (5 Tage Pause), neutraler Spielort ohne Heimvorteil"
         ],
         "risks": [
-          "Curaçaos lange Pause (200 Tage seit letztem Spiel) erschwert Formeinschätzung erheblich",
-          "Ecuadors offensive Schwäche (GF 0.9) könnte ein knappes oder unentschiedenes Ergebnis begünstigen",
-          "Keine Head-to-Head-Daten vorhanden – hohe Unsicherheit",
-          "Große Diskrepanz zwischen Baseline und externer Prognose deutet auf instabile Datenlage"
+          "Ecuadors eigene Offensive ist schwach (nur 0.714 Tore/Spiel) – Tore könnten Mangelware sein, was knappe Ergebnisse oder ein Remis begünstigt",
+          "Curaçao zeigt zuletzt gute Form (recentForm 1.4) und kann offensiv überraschen",
+          "Kein H2H-Datenmaterial vorhanden – erhöhte Unsicherheit",
+          "Turnier-Kontext: Außenseiter könnte tief stehen und Ecuador am Toreschießen hindern"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.4,
-          "away": 0.25
+          "home": 0.65,
+          "draw": 0.25,
+          "away": 0.1
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Ecuador's slightly better Elo rating indicates a marginally stronger team.",
-          "Curaçao's superior recent goal-scoring form is a key factor.",
-          "Neutral venue nullifies typical home advantage.",
-          "Ecuador's recent form is solid, but Curaçao's is marginally better."
+          "Ecuador hat einen höheren Elo-Wert und kommt mit guter Form in das Spiel.",
+          "Ecuador hat eine solide Defensive mit einer hohen Clean-Sheet-Rate.",
+          "Curaçao hat eine hohe Toranzahl in der Defensive kassiert und eher gegen schwächere Gegner gespielt."
         ],
         "risks": [
-          "No head-to-head data to predict interactions between teams.",
-          "Curaçao has not played for 200 days, potential rust or surprise performance."
+          "Curaçao könnte mit tiefer Defensive überraschen.",
+          "Keine direkte historische Begegnung der beiden Teams, wodurch wenig Erkenntnisse aus direkten Duellen vorhanden sind."
         ]
       }
     },
-    "agreement": 0.9133,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador hat deutlich höhere Elo (1747 vs 1637) und eine sehr starke Defensive (GA 0.528, Clean-Sheet-Rate 0.519); Baseline unterschätzt Ecuador stark; externe Prognose sieht Ecuador klar vorn (0.79) – realistische Korrektur liegt dazwischen; Curaçao zeigt offensiv beeindruckende Form (GF 2.199, weightedForm 1.857), bleibt aber qualitativ unter Ecuador.",
-    "inputHash": "sha256:56e2f016fb5f26a46c58a137164ce49e5f205d3136a5b96dd40be3a4fc95c703"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.4885,
+      "chatgpt": 0.5115
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ecuador deutlich höhere Elo (1674 vs 1565) und sehr solide Defensive (Clean-Sheet-Rate 0.5, nur 0.625 Gegentore im Schnitt); Markt sieht Ecuador als klaren Favoriten (0.87), was die Baseline (0.48) als zu niedrig erscheinen lässt; Curaçao kassiert im Schnitt 2.23 Tore pro Spiel – defensiv anfällig gegen strukturierte Gegner. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:34bfd4679a2867b8c17216e9d56a61e0ef9a46786701056a4dcb18aa1432cd79"
   },
   "predictionHistory": [
     {
@@ -268,11 +271,24 @@
         "away": 0.2453
       },
       "confidence": 0.4828
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3864,
+        "draw": 0.3527,
+        "away": 0.2609
+      },
+      "confidence": 0.5262
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T11:04:13.989Z",
+    "updatedAt": "2026-06-19T12:05:52.415Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.8678,
