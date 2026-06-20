@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-20T12:07:43.049Z",
+    "generatedAt": "2026-06-20T13:03:47.866Z",
     "home": {
       "teamId": "NZL",
       "elo": 1576,
@@ -50,79 +50,85 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-20T13:03:47.866Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 0,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.25,
-      "draw": 0.25,
-      "away": 0.5
+      "home": 0.2157,
+      "draw": 0.2704,
+      "away": 0.5139
     },
-    "confidence": 0.65,
+    "confidence": 0.588,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3311,
-        "draw": 0.2539,
-        "away": 0.4149
+        "home": 0.3063,
+        "draw": 0.2445,
+        "away": 0.4492
       },
       "expectedGoals": {
         "home": 1.29,
-        "away": 1.47
+        "away": 1.61
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
-          "away": 2
+          "home": 0,
+          "away": 1
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.25,
-          "away": 0.5
+          "home": 0.22,
+          "draw": 0.27,
+          "away": 0.51
         },
-        "confidence": 0.6,
+        "confidence": 0.55,
         "keyFactors": [
-          "Ägypten klar höheres Elo (1770 vs 1641) und bessere gewichtete Form (2.13 vs 1.24)",
-          "Ägypten defensiv stark: nur 0.41 Gegentore/Spiel, Clean-Sheet-Rate 57%",
-          "Neutraler Spielort eliminiert Heimvorteil für Neuseeland",
-          "Ägypten spielregelmäßiger (28 Spiele, 67 Tage Pause) vs Neuseeland mit 200 Tagen Inaktivität"
+          "Ägypten klar stärker laut Elo (1692 vs 1576) und gewichteter Form (1.95 vs 1.15)",
+          "Sehr stabile ägyptische Defensive (0.51 Gegentore/Spiel, 55% Zu-Null)",
+          "Markt sieht Ägypten deutlich vorne (0.60), Baseline moderater (0.45) — Wahrheit dazwischen",
+          "Neuseeland defensiv solide (53% Zu-Null), kann tief stehen und Spiel verschleppen"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar – hohe Unsicherheit über direktes Kräfteverhältnis",
-          "Neuseelands lange Pause (200 Tage) erschwert Formbewertung – könnte erholt oder eingerostet sein",
-          "Neuseelands hohe Offensivwerte (2.12 Tore/Spiel) könnten gegen schwächere Gegner verzerrt sein",
-          "Trainer-/Umfeldwechsel-News bei Neuseeland schwer einzuordnen"
+          "Neutraler Ort ohne Heimvorteil, kein H2H als Anhaltspunkt",
+          "WM-Auftakt oft torarm; kompaktes Neuseeland kann Remis erzwingen",
+          "Ägyptens Offensive nur durchschnittlich (1.44 Tore/Spiel) — knappe Spiele möglich",
+          "Überraschungspotenzial Neuseelands bei Standards und Kontern"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 2
+          "home": 0,
+          "away": 1
         },
         "probabilities": {
           "home": 0.25,
-          "draw": 0.25,
-          "away": 0.5
+          "draw": 0.3,
+          "away": 0.45
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Egypt's stronger Elo rating and recent form",
-          "New Zealand's long gap since last match affecting their rhythm",
-          "Neutral venue eliminating any home advantage"
+          "Egypt has a significantly higher Elo rating compared to New Zealand.",
+          "Egypt's defense is strong with a goals against average of 0.508 and a high clean sheet rate.",
+          "New Zealand recently achieved a solid performance noted in their draw with Iran, but still face a challenging opponent.",
+          "Egypt has a higher recent form rating indicating better recent performances."
         ],
         "risks": [
-          "Potential positive impact of New Zealand's recent coaching change",
-          "New Zealand's decent clean sheet rate contributing to defensive strength"
+          "First meeting head-to-head, reducing historical reference for performance.",
+          "The match is played at a neutral venue, eliminating home advantage.",
+          "New Zealand's recent improvement could lead to a closer match than anticipated."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ägypten klar höheres Elo (1770 vs 1641) und bessere gewichtete Form (2.13 vs 1.24); Ägypten defensiv stark: nur 0.41 Gegentore/Spiel, Clean-Sheet-Rate 57%; Neutraler Spielort eliminiert Heimvorteil für Neuseeland.",
-    "inputHash": "sha256:dfca14abf1e7d1dc0d8628cb301d52f8a3e1db79c4cd9bcd72423997d409986b"
+    "agreement": 0.96,
+    "ensembleWeights": {
+      "claude": 0.4892,
+      "chatgpt": 0.5108
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ägypten klar stärker laut Elo (1692 vs 1576) und gewichteter Form (1.95 vs 1.15); Sehr stabile ägyptische Defensive (0.51 Gegentore/Spiel, 55% Zu-Null); Markt sieht Ägypten deutlich vorne (0.60), Baseline moderater (0.45) — Wahrheit dazwischen. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:c05d31ca8cc3f0afddeffb81232dcb456164ac71bf1c569955bb7ee2082f9218"
   },
   "predictionHistory": [
     {
@@ -254,20 +260,33 @@
         "away": 0.485
       },
       "confidence": 0.597
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.25,
+        "draw": 0.25,
+        "away": 0.5
+      },
+      "confidence": 0.65
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-20T12:09:35.561Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-20T13:03:48.438Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.1672,
-      "draw": 0.2317,
-      "away": 0.601
+      "home": 0.167,
+      "draw": 0.2328,
+      "away": 0.6002
     },
     "decimal": {
       "home": 5.75,
-      "draw": 4.15,
+      "draw": 4.13,
       "away": 1.6
     }
   }
