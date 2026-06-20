@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-20T18:03:42.090Z",
+    "generatedAt": "2026-06-20T19:03:50.496Z",
     "home": {
       "teamId": "GER",
       "elo": 1800,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-20T16:03:49.395Z",
+    "generatedAt": "2026-06-20T19:03:50.496Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5979,
-      "draw": 0.2228,
-      "away": 0.1792
+      "home": 0.6285,
+      "draw": 0.2171,
+      "away": 0.1545
     },
-    "confidence": 0.6125,
+    "confidence": 0.6392,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.61,
-          "draw": 0.21,
+          "home": 0.62,
+          "draw": 0.2,
           "away": 0.18
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Germany mit deutlich höherem Elo (1800 vs 1691) und starker Offensivform (3.49 Tore/Spiel)",
-          "Sehr gute gewichtete Form beider Teams, aber Deutschland leicht überlegen",
-          "Elfenbeinküste defensiv stabil (0.469 Gegentore/Spiel, 55.9% Zu-Null) – kann das Ergebnis knapp halten",
-          "Markt sieht Deutschland klarer vorn (0.644), Baseline etwas vorsichtiger (0.588)",
-          "Neutraler Spielort, kein Heimvorteil für Deutschland"
+          "Deutschland mit klar höherem Elo (1800 vs 1691) und starker Offensive (3.49 Tore/Spiel)",
+          "Sané kehrt zurück, DFB-Elf in guter Form (weightedForm 2.5)",
+          "Markt sieht Deutschland deutlich vorn (0.674), Baseline etwas vorsichtiger (0.588)",
+          "Elfenbeinküste mit auffällig stabiler Defensive (0.47 Gegentore, 56% Clean Sheets)"
         ],
         "risks": [
-          "Kompakte, defensiv disziplinierte Ivorer könnten Deutschland frustrieren und ein Remis erzwingen",
-          "Keine H2H-Daten zur Kalibrierung vorhanden",
-          "Gruppenphasen-Auftakt oft vorsichtiger und torärmer als Form vermuten lässt",
-          "Ivorische Konterstärke bei hoher deutscher Linie könnte überraschen"
+          "Sehr kompakte ivorische Defensive kann Deutschland das Toreschießen erschweren",
+          "Kein H2H-Datenmaterial vorhanden, erhöht Unsicherheit",
+          "Turnierkontext: Außenseiter stehen oft tief, knappe Ergebnisse möglich",
+          "Mögliche Rotation/individuelle Fehler in der DFB-Abwehr (nur 39% Clean Sheets)"
         ]
       },
       "chatgpt": {
@@ -105,29 +104,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
+          "home": 0.6,
           "draw": 0.25,
-          "away": 0.2
+          "away": 0.15
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Germany's strong offensive record with goalsForAvg of 3.49",
-          "Ivory Coast's solid defense with goalsAgainstAvg of 0.469",
-          "Germany's superior Elo rating and overall form compared to Ivory Coast"
+          "Germany's higher Elo rating and offensive strength with a high goals per game average.",
+          "Ivory Coast's strong defense with a high clean sheet rate, which could neutralize some of Germany's attacking opportunities.",
+          "Neutral venue reduces home advantage."
         ],
         "risks": [
-          "Ivory Coast's relatively high clean sheet rate could stifle Germany's attack",
-          "Neutral venue reduces potential home advantage for Germany",
-          "Recent form of both teams is relatively balanced"
+          "Germany's recent form shows slight inconsistency, which could make them vulnerable.",
+          "Ivory Coast's ability to maintain clean sheets might disrupt Germany's scoring, with a possibility for a surprise outcome."
         ]
       }
     },
-    "agreement": 0.96,
+    "agreement": 0.9667,
     "ensembleWeights": {
       "claude": 0.4892,
       "chatgpt": 0.5108
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit deutlich höherem Elo (1800 vs 1691) und starker Offensivform (3.49 Tore/Spiel); Sehr gute gewichtete Form beider Teams, aber Deutschland leicht überlegen; Elfenbeinküste defensiv stabil (0.469 Gegentore/Spiel, 55.9% Zu-Null) – kann das Ergebnis knapp halten. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit klar höherem Elo (1800 vs 1691) und starker Offensive (3.49 Tore/Spiel); Sané kehrt zurück, DFB-Elf in guter Form (weightedForm 2.5); Markt sieht Deutschland deutlich vorn (0.674), Baseline etwas vorsichtiger (0.588). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:7ae828cf50fc34f7e993c09892619cb2cb0db3c13c1118e99207c21017ffd5a5"
   },
   "predictionHistory": [
@@ -325,21 +323,34 @@
         "away": 0.1862
       },
       "confidence": 0.6578
+    },
+    {
+      "generatedAt": "2026-06-20T16:03:49.395Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5979,
+        "draw": 0.2228,
+        "away": 0.1792
+      },
+      "confidence": 0.6125
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-20T18:03:42.505Z",
+    "updatedAt": "2026-06-20T19:05:34.891Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.6546,
-      "draw": 0.2018,
-      "away": 0.1435
+      "home": 0.6739,
+      "draw": 0.1927,
+      "away": 0.1334
     },
     "decimal": {
-      "home": 1.48,
-      "draw": 4.8,
-      "away": 6.75
+      "home": 1.43,
+      "draw": 5,
+      "away": 7.23
     }
   }
 }
