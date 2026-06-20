@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-20T06:03:50.478Z",
+    "generatedAt": "2026-06-20T07:03:47.447Z",
     "home": {
       "teamId": "BEL",
       "elo": 1728,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-20T07:03:47.447Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5778,
-      "draw": 0.2211,
-      "away": 0.2011
+      "home": 0.6125,
+      "draw": 0.2191,
+      "away": 0.1684
     },
-    "confidence": 0.6593,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.489,
-        "draw": 0.2123,
-        "away": 0.2987
+        "home": 0.5232,
+        "draw": 0.209,
+        "away": 0.2678
       },
       "expectedGoals": {
-        "home": 2.06,
-        "away": 1.58
+        "home": 2.12,
+        "away": 1.48
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.21,
-          "away": 0.24
+          "home": 0.5700000000000001,
+          "draw": 0.22000000000000003,
+          "away": 0.21000000000000002
         },
-        "confidence": 0.6,
+        "confidence": 0.55,
         "keyFactors": [
-          "Belgien mit stärkerer Offensive (goalsForAvg 2.91 vs 2.27) und besserer aktueller Form (recentForm 2.2)",
-          "Leicht höhere Elo-Wertung für Belgien (1744 vs 1730)",
-          "Externe Prognose sieht Belgien deutlich vorne (0.672), was eine moderate Aufwertung der Baseline rechtfertigt",
-          "Belgien mit besserer Tordifferenz-Bilanz (xG-Vorsprung in der Baseline 2.06 vs 1.58)"
+          "Belgien mit höherem Elo (1728 vs 1689), klar besserer gewichteter und jüngster Form (recentForm 2.2 vs 1.7) und starker Offensive (2.5 Tore/Spiel)",
+          "Markt sieht Belgien deutlich vorne (67%), Baseline moderater (52%) – kompromiss zugunsten Belgiens",
+          "Lukakus Rückkehr stärkt die belgische Offensive zusätzlich",
+          "Iran defensiv solide (cleanSheetRate 0.444), kann tief und kompakt stehen und Favoriten Probleme bereiten"
         ],
         "risks": [
-          "Iran defensiv stark (cleanSheetRate 0.462, goalsAgainstAvg 0.908) und kann Belgien ausbremsen",
-          "Neutraler Spielort ohne Heimvorteil für Belgien",
-          "Keine H2H-Daten vorhanden, erhöht Prognoseunsicherheit",
-          "Lange Pause (67 Tage) für beide Teams kann Rhythmusprobleme verursachen"
+          "Iran ist als WM-erfahrene, defensiv disziplinierte Mannschaft schwer zu durchbrechen – torarmes oder Remis-Szenario möglich",
+          "Negative Begleitumstände/Unruhe im Iran-Lager (Reise-/Organisationsärger) könnten Fokus stören, aber auch Trotzreaktion auslösen",
+          "Belgiens hohe Gegentorquote (1.04) und niedrige Clean-Sheet-Rate (0.37) lassen Iran-Treffer realistisch erscheinen",
+          "Kein H2H-Datenmaterial, erhöhte Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -108,21 +108,25 @@
           "draw": 0.23,
           "away": 0.17
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Belgium's higher recent form and attacking power with goalsForAvg of 2.914",
-          "Iran's slightly better defensive form with cleanSheetRate of 0.462",
-          "Neutral venue reduces geographical advantages"
+          "Belgium's strong recent form with a high scoring average",
+          "Iran's internal morale issues and logistical challenges affecting performance",
+          "Lukaku's strong return from injury boosts Belgium's attack potential"
         ],
         "risks": [
-          "Iran's close Elo rating to Belgium, indicating potential competitiveness",
-          "Lack of head-to-head history adds uncertainty"
+          "Potential underestimation of Iran's defensive resilience and clean sheet capability",
+          "Neutral venue may reduce home advantage for Belgium"
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit stärkerer Offensive (goalsForAvg 2.91 vs 2.27) und besserer aktueller Form (recentForm 2.2); Leicht höhere Elo-Wertung für Belgien (1744 vs 1730); Externe Prognose sieht Belgien deutlich vorne (0.672), was eine moderate Aufwertung der Baseline rechtfertigt.",
-    "inputHash": "sha256:b1e4ba67027ea5726ec06b34e60d08a133784c8e5a89c6f7d7e407456f092970"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.4892,
+      "chatgpt": 0.5108
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit höherem Elo (1728 vs 1689), klar besserer gewichteter und jüngster Form (recentForm 2.2 vs 1.7) und starker Offensive (2.5 Tore/Spiel); Markt sieht Belgien deutlich vorne (67%), Baseline moderater (52%) – kompromiss zugunsten Belgiens; Lukakus Rückkehr stärkt die belgische Offensive zusätzlich. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:5594ec444e29903f5d688fcf38ca085a1a8bed31adf42740579ae2a834077c31"
   },
   "predictionHistory": [
     {
@@ -241,11 +245,24 @@
         "away": 0.2182
       },
       "confidence": 0.6512
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5778,
+        "draw": 0.2211,
+        "away": 0.2011
+      },
+      "confidence": 0.6593
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-20T06:05:38.520Z",
+    "updatedAt": "2026-06-20T07:03:47.865Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6718,
