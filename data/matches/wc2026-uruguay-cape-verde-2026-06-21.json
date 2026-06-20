@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-20T09:36:44.964Z",
+    "generatedAt": "2026-06-20T10:03:50.979Z",
     "home": {
       "teamId": "URU",
       "elo": 1664,
@@ -50,52 +50,52 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-20T10:03:50.979Z",
     "predictedScore": {
-      "home": 1,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3818,
-      "draw": 0.3727,
-      "away": 0.2455
+      "home": 0.5324,
+      "draw": 0.2863,
+      "away": 0.1813
     },
-    "confidence": 0.5188,
+    "confidence": 0.5597,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2897,
-        "draw": 0.2871,
-        "away": 0.4231
+        "home": 0.301,
+        "draw": 0.3143,
+        "away": 0.3847
       },
       "expectedGoals": {
-        "home": 0.97,
-        "away": 1.24
+        "home": 0.88,
+        "away": 1.04
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.42,
-          "draw": 0.28,
-          "away": 0.3
+          "home": 0.51,
+          "draw": 0.27,
+          "away": 0.22
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Uruguay deutlich höheres Elo (1677 vs 1608) und individuelle Klasse unter Bielsa",
-          "Externe Prognose sieht Uruguay klar vorn (0.66), korrigiert die ungünstige Poisson-Baseline für den Favoriten nach oben",
-          "Kapverdens starke Form (weightedForm 1.977, recentForm 2.1, 1.67 Tore/Spiel) macht das Team gefährlich und offensiv",
-          "Beide Teams defensiv solide (Gegentore ~0.83/Spiel), niedrige Torerwartung insgesamt"
+          "Uruguay deutlich höhere Elo (1664 vs 1567) und individuell stärker besetzter Kader (Núñez, Valverde, Araújo etc.)",
+          "Markt sieht Uruguay klar vorne (0.66), während Baseline durch niedrige Tor-Averages verzerrt Cape Verde favorisiert",
+          "Cape Verde defensiv stabil (goalsAgainstAvg 0.582) und in guter Form, kann tief und kompakt stehen",
+          "Neutraler Ort, kein Heimvorteil für Uruguay"
         ],
         "risks": [
-          "Kapverden seit 236 Tagen ohne Spiel – große Unsicherheit über aktuellen Spielrhythmus und Form",
-          "Uruguay 67 Tage Pause, mögliche fehlende Matchpraxis",
-          "Keine Head-to-Head-Daten vorhanden, hohe Prognoseunsicherheit",
-          "Neutraler Spielort eliminiert Heimvorteil für Uruguay"
+          "Cape Verde in starker aktueller Form (recentForm 2.2) und kann mit kompakter Defensive Punkte holen",
+          "WM-Auftaktspiele oft torarm und vorsichtig — Remis durchaus möglich",
+          "Kein H2H-Datenmaterial vorhanden, erhöhte Unsicherheit",
+          "Uruguays geringe Offensivproduktivität (goalsForAvg 0.928) könnte gegen tiefe Defensive Probleme bereiten"
         ]
       },
       "chatgpt": {
@@ -104,25 +104,29 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.45,
+          "home": 0.45,
+          "draw": 0.35,
           "away": 0.2
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Cape Verde has higher recent form and weighted form numbers, indicating strong performance.",
-          "Uruguay has a stronger historical Elo rating and solid defensive record.",
-          "Neutral venue diminishes any home advantage."
+          "Uruguay hat eine höhere Elo-Zahl als Kap Verde, was auf eine stärkere grundsätzliche Qualität hinweist.",
+          "Cape Verde zeigt eine bessere jüngste Form als Uruguay, was auf einen Formhoch hinweisen könnte.",
+          "Cape Verdes Defensivstärke mit einem geringeren Gegentorschnitt stärkt ihre Chancen auf ein knappes Spiel."
         ],
         "risks": [
-          "Days since last match for Cape Verde may affect match sharpness.",
-          "No prior head-to-head encounters to draw comparisons."
+          "Keine direkten Head-to-Head-Daten verfügbar, was die Vorhersage erschwert.",
+          "Die individuelle Spielsituation oder Überraschungsspieler bei Cape Verde könnten starke Schwankungen verursachen."
         ]
       }
     },
-    "agreement": 0.8867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höheres Elo (1677 vs 1608) und individuelle Klasse unter Bielsa; Externe Prognose sieht Uruguay klar vorn (0.66), korrigiert die ungünstige Poisson-Baseline für den Favoriten nach oben; Kapverdens starke Form (weightedForm 1.977, recentForm 2.1, 1.67 Tore/Spiel) macht das Team gefährlich und offensiv.",
-    "inputHash": "sha256:6e503d25bbbc67a3b337e9dbb2d0e9b123afcaa0902686874b315b2f7c3b0d87"
+    "agreement": 0.9467,
+    "ensembleWeights": {
+      "claude": 0.4892,
+      "chatgpt": 0.5108
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höhere Elo (1664 vs 1567) und individuell stärker besetzter Kader (Núñez, Valverde, Araújo etc.); Markt sieht Uruguay klar vorne (0.66), während Baseline durch niedrige Tor-Averages verzerrt Cape Verde favorisiert; Cape Verde defensiv stabil (goalsAgainstAvg 0.582) und in guter Form, kann tief und kompakt stehen. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:4be419bfd1e6a3de6e8b98036db4900f629fc47af78872267f47f67794abc8d4"
   },
   "predictionHistory": [
     {
@@ -254,11 +258,24 @@
         "away": 0.2888
       },
       "confidence": 0.5507
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3818,
+        "draw": 0.3727,
+        "away": 0.2455
+      },
+      "confidence": 0.5188
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-20T09:38:47.412Z",
+    "updatedAt": "2026-06-20T10:03:51.390Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6592,
