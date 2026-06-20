@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-20T15:03:48.994Z",
+    "generatedAt": "2026-06-20T16:03:49.395Z",
     "home": {
       "teamId": "ESP",
       "elo": 1924,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-20T04:03:52.968Z",
+    "generatedAt": "2026-06-20T16:03:49.395Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8409,
-      "draw": 0.1147,
-      "away": 0.0444
+      "home": 0.8464,
+      "draw": 0.1094,
+      "away": 0.0442
     },
-    "confidence": 0.814,
+    "confidence": 0.792,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,15 +86,15 @@
         },
         "confidence": 0.8,
         "keyFactors": [
-          "Spanien klar überlegen: Elo 1924 vs 1567, starke Form (gewichtet 2.06) und Torgefahr (2.13 Tore/Spiel)",
+          "Spanien deutlich überlegen: Elo 1924 vs 1567, weltklasse Form (weightedForm 2.06, recentForm 2.2)",
+          "Spaniens starke Offensive (2.13 Tore/Spiel) und solide Defensive (0.56 Gegentore, 50% Clean Sheets)",
           "Saudi-Arabien defensiv anfällig (1.26 Gegentore/Spiel) und offensiv schwach (0.90 Tore/Spiel)",
-          "Baseline und Markt stimmen mit deutlichem Spanien-Favoritenstatus überein (84-87%)",
-          "Spaniens hohe Clean-Sheet-Rate (50%) gegen schwache saudische Offensive"
+          "Markt und Baseline beide klar pro Spanien (Heimsieg ~84-87%)"
         ],
         "risks": [
-          "WM-Auftakt: Außenseiter steht oft tief und kompakt, was Tore erschwert",
-          "Mögliche Rotation oder frühe Lockerheit Spaniens nach Führung",
-          "Einzelner Konter/Standard kann Ergebnis verzerren"
+          "Saudi-Arabien könnte tief und kompakt stehen, was Spaniens Torausbeute begrenzt",
+          "Gruppenphasen-Auftakt oft vorsichtiger und torärmer als erwartet",
+          "Mögliche Rotation/Druck-Situation bei Spanien laut News ('Desaster'-Stimmung)"
         ]
       },
       "chatgpt": {
@@ -103,28 +103,29 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.81,
-          "draw": 0.14,
+          "home": 0.82,
+          "draw": 0.13,
           "away": 0.05
         },
-        "confidence": 0.85,
+        "confidence": 0.8,
         "keyFactors": [
-          "Spain has a significantly higher Elo rating (1924) compared to Saudi Arabia (1567).",
-          "Spain's recent form (2.2) is stronger than Saudi Arabia's (1.2).",
-          "Saudi Arabia has a low clean sheet rate (0.457) and allows more goals on average (1.259)."
+          "Spain's high Elo rating and strong weighted form",
+          "Saudi Arabia's lower Elo and recent form",
+          "No head-to-head history between the teams",
+          "Neutral venue reduces home advantage for Spain"
         ],
         "risks": [
-          "Neutral venue minimizes any potential home advantage for Spain.",
-          "Initial group stage match, usually cautious and could lead to a lower score."
+          "Spain may play cautiously in the group stage opener",
+          "Spain's recent morale concerns, though pressure is managed"
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.98,
     "ensembleWeights": {
-      "claude": 0.4899,
-      "chatgpt": 0.5101
+      "claude": 0.4892,
+      "chatgpt": 0.5108
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien klar überlegen: Elo 1924 vs 1567, starke Form (gewichtet 2.06) und Torgefahr (2.13 Tore/Spiel); Saudi-Arabien defensiv anfällig (1.26 Gegentore/Spiel) und offensiv schwach (0.90 Tore/Spiel); Baseline und Markt stimmen mit deutlichem Spanien-Favoritenstatus überein (84-87%). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich überlegen: Elo 1924 vs 1567, weltklasse Form (weightedForm 2.06, recentForm 2.2); Spaniens starke Offensive (2.13 Tore/Spiel) und solide Defensive (0.56 Gegentore, 50% Clean Sheets); Saudi-Arabien defensiv anfällig (1.26 Gegentore/Spiel) und offensiv schwach (0.90 Tore/Spiel). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:6424790935f3c2313842e9c0a3ca718a5b2e6408f7aab44f7c44d2024ee8d7cf"
   },
   "predictionHistory": [
@@ -283,11 +284,24 @@
         "away": 0.0323
       },
       "confidence": 0.8386
+    },
+    {
+      "generatedAt": "2026-06-20T04:03:52.968Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8409,
+        "draw": 0.1147,
+        "away": 0.0444
+      },
+      "confidence": 0.814
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-20T15:04:09.390Z",
+    "updatedAt": "2026-06-20T16:05:30.329Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8739,
