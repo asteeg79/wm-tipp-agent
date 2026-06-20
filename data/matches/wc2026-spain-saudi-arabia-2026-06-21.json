@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T23:12:41.421Z",
+    "generatedAt": "2026-06-20T04:03:52.968Z",
     "home": {
       "teamId": "ESP",
       "elo": 1924,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.557,
       "cleanSheetRate": 0.5,
       "matchesCount": 30,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "away": {
       "teamId": "KSA",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.259,
       "cleanSheetRate": 0.457,
       "matchesCount": 35,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "h2h": {
       "played": 0,
@@ -50,26 +50,26 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-20T04:03:52.968Z",
     "predictedScore": {
-      "home": 3,
+      "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.88,
-      "draw": 0.0877,
-      "away": 0.0323
+      "home": 0.8409,
+      "draw": 0.1147,
+      "away": 0.0444
     },
-    "confidence": 0.8386,
+    "confidence": 0.814,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.8884,
-        "draw": 0.0818,
-        "away": 0.0298
+        "home": 0.8383,
+        "draw": 0.117,
+        "away": 0.0446
       },
       "expectedGoals": {
-        "home": 3.21,
+        "home": 2.68,
         "away": 0.48
       }
     },
@@ -80,50 +80,52 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.88,
-          "draw": 0.085,
-          "away": 0.035
+          "home": 0.85,
+          "draw": 0.105,
+          "away": 0.045
         },
-        "confidence": 0.78,
+        "confidence": 0.8,
         "keyFactors": [
-          "Großer Elo-Unterschied (1974 vs. 1572) zugunsten Spaniens",
-          "Spaniens überlegene gewichtete Form (2.33 vs. 1.26) und hohe Torausbeute (2.68 Tore/Spiel)",
-          "Schwache Defensivbilanz Saudi-Arabiens (1.32 Gegentore/Spiel) bei nur 0.87 erzielten Toren",
-          "Neutraler Spielort eliminiert Heimvorteil, aber Spaniens Qualität dominiert dennoch"
+          "Spanien klar überlegen: Elo 1924 vs 1567, starke Form (gewichtet 2.06) und Torgefahr (2.13 Tore/Spiel)",
+          "Saudi-Arabien defensiv anfällig (1.26 Gegentore/Spiel) und offensiv schwach (0.90 Tore/Spiel)",
+          "Baseline und Markt stimmen mit deutlichem Spanien-Favoritenstatus überein (84-87%)",
+          "Spaniens hohe Clean-Sheet-Rate (50%) gegen schwache saudische Offensive"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, daher keine direkte Vergleichsbasis",
-          "Lange Pause (67 Tage ohne Spiel) könnte spanischen Spielrhythmus beeinträchtigen",
-          "Saudi-Arabien mit solider Clean-Sheet-Rate (0.47) könnte defensiv kompakt stehen und das Ergebnis niedriger halten",
-          "Kaderzusammensetzung noch unklar (News deuten auf offene Aufgebotsentscheidungen hin)"
+          "WM-Auftakt: Außenseiter steht oft tief und kompakt, was Tore erschwert",
+          "Mögliche Rotation oder frühe Lockerheit Spaniens nach Führung",
+          "Einzelner Konter/Standard kann Ergebnis verzerren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 3,
+          "home": 2,
           "away": 0
         },
         "probabilities": {
-          "home": 0.88,
-          "draw": 0.09,
-          "away": 0.03
+          "home": 0.81,
+          "draw": 0.14,
+          "away": 0.05
         },
-        "confidence": 0.9,
+        "confidence": 0.85,
         "keyFactors": [
-          "Spain's superior elo rating and recent performance",
-          "Spain's high goals for average compared to Saudi Arabia's lower scoring average",
-          "Neutral venue mitigates any home advantage, but Spain remains stronger overall"
+          "Spain has a significantly higher Elo rating (1924) compared to Saudi Arabia (1567).",
+          "Spain's recent form (2.2) is stronger than Saudi Arabia's (1.2).",
+          "Saudi Arabia has a low clean sheet rate (0.457) and allows more goals on average (1.259)."
         ],
         "risks": [
-          "Unpredictability due to a lack of direct head-to-head history between Spain and Saudi Arabia",
-          "Possible overconfidence from Spain causing underperformance",
-          "Both teams have been inactive for 67 days before the match, impacting form"
+          "Neutral venue minimizes any potential home advantage for Spain.",
+          "Initial group stage match, usually cautious and could lead to a lower score."
         ]
       }
     },
-    "agreement": 0.9967,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1974 vs. 1572) zugunsten Spaniens; Spaniens überlegene gewichtete Form (2.33 vs. 1.26) und hohe Torausbeute (2.68 Tore/Spiel); Schwache Defensivbilanz Saudi-Arabiens (1.32 Gegentore/Spiel) bei nur 0.87 erzielten Toren.",
-    "inputHash": "sha256:c9ec90a986d4737ed13e1d3ed4beed3960f4c2ef4cb23408e745648f18d6d07b"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.4899,
+      "chatgpt": 0.5101
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien klar überlegen: Elo 1924 vs 1567, starke Form (gewichtet 2.06) und Torgefahr (2.13 Tore/Spiel); Saudi-Arabien defensiv anfällig (1.26 Gegentore/Spiel) und offensiv schwach (0.90 Tore/Spiel); Baseline und Markt stimmen mit deutlichem Spanien-Favoritenstatus überein (84-87%). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:6424790935f3c2313842e9c0a3ca718a5b2e6408f7aab44f7c44d2024ee8d7cf"
   },
   "predictionHistory": [
     {
@@ -268,11 +270,24 @@
         "away": 0.0366
       },
       "confidence": 0.8317
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.88,
+        "draw": 0.0877,
+        "away": 0.0323
+      },
+      "confidence": 0.8386
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T23:14:20.913Z",
+    "updatedAt": "2026-06-20T04:05:46.610Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8688,

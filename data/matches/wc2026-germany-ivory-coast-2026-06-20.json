@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-19T23:12:41.421Z",
+    "generatedAt": "2026-06-20T04:03:52.968Z",
     "home": {
       "teamId": "GER",
       "elo": 1800,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.084,
       "cleanSheetRate": 0.393,
       "matchesCount": 28,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "CIV",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.469,
       "cleanSheetRate": 0.559,
       "matchesCount": 34,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-19T20:04:09.009Z",
+    "generatedAt": "2026-06-20T04:03:52.968Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6074,
-      "draw": 0.213,
-      "away": 0.1796
+      "home": 0.5985,
+      "draw": 0.2057,
+      "away": 0.1958
     },
-    "confidence": 0.6229,
+    "confidence": 0.5821,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,17 @@
           "draw": 0.21,
           "away": 0.19
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Germany mit höherem Elo (1800 vs 1691), starker Offensivform (3.49 Tore/Spiel) und sehr guter gewichteter Form",
-          "Baseline und Markt sehen Deutschland klar vorne (0.588 / 0.625)",
-          "Heim-/Favoritenrolle Deutschlands trotz neutralem Spielort",
-          "Beide Teams gut erholt (5 Tage Pause)"
+          "Germany mit höherem Elo (1800 vs 1691), starker Offensive (xG 2.21) und sehr guter Form (weightedForm 2.50)",
+          "Sowohl Baseline (0.588) als auch Markt (0.631) sehen Deutschland klar favorisiert",
+          "Neutraler Spielort ohne Heimvorteil relativiert die deutsche Stärke leicht"
         ],
         "risks": [
-          "Elfenbeinküste mit sehr stabiler Defensive (0.47 Gegentore/Spiel, 55,9% Clean Sheets) kann tief stehen und Punkte klauen",
-          "Keine H2H-Daten als Referenz",
-          "Turnierauftakt oft vorsichtig und torärmer als erwartet",
-          "Afrikanischer Gegner mit körperlicher Stärke kann Deutschlands Offensive frustrieren"
+          "Elfenbeinküste mit exzellenter Defensive (nur 0.47 Gegentore/Spiel, 55.9% Clean Sheets) kann tief stehen und das Spiel torarm halten",
+          "Als Afrika-Cup-Sieger taktisch diszipliniert – Konter und Standards können für Überraschung sorgen",
+          "Kein H2H-Vergleich vorhanden, daher erhöhte Unsicherheit",
+          "Mögliche Rotation/Experimente bei Nagelsmann im Gruppenspiel"
         ]
       },
       "chatgpt": {
@@ -104,29 +103,29 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.6,
-          "draw": 0.22,
-          "away": 0.18
+          "home": 0.57,
+          "draw": 0.2,
+          "away": 0.23
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Germany's higher Elo rating and superior recent form",
-          "Ivory Coast's strong defensive record (higher clean sheet rate)",
-          "Germany's strong offensive output (high goals for average)"
+          "Germany's higher Elo rating and recent strong offensive form with a goals-for-average of 3.49.",
+          "Ivory Coast's solid defensive record with a clean sheet rate of 0.559.",
+          "Neutral venue with no host advantage."
         ],
         "risks": [
-          "Ivory Coast's capacity to play defensively and achieve clean sheets",
-          "Neutral venue may mitigate some of Germany's strengths"
+          "Germany's defensive vulnerability with a goals-against average of 1.084.",
+          "Ivory Coast's potential to capitalize on Germany's defensive gaps, supported by their recent form."
         ]
       }
     },
-    "agreement": 0.9933,
+    "agreement": 0.9733,
     "ensembleWeights": {
-      "claude": 0.4885,
-      "chatgpt": 0.5115
+      "claude": 0.4899,
+      "chatgpt": 0.5101
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit höherem Elo (1800 vs 1691), starker Offensivform (3.49 Tore/Spiel) und sehr guter gewichteter Form; Baseline und Markt sehen Deutschland klar vorne (0.588 / 0.625); Heim-/Favoritenrolle Deutschlands trotz neutralem Spielort. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:10f2897d1ad88bec5f0e402d1e37e6204cdbfd18518e34e5d9a92e6af8a50463"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany mit höherem Elo (1800 vs 1691), starker Offensive (xG 2.21) und sehr guter Form (weightedForm 2.50); Sowohl Baseline (0.588) als auch Markt (0.631) sehen Deutschland klar favorisiert; Neutraler Spielort ohne Heimvorteil relativiert die deutsche Stärke leicht. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:7ae828cf50fc34f7e993c09892619cb2cb0db3c13c1118e99207c21017ffd5a5"
   },
   "predictionHistory": [
     {
@@ -284,11 +283,24 @@
         "away": 0.1816
       },
       "confidence": 0.6705
+    },
+    {
+      "generatedAt": "2026-06-19T20:04:09.009Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6074,
+        "draw": 0.213,
+        "away": 0.1796
+      },
+      "confidence": 0.6229
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-19T23:14:20.913Z",
+    "updatedAt": "2026-06-20T04:05:46.610Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6313,
