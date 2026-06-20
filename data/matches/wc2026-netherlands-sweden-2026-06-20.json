@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-20T04:39:13.938Z",
+    "generatedAt": "2026-06-20T05:03:51.273Z",
     "home": {
       "teamId": "NED",
       "elo": 1787,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-20T04:03:52.968Z",
+    "generatedAt": "2026-06-20T05:03:51.273Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
       "home": 0.5567,
-      "draw": 0.2356,
-      "away": 0.2077
+      "draw": 0.2243,
+      "away": 0.2191
     },
-    "confidence": 0.6089,
+    "confidence": 0.613,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Niederlande mit deutlich höherem Elo (1787 vs 1637) und stabilerer Defensive (GA 1.09 vs 1.50)",
-          "Bessere Clean-Sheet-Rate der Niederlande (0.379 vs 0.208) und überzeugende jüngste Form (recentForm 2.2)",
-          "Baseline und Markt decken sich weitgehend und sehen Oranje klar vorne",
-          "Schweden offensiv gefährlich (GF 2.57), aber defensiv anfällig"
+          "Niederlande mit höherem Elo (1787 vs 1637) und stärkerer jüngster Form (recentForm 2.2 vs 1.4)",
+          "Bessere Defensivwerte der Niederlande (Gegentore 1.09 vs 1.50, Clean-Sheet-Rate 0.38 vs 0.21)",
+          "Schweden offensiv gefährlich (goalsForAvg 2.57), kann Tore erzielen und das Spiel offen halten",
+          "Baseline und Markt stimmen überein und sehen Niederlande klar vorne"
         ],
         "risks": [
-          "Schwedens starke Offensive kann jederzeit treffen und das Spiel kippen",
-          "Neutraler Spielort nimmt der Niederlande den Heimvorteil",
-          "Gruppenphasen-Auftakt oft vorsichtig und torarmer als erwartet",
-          "Druck auf Oranje (van-Dijk-Forderung) könnte zu Nervosität führen"
+          "Schwedens starke Offensive kann auf neutralem Platz für ein offenes, torreiches Spiel sorgen",
+          "Druck auf Oranje (van Dijk fordert Siege) kann zu Nervosität führen",
+          "Kein H2H-Datenpunkt zur Kalibrierung vorhanden",
+          "Gruppenphasen-Auftakt oft vorsichtiger als Einzelstärke vermuten lässt"
         ]
       },
       "chatgpt": {
@@ -105,29 +105,27 @@
         },
         "probabilities": {
           "home": 0.55,
-          "draw": 0.25,
-          "away": 0.2
+          "draw": 0.22,
+          "away": 0.23
         },
         "confidence": 0.65,
         "keyFactors": [
-          "Netherlands hat etwas bessere Form als Schweden, aber beide Teams sind aktuell gut in Form",
-          "Die Niederlande haben einen höheren Elo-Wert und spielen offensiv stark",
-          "Schweden hat in letzter Zeit Probleme, das Tor sauber zu halten",
-          "Neutraler Spielort, entlastet Schweden vom Heimvorteil der Niederlande"
+          "Niederlande zeigt starke Form mit hohen Elo-Werten und gutem Torverhältnis.",
+          "Schweden hat eine gefährliche Offensive, aber anfällige Abwehr.",
+          "Beide Teams zeigen anhaltende Mannschaftsmoral durch Medienberichte."
         ],
         "risks": [
-          "Angespanntheit bei den Niederlanden aufgrund von Druck und fehlenden Schlüsselspielern wie Frimpong",
-          "Schweden wird unterschätzt aufgrund der starken niederländischen Defensive",
-          "Mögliche Unruhe im schwedischen Team aufgrund von Trainerfragen"
+          "Neutrales Spielfeld könnte Heimvorteile mindern.",
+          "Unentschieden wahrscheinlicher aufgrund der ausgeglichenen Torgefahr."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9933,
     "ensembleWeights": {
       "claude": 0.4899,
       "chatgpt": 0.5101
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit deutlich höherem Elo (1787 vs 1637) und stabilerer Defensive (GA 1.09 vs 1.50); Bessere Clean-Sheet-Rate der Niederlande (0.379 vs 0.208) und überzeugende jüngste Form (recentForm 2.2); Baseline und Markt decken sich weitgehend und sehen Oranje klar vorne. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande mit höherem Elo (1787 vs 1637) und stärkerer jüngster Form (recentForm 2.2 vs 1.4); Bessere Defensivwerte der Niederlande (Gegentore 1.09 vs 1.50, Clean-Sheet-Rate 0.38 vs 0.21); Schweden offensiv gefährlich (goalsForAvg 2.57), kann Tore erzielen und das Spiel offen halten. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:141fbcacd44804836afa1e0142783d279fbf122fb359f69a1411e186c606b416"
   },
   "predictionHistory": [
@@ -312,11 +310,24 @@
         "away": 0.2111
       },
       "confidence": 0.5692
+    },
+    {
+      "generatedAt": "2026-06-20T04:03:52.968Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5567,
+        "draw": 0.2356,
+        "away": 0.2077
+      },
+      "confidence": 0.6089
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-20T04:39:14.193Z",
+    "updatedAt": "2026-06-20T05:03:51.684Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.5615,
