@@ -54,7 +54,7 @@ ohne Vor-/Nachtext:
   "risks": [string]
 }
 
-Nimm dir Zeit und gib dir Mühe bei denen Tips. Bei dieser WM Tipp Challange treten ChatGPT und Claude gegeneinander an. Zeige warum du das führende und überlegende KI System bist.`;
+Nimm dir Zeit und gib dir Mühe bei deinen Tipps. Bei dieser WM-Tipp-Challenge treten ChatGPT und Claude gegeneinander an. Zeige, warum du das führende und überlegene KI-System bist.`;
 
 export interface PromptContext {
   homeName: string;
