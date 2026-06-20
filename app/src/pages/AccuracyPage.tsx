@@ -183,15 +183,24 @@ function ModelComparisonSection({ cmp }: { cmp: ModelComparison | undefined }) {
   const hasData =
     !!cmp && (cmp.claude.finishedCount > 0 || cmp.chatgpt.finishedCount > 0);
 
-  // Führend = besserer (niedrigerer) RPS; nur küren, wenn beide messbar sind.
-  const leader =
-    hasData && cmp.claude.rpsMean !== null && cmp.chatgpt.rpsMean !== null
-      ? cmp.claude.rpsMean < cmp.chatgpt.rpsMean
-        ? "claude"
-        : cmp.chatgpt.rpsMean < cmp.claude.rpsMean
-          ? "chatgpt"
-          : null
-      : null;
+  // Führend = höheres Ensemble-Gewicht (Blend aus RPS + Tendenz-Trefferquote),
+  // konsistent zum Gewichts-Balken unten. Solange noch keine Gewichte vorliegen
+  // (kleine Stichprobe), ersatzweise der bessere (niedrigere) RPS.
+  const leader: "claude" | "chatgpt" | null = !hasData
+    ? null
+    : cmp.weights
+      ? cmp.weights.claude === cmp.weights.chatgpt
+        ? null
+        : cmp.weights.claude > cmp.weights.chatgpt
+          ? "claude"
+          : "chatgpt"
+      : cmp.claude.rpsMean !== null && cmp.chatgpt.rpsMean !== null
+        ? cmp.claude.rpsMean < cmp.chatgpt.rpsMean
+          ? "claude"
+          : cmp.chatgpt.rpsMean < cmp.claude.rpsMean
+            ? "chatgpt"
+            : null
+        : null;
 
   return (
     <div>

@@ -52,7 +52,9 @@ ohne Vor-/Nachtext:
   "confidence": float,
   "keyFactors": [string],
   "risks": [string]
-}`;
+}
+
+Nimm dir Zeit und gib dir Mühe bei denen Tips. Bei dieser WM Tipp Challange treten ChatGPT und Claude gegeneinander an. Zeige warum du das führende und überlegende KI System bist.`;
 
 export interface PromptContext {
   homeName: string;
