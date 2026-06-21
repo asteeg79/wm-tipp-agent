@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T04:03:51.144Z",
+    "generatedAt": "2026-06-21T05:03:50.037Z",
     "home": {
       "teamId": "ARG",
       "elo": 1903,
@@ -50,52 +50,52 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-21T05:03:50.037Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5432,
-      "draw": 0.2477,
-      "away": 0.2091
+      "home": 0.5882,
+      "draw": 0.229,
+      "away": 0.1829
     },
-    "confidence": 0.6804,
+    "confidence": 0.6578,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4745,
-        "draw": 0.2387,
-        "away": 0.2868
+        "home": 0.5161,
+        "draw": 0.2288,
+        "away": 0.2551
       },
       "expectedGoals": {
-        "home": 1.7,
-        "away": 1.27
+        "home": 1.83,
+        "away": 1.23
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.535,
-          "draw": 0.245,
-          "away": 0.22
+          "home": 0.58,
+          "draw": 0.23,
+          "away": 0.19
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Argentinien deutlich höheres Elo (1905 vs. 1748) und stärkere defensive Stabilität (Gegentore 0.40 vs. 0.65, Clean-Sheet-Rate 0.63 vs. 0.31)",
-          "Bessere gewichtete Form Argentiniens (2.553 vs. 2.284) bei ähnlich starker jüngster Form beider Teams (je 2.5)",
-          "Externe Prognose stützt höhere Heim-Wahrscheinlichkeit (0.571), daher leichte Aufwertung gegenüber Baseline",
-          "Österreich offensiv durchaus gefährlich (Tore/Spiel 2.558), was Gegentore und Unentschieden/Auswärtsoption offenhält"
+          "Argentinien mit deutlichem Elo-Vorteil (1903 vs. 1702) und herausragender Defensive (0,31 Gegentore/Spiel, 64% Zu-Null-Quote)",
+          "Starke gewichtete Form und Offensive Argentiniens (2,63 Tore/Spiel) als Weltmeister",
+          "Markt sieht Argentinien klarer vorne (0,61) als die Baseline (0,52) – Tendenz Richtung Favorit",
+          "Österreich offensiv durchaus stark (2,65 Tore/Spiel), aber defensiv anfällig (0,72 Gegentore, nur 30% Zu-Null)"
         ],
         "risks": [
-          "Unsicherheit um Messi-Teilnahme (Trainer äußert Bedenken) könnte Argentiniens Offensivstärke schwächen",
-          "Verletzungssorgen bei Österreich (Karl) könnten Kaderstärke mindern – Datenlage unklar",
-          "Kein H2H vorhanden, daher erhöhte Modellunsicherheit",
-          "Neutraler Spielort ohne Heimvorteil reduziert Argentiniens Vorteil leicht"
+          "Mögliche Verletzung/Ausfall von Stefan Posch schwächt Österreichs Defensive – könnte Argentinien zusätzlich begünstigen",
+          "WM-Auftaktspiele oft vorsichtig und torarm; Österreich kann tief und kompakt stehen",
+          "Kein H2H-Datensatz vorhanden – erhöhte Unsicherheit",
+          "Österreich spielt 'befreit' ohne großen Erwartungsdruck, was eine Überraschung begünstigen könnte"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,29 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.25,
+          "home": 0.58,
+          "draw": 0.22,
           "away": 0.2
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Argentinien hat eine höhere Elo-Bewertung (1905) im Vergleich zu Österreich (1748).",
-          "Starker Unterschied in der Defensivleistung: Argentinien hat eine höhere Clean-Sheet-Rate (0.63) als Österreich (0.308).",
-          "Neutraler Spielort begünstigt keine der beiden Mannschaften, hebt jedoch die individuelle Qualität von Argentinien hervor.",
-          "Austrias Gewichtete Form (2.284) zeigt keine überlegene Leistung gegenüber Argentinien (2.553)."
+          "Argentinien hat einen höheren Elo-Wert und eine stärkere Defensivstatistik (niedrige Gegentore).",
+          "Österreich hat eine ähnliche Form, aber eine schwächere Abwehrleistung (höhere Gegentore).",
+          "Verletzungsprobleme in Österreichs Abwehr mit der möglichen Abwesenheit von Stefan Posch."
         ],
         "risks": [
-          "Messis Teilnahme an der WM 2026 ist unklar, könnte einen Unterschied in der Performance machen.",
-          "Trotz neutralem Spielort und potenzieller Verletzungsprobleme spielt Österreich unerwartet stark in letzter Zeit."
+          "Österreichs Offensivstärke könnte in einem neutralen Spielumfeld überraschen.",
+          "Turnierauftakt könnte zu vorsichtigem Spiel führen, was die Wahrscheinlichkeit eines Unentschiedens erhöht."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich höheres Elo (1905 vs. 1748) und stärkere defensive Stabilität (Gegentore 0.40 vs. 0.65, Clean-Sheet-Rate 0.63 vs. 0.31); Bessere gewichtete Form Argentiniens (2.553 vs. 2.284) bei ähnlich starker jüngster Form beider Teams (je 2.5); Externe Prognose stützt höhere Heim-Wahrscheinlichkeit (0.571), daher leichte Aufwertung gegenüber Baseline.",
-    "inputHash": "sha256:54f299859a795e0b69abe24818f0898c06e1d4849a14a515261e89e8ef9a7ace"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.4911,
+      "chatgpt": 0.5089
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit deutlichem Elo-Vorteil (1903 vs. 1702) und herausragender Defensive (0,31 Gegentore/Spiel, 64% Zu-Null-Quote); Starke gewichtete Form und Offensive Argentiniens (2,63 Tore/Spiel) als Weltmeister; Markt sieht Argentinien klarer vorne (0,61) als die Baseline (0,52) – Tendenz Richtung Favorit. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:679f2ffd41a3ed6acfb173ad84669722a262bbb0a2ad1240a893a366f886f2a3"
   },
   "predictionHistory": [
     {
@@ -268,11 +271,24 @@
         "away": 0.2046
       },
       "confidence": 0.6923
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5432,
+        "draw": 0.2477,
+        "away": 0.2091
+      },
+      "confidence": 0.6804
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T04:05:39.896Z",
+    "updatedAt": "2026-06-21T05:03:50.486Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6073,
