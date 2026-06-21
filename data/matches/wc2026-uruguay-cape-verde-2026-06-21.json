@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T16:07:58.134Z",
+    "generatedAt": "2026-06-21T17:03:49.870Z",
     "home": {
       "teamId": "URU",
       "elo": 1664,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-21T14:03:49.873Z",
+    "generatedAt": "2026-06-21T17:03:49.870Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.5761,
-      "draw": 0.2684,
-      "away": 0.1556
+      "home": 0.5966,
+      "draw": 0.2489,
+      "away": 0.1544
     },
-    "confidence": 0.5733,
+    "confidence": 0.6083,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.27,
           "away": 0.21
         },
-        "confidence": 0.52,
+        "confidence": 0.55,
         "keyFactors": [
-          "Uruguay hat klar höheres Elo (1664 vs 1567) und größere individuelle Qualität sowie WM-Erfahrung unter Bielsa",
-          "Solide Defensive Uruguays (cleanSheetRate 0.5) trifft auf eine zwar formstarke, aber defensiv ebenfalls disziplinierte kapverdische Mannschaft",
-          "Externe Markteinschätzung sieht Uruguay klar vorn (0.667) und korrigiert die für Cape Verde zu optimistische Poisson-Baseline",
-          "Kap Verde reist mit starker jüngster Form (recentForm 2.2) und niedrigem Gegentorschnitt an – kein leichter Gegner"
+          "Uruguay deutlich höhere Elo (1664 vs 1567) und individuelle Klasse mit WM-Erfahrung",
+          "Solide Defensive Uruguays (Clean-Sheet-Rate 50%) unter Bielsa",
+          "Markt sieht Uruguay als klaren Favoriten (0.67), was die Baseline-Verzerrung Richtung Away relativiert",
+          "Cape Verde defensiv stark (nur 0.58 Gegentore/Spiel) und in guter Form – wird tief und kompakt stehen"
         ],
         "risks": [
-          "Cape Verde tritt diszipliniert auf und kann in kompakter Defensive ein Remis erzwingen – typisches torarmes Gruppenspiel",
-          "Uruguays Offensive ist zuletzt harmlos (goalsForAvg 0.928), Tore könnten schwerfallen",
-          "Druck und mögliche Verunsicherung im Uruguay-Lager (laut News) könnte zu vorsichtigem Spiel führen",
-          "Neutraler Spielort nimmt Uruguay jeglichen Heimvorteil"
+          "Cape Verde zeigt aktuell starke Form (recentForm 2.2) und könnte überraschen",
+          "Torarmes WM-Gruppenspiel mit kompaktem Außenseiter erhöht Remis-Wahrscheinlichkeit",
+          "Kein H2H vorhanden, neutraler Spielort ohne Heimvorteil",
+          "Baseline favorisiert sogar Cape Verde – mögliche Unterschätzung der Außenseiter-Stärke"
         ]
       },
       "chatgpt": {
@@ -104,30 +104,29 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.3,
+          "home": 0.6,
+          "draw": 0.25,
           "away": 0.15
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Uruguay hat eine stärkere Elo-Wertung (1664 im Vergleich zu 1567 für Kap Verde)",
-          "Uruguays Heimvorteil durch offensivere Spielweise und höhere individuelle Klasse",
-          "Externe Markt-Einschätzung favorisiert Uruguay klar",
-          "Kap Verde hat zwar eine gute jüngste Form, aber weniger Turniererfahrung auf diesem Niveau"
+          "Uruguay hat den höheren Elo-Wert und spielt stark in letzter Zeit mit einer Recent Form von 1.7.",
+          "Cape Verde hat eine starke Form mit 2.2, aber insgesamt einen niedrigeren Elo-Wert.",
+          "Neutraler Spielort, daher kein Heimvorteil für Uruguay.",
+          "Uruguays Erfahrung auf internationalen Turnieren."
         ],
         "risks": [
-          "Kap Verde zeigt eine starke Form (recentForm 2.2)",
-          "Neutrales Spielort könnte für ein ausgeglicheneres Spiel sorgen",
-          "Kein direkter Vergleich (H2H) vorhanden, was die Analyse erschwert"
+          "Cape Verdes gute Form und solide Abwehr könnten Überraschungen begünstigen.",
+          "Uruguays Schwierigkeiten bei der Anpassung an neutrale Spielbedingungen (Trinkpausen)."
         ]
       }
     },
-    "agreement": 0.96,
+    "agreement": 0.9467,
     "ensembleWeights": {
       "claude": 0.4922,
       "chatgpt": 0.5078
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay hat klar höheres Elo (1664 vs 1567) und größere individuelle Qualität sowie WM-Erfahrung unter Bielsa; Solide Defensive Uruguays (cleanSheetRate 0.5) trifft auf eine zwar formstarke, aber defensiv ebenfalls disziplinierte kapverdische Mannschaft; Externe Markteinschätzung sieht Uruguay klar vorn (0.667) und korrigiert die für Cape Verde zu optimistische Poisson-Baseline. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höhere Elo (1664 vs 1567) und individuelle Klasse mit WM-Erfahrung; Solide Defensive Uruguays (Clean-Sheet-Rate 50%) unter Bielsa; Markt sieht Uruguay als klaren Favoriten (0.67), was die Baseline-Verzerrung Richtung Away relativiert. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:b909af76203bb2ad2bf1be04fe35bb7de6e92eec929825c170c70fcaf1e0b916"
   },
   "predictionHistory": [
@@ -312,11 +311,24 @@
         "away": 0.1633
       },
       "confidence": 0.5937
+    },
+    {
+      "generatedAt": "2026-06-21T14:03:49.873Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5761,
+        "draw": 0.2684,
+        "away": 0.1556
+      },
+      "confidence": 0.5733
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T16:08:44.875Z",
+    "updatedAt": "2026-06-21T17:03:50.302Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6694,

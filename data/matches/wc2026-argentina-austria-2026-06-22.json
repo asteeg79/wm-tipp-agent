@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T16:07:58.134Z",
+    "generatedAt": "2026-06-21T17:03:49.870Z",
     "home": {
       "teamId": "ARG",
       "elo": 1903,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-21T05:03:50.037Z",
+    "generatedAt": "2026-06-21T17:03:49.870Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5882,
-      "draw": 0.229,
-      "away": 0.1829
+      "home": 0.5879,
+      "draw": 0.231,
+      "away": 0.1811
     },
-    "confidence": 0.6578,
+    "confidence": 0.6827,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,16 +86,16 @@
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Argentinien mit deutlichem Elo-Vorteil (1903 vs. 1702) und herausragender Defensive (0,31 Gegentore/Spiel, 64% Zu-Null-Quote)",
-          "Starke gewichtete Form und Offensive Argentiniens (2,63 Tore/Spiel) als Weltmeister",
-          "Markt sieht Argentinien klarer vorne (0,61) als die Baseline (0,52) – Tendenz Richtung Favorit",
-          "Österreich offensiv durchaus stark (2,65 Tore/Spiel), aber defensiv anfällig (0,72 Gegentore, nur 30% Zu-Null)"
+          "Argentinien klar stärker (Elo 1903 vs 1702) und amtierender Weltmeister mit Topform",
+          "Sehr stabile argentinische Defensive (GegentoreØ 0,31, Clean-Sheet-Rate 64%)",
+          "Beide Teams torgefährlich, aber Argentinien defensiv deutlich solider",
+          "Markt sieht Argentinien noch klarer vorne (0,62) als die Baseline"
         ],
         "risks": [
-          "Mögliche Verletzung/Ausfall von Stefan Posch schwächt Österreichs Defensive – könnte Argentinien zusätzlich begünstigen",
-          "WM-Auftaktspiele oft vorsichtig und torarm; Österreich kann tief und kompakt stehen",
-          "Kein H2H-Datensatz vorhanden – erhöhte Unsicherheit",
-          "Österreich spielt 'befreit' ohne großen Erwartungsdruck, was eine Überraschung begünstigen könnte"
+          "Österreich ist offensiv variabel (Toreschnitt 2,65) und kann bei Konterchancen treffen",
+          "Gruppenspiel-Charakter: tiefstehender Gegner kann das Spiel zähflüssig machen",
+          "Keine H2H-Historie, höhere Unsicherheit in der Einschätzung",
+          "Mögliche Rotation/Spielmanagement bei klarem Favoriten"
         ]
       },
       "chatgpt": {
@@ -104,28 +104,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.58,
-          "draw": 0.22,
+          "home": 0.57,
+          "draw": 0.23,
           "away": 0.2
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Argentinien hat einen höheren Elo-Wert und eine stärkere Defensivstatistik (niedrige Gegentore).",
-          "Österreich hat eine ähnliche Form, aber eine schwächere Abwehrleistung (höhere Gegentore).",
-          "Verletzungsprobleme in Österreichs Abwehr mit der möglichen Abwesenheit von Stefan Posch."
+          "Argentina's superior Elo rating and recent form.",
+          "Austria's relatively weaker defense compared to Argentina's offense.",
+          "The match is at a neutral venue, minimizing home advantage."
         ],
         "risks": [
-          "Österreichs Offensivstärke könnte in einem neutralen Spielumfeld überraschen.",
-          "Turnierauftakt könnte zu vorsichtigem Spiel führen, was die Wahrscheinlichkeit eines Unentschiedens erhöht."
+          "Austria has a decent attack and could pose a threat.",
+          "Lack of head-to-head data introduces uncertainty."
         ]
       }
     },
     "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.4911,
-      "chatgpt": 0.5089
+      "claude": 0.4922,
+      "chatgpt": 0.5078
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit deutlichem Elo-Vorteil (1903 vs. 1702) und herausragender Defensive (0,31 Gegentore/Spiel, 64% Zu-Null-Quote); Starke gewichtete Form und Offensive Argentiniens (2,63 Tore/Spiel) als Weltmeister; Markt sieht Argentinien klarer vorne (0,61) als die Baseline (0,52) – Tendenz Richtung Favorit. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar stärker (Elo 1903 vs 1702) und amtierender Weltmeister mit Topform; Sehr stabile argentinische Defensive (GegentoreØ 0,31, Clean-Sheet-Rate 64%); Beide Teams torgefährlich, aber Argentinien defensiv deutlich solider. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:679f2ffd41a3ed6acfb173ad84669722a262bbb0a2ad1240a893a366f886f2a3"
   },
   "predictionHistory": [
@@ -284,11 +284,24 @@
         "away": 0.2091
       },
       "confidence": 0.6804
+    },
+    {
+      "generatedAt": "2026-06-21T05:03:50.037Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5882,
+        "draw": 0.229,
+        "away": 0.1829
+      },
+      "confidence": 0.6578
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T16:08:44.875Z",
+    "updatedAt": "2026-06-21T17:03:50.302Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6194,
