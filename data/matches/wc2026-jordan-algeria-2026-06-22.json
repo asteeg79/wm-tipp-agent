@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T14:03:49.873Z",
+    "generatedAt": "2026-06-21T15:03:53.405Z",
     "home": {
       "teamId": "JOR",
       "elo": 1535,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-21T15:03:53.405Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1407,
-      "draw": 0.2,
-      "away": 0.6593
+      "home": 0.1677,
+      "draw": 0.2263,
+      "away": 0.6061
     },
-    "confidence": 0.745,
+    "confidence": 0.6435,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.098,
-        "draw": 0.1492,
-        "away": 0.7528
+        "home": 0.1537,
+        "draw": 0.184,
+        "away": 0.6623
       },
       "expectedGoals": {
-        "home": 0.86,
-        "away": 2.64
+        "home": 1.04,
+        "away": 2.33
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.13,
-          "draw": 0.2,
-          "away": 0.67
+          "home": 0.16,
+          "draw": 0.22,
+          "away": 0.62
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Algerien deutlich stärker in Elo (1767 vs. 1529) und überlegene Form (weightedForm 2.38 vs. 1.07)",
-          "Algeriens starke Defensive (gegen 0.55 Tore/Spiel, 51.6% Clean Sheets) limitiert Jordaniens Offensive",
-          "Algeriens Torgefährlichkeit (2.34 Tore/Spiel) deutlich über Jordaniens Schnitt",
-          "Neutraler Spielort ohne Heimvorteil für Jordan"
+          "Algerien deutlich höhere Elo (1689 vs. 1535) und klar bessere gewichtete Form (2.02 vs. 0.87)",
+          "Algerien defensiv stark: 0.92 Gegentore/Spiel, 50% Clean-Sheet-Rate, Jordanien kassiert im Schnitt 1.82 Tore",
+          "Algeriens Offensive (1.98 Tore/Spiel) trifft auf eher schwache jordanische Defensive",
+          "Neutraler Spielort, kein Heimvorteil für Jordanien"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, erschwert direkten Vergleich",
-          "Lange Pause (67 Tage) für beide Teams kann Form beeinträchtigen",
-          "Jordaniens solide Defensivwerte könnten ein knapperes Ergebnis ermöglichen",
-          "Baseline überschätzt möglicherweise Algeriens Dominanz; externe Prognose milder"
+          "Jordanien könnte als Außenseiter tief und kompakt stehen und Algerien das Spiel erschweren",
+          "Auftakt-/Gruppenspiele oft vorsichtig und torarm – Remis nicht ausgeschlossen",
+          "Keine H2H-Daten verfügbar, Unsicherheit über direktes Aufeinandertreffen",
+          "Algerien könnte bei früher Führung das Tempo herausnehmen"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,29 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.15,
-          "draw": 0.2,
-          "away": 0.65
+          "home": 0.18,
+          "draw": 0.23,
+          "away": 0.59
         },
-        "confidence": 0.8,
+        "confidence": 0.7,
         "keyFactors": [
-          "Algeria's significantly higher Elo rating and recent form suggests dominance",
-          "Jordan's average defensive record with a relatively high goals against average",
-          "Algeria's strong clean sheet rate and low goals conceded",
-          "Neutral venue slightly reduces typical home advantage"
+          "Algeria has a higher ELO rating (1689 vs 1535)",
+          "Algeria's form is stronger compared to Jordan (weightedForm: 2.022 vs 0.867)",
+          "Algeria's defensive record is better with a lower goals against average (0.923 vs 1.817)"
         ],
         "risks": [
-          "No head-to-head history between the teams introduces uncertainty",
-          "Relative unknown variables in playing at a neutral location"
+          "Neutral venue reduces potential home advantage for both teams",
+          "Jordan's recent form suggests potential for an upset"
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Algerien deutlich stärker in Elo (1767 vs. 1529) und überlegene Form (weightedForm 2.38 vs. 1.07); Algeriens starke Defensive (gegen 0.55 Tore/Spiel, 51.6% Clean Sheets) limitiert Jordaniens Offensive; Algeriens Torgefährlichkeit (2.34 Tore/Spiel) deutlich über Jordaniens Schnitt.",
-    "inputHash": "sha256:6b102736540e4d81c7a6fa23ec04d30a58e73b3f0f500e36afeb1a0feb7f550e"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.4922,
+      "chatgpt": 0.5078
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Algerien deutlich höhere Elo (1689 vs. 1535) und klar bessere gewichtete Form (2.02 vs. 0.87); Algerien defensiv stark: 0.92 Gegentore/Spiel, 50% Clean-Sheet-Rate, Jordanien kassiert im Schnitt 1.82 Tore; Algeriens Offensive (1.98 Tore/Spiel) trifft auf eher schwache jordanische Defensive. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:b5b957ea9a46fc44ca2aca960f24643b577dbf34131ab9b81a915ca6eb7a95fb"
   },
   "predictionHistory": [
     {
@@ -255,11 +258,24 @@
         "away": 0.6133
       },
       "confidence": 0.6983
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1407,
+        "draw": 0.2,
+        "away": 0.6593
+      },
+      "confidence": 0.745
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T14:05:39.228Z",
+    "updatedAt": "2026-06-21T15:04:33.081Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1602,
