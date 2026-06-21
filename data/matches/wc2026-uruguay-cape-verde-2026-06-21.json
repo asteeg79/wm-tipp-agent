@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T09:06:11.389Z",
+    "generatedAt": "2026-06-21T10:03:54.481Z",
     "home": {
       "teamId": "URU",
       "elo": 1664,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-21T04:03:51.144Z",
+    "generatedAt": "2026-06-21T10:03:54.481Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.5186,
-      "draw": 0.2884,
-      "away": 0.193
+      "home": 0.5644,
+      "draw": 0.2723,
+      "away": 0.1633
     },
-    "confidence": 0.5501,
+    "confidence": 0.5937,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,52 +80,55 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.53,
-          "draw": 0.27,
-          "away": 0.2
+          "home": 0.49,
+          "draw": 0.28,
+          "away": 0.23
         },
-        "confidence": 0.55,
+        "confidence": 0.52,
         "keyFactors": [
-          "Uruguay deutlich höhere Elo (1664 vs. 1567) und größere individuelle WM-Klasse unter Bielsa",
-          "Markt sieht Uruguay klar vorne (0.65) – die Baseline unterschätzt Uruguay erkennbar",
-          "Kap Verde mit starker jüngster Form (recentForm 2.2) und sehr stabiler Defensive (GA 0.582), tritt aber als WM-Debütant gegen etablierte Nation an",
-          "Beide gut erholt (6 Tage Pause), neutraler Spielort ohne Heimvorteil"
+          "Uruguay deutlich höhere Elo (1664 vs 1567) und größere individuelle Klasse mit Bielsa-Coaching",
+          "Markt sieht Uruguay klar vorne (0.66), während die Elo+Poisson-Baseline Kap Verde leicht favorisiert – die Wahrheit liegt dazwischen, eher pro Uruguay",
+          "Kap Verde defensiv stabil (gegen-Tore 0.58, Form stark), kann als kompakter Außenseiter Punkte holen",
+          "Beide Teams nur 6 Tage Pause – ausgeglichene Frische",
+          "Neutraler Spielort, kein Heimvorteil für Uruguay"
         ],
         "risks": [
-          "Kap Verdes kompakte Defensive und gute Form könnten Uruguay einen torarmen Punktverlust aufzwingen",
-          "Uruguays niedrige Offensivwerte (xG 0.88) deuten auf Schwierigkeiten gegen tiefstehende Außenseiter",
-          "Großer Widerspruch zwischen Baseline (Away-Tendenz) und Markt erhöht Prognoseunsicherheit",
-          "Gruppenphasen-Auftakt oft vorsichtig und torarm – Remis realistisch"
+          "Kap Verdes starke aktuelle Form (recentForm 2.2) und niedrige Gegentorquote könnten Uruguay frustrieren",
+          "Torarme WM-Auftaktspiele begünstigen ein Remis",
+          "Uruguay zeigte zuletzt nur durchwachsene Form trotz Klasse",
+          "Kein H2H vorhanden – erhöhte Prognoseunsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.35,
-          "away": 0.25
+          "home": 0.55,
+          "draw": 0.3,
+          "away": 0.15
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Uruguay hat basierend auf Elo-Rating einen leichten Vorteil, aber Cape Verde zeigt in letzter Zeit bessere Form.",
-          "Uruguay unter Druck laut aktueller Nachrichten, könnte Einfluss auf die Leistung haben.",
-          "Cape Verde hat in den letzten Matches eine höhere Torausbeute, obwohl Uruguay schwieriger zu schlagen ist (höhere Clean-Sheet-Rate)."
+          "Uruguay hat den höheren Elo-Wert und eine solide Defensivleistung mit einer Clean Sheet Rate von 50%.",
+          "Uruguay spielt unter dem erfahrenen Trainer Marcelo Bielsa, was für strategische Tiefe sorgen könnte.",
+          "Uruguay konnte in der Vergangenheit Drucksituationen gut bewältigen, was aus der psychologischen Fitness des Teams hervorgeht.",
+          "Kap Verde zeigte zuletzt zwar gute Form, hat jedoch historisch weniger Erfahrung auf großer Bühne wie die WM im Vergleich zu Uruguay."
         ],
         "risks": [
-          "Baselinemodell unterschätzt die aktuelle Formstärke von Cape Verde.",
-          "Uruguay könnte trotz Bilanzdruck eine verbesserte Leistung zeigen."
+          "Kap Verde hat eine höhere jüngste Formbewertung mit 2.2, was auf dynamisches Offensivspiel hinweisen könnte.",
+          "Beide Teams haben sich zuletzt gut formtechnisch entwickelt, was zu einem engeren Spiel als erwartet führen kann.",
+          "Keine historischen Begegnungen zwischen den Teams, sodass die direkte Vergleichsbewertung wegfällt."
         ]
       }
     },
-    "agreement": 0.9133,
+    "agreement": 0.9467,
     "ensembleWeights": {
-      "claude": 0.4911,
-      "chatgpt": 0.5089
+      "claude": 0.4922,
+      "chatgpt": 0.5078
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höhere Elo (1664 vs. 1567) und größere individuelle WM-Klasse unter Bielsa; Markt sieht Uruguay klar vorne (0.65) – die Baseline unterschätzt Uruguay erkennbar; Kap Verde mit starker jüngster Form (recentForm 2.2) und sehr stabiler Defensive (GA 0.582), tritt aber als WM-Debütant gegen etablierte Nation an. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Uruguay deutlich höhere Elo (1664 vs 1567) und größere individuelle Klasse mit Bielsa-Coaching; Markt sieht Uruguay klar vorne (0.66), während die Elo+Poisson-Baseline Kap Verde leicht favorisiert – die Wahrheit liegt dazwischen, eher pro Uruguay; Kap Verde defensiv stabil (gegen-Tore 0.58, Form stark), kann als kompakter Außenseiter Punkte holen. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:b909af76203bb2ad2bf1be04fe35bb7de6e92eec929825c170c70fcaf1e0b916"
   },
   "predictionHistory": [
@@ -284,20 +287,33 @@
         "away": 0.1813
       },
       "confidence": 0.5597
+    },
+    {
+      "generatedAt": "2026-06-21T04:03:51.144Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5186,
+        "draw": 0.2884,
+        "away": 0.193
+      },
+      "confidence": 0.5501
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T09:06:11.725Z",
+    "updatedAt": "2026-06-21T10:04:52.658Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.6564,
-      "draw": 0.2282,
-      "away": 0.1155
+      "home": 0.6566,
+      "draw": 0.2271,
+      "away": 0.1163
     },
     "decimal": {
-      "home": 1.46,
-      "draw": 4.2,
+      "home": 1.47,
+      "draw": 4.25,
       "away": 8.3
     }
   }
