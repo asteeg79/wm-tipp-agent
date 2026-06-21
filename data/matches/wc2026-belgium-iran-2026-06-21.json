@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T17:51:17.391Z",
+    "generatedAt": "2026-06-21T18:03:50.116Z",
     "home": {
       "teamId": "BEL",
       "elo": 1728,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-21T15:03:53.405Z",
+    "generatedAt": "2026-06-21T18:03:50.116Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6185,
-      "draw": 0.2279,
-      "away": 0.1537
+      "home": 0.6164,
+      "draw": 0.2174,
+      "away": 0.1662
     },
-    "confidence": 0.6315,
+    "confidence": 0.6188,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,57 +77,55 @@
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.58,
+          "home": 0.57,
           "draw": 0.23,
-          "away": 0.19
+          "away": 0.2
         },
-        "confidence": 0.58,
+        "confidence": 0.55,
         "keyFactors": [
-          "Belgien mit höherer individueller Qualität, starker Form (recentForm 2.2) und hoher Torausbeute (2.51 Tore/Spiel)",
-          "Lukaku zurück und einsatzbereit stärkt Belgiens Offensive",
-          "Iran defensiv stabil (Clean-Sheet-Rate 0.44) und steht bei Turnieren traditionell tief und kompakt",
-          "Markt sieht Belgien klarer vorne (0.68) als die Elo-Baseline (0.52)"
+          "Belgien mit höherer Elo (1728 vs 1689), starker Form (recentForm 2.2) und hoher Offensivkraft (2.51 Tore/Spiel)",
+          "Lukakus Rückkehr stärkt die belgische Offensive",
+          "Markt sieht Belgien klar vorne (0.68), was die Baseline (0.52) tendenziell nach oben korrigiert",
+          "Iran defensiv stabil (Clean-Sheet-Rate 0.44), kann tief und kompakt verteidigen"
         ],
         "risks": [
-          "Iran als kompakter Außenseiter kann Belgien das Spiel zumachen – Remis-Gefahr typisch für WM-Gruppenphase",
-          "Berichte über Reise-/Organisationsstress im iranischen Lager könnten Leistung beeinflussen (unsicher)",
-          "Belgiens unsichere Defensive (Gegentore 1.04/Spiel, Clean-Sheet nur 0.37) lässt Iran-Kontertore zu",
-          "Auftaktspiele oft vorsichtig und torarm"
+          "Iran steht als WM-Außenseiter oft tief und kompakt – Belgien könnte sich schwertun, Remis-Gefahr",
+          "Geringer Elo-Abstand spricht für engeres Spiel als der Markt suggeriert",
+          "Mögliche Unruhe im iranischen Lager (FIFA-Zoff) könnte Leistung beeinflussen, ist aber unsicher",
+          "Lukakus Fitness nach langer Pause (200 Tage) nicht garantiert"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.25,
-          "away": 0.15
+          "draw": 0.22,
+          "away": 0.18
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Belgium has slightly higher ELO and recent form advantages.",
-          "Iran does not have a significant head-to-head advantage since no matches have been played before.",
-          "Neutral venue reduces the home advantage for Belgium but does not eliminate their overall strength.",
-          "Recent form and Lukaku's return boost Belgium's attacking potential."
+          "Belgium has a higher recent form and a better goal scoring record.",
+          "Belgium's key player Lukaku is returning strong after a 200-day pause.",
+          "Iran's morale might be impacted by ongoing FIFA-related issues."
         ],
         "risks": [
-          "Iran's relatively high clean sheet rate could lead to a low-scoring game.",
-          "Off-field issues surrounding Iran might impact team morale and focus negatively.",
-          "Belgium's defense, while decent, is not impenetrable, opening possibilities for an Iranian goal."
+          "Neutral venue negates typical home advantage.",
+          "Iran has a respectable clean sheet rate which could make breaking their defense challenging."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.4922,
       "chatgpt": 0.5078
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit höherer individueller Qualität, starker Form (recentForm 2.2) und hoher Torausbeute (2.51 Tore/Spiel); Lukaku zurück und einsatzbereit stärkt Belgiens Offensive; Iran defensiv stabil (Clean-Sheet-Rate 0.44) und steht bei Turnieren traditionell tief und kompakt. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit höherer Elo (1728 vs 1689), starker Form (recentForm 2.2) und hoher Offensivkraft (2.51 Tore/Spiel); Lukakus Rückkehr stärkt die belgische Offensive; Markt sieht Belgien klar vorne (0.68), was die Baseline (0.52) tendenziell nach oben korrigiert. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:f5433eb39ca68a61b753f29e4da2acfbc8ba3b1bc708eb6aac48fc0f8f32d367"
   },
   "predictionHistory": [
@@ -325,11 +323,24 @@
         "away": 0.1919
       },
       "confidence": 0.574
+    },
+    {
+      "generatedAt": "2026-06-21T15:03:53.405Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6185,
+        "draw": 0.2279,
+        "away": 0.1537
+      },
+      "confidence": 0.6315
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T17:53:03.493Z",
+    "updatedAt": "2026-06-21T18:03:50.529Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6849,
