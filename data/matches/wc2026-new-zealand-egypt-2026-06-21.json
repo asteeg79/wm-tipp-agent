@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T20:03:47.095Z",
+    "generatedAt": "2026-06-21T21:03:49.348Z",
     "home": {
       "teamId": "NZL",
       "elo": 1576,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-21T13:03:48.067Z",
+    "generatedAt": "2026-06-21T21:03:49.348Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 0,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.22,
-      "draw": 0.271,
-      "away": 0.509
+      "home": 0.2178,
+      "draw": 0.2863,
+      "away": 0.4959
     },
-    "confidence": 0.5848,
+    "confidence": 0.4988,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,17 @@
           "draw": 0.27,
           "away": 0.52
         },
-        "confidence": 0.56,
+        "confidence": 0.55,
         "keyFactors": [
-          "Ägypten klar stärker nach Elo (1692 vs 1576) und gewichteter Form (1.95 vs 1.15)",
-          "Sehr stabile ägyptische Defensive (0.51 Gegentore/Spiel, 55% Zu-Null) erschwert Neuseelands Offensive",
-          "Externer Markt sieht Ägypten als deutlichen Favoriten (0.61)",
-          "Neuseeland offensiv durchaus präsent (2.08 Tore/Spiel), kann zumindest punkten"
+          "Ägypten klar höher eingestuft (Elo 1692 vs 1576) und mit deutlich besserer Defensive (0,51 Gegentore/Spiel, 55% Zu-Null)",
+          "Stärkere gewichtete Form Ägyptens (1,95 vs 1,15) und höhere Erfahrung (29 vs 17 erfasste Spiele)",
+          "Markt sieht Ägypten als klaren Favoriten (0,61), was die Baseline-Tendenz stützt"
         ],
         "risks": [
-          "WM-Gruppenphase: Ägypten könnte vorsichtig agieren, Außenseiter Neuseeland steht tief - Remis-Gefahr",
-          "Mögliche Salah-Missstimmung im ägyptischen Lager könnte Leistung beeinträchtigen",
-          "Kein H2H-Datensatz vorhanden, höhere Unsicherheit",
-          "Neuseeland zeigte zuletzt ordentliche Form (recentForm 1.7), Überraschung nicht ausgeschlossen"
+          "Salah-Gerüchte/mögliche Unruhe im ägyptischen Lager könnten Stabilität beeinträchtigen",
+          "Neuseeland tritt oft kompakt auf (52% Zu-Null) und kann tief stehen – Remis-Gefahr gegen Favoriten",
+          "Turnierauftakte sind häufig torarm und vorsichtig, knappes Ergebnis möglich",
+          "Kein H2H-Datenpunkt vorhanden, erhöhte Prognoseunsicherheit"
         ]
       },
       "chatgpt": {
@@ -105,28 +104,27 @@
         },
         "probabilities": {
           "home": 0.28,
-          "draw": 0.3,
-          "away": 0.42
+          "draw": 0.35,
+          "away": 0.37
         },
-        "confidence": 0.65,
+        "confidence": 0.5,
         "keyFactors": [
-          "Ägypten hat ein höheres Elo-Rating und befindet sich in besserer Form als Neuseeland.",
-          "MaterialNews zeigt mögliche Missstimmung in Ägypten, aber keine entscheidenden Verletzungen.",
-          "Unentschieden im letzten Spiel von Neuseeland gegen Iran zeigt defensive Stabilität.",
-          "Neutraler Spielort, kein Heimvorteil für Neuseeland."
+          "Egypt has a higher Elo rating and recent form advantage.",
+          "Both teams have similar clean sheet rates, indicating strong defenses.",
+          "Neutral venue reduces typical home advantage."
         ],
         "risks": [
-          "Emotionale Faktoren: Missstimmung in ägyptischem Team könnte beeinflussen.",
-          "Unterbewertung der Motivation und defensiven Stabilität von Neuseeland."
+          "Possible unrest or distraction within the Egyptian team due to Salah-related news.",
+          "New Zealand's recent improvement in form might make them a tougher opponent than anticipated."
         ]
       }
     },
-    "agreement": 0.9333,
+    "agreement": 0.9,
     "ensembleWeights": {
-      "claude": 0.4922,
-      "chatgpt": 0.5078
+      "claude": 0.4928,
+      "chatgpt": 0.5072
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ägypten klar stärker nach Elo (1692 vs 1576) und gewichteter Form (1.95 vs 1.15); Sehr stabile ägyptische Defensive (0.51 Gegentore/Spiel, 55% Zu-Null) erschwert Neuseelands Offensive; Externer Markt sieht Ägypten als deutlichen Favoriten (0.61). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ägypten klar höher eingestuft (Elo 1692 vs 1576) und mit deutlich besserer Defensive (0,51 Gegentore/Spiel, 55% Zu-Null); Stärkere gewichtete Form Ägyptens (1,95 vs 1,15) und höhere Erfahrung (29 vs 17 erfasste Spiele); Markt sieht Ägypten als klaren Favoriten (0,61), was die Baseline-Tendenz stützt. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:0941b8057f1b476fef7b4ceecdaa50077d523203501eb94a5285ac3c0174e773"
   },
   "predictionHistory": [
@@ -298,11 +296,24 @@
         "away": 0.5107
       },
       "confidence": 0.5654
+    },
+    {
+      "generatedAt": "2026-06-21T13:03:48.067Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.22,
+        "draw": 0.271,
+        "away": 0.509
+      },
+      "confidence": 0.5848
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T20:03:47.413Z",
+    "updatedAt": "2026-06-21T21:05:27.489Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1572,
