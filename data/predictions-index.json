@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-21T06:03:46.520Z",
+  "lastUpdated": "2026-06-21T07:03:53.763Z",
   "aggregate": {
-    "finishedCount": 35,
-    "exactScoreRate": 0.1143,
-    "outcomeRate": 0.5429,
-    "brierMean": 0.5763,
-    "rpsMean": 0.1739
+    "finishedCount": 36,
+    "exactScoreRate": 0.1111,
+    "outcomeRate": 0.5556,
+    "brierMean": 0.5673,
+    "rpsMean": 0.1718
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 35,
-      "exactScoreRate": 0.0857,
-      "outcomeRate": 0.4286,
-      "brierMean": 0.5781,
-      "rpsMean": 0.1748
+      "finishedCount": 36,
+      "exactScoreRate": 0.0833,
+      "outcomeRate": 0.4444,
+      "brierMean": 0.5685,
+      "rpsMean": 0.1724
     },
     "chatgpt": {
-      "finishedCount": 35,
-      "exactScoreRate": 0.1714,
-      "outcomeRate": 0.4857,
-      "brierMean": 0.5832,
-      "rpsMean": 0.1783
+      "finishedCount": 36,
+      "exactScoreRate": 0.1667,
+      "outcomeRate": 0.5,
+      "brierMean": 0.5754,
+      "rpsMean": 0.1767
     },
     "weights": {
-      "claude": 0.4911,
-      "chatgpt": 0.5089
+      "claude": 0.4922,
+      "chatgpt": 0.5078
     }
   },
   "entries": [
@@ -1248,7 +1248,16 @@
         "draw": 0.2214,
         "away": 0.6531
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 0,
+        "away": 4
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.2506,
+        "rps": 0.0971
+      }
     },
     {
       "matchId": "wc2026-spain-saudi-arabia-2026-06-21",
@@ -1288,11 +1297,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.5927,
+        "home": 0.6152,
         "draw": 0.2156,
-        "away": 0.1917
+        "away": 0.1692
       },
-      "confidence": 0.6109,
+      "confidence": 0.6208,
       "expectedGoals": {
         "home": 2.12,
         "away": 1.48
