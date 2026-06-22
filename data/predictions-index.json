@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-21T23:43:06.292Z",
+  "lastUpdated": "2026-06-22T04:03:55.022Z",
   "aggregate": {
-    "finishedCount": 38,
-    "exactScoreRate": 0.1053,
-    "outcomeRate": 0.5526,
-    "brierMean": 0.5651,
-    "rpsMean": 0.1684
+    "finishedCount": 40,
+    "exactScoreRate": 0.1,
+    "outcomeRate": 0.55,
+    "brierMean": 0.5701,
+    "rpsMean": 0.1685
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 38,
-      "exactScoreRate": 0.0789,
-      "outcomeRate": 0.4474,
-      "brierMean": 0.5647,
-      "rpsMean": 0.1685
+      "finishedCount": 40,
+      "exactScoreRate": 0.075,
+      "outcomeRate": 0.45,
+      "brierMean": 0.5663,
+      "rpsMean": 0.1674
     },
     "chatgpt": {
-      "finishedCount": 38,
-      "exactScoreRate": 0.1579,
-      "outcomeRate": 0.5,
-      "brierMean": 0.5724,
-      "rpsMean": 0.1729
+      "finishedCount": 40,
+      "exactScoreRate": 0.15,
+      "outcomeRate": 0.475,
+      "brierMean": 0.5824,
+      "rpsMean": 0.175
     },
     "weights": {
-      "claude": 0.493,
-      "chatgpt": 0.507
+      "claude": 0.5003,
+      "chatgpt": 0.4997
     }
   },
   "entries": [
@@ -1356,7 +1356,16 @@
         "draw": 0.2098,
         "away": 0.096
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 2,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.9482,
+        "rps": 0.191
+      }
     },
     {
       "matchId": "wc2026-new-zealand-egypt-2026-06-21",
@@ -1383,7 +1392,16 @@
         "draw": 0.2355,
         "away": 0.6073
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 3
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.3835,
+        "rps": 0.1508
+      }
     },
     {
       "matchId": "wc2026-argentina-austria-2026-06-22",
@@ -1396,11 +1414,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.5879,
+        "home": 0.6026,
         "draw": 0.231,
-        "away": 0.1811
+        "away": 0.1664
       },
-      "confidence": 0.6827,
+      "confidence": 0.6804,
       "expectedGoals": {
         "home": 1.83,
         "away": 1.23
@@ -1419,15 +1437,15 @@
       "homeTeamId": "FRA",
       "awayTeamId": "IRQ",
       "predictedScore": {
-        "home": 3,
+        "home": 2,
         "away": 0
       },
       "probabilities": {
-        "home": 0.8619,
-        "draw": 0.0939,
+        "home": 0.8439,
+        "draw": 0.1119,
         "away": 0.0442
       },
-      "confidence": 0.84,
+      "confidence": 0.8113,
       "expectedGoals": {
         "home": 2.9,
         "away": 0.73
@@ -1450,11 +1468,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.4303,
-        "draw": 0.2596,
-        "away": 0.3102
+        "home": 0.4062,
+        "draw": 0.2967,
+        "away": 0.2972
       },
-      "confidence": 0.5463,
+      "confidence": 0.5408,
       "expectedGoals": {
         "home": 1.96,
         "away": 1.49
@@ -1477,11 +1495,11 @@
         "away": 2
       },
       "probabilities": {
-        "home": 0.1677,
-        "draw": 0.2263,
-        "away": 0.6061
+        "home": 0.1639,
+        "draw": 0.2259,
+        "away": 0.6102
       },
-      "confidence": 0.6435,
+      "confidence": 0.6167,
       "expectedGoals": {
         "home": 1.04,
         "away": 2.33

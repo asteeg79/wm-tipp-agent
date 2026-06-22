@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-21T23:43:06.292Z",
+    "generatedAt": "2026-06-22T04:03:55.022Z",
     "home": {
       "teamId": "NOR",
       "elo": 1702,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.854,
       "cleanSheetRate": 0.435,
       "matchesCount": 23,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "SEN",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.944,
       "cleanSheetRate": 0.629,
       "matchesCount": 35,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-21T21:03:49.348Z",
+    "generatedAt": "2026-06-22T04:03:55.022Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4303,
-      "draw": 0.2596,
-      "away": 0.3102
+      "home": 0.4062,
+      "draw": 0.2967,
+      "away": 0.2972
     },
-    "confidence": 0.5463,
+    "confidence": 0.5408,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,57 +76,58 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.44,
-          "draw": 0.26,
+          "home": 0.42,
+          "draw": 0.28,
           "away": 0.3
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Norwegen mit herausragender Offensivform (3,04 Tore/Spiel) und Haaland in Topform, zuletzt erfolgreicher WM-Auftakt",
-          "Senegal defensiv sehr stabil (Clean-Sheet-Rate 0,63) und mit höherem Elo (1757 vs 1702) sowie mehr Turniererfahrung",
-          "Neutraler Spielort neutralisiert klassischen Heimvorteil Norwegens",
-          "Beide Teams gut erholt (5 Tage Pause), ausgeglichene Form-Werte"
+          "Norwegen mit starker gewichteter Form (2.23) und hoher Offensivproduktion (3.04 Tore/Spiel) bei solider Defensive",
+          "Senegal mit höherem Elo (1757) und sehr stabiler Defensive (Clean-Sheet-Rate 0.63), aber etwas geringerer Torgefahr",
+          "Neutraler Spielort nivelliert den klassischen Heimvorteil – Partie ausgeglichener als reine Elo-Differenz",
+          "Markt sieht Spiel enger (Home 0.42) als die Baseline (0.49), was die Unentschieden-Tendenz stützt"
         ],
         "risks": [
-          "Berichte über mögliche Unruhe im Senegal-Lager ('Senegal-Chaos') schwer einzuschätzen, im Zweifel nicht überbewertet",
-          "Keine H2H-Daten vorhanden, hohe Unsicherheit über Kräfteverhältnis",
-          "Senegals kompakte Defensive könnte Norwegens Offensive ausbremsen und ein Remis begünstigen",
-          "Einzelne Genie-Aktionen (Haaland) können Spiel kippen, hohe Varianz bei torarmem Gruppenspiel"
+          "Keine H2H-Daten vorhanden, daher hohe Unsicherheit im direkten Vergleich",
+          "Mögliche Kaderunruhe/News im Senegal-Lager ('Senegal-Chaos') könnte Leistung beeinflussen, ist aber nicht eindeutig quantifizierbar",
+          "Norwegens Offensivstärke (u.a. Haaland) kann das Spiel kippen – Über/Unter-Risiko",
+          "Senegals kompakte Defensive könnte ein torarmes Remis erzwingen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.43,
-          "draw": 0.25,
-          "away": 0.32
+          "home": 0.38,
+          "draw": 0.33,
+          "away": 0.29
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Haaland's recent form with two goals increases Norway's offensive threat.",
-          "Senegal's slightly superior Elo rating indicates a competitive match.",
-          "Neutral venue eliminates home advantage."
+          "Norway's strong recent offensive form with high goals for average.",
+          "Senegal has a slightly higher Elo rating and a better clean sheet rate.",
+          "No head-to-head matchups between the two teams.",
+          "Neutral venue, minimizing home advantage considerations."
         ],
         "risks": [
-          "Potential for Senegal to regroup effectively despite recent disruptions.",
-          "Both teams have been defensively solid, increasing draw likelihood."
+          "Potential impact of any recent coach-related chaos in Senegal.",
+          "Variability in performance due to lack of direct head-to-head data."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9667,
     "ensembleWeights": {
-      "claude": 0.4928,
-      "chatgpt": 0.5072
+      "claude": 0.5003,
+      "chatgpt": 0.4997
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Norwegen mit herausragender Offensivform (3,04 Tore/Spiel) und Haaland in Topform, zuletzt erfolgreicher WM-Auftakt; Senegal defensiv sehr stabil (Clean-Sheet-Rate 0,63) und mit höherem Elo (1757 vs 1702) sowie mehr Turniererfahrung; Neutraler Spielort neutralisiert klassischen Heimvorteil Norwegens. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:ae93e3f83ec4210435d07be69c428bc4d6f264e78658831c5387b3bd5fd005e1"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Norwegen mit starker gewichteter Form (2.23) und hoher Offensivproduktion (3.04 Tore/Spiel) bei solider Defensive; Senegal mit höherem Elo (1757) und sehr stabiler Defensive (Clean-Sheet-Rate 0.63), aber etwas geringerer Torgefahr; Neutraler Spielort nivelliert den klassischen Heimvorteil – Partie ausgeglichener als reine Elo-Differenz. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:e409d4fd6457615bc859b032ef77f82b8a7bd18ad8fe2872b27e1316bb308f94"
   },
   "predictionHistory": [
     {
@@ -297,11 +298,24 @@
         "away": 0.2842
       },
       "confidence": 0.5597
+    },
+    {
+      "generatedAt": "2026-06-21T21:03:49.348Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4303,
+        "draw": 0.2596,
+        "away": 0.3102
+      },
+      "confidence": 0.5463
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-21T23:44:46.046Z",
+    "updatedAt": "2026-06-22T04:05:48.143Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4247,
