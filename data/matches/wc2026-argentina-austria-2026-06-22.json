@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T12:24:28.364Z",
+    "generatedAt": "2026-06-22T13:03:54.202Z",
     "home": {
       "teamId": "ARG",
       "elo": 1903,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-22T10:03:49.758Z",
+    "generatedAt": "2026-06-22T13:03:54.202Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6151,
-      "draw": 0.2204,
-      "away": 0.1645
+      "home": 0.6215,
+      "draw": 0.2228,
+      "away": 0.1558
     },
-    "confidence": 0.685,
+    "confidence": 0.6827,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.6,
+          "home": 0.61,
           "draw": 0.22,
-          "away": 0.18
+          "away": 0.17
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Argentinien klar höher eingestuft (Elo 1903 vs 1702) und amtierender Weltmeister",
-          "Exzellente Defensive Argentiniens: GA-Schnitt 0.31 und 64% Clean-Sheet-Rate",
-          "Beide Teams in guter Form, aber Argentinien stabiler über mehr Spiele",
-          "Markt sieht Argentinien noch deutlicher vorne (0.65) als die Baseline (0.52)"
+          "Argentinien klar höhere Elo (1903 vs 1702) und Weltmeister-Klasse",
+          "Herausragende Defensive Argentiniens (0,31 Gegentore/Spiel, 64% Zu-Null-Rate)",
+          "Beide Teams in starker Form, aber Austria deutlich anfälliger hinten (0,72 GA, nur 30% Clean Sheets)",
+          "Markt sieht Argentinien klarer (66%) als die Baseline (52%) – Wahrheit dazwischen"
         ],
         "risks": [
-          "Österreich unter Rangnick offensiv stark (2.65 Tore/Spiel) und kann kontern",
-          "Neutraler Spielort ohne Heimvorteil für Argentinien",
-          "Gruppenphasen-Spiele oft vorsichtig/torarm, Außenseiter steht oft tief",
-          "Mögliche Rotation oder Unterschätzung des Gegners"
+          "Austria hat selbst gute Offensive (2,65 Tore/Spiel) und kann kontern",
+          "WM-Gruppenphase: kompakte Außenseiter erschweren Favoritensiege, Remis-Gefahr",
+          "Mögliche Rotation/Vorsicht im Turnierauftakt",
+          "Kein H2H-Datenmaterial vorhanden"
         ]
       },
       "chatgpt": {
@@ -105,27 +105,27 @@
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.22,
-          "away": 0.18
+          "draw": 0.23,
+          "away": 0.17
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Argentina's strong recent form with high goal-scoring ability and solid defense.",
-          "Austria's decent recent form but weaker comparative Elo rating.",
-          "Argentina's higher market confidence reflects in the external forecast."
+          "Argentina's higher Elo rating and recent consistent form.",
+          "Argentina's strong defensive record with a high clean sheet rate.",
+          "Neutral venue reduces 'home' advantage but favors more experienced teams like Argentina."
         ],
         "risks": [
-          "Scaloni's concern about new rules possibly benefiting weaker teams.",
-          "Neutral venue minimizes home advantage."
+          "Austria's competitive recent form and ability to score goals.",
+          "Initial group stage dynamics often lead to conservative play."
         ]
       }
     },
-    "agreement": 1,
+    "agreement": 0.9933,
     "ensembleWeights": {
       "claude": 0.5003,
       "chatgpt": 0.4997
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar höher eingestuft (Elo 1903 vs 1702) und amtierender Weltmeister; Exzellente Defensive Argentiniens: GA-Schnitt 0.31 und 64% Clean-Sheet-Rate; Beide Teams in guter Form, aber Argentinien stabiler über mehr Spiele. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar höhere Elo (1903 vs 1702) und Weltmeister-Klasse; Herausragende Defensive Argentiniens (0,31 Gegentore/Spiel, 64% Zu-Null-Rate); Beide Teams in starker Form, aber Austria deutlich anfälliger hinten (0,72 GA, nur 30% Clean Sheets). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:e7dea60aefe35a0bb72ca8eb3d855b5cfb05ae959242156897982d5aaeaedd6a"
   },
   "predictionHistory": [
@@ -349,21 +349,34 @@
         "away": 0.1534
       },
       "confidence": 0.6534
+    },
+    {
+      "generatedAt": "2026-06-22T10:03:49.758Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6151,
+        "draw": 0.2204,
+        "away": 0.1645
+      },
+      "confidence": 0.685
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T12:24:28.846Z",
+    "updatedAt": "2026-06-22T13:03:54.827Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.6581,
-      "draw": 0.2184,
-      "away": 0.1236
+      "home": 0.661,
+      "draw": 0.2164,
+      "away": 0.1226
     },
     "decimal": {
-      "home": 1.46,
-      "draw": 4.4,
-      "away": 7.78
+      "home": 1.47,
+      "draw": 4.47,
+      "away": 7.9
     }
   }
 }
