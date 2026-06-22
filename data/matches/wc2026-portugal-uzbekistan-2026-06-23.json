@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T04:03:55.022Z",
+    "generatedAt": "2026-06-22T05:03:48.863Z",
     "home": {
       "teamId": "POR",
       "elo": 1773,
@@ -50,80 +50,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-22T05:03:48.863Z",
     "predictedScore": {
       "home": 2,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.6574,
-      "draw": 0.1891,
-      "away": 0.1536
+      "home": 0.7373,
+      "draw": 0.1631,
+      "away": 0.0996
     },
-    "confidence": 0.6736,
+    "confidence": 0.7003,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.5758,
-        "draw": 0.2228,
-        "away": 0.2015
+        "home": 0.6739,
+        "draw": 0.1871,
+        "away": 0.139
       },
       "expectedGoals": {
-        "home": 1.89,
-        "away": 1.02
+        "home": 2.23,
+        "away": 0.9
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.63,
-          "draw": 0.2,
-          "away": 0.17
+          "home": 0.72,
+          "draw": 0.17,
+          "away": 0.11
         },
-        "confidence": 0.62,
+        "confidence": 0.66,
         "keyFactors": [
-          "Portugal mit deutlich höherem Elo (1793 vs 1676) und stärkerer gewichteter Form (2.01 vs 1.71)",
-          "Höhere Offensivkraft Portugals (2.32 Tore/Spiel) gegenüber Usbekistan (1.51)",
-          "Externer Forecast sieht Portugal noch klarer vorn (0.76), stützt Anpassung leicht nach oben gegenüber Baseline",
-          "Neutraler Spielort, daher keine Heimvorteil-Verzerrung zugunsten Portugals"
+          "Portugal deutlich stärker (Elo 1773 vs 1610) mit besserer Form (weightedForm 1.80 vs 1.17)",
+          "Portugals Offensive (2.05 Tore/Spiel) gegenüber Uzbekistans wackliger Defensive (1.55 Gegentore/Spiel)",
+          "Markt sieht Portugal klar vorne (80%), Baseline etwas vorsichtiger (67%)",
+          "Neutraler Spielort, beide Teams gleiche Erholung (5 Tage)"
         ],
         "risks": [
-          "Usbekistan defensiv stark: Clean-Sheet-Rate 0.625 könnte Portugals Torausbeute dämpfen",
-          "Lange Pause Usbekistans (131 Tage) und Portugals (67 Tage) erschwert Formeinschätzung",
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
-          "Neuer Trainer (Cannavaro) bei Usbekistan kann taktische Überraschungen bringen"
+          "WM-Auftakt oft vorsichtig/torarm, Außenseiter steht tief und kompakt",
+          "Uzbekistan hat hohe Clean-Sheet-Rate (0.60) und könnte defensiv stabil agieren",
+          "Keine H2H-Historie verfügbar",
+          "Portugal könnte sich an kompaktem Abwehrblock festbeißen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.68,
-          "draw": 0.18,
-          "away": 0.14
+          "home": 0.7000000000000001,
+          "draw": 0.18000000000000002,
+          "away": 0.12000000000000001
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Portugal hat eine höhere Elo-Zahl als Usbekistan, was auf eine allgemein stärkere Mannschaft hindeutet.",
-          "Portugal hat eine bessere gewichtete Form (2.01) im Vergleich zu Usbekistan (1.707).",
-          "Portugal erzielt durchschnittlich mehr Tore (2.32) pro Spiel im Vergleich zu Usbekistan (1.51).",
-          "Usbekistan hat eine hohe Clean Sheet Rate (0.625), was auf eine solide Defensive hinweist."
+          "Portugal hat eine stärkere Elo-Wertung und bessere Form",
+          "Portugal erzielt im Durchschnitt mehr Tore und hat eine geringere Gegentorquote",
+          "kein direktes Aufeinandertreffen in der Vergangenheit; Stärkeverhältnis anhand allgemeiner Daten bewertet"
         ],
         "risks": [
-          "Die Partie wird auf neutralem Boden ausgetragen, wodurch kein Heimvorteil besteht.",
-          "Usbekistan hat seit mehr als 4 Monaten kein Spiel gespielt, was unvorhergesehene Form- oder Motivationsänderungen bedeuten könnte."
+          "Neutraler Spielort, kein Heimvorteil für Portugal",
+          "Uzbekistan hat eine hohe Clean-Sheet-Rate"
         ]
       }
     },
-    "agreement": 0.9667,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal mit deutlich höherem Elo (1793 vs 1676) und stärkerer gewichteter Form (2.01 vs 1.71); Höhere Offensivkraft Portugals (2.32 Tore/Spiel) gegenüber Usbekistan (1.51); Externer Forecast sieht Portugal noch klarer vorn (0.76), stützt Anpassung leicht nach oben gegenüber Baseline.",
-    "inputHash": "sha256:8f12a8f865ba0f70e087e543a6dbd95763e0c5f4b46da217b779f43adebe564e"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5003,
+      "chatgpt": 0.4997
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugal deutlich stärker (Elo 1773 vs 1610) mit besserer Form (weightedForm 1.80 vs 1.17); Portugals Offensive (2.05 Tore/Spiel) gegenüber Uzbekistans wackliger Defensive (1.55 Gegentore/Spiel); Markt sieht Portugal klar vorne (80%), Baseline etwas vorsichtiger (67%). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:121f21368337daa3dab61f79a074161c8b2d4551b161d7fb37bd57fa52770b6c"
   },
   "predictionHistory": [
     {
@@ -268,11 +271,24 @@
         "away": 0.1489
       },
       "confidence": 0.6918
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6574,
+        "draw": 0.1891,
+        "away": 0.1536
+      },
+      "confidence": 0.6736
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T04:05:48.143Z",
+    "updatedAt": "2026-06-22T05:03:49.266Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8024,
