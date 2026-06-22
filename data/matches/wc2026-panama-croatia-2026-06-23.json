@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T10:48:34.089Z",
+    "generatedAt": "2026-06-22T11:03:47.177Z",
     "home": {
       "teamId": "PAN",
       "elo": 1590,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-22T11:03:47.177Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1668,
-      "draw": 0.2223,
-      "away": 0.6109
+      "home": 0.1597,
+      "draw": 0.2435,
+      "away": 0.5967
     },
-    "confidence": 0.6804,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.211,
-        "draw": 0.2169,
-        "away": 0.5721
+        "home": 0.2593,
+        "draw": 0.222,
+        "away": 0.5187
       },
       "expectedGoals": {
-        "home": 1.11,
-        "away": 1.97
+        "home": 1.3,
+        "away": 1.92
       }
     },
     "models": {
@@ -80,51 +80,55 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.175,
-          "draw": 0.225,
-          "away": 0.6
+          "home": 0.19,
+          "draw": 0.24,
+          "away": 0.57
         },
-        "confidence": 0.62,
+        "confidence": 0.55,
         "keyFactors": [
-          "Kroatien deutlich höhere Elo (1778 vs 1642) und bessere gewichtete Form (2.103 vs 1.793)",
-          "Starke aktuelle Form Kroatiens (recentForm 2.5) und höhere Offensivkraft (goalsForAvg 2.205)",
-          "Neutraler Spielort eliminiert Heimvorteil für Panama",
-          "Externe Prognose stützt klare Favoritenrolle Kroatiens (0.634 Auswärtssieg)"
+          "Kroatien deutlich höhere Elo (1735 vs 1590) und stärkere recentForm (2.2 vs 1.6)",
+          "Kroatiens höhere Offensivproduktion (goalsForAvg 2.16 vs 1.30)",
+          "Markt sieht Kroatien klar vorne (62%), Baseline ebenfalls (52%) – beide einig",
+          "Neutraler Spielort, kein Heimvorteil für Panama"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit",
-          "Panama defensiv solide (goalsAgainstAvg 1.012), könnte das Spiel eng halten",
-          "Materielle News enthalten keine verwertbaren Kaderinfos zu Verletzungen/Sperren",
-          "Lange Pause beider Teams (67 Tage) könnte Rhythmus beeinflussen"
+          "Panama steht traditionell tief und kompakt, niedriger goalsAgainstAvg (1.01) – kann Favoriten frustrieren",
+          "Kroatiens schwache Defensive (goalsAgainstAvg 1.727) ermöglicht Panama Treffer",
+          "Gruppenphasen-Auftakt oft vorsichtig und torarm",
+          "Keine H2H-Historie als Referenz"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.16,
-          "draw": 0.22,
-          "away": 0.62
+          "home": 0.15,
+          "draw": 0.25,
+          "away": 0.6
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Croatia's higher Elo rating indicating a stronger team overall.",
-          "Croatia's recent form being significantly better than Panama's.",
-          "Panama has not faced Croatia before, possible unpreparedness for Croatia's playstyle.",
-          "Neutral venue, no home advantage for either team."
+          "Kroatien hat einen hohen Elo-Wert von 1735, deutlich über dem von Panama mit 1590.",
+          "Kroatien hat eine stärkere Auswärts-Weighted-Form von 1.65 gegenüber Panamas 1.506.",
+          "Keine direkten Begegnungen, aber Kroatien hat einen stärkeren Kader und mehr internationale Erfahrung.",
+          "Kroatien erzielt im Durchschnitt mehr Tore (2.161 pro Spiel) verglichen mit Panama.",
+          "Klares Signal von Buchmacherquoten, die Kroatien als starken Favoriten betrachten."
         ],
         "risks": [
-          "Lack of head-to-head history adds uncertainty to the match dynamics.",
-          "Panama's recent stabilization in form.",
-          "Possible morale impact due to recent coaching changes in Croatia."
+          "Das Spiel findet auf neutralem Boden statt, was den Einfluss der Zuschauer eliminiert.",
+          "WM-Gruppenspiele sind potenziell torarm und taktisch geprägt, Unentschieden ist immer möglich."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien deutlich höhere Elo (1778 vs 1642) und bessere gewichtete Form (2.103 vs 1.793); Starke aktuelle Form Kroatiens (recentForm 2.5) und höhere Offensivkraft (goalsForAvg 2.205); Neutraler Spielort eliminiert Heimvorteil für Panama.",
-    "inputHash": "sha256:6aee95495bc577ce3b4a6e9cf8779d78bd6e6a619b615c55250a9364dcd422e2"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5003,
+      "chatgpt": 0.4997
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien deutlich höhere Elo (1735 vs 1590) und stärkere recentForm (2.2 vs 1.6); Kroatiens höhere Offensivproduktion (goalsForAvg 2.16 vs 1.30); Markt sieht Kroatien klar vorne (62%), Baseline ebenfalls (52%) – beide einig. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:94de98b257c47b3c5c0e4334cb4fc02271f995f5e5a711dc3766912b285deca5"
   },
   "predictionHistory": [
     {
@@ -243,12 +247,25 @@
         "away": 0.61
       },
       "confidence": 0.6965
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1668,
+        "draw": 0.2223,
+        "away": 0.6109
+      },
+      "confidence": 0.6804
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T10:48:36.373Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-22T11:03:47.823Z",
+    "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1414,
       "draw": 0.2387,
