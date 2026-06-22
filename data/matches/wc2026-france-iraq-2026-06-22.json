@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T13:03:54.202Z",
+    "generatedAt": "2026-06-22T14:03:56.209Z",
     "home": {
       "teamId": "FRA",
       "elo": 1884,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-22T12:03:56.708Z",
+    "generatedAt": "2026-06-22T14:03:56.209Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8629,
-      "draw": 0.0925,
-      "away": 0.0446
+      "home": 0.8435,
+      "draw": 0.1049,
+      "away": 0.0516
     },
-    "confidence": 0.825,
+    "confidence": 0.8069,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,20 +80,20 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.85,
+          "home": 0.84,
           "draw": 0.1,
-          "away": 0.05
+          "away": 0.06
         },
-        "confidence": 0.8,
+        "confidence": 0.78,
         "keyFactors": [
-          "Frankreich mit deutlich höherem Elo (1884 vs 1569) und starker Form (weightedForm 2.55)",
-          "Offensive Überlegenheit: FRA 2.48 Tore/Spiel vs Iraks Defensivschwäche (1.66 Gegentore/Spiel)",
-          "Individuelle Klasse und Kadertiefe Frankreichs klar über Irak"
+          "Großer Elo-Unterschied (1884 vs. 1569) und klar überlegene gewichtete Form Frankreichs (2.55 vs. 1.48)",
+          "Frankreich mit hoher Offensivproduktivität (2.48 Tore/Spiel) gegen anfällige irakische Defensive (1.66 Gegentore/Spiel)",
+          "Markt sieht Frankreich noch klarer (88,8%) als die Baseline, beide deuten auf deutlichen Favoritensieg"
         ],
         "risks": [
-          "Irak könnte tief und kompakt stehen und das Ergebnis niedrig halten",
-          "Mögliche Rotation Frankreichs bei früher Führung oder bereits gesicherter Situation",
-          "Standardsituationen könnten Irak unerwartet ins Spiel bringen"
+          "Iraks solide Clean-Sheet-Rate (0.44) und mögliche tiefe, kompakte Defensive könnten Frankreich das Toreschießen erschweren",
+          "Mögliche Rotation oder Vorsicht im Gruppenspiel könnte das Ergebnis enger gestalten",
+          "Mögliche Verletzungs-/Verfügbarkeitsfragen im französischen Sturm laut News"
         ]
       },
       "chatgpt": {
@@ -102,28 +102,28 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.85,
-          "draw": 0.1,
-          "away": 0.05
+          "home": 0.81,
+          "draw": 0.13,
+          "away": 0.06
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Frankreichs überlegene Elo-Wertung und aktuelle Form",
-          "Irak hat keine Erfahrung in K.O.-Spielen gegen hochkarätige Gegner",
-          "Frankreichs starkes Torverhältnis und Abwehrstärke"
+          "Frankreich hat einen erheblichen ELO-Vorsprung gegenüber Irak.",
+          "Frankreichs hohe Formleistung und Torgefährlichkeit (2.475 Tore pro Spiel).",
+          "Irak ist defensiv anfällig (1.661 Gegentore pro Spiel).",
+          "Das Spiel findet auf neutralem Boden statt, es gibt keinen Heimvorteil."
         ],
         "risks": [
-          "Möglichkeit, dass Frankreich im ersten Turnierspiel defensiv agiert",
-          "Irak könnte defensiv stark stehen und es Frankreich schwer machen, zu Chancen zu kommen"
+          "Möglichkeit einer Spielverschiebung aufgrund von extremen Wetterbedingungen, die das Spielsystem beeinflussen könnten."
         ]
       }
     },
-    "agreement": 1,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.5003,
       "chatgpt": 0.4997
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit deutlich höherem Elo (1884 vs 1569) und starker Form (weightedForm 2.55); Offensive Überlegenheit: FRA 2.48 Tore/Spiel vs Iraks Defensivschwäche (1.66 Gegentore/Spiel); Individuelle Klasse und Kadertiefe Frankreichs klar über Irak. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1884 vs. 1569) und klar überlegene gewichtete Form Frankreichs (2.55 vs. 1.48); Frankreich mit hoher Offensivproduktivität (2.48 Tore/Spiel) gegen anfällige irakische Defensive (1.66 Gegentore/Spiel); Markt sieht Frankreich noch klarer (88,8%) als die Baseline, beide deuten auf deutlichen Favoritensieg. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:74154a463f1ea0d205c4aebcaa8df9e6fa819e78df7a221660baa4a1ab804aec"
   },
   "predictionHistory": [
@@ -347,11 +347,24 @@
         "away": 0.044
       },
       "confidence": 0.84
+    },
+    {
+      "generatedAt": "2026-06-22T12:03:56.708Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8629,
+        "draw": 0.0925,
+        "away": 0.0446
+      },
+      "confidence": 0.825
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T13:03:54.827Z",
+    "updatedAt": "2026-06-22T14:06:01.947Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8881,
