@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T07:03:43.164Z",
+    "generatedAt": "2026-06-22T08:05:07.707Z",
     "home": {
       "teamId": "ENG",
       "elo": 1827,
@@ -50,79 +50,85 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-22T08:05:07.707Z",
     "predictedScore": {
-      "home": 3,
-      "away": 1
+      "home": 2,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.7247,
-      "draw": 0.1783,
-      "away": 0.097
+      "home": 0.7642,
+      "draw": 0.1486,
+      "away": 0.0873
     },
-    "confidence": 0.7438,
+    "confidence": 0.7575,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.75,
-        "draw": 0.1567,
-        "away": 0.0933
+        "home": 0.7396,
+        "draw": 0.1573,
+        "away": 0.103
       },
       "expectedGoals": {
-        "home": 2.46,
-        "away": 0.75
+        "home": 2.52,
+        "away": 0.84
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.73,
-          "draw": 0.165,
-          "away": 0.105
+          "home": 0.76,
+          "draw": 0.15,
+          "away": 0.09
         },
-        "confidence": 0.7,
+        "confidence": 0.72,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung England (1829 vs 1548) und starke gewichtete Form (2.03 vs 1.19)",
-          "Englands defensive Stabilität: niedriger Gegentorschnitt (0.52) und hohe Clean-Sheet-Rate (55%)",
-          "Ghana mit anfälliger Defensive (1.56 Gegentore/Spiel, nur 32% Clean Sheets)",
-          "Neutraler Spielort, kein Heimvorteil für eine Seite"
+          "Großer Elo-Unterschied (1827 vs 1548) zugunsten Englands",
+          "Englands starke Form (weightedForm 2.23) und solide Defensive (cleanSheetRate 0.53, 0.83 Gegentore/Spiel)",
+          "Hohe Offensivkraft Englands (2.40 Tore/Spiel) gegen Ghanas durchschnittliche Defensive (1.17 Gegentore)",
+          "Markt und Baseline sehen England klar vorne (0.74-0.79)"
         ],
         "risks": [
-          "Mögliche taktische Unsicherheit bei England durch Tuchels umstrittene Kader-/Rollenentscheidungen (z.B. Kane)",
-          "Ghana verzichtet laut News auf einige Stars, was Offensivpotenzial schwächen, aber auch Teamgefüge beeinflussen kann",
-          "Lange Pause beider Teams (67/68 Tage) kann Rhythmusprobleme verursachen",
-          "Keine H2H-Daten vorhanden – erhöhte Unsicherheit bei direkter Einschätzung"
+          "Tuchel-Kaderausfälle (Foden, Palmer, Alexander-Arnold) könnten Englands Offensive schwächen",
+          "WM-Auftaktspiele oft vorsichtig; Ghana könnte tief und kompakt verteidigen",
+          "Ghana mit individueller Qualität kann bei Kontern gefährlich werden",
+          "Kein H2H-Datenmaterial vorhanden"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 3,
-          "away": 1
+          "home": 2,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.7200000000000001,
-          "draw": 0.19000000000000003,
-          "away": 0.09000000000000001
+          "home": 0.75,
+          "draw": 0.15,
+          "away": 0.1
         },
         "confidence": 0.8,
         "keyFactors": [
-          "Englands höhere Elo-Zahl und starke Form der letzten Zeit.",
-          "Ghanas relativ schwächere Defensivstatistik mit höheren Gegentoren pro Spiel.",
-          "Englands positive Nachrichtenlage bezüglich überraschender strategischer Rollen für Schlüsselspieler."
+          "England hat einen sehr hohen Elo-Wert von 1827 im Vergleich zu Ghanas 1548.",
+          "Englands weightedForm und recentForm sind stärker als die von Ghana.",
+          "England hat eine höhere Torquote (2.404) und eine bessere Defensivbilanz (0.825 Gegentore im Schnitt) als Ghana.",
+          "Fehlen von Foden, Palmer & Alexander-Arnold im England-Kader, aber der Kader ist dennoch sehr stark besetzt.",
+          "Neutrale Venue ohne Vorteil für eine der beiden Mannschaften."
         ],
         "risks": [
-          "Thomas Tuchels experimentelle Taktiken könnten die Teamdynamik beeinflussen.",
-          "Neutraler Spielort reduziert den Heimvorteil für England."
+          "Ghana hat jüngst einen Erfolg gefeiert, was möglicherweise ihr Selbstvertrauen stärkt.",
+          "Erfahrungen in WM-Spielen, die Ghana als Außenseiter dazu bringen könnten, defensiv kompakt zu stehen."
         ]
       }
     },
-    "agreement": 0.9833,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung England (1829 vs 1548) und starke gewichtete Form (2.03 vs 1.19); Englands defensive Stabilität: niedriger Gegentorschnitt (0.52) und hohe Clean-Sheet-Rate (55%); Ghana mit anfälliger Defensive (1.56 Gegentore/Spiel, nur 32% Clean Sheets).",
-    "inputHash": "sha256:43abb3b4953c608c5e66eb0917d454ad74b24a4dd4af3f128b679085562b4ebf"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5003,
+      "chatgpt": 0.4997
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1827 vs 1548) zugunsten Englands; Englands starke Form (weightedForm 2.23) und solide Defensive (cleanSheetRate 0.53, 0.83 Gegentore/Spiel); Hohe Offensivkraft Englands (2.40 Tore/Spiel) gegen Ghanas durchschnittliche Defensive (1.17 Gegentore). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:98828b6f2be8c3a43ea54ad1337ffeae8c2ad8ba8c00bde795565b07bd80a200"
   },
   "predictionHistory": [
     {
@@ -267,21 +273,34 @@
         "away": 0.1131
       },
       "confidence": 0.708
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7247,
+        "draw": 0.1783,
+        "away": 0.097
+      },
+      "confidence": 0.7438
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T07:05:39.116Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-22T08:06:48.728Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.7836,
-      "draw": 0.1468,
-      "away": 0.0696
+      "home": 0.7862,
+      "draw": 0.1453,
+      "away": 0.0685
     },
     "decimal": {
       "home": 1.22,
-      "draw": 6.51,
-      "away": 13.74
+      "draw": 6.6,
+      "away": 14
     }
   }
 }
