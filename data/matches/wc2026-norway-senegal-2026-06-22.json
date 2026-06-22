@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T19:03:49.093Z",
+    "generatedAt": "2026-06-22T20:03:55.984Z",
     "home": {
       "teamId": "NOR",
       "elo": 1702,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-22T12:03:56.708Z",
+    "generatedAt": "2026-06-22T20:03:55.984Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4265,
-      "draw": 0.2855,
-      "away": 0.288
+      "home": 0.4167,
+      "draw": 0.2954,
+      "away": 0.2879
     },
-    "confidence": 0.5772,
+    "confidence": 0.539,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,18 +84,18 @@
           "draw": 0.27,
           "away": 0.29
         },
-        "confidence": 0.52,
+        "confidence": 0.5,
         "keyFactors": [
-          "Norwegen mit sehr starker Offensive (3,04 Tore/Spiel) und guter Form (weightedForm 2,23), inkl. Top-Torjäger Haaland",
-          "Senegal defensiv stabil (Clean-Sheet-Rate 0,63) und höherer Elo (1757 vs 1702), aber etwas schwächere Form",
-          "Neutraler Spielort ohne Heimvorteil, beide Teams gleich ausgeruht (6 Tage Pause)",
-          "Baseline und Markt sehen Norwegen als leichten Favoriten, der Markt jedoch ausgeglichener"
+          "Norwegen mit überragender Offensivform (3,04 Tore/Spiel, gewichtete Form 2,23) und nur 0,85 Gegentoren - aktuell sehr formstark",
+          "Senegal mit leicht höherem Elo (1757 vs 1702) und sehr stabiler Defensive (Clean-Sheet-Rate 0,63), aber schwächerer Offensive",
+          "Neutraler Spielort - kein Heimvorteil für Norwegen",
+          "Markt sieht Partie ausgeglichener (Heim 0,43) als die Elo-Baseline (0,49); beide Signale lassen Remis-Wahrscheinlichkeit deutlich anwachsen"
         ],
         "risks": [
-          "Senegals kompakte Defensive könnte Norwegens Offensive ausbremsen und ein torarmes Remis begünstigen",
-          "Berichte über mögliche Unruhe im senegalesischen Lager ('Senegal-Chaos') – Auswirkung unklar",
-          "Kein H2H-Vergleich vorhanden, erhöht die Unsicherheit",
-          "Turnierkontext (Gruppenphase) begünstigt vorsichtige, knappe Ergebnisse"
+          "Senegals kompakte Defensive könnte Norwegens Offensive ausbremsen - torarmes Remis möglich",
+          "Berichte über mögliche Unruhe/Chaos im senegalesischen Lager (Trainer Thiaw) - schwer einzuschätzende Auswirkung",
+          "Kein Head-to-Head-Vergleich vorhanden, erhöhte Prognoseunsicherheit",
+          "Gruppenphasen-Auftakt oft vorsichtig und torarm"
         ]
       },
       "chatgpt": {
@@ -104,29 +104,28 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.31,
-          "away": 0.29
+          "home": 0.39,
+          "draw": 0.33,
+          "away": 0.28
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Beide Teams haben eine ähnliche jüngste Form und Elo-Werte, was auf ein ausgeglichenes Match hindeutet.",
-          "Senegal hat eine etwas stärkere Defensive mit einer höheren Clean-Sheet-Rate.",
-          "Norwegens höhere durchschnittliche Tore pro Spiel könnten durch Senegals Defensivstärke ausgeglichen werden.",
-          "Das Spiel findet auf neutralem Boden statt, was keine der beiden Mannschaften bevorzugt."
+          "Norway has a high goals scored average (3.043) and a solid defensive record (goals against avg 0.854).",
+          "Senegal has a higher elo rating (1757 vs. 1702) but faces potential coaching issues.",
+          "The match is at a neutral venue, which minimizes home advantage."
         ],
         "risks": [
-          "Unbekannte Head-to-Head-Dynamik, da beide Teams noch nie gegeneinander gespielt haben.",
-          "Unklarheit über das wirkliche Ausmaß der Auswirkungen von eventuellem 'Fußball-Chaos' in der senegalesischen Mannschaft."
+          "No head-to-head data available, adding uncertainty to the outcome.",
+          "Potential impact of coaching stability issues in the Senegal team."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.96,
     "ensembleWeights": {
-      "claude": 0.5003,
-      "chatgpt": 0.4997
+      "claude": 0.5005,
+      "chatgpt": 0.4995
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Norwegen mit sehr starker Offensive (3,04 Tore/Spiel) und guter Form (weightedForm 2,23), inkl. Top-Torjäger Haaland; Senegal defensiv stabil (Clean-Sheet-Rate 0,63) und höherer Elo (1757 vs 1702), aber etwas schwächere Form; Neutraler Spielort ohne Heimvorteil, beide Teams gleich ausgeruht (6 Tage Pause). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Norwegen mit überragender Offensivform (3,04 Tore/Spiel, gewichtete Form 2,23) und nur 0,85 Gegentoren - aktuell sehr formstark; Senegal mit leicht höherem Elo (1757 vs 1702) und sehr stabiler Defensive (Clean-Sheet-Rate 0,63), aber schwächerer Offensive; Neutraler Spielort - kein Heimvorteil für Norwegen. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:e409d4fd6457615bc859b032ef77f82b8a7bd18ad8fe2872b27e1316bb308f94"
   },
   "predictionHistory": [
@@ -324,11 +323,24 @@
         "away": 0.2972
       },
       "confidence": 0.5408
+    },
+    {
+      "generatedAt": "2026-06-22T12:03:56.708Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4265,
+        "draw": 0.2855,
+        "away": 0.288
+      },
+      "confidence": 0.5772
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T19:03:49.673Z",
+    "updatedAt": "2026-06-22T20:05:48.673Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.426,
