@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T09:03:54.931Z",
+    "generatedAt": "2026-06-22T10:03:49.758Z",
     "home": {
       "teamId": "ARG",
       "elo": 1903,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-22T08:05:07.707Z",
+    "generatedAt": "2026-06-22T10:03:49.758Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
       "home": 0.6151,
-      "draw": 0.2315,
-      "away": 0.1534
+      "draw": 0.2204,
+      "away": 0.1645
     },
-    "confidence": 0.6534,
+    "confidence": 0.685,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -86,46 +86,46 @@
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Argentinien klar stärker: Elo 1903 vs. 1702, Weltmeister-Klasse und herausragende Defensive (nur 0.31 Gegentore/Spiel, 64% Zu-Null)",
-          "Sehr starke gewichtete Form (2.65) und hohe Offensivwucht (2.63 Tore/Spiel) sprechen für Argentinien",
-          "Markt sieht Argentinien mit 0.65 deutlich vor der konservativeren Baseline (0.52) – ich positioniere mich dazwischen, klar pro Argentinien",
-          "Österreich offensiv durchaus gefährlich (2.65 Tore/Spiel), aber defensiv anfällig (0.72 Gegentore, nur 30% Zu-Null)"
+          "Argentinien klar höher eingestuft (Elo 1903 vs 1702) und amtierender Weltmeister",
+          "Exzellente Defensive Argentiniens: GA-Schnitt 0.31 und 64% Clean-Sheet-Rate",
+          "Beide Teams in guter Form, aber Argentinien stabiler über mehr Spiele",
+          "Markt sieht Argentinien noch deutlicher vorne (0.65) als die Baseline (0.52)"
         ],
         "risks": [
-          "Österreich unter Rangnick spielt mutig und kompakt, könnte das Spiel torarm und eng halten",
-          "Gruppenphasen-Auftakt oft vorsichtig – ein knappes Ergebnis oder Remis ist möglich",
-          "Kein H2H-Verlauf vorhanden, neutraler Spielort nimmt Argentinien Heimvorteil",
-          "Mögliche Rotation/Unterschätzung bei Favorit Argentinien"
+          "Österreich unter Rangnick offensiv stark (2.65 Tore/Spiel) und kann kontern",
+          "Neutraler Spielort ohne Heimvorteil für Argentinien",
+          "Gruppenphasen-Spiele oft vorsichtig/torarm, Außenseiter steht oft tief",
+          "Mögliche Rotation oder Unterschätzung des Gegners"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.25,
-          "away": 0.15
+          "draw": 0.22,
+          "away": 0.18
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Argentinien hat deutlich höhere Elo-Wertung als Österreich.",
-          "Argentinien hat eine starke Offensivstatistik und gute Defensivwerte.",
-          "Neutraler Spielort, keine Mannschaft hat Heimvorteil."
+          "Argentina's strong recent form with high goal-scoring ability and solid defense.",
+          "Austria's decent recent form but weaker comparative Elo rating.",
+          "Argentina's higher market confidence reflects in the external forecast."
         ],
         "risks": [
-          "Erstmaliges Aufeinandertreffen, keine direkte H2H-Historie.",
-          "Österreichs Offensivwerte sind vergleichbar mit denen Argentiniens."
+          "Scaloni's concern about new rules possibly benefiting weaker teams.",
+          "Neutral venue minimizes home advantage."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 1,
     "ensembleWeights": {
       "claude": 0.5003,
       "chatgpt": 0.4997
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar stärker: Elo 1903 vs. 1702, Weltmeister-Klasse und herausragende Defensive (nur 0.31 Gegentore/Spiel, 64% Zu-Null); Sehr starke gewichtete Form (2.65) und hohe Offensivwucht (2.63 Tore/Spiel) sprechen für Argentinien; Markt sieht Argentinien mit 0.65 deutlich vor der konservativeren Baseline (0.52) – ich positioniere mich dazwischen, klar pro Argentinien. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar höher eingestuft (Elo 1903 vs 1702) und amtierender Weltmeister; Exzellente Defensive Argentiniens: GA-Schnitt 0.31 und 64% Clean-Sheet-Rate; Beide Teams in guter Form, aber Argentinien stabiler über mehr Spiele. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:e7dea60aefe35a0bb72ca8eb3d855b5cfb05ae959242156897982d5aaeaedd6a"
   },
   "predictionHistory": [
@@ -336,11 +336,24 @@
         "away": 0.1561
       },
       "confidence": 0.6728
+    },
+    {
+      "generatedAt": "2026-06-22T08:05:07.707Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6151,
+        "draw": 0.2315,
+        "away": 0.1534
+      },
+      "confidence": 0.6534
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T09:03:55.327Z",
+    "updatedAt": "2026-06-22T10:05:49.695Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6504,
