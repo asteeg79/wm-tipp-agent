@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-22T08:05:07.707Z",
+    "generatedAt": "2026-06-22T09:03:54.931Z",
     "home": {
       "teamId": "FRA",
       "elo": 1884,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-22T04:03:55.022Z",
+    "generatedAt": "2026-06-22T09:03:54.931Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8439,
-      "draw": 0.1119,
-      "away": 0.0442
+      "home": 0.8639,
+      "draw": 0.0921,
+      "away": 0.044
     },
-    "confidence": 0.8113,
+    "confidence": 0.84,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,16 +84,16 @@
           "draw": 0.1,
           "away": 0.05
         },
-        "confidence": 0.8,
+        "confidence": 0.78,
         "keyFactors": [
-          "Frankreich mit deutlich höherem Elo (1884 vs 1569) und starker Form (weightedForm 2.55 vs 1.48)",
-          "Französische Offensivstärke (2.48 Tore/Spiel) gegen anfällige irakische Defensive (1.66 Gegentore/Spiel)",
-          "Markt sieht Frankreich klar vorn (88,9% Heimsieg), Baseline bestätigt deutliche Favoritenrolle"
+          "France deutlich überlegen: Elo 1884 vs 1569, gewichtete Form 2.55 vs 1.48",
+          "Hohe Offensivkraft Frankreichs (xG 2.9, 2.48 Tore/Spiel) gegen anfällige Irak-Defensive (1.66 Gegentore/Spiel)",
+          "Markt und Baseline sehen Frankreich klar als Favorit (81-90% Heimsieg)"
         ],
         "risks": [
-          "Irak könnte tief und kompakt verteidigen und das Ergebnis niedrig halten",
-          "Mögliche Rotation Frankreichs bei früher Führung",
-          "WM-Auftaktspiele oft vorsichtiger und torärmer als erwartet"
+          "Irak könnte tief und kompakt stehen und so ein knappes Ergebnis erzwingen",
+          "Mögliche Rotation Frankreichs in der Gruppenphase senkt Torausbeute",
+          "Frühe Gruppenspiele oft vorsichtiger als Einzelstärke vermuten lässt"
         ]
       },
       "chatgpt": {
@@ -102,28 +102,29 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.8,
-          "draw": 0.15,
+          "home": 0.85,
+          "draw": 0.1,
           "away": 0.05
         },
-        "confidence": 0.85,
+        "confidence": 0.9,
         "keyFactors": [
-          "France's recent strong form and high Elo rating",
-          "Iraq's relatively weaker form and Elo rating",
-          "Neutral venue minimizes home advantage"
+          "Frankreichs hohe Elo-Zahl und starke Form",
+          "Iraks niedrigere Elo-Zahl und schwächere Form",
+          "keine direkte Begegnung in der Vergangenheit",
+          "neutrale Spielstätte ohne Heimvorteil"
         ],
         "risks": [
-          "Potential lower goals due to conservative group stage approach",
-          "No head-to-head history to gauge previous matchups"
+          "Irak könnte defensiv kompakt auftreten und das Spiel langsamer gestalten",
+          "typische konservative Herangehensweise in Auftaktspielen der Gruppenphase"
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 1,
     "ensembleWeights": {
       "claude": 0.5003,
       "chatgpt": 0.4997
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit deutlich höherem Elo (1884 vs 1569) und starker Form (weightedForm 2.55 vs 1.48); Französische Offensivstärke (2.48 Tore/Spiel) gegen anfällige irakische Defensive (1.66 Gegentore/Spiel); Markt sieht Frankreich klar vorn (88,9% Heimsieg), Baseline bestätigt deutliche Favoritenrolle. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: France deutlich überlegen: Elo 1884 vs 1569, gewichtete Form 2.55 vs 1.48; Hohe Offensivkraft Frankreichs (xG 2.9, 2.48 Tore/Spiel) gegen anfällige Irak-Defensive (1.66 Gegentore/Spiel); Markt und Baseline sehen Frankreich klar als Favorit (81-90% Heimsieg). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:74154a463f1ea0d205c4aebcaa8df9e6fa819e78df7a221660baa4a1ab804aec"
   },
   "predictionHistory": [
@@ -321,11 +322,24 @@
         "away": 0.0442
       },
       "confidence": 0.84
+    },
+    {
+      "generatedAt": "2026-06-22T04:03:55.022Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.8439,
+        "draw": 0.1119,
+        "away": 0.0442
+      },
+      "confidence": 0.8113
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-22T08:06:48.727Z",
+    "updatedAt": "2026-06-22T09:03:55.327Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.8963,
