@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-23T13:03:48.514Z",
+    "generatedAt": "2026-06-23T14:03:58.856Z",
     "home": {
       "teamId": "COL",
       "elo": 1752,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-23T06:03:44.910Z",
+    "generatedAt": "2026-06-23T14:03:58.856Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 1,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.5016,
-      "draw": 0.2806,
-      "away": 0.2178
+      "home": 0.5125,
+      "draw": 0.2786,
+      "away": 0.2089
     },
-    "confidence": 0.4,
+    "confidence": 0.504,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,32 +75,61 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.52,
+          "draw": 0.25,
+          "away": 0.23
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Kolumbien deutlich höhere Elo (1752 vs 1644) und stärkere Offensive (2.17 Tore/Spiel)",
+          "Markt sieht Kolumbien klar vorne (62.7%), Baseline moderater (46%) – eigener Wert liegt dazwischen",
+          "DR Kongo defensiv sehr stabil (cleanSheetRate 0.53, nur 0.57 Gegentore), kann tief und kompakt stehen",
+          "Neutraler Ort, kein Heimvorteil – relativiert Kolumbiens nominellen Heimstatus"
+        ],
+        "risks": [
+          "Starke kongolesische Defensive könnte ein torarmes Remis erzwingen",
+          "Keine H2H-Daten und unsichere Kaderlage erhöhen Unsicherheit",
+          "Höhenlage (1566m) als möglicher Ausgleichsfaktor",
+          "Gruppenphasen-Auftakt oft vorsichtig und torarm"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.3,
+          "home": 0.4,
+          "draw": 0.35,
           "away": 0.25
         },
-        "confidence": 0.4,
+        "confidence": 0.5,
         "keyFactors": [
-          "Neutraler Spielort auf 1566m Höhe, was beiden Teams die Heimat-Vorteile nimmt.",
-          "DR Congo zeigt starke defensive Statistiken mit einer hohen Clean-Sheet-Rate von 52.9%.",
-          "Kolumbien hat zwar einen höheren Elo-Wert, zeigt aber ähnliche Form wie DR Congo in letzter Zeit.",
-          "Keinerlei H2H-Spiele zwischen den beiden Teams, was die Unsicherheit erhöht."
+          "Kolumbien hat eine starke Offensive, aber auch eine anfällige Abwehr, was zu einem höheren Schnitt an geschossenen und kassierten Toren führt.",
+          "DR Kongo zeigt eine gute Defensivleistung mit einer hohen Quote von Zu-Null-Spielen, was auf eine solide Abwehrarbeit hinweist.",
+          "Beide Teams haben in den letzten zwei Jahren eine ähnliche Form, was auf ein ausgeglichenes Spiel hinweist.",
+          "Neutrale Spielstätte neutralisiert den potenziellen Heimvorteil.",
+          "Höhe von 1566m könnte Auswirkungen auf die Spieler haben und das Tempo des Spiels beeinflussen."
         ],
         "risks": [
-          "Erster Auftritt der Teams bei dieser WM, was die Taktik und Herangehensweise schwer vorhersehbar macht.",
-          "Kolumbiens höheres Torverhältnis könnte unterschätzt werden, falls sie in der Lage sind, DR Congos Abwehr zu knacken.",
-          "Der Markt sieht Kolumbien als klaren Favoriten, was auf eine mögliche Unterschätzung von DR Congos defensiven Stärken hindeuten könnte."
+          "Unvorhergesehene Anpassungen aufgrund der Höhe, die beide Teams unterschiedlich beeinflussen könnten.",
+          "Fehlende direkte Begegnungen macht Vorhersagen schwieriger, da kein direkter Leistungsindex verfügbar ist.",
+          "Ähnliche Form und Statistiken deuten auf ein knappes Spiel hin, was den Ausgang unvorhersehbarer macht."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Neutraler Spielort auf 1566m Höhe, was beiden Teams die Heimat-Vorteile nimmt.; DR Congo zeigt starke defensive Statistiken mit einer hohen Clean-Sheet-Rate von 52.9%.; Kolumbien hat zwar einen höheren Elo-Wert, zeigt aber ähnliche Form wie DR Congo in letzter Zeit.. Marktquoten zu 30 % eingemischt.",
+    "agreement": 0.92,
+    "ensembleWeights": {
+      "claude": 0.5056,
+      "chatgpt": 0.4944
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kolumbien deutlich höhere Elo (1752 vs 1644) und stärkere Offensive (2.17 Tore/Spiel); Markt sieht Kolumbien klar vorne (62.7%), Baseline moderater (46%) – eigener Wert liegt dazwischen; DR Kongo defensiv sehr stabil (cleanSheetRate 0.53, nur 0.57 Gegentore), kann tief und kompakt stehen. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:93ca05edd12faf44bf4513cd190c35b3ef700233cde4ff7dadd89854fea1a57d"
   },
   "predictionHistory": [
@@ -285,11 +314,24 @@
         "away": 0.1907
       },
       "confidence": 0.5578
+    },
+    {
+      "generatedAt": "2026-06-23T06:03:44.910Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5016,
+        "draw": 0.2806,
+        "away": 0.2178
+      },
+      "confidence": 0.4
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-23T13:03:48.952Z",
+    "updatedAt": "2026-06-23T14:06:51.468Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.6267,
