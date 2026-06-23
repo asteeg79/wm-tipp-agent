@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-23T18:03:50.404Z",
+    "generatedAt": "2026-06-23T19:03:51.403Z",
     "home": {
       "teamId": "PAN",
       "elo": 1590,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-23T11:03:53.415Z",
+    "generatedAt": "2026-06-23T19:03:51.403Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1668,
-      "draw": 0.2269,
-      "away": 0.6063
+      "home": 0.1651,
+      "draw": 0.2353,
+      "away": 0.5997
     },
-    "confidence": 0.665,
+    "confidence": 0.6478,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,52 +81,51 @@
         },
         "probabilities": {
           "home": 0.18,
-          "draw": 0.23,
-          "away": 0.59
+          "draw": 0.24,
+          "away": 0.58
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "Kroatien deutlich höhere Elo (1735 vs 1590) und stärkere Offensive (goalsForAvg 2.16)",
-          "Kroatiens aktuelle Form sehr gut (recentForm 2.2), individuell klar überlegen",
-          "Markt sieht Kroatien klar vorne (0.64), Baseline etwas vorsichtiger",
-          "Neutraler Spielort, kein Heimvorteil für Panama"
+          "Kroatien deutlich stärker laut Elo (1735 vs 1590) und besserer recentForm (2.2 vs 1.6)",
+          "Kroatiens Offensive (goalsForAvg 2.16) klar über Panamas Niveau",
+          "Markt sieht Kroatien klar vorne (0.66), Baseline etwas vorsichtiger (0.52)"
         ],
         "risks": [
-          "Panama steht als Außenseiter oft tief und kompakt, was knappe Ergebnisse begünstigt",
-          "Kroatiens hohe goalsAgainstAvg (1.73) zeigt defensive Anfälligkeit",
-          "WM-Auftaktspiele oft vorsichtig und torarm",
-          "Keine H2H-Daten zur Kalibrierung verfügbar"
+          "Kroatiens anfällige Defensive (goalsAgainstAvg 1.73) kann Panama Kontertore ermöglichen",
+          "Panama steht tief und kompakt – typisches Außenseiterprofil, knappes Ergebnis möglich",
+          "Neutraler Ort und WM-Gruppenauftakt oft vorsichtig und torarm",
+          "Keine H2H-Historie als Orientierung"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
           "home": 0.18,
-          "draw": 0.23,
-          "away": 0.59
+          "draw": 0.25,
+          "away": 0.57
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "Croatia hat einen höheren Elo-Wert von 1735 im Vergleich zu Panama mit 1590.",
-          "Kroatiens kürzliche Form ist mit 2.2 deutlich besser als Panamas mit 1.6.",
-          "Die durchschnittlichen erzielten Tore von Kroatien sind mit 2.161 höher als Panamas 1.295.",
-          "Neutrale Spielstätte, kein Heimvorteil für Panama."
+          "Croatia's higher Elo rating and recent form compared to Panama",
+          "Neutral venue minimizes traditional home advantage",
+          "Panama's relatively low goals against average mitigates Croatia's scoring potential",
+          "No significant head-to-head history between the teams"
         ],
         "risks": [
-          "Eröffnungs- und Gruppenspiele neigen zu geringerer Trefferausbeute.",
-          "Kroatien könnte Schwierigkeiten haben, die Abwehr von Panama zu durchbrechen, die solide verteidigen können."
+          "Inherent variance in football results, especially in neutral venues",
+          "Croatia's potential defensive vulnerabilities with higher goals against average"
         ]
       }
     },
-    "agreement": 1,
+    "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.5056,
-      "chatgpt": 0.4944
+      "claude": 0.5058,
+      "chatgpt": 0.4942
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien deutlich höhere Elo (1735 vs 1590) und stärkere Offensive (goalsForAvg 2.16); Kroatiens aktuelle Form sehr gut (recentForm 2.2), individuell klar überlegen; Markt sieht Kroatien klar vorne (0.64), Baseline etwas vorsichtiger. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien deutlich stärker laut Elo (1735 vs 1590) und besserer recentForm (2.2 vs 1.6); Kroatiens Offensive (goalsForAvg 2.16) klar über Panamas Niveau; Markt sieht Kroatien klar vorne (0.66), Baseline etwas vorsichtiger (0.52). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:ad2c4dd45d56126ba4bd2c79817c62c0caeb198d1f907a4a1f82c0c556bec662"
   },
   "predictionHistory": [
@@ -298,21 +297,34 @@
         "away": 0.6124
       },
       "confidence": 0.6539
+    },
+    {
+      "generatedAt": "2026-06-23T11:03:53.415Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1668,
+        "draw": 0.2269,
+        "away": 0.6063
+      },
+      "confidence": 0.665
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-23T18:06:18.436Z",
+    "updatedAt": "2026-06-23T19:04:11.575Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.1344,
-      "draw": 0.2184,
-      "away": 0.6472
+      "home": 0.1302,
+      "draw": 0.2118,
+      "away": 0.6579
     },
     "decimal": {
-      "home": 7.15,
-      "draw": 4.4,
-      "away": 1.49
+      "home": 7.4,
+      "draw": 4.55,
+      "away": 1.47
     }
   }
 }
