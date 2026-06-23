@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-23T10:01:27.869Z",
+    "generatedAt": "2026-06-23T10:04:05.654Z",
     "home": {
       "teamId": "SCO",
       "elo": 1567,
@@ -50,80 +50,84 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-23T10:04:05.654Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1687,
-      "draw": 0.2077,
-      "away": 0.6236
+      "home": 0.1234,
+      "draw": 0.1984,
+      "away": 0.6782
     },
-    "confidence": 0.6782,
+    "confidence": 0.7202,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.1614,
-        "draw": 0.2076,
-        "away": 0.6309
+        "home": 0.1467,
+        "draw": 0.2183,
+        "away": 0.635
       },
       "expectedGoals": {
-        "home": 0.91,
-        "away": 2.01
+        "home": 0.76,
+        "away": 1.86
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.155,
-          "draw": 0.205,
-          "away": 0.64
+          "home": 0.12,
+          "draw": 0.2,
+          "away": 0.68
         },
-        "confidence": 0.62,
+        "confidence": 0.7,
         "keyFactors": [
-          "Brasilien deutlich höheres Elo (1844 vs 1586) und stärkere gewichtete Form (1.791 vs 1.301)",
-          "Brasilien defensiv solider: cleanSheetRate 0.40 und nur 0.892 Gegentore im Schnitt",
-          "Neutraler Spielort eliminiert Heimvorteil für Schottland",
-          "Höhere erwartete Tore für Brasilien (xG 2.01 vs 0.91) bestätigt Favoritenrolle"
+          "Deutlicher Elo-Unterschied (1820 vs 1567) und klar bessere gewichtete Form Brasiliens (1.871 vs 1.364)",
+          "Brasilien defensiv stabil (Gegentore-Schnitt 0.748, Clean-Sheet-Rate 0.407) und offensiv stark (1.885 Tore/Spiel)",
+          "Schottland erzielt nur ~1.06 Tore und kassiert ~1.01 pro Spiel – wird vermutlich tief und kompakt stehen",
+          "Markt sieht Brasilien noch stärker (0.70) als die Baseline (0.635)"
         ],
         "risks": [
-          "Kein H2H-Datensatz vorhanden, daher keine direkte Vergleichsbasis",
-          "Schottlands recentForm (1.6) leicht über weightedForm deutet auf Aufwärtstrend hin",
-          "Lange Pause (67 Tage seit letztem Spiel) für beide Teams kann Rhythmus beeinflussen",
-          "Personelle Unsicherheiten bei Brasilien (Neymar/Ancelotti-Konstellation laut News)"
+          "Raphinha-Ausfall könnte Brasiliens Offensive schwächen, auch wenn der Kader tief ist",
+          "Außenseiter Schottland kann mit defensiver Kompaktheit ein knappes/torarmes Ergebnis erzwingen",
+          "Kein H2H-Datenmaterial vorhanden – erhöhte Unsicherheit",
+          "Gruppenphasen-Spiele oft vorsichtiger und torärmer als Einzelstärke vermuten lässt"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.18,
+          "home": 0.13,
           "draw": 0.21,
-          "away": 0.61
+          "away": 0.66
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Brazil's higher Elo rating and stronger weighted form",
-          "Scotland's recent improvement in form, yet still below Brazil's level",
-          "Neutral venue reduces advantage for either team"
+          "Brasilien hat einen klaren Elo-Vorsprung gegenüber Schottland.",
+          "Brasilien zeigt gute Form, trotz Verletzungen von Schlüsselspielern.",
+          "Brasilien hat kürzlich positive Nachrichten bezüglich Neymars Rückkehr und Cunhas Leistung erhalten.",
+          "Schottland hat solide Form, aber schwächere offensive Statistiken als Brasilien."
         ],
         "risks": [
-          "No recent head-to-head matches to draw comparative form",
-          "Potential impact of Neymar and new strategies mentioned in news",
-          "Relatively outdated days since last match for both teams"
+          "Verletzungsnachrichten könnten die Stabilität von Brasilien beeinträchtigen.",
+          "Turnierspiele können taktisch defensiver und unerwartet knapp ausfallen."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brasilien deutlich höheres Elo (1844 vs 1586) und stärkere gewichtete Form (1.791 vs 1.301); Brasilien defensiv solider: cleanSheetRate 0.40 und nur 0.892 Gegentore im Schnitt; Neutraler Spielort eliminiert Heimvorteil für Schottland.",
-    "inputHash": "sha256:a78639c247b51f40de4fb0fe4578e41edce5d2adc3271d397ff12d0f0db4b5a8"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5056,
+      "chatgpt": 0.4944
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Unterschied (1820 vs 1567) und klar bessere gewichtete Form Brasiliens (1.871 vs 1.364); Brasilien defensiv stabil (Gegentore-Schnitt 0.748, Clean-Sheet-Rate 0.407) und offensiv stark (1.885 Tore/Spiel); Schottland erzielt nur ~1.06 Tore und kassiert ~1.01 pro Spiel – wird vermutlich tief und kompakt stehen. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:fbd1aeb64e4c969213fb6cd399e684004589b177ff501220e9172407c99ec547"
   },
   "predictionHistory": [
     {
@@ -268,11 +272,24 @@
         "away": 0.6542
       },
       "confidence": 0.7325
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1687,
+        "draw": 0.2077,
+        "away": 0.6236
+      },
+      "confidence": 0.6782
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-23T10:03:34.644Z",
+    "updatedAt": "2026-06-23T10:04:07.428Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1195,
