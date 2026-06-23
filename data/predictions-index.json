@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-23T05:03:49.336Z",
+  "lastUpdated": "2026-06-23T06:03:44.910Z",
   "aggregate": {
-    "finishedCount": 43,
-    "exactScoreRate": 0.093,
-    "outcomeRate": 0.5814,
-    "brierMean": 0.548,
-    "rpsMean": 0.1639
+    "finishedCount": 44,
+    "exactScoreRate": 0.1136,
+    "outcomeRate": 0.5909,
+    "brierMean": 0.5404,
+    "rpsMean": 0.1621
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 43,
-      "exactScoreRate": 0.093,
-      "outcomeRate": 0.4884,
-      "brierMean": 0.544,
-      "rpsMean": 0.1628
+      "finishedCount": 44,
+      "exactScoreRate": 0.0909,
+      "outcomeRate": 0.5,
+      "brierMean": 0.5358,
+      "rpsMean": 0.1608
     },
     "chatgpt": {
-      "finishedCount": 43,
-      "exactScoreRate": 0.1395,
-      "outcomeRate": 0.4884,
-      "brierMean": 0.5612,
-      "rpsMean": 0.1705
+      "finishedCount": 44,
+      "exactScoreRate": 0.1591,
+      "outcomeRate": 0.5,
+      "brierMean": 0.5539,
+      "rpsMean": 0.1688
     },
     "weights": {
-      "claude": 0.5053,
-      "chatgpt": 0.4947
+      "claude": 0.5056,
+      "chatgpt": 0.4944
     }
   },
   "entries": [
@@ -1536,7 +1536,16 @@
         "draw": 0.2222,
         "away": 0.6318
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": true,
+        "outcomeHit": true,
+        "brier": 0.2125,
+        "rps": 0.0834
+      }
     },
     {
       "matchId": "wc2026-portugal-uzbekistan-2026-06-23",
@@ -1573,14 +1582,14 @@
       "awayTeamId": "GHA",
       "predictedScore": {
         "home": 2,
-        "away": 0
+        "away": 1
       },
       "probabilities": {
-        "home": 0.7676,
-        "draw": 0.1465,
-        "away": 0.0859
+        "home": 0.7442,
+        "draw": 0.1568,
+        "away": 0.099
       },
-      "confidence": 0.7575,
+      "confidence": 0.7154,
       "expectedGoals": {
         "home": 2.52,
         "away": 0.84
@@ -1599,15 +1608,15 @@
       "homeTeamId": "PAN",
       "awayTeamId": "CRO",
       "predictedScore": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
       "probabilities": {
-        "home": 0.1636,
-        "draw": 0.2364,
-        "away": 0.6
+        "home": 0.1541,
+        "draw": 0.2336,
+        "away": 0.6124
       },
-      "confidence": 0.6584,
+      "confidence": 0.6539,
       "expectedGoals": {
         "home": 1.3,
         "away": 1.92
@@ -1630,11 +1639,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.5243,
-        "draw": 0.285,
-        "away": 0.1907
+        "home": 0.5016,
+        "draw": 0.2806,
+        "away": 0.2178
       },
-      "confidence": 0.5578,
+      "confidence": 0.4,
       "expectedGoals": {
         "home": 1.53,
         "away": 1.14
