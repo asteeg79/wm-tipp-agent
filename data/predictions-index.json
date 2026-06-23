@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-22T22:15:49.967Z",
+  "lastUpdated": "2026-06-23T04:03:45.128Z",
   "aggregate": {
-    "finishedCount": 41,
-    "exactScoreRate": 0.0976,
-    "outcomeRate": 0.561,
-    "brierMean": 0.5615,
-    "rpsMean": 0.1665
+    "finishedCount": 43,
+    "exactScoreRate": 0.093,
+    "outcomeRate": 0.5814,
+    "brierMean": 0.548,
+    "rpsMean": 0.1639
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 41,
-      "exactScoreRate": 0.0976,
-      "outcomeRate": 0.4634,
-      "brierMean": 0.5581,
-      "rpsMean": 0.1656
+      "finishedCount": 43,
+      "exactScoreRate": 0.093,
+      "outcomeRate": 0.4884,
+      "brierMean": 0.544,
+      "rpsMean": 0.1628
     },
     "chatgpt": {
-      "finishedCount": 41,
-      "exactScoreRate": 0.1463,
-      "outcomeRate": 0.4878,
-      "brierMean": 0.5741,
-      "rpsMean": 0.1731
+      "finishedCount": 43,
+      "exactScoreRate": 0.1395,
+      "outcomeRate": 0.4884,
+      "brierMean": 0.5612,
+      "rpsMean": 0.1705
     },
     "weights": {
-      "claude": 0.5005,
-      "chatgpt": 0.4995
+      "claude": 0.5053,
+      "chatgpt": 0.4947
     }
   },
   "entries": [
@@ -1464,7 +1464,16 @@
         "draw": 0.0805,
         "away": 0.0333
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 3,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.0311,
+        "rps": 0.0112
+      }
     },
     {
       "matchId": "wc2026-norway-senegal-2026-06-22",
@@ -1491,7 +1500,16 @@
         "draw": 0.2806,
         "away": 0.3074
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 3,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.5104,
+        "rps": 0.2116
+      }
     },
     {
       "matchId": "wc2026-jordan-algeria-2026-06-22",
@@ -1531,11 +1549,11 @@
         "away": 0
       },
       "probabilities": {
-        "home": 0.7225,
-        "draw": 0.1798,
-        "away": 0.0977
+        "home": 0.7445,
+        "draw": 0.161,
+        "away": 0.0945
       },
-      "confidence": 0.6933,
+      "confidence": 0.7227,
       "expectedGoals": {
         "home": 2.23,
         "away": 0.9
@@ -1555,14 +1573,14 @@
       "awayTeamId": "GHA",
       "predictedScore": {
         "home": 2,
-        "away": 1
+        "away": 0
       },
       "probabilities": {
-        "home": 0.7489,
-        "draw": 0.1648,
-        "away": 0.0863
+        "home": 0.7676,
+        "draw": 0.1465,
+        "away": 0.0859
       },
-      "confidence": 0.7203,
+      "confidence": 0.7575,
       "expectedGoals": {
         "home": 2.52,
         "away": 0.84
@@ -1581,15 +1599,15 @@
       "homeTeamId": "PAN",
       "awayTeamId": "CRO",
       "predictedScore": {
-        "home": 0,
+        "home": 1,
         "away": 2
       },
       "probabilities": {
-        "home": 0.1597,
-        "draw": 0.2435,
-        "away": 0.5967
+        "home": 0.1636,
+        "draw": 0.2364,
+        "away": 0.6
       },
-      "confidence": 0.6167,
+      "confidence": 0.6584,
       "expectedGoals": {
         "home": 1.3,
         "away": 1.92
@@ -1608,15 +1626,15 @@
       "homeTeamId": "COL",
       "awayTeamId": "COD",
       "predictedScore": {
-        "home": 1,
-        "away": 0
+        "home": 2,
+        "away": 1
       },
       "probabilities": {
-        "home": 0.5784,
-        "draw": 0.2463,
-        "away": 0.1753
+        "home": 0.5243,
+        "draw": 0.285,
+        "away": 0.1907
       },
-      "confidence": 0.6125,
+      "confidence": 0.5578,
       "expectedGoals": {
         "home": 1.53,
         "away": 1.14
