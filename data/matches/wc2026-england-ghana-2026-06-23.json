@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-23T07:03:46.232Z",
+    "generatedAt": "2026-06-23T08:03:54.531Z",
     "home": {
       "teamId": "ENG",
       "elo": 1827,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-23T06:03:44.910Z",
+    "generatedAt": "2026-06-23T08:03:54.531Z",
     "predictedScore": {
       "home": 2,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.7442,
-      "draw": 0.1568,
-      "away": 0.099
+      "home": 0.7547,
+      "draw": 0.1606,
+      "away": 0.0846
     },
-    "confidence": 0.7154,
+    "confidence": 0.745,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,54 +80,52 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.76,
-          "draw": 0.15,
-          "away": 0.09
+          "home": 0.74,
+          "draw": 0.16,
+          "away": 0.1
         },
-        "confidence": 0.72,
+        "confidence": 0.7,
         "keyFactors": [
-          "Großer Elo-Unterschied (1827 vs 1548) und klar bessere gewichtete Form Englands (2,23 vs 1,64)",
-          "Englands starke Defensive (0,83 Gegentore/Spiel, 53% Zu-Null) gegen Ghanas durchschnittliche Abwehr (1,17 Gegentore, nur 35% Zu-Null)",
-          "Höhere Offensivkraft Englands (2,40 erzielte Tore/Spiel) deckt sich mit Baseline-xG von 2,52",
-          "Markt sieht England mit 80% sogar noch deutlicher als Favorit"
+          "England deutlich höhere Elo (1827 vs 1548) und starke Form (gewichtete Form 2.23)",
+          "Englands hohe Offensivkraft (2.4 Tore/Spiel) und solide Defensive (Clean-Sheet-Rate 53%)",
+          "Ghana defensiv anfällig (1.17 Gegentore/Spiel, nur 35% Clean Sheets)",
+          "Markt sieht England noch klarer als Baseline (80% Heimsieg)"
         ],
         "risks": [
-          "WM-Gruppenphase: Außenseiter Ghana könnte tief und kompakt stehen und das Spiel zerstören",
-          "Ghana hat individuelle Offensivqualität und kann mit Kontern gefährlich werden",
-          "Mögliche Rotation/Vorsicht im Auftaktspiel könnte England Tore kosten",
-          "Keine H2H-Daten als zusätzliche Orientierung vorhanden"
+          "Ghana könnte tief und kompakt stehen und das Spiel torarm halten",
+          "Mögliche Rotation/Trinkpausen-Diskussionen bei England",
+          "WM-Auftaktspiele oft vorsichtig - Favorit tut sich schwer durchzubrechen",
+          "Keine H2H-Daten verfügbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.68,
-          "draw": 0.18,
-          "away": 0.14
+          "home": 0.7300000000000001,
+          "draw": 0.18000000000000002,
+          "away": 0.09000000000000001
         },
-        "confidence": 0.75,
+        "confidence": 0.8,
         "keyFactors": [
-          "England hat höheren Elo-Wert und stärkere Form.",
-          "Englands Angriff ist torreich, Ghana jedoch stabil in der Defensive.",
-          "Thomas Tuchel als neuer Trainer könnte Englands Spielstil dynamischer gemacht haben.",
-          "Ghana zeigt Aufwärtstrend in letzter Zeit und ist unberechenbar."
+          "England's higher Elo rating and recent strong form",
+          "Ghana's lower clean sheet rate and higher goals against average",
+          "England's tactical shift and new coach leadership under Tuchel"
         ],
         "risks": [
-          "Die Vorsicht in Vorrundenspielen könnte zu weniger Toren führen.",
-          "Unvorhersehbarkeit durch Trainerwechsel bei England könnte sich widersprüchlich auswirken.",
-          "Ghana hat keine direkte Konkurrenz mit England und könnte überraschen."
+          "Potential for a cautious approach in the opening group match",
+          "Possibility of tactical surprises from Ghana's coach"
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.9867,
     "ensembleWeights": {
       "claude": 0.5056,
       "chatgpt": 0.4944
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1827 vs 1548) und klar bessere gewichtete Form Englands (2,23 vs 1,64); Englands starke Defensive (0,83 Gegentore/Spiel, 53% Zu-Null) gegen Ghanas durchschnittliche Abwehr (1,17 Gegentore, nur 35% Zu-Null); Höhere Offensivkraft Englands (2,40 erzielte Tore/Spiel) deckt sich mit Baseline-xG von 2,52. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England deutlich höhere Elo (1827 vs 1548) und starke Form (gewichtete Form 2.23); Englands hohe Offensivkraft (2.4 Tore/Spiel) und solide Defensive (Clean-Sheet-Rate 53%); Ghana defensiv anfällig (1.17 Gegentore/Spiel, nur 35% Clean Sheets). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:4ca5989b30efda43bf65602082694fd26c2b93400f99426c00c353d571ebff4b"
   },
   "predictionHistory": [
@@ -351,11 +349,24 @@
         "away": 0.0859
       },
       "confidence": 0.7575
+    },
+    {
+      "generatedAt": "2026-06-23T06:03:44.910Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7442,
+        "draw": 0.1568,
+        "away": 0.099
+      },
+      "confidence": 0.7154
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-23T07:05:36.202Z",
+    "updatedAt": "2026-06-23T08:05:52.563Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.8015,
