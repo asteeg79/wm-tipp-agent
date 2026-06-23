@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-23T06:03:44.910Z",
+    "generatedAt": "2026-06-23T07:03:46.232Z",
     "home": {
       "teamId": "SUI",
       "elo": 1713,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-23T07:03:46.232Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3882,
-      "draw": 0.3077,
-      "away": 0.3041
+      "home": 0.3672,
+      "draw": 0.3164,
+      "away": 0.3165
     },
-    "confidence": 0.6039,
+    "confidence": 0.495,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4112,
-        "draw": 0.2709,
-        "away": 0.3179
+        "home": 0.3541,
+        "draw": 0.2509,
+        "away": 0.395
       },
       "expectedGoals": {
-        "home": 1.33,
-        "away": 1.13
+        "home": 1.37,
+        "away": 1.46
       }
     },
     "models": {
@@ -80,22 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.29,
-          "away": 0.31
+          "home": 0.36,
+          "draw": 0.3,
+          "away": 0.34
         },
-        "confidence": 0.5,
+        "confidence": 0.4,
         "keyFactors": [
-          "Switzerland mit stärkerer Offensive (goalsForAvg 2.02) und guter recentForm (2.1)",
-          "Canada defensiv sehr stabil (cleanSheetRate 0.536, goalsAgainstAvg 0.61)",
-          "Co-Gastgeber-Vorteil für Canada trotz neutralem Spielort relevant",
-          "Beide Teams in der gewichteten Form nahezu gleichauf (1.638 vs 1.623)"
+          "Schweiz mit leicht höherem Elo (1713 vs 1659) und starker Offensivform (2.19 Tore/Spiel)",
+          "Kanada defensiv sehr stabil: nur 0.57 Gegentore/Spiel und 53% Clean-Sheet-Rate",
+          "Markt sieht leichten Schweizer Vorteil mit hoher Remis-Wahrscheinlichkeit, Baseline knapp pro Kanada – insgesamt ausgeglichen",
+          "Kanada genießt als Co-Gastgeber Heimvorteil trott neutralem Spielort-Tag",
+          "Beide Teams in guter, ähnlicher gewichteter Form (1.77 vs 1.75)"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "Materielle News betreffen Eishockey, nicht Fußball - keine fußballrelevante Info",
-          "Lange Pause (67 Tage) bei beiden Teams kann Rhythmus beeinflussen",
-          "Defensive Stärke Canadas könnte Schweizer Offensive neutralisieren"
+          "Mögliche Verletzung von Ismaël Koné könnte Kanadas Mittelfeld schwächen (unklare Faktenlage)",
+          "Kein H2H-Verlauf verfügbar, daher erhöhte Unsicherheit",
+          "Kanadas kompakte Defensive könnte ein torarmes Remis begünstigen oder einem Konter-Sieg den Weg ebnen",
+          "Enges Spiel – jedes Einzelereignis (Standard, Platzverweis) kann den Ausgang kippen"
         ]
       },
       "chatgpt": {
@@ -104,26 +105,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.32,
-          "away": 0.3
+          "home": 0.35,
+          "draw": 0.33,
+          "away": 0.32
         },
-        "confidence": 0.72,
+        "confidence": 0.6,
         "keyFactors": [
-          "Switzerland has a better Elo rating and slightly better recent form.",
-          "Canada has a higher clean sheet rate and a strong recent defensive performance.",
-          "Neutral venue diminishes home advantage.",
-          "Lack of head-to-head data gives no advantage to either team."
+          "Neutraler Spielort ohne klaren Heimvorteil.",
+          "Kanada hat kürzlich Verletzungsprobleme, die ihre Leistung beeinträchtigen könnten.",
+          "Beide Teams zeigen eine vergleichbare Formkurve.",
+          "Schweiz hat leicht höheres Elo-Rating."
         ],
         "risks": [
-          "Both teams have not played for 67 days, causing potential unpredictability in form.",
-          "Neither team benefits from a strong home advantage as the match is on neutral ground."
+          "Erstmals aufeinander treffende Teams, keine direkten Vergleichsdaten verfügbar.",
+          "Turnierkontext mit tendenziell defensivem Spielstil könnte zu einem unerwarteten Ergebnis führen."
         ]
       }
     },
     "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit stärkerer Offensive (goalsForAvg 2.02) und guter recentForm (2.1); Canada defensiv sehr stabil (cleanSheetRate 0.536, goalsAgainstAvg 0.61); Co-Gastgeber-Vorteil für Canada trotz neutralem Spielort relevant.",
-    "inputHash": "sha256:5e4617c6ecaf31d7995d7287468e9205e4b8a8de157fb5d6ef04c9fb53c67acf"
+    "ensembleWeights": {
+      "claude": 0.5056,
+      "chatgpt": 0.4944
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit leicht höherem Elo (1713 vs 1659) und starker Offensivform (2.19 Tore/Spiel); Kanada defensiv sehr stabil: nur 0.57 Gegentore/Spiel und 53% Clean-Sheet-Rate; Markt sieht leichten Schweizer Vorteil mit hoher Remis-Wahrscheinlichkeit, Baseline knapp pro Kanada – insgesamt ausgeglichen. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:ec36dae01183590fe26552e8b032c97e5097b3867d7e70732885460e14d68e76"
   },
   "predictionHistory": [
     {
@@ -268,11 +273,24 @@
         "away": 0.3085
       },
       "confidence": 0.5841
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3882,
+        "draw": 0.3077,
+        "away": 0.3041
+      },
+      "confidence": 0.6039
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-23T06:05:48.728Z",
+    "updatedAt": "2026-06-23T07:05:36.203Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.3977,
