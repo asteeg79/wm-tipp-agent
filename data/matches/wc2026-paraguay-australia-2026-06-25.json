@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T13:03:47.749Z",
+    "generatedAt": "2026-06-24T14:03:47.868Z",
     "home": {
       "teamId": "PAR",
       "elo": 1600,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-24T14:03:47.868Z",
     "predictedScore": {
-      "home": 1,
-      "away": 1
+      "home": 0,
+      "away": 0
     },
     "probabilities": {
-      "home": 0.348,
-      "draw": 0.298,
-      "away": 0.354
+      "home": 0.3121,
+      "draw": 0.4225,
+      "away": 0.2654
     },
-    "confidence": 0.5781,
+    "confidence": 0.4883,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3113,
-        "draw": 0.2823,
-        "away": 0.4065
+        "home": 0.2824,
+        "draw": 0.2737,
+        "away": 0.4439
       },
       "expectedGoals": {
-        "home": 1.05,
-        "away": 1.24
+        "home": 1.02,
+        "away": 1.35
       }
     },
     "models": {
@@ -80,51 +80,54 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34500000000000003,
-          "draw": 0.29500000000000004,
-          "away": 0.36000000000000004
+          "home": 0.31,
+          "draw": 0.38,
+          "away": 0.31
         },
-        "confidence": 0.46,
+        "confidence": 0.4,
         "keyFactors": [
-          "Australien mit minimal höherem Elo (1666 vs 1644) und besserer Defensive (CleanSheet 0.542, recentForm 1.7)",
-          "Paraguay mit deutlich kürzerer Wettkampfpause (67 Tage) gegenüber Australien (200 Tage ohne Spiel)",
-          "Externe Prognose sieht Paraguay klar stärker (0.43) als Baseline - rechtfertigt Anhebung der Heimchancen",
-          "Beide Teams formstabil (weightedForm ~1.4), niedrige Tor-Erwartung deutet auf enge Partie hin"
+          "Markt sieht die Partie deutlich ausgeglichener als die Elo-Baseline und favorisiert das Remis (0.42) – defensiv stabile Teams ohne klaren Favoriten",
+          "Australien mit besserer jüngster Form (recentForm 1.8) und solider Defensive (Gegentorschnitt 1.05, Clean-Sheet-Rate 0.54)",
+          "Paraguay defensiv anfälliger (Gegentorschnitt 1.39), aber kampfstark und kompakt – passt zu engem, torarmem Spiel",
+          "Niedrige erwartete Torzahlen (xG ~1.0 vs ~1.35) sprechen für knappes Ergebnis auf neutralem Platz",
+          "Keine H2H-Historie, beide Teams ähnlich in gewichteter Form (1.46 vs 1.47)"
         ],
         "risks": [
-          "Lange Spielpause Australiens (200 Tage) erschwert Formeinschätzung erheblich",
-          "Keine H2H-Daten vorhanden, hohe Unsicherheit bei der direkten Einschätzung",
-          "Neutraler Spielort entzieht beiden Teams Heimvorteil - Ergebnis sehr offen",
-          "Kader-News liefern keine konkreten Ausfall- oder Verletzungsinformationen"
+          "Baseline und Markt widersprechen sich stark beim Favoriten – hohe Unsicherheit",
+          "Australiens Formstärke könnte sich durchsetzen und Baseline-Auswärtssieg bestätigen",
+          "Frühe WM-Spiele oft vorsichtig – ein einzelnes Standardtor kann das Ergebnis kippen",
+          "Mögliche Sperren/Kaderveränderungen nicht vollständig einschätzbar"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 1
+          "home": 0,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.3,
+          "draw": 0.45,
+          "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Both teams have no direct head-to-head history, making historical comparison difficult.",
-          "Both teams are playing on a neutral venue with no altitude effect and no host advantage.",
-          "Australias' recent form is slightly stronger, with a better weighted and recent form.",
-          "Paraguay has played more recently than Australia, potentially giving them a slight sharpness advantage."
+          "Australien hat eine bessere Form und höhere Elo-Wertung.",
+          "Paraguay muss auf einen gesperrten Spieler verzichten, was ihre Abwehr schwächt.",
+          "Das Spiel findet an einem neutralen Ort statt, was den Heimvorteil für Paraguay neutralisiert."
         ],
         "risks": [
-          "Uncertainty due to lack of direct head-to-head data.",
-          "The neutral venue removes typical home/away advantages.",
-          "Differences in days since last match could affect rhythm, particularly for Australia."
+          "Australiens Trainerwechsel könnte zu unerwarteten Taktik- oder Leistungsänderungen führen.",
+          "Die Baseline sieht Australien als Favoriten, während der Markt ein Unentschieden favorisiert."
         ]
       }
     },
-    "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Australien mit minimal höherem Elo (1666 vs 1644) und besserer Defensive (CleanSheet 0.542, recentForm 1.7); Paraguay mit deutlich kürzerer Wettkampfpause (67 Tage) gegenüber Australien (200 Tage ohne Spiel); Externe Prognose sieht Paraguay klar stärker (0.43) als Baseline - rechtfertigt Anhebung der Heimchancen.",
-    "inputHash": "sha256:97f8a6a71d83ae47eab0e74f7ecc40b37f9c7240452bcfe34d63c4f0292641e0"
+    "agreement": 0.9533,
+    "ensembleWeights": {
+      "claude": 0.5041,
+      "chatgpt": 0.4959
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Markt sieht die Partie deutlich ausgeglichener als die Elo-Baseline und favorisiert das Remis (0.42) – defensiv stabile Teams ohne klaren Favoriten; Australien mit besserer jüngster Form (recentForm 1.8) und solider Defensive (Gegentorschnitt 1.05, Clean-Sheet-Rate 0.54); Paraguay defensiv anfälliger (Gegentorschnitt 1.39), aber kampfstark und kompakt – passt zu engem, torarmem Spiel. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:865538fc23459496a6d0d465ed0959a76ee3079e01ede72dfe12faaea59df69b"
   },
   "predictionHistory": [
     {
@@ -269,11 +272,24 @@
         "away": 0.3427
       },
       "confidence": 0.5436
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.348,
+        "draw": 0.298,
+        "away": 0.354
+      },
+      "confidence": 0.5781
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T13:03:48.422Z",
+    "updatedAt": "2026-06-24T14:05:40.961Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3309,
