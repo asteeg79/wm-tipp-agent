@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T16:31:48.046Z",
+    "generatedAt": "2026-06-24T17:03:51.386Z",
     "home": {
       "teamId": "SUI",
       "elo": 1713,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T15:03:52.927Z",
+    "generatedAt": "2026-06-24T17:03:51.386Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3579,
-      "draw": 0.3391,
-      "away": 0.303
+      "home": 0.3735,
+      "draw": 0.3242,
+      "away": 0.3023
     },
-    "confidence": 0.4917,
+    "confidence": 0.5032,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,21 @@
         },
         "probabilities": {
           "home": 0.36,
-          "draw": 0.32,
-          "away": 0.32
+          "draw": 0.31,
+          "away": 0.33
         },
-        "confidence": 0.4,
+        "confidence": 0.42,
         "keyFactors": [
-          "Sehr ausgeglichene Partie: nahezu identische gewichtete Form (SUI 1.77, CAN 1.75) und enge Elo-Werte (1713 vs. 1659)",
-          "Kanada defensiv stark (nur 0.57 Gegentore/Spiel, 53% Zu-Null), Schweiz mit potenter Offensive (2.19 Tore/Spiel) aber durchlässigerer Abwehr (1.06 Gegentore)",
-          "Externe Markt-Einschätzung sieht hohe Remis-Wahrscheinlichkeit (0.31) und leichten Heimvorteil – passt zum WM-Gruppenkontext torarmer, vorsichtiger Spiele",
-          "Kontext-News deutet auf ein für beide Teams ausreichendes Remis hin – erhöht Wahrscheinlichkeit eines abgesicherten, knappen Resultats",
-          "Gastgeber-Bonus tendenziell bei Kanada, was die nominell leicht höhere Schweizer Stärke neutralisiert"
+          "Schweiz mit leicht höherem Elo (1713 vs 1659) und stärkerer gewichteter Form sowie torgefährlicherem Angriff (2.19 erzielte Tore/Spiel)",
+          "Kanada mit auffällig stabiler Defensive (nur 0.57 Gegentore/Spiel, 53% Zu-null-Quote) – schwer zu durchbrechen",
+          "Markt sieht Schweiz leicht vorne und das Remis als starke Option (32%), Baseline neutraler",
+          "Mitgastgeber-Bonus für Kanada (hostAdvantageTeamId CAN) trotz formal neutralem Spielort"
         ],
         "risks": [
-          "Verletzungsstatus von Alphonso Davies unklar – beeinflusst Kanadas Offensivpotenzial erheblich",
-          "Schweizer Offensive könnte Kanadas kompakte Abwehr knacken und das Remis kippen",
-          "Baseline und Markt widersprechen sich bei der Siegrichtung (Poisson leicht Auswärts, Markt leicht Heim) – erhöhte Unsicherheit",
-          "Mögliche Rotation/taktische Zurückhaltung bei bereits ausreichendem Remis-Szenario"
+          "Sehr ausgeglichenes Spiel zweier formstarker Teams – Ausgang kann in beide Richtungen kippen",
+          "Kein H2H-Verlauf vorhanden, erhöhte Prognoseunsicherheit",
+          "Kanadas kompakte Defensive könnte ein torarmes Remis erzwingen oder per Konter entscheiden",
+          "WM-Auftaktspiele oft vorsichtig und torarm"
         ]
       },
       "chatgpt": {
@@ -105,29 +104,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
-          "draw": 0.37,
-          "away": 0.3
+          "home": 0.37,
+          "draw": 0.34,
+          "away": 0.29
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Kanadas stärkere Defensive mit höherer Clean-Sheet-Rate",
-          "Beide Teams mit sehr ähnlicher jüngster Form und Spielstärke",
-          "Neutraler Spielort ohne Heimvorteil",
-          "Remis würde beiden Teams genügen laut Traineraussagen"
+          "Switzerland's slightly higher Elo rating and recent form.",
+          "Canada's strong defensive record with a higher clean sheet rate.",
+          "Granit Xhaka's leadership boosting Switzerland's morale.",
+          "Neutral venue reduces potential home advantage."
         ],
         "risks": [
-          "Unsicherheiten bezüglich Alphonso Davies' Spielverfügbarkeit",
-          "Unvorhersehbare taktische Anpassungen bei Bedarf nach Verletzungsupdates"
+          "Limited head-to-head data.",
+          "Switzerland's slightly higher goals against average compared to Canada.",
+          "Canada's lower Elo rating but stronger defensive capabilities could result in a more resilient performance."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5041,
       "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr ausgeglichene Partie: nahezu identische gewichtete Form (SUI 1.77, CAN 1.75) und enge Elo-Werte (1713 vs. 1659); Kanada defensiv stark (nur 0.57 Gegentore/Spiel, 53% Zu-Null), Schweiz mit potenter Offensive (2.19 Tore/Spiel) aber durchlässigerer Abwehr (1.06 Gegentore); Externe Markt-Einschätzung sieht hohe Remis-Wahrscheinlichkeit (0.31) und leichten Heimvorteil – passt zum WM-Gruppenkontext torarmer, vorsichtiger Spiele. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Schweiz mit leicht höherem Elo (1713 vs 1659) und stärkerer gewichteter Form sowie torgefährlicherem Angriff (2.19 erzielte Tore/Spiel); Kanada mit auffällig stabiler Defensive (nur 0.57 Gegentore/Spiel, 53% Zu-null-Quote) – schwer zu durchbrechen; Markt sieht Schweiz leicht vorne und das Remis als starke Option (32%), Baseline neutraler. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:a1705f1c4b1cebc6909628ee4fbdc2192446f177cbc9e2a4d7b188d956e202b5"
   },
   "predictionHistory": [
@@ -351,21 +351,34 @@
         "away": 0.3005
       },
       "confidence": 0.4933
+    },
+    {
+      "generatedAt": "2026-06-24T15:03:52.927Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3579,
+        "draw": 0.3391,
+        "away": 0.303
+      },
+      "confidence": 0.4917
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T16:33:34.625Z",
+    "updatedAt": "2026-06-24T17:03:52.187Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.3949,
-      "draw": 0.3141,
-      "away": 0.291
+      "home": 0.3914,
+      "draw": 0.3163,
+      "away": 0.2923
     },
     "decimal": {
-      "home": 2.45,
-      "draw": 3.08,
-      "away": 3.33
+      "home": 2.47,
+      "draw": 3.05,
+      "away": 3.3
     }
   }
 }

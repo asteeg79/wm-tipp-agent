@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T16:31:48.046Z",
+    "generatedAt": "2026-06-24T17:03:51.386Z",
     "home": {
       "teamId": "ECU",
       "elo": 1671,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T14:03:47.868Z",
+    "generatedAt": "2026-06-24T17:03:51.386Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2269,
-      "draw": 0.243,
-      "away": 0.5302
+      "home": 0.2251,
+      "draw": 0.2636,
+      "away": 0.5113
     },
-    "confidence": 0.6229,
+    "confidence": 0.6059,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,56 +76,58 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.18,
-          "draw": 0.24,
-          "away": 0.58
+          "home": 0.21,
+          "draw": 0.27,
+          "away": 0.52
         },
-        "confidence": 0.58,
+        "confidence": 0.52,
         "keyFactors": [
-          "Deutschland mit klar überlegener Form (weightedForm 2.59 vs 1.14) und Elo-Vorsprung (1807 vs 1671)",
-          "Deutsche Offensive sehr stark (goalsForAvg 3.23), während Ecuador kaum Tore erzielt (goalsForAvg 0.59)",
-          "Ecuador defensiv kompakt (Gegentorschnitt 0.52, Clean-Sheet-Rate 0.52) – kann tief stehen und das Ergebnis lange offen halten",
-          "News: Ecuador-Trainer in der Kritik nach zwei Niederlagen, Unruhe im Umfeld spricht gegen den Außenseiter"
+          "Deutschland mit überragender Offensivform (3.23 Tore/Spiel, weightedForm 2.59) und höherer Elo (1807 vs 1671)",
+          "Ecuador defensiv extrem stabil (0.52 Gegentore/Spiel, 51.7% Clean Sheets) – schwer zu durchbrechen",
+          "Neutraler Spielort ohne Heimvorteil relativiert Ecuadors Nominal-Heimstatus",
+          "Markt deutlich konservativer (51.8% statt 71% für Deutschland) – Ecuador wird mehr zugetraut als die Baseline",
+          "WM-Gruppenkontext: Außenseiter stehen tief, Favoriten tun sich oft schwer"
         ],
         "risks": [
-          "Ecuadors starke Defensive könnte ein torarmes Spiel und ein mögliches Remis begünstigen (Markt sieht Ecuador stärker als die Baseline)",
-          "Turnier-Kontext: Außenseiter steht tief, Favorit tut sich oft schwer durchzubrechen",
-          "Geringe Ecuador-Torgefahr macht jedes deutsche Gegentor zur Überraschung – aber Standards bleiben Restrisiko",
-          "Mögliche Rotation/Aufstellungsfragen bei Deutschland (Undav-Entscheidung Nagelsmanns)"
+          "Ecuadors kompakte Defensive könnte ein torarmes Remis erzwingen",
+          "Mögliche Rotation/Experimente bei Nagelsmann könnten DFB-Durchschlagskraft mindern",
+          "Ecuadors schwache Offensive (0.59 Tore) macht eigenen Punktgewinn primär defensiv abhängig",
+          "Baseline überschätzt Germany möglicherweise deutlich gegenüber Markteinschätzung"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.25,
+          "home": 0.22,
+          "draw": 0.28,
           "away": 0.5
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Germany's strong recent form and high goalscoring ability with an average of 3.229 goals per game.",
-          "Ecuador's coaching instability and pressure on the manager may affect their performance.",
-          "The neutral venue reduces any home advantage for Ecuador."
+          "Deutschland hat einen höheren Elo-Wert und eine bessere gewichtete Form.",
+          "Ecuador zeigt eine solide Defensivleistung mit hoher Clean-Sheet-Rate.",
+          "Deutschland könnte rotieren, was die Teamstärke beeinflussen könnte.",
+          "Ecuador hat in jüngsten Medienberichten trotz Chaos innerhalb des Teams Kampfansagen gemacht."
         ],
         "risks": [
-          "Ecuador's high clean sheet rate could pose challenges to Germany's attacking play.",
-          "Despite recent form, Germany's defense has a relatively low clean sheet rate."
+          "Deutschland könnte nach den Medienberichten eine inkonsistente Aufstellung haben.",
+          "Ecuador hat eine hohe moralische Motivation durch Kampfansagen des Coaches."
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.9867,
     "ensembleWeights": {
       "claude": 0.5041,
       "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit klar überlegener Form (weightedForm 2.59 vs 1.14) und Elo-Vorsprung (1807 vs 1671); Deutsche Offensive sehr stark (goalsForAvg 3.23), während Ecuador kaum Tore erzielt (goalsForAvg 0.59); Ecuador defensiv kompakt (Gegentorschnitt 0.52, Clean-Sheet-Rate 0.52) – kann tief stehen und das Ergebnis lange offen halten. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit überragender Offensivform (3.23 Tore/Spiel, weightedForm 2.59) und höherer Elo (1807 vs 1671); Ecuador defensiv extrem stabil (0.52 Gegentore/Spiel, 51.7% Clean Sheets) – schwer zu durchbrechen; Neutraler Spielort ohne Heimvorteil relativiert Ecuadors Nominal-Heimstatus. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:519e62b82990d08dab154a363cde35d257ce8c88c1dc22015f40742196ef70a1"
   },
   "predictionHistory": [
@@ -297,11 +299,24 @@
         "away": 0.5309
       },
       "confidence": 0.6315
+    },
+    {
+      "generatedAt": "2026-06-24T14:03:47.868Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2269,
+        "draw": 0.243,
+        "away": 0.5302
+      },
+      "confidence": 0.6229
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T16:33:34.625Z",
+    "updatedAt": "2026-06-24T17:03:52.187Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.247,
