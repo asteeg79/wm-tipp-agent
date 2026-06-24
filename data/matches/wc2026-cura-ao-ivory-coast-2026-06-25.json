@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T07:03:49.498Z",
+    "generatedAt": "2026-06-24T08:03:47.067Z",
     "home": {
       "teamId": "CUW",
       "elo": 1568,
@@ -50,80 +50,85 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-24T08:03:47.067Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2589,
-      "draw": 0.2222,
-      "away": 0.5189
+      "home": 0.1105,
+      "draw": 0.1694,
+      "away": 0.7201
     },
-    "confidence": 0.6593,
+    "confidence": 0.6736,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3185,
-        "draw": 0.2532,
-        "away": 0.4283
+        "home": 0.1893,
+        "draw": 0.2139,
+        "away": 0.5968
       },
       "expectedGoals": {
-        "home": 1.26,
-        "away": 1.5
+        "home": 1.02,
+        "away": 1.98
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.27,
-          "draw": 0.25,
-          "away": 0.48
+          "home": 0.12,
+          "draw": 0.18,
+          "away": 0.7
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Ivory Coast mit deutlich höherer Elo (1753 vs. 1637) und besserer gewichteter Form (2.267 vs. 1.857)",
-          "Externe Prognose sieht klaren Favoriten Ivory Coast (76%), was die Away-Wahrscheinlichkeit gegenüber Baseline stützt",
-          "Ivory Coast spielrhythmisch besser im Wettkampfmodus (67 Tage seit letztem Spiel) vs. Curaçao mit langer Pause (200 Tage)",
-          "Neutraler Spielort eliminiert Heimvorteil für Curaçao"
+          "Elfenbeinküste deutlich höhere Elo (1684 vs 1568) und stärkere gewichtete Form (2.05 vs 1.31)",
+          "Solide Defensive der Gäste (nur 0.68 Gegentore/Spiel, Clean-Sheet-Rate 54%) gegen offensivschwächeres Curaçao",
+          "Markt sieht Ivory Coast als klaren Favoriten (83%), Baseline mit 60% vorsichtiger",
+          "Curaçao mit erfahrungsmäßig kleinerem Datensatz (22 Spiele) und höherer Gegentor-Anfälligkeit (1.77/Spiel)"
         ],
         "risks": [
-          "Curaçao defensiv stark (cleanSheetRate 0.55, nur 0.621 Gegentore/Spiel) und torgefährlich (2.199 Tore/Spiel) - kann überraschen",
-          "Lange Pause Curaçaos (200 Tage) erschwert Formbewertung - könnte sowohl erfrischt als auch rostig sein",
-          "Keine H2H-Daten vorhanden, hohe Unsicherheit bei der direkten Einschätzung",
-          "Geringe Spielanzahl Curaçaos (20) reduziert statistische Belastbarkeit"
+          "Curaçao steht als Außenseiter oft tief und kompakt – kann das Spiel torarm und knapp halten",
+          "Turnierauftakt-Vorsicht kann Favoriten ausbremsen und ein Remis begünstigen",
+          "Kein direkter H2H-Vergleich, erhöhte Unsicherheit",
+          "Beide Teams gleich lange Pause (4 Tage), kein Erholungsvorteil"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.25,
+          "home": 0.15,
           "draw": 0.2,
-          "away": 0.55
+          "away": 0.65
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Ivory Coast has a higher Elo rating than Curaçao, indicating a stronger historical performance.",
-          "Curaçao has not played a match in 200 days, potentially affecting their match readiness.",
-          "The match is played at a neutral venue, which removes home advantage.",
-          "Ivory Coast's recent form is slightly better than Curaçao's, with higher weighted form and more recent matches played."
+          "Ivory Coast hat einen höheren Elo-Wert, was auf eine stärkere Gesamtleistung hinweist.",
+          "Ivory Coast hat eine bessere jüngste Form mit einem höheren weightedForm-Wert.",
+          "Curaçao hat im Durchschnitt mehr Gegentore kassiert, was ihre Defensive schwächer erscheinen lässt.",
+          "Es gibt keinen Heimvorteil aufgrund des neutralen Spielorts."
         ],
         "risks": [
-          "Curaçao's high goals-for average indicates they can be offensively effective, which might surprise Ivory Coast.",
-          "Both teams have a similar clean sheet rate, suggesting that Curaçao may also be defensively resilient."
+          "Die Baseline und die Markt-Erwartung unterscheiden sich stark in der Einschätzung für Curaçao.",
+          "Das Fehlen von direkten H2H-Spielen bedeutet, dass es keine Vergleichswerte aus der Vergangenheit gibt.",
+          "Auftaktspiele können zu Überraschungen führen, da Außenseiter oft defensiv agieren."
         ]
       }
     },
-    "agreement": 0.9533,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ivory Coast mit deutlich höherer Elo (1753 vs. 1637) und besserer gewichteter Form (2.267 vs. 1.857); Externe Prognose sieht klaren Favoriten Ivory Coast (76%), was die Away-Wahrscheinlichkeit gegenüber Baseline stützt; Ivory Coast spielrhythmisch besser im Wettkampfmodus (67 Tage seit letztem Spiel) vs. Curaçao mit langer Pause (200 Tage).",
-    "inputHash": "sha256:8cdb0e5f7b6c1a801f3defac43037167846e7d332e268f4767831a31ca899853"
+    "agreement": 0.9667,
+    "ensembleWeights": {
+      "claude": 0.5041,
+      "chatgpt": 0.4959
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Elfenbeinküste deutlich höhere Elo (1684 vs 1568) und stärkere gewichtete Form (2.05 vs 1.31); Solide Defensive der Gäste (nur 0.68 Gegentore/Spiel, Clean-Sheet-Rate 54%) gegen offensivschwächeres Curaçao; Markt sieht Ivory Coast als klaren Favoriten (83%), Baseline mit 60% vorsichtiger. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:9b02675bba2d30f8ce874e3763b067f00f21ec108f0623b8afc1e0def840f62d"
   },
   "predictionHistory": [
     {
@@ -268,20 +273,33 @@
         "away": 0.5228
       },
       "confidence": 0.6251
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2589,
+        "draw": 0.2222,
+        "away": 0.5189
+      },
+      "confidence": 0.6593
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T07:05:05.491Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-24T08:04:53.483Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.0504,
-      "draw": 0.1175,
-      "away": 0.8321
+      "home": 0.0503,
+      "draw": 0.1194,
+      "away": 0.8304
     },
     "decimal": {
       "home": 19,
-      "draw": 8.15,
+      "draw": 8,
       "away": 1.15
     }
   }
