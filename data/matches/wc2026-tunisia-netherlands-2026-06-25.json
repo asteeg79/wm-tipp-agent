@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T10:03:55.446Z",
+    "generatedAt": "2026-06-24T11:03:45.796Z",
     "home": {
       "teamId": "TUN",
       "elo": 1599,
@@ -50,80 +50,82 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-24T11:03:45.796Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 3
     },
     "probabilities": {
-      "home": 0.1755,
-      "draw": 0.2155,
-      "away": 0.6091
+      "home": 0.0686,
+      "draw": 0.1283,
+      "away": 0.8031
     },
-    "confidence": 0.6804,
+    "confidence": 0.7618,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.1736,
-        "draw": 0.2046,
-        "away": 0.6219
+        "home": 0.0905,
+        "draw": 0.1328,
+        "away": 0.7767
       },
       "expectedGoals": {
-        "home": 1,
-        "away": 2.08
+        "home": 0.94,
+        "away": 2.93
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.17,
-          "draw": 0.21,
-          "away": 0.62
+          "home": 0.06,
+          "draw": 0.12,
+          "away": 0.82
         },
-        "confidence": 0.62,
+        "confidence": 0.76,
         "keyFactors": [
-          "Deutlicher Elo-Vorteil der Niederlande (1825 vs. 1672)",
-          "Stärkere gewichtete und jüngere Form der Niederlande (recentForm 2.4 vs. 1.7)",
-          "Höhere Offensivproduktion der Niederlande (goalsForAvg 2.53 vs. 1.65)",
-          "Tunesiens solide Defensive (cleanSheetRate 0.50, goalsAgainstAvg 0.75) kann Tore begrenzen",
-          "Neutraler Spielort ohne Heimvorteil für Tunesien"
+          "Niederlande deutlich stärker: Elo 1798 vs 1599, gewichtete Form 2.07 vs 1.38",
+          "Oranje mit hoher Offensivkraft (2.87 Tore/Spiel) und solider Defensive (1.08 Gegentore)",
+          "Tunesien defensiv anfällig (1.78 Gegentore/Spiel) und in schwacher Verfassung (jüngste 0:4-Niederlage gegen Japan)",
+          "Markt und Baseline einig im klaren Favoritenstatus der Niederlande"
         ],
         "risks": [
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "Niederländische Defensive anfällig (cleanSheetRate nur 0.39), Tunesien könnte treffen",
-          "67 Tage seit letztem Spiel beider Teams – Rhythmusverlust schwer einzuschätzen",
-          "Keine konkreten Verletzungs-/Ausfall-News verwertbar"
+          "WM-Gruppenphase: Außenseiter Tunesien könnte tief und kompakt verteidigen und das Ergebnis knapp halten",
+          "Mögliche Rotation/vorsichtiger Auftakt der Niederlande senkt Toranzahl",
+          "Standardsituationen oder ein frühes Tunesien-Tor könnten Spielverlauf öffnen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 3
         },
         "probabilities": {
-          "home": 0.18,
-          "draw": 0.22,
-          "away": 0.6
+          "home": 0.1,
+          "draw": 0.15,
+          "away": 0.75
         },
-        "confidence": 0.75,
+        "confidence": 0.8,
         "keyFactors": [
-          "The Netherlands have a significantly higher Elo rating, indicating stronger overall performance.",
-          "The Netherlands have a higher recent form with 2.4 compared to Tunisia's 1.7.",
-          "The Netherlands score more goals on average (2.533) compared to Tunisia (1.647)."
+          "Netherlands hat einen signifikant höheren Elo-Wert und präsentiert sich in der letzten Zeit in starker Form.",
+          "Tunisia hat kürzlich ein deutliches 0:4 gegen Japan verloren, was auf defensive Schwächen hinweist.",
+          "Die durchschnittlichen Torzahlen sprechen klar für die Niederlande, die fast dreimal mehr Tore pro Spiel schießen als Tunesien."
         ],
         "risks": [
-          "Neutral venue, reducing typical home/away advantages.",
-          "No head-to-head matches available as reference data."
+          "Tunisia könnte aus einer verstärkten Defensive heraus die Niederländer überraschen, wenn diese Schwierigkeiten beim Kreieren von Chancen haben.",
+          "Neutraler Spielort reduziert den Einfluss von Heimpublikum, was die Wahrscheinlichkeit für Überraschungen leicht erhöht."
         ]
       }
     },
-    "agreement": 0.9867,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorteil der Niederlande (1825 vs. 1672); Stärkere gewichtete und jüngere Form der Niederlande (recentForm 2.4 vs. 1.7); Höhere Offensivproduktion der Niederlande (goalsForAvg 2.53 vs. 1.65).",
-    "inputHash": "sha256:a72833d877e4d798df7fdf9c97960df5ae8db1468404d460f96d00576d6d8d27"
+    "agreement": 0.9533,
+    "ensembleWeights": {
+      "claude": 0.5041,
+      "chatgpt": 0.4959
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande deutlich stärker: Elo 1798 vs 1599, gewichtete Form 2.07 vs 1.38; Oranje mit hoher Offensivkraft (2.87 Tore/Spiel) und solider Defensive (1.08 Gegentore); Tunesien defensiv anfällig (1.78 Gegentore/Spiel) und in schwacher Verfassung (jüngste 0:4-Niederlage gegen Japan). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:b0a485a7787bfe01bf3801f5599c6b19374f21ba367267de5f611205e9fcd06c"
   },
   "predictionHistory": [
     {
@@ -255,11 +257,24 @@
         "away": 0.6184
       },
       "confidence": 0.7301
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1755,
+        "draw": 0.2155,
+        "away": 0.6091
+      },
+      "confidence": 0.6804
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T10:04:02.669Z",
+    "updatedAt": "2026-06-24T11:05:47.655Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.0414,
