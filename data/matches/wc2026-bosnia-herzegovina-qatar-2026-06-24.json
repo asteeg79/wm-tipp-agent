@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T06:03:45.303Z",
+    "generatedAt": "2026-06-24T07:03:49.498Z",
     "home": {
       "teamId": "BIH",
       "elo": 1535,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T04:03:44.558Z",
+    "generatedAt": "2026-06-24T07:03:49.498Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6468,
-      "draw": 0.1942,
-      "away": 0.159
+      "home": 0.6278,
+      "draw": 0.205,
+      "away": 0.1672
     },
-    "confidence": 0.6293,
+    "confidence": 0.6379,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,52 +81,51 @@
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.2,
-          "away": 0.2
+          "draw": 0.21,
+          "away": 0.19
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Bosnien mit besserer gewichteter und jüngster Form (recentForm 1.4 vs 1.0) und leicht höherem Elo (1535 vs 1526)",
-          "Katars Defensive sehr anfällig: 2.53 Gegentore pro Spiel, zuletzt 0:6 gegen Kanada",
-          "Bosniens erwartete Tore (xG 2.03) klar über Katars (1.30) laut Baseline",
-          "Markt sieht Bosnien deutlich vorne (0.69), stützt Heimfavoritenrolle"
+          "Bosnien mit besserer gewichteter und jüngerer Form (recentForm 1.4 vs 1.0) sowie leicht höherem Elo (1535 vs 1526)",
+          "Katars defensive Schwäche sticht hervor: 2.53 Gegentore im Schnitt, zuletzt 0:6 gegen Kanada",
+          "Bosniens Offensive (1.47 Tore/Spiel) trifft auf eine durchlässige katarische Abwehr",
+          "Markt sieht Bosnien deutlich vorn (0.69) und stützt die Heim-Tendenz über die Baseline hinaus"
         ],
         "risks": [
-          "Neutraler Spielort nimmt echten Heimvorteil – Bosnien ist nicht klar dominant",
-          "Bosnien selbst defensiv schwach (1.72 Gegentore, nur 17% Zu-Null) – Katar kann treffen",
-          "WM-Auftaktspiele oft vorsichtig und torarm, Außenseiter steht tief",
-          "Externe Verletzungsmeldung betrifft Kanada-Spiel, Auswirkung auf Katar-Kader unklar"
+          "Bosnien selbst defensiv anfällig (1.72 Gegentore, nur 17% Zu-Null) – Katar kann kontern",
+          "Kein H2H-Vergleichswert vorhanden, Unsicherheit über direkte Begegnung",
+          "Bosniens eigene Tor-Anfälligkeit könnte ein Unentschieden begünstigen, falls die Offensive stockt",
+          "Turnierkontext: tief stehende Außenseiter erschweren das Toreschießen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
-          "away": 0.15
+          "home": 0.6,
+          "draw": 0.22,
+          "away": 0.18
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Bosnia & Herzegovina's higher recent form (1.4) compared to Qatar's (1)",
-          "Qatar's high goals against average (2.531) indicating defensive weaknesses",
-          "Recent injury concerns for Qatar reducing their squad depth and options",
-          "Neutral venue, reducing any potential host advantage for Qatar"
+          "Bosnia & Herzegovina zeigt eine bessere aktuelle Form als Katar.",
+          "Katar hat Verletzungsprobleme, die ihre Leistung beeinträchtigen könnten.",
+          "Die externen Marktquoten sehen Bosnien & Herzegowina als klaren Favoriten."
         ],
         "risks": [
-          "No head-to-head history; uncertainty about direct matchup dynamics",
-          "Bosnia & Herzegovina's relatively low clean sheet rate (0.174)"
+          "Katar könnte trotz Verletzungen überraschend kompakt spielen.",
+          "Neutrales Spielfeld könnte Einfluss auf die spielerische Leistung haben."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.5044,
-      "chatgpt": 0.4956
+      "claude": 0.5041,
+      "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnien mit besserer gewichteter und jüngster Form (recentForm 1.4 vs 1.0) und leicht höherem Elo (1535 vs 1526); Katars Defensive sehr anfällig: 2.53 Gegentore pro Spiel, zuletzt 0:6 gegen Kanada; Bosniens erwartete Tore (xG 2.03) klar über Katars (1.30) laut Baseline. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Bosnien mit besserer gewichteter und jüngerer Form (recentForm 1.4 vs 1.0) sowie leicht höherem Elo (1535 vs 1526); Katars defensive Schwäche sticht hervor: 2.53 Gegentore im Schnitt, zuletzt 0:6 gegen Kanada; Bosniens Offensive (1.47 Tore/Spiel) trifft auf eine durchlässige katarische Abwehr. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:2ff97bac152fbb54aa390e57c2691906f3a4ef0c25c0557ab089e390ef325180"
   },
   "predictionHistory": [
@@ -311,11 +310,24 @@
         "away": 0.1747
       },
       "confidence": 0.6007
+    },
+    {
+      "generatedAt": "2026-06-24T04:03:44.558Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6468,
+        "draw": 0.1942,
+        "away": 0.159
+      },
+      "confidence": 0.6293
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T06:05:40.735Z",
+    "updatedAt": "2026-06-24T07:05:05.491Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6927,
