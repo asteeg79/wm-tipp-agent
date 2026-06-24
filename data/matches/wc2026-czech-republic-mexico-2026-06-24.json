@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T12:28:49.268Z",
+    "generatedAt": "2026-06-24T13:03:47.749Z",
     "home": {
       "teamId": "CZE",
       "elo": 1610,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T04:03:44.558Z",
+    "generatedAt": "2026-06-24T13:03:47.749Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.2347,
-      "draw": 0.2561,
-      "away": 0.5092
+      "home": 0.2457,
+      "draw": 0.2916,
+      "away": 0.4627
     },
-    "confidence": 0.6379,
+    "confidence": 0.5558,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,57 +77,57 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
-          "away": 2
-        },
-        "probabilities": {
-          "home": 0.23,
-          "draw": 0.26,
-          "away": 0.51
-        },
-        "confidence": 0.58,
-        "keyFactors": [
-          "Mexiko mit deutlich höherem Elo (1712 vs 1610) und stärkerer gewichteter Form (2.06 vs 1.27)",
-          "Sehr stabile mexikanische Defensive (0.6 Gegentore/Spiel, 61% Zu-Null-Rate) gegenüber anfälliger tschechischer Abwehr",
-          "Höhenlage (2240m) und Gastgeber-/Heimvorteil sprechen klar für Mexiko",
-          "Erwartete Tore der Baseline (0.91 vs 1.48) untermauern leichtes Übergewicht Mexikos"
-        ],
-        "risks": [
-          "Kein direktes Head-to-Head als Referenz vorhanden",
-          "Tschechien kann tief und kompakt stehen und torarm punkten – Remis-Potenzial",
-          "Mögliche Rotation/Belastung Mexikos in der Gruppenphase",
-          "WM-Gruppenspiele oft vorsichtig und knapp, was Favoritenrolle relativiert"
-        ]
-      },
-      "chatgpt": {
-        "predictedScore": {
           "home": 0,
           "away": 1
         },
         "probabilities": {
-          "home": 0.22,
-          "draw": 0.26,
-          "away": 0.52
+          "home": 0.23,
+          "draw": 0.27,
+          "away": 0.5
         },
-        "confidence": 0.7,
+        "confidence": 0.55,
         "keyFactors": [
-          "Mexiko hat eine höhere Elo-Wertung und bessere Form als Tschechien.",
-          "Tschechien hat ein etwas höheres Durchschnitt von Toren pro Spiel, kassiert aber auch mehr Gegentore.",
-          "Spiel findet auf neutralem Boden, jedoch in hoher Lage statt, was Mexiko begünstigen könnte.",
-          "Mexiko hat eine hohe Clean-Sheet-Rate."
+          "Mexiko klar stärker: höheres Elo (1712 vs 1610), bessere gewichtete Form (2.06 vs 1.27) und deutlich stabilere Defensive (0.6 Gegentore/Spiel, 61% Clean Sheets)",
+          "Tschechien defensiv anfällig (1.30 Gegentore/Spiel, nur 30% Clean Sheets) bei nur moderater Offensive",
+          "Mexiko genießt faktischen Gastgeber-Vorteil und Höhenanpassung (2240m) - für die Tschechen ein zusätzlicher Belastungsfaktor",
+          "Markt und Baseline decken sich eng: beide sehen Mexiko bei ~0.50 als Favorit"
         ],
         "risks": [
-          "Fehlende Head-to-Head-Daten zwischen den Teams.",
-          "Eine Verletzung eines mexikanischen Spielers könnte Auswirkungen haben, aber Details fehlen."
+          "Berichtete Unruhe im mexikanischen Lager vor dem letzten Gruppenspiel könnte die Leistung dämpfen",
+          "Bei bereits entschiedener Gruppensituation könnte Mexiko rotieren und das Spiel verflachen",
+          "Tschechien kann tief und kompakt stehen - WM-Gruppenspiele sind oft torarm, Remis-Potenzial vorhanden",
+          "Mexikos starke Defensive macht ein knappes 1:0/2:0 wahrscheinlicher als ein offenes Spiel"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.25,
+          "draw": 0.35,
+          "away": 0.4
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Mexico hat einen höheren Elo-Wert und eine bessere weightedForm, was sie zu einem leichten Favoriten macht.",
+          "Der Spielort auf hoher Höhe könnte für Tschechien ungewohnt sein, während Mexiko möglicherweise einen Vorteil genießt.",
+          "Mexiko hat eine hohe Clean-Sheet-Rate, während Tschechien anfällig ist, was jedoch durch aktuelle Unruhen bei Mexiko abgeschwächt werden könnte."
+        ],
+        "risks": [
+          "Unruhe im mexikanischen Team könnte ihre Leistung beeinträchtigen und die Favoritenrolle schwächen.",
+          "Der Mangel an direkten H2H-Duellen macht die Vorhersage weniger stabil.",
+          "Die Höhe könnte ein größeres Handicap für Tschechien sein, als antizipiert."
         ]
       }
     },
-    "agreement": 0.9933,
+    "agreement": 0.9333,
     "ensembleWeights": {
-      "claude": 0.5044,
-      "chatgpt": 0.4956
+      "claude": 0.5041,
+      "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko mit deutlich höherem Elo (1712 vs 1610) und stärkerer gewichteter Form (2.06 vs 1.27); Sehr stabile mexikanische Defensive (0.6 Gegentore/Spiel, 61% Zu-Null-Rate) gegenüber anfälliger tschechischer Abwehr; Höhenlage (2240m) und Gastgeber-/Heimvorteil sprechen klar für Mexiko. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko klar stärker: höheres Elo (1712 vs 1610), bessere gewichtete Form (2.06 vs 1.27) und deutlich stabilere Defensive (0.6 Gegentore/Spiel, 61% Clean Sheets); Tschechien defensiv anfällig (1.30 Gegentore/Spiel, nur 30% Clean Sheets) bei nur moderater Offensive; Mexiko genießt faktischen Gastgeber-Vorteil und Höhenanpassung (2240m) - für die Tschechen ein zusätzlicher Belastungsfaktor. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:6ddf5630c7ad9c308944de507d9adb8f9cc22e2fe3829af882d0ec5a88656b8c"
   },
   "predictionHistory": [
@@ -273,21 +273,34 @@
         "away": 0.4965
       },
       "confidence": 0.5654
+    },
+    {
+      "generatedAt": "2026-06-24T04:03:44.558Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.2347,
+        "draw": 0.2561,
+        "away": 0.5092
+      },
+      "confidence": 0.6379
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T12:30:28.726Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-24T13:03:48.421Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.26,
-      "draw": 0.2467,
-      "away": 0.4933
+      "home": 0.2579,
+      "draw": 0.2455,
+      "away": 0.4966
     },
     "decimal": {
-      "home": 3.7,
-      "draw": 3.9,
-      "away": 1.95
+      "home": 3.74,
+      "draw": 3.93,
+      "away": 1.94
     }
   }
 }

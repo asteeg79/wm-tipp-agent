@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T12:28:49.268Z",
+    "generatedAt": "2026-06-24T13:03:47.749Z",
     "home": {
       "teamId": "RSA",
       "elo": 1587,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T04:03:44.558Z",
+    "generatedAt": "2026-06-24T13:03:47.749Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.2483,
-      "draw": 0.2914,
-      "away": 0.4603
+      "home": 0.2478,
+      "draw": 0.2937,
+      "away": 0.4584
     },
-    "confidence": 0.4896,
+    "confidence": 0.48,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,7 +77,7 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
@@ -85,18 +85,18 @@
           "draw": 0.27,
           "away": 0.47
         },
-        "confidence": 0.52,
+        "confidence": 0.45,
         "keyFactors": [
-          "Südkorea mit höherem Elo (1675 vs 1587) und besserer gewichteter sowie aktueller Form (1.566/1.6 vs 1.274/1.4)",
-          "Markt sieht Südkorea klar vorne (0.57), Baseline moderater (0.40) – Wahrheit dazwischen",
-          "Beide Teams defensiv ähnlich, aber Korea offensiv etwas variabler und mit mehr Turniererfahrung",
-          "Neutraler Ort ohne Heimvorteil für Südafrika"
+          "Südkorea hat das höhere Elo (1675 vs 1587) und die bessere gewichtete sowie aktuelle Form (1,57/1,6 vs 1,27/1,4)",
+          "Markt sieht Südkorea deutlich vorne (0,58), Baseline moderater (0,40) – Wahrheit liegt dazwischen",
+          "Beide Teams defensiv anfällig (Clean-Sheet-Raten unter 0,46), Offensiven aber nur durchschnittlich → eher torarmes Spiel",
+          "Neutraler Spielort ohne Heimvorteil, kein H2H-Verlauf vorhanden"
         ],
         "risks": [
-          "Südafrika kann tief und kompakt stehen und Korea das Spiel erschweren – Remis realistisch",
-          "Torarmes WM-Gruppenspiel mit knappem Ausgang möglich",
-          "Kein H2H-Vergleich vorhanden, erhöhte Unsicherheit",
-          "Südkorea tut sich gegen defensive Außenseiter teils schwer"
+          "Südafrika steht im WM-Gruppenspiel möglicherweise tief und kompakt, was ein Remis begünstigt",
+          "Negative Trainer-Stimmung/Umfeld bei Südafrika könnte Leistung beeinträchtigen oder als Motivation umschlagen",
+          "Knappe Einzelstärke-Unterschiede – Spiel kann leicht in jede Richtung kippen",
+          "Höhe (540 m) und WM-Kontext können das Tempo und die Ergebnisoffenheit beeinflussen"
         ]
       },
       "chatgpt": {
@@ -109,26 +109,25 @@
           "draw": 0.35000000000000003,
           "away": 0.35000000000000003
         },
-        "confidence": 0.5,
+        "confidence": 0.55,
         "keyFactors": [
-          "Südafrikas Form ist stabil und sie haben eine gute Defensivbilanz mit einer Clean-Sheet-Rate von 45,5%.",
-          "Südkorea hat einen höheren Elo, aber ihre Defensivstatistik ist weniger stark als Südafrikas.",
-          "Weder Heim- noch Auswärtsteam hat direkten Head-to-Head-Vergleich, was das Spiel offener macht.",
-          "Der neutraler Spielort nimmt beiden Teams den Heimvorteil."
+          "Südafrika hat eine leicht schwächere Elo-Zahl als Südkorea.",
+          "Form beider Teams ist ähnlich, Südkorea jedoch etwas stärker.",
+          "Spiel findet auf neutralem Boden statt, kein Heimvorteil.",
+          "Kein Head-to-Head-Vergleich vorhanden."
         ],
         "risks": [
-          "Fehlende Head-to-Head-Vergleiche zwischen den Teams könnten zu unerwarteten Spielverläufen führen.",
-          "Externe Prognose setzt stark auf Südkorea, was möglicherweise Markttrends berücksichtigt, die nicht in den Daten sichtbar sind.",
-          "Südafrikas interner Druck aufgrund des Trainer-Statements könnte die Leistung beeinträchtigen."
+          "Kritik des südafrikanischen Trainers könnte Einfluss auf Teamleistung haben.",
+          "Externe Prognosen sehen Südkorea als stärkeren Favoriten als die Baseline."
         ]
       }
     },
     "agreement": 0.92,
     "ensembleWeights": {
-      "claude": 0.5044,
-      "chatgpt": 0.4956
+      "claude": 0.5041,
+      "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea mit höherem Elo (1675 vs 1587) und besserer gewichteter sowie aktueller Form (1.566/1.6 vs 1.274/1.4); Markt sieht Südkorea klar vorne (0.57), Baseline moderater (0.40) – Wahrheit dazwischen; Beide Teams defensiv ähnlich, aber Korea offensiv etwas variabler und mit mehr Turniererfahrung. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea hat das höhere Elo (1675 vs 1587) und die bessere gewichtete sowie aktuelle Form (1,57/1,6 vs 1,27/1,4); Markt sieht Südkorea deutlich vorne (0,58), Baseline moderater (0,40) – Wahrheit liegt dazwischen; Beide Teams defensiv anfällig (Clean-Sheet-Raten unter 0,46), Offensiven aber nur durchschnittlich → eher torarmes Spiel. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:2012356b8b4762d7c0f9930b486fa1d2e53339d2860116fb62ca048b4210db38"
   },
   "predictionHistory": [
@@ -287,21 +286,34 @@
         "away": 0.4535
       },
       "confidence": 0.528
+    },
+    {
+      "generatedAt": "2026-06-24T04:03:44.558Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.2483,
+        "draw": 0.2914,
+        "away": 0.4603
+      },
+      "confidence": 0.4896
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T12:30:28.726Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-06-24T13:03:48.421Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.1783,
-      "draw": 0.2487,
-      "away": 0.573
+      "home": 0.1685,
+      "draw": 0.2472,
+      "away": 0.5843
     },
     "decimal": {
-      "home": 5.4,
-      "draw": 3.87,
-      "away": 1.68
+      "home": 5.72,
+      "draw": 3.9,
+      "away": 1.65
     }
   }
 }
