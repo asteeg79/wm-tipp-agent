@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T17:03:51.386Z",
+    "generatedAt": "2026-06-24T18:03:49.821Z",
     "home": {
       "teamId": "MAR",
       "elo": 1817,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T10:03:55.446Z",
+    "generatedAt": "2026-06-24T18:03:49.821Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7757,
-      "draw": 0.1582,
-      "away": 0.0661
+      "home": 0.7845,
+      "draw": 0.1373,
+      "away": 0.0783
     },
-    "confidence": 0.7798,
+    "confidence": 0.7745,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,21 +80,22 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.77,
-          "draw": 0.16,
-          "away": 0.07
+          "home": 0.79,
+          "draw": 0.135,
+          "away": 0.075
         },
         "confidence": 0.72,
         "keyFactors": [
-          "Marokko mit deutlich höherem Elo (1817 vs 1534) und starker Form (weightedForm 2.445)",
-          "Exzellente Defensive Marokkos: goalsAgainstAvg 0.328 und 69% Clean-Sheet-Rate",
-          "Haiti defensiv anfällig (goalsAgainstAvg 1.402, nur 37,5% Clean Sheets)",
-          "Marokko WM-Halbfinalist 2022 mit gestiegener Qualität, klarer Favorit"
+          "Großer Elo-Unterschied (1817 vs 1534) zugunsten Marokkos",
+          "Marokkos herausragende Defensive (0,33 Gegentore/Spiel, 69% Zu-Null-Quote) trifft auf eine durchschnittliche haitianische Offensive",
+          "Starke gewichtete Form Marokkos (2,45) deutlich über Haiti (0,99)",
+          "Markt sieht Marokko klar vorn (82%), Baseline etwas vorsichtiger (72%)"
         ],
         "risks": [
-          "Außenseiter Haiti könnte tief und kompakt stehen und Marokko das Toreschießen erschweren",
-          "Gruppenauftakt oft vorsichtig und torarm",
-          "Kein direkter H2H-Vergleich verfügbar"
+          "WM-Auftaktspiele oft torarm und vorsichtig; tief stehender Außenseiter kann Tore lange verhindern",
+          "Keine H2H-Daten zur Kalibrierung vorhanden",
+          "Möglicher Konterfußball Haitis bei marokkanischem Ballbesitzdruck",
+          "Rotations- oder Verletzungsrisiken im Kader noch nicht final abschätzbar"
         ]
       },
       "chatgpt": {
@@ -104,27 +105,28 @@
         },
         "probabilities": {
           "home": 0.75,
-          "draw": 0.18,
-          "away": 0.07
+          "draw": 0.15,
+          "away": 0.1
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Morocco's high Elo rating and strong form compared to Haiti.",
-          "Morocco's excellent defensive record, including a high clean sheet rate.",
-          "Haiti's lower weighted form and vulnerability in defense."
+          "Morocco has a significantly higher Elo rating than Haiti, indicating stronger overall team strength.",
+          "Morocco's weighted form and recent form are superior to Haiti's, showing better recent performances.",
+          "Morocco's goals against average and clean sheet rate suggest a strong defense that Haiti may struggle to breach.",
+          "Game is held at a neutral venue, minimizing home advantage but still favoring the stronger team."
         ],
         "risks": [
-          "Neutral venue potentially leveling the playing field slightly.",
-          "Typical cautious approach in group stage openers."
+          "Uncertainty exists due to lack of head-to-head data between the teams.",
+          "Variability in team performance during World Cup group stages, where caution can lead to fewer goals."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5041,
       "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko mit deutlich höherem Elo (1817 vs 1534) und starker Form (weightedForm 2.445); Exzellente Defensive Marokkos: goalsAgainstAvg 0.328 und 69% Clean-Sheet-Rate; Haiti defensiv anfällig (goalsAgainstAvg 1.402, nur 37,5% Clean Sheets). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1817 vs 1534) zugunsten Marokkos; Marokkos herausragende Defensive (0,33 Gegentore/Spiel, 69% Zu-Null-Quote) trifft auf eine durchschnittliche haitianische Offensive; Starke gewichtete Form Marokkos (2,45) deutlich über Haiti (0,99). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:fd72771a1a2b54194ef49f943398c6ec308f673c039af367a18819a555de36db"
   },
   "predictionHistory": [
@@ -322,11 +324,24 @@
         "away": 0.0758
       },
       "confidence": 0.7549
+    },
+    {
+      "generatedAt": "2026-06-24T10:03:55.446Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7757,
+        "draw": 0.1582,
+        "away": 0.0661
+      },
+      "confidence": 0.7798
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T17:03:52.187Z",
+    "updatedAt": "2026-06-24T18:05:59.425Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8218,

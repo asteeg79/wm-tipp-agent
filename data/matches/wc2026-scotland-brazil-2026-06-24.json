@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T17:03:51.386Z",
+    "generatedAt": "2026-06-24T18:03:49.821Z",
     "home": {
       "teamId": "SCO",
       "elo": 1567,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T10:03:55.446Z",
+    "generatedAt": "2026-06-24T18:03:49.821Z",
     "predictedScore": {
       "home": 0,
-      "away": 2
+      "away": 1
     },
     "probabilities": {
-      "home": 0.1145,
-      "draw": 0.1997,
-      "away": 0.6858
+      "home": 0.1199,
+      "draw": 0.2047,
+      "away": 0.6755
     },
-    "confidence": 0.7251,
+    "confidence": 0.667,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,53 +80,51 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.12,
-          "draw": 0.2,
-          "away": 0.68
+          "home": 0.11,
+          "draw": 0.19,
+          "away": 0.7
         },
-        "confidence": 0.66,
+        "confidence": 0.68,
         "keyFactors": [
-          "Brasilien deutlich stärker: Elo 1820 vs 1567, bessere gewichtete Form (1.871 vs 1.364) und Topwerte in Offensive (1.885) wie Defensive (0.748 Gegentore)",
-          "Brasiliens recentForm makellos (2.0), höhere Clean-Sheet-Rate (0.407)",
-          "Schottland defensiv anfällig (cleanSheetRate nur 0.296) und offensiv limitiert (1.062 Tore)",
-          "Markt sieht Brasilien klar vorn (0.7248), Baseline bestätigt klares Favoritenbild"
+          "Brasilien deutlich stärker: Elo 1820 vs 1567, bessere gewichtete Form (1.871 vs 1.364) und Topwerte in der jüngsten Form",
+          "Brasilien defensiv solide (0.748 Gegentore/Spiel, 40.7% Clean Sheets) und offensiv klar überlegen (1.885 Tore/Spiel)",
+          "Neutraler Spielort ohne Heimvorteil für Schottland",
+          "Markt sieht Brasilien noch klarer (73.6%) als die Baseline (63.5%)"
         ],
         "risks": [
-          "WM-Gruppenphase: Schottland steht oft tief und kompakt, kann ein torarmes knappes Ergebnis erzwingen",
-          "Brasilien-Verletzungssorgen (Raphinha-Ersatz) könnten Offensive schwächen",
-          "Auftakt-/Gruppenspiele tendenziell vorsichtig und torarm",
-          "Kein H2H-Datenmaterial vorhanden"
+          "Schottland steht als Außenseiter oft tief und kompakt – WM-Gruppenspiele können torarm und eng bleiben",
+          "Mögliche Rotation Brasiliens bei früher Führung oder bereits entschiedener Gruppensituation",
+          "Standardsituationen Schottlands könnten zu einem Überraschungstor führen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 0,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.12,
-          "draw": 0.22,
-          "away": 0.66
+          "home": 0.15,
+          "draw": 0.25,
+          "away": 0.6
         },
-        "confidence": 0.8,
+        "confidence": 0.7,
         "keyFactors": [
-          "Brazil's significantly higher Elo rating",
-          "Brazil's strong offensive capabilities",
-          "Scotland's lower clean sheet rate",
-          "Neutral venue reduces the impact of a 'home' advantage for Scotland"
+          "Brazil's high Elo rating and superior recent form, indicating strong performance.",
+          "Scotland's decent recent form but lower overall quality compared to Brazil.",
+          "Neutral venue limits any host advantage."
         ],
         "risks": [
-          "Potential formation changes due to Raphinha's injury",
-          "Scotland's ability to play compact and disrupt Brazil's attack"
+          "Possible conservative approach from both teams in the group stage.",
+          "Scotland may play defensively, increasing the chance of a draw."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9333,
     "ensembleWeights": {
       "claude": 0.5041,
       "chatgpt": 0.4959
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brasilien deutlich stärker: Elo 1820 vs 1567, bessere gewichtete Form (1.871 vs 1.364) und Topwerte in Offensive (1.885) wie Defensive (0.748 Gegentore); Brasiliens recentForm makellos (2.0), höhere Clean-Sheet-Rate (0.407); Schottland defensiv anfällig (cleanSheetRate nur 0.296) und offensiv limitiert (1.062 Tore). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brasilien deutlich stärker: Elo 1820 vs 1567, bessere gewichtete Form (1.871 vs 1.364) und Topwerte in der jüngsten Form; Brasilien defensiv solide (0.748 Gegentore/Spiel, 40.7% Clean Sheets) und offensiv klar überlegen (1.885 Tore/Spiel); Neutraler Spielort ohne Heimvorteil für Schottland. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:c0c74ea3552e2972c5bbf4fbe32494a6dc72d21d8415d343e61e3cf6fbd567b8"
   },
   "predictionHistory": [
@@ -311,11 +309,24 @@
         "away": 0.6757
       },
       "confidence": 0.7227
+    },
+    {
+      "generatedAt": "2026-06-24T10:03:55.446Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1145,
+        "draw": 0.1997,
+        "away": 0.6858
+      },
+      "confidence": 0.7251
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T17:03:52.187Z",
+    "updatedAt": "2026-06-24T18:05:59.425Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.096,
