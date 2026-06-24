@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-23T23:20:36.855Z",
+    "generatedAt": "2026-06-24T04:03:44.558Z",
     "home": {
       "teamId": "RSA",
       "elo": 1587,
@@ -23,7 +23,7 @@
       "goalsAgainstAvg": 1.15,
       "cleanSheetRate": 0.455,
       "matchesCount": 33,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "KOR",
@@ -34,7 +34,7 @@
       "goalsAgainstAvg": 1.23,
       "cleanSheetRate": 0.387,
       "matchesCount": 31,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 0,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-23T13:03:48.514Z",
+    "generatedAt": "2026-06-24T04:03:44.558Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 0,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.2486,
-      "draw": 0.298,
-      "away": 0.4535
+      "home": 0.2483,
+      "draw": 0.2914,
+      "away": 0.4603
     },
-    "confidence": 0.528,
+    "confidence": 0.4896,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,26 +77,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 1
         },
         "probabilities": {
-          "home": 0.25,
-          "draw": 0.28,
+          "home": 0.26,
+          "draw": 0.27,
           "away": 0.47
         },
-        "confidence": 0.5,
+        "confidence": 0.52,
         "keyFactors": [
-          "Südkorea höher eingestuft (Elo 1675 vs 1587) und in besserer gewichteter Form (1.566 vs 1.274)",
-          "Markt sieht Südkorea klar vorne (56,6%), Baseline moderater (40,3%) – Kompromiss zugunsten Korea",
-          "Beide Teams mit ähnlicher Offensiv-/Defensivbilanz, neutraler Spielort ohne Heimvorteil",
-          "WM-Gruppenphase: Südafrika kann tief und kompakt stehen, knappe Ergebnisse wahrscheinlich"
+          "Südkorea mit höherem Elo (1675 vs 1587) und besserer gewichteter sowie aktueller Form (1.566/1.6 vs 1.274/1.4)",
+          "Markt sieht Südkorea klar vorne (0.57), Baseline moderater (0.40) – Wahrheit dazwischen",
+          "Beide Teams defensiv ähnlich, aber Korea offensiv etwas variabler und mit mehr Turniererfahrung",
+          "Neutraler Ort ohne Heimvorteil für Südafrika"
         ],
         "risks": [
-          "Trainersperre/Unruhe im südafrikanischen Lager könnte Organisation beeinträchtigen – schwer quantifizierbar",
-          "Kein Head-to-Head vorhanden, hohe Unsicherheit",
-          "Torarme, ausgeglichene Partie macht Remis realistisch",
-          "Südkorea defensiv anfällig (Clean-Sheet-Rate nur 0.387) – Südafrika kann punkten"
+          "Südafrika kann tief und kompakt stehen und Korea das Spiel erschweren – Remis realistisch",
+          "Torarmes WM-Gruppenspiel mit knappem Ausgang möglich",
+          "Kein H2H-Vergleich vorhanden, erhöhte Unsicherheit",
+          "Südkorea tut sich gegen defensive Außenseiter teils schwer"
         ]
       },
       "chatgpt": {
@@ -109,25 +109,27 @@
           "draw": 0.35000000000000003,
           "away": 0.35000000000000003
         },
-        "confidence": 0.6,
+        "confidence": 0.5,
         "keyFactors": [
-          "Sowohl Südafrika als auch Südkorea haben ähnliche Formwerte und Torausbeuten, was auf ein ausgeglichenes Spiel schließen lässt.",
-          "Das Fehlen von direkten Head-to-Head-Begegnungen erschwert eine genaue Einschätzung der Dynamik zwischen den beiden Teams.",
-          "Der neutrale Spielort begünstigt keine Mannschaft, was die Chancen auf ein Unentschieden leicht erhöht."
+          "Südafrikas Form ist stabil und sie haben eine gute Defensivbilanz mit einer Clean-Sheet-Rate von 45,5%.",
+          "Südkorea hat einen höheren Elo, aber ihre Defensivstatistik ist weniger stark als Südafrikas.",
+          "Weder Heim- noch Auswärtsteam hat direkten Head-to-Head-Vergleich, was das Spiel offener macht.",
+          "Der neutraler Spielort nimmt beiden Teams den Heimvorteil."
         ],
         "risks": [
-          "Die Suspendierung des südafrikanischen Trainers könnte die Leistung des Teams negativ beeinflussen.",
-          "Die Marktprognose zeigt eine klare Präferenz für Südkorea, was auf unterschätzte Faktoren hinsichtlich der Spielstärke Südafrikas hinweisen könnte."
+          "Fehlende Head-to-Head-Vergleiche zwischen den Teams könnten zu unerwarteten Spielverläufen führen.",
+          "Externe Prognose setzt stark auf Südkorea, was möglicherweise Markttrends berücksichtigt, die nicht in den Daten sichtbar sind.",
+          "Südafrikas interner Druck aufgrund des Trainer-Statements könnte die Leistung beeinträchtigen."
         ]
       }
     },
     "agreement": 0.92,
     "ensembleWeights": {
-      "claude": 0.5056,
-      "chatgpt": 0.4944
+      "claude": 0.5044,
+      "chatgpt": 0.4956
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea höher eingestuft (Elo 1675 vs 1587) und in besserer gewichteter Form (1.566 vs 1.274); Markt sieht Südkorea klar vorne (56,6%), Baseline moderater (40,3%) – Kompromiss zugunsten Korea; Beide Teams mit ähnlicher Offensiv-/Defensivbilanz, neutraler Spielort ohne Heimvorteil. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:e823079b78fdc25d15f578ca68bf281c35a6067274229cb4d93c1125a1f90652"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Südkorea mit höherem Elo (1675 vs 1587) und besserer gewichteter sowie aktueller Form (1.566/1.6 vs 1.274/1.4); Markt sieht Südkorea klar vorne (0.57), Baseline moderater (0.40) – Wahrheit dazwischen; Beide Teams defensiv ähnlich, aber Korea offensiv etwas variabler und mit mehr Turniererfahrung. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:2012356b8b4762d7c0f9930b486fa1d2e53339d2860116fb62ca048b4210db38"
   },
   "predictionHistory": [
     {
@@ -272,11 +274,24 @@
         "away": 0.39
       },
       "confidence": 0.6146
+    },
+    {
+      "generatedAt": "2026-06-23T13:03:48.514Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2486,
+        "draw": 0.298,
+        "away": 0.4535
+      },
+      "confidence": 0.528
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-23T23:22:16.375Z",
+    "updatedAt": "2026-06-24T04:05:35.848Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1758,
