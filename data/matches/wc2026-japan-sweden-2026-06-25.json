@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T23:20:56.760Z",
+    "generatedAt": "2026-06-25T04:03:47.550Z",
     "home": {
       "teamId": "JPN",
       "elo": 1733,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.633,
       "cleanSheetRate": 0.577,
       "matchesCount": 26,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "away": {
       "teamId": "SWE",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 2.132,
       "cleanSheetRate": 0.2,
       "matchesCount": 25,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T11:03:45.796Z",
+    "generatedAt": "2026-06-25T04:03:47.550Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5005,
-      "draw": 0.2852,
-      "away": 0.2143
+      "home": 0.5269,
+      "draw": 0.25,
+      "away": 0.2231
     },
-    "confidence": 0.5664,
+    "confidence": 0.6188,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,50 +84,49 @@
           "draw": 0.23,
           "away": 0.22
         },
-        "confidence": 0.58,
+        "confidence": 0.55,
         "keyFactors": [
-          "Japan deutlich höhere Elo (1733 vs 1626) und stärkere gewichtete Form (2.12 vs 1.58)",
-          "Japans solide Defensive (0.63 Gegentore/Spiel, 57.7% Zu-Null) gegen Schwedens anfällige Abwehr (2.13 Gegentore/Spiel, nur 20% Zu-Null)",
-          "Beide Teams torgefährlich in der Offensive (Japan 2.26, Schweden 2.29 Tore/Spiel) - Tore auf beiden Seiten möglich",
-          "Markt und Baseline sehen beide Japan klar vorn, Markt etwas vorsichtiger"
+          "Japan mit deutlich höherem Elo (1733 vs. 1626) und stärkerer gewichteter Form (2.12 vs. 1.58)",
+          "Japans sehr stabile Defensive (0.63 Gegentore/Spiel, 57,8% Zu-Null) trifft auf eine anfällige schwedische Abwehr (2.13 Gegentore/Spiel, nur 20% Zu-Null)",
+          "Beide Teams offensiv produktiv (Japan 2.26, Schweden 2.29 Tore/Spiel) – Torpotenzial vorhanden",
+          "Markt etwas vorsichtiger als Baseline (0.51 vs. 0.60 home), spricht für leichte Korrektur nach unten zugunsten von Remis"
         ],
         "risks": [
-          "WM-Auftaktspiele oft vorsichtig/torarm, Schweden könnte tief und kompakt stehen",
-          "Schweden mit ordentlicher Offensivleistung kann Japans Defensive trotz Form fordern",
-          "Kein H2H-Vergleich vorhanden, erhöht Unsicherheit",
-          "Neutraler Spielort ohne Heimvorteil für Japan"
+          "Schwedens hohe Offensivproduktion könnte trotz schwacher Defensive für Tore sorgen und das Spiel offen halten",
+          "WM-Gruppenphase oft taktisch vorsichtig – ein knappes Ergebnis oder Remis ist möglich",
+          "Kein H2H-Datenbestand vorhanden, erhöht die Unsicherheit",
+          "Schweden könnte tief stehen und Japans Offensive den Zugriff erschweren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.35,
-          "away": 0.2
+          "home": 0.52,
+          "draw": 0.25,
+          "away": 0.23
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Japan hat eine höhere Elo-Wertung und bessere Form als Schweden",
-          "Japan hat eine gute Defensivbilanz mit einer hohen Clean-Sheet-Rate",
-          "Schweden hat eine instabile Defensive mit einer hohen Gegentorquote",
-          "Neutrales Spielfeld minimiert Heimvorteil"
+          "Japan hat deutlich höhere Elo-Wertung als Schweden.",
+          "Japan hat bessere aktuelle Form und höhere Toreffizienz.",
+          "Neutraler Spielort begünstigt taktische Ausgeglichenheit."
         ],
         "risks": [
-          "Headline über eine Verletzung des schwedischen Trainers könnte die Vorbereitung beeinflussen, aber ohne direkten Effekt auf die Spielstärke",
-          "Schwedens Angriff könnte Japans Abwehr gefährden"
+          "Schweden hat Potenzial für Überraschungen mit ihrer offensiven Torgefährlichkeit.",
+          "Der schwedische Trainer könnte durch die jüngsten Vorfälle eingeschränkt sein."
         ]
       }
     },
-    "agreement": 0.92,
+    "agreement": 0.98,
     "ensembleWeights": {
-      "claude": 0.5041,
-      "chatgpt": 0.4959
+      "claude": 0.5082,
+      "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan deutlich höhere Elo (1733 vs 1626) und stärkere gewichtete Form (2.12 vs 1.58); Japans solide Defensive (0.63 Gegentore/Spiel, 57.7% Zu-Null) gegen Schwedens anfällige Abwehr (2.13 Gegentore/Spiel, nur 20% Zu-Null); Beide Teams torgefährlich in der Offensive (Japan 2.26, Schweden 2.29 Tore/Spiel) - Tore auf beiden Seiten möglich. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:e4f1d1613a5e76f68e942da61d65f6698ca619145e0ad4f8c61f34b2d66143cc"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Japan mit deutlich höherem Elo (1733 vs. 1626) und stärkerer gewichteter Form (2.12 vs. 1.58); Japans sehr stabile Defensive (0.63 Gegentore/Spiel, 57,8% Zu-Null) trifft auf eine anfällige schwedische Abwehr (2.13 Gegentore/Spiel, nur 20% Zu-Null); Beide Teams offensiv produktiv (Japan 2.26, Schweden 2.29 Tore/Spiel) – Torpotenzial vorhanden. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:804cf2fbaf251e2b74e6222f16a147d1953193302a80ed530ea91201b7e7f6bc"
   },
   "predictionHistory": [
     {
@@ -285,11 +284,24 @@
         "away": 0.2
       },
       "confidence": 0.6759
+    },
+    {
+      "generatedAt": "2026-06-24T11:03:45.796Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5005,
+        "draw": 0.2852,
+        "away": 0.2143
+      },
+      "confidence": 0.5664
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T23:22:37.904Z",
+    "updatedAt": "2026-06-25T04:05:33.952Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5117,

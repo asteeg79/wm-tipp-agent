@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T23:20:56.760Z",
+    "generatedAt": "2026-06-25T04:03:47.550Z",
     "home": {
       "teamId": "TUR",
       "elo": 1642,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.26,
       "cleanSheetRate": 0.276,
       "matchesCount": 29,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "USA",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.326,
       "cleanSheetRate": 0.25,
       "matchesCount": 36,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 1,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T14:03:47.868Z",
+    "generatedAt": "2026-06-25T04:03:47.550Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.276,
-      "draw": 0.2597,
-      "away": 0.4643
+      "home": 0.2728,
+      "draw": 0.2383,
+      "away": 0.489
     },
-    "confidence": 0.5597,
+    "confidence": 0.5581,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,50 +84,52 @@
           "draw": 0.24,
           "away": 0.49
         },
-        "confidence": 0.55,
+        "confidence": 0.52,
         "keyFactors": [
-          "USA mit höherem Elo (1681 vs 1642), besserer gewichteter Form (1.92) und deutlich höherem Torschnitt (2.03 vs 1.28)",
-          "Gastgebervorteil liegt bei den USA – auch auf neutralem Platz spielt das US-Publikum/Heimturnier-Kontext eine Rolle",
-          "Türkei mit defensiver Schwäche (Clean-Sheet-Rate 27,6%, 1.26 Gegentore/Spiel) und negativem Umfeld (Trainer-/Verbandsdiskussionen, Sperre)",
-          "Markt und Baseline sehen beide klar die USA vorne (rund 47–50%)"
+          "USA mit höherem Elo (1681 vs 1642), stärkerer gewichteter Form (1.92 vs 1.5) und deutlich besserer Offensive (2.03 vs 1.28 Tore/Spiel)",
+          "USA profitiert als Co-Gastgeber vom Heimvorteil trotz formal neutralem Ort",
+          "Baseline und Markteinschätzung sehen USA klar vorne (~0.47-0.50)",
+          "Türkei defensiv anfällig (Gegentorschnitt 1.26, Clean-Sheet-Rate nur 0.28)"
         ],
         "risks": [
-          "Außenseiter Türkei könnte tief und kompakt stehen und auf Konter lauern – torarmes Remis möglich",
-          "Beide Teams nur 5 Tage Pause, ähnliche Verfassung – Spiel könnte enger als erwartet werden",
-          "Negative Türkei-News teils unklar/widersprüchlich, daher nur begrenzt gewichtet",
-          "H2H mit nur einem Spiel (Türkei-Sieg) statistisch wenig aussagekräftig"
+          "Türkei zeigt zuletzt aufsteigende Form (recentForm 1.9) und kann gefährlich werden",
+          "Gruppenspiele oft taktisch und torarm - Remis durchaus möglich",
+          "Unsichere/widersprüchliche News-Lage zur Türkei (Trainer/Stimmung) schwer einzuordnen",
+          "H2H minimal (1 Spiel) und wenig aussagekräftig"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.29,
-          "draw": 0.3,
-          "away": 0.41
+          "home": 0.28,
+          "draw": 0.24,
+          "away": 0.48
         },
         "confidence": 0.6,
         "keyFactors": [
-          "USA hat einen höheren Elo-Wert und bessere Form, sowohl gewichtete als auch aktuelle",
-          "Türkei hat interne Turbulenzen mit negativem Einfluss durch Trainer-Diskussionen",
-          "Türkei spielte gegen USA bisher nur einmal, mit einem knappen Sieg",
-          "Austragung auf neutralem Boden ohne spezifischen Höhenvorteil"
+          "USA hat einen höheren Elo-Wert und bessere jüngste Form als die Türkei.",
+          "USA hat mehr Offensivkraft im Durchschnitt (2.028 Tore pro Spiel) als die Türkei (1.28 Tore pro Spiel).",
+          "Die Türkei scheint nach negativen Nachrichten um den Trainer und Rücktrittsgerüchte instabil zu sein.",
+          "Spiel findet auf neutralem Boden statt, aber USA hat potenziell einen Vorteil als Co-Gastgeber.",
+          "USA hat im vergangenen Vergleich nicht gegen die Türkei verloren."
         ],
         "risks": [
-          "Potenzielle mentale Ablenkung der Türkei wegen Trainerdiskussionen könnte zu Leistungseinbrüchen führen",
-          "USA hat den leichten Vorteil eines Host-Adaptive Effekts, obwohl neutraler Spielort"
+          "Die Türkei hat in der Vergangenheit den direkten Vergleich gewonnen, obwohl nur ein Spiel gespielt wurde.",
+          "Die USA hat eine vergleichsweise niedrigere Clean-Sheet-Rate (25%) als die Türkei (27,6%).",
+          "Hoher Druck auf die USA als Co-Gastgeber, der sich in unvorhersehbarem Spielverlauf niederschlagen kann."
         ]
       }
     },
-    "agreement": 0.9467,
+    "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.5041,
-      "chatgpt": 0.4959
+      "claude": 0.5082,
+      "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1681 vs 1642), besserer gewichteter Form (1.92) und deutlich höherem Torschnitt (2.03 vs 1.28); Gastgebervorteil liegt bei den USA – auch auf neutralem Platz spielt das US-Publikum/Heimturnier-Kontext eine Rolle; Türkei mit defensiver Schwäche (Clean-Sheet-Rate 27,6%, 1.26 Gegentore/Spiel) und negativem Umfeld (Trainer-/Verbandsdiskussionen, Sperre). Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:5d17e30899977d237b6398de171ace26134fce0ad08155183c418d1895611c01"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1681 vs 1642), stärkerer gewichteter Form (1.92 vs 1.5) und deutlich besserer Offensive (2.03 vs 1.28 Tore/Spiel); USA profitiert als Co-Gastgeber vom Heimvorteil trotz formal neutralem Ort; Baseline und Markteinschätzung sehen USA klar vorne (~0.47-0.50). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:e57f35a71995469e625f97e49d464ec6b34e0ca884f875d1c674caff41bf9451"
   },
   "predictionHistory": [
     {
@@ -285,11 +287,24 @@
         "away": 0.3067
       },
       "confidence": 0.584
+    },
+    {
+      "generatedAt": "2026-06-24T14:03:47.868Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.276,
+        "draw": 0.2597,
+        "away": 0.4643
+      },
+      "confidence": 0.5597
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T23:22:37.904Z",
+    "updatedAt": "2026-06-25T04:05:33.953Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2668,

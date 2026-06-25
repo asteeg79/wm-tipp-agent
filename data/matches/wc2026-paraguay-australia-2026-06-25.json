@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-24T23:20:56.760Z",
+    "generatedAt": "2026-06-25T04:03:47.550Z",
     "home": {
       "teamId": "PAR",
       "elo": 1600,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.385,
       "cleanSheetRate": 0.44,
       "matchesCount": 25,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "AUS",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 1.049,
       "cleanSheetRate": 0.538,
       "matchesCount": 26,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-24T20:03:52.717Z",
+    "generatedAt": "2026-06-25T04:03:47.550Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3059,
-      "draw": 0.4023,
-      "away": 0.2917
+      "home": 0.3101,
+      "draw": 0.3941,
+      "away": 0.2958
     },
-    "confidence": 0.4144,
+    "confidence": 0.444,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,22 @@
         },
         "probabilities": {
           "home": 0.3,
-          "draw": 0.37,
-          "away": 0.33
+          "draw": 0.36,
+          "away": 0.34
         },
-        "confidence": 0.34,
+        "confidence": 0.4,
         "keyFactors": [
-          "Australien mit leicht höherem Elo (1643 vs 1600) und besserer aktueller Form (recentForm 1.8) sowie stabilerer Defensive (CleanSheet-Rate 53,8%, GegentoreØ 1,05)",
-          "Markt sieht das Spiel deutlich enger und favorisiert das Remis (0,42) gegenüber der Baseline, die Australien klar bevorzugt",
-          "Beide Teams torarm in der Offensive (GoalsForAvg ~1,0-1,1) – ein knappes, defensiv geprägtes Gruppenspiel ist wahrscheinlich",
-          "Neutraler Spielort ohne Heimvorteil für Paraguay",
-          "Gleiche Erholungszeit (5 Tage) für beide Mannschaften"
+          "Australien mit leicht höherem Elo (1643 vs 1600), besserer jüngster Form (recentForm 1.8) und stabilerer Defensive (Gegentore 1.049, Clean-Sheet-Rate 0.54)",
+          "Paraguay defensiv solider in der Heimrolle, aber mit schwacher Offensive (nur 0.99 Tore/Spiel)",
+          "Markt sieht klar das Remis als wahrscheinlichsten Ausgang (0.42), während die Baseline Australien favorisiert – ausgeglichenes Spiel",
+          "Neutraler Spielort ohne Heimvorteil, beide Teams ausgeruht (6 Tage Pause)",
+          "Torarmes Duell zweier defensiv geprägter Mannschaften zu erwarten (xG knapp über 1)"
         ],
         "risks": [
-          "Keine H2H-Daten vorhanden – Vergleichbarkeit eingeschränkt",
-          "Materialnews unklar (Sperre Paraguay / Trainerthema Australien) – möglicher Personaleinfluss",
-          "Baseline und Markt widersprechen sich stark (Away-Favorit vs. Remis-Tendenz)",
-          "Paraguays Abwehrschwäche (GegentoreØ 1,39) könnte Australien Chancen eröffnen"
+          "Keine H2H-Daten verfügbar – große Unsicherheit über das direkte Kräfteverhältnis",
+          "Mögliche Sperre bei Paraguay (News-Hinweis Platzverweis) könnte Defensive schwächen",
+          "Australiens stärkere Form könnte in einem knappen Sieg münden, wenn Paraguays Offensive verstummt",
+          "WM-Gruppenphase: vorsichtige Spielweise kann jederzeit in ein 0:0 oder eine einzelne Standardsituation kippen"
         ]
       },
       "chatgpt": {
@@ -105,30 +105,31 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.29,
-          "draw": 0.41,
+          "home": 0.3,
+          "draw": 0.4,
           "away": 0.3
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Beide Teams haben vergleichbare Form und keine direkten Begegnungen, was ein ausgeglichenes Spiel nahelegt.",
-          "Paraguay hat eine solide Verteidigung, was durch eine hohe Clean-Sheet-Rate hervorgehoben wird.",
-          "Australien zeigt höhere durchschnittliche jüngste Form, aber Paraguay's Aufstellung könnte durch eine Sperre beeinflusst werden.",
-          "Das Spiel wird auf neutralem Boden ausgetragen, wodurch kein Team einen geografischen Vorteil hat."
+          "Beide Teams haben eine ähnliche jüngste Form und eine ausgeglichene Elo-Differenz.",
+          "Paraguays jüngste defensive Leistung trotz eines Platzverweises im letzten Spiel könnte Einfluss nehmen.",
+          "Australiens bessere aktuelle Form und höhere Clean-Sheet-Rate.",
+          "Keine Head-to-Head-Historie zwischen den Teams, was die Unsicherheit erhöht.",
+          "Neutraler Spielort, was den Einfluss des Heimvorteils minimiert."
         ],
         "risks": [
-          "Der Einfluss der Sperre bei Paraguay könnte die Defensivstabilität beeinträchtigen.",
-          "Mögliche strategische Anpassungen durch den australischen Trainer könnten unvorhergesehene Vorteile bringen."
+          "Einfluss des Platzverweises im letzten Spiel von Paraguay auf die Mannschaftsmoral.",
+          "Mögliche Anpassungen durch Australiens Trainer aufgrund ihrer Vorbereitung und Strategie."
         ]
       }
     },
     "agreement": 0.9733,
     "ensembleWeights": {
-      "claude": 0.5041,
-      "chatgpt": 0.4959
+      "claude": 0.5082,
+      "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Australien mit leicht höherem Elo (1643 vs 1600) und besserer aktueller Form (recentForm 1.8) sowie stabilerer Defensive (CleanSheet-Rate 53,8%, GegentoreØ 1,05); Markt sieht das Spiel deutlich enger und favorisiert das Remis (0,42) gegenüber der Baseline, die Australien klar bevorzugt; Beide Teams torarm in der Offensive (GoalsForAvg ~1,0-1,1) – ein knappes, defensiv geprägtes Gruppenspiel ist wahrscheinlich. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:865538fc23459496a6d0d465ed0959a76ee3079e01ede72dfe12faaea59df69b"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Australien mit leicht höherem Elo (1643 vs 1600), besserer jüngster Form (recentForm 1.8) und stabilerer Defensive (Gegentore 1.049, Clean-Sheet-Rate 0.54); Paraguay defensiv solider in der Heimrolle, aber mit schwacher Offensive (nur 0.99 Tore/Spiel); Markt sieht klar das Remis als wahrscheinlichsten Ausgang (0.42), während die Baseline Australien favorisiert – ausgeglichenes Spiel. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:507a8f88d28a4e58cc0bb1d3b8d85658d887b98f42419f0f979a75ea10db3141"
   },
   "predictionHistory": [
     {
@@ -299,11 +300,24 @@
         "away": 0.2654
       },
       "confidence": 0.4883
+    },
+    {
+      "generatedAt": "2026-06-24T20:03:52.717Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3059,
+        "draw": 0.4023,
+        "away": 0.2917
+      },
+      "confidence": 0.4144
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-24T23:22:37.904Z",
+    "updatedAt": "2026-06-25T04:05:33.953Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3336,
