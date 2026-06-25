@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T18:03:47.951Z",
+    "generatedAt": "2026-06-25T19:03:55.950Z",
     "home": {
       "teamId": "ECU",
       "elo": 1671,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-25T16:03:48.673Z",
+    "generatedAt": "2026-06-25T19:03:55.950Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1655,
-      "draw": 0.2051,
-      "away": 0.6294
+      "home": 0.1639,
+      "draw": 0.206,
+      "away": 0.6301
     },
-    "confidence": 0.6584,
+    "confidence": 0.6705,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,30 +77,30 @@
       "claude": {
         "predictedScore": {
           "home": 0,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.16,
+          "home": 0.15,
           "draw": 0.22,
-          "away": 0.62
+          "away": 0.63
         },
-        "confidence": 0.58,
+        "confidence": 0.6,
         "keyFactors": [
-          "Deutschland mit überragender Offensive (9 Tore in 2 Spielen, 7:1 vs Curaçao) und klar höherem Elo (1807 vs 1671)",
-          "Deutschland bereits als Gruppenerster qualifiziert (6 Punkte, +7) – Rotation und Verwaltungsmodus wahrscheinlich, was Markt-Wahrscheinlichkeit (61%) gegenüber Baseline (76%) senkt",
-          "Ecuador defensiv stabil (Clean-Sheet-Rate 0.52, nur 0.52 Gegentore/Spiel), aber offensiv harmlos – 0 Tore in beiden Gruppenspielen",
-          "Ecuador muss zwingend gewinnen und wird offensiver agieren, was Räume für deutsche Konter öffnet"
+          "Deutschland mit überragender Form (recentForm 2.7, 9 Tore in 2 Spielen) und bereits als Gruppensieger faktisch durch (6 Punkte, GD +7)",
+          "Ecuador offensiv harmlos (0 Tore in 2 Gruppenspielen, goalsForAvg 0.59), aber defensiv kompakt (cleanSheetRate 0.52)",
+          "Ecuador steht unter Muss-Sieg-Druck (1 Punkt, GD -1) und muss aufmachen, was Deutschland Konterräume gibt",
+          "Elo-Differenz (1807 vs 1671) und xG-Baseline (2.39 vs 0.66) klar pro Deutschland"
         ],
         "risks": [
-          "Deutsche Rotation/Verwaltungsmodus könnte Intensität senken und ein Remis begünstigen",
-          "Ausfall von Schlotterbeck schwächt die deutsche Abwehr",
-          "Ecuadors kompakte Defensive kann ein knappes, torarmes Spiel erzwingen – Überraschung bei Standardsituation möglich",
-          "Fehlende H2H-Daten erhöhen Unsicherheit"
+          "Deutschland könnte rotieren/verwalten (laut News zwei Wechsel), da Gruppensieg gesichert – das senkt Intensität und Tornähe",
+          "Ecuadors tiefe, disziplinierte Defensive kann ein knappes Ergebnis oder Remis ermöglichen",
+          "Außenseiter-Effekt in WM-Gruppenphase: kompaktes Stehen erschwert Favoriten das Toreschießen",
+          "Markt sieht Deutschland deutlich weniger dominant (60,5%) als Baseline (75,8%)"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
@@ -110,23 +110,22 @@
         },
         "confidence": 0.75,
         "keyFactors": [
-          "Germany has already secured advancement and may rotate some players.",
-          "Germany has strong recent performances, particularly a 7-1 win against Curaçao.",
-          "Ecuador has struggled offensively in the tournament, with no goals scored yet.",
-          "The match is played at a neutral venue, minimizing potential home advantage."
+          "Germany's strong recent form and high goalscoring rate.",
+          "Ecuador's struggle to score in recent matches.",
+          "Germany already secured the next round, might rotate squad."
         ],
         "risks": [
-          "Rotation by Germany could affect their performance consistency.",
-          "Ecuador needs a win and will likely be highly motivated."
+          "Potential rotation by Germany leading to less cohesion.",
+          "Ecuador's need for a positive result might lead to more defensive intensity."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9867,
     "ensembleWeights": {
       "claude": 0.5082,
       "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit überragender Offensive (9 Tore in 2 Spielen, 7:1 vs Curaçao) und klar höherem Elo (1807 vs 1671); Deutschland bereits als Gruppenerster qualifiziert (6 Punkte, +7) – Rotation und Verwaltungsmodus wahrscheinlich, was Markt-Wahrscheinlichkeit (61%) gegenüber Baseline (76%) senkt; Ecuador defensiv stabil (Clean-Sheet-Rate 0.52, nur 0.52 Gegentore/Spiel), aber offensiv harmlos – 0 Tore in beiden Gruppenspielen. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit überragender Form (recentForm 2.7, 9 Tore in 2 Spielen) und bereits als Gruppensieger faktisch durch (6 Punkte, GD +7); Ecuador offensiv harmlos (0 Tore in 2 Gruppenspielen, goalsForAvg 0.59), aber defensiv kompakt (cleanSheetRate 0.52); Ecuador steht unter Muss-Sieg-Druck (1 Punkt, GD -1) und muss aufmachen, was Deutschland Konterräume gibt. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:0c95bd69307d1a62457045e95fcc9d1161bd503503e782fbfa4c1964283569d2"
   },
   "predictionHistory": [
@@ -428,11 +427,24 @@
         "away": 0.6267
       },
       "confidence": 0.6638
+    },
+    {
+      "generatedAt": "2026-06-25T16:03:48.673Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1655,
+        "draw": 0.2051,
+        "away": 0.6294
+      },
+      "confidence": 0.6584
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T18:05:26.190Z",
+    "updatedAt": "2026-06-25T19:05:36.931Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1963,

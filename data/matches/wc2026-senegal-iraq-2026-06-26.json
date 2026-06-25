@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T18:03:47.951Z",
+    "generatedAt": "2026-06-25T19:03:55.950Z",
     "home": {
       "teamId": "SEN",
       "elo": 1746,
@@ -50,82 +50,84 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-25T07:03:55.867Z",
+    "generatedAt": "2026-06-25T19:03:55.950Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7286,
-      "draw": 0.1653,
-      "away": 0.1061
+      "home": 0.7393,
+      "draw": 0.1685,
+      "away": 0.0922
     },
-    "confidence": 0.6827,
+    "confidence": 0.6463,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.6859,
-        "draw": 0.1767,
-        "away": 0.1373
+        "home": 0.7524,
+        "draw": 0.1486,
+        "away": 0.099
       },
       "expectedGoals": {
-        "home": 2.38,
-        "away": 0.97
+        "home": 2.66,
+        "away": 0.87
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.71,
-          "draw": 0.17,
-          "away": 0.12
+          "home": 0.74,
+          "draw": 0.16,
+          "away": 0.1
         },
-        "confidence": 0.62,
+        "confidence": 0.66,
         "keyFactors": [
-          "Senegal deutlich stärker (Elo 1746 vs 1564) und in besserer Form (weightedForm 1.84 vs 1.17)",
-          "Senegals solide Defensive (CleanSheet-Rate 61%) gegen schwache irakische Offensive (0,95 Tore/Spiel)",
-          "Irak kassiert im Schnitt fast 2 Gegentore pro Spiel und steht defensiv anfällig",
-          "Markt sieht Senegal als klaren Favoriten (78%), Baseline etwas vorsichtiger (69%)"
+          "Senegal deutlich stärker (Elo 1746 vs 1564) und mit besserer Form/Offensive (2.12 vs 0.95 Tore pro Spiel)",
+          "Irak defensiv anfällig: 1.95 Gegentore im Schnitt, nur 0:3 gegen Frankreich und 1:4 gegen Norwegen",
+          "Senegals hohe Clean-Sheet-Rate (0.61) gegen schwache irakische Offensive (0.95 Tore)",
+          "Markt und Baseline stützen klaren Senegal-Favoritenstatus (~0.75-0.78)"
         ],
         "risks": [
-          "Berichte über Unruhe im Senegal-Lager könnten Leistung beeinträchtigen",
-          "Irak könnte tief und kompakt verteidigen und das WM-Gruppenspiel torarm gestalten",
-          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
-          "WM-Auftaktspiele oft vorsichtig - knappes Ergebnis möglich"
+          "Beide Teams bereits ausgeschieden (0 Punkte) – mögliche Rotation/geringere Intensität könnte das Ergebnis verflachen",
+          "Senegal-Unruhe/Moral laut News könnte Leistung dämpfen",
+          "Irak könnte tief und kompakt stehen und auf knappes Ergebnis spielen",
+          "Kein H2H-Verlauf als Referenz vorhanden"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
           "home": 0.7000000000000001,
-          "draw": 0.18000000000000002,
-          "away": 0.12000000000000001
+          "draw": 0.20000000000000004,
+          "away": 0.10000000000000002
         },
-        "confidence": 0.75,
+        "confidence": 0.65,
         "keyFactors": [
-          "Senegal's superior elo rating and recent form compared to Iraq.",
-          "Senegal's strong offensive capabilities with an average of 2.12 goals per game.",
-          "Iraq's defensive vulnerabilities, conceding an average of 1.946 goals per game.",
-          "Neutral venue negates home advantage effects."
+          "Senegal needs a win to have any chance to progress, likely increasing their attacking intensity.",
+          "Senegal's recent performances against higher-ranked teams (1-3 loss to France, 2-3 loss to Norway) show resilience but also defensive vulnerability.",
+          "Iraq has shown a weaker defense, conceding 7 goals in two World Cup matches.",
+          "No significant head-to-head history to influence the prediction."
         ],
         "risks": [
-          "Potential morale issues in Senegal's camp due to unrest before a key match."
+          "Potential morale issues in the Senegal squad as indicated by news snippets.",
+          "Both teams eliminated, affecting motivation and performance.",
+          "Neutral venue may minimize home advantage for Senegal."
         ]
       }
     },
-    "agreement": 0.9933,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5082,
       "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal deutlich stärker (Elo 1746 vs 1564) und in besserer Form (weightedForm 1.84 vs 1.17); Senegals solide Defensive (CleanSheet-Rate 61%) gegen schwache irakische Offensive (0,95 Tore/Spiel); Irak kassiert im Schnitt fast 2 Gegentore pro Spiel und steht defensiv anfällig. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal deutlich stärker (Elo 1746 vs 1564) und mit besserer Form/Offensive (2.12 vs 0.95 Tore pro Spiel); Irak defensiv anfällig: 1.95 Gegentore im Schnitt, nur 0:3 gegen Frankreich und 1:4 gegen Norwegen; Senegals hohe Clean-Sheet-Rate (0.61) gegen schwache irakische Offensive (0.95 Tore). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:b39d8f693d7e5a4d7f6902963bb98e6423b609bea24295107ddb096e9c898a7c"
   },
   "predictionHistory": [
@@ -271,11 +273,24 @@
         "away": 0.1344
       },
       "confidence": 0.7076
+    },
+    {
+      "generatedAt": "2026-06-25T07:03:55.867Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7286,
+        "draw": 0.1653,
+        "away": 0.1061
+      },
+      "confidence": 0.6827
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T18:05:26.191Z",
+    "updatedAt": "2026-06-25T19:05:36.932Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.7832,

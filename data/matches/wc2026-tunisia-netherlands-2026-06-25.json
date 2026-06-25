@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T18:03:47.951Z",
+    "generatedAt": "2026-06-25T19:03:55.950Z",
     "home": {
       "teamId": "TUN",
       "elo": 1599,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-25T12:36:54.598Z",
+    "generatedAt": "2026-06-25T19:03:55.950Z",
     "predictedScore": {
       "home": 0,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0413,
-      "draw": 0.0894,
-      "away": 0.8693
+      "home": 0.0415,
+      "draw": 0.0929,
+      "away": 0.8656
     },
-    "confidence": 0.8267,
+    "confidence": 0.8294,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,21 +81,20 @@
         },
         "probabilities": {
           "home": 0.04,
-          "draw": 0.08,
-          "away": 0.88
+          "draw": 0.09,
+          "away": 0.87
         },
         "confidence": 0.82,
         "keyFactors": [
-          "Niederlande klar überlegen (Elo 1798 vs 1599, gewichtete Form 2.07 vs 1.38) und mit 2.87 Toren/Spiel hochgefährlich in der Offensive",
-          "Tunesien in der Gruppe bereits ausgeschieden (0 Punkte, -8 Tordifferenz) und defensiv desolat: 0:4 gegen Japan, 1:5 gegen Schweden",
-          "Niederlande topfit, will als Gruppensieger durch und braucht Punkte (4 Zähler, GD +4) – kein Verwaltungsmodus",
-          "Tunesien kassiert im Schnitt 1.78 Gegentore und zeigte zuletzt keine Defensivstabilität; 'kein Trainereffekt' laut News",
-          "Oranje mit Momentum (5:1 gegen Schweden, 2:2 gegen Japan) und klar besserer Gegnerqualität in den jüngsten Resultaten"
+          "Niederlande klar überlegen (Elo 1798 vs 1599), starke gewichtete Form (2.07) und Torgefahr (2.87 Tore/Spiel)",
+          "Tunesien bereits ausgeschieden (0 Punkte, -8 Tordifferenz) und defensiv desolat: 4:0 gegen Japan, 5:1 gegen Schweden kassiert",
+          "Niederlande braucht Sieg für Gruppensieg vor Japan (Punktgleichheit, gleiche Tordifferenz) - klare Motivation",
+          "Tunesiens hohe Gegentorquote (1.78) trifft auf treffsichere Elftal"
         ],
         "risks": [
-          "Niederlande könnte bei früher Führung das Tempo herausnehmen und rotieren, was das Torniveau senkt",
-          "Außenseiter Tunesien könnte ohne Druck (bereits ausgeschieden) befreit und kompakt auftreten",
-          "Unterschätztes Restrisiko eines Ehrentreffers oder Konters bei Oranje-Cleansheet-Rate von nur 0.37"
+          "Niederlande könnte bei früher Führung verwalten und Spieler schonen",
+          "Tunesien steht als Außenseiter möglicherweise tief und kompakt, drückt das Torniveau",
+          "Mögliche Rotation/Trainerunruhe bei Tunesien (Renard-Zukunft offen) - schwer kalkulierbar"
         ]
       },
       "chatgpt": {
@@ -110,21 +109,22 @@
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Tunesien hat alle bisherigen Spiele in der Gruppenphase verloren und weist eine schwache Torverhältnis auf.",
-          "Niederlande zeigte eine starke Leistung mit einem 5:1-Sieg gegen Schweden und einem Unentschieden gegen Japan.",
-          "Das Spiel findet auf neutralem Boden statt, wodurch der Heimvorteil entfällt."
+          "Netherlands strong form, scoring 5 goals against Sweden in last match",
+          "Tunisia has yet to secure a point and has a poor goal difference of -8",
+          "Tunisia's coach uncertainty may affect team morale"
         ],
         "risks": [
-          "Tunesien hat einen neuen Trainer, der unberechenbare Impulse setzen könnte."
+          "Netherlands may rotate squad with advancement nearly secured",
+          "Potential tactical changes from Tunisia as they have nothing to lose"
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9867,
     "ensembleWeights": {
       "claude": 0.5082,
       "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande klar überlegen (Elo 1798 vs 1599, gewichtete Form 2.07 vs 1.38) und mit 2.87 Toren/Spiel hochgefährlich in der Offensive; Tunesien in der Gruppe bereits ausgeschieden (0 Punkte, -8 Tordifferenz) und defensiv desolat: 0:4 gegen Japan, 1:5 gegen Schweden; Niederlande topfit, will als Gruppensieger durch und braucht Punkte (4 Zähler, GD +4) – kein Verwaltungsmodus. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Niederlande klar überlegen (Elo 1798 vs 1599), starke gewichtete Form (2.07) und Torgefahr (2.87 Tore/Spiel); Tunesien bereits ausgeschieden (0 Punkte, -8 Tordifferenz) und defensiv desolat: 4:0 gegen Japan, 5:1 gegen Schweden kassiert; Niederlande braucht Sieg für Gruppensieg vor Japan (Punktgleichheit, gleiche Tordifferenz) - klare Motivation. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:16d5f3b490be0db5fe3b0a4b66bdd2f3135e030b3831db57cf4adf4a78167df2"
   },
   "predictionHistory": [
@@ -335,11 +335,24 @@
         "away": 0.8622
       },
       "confidence": 0.8123
+    },
+    {
+      "generatedAt": "2026-06-25T12:36:54.598Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0413,
+        "draw": 0.0894,
+        "away": 0.8693
+      },
+      "confidence": 0.8267
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T18:05:26.190Z",
+    "updatedAt": "2026-06-25T19:05:36.931Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.0333,
