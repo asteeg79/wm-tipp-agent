@@ -269,6 +269,17 @@ const resources = {
         resetNotified: "Benachrichtigungs-Historie löschen",
         done: "Erledigt",
         pipeline: "Pipeline (GitHub Actions)",
+        forceHint:
+          "Bewertet alle Partien der nächsten 24 h sofort per KI neu (umgeht die Retrigger-Logik). Verursacht KI-Kosten.",
+        forceButton: "Kommende Partien neu bewerten",
+        forceRunning: "Wird ausgelöst …",
+        forceConfirm:
+          "Alle kommenden Partien (nächste 24 h) jetzt per KI neu bewerten? Das verursacht KI-Kosten.",
+        forceOk:
+          "Neubewertung ausgelöst — Ergebnisse erscheinen in einigen Minuten.",
+        forceError: "Auslösen fehlgeschlagen.",
+        forceNotConfigured:
+          "Nicht konfiguriert (Server-Token GITHUB_DISPATCH_TOKEN fehlt).",
         pipelineHint:
           "Die Datenerzeugung läuft serverseitig in GitHub Actions. Manuell auslösen direkt dort:",
         openActions: "Actions öffnen",
@@ -543,6 +554,16 @@ const resources = {
         resetNotified: "Clear notification history",
         done: "Done",
         pipeline: "Pipeline (GitHub Actions)",
+        forceHint:
+          "Re-runs the AI for all matches in the next 24 h immediately (bypasses the retrigger logic). Incurs AI costs.",
+        forceButton: "Re-evaluate upcoming matches",
+        forceRunning: "Triggering …",
+        forceConfirm:
+          "Re-evaluate all upcoming matches (next 24 h) with the AI now? This incurs AI costs.",
+        forceOk: "Re-evaluation triggered — results appear in a few minutes.",
+        forceError: "Trigger failed.",
+        forceNotConfigured:
+          "Not configured (server token GITHUB_DISPATCH_TOKEN missing).",
         pipelineHint:
           "Data generation runs server-side in GitHub Actions. Trigger manually there:",
         openActions: "Open Actions",

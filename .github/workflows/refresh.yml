@@ -43,8 +43,8 @@ jobs:
     timeout-minutes: 25
     env:
       WM_MODE: ${{ inputs.mode || github.event.client_payload.mode || 'predict' }}
-      WM_FORCE_EVAL: ${{ inputs.force && '1' || '0' }}
-      WM_AI_WINDOW_HOURS: ${{ inputs.window || '' }}
+      WM_FORCE_EVAL: ${{ (inputs.force || github.event.client_payload.force) && '1' || '0' }}
+      WM_AI_WINDOW_HOURS: ${{ inputs.window || github.event.client_payload.window || '' }}
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6

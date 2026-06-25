@@ -16,10 +16,33 @@ export function AdminPage() {
   const { data: index } = useIndex();
   const { data: predIndex } = usePredictionsIndex();
   const [toast, setToast] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
 
   const flash = (msg: string): void => {
     setToast(msg);
-    setTimeout(() => setToast(null), 1500);
+    setTimeout(() => setToast(null), 2500);
+  };
+
+  // Force-Neubewertung der kommenden Partien anstoßen (serverseitige Function
+  // feuert repository_dispatch; Token liegt nur in Vercel-Env).
+  const triggerRefresh = async (): Promise<void> => {
+    if (refreshing) return;
+    if (!window.confirm(t("admin.forceConfirm"))) return;
+    setRefreshing(true);
+    try {
+      const res = await fetch("/api/refresh", { method: "POST" });
+      const data: { ok?: boolean; error?: string } = await res
+        .json()
+        .catch(() => ({}));
+      if (res.ok && data.ok) flash(t("admin.forceOk"));
+      else if (res.status === 503 || data.error === "not_configured")
+        flash(t("admin.forceNotConfigured"));
+      else flash(t("admin.forceError"));
+    } catch {
+      flash(t("admin.forceError"));
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   // Datenstatus ableiten.
@@ -154,16 +177,28 @@ export function AdminPage() {
         <h3 className="text-sm font-semibold uppercase tracking-wide text-fg-faint">
           {t("admin.pipeline")}
         </h3>
-        <div className="rounded-xl border border-edge bg-surface/40 p-4 text-sm text-fg-muted">
-          <p>{t("admin.pipelineHint")}</p>
-          <a
-            href={GH_ACTIONS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-block rounded-md bg-brand/15 px-3 py-1.5 font-medium text-brand hover:bg-brand/25"
-          >
-            {t("admin.openActions")} →
-          </a>
+        <div className="space-y-3 rounded-xl border border-edge bg-surface/40 p-4 text-sm text-fg-muted">
+          <div className="border-b border-edge pb-3">
+            <p className="mb-2">{t("admin.forceHint")}</p>
+            <button
+              onClick={() => void triggerRefresh()}
+              disabled={refreshing}
+              className="inline-flex items-center gap-2 rounded-md bg-acc/15 px-3 py-1.5 font-medium text-acc hover:bg-acc/25 disabled:opacity-50"
+            >
+              {refreshing ? t("admin.forceRunning") : t("admin.forceButton")}
+            </button>
+          </div>
+          <div>
+            <p>{t("admin.pipelineHint")}</p>
+            <a
+              href={GH_ACTIONS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block rounded-md bg-brand/15 px-3 py-1.5 font-medium text-brand hover:bg-brand/25"
+            >
+              {t("admin.openActions")} →
+            </a>
+          </div>
         </div>
       </div>
 
