@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T20:21:03.500Z",
+    "generatedAt": "2026-06-25T21:03:49.553Z",
     "home": {
       "teamId": "PAR",
       "elo": 1600,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-25T14:03:54.791Z",
+    "generatedAt": "2026-06-25T21:03:49.553Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3351,
-      "draw": 0.3942,
-      "away": 0.2706
+      "home": 0.3372,
+      "draw": 0.3793,
+      "away": 0.2835
     },
-    "confidence": 0.4917,
+    "confidence": 0.4554,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,22 +81,21 @@
         },
         "probabilities": {
           "home": 0.32,
-          "draw": 0.36,
-          "away": 0.32
+          "draw": 0.35,
+          "away": 0.33
         },
-        "confidence": 0.4,
+        "confidence": 0.32,
         "keyFactors": [
-          "Beide Teams punktgleich (3) am 3. Spieltag – ein direktes Endspiel um Platz 2 hinter den USA",
-          "Australiens Tordifferenz (0) ist besser als Paraguays (-2); ein Remis würde Australien beim aktuellen Stand eher reichen, Paraguay muss tendenziell gewinnen",
-          "Australien mit leicht besserer jüngster Form (recentForm 1.8) und solider Defensive (cleanSheetRate 0.54), aber 0:2 gegen die USA",
-          "Paraguay defensiv stabilisiert (1:0 gegen Türkei) und mit Heimnähe-Momentum trotz neutralem Ort",
-          "Markt sieht klar das Unentschieden vorne (0.42) und korrigiert die Baseline, die Australien überbewertet"
+          "Entscheidungsspiel um Platz 2 in Gruppe D: Paraguay (3 Pkt, GD -2) muss bei Australien (3 Pkt, GD 0) gewinnen, Australien reicht rechnerisch ein Remis – das prägt die Dynamik (Paraguay offensiv, Australien kompakt/konternd)",
+          "Markt sieht Paraguay/Remis deutlich stärker (0.36/0.42) als die Elo-Baseline, die Australien favorisiert (0.46) – ich korrigiere die Baseline Richtung Markt wegen des Muss-Sieg-Drucks und der Heim-/Anstoßlogik für Paraguay",
+          "Australien mit leicht besserer Form (recentForm 1.8, 2:0 vs. Türkei), höherer Clean-Sheet-Rate (0.54) und Elo-Vorteil – gefährlich bei Kontern gegen ein aufrückendes Paraguay",
+          "Beide Teams torarm (xG-Baseline ~1.0 bzw. 1.4), beide schlugen die Türkei und verloren gegen die USA – sehr ausgeglichenes Kräfteverhältnis"
         ],
         "risks": [
-          "Tabellensituation kann beide zu offensivem Risiko zwingen – mehr Tore als erwartet möglich",
-          "Paraguay als 'Muss-Sieger' könnte das Spiel öffnen und so Australiens Konter begünstigen",
-          "Geringe Datenbasis: kein direktes H2H vorhanden",
-          "Baseline und Markt widersprechen sich stark – hohe Prognoseunsicherheit"
+          "Wenn Australien defensiv verwaltet und auf das ausreichende Remis spielt, könnte ein 0:0 oder ein Konter-Sieg Australiens entstehen",
+          "Paraguays Offensivdruck könnte Räume öffnen und zu einem klareren australischen Sieg führen",
+          "Parallelspiel Türkei–USA kann die Tabellensituation kippen und das Risikoverhalten beider Teams kurzfristig ändern",
+          "Keine H2H-Historie verfügbar – erhöhte Unsicherheit der Einschätzung"
         ]
       },
       "chatgpt": {
@@ -106,28 +105,28 @@
         },
         "probabilities": {
           "home": 0.33,
-          "draw": 0.4,
-          "away": 0.27
+          "draw": 0.37,
+          "away": 0.3
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Australien hat eine bessere Elo-Bewertung, aber Paraguay zeigt eine solide Form in den letzten Spielen.",
-          "Beide Teams haben ihre letzte Partie gewonnen, wobei Paraguay gegen Türkei und Australien gegen Türkei gespielt hat.",
-          "Paraguay hat gegen einen stärkeren Gegner in den USA nur knapp verloren, was auf eine beachtliche Defensive hinweist.",
-          "Die Markt-Einschätzung favorisiert ein Unentschieden, das auch zur Spielsituation in der Gruppe passt."
+          "Beide Teams haben 3 Punkte und stehen vor einem entscheidenden Spiel für den Aufstieg in die K.O.-Runde.",
+          "Australiens höhere Elo-Zahl zeigt grundsätzlich eine leichte Überlegenheit, aber Paraguays letzter Sieg gegen die Türkei gibt Momentum.",
+          "Der Markt bewertet Paraguay stärker als die Baseline (wahrscheinlich aufgrund des direkten KO-Duells).",
+          "Recent Form: Australien verlor gegen den starken USA-Kader; Paraguay ist nach dem Sieg über die Türkei motiviert."
         ],
         "risks": [
-          "Australien könnte von der besseren Elo-Bewertung profitieren.",
-          "Der Ausgang des Spiels könnte durch individuelle Fehler oder überraschende strategische Änderungen beeinflusst werden."
+          "Paraguay hat keine schweren Ausfälle gemeldet, könnte also taktisch flexibel agieren.",
+          "Neutraler Spielort bedeutet kein Heimvorteil; dies begünstigt ausgewogene Spielentwürfe."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.5082,
       "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams punktgleich (3) am 3. Spieltag – ein direktes Endspiel um Platz 2 hinter den USA; Australiens Tordifferenz (0) ist besser als Paraguays (-2); ein Remis würde Australien beim aktuellen Stand eher reichen, Paraguay muss tendenziell gewinnen; Australien mit leicht besserer jüngster Form (recentForm 1.8) und solider Defensive (cleanSheetRate 0.54), aber 0:2 gegen die USA. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Entscheidungsspiel um Platz 2 in Gruppe D: Paraguay (3 Pkt, GD -2) muss bei Australien (3 Pkt, GD 0) gewinnen, Australien reicht rechnerisch ein Remis – das prägt die Dynamik (Paraguay offensiv, Australien kompakt/konternd); Markt sieht Paraguay/Remis deutlich stärker (0.36/0.42) als die Elo-Baseline, die Australien favorisiert (0.46) – ich korrigiere die Baseline Richtung Markt wegen des Muss-Sieg-Drucks und der Heim-/Anstoßlogik für Paraguay; Australien mit leicht besserer Form (recentForm 1.8, 2:0 vs. Türkei), höherer Clean-Sheet-Rate (0.54) und Elo-Vorteil – gefährlich bei Kontern gegen ein aufrückendes Paraguay. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:507a8f88d28a4e58cc0bb1d3b8d85658d887b98f42419f0f979a75ea10db3141"
   },
   "predictionHistory": [
@@ -364,11 +363,24 @@
         "away": 0.2862
       },
       "confidence": 0.5279
+    },
+    {
+      "generatedAt": "2026-06-25T14:03:54.791Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3351,
+        "draw": 0.3942,
+        "away": 0.2706
+      },
+      "confidence": 0.4917
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T20:22:45.699Z",
+    "updatedAt": "2026-06-25T21:03:50.013Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3624,
