@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T06:03:54.463Z",
+    "generatedAt": "2026-06-25T07:03:55.867Z",
     "home": {
       "teamId": "SEN",
       "elo": 1746,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-25T07:03:55.867Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.6578,
-      "draw": 0.2078,
-      "away": 0.1344
+      "home": 0.7286,
+      "draw": 0.1653,
+      "away": 0.1061
     },
-    "confidence": 0.7076,
+    "confidence": 0.6827,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.6407,
-        "draw": 0.2138,
-        "away": 0.1456
+        "home": 0.6859,
+        "draw": 0.1767,
+        "away": 0.1373
       },
       "expectedGoals": {
-        "home": 1.91,
-        "away": 0.78
+        "home": 2.38,
+        "away": 0.97
       }
     },
     "models": {
@@ -80,22 +80,22 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.655,
-          "draw": 0.205,
-          "away": 0.14
+          "home": 0.71,
+          "draw": 0.17,
+          "away": 0.12
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung Senegals (1828 vs. 1630)",
-          "Starke gewichtete Form Senegals (2.44) mit hohem Torschnitt (2.32) und niedriger Gegentorquote (0.61)",
-          "Hohe Clean-Sheet-Rate Senegals (64.7%) gegenüber nur 45.8% beim Irak",
-          "Iraks Form solide (2.01), aber offensiv (1.28 Tore/Spiel) und defensiv (0.82 Gegentore) klar schwächer"
+          "Senegal deutlich stärker (Elo 1746 vs 1564) und in besserer Form (weightedForm 1.84 vs 1.17)",
+          "Senegals solide Defensive (CleanSheet-Rate 61%) gegen schwache irakische Offensive (0,95 Tore/Spiel)",
+          "Irak kassiert im Schnitt fast 2 Gegentore pro Spiel und steht defensiv anfällig",
+          "Markt sieht Senegal als klaren Favoriten (78%), Baseline etwas vorsichtiger (69%)"
         ],
         "risks": [
-          "Lange Pause beider Teams (67 Tage) könnte Rhythmus beeinträchtigen",
-          "Keine H2H-Daten als Referenz vorhanden",
-          "Neutraler Spielort nimmt Senegal Heimvorteil",
-          "Irak defensiv kompakt genug für einen möglichen Punktgewinn (Draw-Wahrscheinlichkeit ~20%)"
+          "Berichte über Unruhe im Senegal-Lager könnten Leistung beeinträchtigen",
+          "Irak könnte tief und kompakt verteidigen und das WM-Gruppenspiel torarm gestalten",
+          "Keine H2H-Daten verfügbar, erhöht Unsicherheit",
+          "WM-Auftaktspiele oft vorsichtig - knappes Ergebnis möglich"
         ]
       },
       "chatgpt": {
@@ -104,26 +104,29 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.66,
-          "draw": 0.21,
-          "away": 0.13
+          "home": 0.7000000000000001,
+          "draw": 0.18000000000000002,
+          "away": 0.12000000000000001
         },
-        "confidence": 0.8,
+        "confidence": 0.75,
         "keyFactors": [
-          "Senegal hat eine starke Form mit einem hohen Elo von 1828 und einem Gewichtungsformwert von 2.441.",
-          "Senegal hat eine hohe durchschnittliche Torquote von 2.319 und eine starke Defensivleistung mit einer Gegentorquote von nur 0.614.",
-          "Neutraler Spielort, der weder Senegal noch Irak einen Vorteil gibt.",
-          "Irak hat eine niedrigere Form und Elo (1630), was Senegal deutlichen Vorteil bietet."
+          "Senegal's superior elo rating and recent form compared to Iraq.",
+          "Senegal's strong offensive capabilities with an average of 2.12 goals per game.",
+          "Iraq's defensive vulnerabilities, conceding an average of 1.946 goals per game.",
+          "Neutral venue negates home advantage effects."
         ],
         "risks": [
-          "Fehlende Head-to-Head-Daten, was eine gewisse Unsicherheit in direkten Vergleichen mit sich bringt.",
-          "Beide Teams haben seit mehr als zwei Monaten kein Spiel bestritten, was die aktuelle Spielrhythmusbeurteilung erschwert."
+          "Potential morale issues in Senegal's camp due to unrest before a key match."
         ]
       }
     },
     "agreement": 0.9933,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Senegals (1828 vs. 1630); Starke gewichtete Form Senegals (2.44) mit hohem Torschnitt (2.32) und niedriger Gegentorquote (0.61); Hohe Clean-Sheet-Rate Senegals (64.7%) gegenüber nur 45.8% beim Irak.",
-    "inputHash": "sha256:da7f019b755bc204511d30507615d0765e8247fbb67fe2de64ced46104f63540"
+    "ensembleWeights": {
+      "claude": 0.5082,
+      "chatgpt": 0.4918
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal deutlich stärker (Elo 1746 vs 1564) und in besserer Form (weightedForm 1.84 vs 1.17); Senegals solide Defensive (CleanSheet-Rate 61%) gegen schwache irakische Offensive (0,95 Tore/Spiel); Irak kassiert im Schnitt fast 2 Gegentore pro Spiel und steht defensiv anfällig. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:b39d8f693d7e5a4d7f6902963bb98e6423b609bea24295107ddb096e9c898a7c"
   },
   "predictionHistory": [
     {
@@ -255,11 +258,24 @@
         "away": 0.1491
       },
       "confidence": 0.7449
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6578,
+        "draw": 0.2078,
+        "away": 0.1344
+      },
+      "confidence": 0.7076
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T06:05:44.481Z",
+    "updatedAt": "2026-06-25T07:04:27.805Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.7846,

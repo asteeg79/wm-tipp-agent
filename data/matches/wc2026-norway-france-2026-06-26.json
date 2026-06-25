@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T06:03:54.463Z",
+    "generatedAt": "2026-06-25T07:03:55.867Z",
     "home": {
       "teamId": "NOR",
       "elo": 1714,
@@ -50,27 +50,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-25T07:03:55.867Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 2,
+      "away": 3
     },
     "probabilities": {
-      "home": 0.2906,
-      "draw": 0.2453,
-      "away": 0.4641
+      "home": 0.236,
+      "draw": 0.2801,
+      "away": 0.4839
     },
-    "confidence": 0.6534,
+    "confidence": 0.5526,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.3392,
-        "draw": 0.2227,
-        "away": 0.4381
+        "home": 0.2795,
+        "draw": 0.2057,
+        "away": 0.5148
       },
       "expectedGoals": {
-        "home": 1.61,
-        "away": 1.85
+        "home": 1.58,
+        "away": 2.18
       }
     },
     "models": {
@@ -80,51 +80,54 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.28,
-          "draw": 0.24,
-          "away": 0.48
+          "home": 0.25,
+          "draw": 0.21,
+          "away": 0.54
         },
-        "confidence": 0.62,
+        "confidence": 0.58,
         "keyFactors": [
-          "Frankreich mit deutlich höherem Elo (1904 vs 1774) und besserer gewichteter Form (2.43 vs 2.019)",
-          "Externe Prognose sieht Frankreich klar vorn (0.52), zieht Baseline-Korrektur Richtung Auswärtssieg",
-          "Norwegen offensiv stark (goalsForAvg 2.78) und defensiv solide (goalsAgainstAvg 0.81), kann Frankreich fordern",
-          "Neutraler Spielort eliminiert Heimvorteil für Norwegen"
+          "Frankreich klar höher eingestuft (Elo 1889 vs 1714) und mit besserer gewichteter Form (2.63 vs 2.37) sowie stabilerer Defensive (0.79 Gegentore/Spiel, 47% Zu-Null).",
+          "Markt und Baseline sehen Frankreich als deutlichen Favoriten (~52-58% Auswärtssieg) – das ist konsistent mit der Qualität.",
+          "Norwegen ist aber offensiv brandgefährlich (3.0 erzielte Tore/Spiel, starke recentForm 2.3) und kann Frankreich unter Druck setzen, was Norwegen-Chancen und Toraufkommen erhöht.",
+          "Neutraler Spielort, kein Heimvorteil – mindert die nominelle 'Heim'-Stärke Norwegens."
         ],
         "risks": [
-          "Haalands Torflaute (zwei verschossene Elfmeter laut News) könnte Norwegens Offensive schwächen",
-          "Beide Teams lange ohne Spiel (67/69 Tage) – Rhythmus schwer einzuschätzen",
-          "Keine H2H-Daten vorhanden, erhöht Unsicherheit",
-          "Norwegens hohe Trefferquote könnte zu offenem Spiel mit mehr Toren führen"
+          "Norwegens Offensivpower (Haaland/Ødegaard-Typ Sturm) kann jedes Spiel kippen – Auswärtssieg nicht sicher, Über-Tore-Szenario möglich.",
+          "Abwesenheit von Trainer Deschamps (Trauerfall) könnte die französische Organisation/Atmosphäre minimal beeinträchtigen.",
+          "Gruppenspiel-Kontext: Bei bereits geklärter Tabellensituation könnte Frankreich rotieren und an Schärfe verlieren.",
+          "H2H fehlt vollständig (0 Spiele), daher höhere Unsicherheit in der Einschätzung."
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.3,
-          "draw": 0.25,
-          "away": 0.45
+          "home": 0.25,
+          "draw": 0.4,
+          "away": 0.35
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "France has a higher Elo rating (1904) compared to Norway's (1774), indicating a stronger team on paper.",
-          "Both teams are in good recent form, but France's is slightly better with a form score of 2.5 versus Norway's 2.3.",
-          "The match is played at a neutral venue, removing home advantage.",
-          "Both teams have a similar clean sheet rate (Norway 0.455, France 0.464)."
+          "Didier Deschamps, Trainer von Frankreich, fehlte aus persönlichen Gründen",
+          "Frankreich hat kein Heimvorteil, da das Spiel an einem neutralen Ort stattfindet",
+          "Norwegens aktuelle Form ist stabil und sie haben eine starke Offensive"
         ],
         "risks": [
-          "Norway's recent morale issues, such as Haaland missing penalties, could impact team performance.",
-          "No historical head-to-head matches to gauge past performance between the teams.",
-          "France's dependency on certain players from club performances like OSC Lille might influence squad decisions."
+          "Frankreich hat trotz allem eine höhere individuelle Qualität im Kader",
+          "Norwegens Verteidigung gegen starke Angriffe wie von Frankreich könnte anfällig sein",
+          "Kleine Schwankungen in der Leistung beider Teams könnten Ergebnis beeinflussen"
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit deutlich höherem Elo (1904 vs 1774) und besserer gewichteter Form (2.43 vs 2.019); Externe Prognose sieht Frankreich klar vorn (0.52), zieht Baseline-Korrektur Richtung Auswärtssieg; Norwegen offensiv stark (goalsForAvg 2.78) und defensiv solide (goalsAgainstAvg 0.81), kann Frankreich fordern.",
-    "inputHash": "sha256:d8d9ea23c204d3ad37199f6260738418a8a9b5c6d71bc7ca6f7c2fce46dd41da"
+    "agreement": 0.8733,
+    "ensembleWeights": {
+      "claude": 0.5082,
+      "chatgpt": 0.4918
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich klar höher eingestuft (Elo 1889 vs 1714) und mit besserer gewichteter Form (2.63 vs 2.37) sowie stabilerer Defensive (0.79 Gegentore/Spiel, 47% Zu-Null).; Markt und Baseline sehen Frankreich als deutlichen Favoriten (~52-58% Auswärtssieg) – das ist konsistent mit der Qualität.; Norwegen ist aber offensiv brandgefährlich (3.0 erzielte Tore/Spiel, starke recentForm 2.3) und kann Frankreich unter Druck setzen, was Norwegen-Chancen und Toraufkommen erhöht.. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:030b8d7585f3275f3ffbfe65da5cbdc7be18061ff59e4e4014b650b652edcc9e"
   },
   "predictionHistory": [
     {
@@ -269,11 +272,24 @@
         "away": 0.4744
       },
       "confidence": 0.6728
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2906,
+        "draw": 0.2453,
+        "away": 0.4641
+      },
+      "confidence": 0.6534
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T06:05:44.481Z",
+    "updatedAt": "2026-06-25T07:04:27.805Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2032,
