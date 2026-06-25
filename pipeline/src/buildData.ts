@@ -102,6 +102,12 @@ export interface BuildOptions {
    * Spiele außerhalb behalten ihren letzten Tipp (oder Baseline).
    */
   aiWindowHours?: number | null;
+  /**
+   * Erzwingt die Neubewertung ALLER Partien im Anpfiff-Fenster (umgeht die
+   * Retrigger-Logik). Für manuelle „jetzt alles neu rechnen"-Läufe. Das Fenster
+   * (aiWindowHours) begrenzt weiterhin, WELCHE Partien betroffen sind.
+   */
+  forceEval?: boolean;
 }
 
 /** Saisons für die N-Jahres-Historie (eindeutige Jahre im Zeitfenster). */
@@ -364,6 +370,7 @@ export async function buildData(
     now,
     ensemble: ensemble && ensemble.active ? ensemble : null,
     aiWindowHours: options.aiWindowHours ?? null,
+    forceEval: options.forceEval ?? false,
     externalPriors,
     odds,
   });
@@ -390,6 +397,8 @@ interface WriteMatchesCtx {
   ensemble: Ensemble | null;
   /** KI nur für Partien ≤ diesem Anpfiff-Fenster (Std.); null = unbegrenzt. */
   aiWindowHours: number | null;
+  /** Retrigger umgehen → alle Partien im Fenster neu bewerten (manueller Lauf). */
+  forceEval: boolean;
   /** Optionale externe Prognose-Priors (als Anker für die KI). */
   externalPriors: ExternalPriors | null;
   /** Buchmacher-Quoten je Partie (gekeyt über oddsKey(home, away)). */
@@ -658,13 +667,9 @@ async function writeMatches(
         (hoursUntilKickoff >= 0 && hoursUntilKickoff <= ctx.aiWindowHours);
 
       if (ensemble && inAiWindow) {
-        const decision = decideRetrigger(
-          prev ?? match,
-          inputHash,
-          homeNews,
-          awayNews,
-          now,
-        );
+        const decision = ctx.forceEval
+          ? { shouldEvaluate: true, reason: "Force (manuell)" }
+          : decideRetrigger(prev ?? match, inputHash, homeNews, awayNews, now);
         if (decision.shouldEvaluate) {
           // Markt-Anker für die KI: echte Buchmacher-Quoten bevorzugt,
           // sonst der optionale externe Prior.

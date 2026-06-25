@@ -101,11 +101,16 @@ async function main(): Promise<void> {
   // Test-Overrides bleiben erhalten.
   const withNews = process.env.WM_NO_NEWS !== "1";
   const withAi = mode !== "news" && process.env.WM_NO_AI !== "1";
+  // Manueller „jetzt alles neu rechnen"-Lauf: erzwingt die Neubewertung aller
+  // Partien im Anpfiff-Fenster (umgeht den Retrigger). Fenster begrenzt weiterhin.
+  const forceEval = process.env.WM_FORCE_EVAL === "1";
 
   console.log(
     `[pipeline] Modus: ${mode}` +
       (withAi
-        ? ` (KI-Fenster: ${mode === "full" ? "alle" : aiWindowHours + "h"})`
+        ? ` (KI-Fenster: ${mode === "full" ? "alle" : aiWindowHours + "h"}` +
+          (forceEval ? ", FORCE" : "") +
+          ")"
         : " (ohne KI)"),
   );
 
@@ -113,6 +118,7 @@ async function main(): Promise<void> {
     withNews,
     withAi,
     aiWindowHours: mode === "full" ? null : aiWindowHours,
+    forceEval,
   });
 
   console.log("[pipeline] Lauf abgeschlossen:");
