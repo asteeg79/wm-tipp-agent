@@ -54,6 +54,11 @@ import {
   type Ensemble,
   type EvaluateInput,
 } from "./predict/index.js";
+import type {
+  GroupContext,
+  GroupStandingRow,
+  RecentResult,
+} from "./predict/prompt.js";
 import {
   computeModelComparison,
   computeModelWeights,
@@ -422,6 +427,93 @@ async function collectModelWeights(
   return computeModelWeights(finished, config.ensemble.accuracyMinSample);
 }
 
+interface GroupTable {
+  rows: GroupStandingRow[];
+  /** teamId → bereits gespielte Gruppenspiele (für den Spieltag). */
+  played: Map<string, number>;
+}
+
+/**
+ * Aktuelle Gruppentabellen aus den bereits gespielten Gruppenspielen des
+ * Spielplans. Jede Gruppe enthält ALLE ihre Teams (auch mit 0 Spielen), damit
+ * der Stand schon am 1. Spieltag mitgegeben werden kann.
+ */
+function computeGroupTables(
+  schedule: NormalizedFixture[],
+  nameById: Map<string, string>,
+): Map<string, GroupTable> {
+  interface Agg {
+    played: number;
+    pts: number;
+    gf: number;
+    ga: number;
+  }
+  const byGroup = new Map<string, Map<string, Agg>>();
+  const ensure = (g: string, id: string): Agg => {
+    if (!byGroup.has(g)) byGroup.set(g, new Map());
+    const tbl = byGroup.get(g)!;
+    if (!tbl.has(id)) tbl.set(id, { played: 0, pts: 0, gf: 0, ga: 0 });
+    return tbl.get(id)!;
+  };
+  for (const fx of schedule) {
+    if ((fx.stage ?? "group") !== "group" || !fx.groupId) continue;
+    const h = ensure(fx.groupId, fx.homeTeamId);
+    const a = ensure(fx.groupId, fx.awayTeamId);
+    if (!fx.finished || fx.goalsHome === null || fx.goalsAway === null)
+      continue;
+    h.played++;
+    a.played++;
+    h.gf += fx.goalsHome;
+    h.ga += fx.goalsAway;
+    a.gf += fx.goalsAway;
+    a.ga += fx.goalsHome;
+    if (fx.goalsHome > fx.goalsAway) h.pts += 3;
+    else if (fx.goalsHome < fx.goalsAway) a.pts += 3;
+    else {
+      h.pts++;
+      a.pts++;
+    }
+  }
+  const out = new Map<string, GroupTable>();
+  for (const [g, tbl] of byGroup) {
+    const played = new Map<string, number>();
+    const rows: GroupStandingRow[] = [];
+    for (const [id, agg] of tbl) {
+      played.set(id, agg.played);
+      rows.push({
+        team: nameById.get(id) ?? id,
+        played: agg.played,
+        points: agg.pts,
+        goalDiff: agg.gf - agg.ga,
+        goalsFor: agg.gf,
+      });
+    }
+    rows.sort(
+      (x, y) =>
+        y.points - x.points ||
+        y.goalDiff - x.goalDiff ||
+        y.goalsFor - x.goalsFor,
+    );
+    out.set(g, { rows, played });
+  }
+  return out;
+}
+
+/** Jüngste Ergebnisse (neueste zuerst, max `limit`) als Prompt-Objekte. */
+function recentResultsOf(results: TeamResult[], limit: number): RecentResult[] {
+  return [...results]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, limit)
+    .map((r) => ({
+      date: r.date,
+      opponent: r.opponentName,
+      scored: r.goalsFor,
+      conceded: r.goalsAgainst,
+      venue: r.venue,
+      competition: r.competition,
+    }));
+}
+
 /**
  * Schreibt die Match-Dokumente. Für anstehende Partien mit bekannter Historie:
  * Feature-Bundle + Baseline (Phase 4); falls KI-Ensemble aktiv und Re-Trigger
@@ -434,6 +526,9 @@ async function writeMatches(
   ctx: WriteMatchesCtx,
 ): Promise<WriteMatchesResult> {
   const { resultsByTeam, newsByTeam, nameById, eloOf, now, ensemble } = ctx;
+  // Gruppentabellen einmal aus den bereits gespielten Spielen ableiten
+  // (Einsatz-Kontext + Spieltag für die KI).
+  const groupTables = computeGroupTables(schedule, nameById);
   let written = 0;
   let aiEvaluated = 0;
   let aiSkipped = 0;
@@ -576,6 +671,20 @@ async function writeMatches(
           const prior =
             match.market?.probabilities ??
             ctx.externalPriors?.byMatch.get(fx.matchId);
+          // Gruppenstand + Spieltag (Einsatz) und jüngste Ergebnisse (Momentum).
+          const gt = fx.groupId ? groupTables.get(fx.groupId) : undefined;
+          const matchday = gt
+            ? (gt.played.get(fx.homeTeamId) ?? 0) + 1
+            : undefined;
+          const groupContext: GroupContext | undefined =
+            gt && fx.groupId && matchday
+              ? {
+                  groupId: fx.groupId,
+                  matchday,
+                  remainingAfter: Math.max(0, 3 - matchday),
+                  table: gt.rows,
+                }
+              : undefined;
           // NICHT sofort bewerten: fällige Partien werden gesammelt und nach
           // der Schleife gebündelt bewertet (Claude via Batches-API → 50 %
           // günstiger). Datei-Write + Zähler folgen ebenfalls erst dann.
@@ -595,6 +704,9 @@ async function writeMatches(
               now,
               modelWeights,
               ...(prior ? { marketProbabilities: prior } : {}),
+              ...(groupContext ? { groupContext } : {}),
+              homeRecent: recentResultsOf(homeResults, 5),
+              awayRecent: recentResultsOf(awayResults, 5),
             },
           });
           continue;

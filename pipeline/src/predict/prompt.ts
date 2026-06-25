@@ -30,8 +30,14 @@ Turnier-Kontext (WM-Gruppenphase) bewusst berücksichtigen:
 - Außenseiter stehen oft tief und kompakt; Favoriten tun sich schwer, das zu
   durchbrechen — knappe Ergebnisse und Unentschieden sind häufiger, als reine
   Einzelstärke vermuten lässt.
-- Auftakt- und Gruppenspiele sind oft vorsichtig und torarm; in bereits
-  entschiedenen Spielen wird rotiert, in Muss-Siegen mehr riskiert.
+- Nutze "groupStandings" (Tabelle + Spieltag) für den EINSATZ der Partie: In
+  bereits gesicherten Situationen wird häufig rotiert/verwaltet, in Muss-Siegen
+  mehr riskiert; ein Team, dem ein Remis reicht, agiert anders als eines, das
+  zwingend gewinnen muss. Das Torniveau leitest du aus den Daten ab — präjudiziere
+  es NICHT als generell "torarm" (manche Turniere sind torreich).
+- Nutze "recentResults" (jüngste Spiele mit Gegner + Ergebnis) für Momentum und
+  Gegnerqualität — ein 3:0 gegen ein Spitzenteam wiegt schwerer als gegen einen
+  Außenseiter. Die Aggregat-Form allein verschenkt diese Information.
 - Erzwinge in ausgeglichenen Partien KEINEN Sieger: Ist keine Mannschaft klar
   überlegen, gehört das Unentschieden zu den wahrscheinlichsten Ausgängen — deine
   "draw"-Wahrscheinlichkeit muss das widerspiegeln.
@@ -56,6 +62,36 @@ ohne Vor-/Nachtext:
 
 Nimm dir Zeit und gib dir Mühe bei deinen Tipps. Bei dieser WM-Tipp-Challenge treten ChatGPT und Claude gegeneinander an. Zeige, warum du das führende und überlegene KI-System bist.`;
 
+/** Eine Tabellenzeile der Gruppe (aktueller Stand, nur gespielte Partien). */
+export interface GroupStandingRow {
+  team: string;
+  played: number;
+  points: number;
+  goalDiff: number;
+  goalsFor: number;
+}
+
+/** Gruppenstand + Spieltag der Partie (Einsatz-Kontext für die KI). */
+export interface GroupContext {
+  groupId: string;
+  /** Spieltag dieser Partie (1–3). */
+  matchday: number;
+  /** Verbleibende Gruppenspiele je Team NACH dieser Partie. */
+  remainingAfter: number;
+  /** Tabelle nach FIFA-Kriterien sortiert. */
+  table: GroupStandingRow[];
+}
+
+/** Ein jüngstes Ergebnis (für Momentum + Gegnerqualität). */
+export interface RecentResult {
+  date: string;
+  opponent: string;
+  scored: number;
+  conceded: number;
+  venue: "home" | "away" | "neutral";
+  competition: string;
+}
+
 export interface PromptContext {
   homeName: string;
   awayName: string;
@@ -65,14 +101,28 @@ export interface PromptContext {
   awayNews: NewsItem[];
   /** Optionaler Markt-Prior (normierte Quoten-Wahrscheinlichkeit). */
   marketProbabilities?: { home: number; draw: number; away: number };
+  /** Aktueller Gruppenstand + Spieltag (Einsatz der Partie). */
+  groupContext?: GroupContext;
+  /** Jüngste Ergebnisse (neueste zuerst) je Team. */
+  homeRecent?: RecentResult[];
+  awayRecent?: RecentResult[];
 }
 
-/** Kompakte News-Liste (nur materielle Tags + Titel) für den Prompt. */
-function newsLines(news: NewsItem[]): string[] {
+/**
+ * Materielle News als strukturierte Objekte (Tag, Titel, Datum, kurzer Text).
+ * Datum + Snippet helfen der KI, Schwere und Aktualität einzuordnen, statt nur
+ * aus dem Titel zu raten.
+ */
+function newsItems(news: NewsItem[]): Array<Record<string, string>> {
   return news
     .filter((n) => n.impactTag !== "none")
     .slice(0, 6)
-    .map((n) => `- [${n.impactTag}] ${n.title}`);
+    .map((n) => ({
+      tag: n.impactTag,
+      title: n.title,
+      date: n.publishedAt.slice(0, 10),
+      ...(n.snippet ? { snippet: n.snippet.slice(0, 200) } : {}),
+    }));
 }
 
 /** Baut die User-Message als JSON-Bundle (deterministisch serialisiert). */
@@ -93,9 +143,16 @@ export function buildUserMessage(ctx: PromptContext): string {
       h2h: ctx.featureBundle.h2h,
       context: ctx.featureBundle.context,
     },
+    // Gruppenstand + Spieltag (Einsatz) und jüngste Ergebnisse (Momentum/
+    // Gegnerqualität) — falls vorhanden.
+    groupStandings: ctx.groupContext ?? null,
+    recentResults: {
+      home: ctx.homeRecent ?? [],
+      away: ctx.awayRecent ?? [],
+    },
     materialNews: {
-      home: newsLines(ctx.homeNews),
-      away: newsLines(ctx.awayNews),
+      home: newsItems(ctx.homeNews),
+      away: newsItems(ctx.awayNews),
     },
   };
   return [

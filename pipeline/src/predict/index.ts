@@ -4,7 +4,12 @@
  * die finale Prediction. Re-Trigger-Entscheidung erfolgt im Aufrufer.
  */
 import type { Baseline, FeatureBundle, NewsItem, Prediction } from "@wm/shared";
-import { buildUserMessage } from "./prompt.js";
+import {
+  buildUserMessage,
+  type GroupContext,
+  type PromptContext,
+  type RecentResult,
+} from "./prompt.js";
 import { ChatGptClient, ClaudeClient, type ModelClient } from "./models.js";
 import { mapLimit } from "../util/async.js";
 import { config } from "../../config.js";
@@ -38,6 +43,29 @@ export interface EvaluateInput {
   marketProbabilities?: { home: number; draw: number; away: number };
   /** Accuracy-Gewichte aus beendeten Partien (computeModelWeights). */
   modelWeights?: EnsembleWeights | null;
+  /** Aktueller Gruppenstand + Spieltag (Einsatz-Kontext). */
+  groupContext?: GroupContext;
+  /** Jüngste Ergebnisse je Team (neueste zuerst). */
+  homeRecent?: RecentResult[];
+  awayRecent?: RecentResult[];
+}
+
+/** Baut den PromptContext aus dem EvaluateInput (eine Quelle für beide Pfade). */
+function promptContextOf(input: EvaluateInput): PromptContext {
+  return {
+    homeName: input.homeName,
+    awayName: input.awayName,
+    featureBundle: input.featureBundle,
+    baseline: input.baseline,
+    homeNews: input.homeNews,
+    awayNews: input.awayNews,
+    ...(input.marketProbabilities
+      ? { marketProbabilities: input.marketProbabilities }
+      : {}),
+    ...(input.groupContext ? { groupContext: input.groupContext } : {}),
+    ...(input.homeRecent ? { homeRecent: input.homeRecent } : {}),
+    ...(input.awayRecent ? { awayRecent: input.awayRecent } : {}),
+  };
 }
 
 class EnsembleImpl implements Ensemble {
@@ -55,17 +83,7 @@ class EnsembleImpl implements Ensemble {
   }
 
   async evaluate(input: EvaluateInput): Promise<Prediction> {
-    const userMessage = buildUserMessage({
-      homeName: input.homeName,
-      awayName: input.awayName,
-      featureBundle: input.featureBundle,
-      baseline: input.baseline,
-      homeNews: input.homeNews,
-      awayNews: input.awayNews,
-      ...(input.marketProbabilities
-        ? { marketProbabilities: input.marketProbabilities }
-        : {}),
-    });
+    const userMessage = buildUserMessage(promptContextOf(input));
 
     // Beide Modelle parallel; ein Modellfehler darf den Tipp nicht killen.
     const settled = await Promise.allSettled(
@@ -93,17 +111,7 @@ class EnsembleImpl implements Ensemble {
 
   async evaluateMany(inputs: EvaluateInput[]): Promise<Prediction[]> {
     const messages = inputs.map((input) =>
-      buildUserMessage({
-        homeName: input.homeName,
-        awayName: input.awayName,
-        featureBundle: input.featureBundle,
-        baseline: input.baseline,
-        homeNews: input.homeNews,
-        awayNews: input.awayNews,
-        ...(input.marketProbabilities
-          ? { marketProbabilities: input.marketProbabilities }
-          : {}),
-      }),
+      buildUserMessage(promptContextOf(input)),
     );
 
     // Je Client alle Antworten einsammeln (Batch wenn unterstützt, sonst
