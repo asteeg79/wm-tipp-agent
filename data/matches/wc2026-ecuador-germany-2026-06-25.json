@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T05:03:52.781Z",
+    "generatedAt": "2026-06-25T06:03:54.463Z",
     "home": {
       "teamId": "ECU",
       "elo": 1671,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-25T04:03:47.550Z",
+    "generatedAt": "2026-06-25T06:03:54.463Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.216,
-      "draw": 0.2407,
-      "away": 0.5433
+      "home": 0.2234,
+      "draw": 0.2446,
+      "away": 0.532
     },
-    "confidence": 0.6237,
+    "confidence": 0.5909,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.19,
+          "home": 0.18,
           "draw": 0.25,
-          "away": 0.56
+          "away": 0.57
         },
         "confidence": 0.56,
         "keyFactors": [
-          "Deutschland mit klar überlegener Offensive (xG 2.2, 3.23 Tore/Spiel) und höherem Elo (1807 vs 1671)",
-          "Ecuador defensiv sehr stabil (0.52 Gegentore/Spiel, 51,7% Zu-null-Rate) und kann tief und kompakt stehen",
-          "Externer Markt deutlich vorsichtiger als die Elo-Baseline (53% statt 71% für Deutschland) – Ecuador wird stärker eingeschätzt",
-          "Ecuador in guter Form (recentForm 1.3) und mit Druck/Motivation (Trainer Beccacece unter Zugzwang)"
+          "Deutschland mit klar überlegener Offensive (3,23 Tore/Spiel) und starker Form (weightedForm 2,59)",
+          "Ecuador defensiv sehr kompakt (Clean-Sheet-Rate 51,7%, nur 0,52 Gegentore/Spiel) – schwer zu durchbrechen",
+          "Markt sieht Partie deutlich enger (53% Deutschland) als die Elo-Baseline (71%)",
+          "Nagelsmann verzichtet auf Rotation und setzt auf Bestbesetzung"
         ],
         "risks": [
-          "Verletzungssorgen in der deutschen Defensive (Nagelsmann muss umstellen) könnten Ecuadors wenige Chancen begünstigen",
-          "Ecuadors schwache Offensive (nur 0.59 Tore/Spiel) macht ein torarmes, knappes Ergebnis möglich",
-          "Bei kompakter Defensivtaktik Ecuadors ist ein Remis ein realistisches Szenario",
-          "Kein H2H-Vergleichswert vorhanden, erhöht die Unsicherheit"
+          "Verletzungssorgen in der deutschen Defensive könnten Ecuador Konterchancen eröffnen",
+          "Ecuadors tiefstehende, kompakte Spielweise kann ein torarmes Remis erzwingen",
+          "Ecuador-Coach unter Druck ('Endspiel um Job') – mögliche erhöhte Motivation",
+          "Geringe Offensivkraft Ecuadors macht eigenes Tor unwahrscheinlich, aber 0:0/1:1 bleibt realistisch"
         ]
       },
       "chatgpt": {
@@ -104,28 +104,29 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.22,
-          "draw": 0.24,
-          "away": 0.54
+          "home": 0.25,
+          "draw": 0.25,
+          "away": 0.5
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Deutschland hat eine höhere Elo-Zahl und gewichtete Form.",
-          "Ecuador spielt unter starkem Druck aufgrund des Jobs des Trainers.",
-          "Materialnews deuten auf Verteidigungsprobleme bei Deutschland hin."
+          "Deutschland ist klarer Favorit laut Elo-Bewertung und Baseline-Model.",
+          "Deutschlands jüngste Verletzung in der Defensive könnte die Stabilität beeinträchtigen.",
+          "Ecuador hat eine gute Defensivstatistik mit einer hohen Anzahl von Zu-Null-Spielen."
         ],
         "risks": [
-          "Deutschland muss mit Ausfällen in der Defensive umgehen.",
-          "Ecuadors Trainer könnte das Team extra motivieren."
+          "Julian Nagelsmanns Verletzungssorgen könnten die deutsche Defensive schwächen.",
+          "Ecuadors Trainer steht aufgrund von schlechten Leistungen unter Druck, was ein motiviertes Auftreten gegen Deutschland erwarten lässt.",
+          "Das Neutralisieren von Deutschlands starkem Angriffsspiel ist für Ecuador entscheidend."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9533,
     "ensembleWeights": {
       "claude": 0.5082,
       "chatgpt": 0.4918
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit klar überlegener Offensive (xG 2.2, 3.23 Tore/Spiel) und höherem Elo (1807 vs 1671); Ecuador defensiv sehr stabil (0.52 Gegentore/Spiel, 51,7% Zu-null-Rate) und kann tief und kompakt stehen; Externer Markt deutlich vorsichtiger als die Elo-Baseline (53% statt 71% für Deutschland) – Ecuador wird stärker eingeschätzt. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland mit klar überlegener Offensive (3,23 Tore/Spiel) und starker Form (weightedForm 2,59); Ecuador defensiv sehr kompakt (Clean-Sheet-Rate 51,7%, nur 0,52 Gegentore/Spiel) – schwer zu durchbrechen; Markt sieht Partie deutlich enger (53% Deutschland) als die Elo-Baseline (71%). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:0c95bd69307d1a62457045e95fcc9d1161bd503503e782fbfa4c1964283569d2"
   },
   "predictionHistory": [
@@ -336,11 +337,24 @@
         "away": 0.5257
       },
       "confidence": 0.6167
+    },
+    {
+      "generatedAt": "2026-06-25T04:03:47.550Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.216,
+        "draw": 0.2407,
+        "away": 0.5433
+      },
+      "confidence": 0.6237
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T05:04:21.828Z",
+    "updatedAt": "2026-06-25T06:05:44.481Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2383,
