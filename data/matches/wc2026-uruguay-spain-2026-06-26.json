@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T11:03:43.129Z",
+    "generatedAt": "2026-06-25T12:03:44.791Z",
     "home": {
       "teamId": "URU",
       "elo": 1662,
@@ -51,27 +51,27 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-25T12:03:44.791Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1406,
-      "draw": 0.2153,
-      "away": 0.6441
+      "home": 0.144,
+      "draw": 0.2396,
+      "away": 0.6164
     },
-    "confidence": 0.6534,
+    "confidence": 0.6728,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.0598,
-        "draw": 0.1315,
-        "away": 0.8087
+        "home": 0.0375,
+        "draw": 0.0972,
+        "away": 0.8653
       },
       "expectedGoals": {
-        "home": 0.57,
-        "away": 2.6
+        "home": 0.5,
+        "away": 2.98
       }
     },
     "models": {
@@ -81,22 +81,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.13,
-          "draw": 0.21,
-          "away": 0.66
+          "home": 0.15,
+          "draw": 0.24,
+          "away": 0.61
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Spanien deutlich überlegen in Elo (1974 vs 1677) und gewichteter Form (2.327 vs 1.397)",
-          "Spaniens hohe Offensivproduktion (2.675 Tore/Spiel) gegen Uruguays solide, aber harmlose Offensive (0.91)",
-          "Uruguays gute Defensive (cleanSheetRate 0.517, 0.832 Gegentore) kann das Resultat dämpfen",
-          "Neutraler Ort ohne Heimvorteil für Uruguay; Baseline überschätzt Spanien-Sieg leicht"
+          "Spanien deutlich höher eingestuft (Elo 1928 vs 1662) mit klar besserer gewichteter Form (2.22 vs 1.26) und überragender Defensive (0.46 Gegentore/Spiel, 4:0 gegen Saudi-Arabien zuletzt)",
+          "Spanien führt die Gruppe an (4 Punkte, +4) und braucht am letzten Spieltag nur ein Remis zum sicheren Gruppensieg – ein torreiches Spiel ist nicht zwingend",
+          "Uruguay defensiv solide (Clean-Sheet-Rate 0.48) und unter Druck (nur 2 Punkte), muss aber für das Weiterkommen aktiver agieren, was Räume für Spaniens Offensive öffnet",
+          "Baseline überzeichnet Spaniens Sieg (86%) deutlich – Markt mit 64% realistischer für ein WM-Gruppenfinale"
         ],
         "risks": [
-          "Höhenlage (1566 m) könnte konditionsabhängiges spanisches Pressing schwächen",
-          "Uruguay unter Bielsa defensiv organisiert und kampfstark - Überraschungspotenzial",
-          "Kein H2H-Datensatz vorhanden, daher höhere Unsicherheit",
-          "67 Tage seit letztem Spiel - Rhythmus beider Teams schwer einschätzbar"
+          "Uruguay steht traditionell tief und kompakt; ein knappes Remis (1:1/0:0) ist bei beidseitig vorsichtiger Spielweise gut möglich",
+          "Falls Spanien das Weiterkommen schon sicher hat, droht Rotation/Verwalten und damit ein offenes Ergebnis",
+          "Höhe (1566 m) und nur 4 Tage Pause könnten das Tempo drosseln und Außenseiter begünstigen",
+          "Kein H2H-Datenpunkt verfügbar, erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -106,24 +106,30 @@
         },
         "probabilities": {
           "home": 0.15,
-          "draw": 0.22,
-          "away": 0.63
+          "draw": 0.25,
+          "away": 0.6
         },
-        "confidence": 0.7,
+        "confidence": 0.75,
         "keyFactors": [
-          "Spain's higher Elo rating and recent form advantage.",
-          "Spain's superior average goals scored compared to Uruguay.",
-          "Neutral venue negating home advantage for Uruguay."
+          "Spanien hat eine deutlich höhere Elo-Wertung als Uruguay.",
+          "In den letzten zwei Spielen hat Spanien solide Leistungen gezeigt, inklusive eines 4:0-Siegs gegen Saudi-Arabien.",
+          "Uruguay hat in den bisherigen WM-Spielen zweimal unentschieden gespielt, was auf eine kämpferische, jedoch nicht siegreiche Spielweise hinweist.",
+          "Spanien hat eine hohe Offensivkraft mit einem Durchschnitt von 2.453 Toren pro Spiel."
         ],
         "risks": [
-          "Potential impact of altitude affecting stamina and performance.",
-          "Uruguay's strong defensive form with a decent clean sheet rate."
+          "Turnierkontext könnte die Motivation beider Teams beeinflussen: Uruguay könnte bei einem Sieg noch weiterkommen, Spanien möchte Gruppenplatz sichern.",
+          "Keine direkten Head-to-Head-Vergleiche zwischen beiden Teams vorhanden, was zu Überraschungen führen könnte.",
+          "Die Höhenlage des Spielorts könnte den Spielverlauf unvorhersehbar beeinflussen."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich überlegen in Elo (1974 vs 1677) und gewichteter Form (2.327 vs 1.397); Spaniens hohe Offensivproduktion (2.675 Tore/Spiel) gegen Uruguays solide, aber harmlose Offensive (0.91); Uruguays gute Defensive (cleanSheetRate 0.517, 0.832 Gegentore) kann das Resultat dämpfen.",
-    "inputHash": "sha256:50fbcbb8bff0180c08529620c5620b3ccdcb796bc527cea75ce793b7f6fce3b7"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5082,
+      "chatgpt": 0.4918
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich höher eingestuft (Elo 1928 vs 1662) mit klar besserer gewichteter Form (2.22 vs 1.26) und überragender Defensive (0.46 Gegentore/Spiel, 4:0 gegen Saudi-Arabien zuletzt); Spanien führt die Gruppe an (4 Punkte, +4) und braucht am letzten Spieltag nur ein Remis zum sicheren Gruppensieg – ein torreiches Spiel ist nicht zwingend; Uruguay defensiv solide (Clean-Sheet-Rate 0.48) und unter Druck (nur 2 Punkte), muss aber für das Weiterkommen aktiver agieren, was Räume für Spaniens Offensive öffnet. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:9a0eb4a953976485e9f240f4da36fcb28d2f83c8f6e8e37753598cf557a360f3"
   },
   "predictionHistory": [
     {
@@ -268,11 +274,24 @@
         "away": 0.6117
       },
       "confidence": 0.669
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1406,
+        "draw": 0.2153,
+        "away": 0.6441
+      },
+      "confidence": 0.6534
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T11:05:35.112Z",
+    "updatedAt": "2026-06-25T12:05:46.055Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.13,
