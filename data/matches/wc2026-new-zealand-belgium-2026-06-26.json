@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-25T14:03:54.791Z",
+    "generatedAt": "2026-06-25T15:03:48.419Z",
     "home": {
       "teamId": "NZL",
       "elo": 1566,
@@ -50,81 +50,85 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-25T15:03:48.419Z",
     "predictedScore": {
       "home": 1,
-      "away": 3
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1627,
-      "draw": 0.1916,
-      "away": 0.6458
+      "home": 0.0937,
+      "draw": 0.165,
+      "away": 0.7414
     },
-    "confidence": 0.7277,
+    "confidence": 0.616,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.2448,
-        "draw": 0.1943,
-        "away": 0.5609
+        "home": 0.124,
+        "draw": 0.1522,
+        "away": 0.7239
       },
       "expectedGoals": {
-        "home": 1.54,
-        "away": 2.37
+        "home": 1.1,
+        "away": 2.78
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.18,
-          "draw": 0.18,
-          "away": 0.64
+          "home": 0.1,
+          "draw": 0.15,
+          "away": 0.75
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Belgien klar stärker: Elo 1744 vs 1641, weightedForm 1.908 vs 1.235",
-          "Belgiens Offensive deutlich gefährlicher (goalsForAvg 2.914 vs 2.122)",
-          "Neuseeland defensiv solide (cleanSheetRate 0.563), kann Spiel eng halten",
-          "Externe Prognose sieht Belgien noch deutlicher vorne (0.7252)"
+          "Belgien klar elo-überlegen (1727 vs 1566) und mit stärkerer gewichteter Form sowie deutlich besserer Defensive (0,86 Gegentore/Spiel)",
+          "Belgien muss am 3. Spieltag gewinnen (nur 2 Punkte, GD 0) und wird offensiv volles Risiko gehen, um sicher weiterzukommen",
+          "Neuseeland nach 1:3 gegen Ägypten formschwach, defensiv anfällig (1,8 Gegentore/Spiel) und mit GD -2 weitgehend chancenlos",
+          "Belgien produziert klar mehr Chancen (zuletzt Chancenwucher gegen Iran trotz 0:0) und sollte gegen tiefstehenden Außenseiter zur Geltung kommen"
         ],
         "risks": [
-          "Neuseeland 200 Tage ohne Spiel – Match-Fitness und Form schwer einschätzbar",
-          "Kein H2H-Datensatz vorhanden, geringe Vergleichsbasis",
-          "Neutraler Spielort nimmt Heimvorteil, erhöht Belgiens Dominanz",
-          "Belgiens niedrige cleanSheetRate (0.385) lässt NZL-Treffer möglich erscheinen"
+          "Belgiens auffälliger Chancenwucher und Abschlussschwäche (nur 1 Tor in 2 Gruppenspielen) könnte ein knappes Ergebnis oder Remis begünstigen",
+          "Mögliche Sperre/Ausfälle nach roter Karte (Ngoy) schwächen den belgischen Kader",
+          "Neuseeland steht als Außenseiter tief und kompakt – Favorit könnte sich schwertun, das zu durchbrechen",
+          "Falls Belgien früh führt, droht Verwaltungsmodus mit weniger Toren"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 3
+          "away": 2
         },
         "probabilities": {
-          "home": 0.15,
-          "draw": 0.2,
-          "away": 0.65
+          "home": 0.12,
+          "draw": 0.22,
+          "away": 0.66
         },
-        "confidence": 0.85,
+        "confidence": 0.65,
         "keyFactors": [
-          "Belgium's higher Elo rating",
-          "Belgium's superior recent form",
-          "Belgium's attacking strength with higher goals for average",
-          "New Zealand's long break since last match"
+          "Belgium is the stronger team based on Elo ratings and recent form.",
+          "Belgium's Elo of 1727 compared to New Zealand's 1566 suggests a significant strength advantage.",
+          "Recent form shows New Zealand struggled defensively, conceding 3 against Egypt.",
+          "Suspension of a Belgian player might slightly weaken their defense or midfield."
         ],
         "risks": [
-          "Neutral venue reduces potential home advantage for New Zealand",
-          "Limited head-to-head data; no matches played between the two teams",
-          "Potential unknown impact of coaching change for New Zealand"
+          "Belgium's failure to score against Iran raises concerns about their attacking efficiency.",
+          "New Zealand managed a draw against Iran and might pose a defensive challenge for Belgium.",
+          "Neutral venue and World Cup pressure might influence performance."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien klar stärker: Elo 1744 vs 1641, weightedForm 1.908 vs 1.235; Belgiens Offensive deutlich gefährlicher (goalsForAvg 2.914 vs 2.122); Neuseeland defensiv solide (cleanSheetRate 0.563), kann Spiel eng halten.",
-    "inputHash": "sha256:a329d52565f0cacda5f6e9d18a4b8f84cd492464b533bbbf9b0dc2c58efce82b"
+    "agreement": 0.94,
+    "ensembleWeights": {
+      "claude": 0.5082,
+      "chatgpt": 0.4918
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien klar elo-überlegen (1727 vs 1566) und mit stärkerer gewichteter Form sowie deutlich besserer Defensive (0,86 Gegentore/Spiel); Belgien muss am 3. Spieltag gewinnen (nur 2 Punkte, GD 0) und wird offensiv volles Risiko gehen, um sicher weiterzukommen; Neuseeland nach 1:3 gegen Ägypten formschwach, defensiv anfällig (1,8 Gegentore/Spiel) und mit GD -2 weitgehend chancenlos. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:c7094eb262533c0430017717ae68da8f29a7bdb1b31621de39620f8183bbec6b"
   },
   "predictionHistory": [
     {
@@ -256,11 +260,24 @@
         "away": 0.6567
       },
       "confidence": 0.693
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.1627,
+        "draw": 0.1916,
+        "away": 0.6458
+      },
+      "confidence": 0.7277
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-25T14:05:17.575Z",
+    "updatedAt": "2026-06-25T15:05:30.277Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.0553,
