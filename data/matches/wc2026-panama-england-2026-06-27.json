@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T08:36:12.550Z",
+    "generatedAt": "2026-06-26T09:03:45.433Z",
     "home": {
       "teamId": "PAN",
       "elo": 1584,
@@ -50,79 +50,83 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-26T09:03:45.433Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1356,
-      "draw": 0.2069,
-      "away": 0.6575
+      "home": 0.0708,
+      "draw": 0.1515,
+      "away": 0.7776
     },
-    "confidence": 0.7449,
+    "confidence": 0.7597,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.1519,
-        "draw": 0.2188,
-        "away": 0.6293
+        "home": 0.0795,
+        "draw": 0.1592,
+        "away": 0.7614
       },
       "expectedGoals": {
-        "home": 0.79,
-        "away": 1.86
+        "home": 0.61,
+        "away": 2.33
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.13,
-          "draw": 0.19,
-          "away": 0.68
+          "home": 0.07,
+          "draw": 0.15,
+          "away": 0.78
         },
-        "confidence": 0.66,
+        "confidence": 0.74,
         "keyFactors": [
-          "Deutlicher Elo-Vorsprung England (1829 vs. 1642) und stärkere gewichtete Form (2.03 vs. 1.79)",
-          "Englands defensive Stabilität: cleanSheetRate 0.55 und nur 0.52 Gegentore im Schnitt",
-          "Englands Offensive (1.99 Tore/Spiel) gegenüber Panamas durchschnittlicher Abwehr (1.01 Gegentore)",
-          "Neutraler Spielort entzieht Panama jeglichen Heimvorteil"
+          "England klar überlegen (Elo 1820 vs. 1584, gewichtete Form 2.0 vs. 1.3) und mit 4 Punkten Tabellenführer der Gruppe L",
+          "Panama ohne Punkt und ohne erzieltes Tor nach zwei Spielen (0 GF, GD -2), praktisch ausgeschieden und offensiv harmlos",
+          "England stark in der Defensive (0.68 Gegentore/Spiel, 0:0 gegen Ghana, gute Clean-Sheet-Quote 0.55), Panama-Angriff zuletzt komplett ungefährlich (0:1, 0:1)",
+          "Markt (0.82) und Baseline (0.76) sehen klaren England-Favoriten, beide Signale decken sich"
         ],
         "risks": [
-          "Tuchels Kaderentscheidungen sorgen laut News für Unruhe, mögliche taktische Experimente (überraschende Rolle für Kane)",
-          "67 Tage Pause für beide Teams erschwert Formeinschätzung und kann zu holprigem Start führen",
-          "Panama zeigt solide Defensivwerte (cleanSheetRate 0.30) und könnte tief stehen, was knappere Resultate ermöglicht",
-          "Keine H2H-Daten verfügbar, daher erhöhte Unsicherheit beim konkreten Ergebnis"
+          "England könnte als bereits weit qualifiziertes Team rotieren/verwalten und an Intensität verlieren",
+          "Panama steht als Außenseiter tief und kompakt – Favorit könnte sich beim Durchbrechen schwertun, knappes Ergebnis möglich",
+          "Kaderumbau bei England (Foden, Palmer, Alexander-Arnold fehlen) sowie Unruhe-Schlagzeilen könnten die Offensivqualität mindern",
+          "Kein H2H vorhanden – erhöhte Unsicherheit bei der Einschätzung"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.14,
-          "draw": 0.22,
-          "away": 0.64
+          "home": 0.08,
+          "draw": 0.18,
+          "away": 0.74
         },
-        "confidence": 0.85,
+        "confidence": 0.8,
         "keyFactors": [
-          "Englands höheres Elo-Rating und bessere Form.",
-          "England hat eine stärkere Offensiv- und Defensivstatistik.",
-          "Neutrales Spielfeld minimiert Heimvorteil für Panama."
+          "England hat eine deutlich höhere Elo-Zahl und zeigt eine überlegene Form im Vergleich zu Panama.",
+          "Panama hat bisher in der Gruppenphase keine Tore erzielt und hat beide Spiele verloren.",
+          "England hat einen klaren Sieg gegen Kroatien erzielt und ein Unentschieden gegen Ghana erreicht."
         ],
         "risks": [
-          "Überraschende taktische Änderungen von Englands Trainer Tuchel.",
-          "Fehlen von historischen direkten Begegnungen als Vergleichsbasis."
+          "Die Entscheidung von Tuchel, wichtige Spieler nicht in den Kader aufzunehmen, könnte sich auf die Teamleistung auswirken.",
+          "Moraldissonanzen im England-Team aufgrund des Vorfalls im Spiel gegen Ghana könnten das Teamgefüge stören."
         ]
       }
     },
     "agreement": 0.9733,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung England (1829 vs. 1642) und stärkere gewichtete Form (2.03 vs. 1.79); Englands defensive Stabilität: cleanSheetRate 0.55 und nur 0.52 Gegentore im Schnitt; Englands Offensive (1.99 Tore/Spiel) gegenüber Panamas durchschnittlicher Abwehr (1.01 Gegentore).",
-    "inputHash": "sha256:b30457a9323910f88e1b93fe166390925b164cdb6c87a4766eda453de1632c8c"
+    "ensembleWeights": {
+      "claude": 0.5076,
+      "chatgpt": 0.4924
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England klar überlegen (Elo 1820 vs. 1584, gewichtete Form 2.0 vs. 1.3) und mit 4 Punkten Tabellenführer der Gruppe L; Panama ohne Punkt und ohne erzieltes Tor nach zwei Spielen (0 GF, GD -2), praktisch ausgeschieden und offensiv harmlos; England stark in der Defensive (0.68 Gegentore/Spiel, 0:0 gegen Ghana, gute Clean-Sheet-Quote 0.55), Panama-Angriff zuletzt komplett ungefährlich (0:1, 0:1). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:9b8f78d5183292a5e90c969e6b74e617940dd5ed9a533d12e8add79b6508111c"
   },
   "predictionHistory": [
     {
@@ -267,11 +271,24 @@
         "away": 0.6616
       },
       "confidence": 0.7569
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1356,
+        "draw": 0.2069,
+        "away": 0.6575
+      },
+      "confidence": 0.7449
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T08:36:12.973Z",
+    "updatedAt": "2026-06-26T09:03:45.838Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.0609,
