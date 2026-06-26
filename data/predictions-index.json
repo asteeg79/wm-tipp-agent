@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-26T04:03:49.214Z",
+  "lastUpdated": "2026-06-26T04:37:39.353Z",
   "aggregate": {
-    "finishedCount": 58,
-    "exactScoreRate": 0.1207,
-    "outcomeRate": 0.6034,
-    "brierMean": 0.5209,
-    "rpsMean": 0.1628
+    "finishedCount": 60,
+    "exactScoreRate": 0.1167,
+    "outcomeRate": 0.6,
+    "brierMean": 0.5282,
+    "rpsMean": 0.1661
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 58,
-      "exactScoreRate": 0.1034,
-      "outcomeRate": 0.5345,
-      "brierMean": 0.5203,
-      "rpsMean": 0.1627
+      "finishedCount": 60,
+      "exactScoreRate": 0.1,
+      "outcomeRate": 0.5333,
+      "brierMean": 0.5286,
+      "rpsMean": 0.1661
     },
     "chatgpt": {
-      "finishedCount": 58,
-      "exactScoreRate": 0.1552,
-      "outcomeRate": 0.5172,
-      "brierMean": 0.5348,
-      "rpsMean": 0.1698
+      "finishedCount": 60,
+      "exactScoreRate": 0.15,
+      "outcomeRate": 0.5167,
+      "brierMean": 0.542,
+      "rpsMean": 0.173
     },
     "weights": {
-      "claude": 0.5079,
-      "chatgpt": 0.4921
+      "claude": 0.5076,
+      "chatgpt": 0.4924
     }
   },
   "entries": [
@@ -2076,7 +2076,16 @@
         "draw": 0.2222,
         "away": 0.537
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 3,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.9028,
+        "rps": 0.4272
+      }
     },
     {
       "matchId": "wc2026-paraguay-australia-2026-06-25",
@@ -2103,7 +2112,16 @@
         "draw": 0.4186,
         "away": 0.2181
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 0,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.5793,
+        "rps": 0.097
+      }
     },
     {
       "matchId": "wc2026-norway-france-2026-06-26",
