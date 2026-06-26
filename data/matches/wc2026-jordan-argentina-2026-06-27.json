@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T13:03:51.713Z",
+    "generatedAt": "2026-06-26T14:03:50.651Z",
     "home": {
       "teamId": "JOR",
       "elo": 1529,
@@ -50,52 +50,51 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-26T14:03:50.651Z",
     "predictedScore": {
       "home": 0,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0576,
-      "draw": 0.1072,
-      "away": 0.8352
+      "home": 0.0538,
+      "draw": 0.1184,
+      "away": 0.8278
     },
-    "confidence": 0.8109,
+    "confidence": 0.8069,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.0526,
-        "draw": 0.1063,
-        "away": 0.8411
+        "home": 0.0151,
+        "draw": 0.0471,
+        "away": 0.9378
       },
       "expectedGoals": {
-        "home": 0.67,
-        "away": 3.05
+        "home": 0.46,
+        "away": 3.96
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
           "home": 0,
-          "away": 3
+          "away": 2
         },
         "probabilities": {
-          "home": 0.055,
-          "draw": 0.115,
-          "away": 0.83
+          "home": 0.05,
+          "draw": 0.13,
+          "away": 0.82
         },
         "confidence": 0.78,
         "keyFactors": [
-          "Großer Elo-Unterschied (1529 vs 1905) klar zugunsten Argentiniens",
-          "Argentiniens herausragende weighted Form (2.55) und Defensivstärke (0.40 Gegentore/Spiel, 63% Clean Sheets)",
-          "Jordan offensiv limitiert (1.62 Tore/Spiel) gegen Top-Defensive",
-          "Neutraler Spielort, kein Heimvorteil für Jordan"
+          "Argentinien (Elo 1910) ist Jordanien (1529) klar überlegen und führt die Gruppe mit 6 Punkten an",
+          "Argentiniens Defensive überragend: 0,255 Gegentore/Spiel, 65,5% Clean Sheets, zwei WM-Siege ohne Gegentor (3:0 Algerien, 2:0 Österreich)",
+          "Jordanien sieglos mit 0 Punkten und -3 Tordifferenz, in beiden WM-Spielen kassierte es jeweils mehrere Tore",
+          "Form-Werte deutlich pro Argentinien (gewichtete Form 2,715 vs 0,726)"
         ],
         "risks": [
-          "Mögliche Messi-Ausfallrisiken laut News könnten Argentiniens Offensive schwächen",
-          "Kaderrotation/experimentelle Aufstellung Argentiniens (Garnacho dabei, Dybala raus) könnte Konstanz mindern",
-          "Lange Pause beider Teams (67 Tage) erhöht Unsicherheit über aktuelle Spielfitness",
-          "Kein H2H-Datenpunkt vorhanden"
+          "Argentinien bereits sicher qualifiziert (6 Punkte) und könnte am 3. Spieltag rotieren/verwalten, was Intensität und Torausbeute senkt",
+          "Jordanien steht als Außenseiter wohl tief und kompakt – knapperes Ergebnis möglich",
+          "Markt sieht Argentinien (81%) etwas zurückhaltender als die Baseline (93,8%), mögliche Rotation eingepreist"
         ]
       },
       "chatgpt": {
@@ -104,26 +103,29 @@
           "away": 3
         },
         "probabilities": {
-          "home": 0.06,
+          "home": 0.05,
           "draw": 0.1,
-          "away": 0.84
+          "away": 0.85
         },
         "confidence": 0.85,
         "keyFactors": [
-          "Argentinien hat einen deutlich höheren Elo-Wert und eine starke Gewichtung der Form.",
-          "Die Argentinische Mannschaft erzielt im Durchschnitt mehr als doppelt so viele Tore pro Spiel wie Jordanien.",
-          "Hohe Clean-Sheet-Rate von Argentinien erhöht die Chancen auf einen Sieg zu Null.",
-          "Das Spiel findet auf neutralem Boden statt, was keinen Heimvorteil für Jordanien bietet."
+          "Argentina's high Elo rating and recent form indicate strong superiority.",
+          "Argentina has already secured advancement and may rotate, but still maintain superior squad depth.",
+          "Jordan's recent performances in the tournament do not suggest a likely upset."
         ],
         "risks": [
-          "Unklarheit über Teilnahme von Messi, was die Offensivstärke Argentinien beeinflussen könnte.",
-          "Kein direktes Vergleichsspiel zwischen den beiden Nationen, das Prognosen erschweren könnte."
+          "Potential rotation from Argentina could impact team dynamics and effectiveness.",
+          "Neutral venue may slightly reduce home advantage for either team."
         ]
       }
     },
-    "agreement": 0.99,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Großer Elo-Unterschied (1529 vs 1905) klar zugunsten Argentiniens; Argentiniens herausragende weighted Form (2.55) und Defensivstärke (0.40 Gegentore/Spiel, 63% Clean Sheets); Jordan offensiv limitiert (1.62 Tore/Spiel) gegen Top-Defensive.",
-    "inputHash": "sha256:46a17476e29024be09f5635be96746a8cd293ac216337bdb1390967a602bdca5"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5076,
+      "chatgpt": 0.4924
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien (Elo 1910) ist Jordanien (1529) klar überlegen und führt die Gruppe mit 6 Punkten an; Argentiniens Defensive überragend: 0,255 Gegentore/Spiel, 65,5% Clean Sheets, zwei WM-Siege ohne Gegentor (3:0 Algerien, 2:0 Österreich); Jordanien sieglos mit 0 Punkten und -3 Tordifferenz, in beiden WM-Spielen kassierte es jeweils mehrere Tore. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:9dd69954df83919138129828ef70cac0c66a72c6a27de32fd4219a17cc1f07ec"
   },
   "predictionHistory": [
     {
@@ -268,11 +270,24 @@
         "away": 0.8359
       },
       "confidence": 0.8217
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0576,
+        "draw": 0.1072,
+        "away": 0.8352
+      },
+      "confidence": 0.8109
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T13:03:52.316Z",
+    "updatedAt": "2026-06-26T14:06:02.292Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.0627,
