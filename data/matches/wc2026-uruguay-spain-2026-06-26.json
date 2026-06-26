@@ -13,7 +13,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T19:03:52.432Z",
+    "generatedAt": "2026-06-26T20:03:48.605Z",
     "home": {
       "teamId": "URU",
       "elo": 1662,
@@ -51,17 +51,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-26T16:03:51.887Z",
+    "generatedAt": "2026-06-26T20:03:48.605Z",
     "predictedScore": {
-      "home": 1,
+      "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1713,
-      "draw": 0.2585,
-      "away": 0.5702
+      "home": 0.1515,
+      "draw": 0.2413,
+      "away": 0.6072
     },
-    "confidence": 0.6048,
+    "confidence": 0.6468,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -77,7 +77,7 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
@@ -85,49 +85,48 @@
           "draw": 0.26,
           "away": 0.59
         },
-        "confidence": 0.58,
+        "confidence": 0.62,
         "keyFactors": [
-          "Spanien deutlich stärker (Elo 1928 vs 1662), hervorragende Form (weightedForm 2.22) und beste Offensive der Gruppe (4:0 gegen Saudi-Arabien zuletzt)",
-          "Spaniens Defensive ist sehr stabil (Gegentorschnitt 0.46, Clean-Sheet-Rate 0.52), Uruguay tut sich offensiv schwer (1.11 Tore/Spiel)",
-          "Interner Zwist zwischen Trainer Bielsa und den Spielern belastet Uruguay unmittelbar vor dem Spiel",
-          "Tabellensituation: Spanien (4 Pkt) braucht nur ein Remis zum sicheren Gruppensieg, Uruguay (2 Pkt) steht unter Zugzwang und muss riskieren - das öffnet Räume für spanische Konter"
+          "Spanien deutlich stärker: Elo 1928 vs 1662, weightedForm 2.22 vs 1.26, Torschnitt 2.45 bei nur 0.46 Gegentoren",
+          "Spanien führt die Gruppe an (4 Punkte, +4) und kommt nach 4:0 gegen Saudi-Arabien mit klarem Momentum, defensiv top (cleanSheetRate 0.52)",
+          "Uruguay nur Mittelfeldform, kassierte zuletzt häufig (2:2 Kap Verde, 1:5 USA) und muss als Tabellenzweiter eher Risiko gehen, was Räume für Spaniens Konter öffnet",
+          "Interne Unruhe bei Uruguay: berichteter Spieler-Trainer-Zwist um Bielsa vor dem Spiel belastet die mentale Verfassung"
         ],
         "risks": [
-          "Uruguay muss gewinnen und könnte mit hohem Risiko/Leidenschaft die Partie offen gestalten - klassisches Außenseiter-Tief-Stehen kann ein Remis begünstigen",
-          "Höhenlage (1566 m) und neutraler Platz könnten Spaniens Spielfluss leicht bremsen",
-          "Spanien könnte bei früher Führung verwalten und rotieren, da Gruppensieg fast gesichert",
-          "Baseline überschätzt Spanien-Sieg klar (0.87) - reale Turnierdynamik macht knappere Ausgänge wahrscheinlicher"
+          "Uruguay steht unter Bielsa oft kompakt und tief; bei nötigem Sieg kann ein knappes Ergebnis oder Remis entstehen",
+          "Spanien könnte bei bereits weitgehend gesicherter Gruppensituation rotieren/verwalten",
+          "Höhenlage (1566 m) als neutraler Faktor könnte Spielfluss bremsen",
+          "Kein H2H-Wert vorhanden, statistische Baseline überzeichnet Spaniens Dominanz im Turnierkontext"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
-          "draw": 0.25,
-          "away": 0.55
+          "home": 0.15,
+          "draw": 0.2,
+          "away": 0.65
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Spain's higher Elo rating and superior recent form",
-          "Uruguay's internal conflict between coach and players",
-          "Spain's strong recent performance, including a 4-0 win over Saudi Arabia"
+          "Spain's strong recent form with a win and a draw in the group stage.",
+          "Uruguay's internal issues with coach discontent impacting team focus and cohesion.",
+          "Spain's higher Elo rating and attacking prowess, as evidenced by their recent 4-0 victory against Saudi Arabia."
         ],
         "risks": [
-          "The potential impact of Uruguay's internal turmoil on their performance",
-          "The neutral venue and altitude might affect the match dynamics",
-          "Uruguay has managed draws in the tournament so far and might play defensively"
+          "High altitude may affect both teams' performance.",
+          "Uruguay's need to win to advance could lead to an unexpected surge in performance."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.96,
     "ensembleWeights": {
       "claude": 0.5076,
       "chatgpt": 0.4924
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich stärker (Elo 1928 vs 1662), hervorragende Form (weightedForm 2.22) und beste Offensive der Gruppe (4:0 gegen Saudi-Arabien zuletzt); Spaniens Defensive ist sehr stabil (Gegentorschnitt 0.46, Clean-Sheet-Rate 0.52), Uruguay tut sich offensiv schwer (1.11 Tore/Spiel); Interner Zwist zwischen Trainer Bielsa und den Spielern belastet Uruguay unmittelbar vor dem Spiel. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich stärker: Elo 1928 vs 1662, weightedForm 2.22 vs 1.26, Torschnitt 2.45 bei nur 0.46 Gegentoren; Spanien führt die Gruppe an (4 Punkte, +4) und kommt nach 4:0 gegen Saudi-Arabien mit klarem Momentum, defensiv top (cleanSheetRate 0.52); Uruguay nur Mittelfeldform, kassierte zuletzt häufig (2:2 Kap Verde, 1:5 USA) und muss als Tabellenzweiter eher Risiko gehen, was Räume für Spaniens Konter öffnet. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:06df1260ce17aeb704575cb081c133845ff8434d1a6ec22858fc152fa8537c27"
   },
   "predictionHistory": [
@@ -325,11 +324,24 @@
         "away": 0.5748
       },
       "confidence": 0.6048
+    },
+    {
+      "generatedAt": "2026-06-26T16:03:51.887Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1713,
+        "draw": 0.2585,
+        "away": 0.5702
+      },
+      "confidence": 0.6048
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T19:05:01.422Z",
+    "updatedAt": "2026-06-26T20:04:38.368Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1549,
