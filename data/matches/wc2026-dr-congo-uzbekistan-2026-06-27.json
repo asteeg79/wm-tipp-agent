@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T11:03:48.316Z",
+    "generatedAt": "2026-06-26T12:03:48.759Z",
     "home": {
       "teamId": "COD",
       "elo": 1637,
@@ -50,52 +50,52 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-06T06:24:51.441Z",
+    "generatedAt": "2026-06-26T12:03:48.759Z",
     "predictedScore": {
-      "home": 1,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4032,
-      "draw": 0.3168,
-      "away": 0.28
+      "home": 0.5258,
+      "draw": 0.2656,
+      "away": 0.2086
     },
-    "confidence": 0.6188,
+    "confidence": 0.5501,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
-        "home": 0.4039,
-        "draw": 0.2979,
-        "away": 0.2982
+        "home": 0.6289,
+        "draw": 0.218,
+        "away": 0.153
       },
       "expectedGoals": {
-        "home": 1.15,
-        "away": 0.94
+        "home": 1.87,
+        "away": 0.8
       }
     },
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
-          "away": 1
+          "home": 2,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.42,
-          "draw": 0.3,
-          "away": 0.28
+          "home": 0.58,
+          "draw": 0.23,
+          "away": 0.19
         },
         "confidence": 0.55,
         "keyFactors": [
-          "DR Congo mit stärkerer gewichteter Form (2.23 vs 1.71) und besserer Defensive (0.48 Gegentore/Spiel, 54,5% Clean Sheets)",
-          "Höheres Elo (1705 vs 1676) und solide jüngste Form (recentForm 2.3) sprechen leicht für Kongo",
-          "Uzbekistan defensiv ebenfalls stabil (62,5% Clean Sheets), aber höhere Gegentorquote (0.89) deutet auf etwas anfälligere Abwehr",
-          "Neutraler Spielort eliminiert Heimvorteil, was die Partie offen hält"
+          "DR Kongo defensiv deutlich stabiler (Gegentore-Schnitt 0.63 vs 2.39, Clean-Sheet-Quote solide) und mit besserer gewichteter Form (1.74 vs 0.89)",
+          "Usbekistan in beiden WM-Spielen klar unterlegen (0:5 gg. Portugal, 1:3 gg. Kolumbien) und in der Abwehr extrem anfällig",
+          "DR Kongo hat als Tabellendritter mit 1 Punkt noch realistische Aufstiegschance (Best-Third) und damit klaren Anreiz auf Sieg, Usbekistan praktisch ausgeschieden",
+          "Höhere Elo und bessere Offensiv-Bilanz sprechen für Kongo, neutraler Spielort relativiert keinen Heimvorteil"
         ],
         "risks": [
-          "Uzbekistan seit 131 Tagen ohne Pflichtspiel – Wettkampfrhythmus unklar, Form schwer einschätzbar",
-          "Trainerthema bei Uzbekistan (Cannavaro) könnte auf Umbruch/Instabilität hindeuten",
-          "Keine H2H-Daten vorhanden, daher erhöhte Unsicherheit",
-          "DR Congo seit 67 Tagen ohne Spiel – ebenfalls möglicher Rhythmusverlust"
+          "WM-Außenseiter-Konstellation: Usbekistan kann tief und kompakt stehen, was knappe/torarme Ergebnisse begünstigt",
+          "Mögliche Rotation/Verwaltung wenn Aufstiegsszenario für Kongo schon entschieden ist",
+          "Kein H2H vorhanden, Einschätzung beruht rein auf Form/Daten",
+          "Usbekistan kann befreit aufspielen und überraschen (Remis-Gefahr spiegelt sich in moderater draw-Wahrscheinlichkeit)"
         ]
       },
       "chatgpt": {
@@ -104,27 +104,30 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.39,
+          "home": 0.45,
           "draw": 0.33,
-          "away": 0.28
+          "away": 0.22
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "DR Congo has a stronger recent form and overall form compared to Uzbekistan.",
-          "DR Congo's relatively short time since their last match might give them better match fitness.",
-          "Uzbekistan has a higher clean sheet rate than DR Congo.",
-          "Neutral venue negates any potential home advantage."
+          "DR Congo's form is slightly favorable, with a recent draw against Portugal.",
+          "Uzbekistan's poor defensive record in this tournament so far, particularly the 0-5 loss to Portugal.",
+          "Neutral venue, no home advantage for DR Congo.",
+          "Group stage context: DR Congo needs at least a draw to have a chance to progress, while Uzbekistan is already eliminated."
         ],
         "risks": [
-          "Uzbekistan's new coach, Fabio Cannavaro, may introduce strategic changes that are difficult to predict.",
-          "No prior head-to-head confrontations provide historical insights.",
-          "Disparity in match fitness due to different days since the last match."
+          "Limited head-to-head data, no previous meetings between DR Congo and Uzbekistan.",
+          "External forecast suggests a tighter game than baseline model."
         ]
       }
     },
-    "agreement": 0.98,
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Congo mit stärkerer gewichteter Form (2.23 vs 1.71) und besserer Defensive (0.48 Gegentore/Spiel, 54,5% Clean Sheets); Höheres Elo (1705 vs 1676) und solide jüngste Form (recentForm 2.3) sprechen leicht für Kongo; Uzbekistan defensiv ebenfalls stabil (62,5% Clean Sheets), aber höhere Gegentorquote (0.89) deutet auf etwas anfälligere Abwehr.",
-    "inputHash": "sha256:36fd26ea3d700943b40efc8ab7ba8411e90a69b8c7197c3232b7ae949622c523"
+    "agreement": 0.9133,
+    "ensembleWeights": {
+      "claude": 0.5076,
+      "chatgpt": 0.4924
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: DR Kongo defensiv deutlich stabiler (Gegentore-Schnitt 0.63 vs 2.39, Clean-Sheet-Quote solide) und mit besserer gewichteter Form (1.74 vs 0.89); Usbekistan in beiden WM-Spielen klar unterlegen (0:5 gg. Portugal, 1:3 gg. Kolumbien) und in der Abwehr extrem anfällig; DR Kongo hat als Tabellendritter mit 1 Punkt noch realistische Aufstiegschance (Best-Third) und damit klaren Anreiz auf Sieg, Usbekistan praktisch ausgeschieden. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:18751d9062e07b775950c86fc1c101fcc17aaf86598992c507d0e53ba36e2842"
   },
   "predictionHistory": [
     {
@@ -269,11 +272,24 @@
         "away": 0.2957
       },
       "confidence": 0.5692
+    },
+    {
+      "generatedAt": "2026-06-06T06:24:51.441Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4032,
+        "draw": 0.3168,
+        "away": 0.28
+      },
+      "confidence": 0.6188
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T11:05:23.922Z",
+    "updatedAt": "2026-06-26T12:03:49.213Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.5553,
