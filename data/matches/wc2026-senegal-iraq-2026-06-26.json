@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T06:03:50.284Z",
+    "generatedAt": "2026-06-26T07:03:50.946Z",
     "home": {
       "teamId": "SEN",
       "elo": 1746,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-26T04:03:49.214Z",
+    "generatedAt": "2026-06-26T07:03:50.946Z",
     "predictedScore": {
-      "home": 2,
-      "away": 0
+      "home": 3,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.7564,
-      "draw": 0.1591,
-      "away": 0.0844
+      "home": 0.7443,
+      "draw": 0.1543,
+      "away": 0.1014
     },
-    "confidence": 0.7053,
+    "confidence": 0.6883,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,53 +80,52 @@
           "away": 0
         },
         "probabilities": {
-          "home": 0.74,
-          "draw": 0.16,
-          "away": 0.1
+          "home": 0.7,
+          "draw": 0.17,
+          "away": 0.13
         },
-        "confidence": 0.62,
+        "confidence": 0.6,
         "keyFactors": [
-          "Senegal deutlich höhere Elo (1746 vs 1564) und bessere Form (weightedForm 1.84 vs 1.17)",
-          "Senegal mit klar stärkerer Offensive (2.12 vs 0.95 Tore/Spiel) und solider Defensive (CS-Rate 0.61)",
-          "Irak in den WM-Spielen defensiv anfällig (0:3 vs Frankreich, 1:4 vs Norwegen)",
-          "Beide Teams bereits ausgeschieden (0 Punkte) – Partie um Prestige/Tordifferenz"
+          "Senegal klar höhere Elo (1746 vs 1564) und bessere gewichtete Form (1.84 vs 1.17)",
+          "Senegal mit deutlich besserer Offensive (2.12 vs 0.95 Tore/Spiel) und solider Defensive (61% Clean Sheets)",
+          "Irak kassiert im Schnitt fast 2 Gegentore und zeigte gegen Frankreich/Norwegen defensive Schwächen (0:3, 1:4)",
+          "Markt und Baseline sehen Senegal klar vorne (~0.75-0.78)"
         ],
         "risks": [
-          "Bedeutungsloses Spiel kann zu Rotation/geringerer Intensität bei Senegal führen",
-          "Irak könnte tief und kompakt stehen und ein knappes Ergebnis erzwingen",
-          "Senegals Defensive zeigte bei der WM Schwächen (3 und 3 Gegentore) – Kontertore möglich",
-          "Kein H2H-Datenpunkt vorhanden"
+          "Beide Teams sind bereits ausgeschieden (0 Punkte am 3. Spieltag) – Dead Rubber mit möglicher Rotation und reduzierter Motivation auf beiden Seiten",
+          "Irak kann tief und kompakt stehen; Senegal könnte sich an kompakter Defensive die Zähne ausbeißen",
+          "Kein H2H-Datenpunkt vorhanden – erhöhte Unsicherheit",
+          "Senegal in der Gruppenphase defensiv anfällig (zwei Niederlagen), Iraks Konterchancen nicht ausgeschlossen"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 2,
-          "away": 0
+          "home": 3,
+          "away": 1
         },
         "probabilities": {
           "home": 0.75,
-          "draw": 0.17,
-          "away": 0.08
+          "draw": 0.15,
+          "away": 0.1
         },
         "confidence": 0.8,
         "keyFactors": [
-          "Senegal weist eine höhere Elo-Bewertung auf als Irak.",
-          "Senegal hat in der jüngeren Vergangenheit stärkere Teams wie Norwegen knapp besiegt oder hart umkämpft verloren.",
-          "Irak hat in den letzten zwei WM-Spielen eine negative Tordifferenz von -6.",
-          "Beide Teams raus aus dem Turnier - könnten lockerer spielen, aber Senegal braucht den Sieg als Selbstwert."
+          "Senegal hat höhere Elo-Wertung und positive Form.",
+          "Iraq hat in der WM negative Tordifferenz und schwache Abwehr gezeigt.",
+          "Beide Teams haben keinen Punkt aus den ersten zwei Spielen - Senegal braucht Sieg für Chancen aufs Weiterkommen."
         ],
         "risks": [
-          "Beide Teams ohne Chance auf Weiterkommen - könnte die Einsatzbereitschaft beeinflussen.",
-          "Senegal könnte Schwierigkeiten haben, ein tief stehendes Irak zu durchbrechen, das auf Konter lauert."
+          "Beide Teams spielen auf neutralem Boden, was den Heimvorteil neutralisiert.",
+          "Turnierdruck könnte die Leistung beider Mannschaften beeinflussen."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9667,
     "ensembleWeights": {
-      "claude": 0.5079,
-      "chatgpt": 0.4921
+      "claude": 0.5076,
+      "chatgpt": 0.4924
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal deutlich höhere Elo (1746 vs 1564) und bessere Form (weightedForm 1.84 vs 1.17); Senegal mit klar stärkerer Offensive (2.12 vs 0.95 Tore/Spiel) und solider Defensive (CS-Rate 0.61); Irak in den WM-Spielen defensiv anfällig (0:3 vs Frankreich, 1:4 vs Norwegen). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Senegal klar höhere Elo (1746 vs 1564) und bessere gewichtete Form (1.84 vs 1.17); Senegal mit deutlich besserer Offensive (2.12 vs 0.95 Tore/Spiel) und solider Defensive (61% Clean Sheets); Irak kassiert im Schnitt fast 2 Gegentore und zeigte gegen Frankreich/Norwegen defensive Schwächen (0:3, 1:4). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:ff75598b932c17e483cc2814f647c9fba32b13dc89e62f5eac4f6130cb601fdb"
   },
   "predictionHistory": [
@@ -298,11 +297,24 @@
         "away": 0.0922
       },
       "confidence": 0.6463
+    },
+    {
+      "generatedAt": "2026-06-26T04:03:49.214Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7564,
+        "draw": 0.1591,
+        "away": 0.0844
+      },
+      "confidence": 0.7053
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T06:05:32.226Z",
+    "updatedAt": "2026-06-26T07:03:51.352Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.7819,
