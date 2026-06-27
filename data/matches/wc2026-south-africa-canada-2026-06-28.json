@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-27T06:03:44.913Z",
+    "generatedAt": "2026-06-27T07:03:42.553Z",
     "home": {
       "teamId": "RSA",
       "elo": 1599,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-25T16:03:48.673Z",
+    "generatedAt": "2026-06-27T07:03:42.553Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1934,
-      "draw": 0.2434,
-      "away": 0.5632
+      "home": 0.2032,
+      "draw": 0.2749,
+      "away": 0.522
     },
-    "confidence": 0.3448,
+    "confidence": 0.5723,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,12 +72,66 @@
         "away": 1.66
       }
     },
-    "inputHash": "sha256:0311f09ca22a685c338e4b989993d9084470fe507d26168d333c95de777ab94e"
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.2,
+          "draw": 0.25,
+          "away": 0.55
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Kanada mit höherem Elo (1650 vs 1599), besserer Offensive (1,85 Tore/Spiel) und stabilerer Defensive (0,78 Gegentore, 51,6% Zu-Null) - klar das stärkere Team",
+          "Kanada genießt als Co-Gastgeber (hostAdvantageTeamId CAN) faktischen Heimvorteil trotz formal neutralem Spielort",
+          "Kanada zeigte Offensivpotenzial (6:0 gegen Katar), Südafrika eher torarm und defensiv orientiert",
+          "Baseline und Marktquoten sind sich einig: deutliche Favoritenrolle Kanada (~56%)"
+        ],
+        "risks": [
+          "Verletzungsfrage um Alphonso Davies könnte Kanadas Offensivkraft schwächen",
+          "Südafrika defensiv kompakt (Sieg gegen Südkorea, Unentschieden gegen Tschechien) - könnte tief stehen und Remis erzwingen",
+          "H2H ohne Datenbasis (0 Spiele) erhöht Unsicherheit",
+          "Kanada zuletzt anfällig (Niederlage gegen Schweiz), Form schwankend"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.23,
+          "draw": 0.31,
+          "away": 0.46
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Beide Teams haben ähnliche jüngste Form und ähnliche Elo-Werte.",
+          "Kanada gewann gegen Katar mit einem klaren Sieg, kämpfte aber gegen die Schweiz.",
+          "Südafrika erzielte eine knappe Niederlage gegen Mexiko und ein Unentschieden gegen Tschechien.",
+          "Neutraler Austragungsort, kein echter Heimvorteil für eine der Mannschaften."
+        ],
+        "risks": [
+          "Unsicherheit bezüglich Alphonso Davies' Teilnahme könnte Kanadas Stärke beeinflussen.",
+          "Kanadas Offensivstärke gegen Katar könnte auf Südafrika nicht übertragen werden."
+        ]
+      }
+    },
+    "agreement": 0.94,
+    "ensembleWeights": {
+      "claude": 0.501,
+      "chatgpt": 0.499
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599), besserer Offensive (1,85 Tore/Spiel) und stabilerer Defensive (0,78 Gegentore, 51,6% Zu-Null) - klar das stärkere Team; Kanada genießt als Co-Gastgeber (hostAdvantageTeamId CAN) faktischen Heimvorteil trotz formal neutralem Spielort; Kanada zeigte Offensivpotenzial (6:0 gegen Katar), Südafrika eher torarm und defensiv orientiert. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:95646049ed339cc443fcaf016c7e05d1b0a97401462835d2dde7e646988f9fbc"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-27T06:03:45.175Z",
+    "updatedAt": "2026-06-27T07:05:29.411Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.175,
