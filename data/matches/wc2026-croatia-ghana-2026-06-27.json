@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-27T08:49:02.331Z",
+    "generatedAt": "2026-06-27T09:03:52.394Z",
     "home": {
       "teamId": "CRO",
       "elo": 1741,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-27T04:03:43.868Z",
+    "generatedAt": "2026-06-27T09:03:52.394Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5115,
-      "draw": 0.3053,
-      "away": 0.1832
+      "home": 0.4854,
+      "draw": 0.3137,
+      "away": 0.2009
     },
-    "confidence": 0.5558,
+    "confidence": 0.5469,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,25 +76,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.27,
-          "away": 0.18
+          "home": 0.51,
+          "draw": 0.28,
+          "away": 0.21
         },
-        "confidence": 0.55,
+        "confidence": 0.52,
         "keyFactors": [
-          "Kroatien deutlich höhere Elo (1741 vs 1555) und bessere gewichtete Form (1.894 vs 1.509) mit stärkerer Offensive (1.95 vs 1.08 Tore/Spiel)",
-          "Letzter Spieltag Gruppe L: Kroatien (3 Pkt) muss gewinnen, um sicher weiterzukommen, und wird daher offensiv agieren",
-          "Ghana (4 Pkt) reicht oft schon ein Remis – defensiv kompakt (zuletzt 0:0 gegen England, 1:0 gegen Panama) und wird tief stehen",
-          "Markt sieht Kroatien etwas knapper (0.54) als Baseline (0.64) und hebt Remis-Wahrscheinlichkeit an – plausibel angesichts Ghanas Defensivstabilität"
+          "Kroatien klar höher eingestuft (Elo 1741 vs 1555) und mit besserer gewichteter Form (1.89 vs 1.51) sowie höherem Torschnitt (1.95 vs 1.08).",
+          "Letzter Gruppenspieltag: Kroatien (3 Pkt., GD -1) muss zwingend gewinnen, um aufzusteigen, und wird offensiv agieren; Ghana (4 Pkt.) reicht voraussichtlich ein Remis und steht tief/kompakt.",
+          "Ghana defensiv stabil beim Turnier (0:0 gegen England, 1:0 gegen Panama, Clean-Sheet-Rate 0.375) – schwer zu durchbrechen, typisches Außenseiter-Szenario.",
+          "Markt (0.50 home / 0.305 draw) deutlich vorsichtiger als die Baseline (0.639) – das defensive Profil Ghanas und der Spielkontext stützen die niedrigere Heim-Wahrscheinlichkeit."
         ],
         "risks": [
-          "Ghana steht tief und kompakt; Kroatien könnte sich am dichten Abwehrblock festbeißen – erhöhtes Remis-Risiko",
-          "Bei einem Remis, das Ghana womöglich reicht, verwaltet Ghana clever und Kroatien öffnet sich für Konter",
-          "Kroatiens Defensive ist anfällig (1.42 Gegentore/Spiel, nur 36% Zu-Null) – Ghana kann eiskalt kontern"
+          "Kroatiens anfällige Defensive (1.42 Gegentore/Spiel, nur 0.36 Clean Sheets) kann gegen Ghanaer Konter zu Gegentoren führen.",
+          "Wenn Ghana ein Remis zum Aufstieg reicht, kann ein torarmes 0:0 oder 1:1 entstehen – erhöhte Unentschieden-Gefahr.",
+          "Druck-/Muss-Sieg-Situation für Kroatien kann zu Nervosität und offenen Räumen führen, die Ghana ausnutzt.",
+          "Geringe Datenbasis im H2H (0 Spiele) erhöht die Prognoseunsicherheit."
         ]
       },
       "chatgpt": {
@@ -109,22 +110,22 @@
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Croatia's need for at least a draw to secure advancement to the knockout stage.",
-          "Ghana's current form, with a solid draw against a strong England team.",
-          "Neutral venue with no inherent advantage for either team."
+          "Croatia has a slight advantage due to Elo rating and recent form.",
+          "Ghana's recent form and the fact that they need a draw to progress provide them motivation.",
+          "Neutral venue minimally impacts both teams equally."
         ],
         "risks": [
-          "Potential rotation by Croatia to preserve players if match situation allows.",
-          "Ghana's capability of staying defensively solid as seen against England."
+          "Ghana's defensive robustness, having held England to a draw recently.",
+          "Last match context where both teams have different motivational factors that could affect playing style."
         ]
       }
     },
-    "agreement": 0.9333,
+    "agreement": 0.9533,
     "ensembleWeights": {
-      "claude": 0.5037,
-      "chatgpt": 0.4963
+      "claude": 0.501,
+      "chatgpt": 0.499
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien deutlich höhere Elo (1741 vs 1555) und bessere gewichtete Form (1.894 vs 1.509) mit stärkerer Offensive (1.95 vs 1.08 Tore/Spiel); Letzter Spieltag Gruppe L: Kroatien (3 Pkt) muss gewinnen, um sicher weiterzukommen, und wird daher offensiv agieren; Ghana (4 Pkt) reicht oft schon ein Remis – defensiv kompakt (zuletzt 0:0 gegen England, 1:0 gegen Panama) und wird tief stehen. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kroatien klar höher eingestuft (Elo 1741 vs 1555) und mit besserer gewichteter Form (1.89 vs 1.51) sowie höherem Torschnitt (1.95 vs 1.08).; Letzter Gruppenspieltag: Kroatien (3 Pkt., GD -1) muss zwingend gewinnen, um aufzusteigen, und wird offensiv agieren; Ghana (4 Pkt.) reicht voraussichtlich ein Remis und steht tief/kompakt.; Ghana defensiv stabil beim Turnier (0:0 gegen England, 1:0 gegen Panama, Clean-Sheet-Rate 0.375) – schwer zu durchbrechen, typisches Außenseiter-Szenario.. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:c073ee03cc0d24422a545b1d4765ec3fcc5b6a0b44f62fdc953aedfc6fb2aea9"
   },
   "predictionHistory": [
@@ -335,11 +336,24 @@
         "away": 0.1865
       },
       "confidence": 0.598
+    },
+    {
+      "generatedAt": "2026-06-27T04:03:43.868Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5115,
+        "draw": 0.3053,
+        "away": 0.1832
+      },
+      "confidence": 0.5558
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-27T08:49:02.748Z",
+    "updatedAt": "2026-06-27T09:03:52.861Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.5029,
