@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-27T16:03:47.389Z",
+    "generatedAt": "2026-06-27T17:03:48.877Z",
     "home": {
       "teamId": "PAN",
       "elo": 1584,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-27T09:03:52.394Z",
+    "generatedAt": "2026-06-27T17:03:48.877Z",
     "predictedScore": {
       "home": 0,
       "away": 2
     },
     "probabilities": {
-      "home": 0.0673,
-      "draw": 0.1322,
-      "away": 0.8006
+      "home": 0.0626,
+      "draw": 0.1304,
+      "away": 0.807
     },
-    "confidence": 0.8041,
+    "confidence": 0.7623,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -84,17 +84,19 @@
           "draw": 0.13,
           "away": 0.81
         },
-        "confidence": 0.78,
+        "confidence": 0.74,
         "keyFactors": [
-          "England klar überlegen (Elo 1820 vs 1584), beste Form der Gruppe und nur 2 Gegentore in 31 Spielen im Schnitt",
-          "Panama torlos in beiden Gruppenspielen (0:1, 0:1) und bereits ohne Chance aufs Weiterkommen – wenig Durchschlagskraft",
-          "England braucht den Sieg, um Gruppe L zu gewinnen (Punktgleich mit Ghana), agiert also offensiv und zielstrebig",
-          "Trainings-Zoff bei Panama deutet auf interne Unruhe und sinkende Moral beim Außenseiter hin"
+          "England klar überlegen (Elo 1820 vs 1584), beste Form der Gruppe und mit 4 Punkten an der Tabellenspitze",
+          "Panama bereits ausgeschieden (0 Punkte, 0 Tore in 2 Spielen), aber spielt um die Ehre",
+          "Englands starke Defensive (cleanSheetRate 0.55, nur 0.68 Gegentore/Spiel) gegen torlose Panama-Offensive",
+          "Englands Momentum nach 4:2 gegen Kroatien und solidem 0:0 gegen Ghana",
+          "Markt sieht England noch deutlicher vorne (0.84) als die Baseline"
         ],
         "risks": [
-          "Möglicher Ausfall von Reece James schwächt Englands rechte Seite",
-          "Panama steht als Außenseiter oft tief und kompakt – Favorit könnte sich schwertun, Führung früh herzustellen",
-          "Bei bereits gesicherter Achtelfinal-Qualifikation könnte England rotieren und verwalten"
+          "Möglicher Ausfall von Reece James schwächt Englands rechte Abwehrseite",
+          "England könnte bei gesicherter Ausgangslage rotieren und verwalten",
+          "Panama steht als Außenseiter oft tief und kompakt — knappe Ergebnisse möglich",
+          "Trainings-Zoff bei Panama könnte Trotzreaktion oder Zerfall bedeuten — schwer kalkulierbar"
         ]
       },
       "chatgpt": {
@@ -103,29 +105,29 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.08,
+          "home": 0.07,
           "draw": 0.15,
-          "away": 0.77
+          "away": 0.78
         },
-        "confidence": 0.85,
+        "confidence": 0.8,
         "keyFactors": [
-          "England hat den deutlich höheren Elo-Wert und eine bessere Form im Vergleich zu Panama.",
-          "Panama hat in den bisherigen WM-Spielen keine Tore erzielt, während England gegen Kroatien vier Tore schoss.",
-          "Aktuelle Nachrichten aus dem panamaischen Lager deuten auf interne Unstimmigkeiten hin, was sich negativ auf die Teamleistung auswirken könnte.",
-          "Der Ausfall von Reece James für England könnte die Mannschaft minimal schwächen, aber die Qualität im Kader bleibt hoch."
+          "England hat aufgrund eines hohen Elo-Werts und einer guten Form einen klaren Vorteil.",
+          "Panama hat bisher in der Vorrunde beide Spiele verloren und keine Tore erzielt.",
+          "England benötigt einen Sieg, um sicher weiterzukommen, bei aktuellem Punktestand.",
+          "Panama zeigt interne Probleme im Team, die die Leistung beeinträchtigen können.",
+          "Neutrale Spielstätte ohne Höhenlage, was beiden Teams gleichkommt."
         ],
         "risks": [
-          "Panama könnte versuchen, besonders defensiv und kompakt zu stehen, um ein Unentschieden zu erzwingen.",
-          "England hat in der Gruppenphase bereits Punkte abgegeben, was auf eine gewisse Unsicherheit hindeuten könnte."
+          "Der potenzielle Ausfall von Reece James könnte Englands Defensive schwächen."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.501,
       "chatgpt": 0.499
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England klar überlegen (Elo 1820 vs 1584), beste Form der Gruppe und nur 2 Gegentore in 31 Spielen im Schnitt; Panama torlos in beiden Gruppenspielen (0:1, 0:1) und bereits ohne Chance aufs Weiterkommen – wenig Durchschlagskraft; England braucht den Sieg, um Gruppe L zu gewinnen (Punktgleich mit Ghana), agiert also offensiv und zielstrebig. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England klar überlegen (Elo 1820 vs 1584), beste Form der Gruppe und mit 4 Punkten an der Tabellenspitze; Panama bereits ausgeschieden (0 Punkte, 0 Tore in 2 Spielen), aber spielt um die Ehre; Englands starke Defensive (cleanSheetRate 0.55, nur 0.68 Gegentore/Spiel) gegen torlose Panama-Offensive. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:a17f449d51325ba9829aec83ba86da430e3fd66c52482aefcdddabc18764abdc"
   },
   "predictionHistory": [
@@ -349,11 +351,24 @@
         "away": 0.8014
       },
       "confidence": 0.7548
+    },
+    {
+      "generatedAt": "2026-06-27T09:03:52.394Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.0673,
+        "draw": 0.1322,
+        "away": 0.8006
+      },
+      "confidence": 0.8041
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-27T16:03:47.650Z",
+    "updatedAt": "2026-06-27T17:05:34.471Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.0566,
