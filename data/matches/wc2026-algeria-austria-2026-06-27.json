@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T23:21:45.968Z",
+    "generatedAt": "2026-06-27T04:03:43.868Z",
     "home": {
       "teamId": "ALG",
       "elo": 1695,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 0.933,
       "cleanSheetRate": 0.485,
       "matchesCount": 33,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "away": {
       "teamId": "AUT",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.947,
       "cleanSheetRate": 0.286,
       "matchesCount": 28,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-26T14:03:50.651Z",
+    "generatedAt": "2026-06-27T04:03:43.868Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.2854,
-      "draw": 0.3972,
-      "away": 0.3174
+      "home": 0.2911,
+      "draw": 0.3663,
+      "away": 0.3426
     },
-    "confidence": 0.4933,
+    "confidence": 0.4917,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,23 +80,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.31,
-          "draw": 0.36,
-          "away": 0.33
+          "home": 0.33,
+          "draw": 0.31,
+          "away": 0.36
         },
         "confidence": 0.4,
         "keyFactors": [
-          "Beide Teams nahezu identisch in Elo (1695 vs 1694) und Form (recentForm 2.2) – sehr ausgeglichene Partie ohne klaren Favoriten",
-          "Tabellensituation Gruppe J Spieltag 3: Beide bei 3 Punkten, bei Remis zieht Österreich dank besserer Tordifferenz (0 vs -2) weiter – Algerien braucht praktisch einen Sieg und muss offensiver agieren",
-          "Algerien defensiv stabiler (0,93 Gegentore, 48,5% Zu-Null) gegenüber Österreichs offensiverer, aber anfälligerer Ausrichtung (nur 28,6% Zu-Null)",
-          "Markt sieht Remis klar als wahrscheinlichsten Ausgang (0,43) – passt zur Ausgeglichenheit, ich gewichte dies stark",
-          "Österreich mit leicht höherer Offensivproduktion (2,18 Tore/Spiel) und gutem Momentum (3:1 gegen Jordanien)"
+          "Entscheidendes Gruppenfinale: Beide Teams mit 3 Punkten, Argentinien (6) als Gruppensieger praktisch durch",
+          "Algerien (GD -2) braucht faktisch einen Sieg, da Österreich (GD 0) bei einem Remis dank besserer Tordifferenz vorne läge - das zwingt Algerien zu mehr Risiko",
+          "Elo nahezu identisch (1695 vs 1694), beide mit starker jüngster Form (recentForm 2.2) und soliden Defensivwerten",
+          "Österreich mit leicht stärkerer Offensive (goalsForAvg 2.18) und gutem Momentum (3:1 vs Jordanien), Algerien defensiv stabiler (cleanSheetRate 0.49)",
+          "Markt sieht hohes Remis (0.43), Baseline leicht pro Österreich - Realität liegt zwischen beiden"
         ],
         "risks": [
-          "Algeriens Siegzwang kann Räume öffnen und Österreichs Konterstärke begünstigen – dann away-Sieg möglich",
-          "Falls Österreich auf Verwaltung des Remis spielt, könnte Algerien das tief stehende Team nicht knacken (0:0)",
-          "Kein H2H-Datensatz vorhanden – erhöhte Unsicherheit",
-          "Ergebnis im Parallelspiel Argentinien-Jordanien kann Taktik beider Teams kurzfristig verändern"
+          "Algeriens Zwang zu gewinnen kann Räume öffnen und Österreichs Konterstärke begünstigen",
+          "Knapper Ausgang und Remis sehr wahrscheinlich, jeder frühe Treffer kippt die Dynamik stark",
+          "Kein H2H-Datenpunkt vorhanden, erhöhte Unsicherheit",
+          "Tabellenkonstellation könnte zu taktischem, abwartendem Spiel führen (torarm) oder bei Druck zu offenem Schlagabtausch"
         ]
       },
       "chatgpt": {
@@ -106,29 +106,30 @@
         },
         "probabilities": {
           "home": 0.3,
-          "draw": 0.4,
-          "away": 0.3
+          "draw": 0.36,
+          "away": 0.34
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Beide Mannschaften haben gleiche Punktzahl in der Gruppe und benötigen ein positives Ergebnis zum Weiterkommen.",
-          "Algerien hat zuletzt gegen Jordanien gewonnen, während Österreich gegen Argentinien verlor.",
-          "Ähnliche ELO-Werte und aktuelle Form (jeweils 2.2) ohne klaren Favoriten.",
-          "Kein Heimvorteil, da auf neutralem Boden gespielt wird."
+          "Gleiches Elo-Rating von beiden Teams (Algerien 1695, Österreich 1694), was auf ausgeglichene Stärke hindeutet.",
+          "Beide Teams haben jeweils einen Sieg und eine Niederlage in den bisherigen Gruppenspielen und stehen unter Druck, um weiterzukommen.",
+          "Algeriens jüngster Sieg gegen Jordanien und Österreichs Sieg gegen dasselbe Team in ihren vorherigen Gruppenspielen zeigen vergleichbare Leistungen.",
+          "Beide Mannschaften haben in ihren vorherigen Spielen nur wenige Tore erzielt oder kassiert, was auf eine potenziell ausgeglichene Begegnung hindeutet."
         ],
         "risks": [
-          "Knappes Spiel kann von individuellen Fehlern oder Glücksmomenten entschieden werden.",
-          "Beide Teams haben in der Vergangenheit keine direkten Begegnungen gehabt, was die Vorhersagbarkeit erschwert."
+          "Austria hat eine etwas bessere Marktprognose, die auf ein leicht besseres Ergebnis hindeuten könnte.",
+          "Da es sich um ein sehr wichtiger Spiel handelt, könnten unvorhergesehene taktische Anpassungen die Partie beeinflussen.",
+          "Keine direkten Begegnungen (H2H) zur genauen Beurteilung der Spielweise gegeneinander vorhanden."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.9667,
     "ensembleWeights": {
-      "claude": 0.5076,
-      "chatgpt": 0.4924
+      "claude": 0.5037,
+      "chatgpt": 0.4963
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams nahezu identisch in Elo (1695 vs 1694) und Form (recentForm 2.2) – sehr ausgeglichene Partie ohne klaren Favoriten; Tabellensituation Gruppe J Spieltag 3: Beide bei 3 Punkten, bei Remis zieht Österreich dank besserer Tordifferenz (0 vs -2) weiter – Algerien braucht praktisch einen Sieg und muss offensiver agieren; Algerien defensiv stabiler (0,93 Gegentore, 48,5% Zu-Null) gegenüber Österreichs offensiverer, aber anfälligerer Ausrichtung (nur 28,6% Zu-Null). Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:f89b44e1e0fc6073ea548f4febb6136a9a86c2a165c3e499d6c5629b9aaa0dcc"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Entscheidendes Gruppenfinale: Beide Teams mit 3 Punkten, Argentinien (6) als Gruppensieger praktisch durch; Algerien (GD -2) braucht faktisch einen Sieg, da Österreich (GD 0) bei einem Remis dank besserer Tordifferenz vorne läge - das zwingt Algerien zu mehr Risiko; Elo nahezu identisch (1695 vs 1694), beide mit starker jüngster Form (recentForm 2.2) und soliden Defensivwerten. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:2078398d9dbf2254e1358088c54710e917547ce916aa5c999db747b8dfec5971"
   },
   "predictionHistory": [
     {
@@ -234,11 +235,24 @@
         "away": 0.3567
       },
       "confidence": 0.587
+    },
+    {
+      "generatedAt": "2026-06-26T14:03:50.651Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.2854,
+        "draw": 0.3972,
+        "away": 0.3174
+      },
+      "confidence": 0.4933
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T23:23:30.915Z",
+    "updatedAt": "2026-06-27T04:05:24.985Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2422,

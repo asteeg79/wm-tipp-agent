@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-26T23:21:45.968Z",
+    "generatedAt": "2026-06-27T04:03:43.868Z",
     "home": {
       "teamId": "JOR",
       "elo": 1529,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.847,
       "cleanSheetRate": 0.342,
       "matchesCount": 38,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "away": {
       "teamId": "ARG",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.255,
       "cleanSheetRate": 0.655,
       "matchesCount": 29,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-26T14:03:50.651Z",
+    "generatedAt": "2026-06-27T04:03:43.868Z",
     "predictedScore": {
       "home": 0,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0538,
-      "draw": 0.1184,
-      "away": 0.8278
+      "home": 0.0537,
+      "draw": 0.1128,
+      "away": 0.8335
     },
-    "confidence": 0.8069,
+    "confidence": 0.8344,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,20 +81,20 @@
         },
         "probabilities": {
           "home": 0.05,
-          "draw": 0.13,
-          "away": 0.82
+          "draw": 0.12,
+          "away": 0.83
         },
         "confidence": 0.78,
         "keyFactors": [
-          "Argentinien (Elo 1910) ist Jordanien (1529) klar überlegen und führt die Gruppe mit 6 Punkten an",
-          "Argentiniens Defensive überragend: 0,255 Gegentore/Spiel, 65,5% Clean Sheets, zwei WM-Siege ohne Gegentor (3:0 Algerien, 2:0 Österreich)",
-          "Jordanien sieglos mit 0 Punkten und -3 Tordifferenz, in beiden WM-Spielen kassierte es jeweils mehrere Tore",
-          "Form-Werte deutlich pro Argentinien (gewichtete Form 2,715 vs 0,726)"
+          "Argentinien deutlich überlegen (Elo 1910 vs 1529, gewichtete Form 2.72 vs 0.73) und mit zwei Zu-Null-Siegen in der Gruppenphase",
+          "Jordanien sieglos (0 Punkte, -3 Tordifferenz) und bereits ausgeschieden, schwache Defensive (1.85 Gegentore/Spiel, nur 34% Zu-Null)",
+          "Argentinien hat mit 6 Punkten Platz 1 bereits gesichert und könnte rotieren/verwalten, was das Torniveau leicht drückt",
+          "Markt (0.82) etwas vorsichtiger als Baseline (0.94) – Rotationsrisiko spricht für moderatere Favoritenquote"
         ],
         "risks": [
-          "Argentinien bereits sicher qualifiziert (6 Punkte) und könnte am 3. Spieltag rotieren/verwalten, was Intensität und Torausbeute senkt",
-          "Jordanien steht als Außenseiter wohl tief und kompakt – knapperes Ergebnis möglich",
-          "Markt sieht Argentinien (81%) etwas zurückhaltender als die Baseline (93,8%), mögliche Rotation eingepreist"
+          "Mögliche Rotation Argentiniens als bereits qualifiziertes Team senkt Intensität und Torausbeute",
+          "Jordanien steht als Außenseiter eventuell tief und kompakt, knappes Ergebnis denkbar",
+          "Kein H2H-Datenpunkt vorhanden, erhöhte Unsicherheit über Spielverlauf"
         ]
       },
       "chatgpt": {
@@ -107,25 +107,26 @@
           "draw": 0.1,
           "away": 0.85
         },
-        "confidence": 0.85,
+        "confidence": 0.9,
         "keyFactors": [
-          "Argentina's high Elo rating and recent form indicate strong superiority.",
-          "Argentina has already secured advancement and may rotate, but still maintain superior squad depth.",
-          "Jordan's recent performances in the tournament do not suggest a likely upset."
+          "Argentina's high Elo rating and consistent strong form",
+          "Jordan's poor performance and goal difference in group stage",
+          "Argentina has already secured advancement",
+          "Jordan has struggled defensively against weaker opponents"
         ],
         "risks": [
-          "Potential rotation from Argentina could impact team dynamics and effectiveness.",
-          "Neutral venue may slightly reduce home advantage for either team."
+          "Potential rotation by Argentina due to secured group advancement",
+          "Neutral venue may slightly level the playing field"
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9867,
     "ensembleWeights": {
-      "claude": 0.5076,
-      "chatgpt": 0.4924
+      "claude": 0.5037,
+      "chatgpt": 0.4963
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien (Elo 1910) ist Jordanien (1529) klar überlegen und führt die Gruppe mit 6 Punkten an; Argentiniens Defensive überragend: 0,255 Gegentore/Spiel, 65,5% Clean Sheets, zwei WM-Siege ohne Gegentor (3:0 Algerien, 2:0 Österreich); Jordanien sieglos mit 0 Punkten und -3 Tordifferenz, in beiden WM-Spielen kassierte es jeweils mehrere Tore. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:9dd69954df83919138129828ef70cac0c66a72c6a27de32fd4219a17cc1f07ec"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich überlegen (Elo 1910 vs 1529, gewichtete Form 2.72 vs 0.73) und mit zwei Zu-Null-Siegen in der Gruppenphase; Jordanien sieglos (0 Punkte, -3 Tordifferenz) und bereits ausgeschieden, schwache Defensive (1.85 Gegentore/Spiel, nur 34% Zu-Null); Argentinien hat mit 6 Punkten Platz 1 bereits gesichert und könnte rotieren/verwalten, was das Torniveau leicht drückt. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:343ff3c010c28095189dc3ff5fcc901c3cbe89c29a64f0486d7c99f7fccb356a"
   },
   "predictionHistory": [
     {
@@ -283,11 +284,24 @@
         "away": 0.8352
       },
       "confidence": 0.8109
+    },
+    {
+      "generatedAt": "2026-06-26T14:03:50.651Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0538,
+        "draw": 0.1184,
+        "away": 0.8278
+      },
+      "confidence": 0.8069
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-26T23:23:30.915Z",
+    "updatedAt": "2026-06-27T04:05:24.985Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.0625,
