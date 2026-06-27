@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-27T13:03:43.458Z",
+    "generatedAt": "2026-06-27T14:03:46.391Z",
     "home": {
       "teamId": "JOR",
       "elo": 1529,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-27T04:03:43.868Z",
+    "generatedAt": "2026-06-27T14:03:46.391Z",
     "predictedScore": {
       "home": 0,
       "away": 3
     },
     "probabilities": {
-      "home": 0.0537,
-      "draw": 0.1128,
-      "away": 0.8335
+      "home": 0.0508,
+      "draw": 0.1073,
+      "away": 0.8419
     },
-    "confidence": 0.8344,
+    "confidence": 0.8223,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -81,20 +81,19 @@
         },
         "probabilities": {
           "home": 0.05,
-          "draw": 0.12,
-          "away": 0.83
+          "draw": 0.11,
+          "away": 0.84
         },
-        "confidence": 0.78,
+        "confidence": 0.8,
         "keyFactors": [
-          "Argentinien deutlich überlegen (Elo 1910 vs 1529, gewichtete Form 2.72 vs 0.73) und mit zwei Zu-Null-Siegen in der Gruppenphase",
-          "Jordanien sieglos (0 Punkte, -3 Tordifferenz) und bereits ausgeschieden, schwache Defensive (1.85 Gegentore/Spiel, nur 34% Zu-Null)",
-          "Argentinien hat mit 6 Punkten Platz 1 bereits gesichert und könnte rotieren/verwalten, was das Torniveau leicht drückt",
-          "Markt (0.82) etwas vorsichtiger als Baseline (0.94) – Rotationsrisiko spricht für moderatere Favoritenquote"
+          "Argentinien klar überlegen (Elo 1910 vs 1529), 5:0 Tordifferenz in der Gruppe, zwei Zu-Null-Siege gegen Algerien (3:0) und Österreich (2:0)",
+          "Jordanien bereits ausgeschieden (0 Punkte, -3), defensiv anfällig (1,85 Gegentore/Spiel, beide WM-Spiele verloren)",
+          "Argentinien hat höchste Defensivstärke (0,26 Gegentore/Spiel, 65,5% Zu-Null)"
         ],
         "risks": [
-          "Mögliche Rotation Argentiniens als bereits qualifiziertes Team senkt Intensität und Torausbeute",
-          "Jordanien steht als Außenseiter eventuell tief und kompakt, knappes Ergebnis denkbar",
-          "Kein H2H-Datenpunkt vorhanden, erhöhte Unsicherheit über Spielverlauf"
+          "Argentinien bereits als Gruppensieger qualifiziert (6 Punkte) → mögliche Rotation/Verwaltung könnte Torausbeute und Intensität senken",
+          "Jordanien spielt befreit ohne Druck und könnte tief und kompakt stehen",
+          "Mögliche frühe Auswechslung von Schlüsselspielern bei klarer Führung"
         ]
       },
       "chatgpt": {
@@ -107,25 +106,24 @@
           "draw": 0.1,
           "away": 0.85
         },
-        "confidence": 0.9,
+        "confidence": 0.85,
         "keyFactors": [
-          "Argentina's high Elo rating and consistent strong form",
-          "Jordan's poor performance and goal difference in group stage",
-          "Argentina has already secured advancement",
-          "Jordan has struggled defensively against weaker opponents"
+          "Argentina has already secured qualification for the next round with 6 points and a strong goal differential.",
+          "Argentina has demonstrated dominant form with recent 2-0 and 3-0 victories in this tournament.",
+          "Jordan has struggled in the group stage with two losses and a negative goal difference."
         ],
         "risks": [
-          "Potential rotation by Argentina due to secured group advancement",
-          "Neutral venue may slightly level the playing field"
+          "Argentina may rotate their squad or manage intensity, as they have already qualified for the knockout stage.",
+          "Jordan may play more defensively and focus on damage limitation, affecting the overall scoreline."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.5037,
-      "chatgpt": 0.4963
+      "claude": 0.501,
+      "chatgpt": 0.499
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich überlegen (Elo 1910 vs 1529, gewichtete Form 2.72 vs 0.73) und mit zwei Zu-Null-Siegen in der Gruppenphase; Jordanien sieglos (0 Punkte, -3 Tordifferenz) und bereits ausgeschieden, schwache Defensive (1.85 Gegentore/Spiel, nur 34% Zu-Null); Argentinien hat mit 6 Punkten Platz 1 bereits gesichert und könnte rotieren/verwalten, was das Torniveau leicht drückt. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar überlegen (Elo 1910 vs 1529), 5:0 Tordifferenz in der Gruppe, zwei Zu-Null-Siege gegen Algerien (3:0) und Österreich (2:0); Jordanien bereits ausgeschieden (0 Punkte, -3), defensiv anfällig (1,85 Gegentore/Spiel, beide WM-Spiele verloren); Argentinien hat höchste Defensivstärke (0,26 Gegentore/Spiel, 65,5% Zu-Null). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:343ff3c010c28095189dc3ff5fcc901c3cbe89c29a64f0486d7c99f7fccb356a"
   },
   "predictionHistory": [
@@ -297,11 +295,24 @@
         "away": 0.8278
       },
       "confidence": 0.8069
+    },
+    {
+      "generatedAt": "2026-06-27T04:03:43.868Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 3
+      },
+      "probabilities": {
+        "home": 0.0537,
+        "draw": 0.1128,
+        "away": 0.8335
+      },
+      "confidence": 0.8344
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-27T13:05:12.686Z",
+    "updatedAt": "2026-06-27T14:05:32.152Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.0526,
