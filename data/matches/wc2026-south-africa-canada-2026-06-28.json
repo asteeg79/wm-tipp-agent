@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-27T18:03:56.253Z",
+    "generatedAt": "2026-06-27T19:03:47.496Z",
     "home": {
       "teamId": "RSA",
       "elo": 1599,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-27T15:03:51.127Z",
+    "generatedAt": "2026-06-27T19:03:47.496Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.2099,
-      "draw": 0.2795,
-      "away": 0.5106
+      "home": 0.1998,
+      "draw": 0.2592,
+      "away": 0.541
     },
-    "confidence": 0.5291,
+    "confidence": 0.603,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -79,54 +79,53 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.19,
-          "draw": 0.25,
-          "away": 0.56
+          "home": 0.21,
+          "draw": 0.26,
+          "away": 0.53
         },
         "confidence": 0.56,
         "keyFactors": [
-          "Kanada mit höherem Elo (1650 vs 1599), besserer Offensive (1.85 Tore/Spiel) und stärkerer Defensive (0.78 Gegentore, 51.6% Clean Sheets)",
-          "Kanada genießt als Co-Gastgeber Heimvorteil trott nominell neutralem Spielort",
-          "Beide Teams in ähnlicher gewichteter Form (~1.5), aber Kanada zeigte Offensivpotenzial (6:0 gegen Katar)",
-          "Südafrika defensiv kompakt (47% Clean Sheets, nur 1.0 Gegentore) und kann tief stehen – typisches Außenseiter-Szenario",
-          "Markt und Baseline decken sich klar: Kanada Favorit, signifikante Remis-Chance"
+          "Kanada hat das höhere Elo (1650 vs 1599), die bessere Offensive (1.85 Tore/Spiel) und die stabilere Defensive (0.78 Gegentore, 51.6% Clean Sheets)",
+          "Kanada ist als Co-Gastgeber im 'neutralen' Stadion faktisch im Vorteil und kann auf Heimunterstützung bauen",
+          "Beide Teams haben fast identische gewichtete Form (1.50), aber Kanada zeigte zuletzt mehr Offensivpotenzial (6:0 gegen Katar)",
+          "Südafrika kommt mit ordentlicher Defensivleistung (1:0 gegen Südkorea) und steht vermutlich tief und kompakt",
+          "Baseline und Markt sind sich einig: Kanada klarer Favorit (~55%), Remis solide Wahrscheinlichkeit (~25%)"
         ],
         "risks": [
-          "Mögliche Verletzung/Ausfall von Alphonso Davies könnte Kanadas Offensive schwächen",
-          "Südafrikas kompakte Defensive kann ein knappes Remis erzwingen",
-          "Beide Teams nur 3 Tage Pause – Rotation/Müdigkeit möglich",
-          "Kein H2H-Verlauf vorhanden, erhöhte Unsicherheit"
+          "Verletzungsfrage um Alphonso Davies könnte Kanadas Offensive schwächen",
+          "Südafrika kann als kompakter Außenseiter ein torarmes Remis erzwingen",
+          "Kanada war defensiv zuletzt anfällig (2 Gegentore gegen die Schweiz)",
+          "Kein H2H-Verlauf vorhanden, erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
-          "home": 0.26,
-          "draw": 0.32,
-          "away": 0.42
+          "home": 0.21,
+          "draw": 0.25,
+          "away": 0.54
         },
-        "confidence": 0.55,
+        "confidence": 0.65,
         "keyFactors": [
-          "Canada's recent 6-0 victory against Qatar shows strong offensive capability.",
-          "South Africa achieved a clean sheet win against South Korea, indicating solid defense.",
-          "Neutral venue, but Canada has host advantage which might slightly favor them.",
-          "No head-to-head data available."
+          "Kanada hat ein starkes 6:0 gegen Katar gezeigt.",
+          "Kanada hat eine höhere Elo-Wertung als Südafrika.",
+          "Verletzungs-Unsicherheiten bei Alphonso Davies könnten Kanadas Offensivkraft beeinflussen."
         ],
         "risks": [
-          "Alphonso Davies' injury status could influence Canada's performance negatively.",
-          "Both teams have fluctuating form, recent results show inconsistency."
+          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil neutralisiert.",
+          "Südafrika zeigte zuletzt eine solide Leistung gegen Südkorea."
         ]
       }
     },
-    "agreement": 0.9067,
+    "agreement": 0.9933,
     "ensembleWeights": {
       "claude": 0.501,
       "chatgpt": 0.499
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599), besserer Offensive (1.85 Tore/Spiel) und stärkerer Defensive (0.78 Gegentore, 51.6% Clean Sheets); Kanada genießt als Co-Gastgeber Heimvorteil trott nominell neutralem Spielort; Beide Teams in ähnlicher gewichteter Form (~1.5), aber Kanada zeigte Offensivpotenzial (6:0 gegen Katar). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada hat das höhere Elo (1650 vs 1599), die bessere Offensive (1.85 Tore/Spiel) und die stabilere Defensive (0.78 Gegentore, 51.6% Clean Sheets); Kanada ist als Co-Gastgeber im 'neutralen' Stadion faktisch im Vorteil und kann auf Heimunterstützung bauen; Beide Teams haben fast identische gewichtete Form (1.50), aber Kanada zeigte zuletzt mehr Offensivpotenzial (6:0 gegen Katar). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:95646049ed339cc443fcaf016c7e05d1b0a97401462835d2dde7e646988f9fbc"
   },
   "predictionHistory": [
@@ -142,20 +141,33 @@
         "away": 0.522
       },
       "confidence": 0.5723
+    },
+    {
+      "generatedAt": "2026-06-27T15:03:51.127Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.2099,
+        "draw": 0.2795,
+        "away": 0.5106
+      },
+      "confidence": 0.5291
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-27T18:04:31.083Z",
+    "updatedAt": "2026-06-27T19:05:00.381Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.1755,
-      "draw": 0.2676,
-      "away": 0.5569
+      "home": 0.1759,
+      "draw": 0.27,
+      "away": 0.5541
     },
     "decimal": {
-      "home": 5.49,
-      "draw": 3.6,
+      "home": 5.45,
+      "draw": 3.55,
       "away": 1.73
     }
   }
