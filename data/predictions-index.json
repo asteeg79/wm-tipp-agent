@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-27T23:15:42.042Z",
+  "lastUpdated": "2026-06-28T04:03:56.270Z",
   "aggregate": {
-    "finishedCount": 68,
-    "exactScoreRate": 0.1471,
-    "outcomeRate": 0.6471,
-    "brierMean": 0.5024,
-    "rpsMean": 0.1564
+    "finishedCount": 70,
+    "exactScoreRate": 0.1429,
+    "outcomeRate": 0.6429,
+    "brierMean": 0.5045,
+    "rpsMean": 0.1557
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 68,
-      "exactScoreRate": 0.1176,
-      "outcomeRate": 0.5588,
-      "brierMean": 0.505,
-      "rpsMean": 0.1569
+      "finishedCount": 70,
+      "exactScoreRate": 0.1143,
+      "outcomeRate": 0.5571,
+      "brierMean": 0.5068,
+      "rpsMean": 0.1561
     },
     "chatgpt": {
-      "finishedCount": 68,
-      "exactScoreRate": 0.1618,
-      "outcomeRate": 0.5588,
-      "brierMean": 0.5134,
-      "rpsMean": 0.1624
+      "finishedCount": 70,
+      "exactScoreRate": 0.1571,
+      "outcomeRate": 0.5571,
+      "brierMean": 0.5154,
+      "rpsMean": 0.1617
     },
     "weights": {
-      "claude": 0.5039,
-      "chatgpt": 0.4961
+      "claude": 0.504,
+      "chatgpt": 0.496
     }
   },
   "entries": [
@@ -2436,7 +2436,16 @@
         "draw": 0.2399,
         "away": 0.5202
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 0,
+        "away": 0
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.8674,
+        "rps": 0.1517
+      }
     },
     {
       "matchId": "wc2026-dr-congo-uzbekistan-2026-06-27",
@@ -2463,7 +2472,16 @@
         "draw": 0.2441,
         "away": 0.1819
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 3,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.2843,
+        "rps": 0.112
+      }
     },
     {
       "matchId": "wc2026-algeria-austria-2026-06-27",
@@ -2526,15 +2544,15 @@
       "homeTeamId": "RSA",
       "awayTeamId": "CAN",
       "predictedScore": {
-        "home": 1,
-        "away": 2
+        "home": 0,
+        "away": 1
       },
       "probabilities": {
-        "home": 0.1998,
-        "draw": 0.2592,
-        "away": 0.541
+        "home": 0.1886,
+        "draw": 0.2581,
+        "away": 0.5532
       },
-      "confidence": 0.603,
+      "confidence": 0.598,
       "expectedGoals": {
         "home": 0.86,
         "away": 1.66

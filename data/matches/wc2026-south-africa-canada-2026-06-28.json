@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-27T23:15:42.042Z",
+    "generatedAt": "2026-06-28T04:03:56.270Z",
     "home": {
       "teamId": "RSA",
       "elo": 1599,
@@ -21,7 +21,7 @@
       "goalsAgainstAvg": 0.999,
       "cleanSheetRate": 0.471,
       "matchesCount": 34,
-      "daysSinceLastMatch": 3
+      "daysSinceLastMatch": 4
     },
     "away": {
       "teamId": "CAN",
@@ -32,7 +32,7 @@
       "goalsAgainstAvg": 0.776,
       "cleanSheetRate": 0.516,
       "matchesCount": 31,
-      "daysSinceLastMatch": 3
+      "daysSinceLastMatch": 4
     },
     "h2h": {
       "played": 0,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-27T19:03:47.496Z",
+    "generatedAt": "2026-06-28T04:03:56.270Z",
     "predictedScore": {
-      "home": 1,
-      "away": 2
+      "home": 0,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.1998,
-      "draw": 0.2592,
-      "away": 0.541
+      "home": 0.1886,
+      "draw": 0.2581,
+      "away": 0.5532
     },
-    "confidence": 0.603,
+    "confidence": 0.598,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,58 +75,59 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
-          "away": 1
-        },
-        "probabilities": {
-          "home": 0.21,
-          "draw": 0.26,
-          "away": 0.53
-        },
-        "confidence": 0.56,
-        "keyFactors": [
-          "Kanada hat das höhere Elo (1650 vs 1599), die bessere Offensive (1.85 Tore/Spiel) und die stabilere Defensive (0.78 Gegentore, 51.6% Clean Sheets)",
-          "Kanada ist als Co-Gastgeber im 'neutralen' Stadion faktisch im Vorteil und kann auf Heimunterstützung bauen",
-          "Beide Teams haben fast identische gewichtete Form (1.50), aber Kanada zeigte zuletzt mehr Offensivpotenzial (6:0 gegen Katar)",
-          "Südafrika kommt mit ordentlicher Defensivleistung (1:0 gegen Südkorea) und steht vermutlich tief und kompakt",
-          "Baseline und Markt sind sich einig: Kanada klarer Favorit (~55%), Remis solide Wahrscheinlichkeit (~25%)"
-        ],
-        "risks": [
-          "Verletzungsfrage um Alphonso Davies könnte Kanadas Offensive schwächen",
-          "Südafrika kann als kompakter Außenseiter ein torarmes Remis erzwingen",
-          "Kanada war defensiv zuletzt anfällig (2 Gegentore gegen die Schweiz)",
-          "Kein H2H-Verlauf vorhanden, erhöht Unsicherheit"
-        ]
-      },
-      "chatgpt": {
-        "predictedScore": {
           "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.21,
+          "home": 0.19,
+          "draw": 0.26,
+          "away": 0.55
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Kanada mit höherem Elo (1650 vs 1599) und deutlich besserer Offensive (goalsForAvg 1.85, u.a. 6:0 gegen Qatar)",
+          "Kanada defensiv stabiler (cleanSheetRate 0.52, goalsAgainst 0.78) als Südafrika",
+          "Gastgeber-Vorteil Kanada trotz neutralem Spielort gelistet",
+          "Beide Teams in ähnlicher gewichteter Form (~1.50), aber Kanada mit höherer Gegnerqualität in Topspielen"
+        ],
+        "risks": [
+          "Südafrika kompakt und mit ordentlicher Defensive (CS 0.47), kann tief stehen und Remis erzwingen",
+          "Mögliche Verletzungssorgen bei Kanada (Davies-Update) könnten Offensivkraft schwächen",
+          "Geringer Abstand zwischen den Teams macht Unentschieden realistisch",
+          "Südafrika zeigte Momentum mit Sieg gegen Südkorea (1:0)"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 0,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.2,
           "draw": 0.25,
-          "away": 0.54
+          "away": 0.55
         },
         "confidence": 0.65,
         "keyFactors": [
-          "Kanada hat ein starkes 6:0 gegen Katar gezeigt.",
-          "Kanada hat eine höhere Elo-Wertung als Südafrika.",
-          "Verletzungs-Unsicherheiten bei Alphonso Davies könnten Kanadas Offensivkraft beeinflussen."
+          "Keine direkte Begegnung in der Vergangenheit, daher keine h2h-Daten.",
+          "Kanada zeigt insgesamt bessere Elo-Werte und eine robuste defensive Statistik.",
+          "Alphonso Davies könnte verletzt sein, was Kanada schwächen könnte.",
+          "Südafrika hat kürzlich gegen einen stärkeren Gegner gewonnen (Südkorea).",
+          "Kanada zeigt offensive Stärke durch hohe Tore gegen Katar."
         ],
         "risks": [
-          "Das Spiel findet auf neutralem Boden statt, was den Heimvorteil neutralisiert.",
-          "Südafrika zeigte zuletzt eine solide Leistung gegen Südkorea."
+          "Kanada spielt eventuell ohne Alphonso Davies, einen ihrer Starspieler.",
+          "Beide Teams haben ähnliche Formzahlen, was auf eine engere Partie als erwartet hindeuten könnte."
         ]
       }
     },
     "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.501,
-      "chatgpt": 0.499
+      "claude": 0.504,
+      "chatgpt": 0.496
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada hat das höhere Elo (1650 vs 1599), die bessere Offensive (1.85 Tore/Spiel) und die stabilere Defensive (0.78 Gegentore, 51.6% Clean Sheets); Kanada ist als Co-Gastgeber im 'neutralen' Stadion faktisch im Vorteil und kann auf Heimunterstützung bauen; Beide Teams haben fast identische gewichtete Form (1.50), aber Kanada zeigte zuletzt mehr Offensivpotenzial (6:0 gegen Katar). Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:95646049ed339cc443fcaf016c7e05d1b0a97401462835d2dde7e646988f9fbc"
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599) und deutlich besserer Offensive (goalsForAvg 1.85, u.a. 6:0 gegen Qatar); Kanada defensiv stabiler (cleanSheetRate 0.52, goalsAgainst 0.78) als Südafrika; Gastgeber-Vorteil Kanada trotz neutralem Spielort gelistet. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:59adf2e289d333b857f8f5c9ad9aaa62ed8c11522bafbf4e6cf04b11fc021531"
   },
   "predictionHistory": [
     {
@@ -154,11 +155,24 @@
         "away": 0.5106
       },
       "confidence": 0.5291
+    },
+    {
+      "generatedAt": "2026-06-27T19:03:47.496Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1998,
+        "draw": 0.2592,
+        "away": 0.541
+      },
+      "confidence": 0.603
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-27T23:17:20.514Z",
+    "updatedAt": "2026-06-28T04:05:45.079Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1728,
