@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-06-28T09:03:50.821Z",
     "home": {
       "teamId": "GER",
       "elo": 1793,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-06-28T09:03:50.821Z",
     "predictedScore": {
       "home": 2,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8098,
-      "draw": 0.122,
-      "away": 0.0682
+      "home": 0.6969,
+      "draw": 0.1965,
+      "away": 0.1066
     },
-    "confidence": 0.7147,
+    "confidence": 0.6329,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,12 +72,66 @@
         "away": 0.75
       }
     },
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.6900000000000001,
+          "draw": 0.20000000000000004,
+          "away": 0.11000000000000001
+        },
+        "confidence": 0.62,
+        "keyFactors": [
+          "Germany klar stärker (Elo 1793 vs 1601), höhere Form und Offensivpower (goalsForAvg 2.89)",
+          "Paraguay tritt erwartungsgemäß tief, kompakt und körperlich auf (hohe Clean-Sheet-Rate 0.462, nur 0.84 Tore/Spiel) – schwer zu knacken",
+          "K.o.-Charakter laut News erhöht Vorsicht beider Teams, dämpft das Torniveau leicht",
+          "Markt (0.70) etwas zurückhaltender als Baseline (0.81); ich korrigiere Richtung Markt wegen Paraguays Defensivstärke und Deutschlands wackliger Abwehr (zuletzt 2 Gegentore vs Ecuador, 3 vs Schweiz)"
+        ],
+        "risks": [
+          "Deutschland kassiert zuletzt regelmäßig Gegentore – ein Konter/Standard Paraguays kann zum Remis oder gar zur Überraschung führen",
+          "Tief stehende, physische Paraguay-Defensive könnte ein 0:0/1:1 lange halten und Germany frustrieren",
+          "Mögliche Rotation/Aufstellungsfragen bei Nagelsmann (News) könnten Offensivfluss stören",
+          "Bei Standardschwäche Deutschlands ist Paraguays einziger Treffer spielentscheidend"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.7000000000000001,
+          "draw": 0.20000000000000004,
+          "away": 0.10000000000000002
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "Germany's recent form is strong with a significant win against Curaçao and a narrow loss to Ecuador.",
+          "Paraguay's form is less impressive, unable to score against Australia and a heavy loss to the USA.",
+          "Both teams have no head-to-head history, removing historical advantage.",
+          "Neutral venue negates home field advantage for Germany."
+        ],
+        "risks": [
+          "Germany's recent coaching adjustments might impact performance adversely.",
+          "The defensive style of Paraguay could lead to a lower scoring game which might increase draw probability."
+        ]
+      }
+    },
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5038,
+      "chatgpt": 0.4962
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany klar stärker (Elo 1793 vs 1601), höhere Form und Offensivpower (goalsForAvg 2.89); Paraguay tritt erwartungsgemäß tief, kompakt und körperlich auf (hohe Clean-Sheet-Rate 0.462, nur 0.84 Tore/Spiel) – schwer zu knacken; K.o.-Charakter laut News erhöht Vorsicht beider Teams, dämpft das Torniveau leicht. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:806dbbad8240d2383f65e63367399d6c25a4fa8c7cef4bd7b1d9fe5fca30c85f"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-28T08:31:37.263Z",
+    "updatedAt": "2026-06-28T09:03:51.282Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.7012,
