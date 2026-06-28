@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-28T20:03:53.212Z",
+  "lastUpdated": "2026-06-28T21:03:49.941Z",
   "aggregate": {
-    "finishedCount": 72,
-    "exactScoreRate": 0.1389,
-    "outcomeRate": 0.6528,
-    "brierMean": 0.4983,
-    "rpsMean": 0.1527
+    "finishedCount": 73,
+    "exactScoreRate": 0.137,
+    "outcomeRate": 0.6575,
+    "brierMean": 0.4956,
+    "rpsMean": 0.1523
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 72,
-      "exactScoreRate": 0.1111,
-      "outcomeRate": 0.5694,
-      "brierMean": 0.5019,
-      "rpsMean": 0.1534
+      "finishedCount": 73,
+      "exactScoreRate": 0.1096,
+      "outcomeRate": 0.5753,
+      "brierMean": 0.4994,
+      "rpsMean": 0.153
     },
     "chatgpt": {
-      "finishedCount": 72,
-      "exactScoreRate": 0.1528,
-      "outcomeRate": 0.5694,
-      "brierMean": 0.5091,
-      "rpsMean": 0.1586
+      "finishedCount": 73,
+      "exactScoreRate": 0.1507,
+      "outcomeRate": 0.5753,
+      "brierMean": 0.5065,
+      "rpsMean": 0.1581
     },
     "weights": {
-      "claude": 0.5038,
-      "chatgpt": 0.4962
+      "claude": 0.5037,
+      "chatgpt": 0.4963
     }
   },
   "entries": [
@@ -2580,7 +2580,16 @@
         "draw": 0.268,
         "away": 0.5642
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 0,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.3045,
+        "rps": 0.1183
+      }
     },
     {
       "matchId": "wc2026-brazil-japan-2026-06-29",
@@ -2617,14 +2626,14 @@
       "awayTeamId": "PAR",
       "predictedScore": {
         "home": 2,
-        "away": 0
+        "away": 1
       },
       "probabilities": {
-        "home": 0.6955,
-        "draw": 0.1856,
-        "away": 0.1189
+        "home": 0.6958,
+        "draw": 0.19,
+        "away": 0.1143
       },
-      "confidence": 0.6683,
+      "confidence": 0.6229,
       "expectedGoals": {
         "home": 2.91,
         "away": 0.75
