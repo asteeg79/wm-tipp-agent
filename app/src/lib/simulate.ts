@@ -788,8 +788,11 @@ function assignThirds(
 
 /**
  * Projiziert das vollständige K.-o.-Bracket nach dem ECHTEN WM-2026-Schema aus
- * dem aktuellen Gruppenstand: Sieger/Zweite exakt, beste 8 Dritte plausibel
- * verteilt; offene K.-o.-Partien per Elo-Favorit (wie der Baum sonst auch).
+ * dem aktuellen Gruppenstand: Sieger/Zweite exakt; die 8 besten Dritten werden
+ * plausibel verteilt, SOLANGE die Auslosung noch nicht vorliegt — sobald die
+ * echten Sechzehntelfinal-Partien im Index stehen, übernehmen DIESE die Dritten-
+ * Zuordnung (sonst zeigte der Tab z. B. GER–Bosnien statt der real ausgelosten
+ * Paarung GER–Paraguay). Offene K.-o.-Partien per Elo-Favorit (wie der Baum).
  */
 export function projectBracket(
   index: IndexFile,
@@ -797,29 +800,70 @@ export function projectBracket(
 ): ProjectedBracket {
   const eloOf = eloMap(index);
   const standings = currentStandings(index, predIndex);
+  // teamId → Gruppe (für die Herkunft "3. X", auch bei real ausgelosten Dritten).
+  const teamGroup = new Map(index.teams.map((tm) => [tm.id, tm.groupId]));
 
-  // Beste 8 Gruppendritte (FIFA-Kriterien, Elo als Tiebreak).
+  // Beste 8 Gruppendritte (FIFA-Kriterien, Elo als Tiebreak) — Basis für die
+  // PROJEKTION, solange die echte Auslosung fehlt.
   const thirds = [...standings.entries()]
     .map(([group, table]) => (table[2] ? { ...table[2], group } : null))
     .filter((x): x is Standing & { group: string } => !!x)
     .sort((a, b) => cmpStanding(a, b) || eloOf(b.id) - eloOf(a.id))
     .slice(0, 8)
     .map((s) => ({ id: s.id, group: s.group }));
-  const thirdGroupOf = new Map(thirds.map((t) => [t.id, t.group]));
 
-  // Dritt-Slots aus dem Gerüst + Zuordnung.
+  // Dritt-Slots aus dem Gerüst (inkl. Gruppensieger-Slot der jeweiligen Partie,
+  // über den die echte Auslosung gepinnt wird).
   const thirdSlots = WC2026_BRACKET.filter((t) => t.stage === "round32")
     .map((t) => {
-      const f = [t.a, t.b].find(
+      const third = [t.a, t.b].find(
         (x): x is { slot: SlotSource } =>
           "slot" in x && x.slot.kind === "third",
       );
-      return f && f.slot.kind === "third"
-        ? { num: t.num, groups: f.slot.groups }
+      const winner = [t.a, t.b].find(
+        (x): x is { slot: SlotSource } =>
+          "slot" in x && x.slot.kind === "winner",
+      );
+      return third?.slot.kind === "third" && winner?.slot.kind === "winner"
+        ? {
+            num: t.num,
+            groups: third.slot.groups,
+            winnerGroup: winner.slot.group,
+          }
         : null;
     })
-    .filter((x): x is { num: number; groups: string[] } => !!x);
-  const thirdByTie = assignThirds(thirds, thirdSlots);
+    .filter(
+      (x): x is { num: number; groups: string[]; winnerGroup: string } => !!x,
+    );
+
+  // Plausible Basis-Zuordnung …
+  const thirdByTie = assignThirds(
+    thirds,
+    thirdSlots.map((s) => ({ num: s.num, groups: s.groups })),
+  );
+  // … und sobald die echten Sechzehntelfinal-Partien vorliegen, den Dritten je
+  // Partie aus dem realen Gegner des (feststehenden) Gruppensiegers ableiten.
+  const teamSet = new Set(index.teams.map((tm) => tm.id));
+  const realR32 = predIndex.entries.filter(
+    (e) =>
+      e.stage === "round32" &&
+      teamSet.has(e.homeTeamId) &&
+      teamSet.has(e.awayTeamId),
+  );
+  if (realR32.length > 0) {
+    const realOpponentOf = (teamId: string): string | null => {
+      for (const e of realR32) {
+        if (e.homeTeamId === teamId) return e.awayTeamId;
+        if (e.awayTeamId === teamId) return e.homeTeamId;
+      }
+      return null;
+    };
+    for (const s of thirdSlots) {
+      const winnerTeam = standings.get(s.winnerGroup)?.[0]?.id;
+      const opp = winnerTeam ? realOpponentOf(winnerTeam) : null;
+      if (opp) thirdByTie.set(s.num, opp);
+    }
+  }
 
   const teamOfSlot = (num: number, s: SlotSource): string | null => {
     if (s.kind === "winner") return standings.get(s.group)?.[0]?.id ?? null;
@@ -829,7 +873,7 @@ export function projectBracket(
   const sideInfo = (num: number, f: Feed): ProjectedSide | null => {
     if (!("slot" in f)) return null;
     const teamId = teamOfSlot(num, f.slot);
-    const tg = teamId ? thirdGroupOf.get(teamId) : undefined;
+    const tg = teamId ? teamGroup.get(teamId) : undefined;
     return {
       teamId,
       source: f.slot,

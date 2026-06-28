@@ -1,5 +1,9 @@
 import { useTranslation } from "react-i18next";
-import type { TeamSummary } from "@wm/shared";
+import type {
+  PredictionIndexEntry,
+  PredictionsIndex,
+  TeamSummary,
+} from "@wm/shared";
 import { formatPercent } from "../lib/format.js";
 import type {
   KoStage,
@@ -14,6 +18,30 @@ interface Props {
   teams: Map<string, TeamSummary>;
   /** Alle Gruppenspiele gespielt? → endgültige statt projizierte Paarungen. */
   groupsDone: boolean;
+  /** Für real ausgeloste Partien den echten KI-Tipp statt Elo-Projektion. */
+  predIndex: PredictionsIndex | undefined;
+}
+
+const pairKey = (a: string, b: string): string => [a, b].sort().join("|");
+
+/** Anzeigewerte aus dem echten KI-Tipp einer aufgelösten K.-o.-Partie. */
+function tipDisplay(
+  entry: PredictionIndexEntry,
+  a: string,
+): { aGoals: number; bGoals: number; winner: string; winProb: number } | null {
+  const ps = entry.predictedScore;
+  const pr = entry.probabilities;
+  if (!ps || !pr) return null;
+  const aHome = entry.homeTeamId === a;
+  // Sieger aus der Tipp-Tendenz; bei Remis-Tipp nach Wahrscheinlichkeit.
+  const winnerHome =
+    ps.home !== ps.away ? ps.home > ps.away : pr.home >= pr.away;
+  return {
+    aGoals: aHome ? ps.home : ps.away,
+    bGoals: aHome ? ps.away : ps.home,
+    winner: winnerHome ? entry.homeTeamId : entry.awayTeamId,
+    winProb: winnerHome ? pr.home : pr.away,
+  };
 }
 
 /** Herkunfts-Label einer Sechzehntelfinal-Seite (Sieger A / Zweiter B / 3. X). */
@@ -36,7 +64,13 @@ function sourceLabel(
  * Desktop 2–3). Im Sechzehntelfinale zusätzlich die Herkunft je Team
  * (Sieger A / Zweiter B / 3. X); sonst der projizierte Sieger hervorgehoben.
  */
-export function PhasePairings({ proj, stage, teams, groupsDone }: Props) {
+export function PhasePairings({
+  proj,
+  stage,
+  teams,
+  groupsDone,
+  predIndex,
+}: Props) {
   const { t } = useTranslation();
   const round = proj.rounds.find((r) => r.stage === stage);
   if (!round) return null;
@@ -51,6 +85,13 @@ export function PhasePairings({ proj, stage, teams, groupsDone }: Props) {
     }
   }
 
+  // Echte (aufgelöste) K.-o.-Partien je Paarung → für den realen KI-Tipp.
+  const realByPair = new Map<string, PredictionIndexEntry>();
+  for (const e of predIndex?.entries ?? []) {
+    if (e.stage === "group") continue;
+    realByPair.set(pairKey(e.homeTeamId, e.awayTeamId), e);
+  }
+
   return (
     <div className="space-y-3">
       {stage === "round32" && (
@@ -61,33 +102,43 @@ export function PhasePairings({ proj, stage, teams, groupsDone }: Props) {
         </p>
       )}
       <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {round.matches.map((m, i) => (
-          <li
-            key={i}
-            className="min-w-0 overflow-hidden rounded-lg border border-edge bg-surface/40"
-          >
-            <PairLine
-              teams={teams}
-              id={m.a}
-              goals={m.score.a}
-              win={m.winner === m.a}
-              source={sourceOf.get(m.a)}
-            />
-            <div className="h-px bg-edge" />
-            <PairLine
-              teams={teams}
-              id={m.b}
-              goals={m.score.b}
-              win={m.winner === m.b}
-              source={sourceOf.get(m.b)}
-            />
-            <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2/60 px-2 py-0.5">
-              <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
-                {formatPercent(m.winProb)}
-              </span>
-            </div>
-          </li>
-        ))}
+        {round.matches.map((m, i) => {
+          // Liegt die echte Auslosung vor, den realen KI-Tipp zeigen (Score +
+          // Sieger + %), sonst die Elo-Projektion.
+          const real = realByPair.get(pairKey(m.a, m.b));
+          const tip = real ? tipDisplay(real, m.a) : null;
+          const aGoals = tip ? tip.aGoals : m.score.a;
+          const bGoals = tip ? tip.bGoals : m.score.b;
+          const winner = tip ? tip.winner : m.winner;
+          const winProb = tip ? tip.winProb : m.winProb;
+          return (
+            <li
+              key={i}
+              className="min-w-0 overflow-hidden rounded-lg border border-edge bg-surface/40"
+            >
+              <PairLine
+                teams={teams}
+                id={m.a}
+                goals={aGoals}
+                win={winner === m.a}
+                source={sourceOf.get(m.a)}
+              />
+              <div className="h-px bg-edge" />
+              <PairLine
+                teams={teams}
+                id={m.b}
+                goals={bGoals}
+                win={winner === m.b}
+                source={sourceOf.get(m.b)}
+              />
+              <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2/60 px-2 py-0.5">
+                <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
+                  {formatPercent(winProb)}
+                </span>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

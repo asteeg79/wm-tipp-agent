@@ -186,6 +186,7 @@ export function GroupsPage() {
           stage={activeTab as KoStage}
           teams={teams}
           groupsDone={groupsDone}
+          predIndex={predIndex}
         />
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
