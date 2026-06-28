@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-28T09:03:50.821Z",
+    "generatedAt": "2026-06-28T09:27:57.660Z",
     "home": {
       "teamId": "RSA",
       "elo": 1599,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T07:03:56.321Z",
+    "generatedAt": "2026-06-28T09:27:57.660Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1885,
-      "draw": 0.2583,
-      "away": 0.5532
+      "home": 0.1896,
+      "draw": 0.2515,
+      "away": 0.5589
     },
-    "confidence": 0.5731,
+    "confidence": 0.6315,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,26 +75,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 2
         },
         "probabilities": {
-          "home": 0.19,
-          "draw": 0.26,
-          "away": 0.55
+          "home": 0.18,
+          "draw": 0.25,
+          "away": 0.57
         },
-        "confidence": 0.55,
+        "confidence": 0.58,
         "keyFactors": [
-          "Kanada hat klar höheren Elo (1650 vs 1599), bessere Offensive (1,85 Tore/Spiel) und stabilere Defensive (0,78 Gegentore, 51,6% Clean Sheets)",
-          "Gastgeberbonus liegt bei Kanada, was den Außenseiter-Vorteil Südafrikas auf neutralem Platz weiter relativiert",
-          "Südafrikas Form ist defensiv ordentlich (1:0 gegen Südkorea), aber offensiv limitiert (nur 0,86 erwartete Tore)",
-          "Baseline und Markt sind sich einig: Kanada klarer Favorit (~56%), Remis als zweitwahrscheinlichster Ausgang"
+          "Kanada mit höherem Elo (1650 vs 1599), besserer Torausbeute (1.85 vs 1.22) und stabilerer Defensive (0.78 Gegentore, 51,6% Zu-Null)",
+          "Mit-Gastgeber-Vorteil für Kanada bei nominell neutralem Spielort plus klare Marktneigung (Auswärts ~58%)",
+          "Kanada zeigte Offensivpotenzial (6:0 gegen Katar), bleibt aber schwankend (1:2 gegen Schweiz)",
+          "Südafrika defensiv solide (1:0 gegen Südkorea, 47% Zu-Null), aber offensiv limitiert"
         ],
         "risks": [
-          "Südafrika steht oft tief und kompakt; ein Remis (1:1/0:0) ist realistisch, gerade in WM-Gruppenspielen",
-          "Unsicherheit um Alphonso Davies' Fitness könnte Kanadas Offensivkraft schwächen",
-          "Kanada zeigte zuletzt schwankende Leistungen (6:0 gegen Qatar, aber 1:2 gegen Schweiz)",
-          "Kein H2H-Datenpunkt vorhanden, erhöht Unsicherheit"
+          "Verletzungsfrage um Alphonso Davies könnte Kanadas Offensive schwächen",
+          "Südafrika steht oft kompakt und tief – Außenseiter kann Favorit ausbremsen, Remis realistisch",
+          "Beide Teams nur 4 Tage Pause, mögliche Rotation/Ermüdung",
+          "Kein H2H-Datenwert verfügbar, erhöhte Unsicherheit"
         ]
       },
       "chatgpt": {
@@ -103,30 +103,28 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.2,
+          "home": 0.22,
           "draw": 0.25,
-          "away": 0.55
+          "away": 0.53
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Kanada hat eine stärkere aktuelle Form, insbesondere 6:0 gegen Katar",
-          "Vorteil Kanada in der Elo-Zahl und durchschnittlicher Torproduktion",
-          "South Africa konnte in den letzten WM-Spielen nur einmal gewinnen",
-          "Die Verletzungsungewissheit von Alphonso Davies kann Kanada etwas schwächen"
+          "Kanadas höhere Elo-Bewertung gegenüber Südafrika",
+          "Kanadas jüngster 6:0-Sieg gegen Katar zeigt Offensivkraft",
+          "Verletzungsstatus von Alphonso Davies könnte die kanadische Offensive beeinträchtigen, falls er ausfällt"
         ],
         "risks": [
-          "Verletzungsstatus von Alphonso Davies unklar, könnte Kanadas Leistung beeinträchtigen",
-          "Neutrales Spielort mildert möglichen Heimvorteil",
-          "South Africa's defensiv starke Leistung gegen Süd Korea kann Überraschungsmoment enthalten"
+          "Südafrikas Sieg gegen Südkorea zeigt defensive Stärke",
+          "Neutraler Spielort reduziert den Vorteil der Heimfans"
         ]
       }
     },
-    "agreement": 0.9933,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5038,
       "chatgpt": 0.4962
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada hat klar höheren Elo (1650 vs 1599), bessere Offensive (1,85 Tore/Spiel) und stabilere Defensive (0,78 Gegentore, 51,6% Clean Sheets); Gastgeberbonus liegt bei Kanada, was den Außenseiter-Vorteil Südafrikas auf neutralem Platz weiter relativiert; Südafrikas Form ist defensiv ordentlich (1:0 gegen Südkorea), aber offensiv limitiert (nur 0,86 erwartete Tore). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599), besserer Torausbeute (1.85 vs 1.22) und stabilerer Defensive (0.78 Gegentore, 51,6% Zu-Null); Mit-Gastgeber-Vorteil für Kanada bei nominell neutralem Spielort plus klare Marktneigung (Auswärts ~58%); Kanada zeigte Offensivpotenzial (6:0 gegen Katar), bleibt aber schwankend (1:2 gegen Schweiz). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:59adf2e289d333b857f8f5c9ad9aaa62ed8c11522bafbf4e6cf04b11fc021531"
   },
   "predictionHistory": [
@@ -181,11 +179,24 @@
         "away": 0.5532
       },
       "confidence": 0.598
+    },
+    {
+      "generatedAt": "2026-06-28T07:03:56.321Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1885,
+        "draw": 0.2583,
+        "away": 0.5532
+      },
+      "confidence": 0.5731
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-28T09:03:51.282Z",
+    "updatedAt": "2026-06-28T09:27:58.122Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1615,
