@@ -15,18 +15,58 @@ import { PhasePairings } from "../components/PhasePairings.js";
 
 const SIM_RUNS = 5000;
 
+const PHASE_ORDER: Array<"group" | KoStage> = [
+  "group",
+  "round32",
+  "round16",
+  "quarter",
+  "semi",
+  "final",
+];
+
+/**
+ * Aktuelle Turnier-Phase = früheste Stufe mit noch OFFENEN Partien (so landet
+ * man beim Öffnen der Gruppen-Seite immer auf den aktuell laufenden Spielen,
+ * nicht auf bereits beendeten Gruppen-Ergebnissen). Ist alles beendet, die
+ * letzte vorhandene Stufe.
+ */
+function currentPhaseTab(
+  entries: readonly PredictionIndexEntry[],
+): "groups" | KoStage {
+  for (const st of PHASE_ORDER) {
+    const ms = entries.filter((e) => e.stage === st);
+    if (ms.length > 0 && ms.some((e) => !e.actualResult)) {
+      return st === "group" ? "groups" : st;
+    }
+  }
+  for (let i = PHASE_ORDER.length - 1; i >= 0; i--) {
+    const st = PHASE_ORDER[i]!;
+    if (entries.some((e) => e.stage === st))
+      return st === "group" ? "groups" : st;
+  }
+  return "groups";
+}
+
 export function GroupsPage() {
   const { t } = useTranslation();
   const { data: index, isLoading, isError } = useIndex();
   const { data: predIndex } = usePredictionsIndex();
   const teams = useTeamsMap();
   const [teamFilter, setTeamFilter] = useState("");
-  const [tab, setTab] = useState<"groups" | KoStage>("groups");
+  // Explizite Tab-Wahl des Nutzers; null = noch keine → aktuelle Phase. Beim
+  // Navigieren auf /groups wird die Seite neu gemountet → fällt auf die
+  // aktuelle Phase zurück (Wunsch: immer zu den aktuellen Partien springen).
+  const [selectedTab, setSelectedTab] = useState<"groups" | KoStage | null>(
+    null,
+  );
 
-  // Match-Liste je Gruppe (Gruppe = Gruppe des Heimteams).
+  // Match-Liste je Gruppe (Gruppe = Gruppe des Heimteams). NUR Gruppenspiele —
+  // K.-o.-Partien gehören in ihre Phasen-Tabs, nicht unter die Gruppe ihres
+  // Heimteams.
   const matchesByGroup = useMemo(() => {
     const m = new Map<string, PredictionIndexEntry[]>();
     for (const e of predIndex?.entries ?? []) {
+      if (e.stage !== "group") continue;
       const gid = teams.get(e.homeTeamId)?.groupId;
       if (!gid) continue;
       if (!m.has(gid)) m.set(gid, []);
@@ -97,7 +137,9 @@ export function GroupsPage() {
     ? index.groups.filter((g) => g.teamIds.includes(teamFilter))
     : index.groups;
 
-  const showGroups = tab === "groups" || !proj;
+  const activeTab =
+    selectedTab ?? (predIndex ? currentPhaseTab(predIndex.entries) : "groups");
+  const showGroups = activeTab === "groups" || !proj;
 
   return (
     <section className="space-y-4">
@@ -124,15 +166,15 @@ export function GroupsPage() {
         <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1">
           <PhaseTab
             label={t("groups.phaseGroups")}
-            active={tab === "groups"}
-            onClick={() => setTab("groups")}
+            active={activeTab === "groups"}
+            onClick={() => setSelectedTab("groups")}
           />
           {proj.rounds.map((r) => (
             <PhaseTab
               key={r.stage}
               label={t(`bracket.rounds.${r.stage}`)}
-              active={tab === r.stage}
-              onClick={() => setTab(r.stage)}
+              active={activeTab === r.stage}
+              onClick={() => setSelectedTab(r.stage)}
             />
           ))}
         </div>
@@ -141,7 +183,7 @@ export function GroupsPage() {
       {!showGroups && proj ? (
         <PhasePairings
           proj={proj}
-          stage={tab as KoStage}
+          stage={activeTab as KoStage}
           teams={teams}
           groupsDone={groupsDone}
         />
