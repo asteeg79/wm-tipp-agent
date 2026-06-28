@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-28T09:30:43.029Z",
+    "generatedAt": "2026-06-28T10:01:53.122Z",
     "home": {
       "teamId": "RSA",
       "elo": 1599,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T09:27:57.660Z",
+    "generatedAt": "2026-06-28T10:01:53.122Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.1896,
-      "draw": 0.2515,
-      "away": 0.5589
+      "home": 0.1892,
+      "draw": 0.2551,
+      "away": 0.5557
     },
-    "confidence": 0.6315,
+    "confidence": 0.6048,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -85,16 +85,17 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Kanada mit höherem Elo (1650 vs 1599), besserer Torausbeute (1.85 vs 1.22) und stabilerer Defensive (0.78 Gegentore, 51,6% Zu-Null)",
-          "Mit-Gastgeber-Vorteil für Kanada bei nominell neutralem Spielort plus klare Marktneigung (Auswärts ~58%)",
-          "Kanada zeigte Offensivpotenzial (6:0 gegen Katar), bleibt aber schwankend (1:2 gegen Schweiz)",
-          "Südafrika defensiv solide (1:0 gegen Südkorea, 47% Zu-Null), aber offensiv limitiert"
+          "Kanada mit höherem Elo (1650 vs 1599), besserer Offensive (1.85 vs 1.22 Tore/Spiel) und stabilerer Defensive (0.78 Gegentore, 51.6% Clean Sheets)",
+          "Rückkehr von Alphonso Davies stärkt Kanadas Offensive und steigert das Momentum",
+          "Co-Gastgeber-Vorteil (hostAdvantageTeamId CAN) trotz nominell neutralem Spielort",
+          "Beide Teams jüngst formstark mit WM-Siegen (RSA 1:0 Südkorea, CAN 6:0 Qatar), aber Kanadas Siege gegen stärkere Gegnerlage",
+          "Baseline und Markt decken sich klar zugunsten Kanadas (~0.56–0.58)"
         ],
         "risks": [
-          "Verletzungsfrage um Alphonso Davies könnte Kanadas Offensive schwächen",
-          "Südafrika steht oft kompakt und tief – Außenseiter kann Favorit ausbremsen, Remis realistisch",
-          "Beide Teams nur 4 Tage Pause, mögliche Rotation/Ermüdung",
-          "Kein H2H-Datenwert verfügbar, erhöhte Unsicherheit"
+          "Südafrika steht oft tief und kompakt (47% Clean Sheets), könnte das Spiel zermürben und ein Remis erzwingen",
+          "Kanada zuletzt schwankend (1:2 gegen Schweiz, 1:1 gegen Bosnien) – Defensivanfälligkeit bei Gegenstößen",
+          "Davies-Verletzungsstatus nicht zu 100% gesichert – Ausfall würde Kanada schwächen",
+          "K.o.-Charakter (keine Gruppentabelle) kann zu vorsichtigem, torarmem Spiel führen"
         ]
       },
       "chatgpt": {
@@ -104,27 +105,28 @@
         },
         "probabilities": {
           "home": 0.22,
-          "draw": 0.25,
-          "away": 0.53
+          "draw": 0.26,
+          "away": 0.52
         },
-        "confidence": 0.7,
+        "confidence": 0.65,
         "keyFactors": [
-          "Kanadas höhere Elo-Bewertung gegenüber Südafrika",
-          "Kanadas jüngster 6:0-Sieg gegen Katar zeigt Offensivkraft",
-          "Verletzungsstatus von Alphonso Davies könnte die kanadische Offensive beeinträchtigen, falls er ausfällt"
+          "Kanada hat eine höhere Elo-Bewertung und formtechnisch ähnliche Ergebnisse wie Südafrika.",
+          "Kanadas Sieg gegen Katar mit 6:0 zeigt ihre Offensivkraft gegen schwächere Gegner.",
+          "Südafrika hat gegen Mexiko verloren, während Kanadas einzige Niederlage gegen Schweiz war.",
+          "Alphonso Davies' mögliche Rückkehr kann Kanadas Angriffsstärke erhöhen."
         ],
         "risks": [
-          "Südafrikas Sieg gegen Südkorea zeigt defensive Stärke",
-          "Neutraler Spielort reduziert den Vorteil der Heimfans"
+          "Die Partie findet an einem neutralen Ort statt, was den Heimvorteil eliminiert.",
+          "Turnier-Kontext: Beide Teams könnten unterschiedlich agieren in der Gruppenphase."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.9667,
     "ensembleWeights": {
       "claude": 0.5038,
       "chatgpt": 0.4962
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599), besserer Torausbeute (1.85 vs 1.22) und stabilerer Defensive (0.78 Gegentore, 51,6% Zu-Null); Mit-Gastgeber-Vorteil für Kanada bei nominell neutralem Spielort plus klare Marktneigung (Auswärts ~58%); Kanada zeigte Offensivpotenzial (6:0 gegen Katar), bleibt aber schwankend (1:2 gegen Schweiz). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599), besserer Offensive (1.85 vs 1.22 Tore/Spiel) und stabilerer Defensive (0.78 Gegentore, 51.6% Clean Sheets); Rückkehr von Alphonso Davies stärkt Kanadas Offensive und steigert das Momentum; Co-Gastgeber-Vorteil (hostAdvantageTeamId CAN) trotz nominell neutralem Spielort. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:59adf2e289d333b857f8f5c9ad9aaa62ed8c11522bafbf4e6cf04b11fc021531"
   },
   "predictionHistory": [
@@ -192,11 +194,24 @@
         "away": 0.5532
       },
       "confidence": 0.5731
+    },
+    {
+      "generatedAt": "2026-06-28T09:27:57.660Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.1896,
+        "draw": 0.2515,
+        "away": 0.5589
+      },
+      "confidence": 0.6315
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-28T09:32:23.820Z",
+    "updatedAt": "2026-06-28T10:01:53.825Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.1615,
