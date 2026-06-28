@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-28T06:03:51.901Z",
+    "generatedAt": "2026-06-28T07:03:56.321Z",
     "home": {
       "teamId": "RSA",
       "elo": 1599,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T04:03:56.270Z",
+    "generatedAt": "2026-06-28T07:03:56.321Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.1886,
-      "draw": 0.2581,
+      "home": 0.1885,
+      "draw": 0.2583,
       "away": 0.5532
     },
-    "confidence": 0.598,
+    "confidence": 0.5731,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,8 +75,8 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
-          "away": 2
+          "home": 0,
+          "away": 1
         },
         "probabilities": {
           "home": 0.19,
@@ -85,48 +85,48 @@
         },
         "confidence": 0.55,
         "keyFactors": [
-          "Kanada mit höherem Elo (1650 vs 1599) und deutlich besserer Offensive (goalsForAvg 1.85, u.a. 6:0 gegen Qatar)",
-          "Kanada defensiv stabiler (cleanSheetRate 0.52, goalsAgainst 0.78) als Südafrika",
-          "Gastgeber-Vorteil Kanada trotz neutralem Spielort gelistet",
-          "Beide Teams in ähnlicher gewichteter Form (~1.50), aber Kanada mit höherer Gegnerqualität in Topspielen"
+          "Kanada hat klar höheren Elo (1650 vs 1599), bessere Offensive (1,85 Tore/Spiel) und stabilere Defensive (0,78 Gegentore, 51,6% Clean Sheets)",
+          "Gastgeberbonus liegt bei Kanada, was den Außenseiter-Vorteil Südafrikas auf neutralem Platz weiter relativiert",
+          "Südafrikas Form ist defensiv ordentlich (1:0 gegen Südkorea), aber offensiv limitiert (nur 0,86 erwartete Tore)",
+          "Baseline und Markt sind sich einig: Kanada klarer Favorit (~56%), Remis als zweitwahrscheinlichster Ausgang"
         ],
         "risks": [
-          "Südafrika kompakt und mit ordentlicher Defensive (CS 0.47), kann tief stehen und Remis erzwingen",
-          "Mögliche Verletzungssorgen bei Kanada (Davies-Update) könnten Offensivkraft schwächen",
-          "Geringer Abstand zwischen den Teams macht Unentschieden realistisch",
-          "Südafrika zeigte Momentum mit Sieg gegen Südkorea (1:0)"
+          "Südafrika steht oft tief und kompakt; ein Remis (1:1/0:0) ist realistisch, gerade in WM-Gruppenspielen",
+          "Unsicherheit um Alphonso Davies' Fitness könnte Kanadas Offensivkraft schwächen",
+          "Kanada zeigte zuletzt schwankende Leistungen (6:0 gegen Qatar, aber 1:2 gegen Schweiz)",
+          "Kein H2H-Datenpunkt vorhanden, erhöht Unsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 2
         },
         "probabilities": {
           "home": 0.2,
           "draw": 0.25,
           "away": 0.55
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Keine direkte Begegnung in der Vergangenheit, daher keine h2h-Daten.",
-          "Kanada zeigt insgesamt bessere Elo-Werte und eine robuste defensive Statistik.",
-          "Alphonso Davies könnte verletzt sein, was Kanada schwächen könnte.",
-          "Südafrika hat kürzlich gegen einen stärkeren Gegner gewonnen (Südkorea).",
-          "Kanada zeigt offensive Stärke durch hohe Tore gegen Katar."
+          "Kanada hat eine stärkere aktuelle Form, insbesondere 6:0 gegen Katar",
+          "Vorteil Kanada in der Elo-Zahl und durchschnittlicher Torproduktion",
+          "South Africa konnte in den letzten WM-Spielen nur einmal gewinnen",
+          "Die Verletzungsungewissheit von Alphonso Davies kann Kanada etwas schwächen"
         ],
         "risks": [
-          "Kanada spielt eventuell ohne Alphonso Davies, einen ihrer Starspieler.",
-          "Beide Teams haben ähnliche Formzahlen, was auf eine engere Partie als erwartet hindeuten könnte."
+          "Verletzungsstatus von Alphonso Davies unklar, könnte Kanadas Leistung beeinträchtigen",
+          "Neutrales Spielort mildert möglichen Heimvorteil",
+          "South Africa's defensiv starke Leistung gegen Süd Korea kann Überraschungsmoment enthalten"
         ]
       }
     },
     "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.504,
-      "chatgpt": 0.496
+      "claude": 0.5038,
+      "chatgpt": 0.4962
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada mit höherem Elo (1650 vs 1599) und deutlich besserer Offensive (goalsForAvg 1.85, u.a. 6:0 gegen Qatar); Kanada defensiv stabiler (cleanSheetRate 0.52, goalsAgainst 0.78) als Südafrika; Gastgeber-Vorteil Kanada trotz neutralem Spielort gelistet. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Kanada hat klar höheren Elo (1650 vs 1599), bessere Offensive (1,85 Tore/Spiel) und stabilere Defensive (0,78 Gegentore, 51,6% Clean Sheets); Gastgeberbonus liegt bei Kanada, was den Außenseiter-Vorteil Südafrikas auf neutralem Platz weiter relativiert; Südafrikas Form ist defensiv ordentlich (1:0 gegen Südkorea), aber offensiv limitiert (nur 0,86 erwartete Tore). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:59adf2e289d333b857f8f5c9ad9aaa62ed8c11522bafbf4e6cf04b11fc021531"
   },
   "predictionHistory": [
@@ -168,11 +168,24 @@
         "away": 0.541
       },
       "confidence": 0.603
+    },
+    {
+      "generatedAt": "2026-06-28T04:03:56.270Z",
+      "predictedScore": {
+        "home": 0,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.1886,
+        "draw": 0.2581,
+        "away": 0.5532
+      },
+      "confidence": 0.598
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-28T06:05:35.470Z",
+    "updatedAt": "2026-06-28T07:05:43.618Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1728,
