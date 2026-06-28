@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-28T04:47:15.576Z",
+    "generatedAt": "2026-06-28T05:03:51.286Z",
     "home": {
       "teamId": "BRA",
       "elo": 1827,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-26T13:03:51.713Z",
+    "generatedAt": "2026-06-28T05:03:51.286Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.505,
-      "draw": 0.2432,
-      "away": 0.2518
+      "home": 0.5432,
+      "draw": 0.2497,
+      "away": 0.2071
     },
-    "confidence": 0.2575,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,12 +72,66 @@
         "away": 1.1
       }
     },
-    "inputHash": "sha256:fe79bf251bf44ee7c38f2e060f5babad4bb23fdc16eba274590b9082c51a2fc0"
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Brasilien mit hoher Elo (1827) und starker Form (3:0 vs Schottland, 3:0 vs Haiti), Rückkehr von Neymar und explosiver Vinícius belebt die Offensive",
+          "Japan ebenfalls offensivstark (4:0 vs Tunesien, je 2:2 vs Niederlande) mit sehr guter Defensivquote (cleanSheetRate 0.556), klar bestes asiatisches Team",
+          "Beide Teams torgefährlich (goalsForAvg ~2.0), aber Brasilien defensiv leicht solider und insgesamt individuell überlegen",
+          "Markt sieht Brasilien klarer vorn (0.57), Baseline etwas zurückhaltender (0.505) – mein Wert liegt dazwischen"
+        ],
+        "risks": [
+          "Brasilien laut News bereits für K.o.-Runde qualifiziert – mögliche Rotation/Verwaltungsmodus senkt Intensität und begünstigt Japan oder ein Remis",
+          "Unruhe im brasilianischen Lager (Ärger über VAR/FIFA) könnte Fokus stören",
+          "Japans kompakte, taktisch disziplinierte Spielweise kann Favoriten ausbremsen – Remis ist realistisch",
+          "Keine H2H-Daten verfügbar, erhöht Prognoseunsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.55,
+          "draw": 0.25,
+          "away": 0.2
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Brasilien hat mit der Rückkehr von Neymar einen Leistungsträger zurück, was ihre Offensivstärke erhöht.",
+          "Japan zeigt eine solide Form auf hohem Niveau und hat kürzlich gegen starke Gegner wie die Niederlande remis gespielt.",
+          "Keine historischen Direktbegegnungen beeinflussen die Bewertung direkt.",
+          "Das Match findet auf neutralem Boden statt, wodurch Heimvorteil entfällt."
+        ],
+        "risks": [
+          "Japan könnte defensiv schwerer zu brechen sein als erwartet, ähnlich wie im Spiel gegen Schweden.",
+          "Brasiliens interne Kritik an VAR und FIFA könnte die Moral innerhalb des Teams beeinflussen."
+        ]
+      }
+    },
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5038,
+      "chatgpt": 0.4962
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brasilien mit hoher Elo (1827) und starker Form (3:0 vs Schottland, 3:0 vs Haiti), Rückkehr von Neymar und explosiver Vinícius belebt die Offensive; Japan ebenfalls offensivstark (4:0 vs Tunesien, je 2:2 vs Niederlande) mit sehr guter Defensivquote (cleanSheetRate 0.556), klar bestes asiatisches Team; Beide Teams torgefährlich (goalsForAvg ~2.0), aber Brasilien defensiv leicht solider und insgesamt individuell überlegen. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:3e4e4055f0ad5d564b612301e6845d06a812796ac2f3f3c2ffaa1ea347e80910"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-28T04:47:16.046Z",
+    "updatedAt": "2026-06-28T05:03:51.830Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5686,
