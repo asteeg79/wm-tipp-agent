@@ -92,9 +92,48 @@ export function MatchPage() {
           <div>
             <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
               {t("match.probabilities")}
+              {match.stage !== "group" && (
+                <span className="ml-1 normal-case tracking-normal text-fg-faint">
+                  · {t("match.after90")}
+                </span>
+              )}
             </div>
             <ProbabilityBar p={pred.probabilities} />
           </div>
+
+          {/* K.-o.: Weiterkommen nach Verlängerung/Elfmeter */}
+          {match.stage !== "group" && pred.advance && (
+            <div>
+              <div className="mb-1 flex items-baseline justify-between gap-2 text-xs uppercase tracking-wide text-fg-faint">
+                <span>{t("match.advance")}</span>
+                <span className="normal-case tracking-normal">
+                  {t("match.advanceNote")}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3 text-sm font-medium">
+                <span
+                  className={
+                    pred.advance.home >= pred.advance.away
+                      ? "font-bold text-acc"
+                      : "text-fg-muted"
+                  }
+                >
+                  {home?.name ?? match.homeTeamId}{" "}
+                  {formatPercent(pred.advance.home)}
+                </span>
+                <span
+                  className={
+                    pred.advance.away > pred.advance.home
+                      ? "font-bold text-acc"
+                      : "text-fg-muted"
+                  }
+                >
+                  {formatPercent(pred.advance.away)}{" "}
+                  {away?.name ?? match.awayTeamId}
+                </span>
+              </div>
+            </div>
+          )}
 
           {/* Warum dieser Tipp (keyFactors/risks) */}
           {hasAi && <WhySection models={models!} />}

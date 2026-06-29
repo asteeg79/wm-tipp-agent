@@ -66,6 +66,16 @@ export const Prediction = z.object({
     .object({ claude: Probability, chatgpt: Probability })
     .optional(),
   rationale: z.string().optional(),
+  /**
+   * NUR K.-o.-Spiele: Wahrscheinlichkeit, dass das Heim-Team WEITERKOMMT (nach
+   * Verlängerung/Elfmeter, falls nötig). advance = 90′-Sieg + Remis·Tiebreak.
+   */
+  advance: z.object({ home: Probability, away: Probability }).optional(),
+  /**
+   * NUR K.-o.: Ensemble-Tiebreak — P(Heim gewinnt Verlängerung/Elfmeter bei
+   * 90′-Remis). Mischung aus Elo-Basis und (falls vorhanden) KI-Einschätzung.
+   */
+  tiebreakWinProbHome: Probability.optional(),
   /** Hash des Feature-Bundles für Re-Trigger-Logik. */
   inputHash: z.string().optional(),
 });

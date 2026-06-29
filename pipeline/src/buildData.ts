@@ -523,6 +523,36 @@ function recentResultsOf(results: TeamResult[], limit: number): RecentResult[] {
     }));
 }
 
+/** P(Heim gewinnt Verlängerung/Elfmeter) aus Elo, gedämpft Richtung 50/50. */
+function eloTiebreakHome(eloHome: number, eloAway: number): number {
+  const eloWin = 1 / (1 + 10 ** ((eloAway - eloHome) / 400));
+  return 0.5 + (eloWin - 0.5) * config.tiebreak.eloDamp;
+}
+
+/**
+ * K.-o.-Weiterkommen ergänzen: P(Heim weiter) = P(Heimsieg 90′) +
+ * P(Remis)·Tiebreak. Tiebreak = Elo-Basis, bei vorhandener KI-Einschätzung
+ * (`tiebreakWinProbHome`) damit gemischt. Nur K.-o.-Spiele; mutiert prediction.
+ */
+function applyAdvance(match: Match): void {
+  if (match.stage === "group") return;
+  const p = match.prediction;
+  const fb = match.featureBundle;
+  if (!p || !fb) return;
+  const eloTie = eloTiebreakHome(fb.home.elo, fb.away.elo);
+  const aiTie = p.tiebreakWinProbHome;
+  const tie =
+    typeof aiTie === "number"
+      ? config.tiebreak.aiWeight * aiTie +
+        (1 - config.tiebreak.aiWeight) * eloTie
+      : eloTie;
+  const advHome = p.probabilities.home + p.probabilities.draw * tie;
+  match.prediction = {
+    ...p,
+    advance: { home: round(advHome, 4), away: round(1 - advHome, 4) },
+  };
+}
+
 /**
  * Schreibt die Match-Dokumente. Für anstehende Partien mit bekannter Historie:
  * Feature-Bundle + Baseline (Phase 4); falls KI-Ensemble aktiv und Re-Trigger
@@ -712,6 +742,7 @@ async function writeMatches(
               ...(groupContext ? { groupContext } : {}),
               homeRecent: recentResultsOf(homeResults, 5),
               awayRecent: recentResultsOf(awayResults, 5),
+              ...(stage !== "group" ? { isKnockout: true } : {}),
             },
           });
           continue;
@@ -732,6 +763,7 @@ async function writeMatches(
       if (prev.featureBundle) match.featureBundle = prev.featureBundle;
     }
 
+    applyAdvance(match);
     await writeJson(matchPath(fx.matchId), Match, match);
     matches.push(match);
     written++;
@@ -770,6 +802,7 @@ async function writeMatches(
         p.match.prediction = p.prev?.prediction ?? p.baselinePrediction;
         aiSkipped++;
       }
+      applyAdvance(p.match);
       await writeJson(matchPath(p.matchId), Match, p.match);
       matches.push(p.match);
       written++;
@@ -807,6 +840,8 @@ async function writePredictionsIndex(
         if (pred.baseline?.expectedGoals) {
           entry.expectedGoals = pred.baseline.expectedGoals;
         }
+        // K.-o.-Weiterkommen (nach Verlängerung/Elfmeter).
+        if (pred.advance) entry.advance = pred.advance;
       }
       // Markt-Snapshot für den "wir vs. Markt"-Vergleich in der Bilanz.
       if (m.market?.probabilities) {

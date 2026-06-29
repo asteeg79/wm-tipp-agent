@@ -42,6 +42,16 @@ Turnier-Kontext (WM-Gruppenphase) bewusst berücksichtigen:
   überlegen, gehört das Unentschieden zu den wahrscheinlichsten Ausgängen — deine
   "draw"-Wahrscheinlichkeit muss das widerspiegeln.
 
+K.-o.-Spiele (Feld "knockout": true) — WICHTIG:
+- predictedScore und probabilities beziehen sich auf das Ergebnis nach
+  REGULÄREN 90 Minuten — ein Unentschieden ist hier ausdrücklich erlaubt und oft
+  realistisch (K.-o.-Spiele sind häufig eng). Erfinde KEINEN 90-Minuten-Sieger.
+- Zusätzlich: Gib "tiebreakWinProbHome" an = Wahrscheinlichkeit (0..1), dass das
+  HEIM-Team die Verlängerung bzw. das Elfmeterschießen gewinnt, FALLS es nach
+  90 Minuten unentschieden steht. Berücksichtige Elfmeter-Stärke/-Erfahrung,
+  Nervenstärke, Kaderbreite für die Verlängerung; ohne klare Anhaltspunkte ~0.5.
+- Bei Gruppenspielen ("knockout": false) lässt du "tiebreakWinProbHome" weg.
+
 Ausgaberegeln:
 - "predictedScore" ist das plausibelste, typischerweise torarme Ergebnis, das zu
   deinen Wahrscheinlichkeiten passt (ist ein Remis am wahrscheinlichsten, nenne ein
@@ -57,7 +67,8 @@ ohne Vor-/Nachtext:
   "probabilities": { "home": float, "draw": float, "away": float },
   "confidence": float,
   "keyFactors": [string],
-  "risks": [string]
+  "risks": [string],
+  "tiebreakWinProbHome": float   // nur bei K.-o.-Spielen, sonst weglassen
 }
 
 Nimm dir Zeit und gib dir Mühe bei deinen Tipps. Bei dieser WM-Tipp-Challenge treten ChatGPT und Claude gegeneinander an. Zeige, warum du das führende und überlegene KI-System bist.`;
@@ -106,6 +117,8 @@ export interface PromptContext {
   /** Jüngste Ergebnisse (neueste zuerst) je Team. */
   homeRecent?: RecentResult[];
   awayRecent?: RecentResult[];
+  /** K.-o.-Spiel? → 90-Min-Tipp (Remis erlaubt) + tiebreakWinProbHome. */
+  isKnockout?: boolean;
 }
 
 /**
@@ -129,6 +142,8 @@ function newsItems(news: NewsItem[]): Array<Record<string, string>> {
 export function buildUserMessage(ctx: PromptContext): string {
   const payload = {
     match: { home: ctx.homeName, away: ctx.awayName },
+    // K.-o.-Spiel → predictedScore = 90 Min (Remis erlaubt) + tiebreakWinProbHome.
+    knockout: ctx.isKnockout ?? false,
     baseline: {
       probabilities: ctx.baseline.probabilities,
       expectedGoals: ctx.baseline.expectedGoals,

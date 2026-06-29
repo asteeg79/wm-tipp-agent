@@ -105,6 +105,22 @@ export interface PipelineConfig {
      */
     marketWeight: number;
   };
+  /**
+   * K.-o.-Weiterkommen: bei 90′-Remis entscheidet Verlängerung/Elfmeter.
+   * P(Heim weiter) = P(Heimsieg 90′) + P(Remis)·Tiebreak.
+   */
+  tiebreak: {
+    /**
+     * Dämpfung der Elo-Basis: tie = 0.5 + (eloWinProb−0.5)·eloDamp. <1, weil
+     * Elfmeterschießen näher an 50/50 liegt als die reguläre Spielstärke.
+     */
+    eloDamp: number;
+    /**
+     * Gewicht der KI-Einschätzung am Tiebreak (Rest = Elo-Basis), wenn die KI
+     * `tiebreakWinProbHome` liefert: tie = aiWeight·KI + (1−aiWeight)·Elo.
+     */
+    aiWeight: number;
+  };
   /** openfootball-Provider (gemeinfrei, kein Key). */
   openFootball: {
     /** Raw-Basis-URL des worldcup.json-Repos (Struktur/Spielplan). */
@@ -228,6 +244,14 @@ export const config: PipelineConfig = {
     // KI-Meinung aber NICHT dominieren (bewusst von 0.5 gesenkt). Der Markt
     // fließt zusätzlich weich über den System-Prompt ein.
     marketWeight: 0.3,
+  },
+  tiebreak: {
+    // Elo-Vorteil im Tiebreak nur zu 60 % durchschlagen lassen — Elfmeter sind
+    // notorisch nah an 50/50 (Verlängerung gibt dem Stärkeren etwas mehr).
+    eloDamp: 0.6,
+    // KI-Tiebreak und Elo-Basis je zur Hälfte mischen, wenn die KI einen Wert
+    // liefert (Elfmeter-Stärke/Erfahrung vs. reine Spielstärke).
+    aiWeight: 0.5,
   },
   openFootball: {
     worldCupBaseUrl:

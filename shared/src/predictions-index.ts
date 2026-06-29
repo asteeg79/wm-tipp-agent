@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { IsoDateTime, Outcome1x2, ScoreLine, Stage } from "./common.js";
+import {
+  IsoDateTime,
+  Outcome1x2,
+  Probability,
+  ScoreLine,
+  Stage,
+} from "./common.js";
 import { ExpectedGoals } from "./match.js";
 
 /** Genauigkeits-Metriken pro abgeschlossener Partie. */
@@ -29,6 +35,8 @@ export const PredictionIndexEntry = z.object({
   expectedGoals: ExpectedGoals.optional(),
   /** Buchmacher-1X2 (Snapshot) — für den "wir vs. Markt"-Vergleich. */
   marketProbabilities: Outcome1x2.optional(),
+  /** NUR K.-o.: Weiterkommen-Wahrscheinlichkeit (nach Verlängerung/Elfmeter). */
+  advance: z.object({ home: Probability, away: Probability }).optional(),
   actualResult: ScoreLine.nullable().default(null),
   accuracy: AccuracyEntry.optional(),
 });

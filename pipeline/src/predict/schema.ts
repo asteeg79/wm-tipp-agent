@@ -26,6 +26,12 @@ export const LlmPredictionRaw = z.object({
   // Obergrenzen tolerant: LLMs überschreiten sie gern leicht → später kürzen.
   keyFactors: z.array(z.string()).min(1),
   risks: z.array(z.string()).min(1),
+  /**
+   * NUR K.-o.-Spiele: Wahrscheinlichkeit (0..1), dass das HEIM-Team die
+   * Verlängerung bzw. das Elfmeterschießen gewinnt, FALLS es nach 90 Minuten
+   * unentschieden steht. Bei Gruppenspielen weglassen.
+   */
+  tiebreakWinProbHome: z.number().min(0).max(1).optional(),
 });
 
 export const LlmPrediction = LlmPredictionRaw.transform((p) => ({

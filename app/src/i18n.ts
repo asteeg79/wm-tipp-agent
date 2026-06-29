@@ -63,6 +63,7 @@ const resources = {
         nextRoundFinal:
           "Sechzehntelfinal-Paarungen nach dem echten WM-Schema (Sieger A trifft Zweiter B …).",
         vs: "gegen",
+        advances: "weiter",
       },
       team: {
         results: "Ergebnisse (letzte 2 Jahre)",
@@ -98,6 +99,9 @@ const resources = {
           "Deterministische Baseline (Elo + Poisson). Das KI-Ensemble folgt in Phase 5.",
         confidence: "Konfidenz",
         probabilities: "Wahrscheinlichkeiten",
+        after90: "nach 90 Min",
+        advance: "Weiterkommen",
+        advanceNote: "nach Verlängerung/Elfmeter",
         expectedGoals: "Erwartete Tore",
         home: "Heim",
         draw: "Remis",
@@ -347,6 +351,7 @@ const resources = {
         nextRoundFinal:
           "Round-of-32 pairings following the real World Cup bracket (Winner A plays Runner-up B …).",
         vs: "vs",
+        advances: "advances",
       },
       team: {
         results: "Results (last 2 years)",
@@ -382,6 +387,9 @@ const resources = {
           "Deterministic baseline (Elo + Poisson). The AI ensemble follows in phase 5.",
         confidence: "Confidence",
         probabilities: "Probabilities",
+        after90: "after 90 min",
+        advance: "Advancement",
+        advanceNote: "after extra time/penalties",
         expectedGoals: "Expected goals",
         home: "Home",
         draw: "Draw",

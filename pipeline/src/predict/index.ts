@@ -48,6 +48,8 @@ export interface EvaluateInput {
   /** Jüngste Ergebnisse je Team (neueste zuerst). */
   homeRecent?: RecentResult[];
   awayRecent?: RecentResult[];
+  /** K.-o.-Spiel? → 90-Min-Tipp + Tiebreak-Abfrage im Prompt. */
+  isKnockout?: boolean;
 }
 
 /** Baut den PromptContext aus dem EvaluateInput (eine Quelle für beide Pfade). */
@@ -65,6 +67,7 @@ function promptContextOf(input: EvaluateInput): PromptContext {
     ...(input.groupContext ? { groupContext: input.groupContext } : {}),
     ...(input.homeRecent ? { homeRecent: input.homeRecent } : {}),
     ...(input.awayRecent ? { awayRecent: input.awayRecent } : {}),
+    ...(input.isKnockout ? { isKnockout: true } : {}),
   };
 }
 

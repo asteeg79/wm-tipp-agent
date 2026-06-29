@@ -181,6 +181,17 @@ export function reconcile(
     inputHash,
   };
   if (useAcc) prediction.ensembleWeights = accWeights!.weights;
+  // K.-o.-Tiebreak: Mittel der Modell-Einschätzungen (falls geliefert). Die
+  // Elo-Basis + finale advance-Wahrscheinlichkeit ergänzt buildData (braucht Elo).
+  const tbs = results
+    .map((r) => r.prediction.tiebreakWinProbHome)
+    .filter((x): x is number => typeof x === "number");
+  if (tbs.length > 0) {
+    prediction.tiebreakWinProbHome = round(
+      tbs.reduce((s, x) => s + x, 0) / tbs.length,
+      4,
+    );
+  }
   return prediction;
 }
 

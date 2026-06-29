@@ -24,23 +24,45 @@ interface Props {
 
 const pairKey = (a: string, b: string): string => [a, b].sort().join("|");
 
+interface TipDisplay {
+  aGoals: number;
+  bGoals: number;
+  /** Hervorgehobenes Team: bei K.-o. der Weiterkommende, sonst 90′-Sieger. */
+  winner: string;
+  /** Bei K.-o. die Weiterkommen-Wahrscheinlichkeit, sonst die 1X2-Sieg-Wkt. */
+  winProb: number;
+  /** true = winProb/winner meint „kommt weiter" (nach Verlängerung/Elfmeter). */
+  advance: boolean;
+}
+
 /** Anzeigewerte aus dem echten KI-Tipp einer aufgelösten K.-o.-Partie. */
-function tipDisplay(
-  entry: PredictionIndexEntry,
-  a: string,
-): { aGoals: number; bGoals: number; winner: string; winProb: number } | null {
+function tipDisplay(entry: PredictionIndexEntry, a: string): TipDisplay | null {
   const ps = entry.predictedScore;
   const pr = entry.probabilities;
   if (!ps || !pr) return null;
   const aHome = entry.homeTeamId === a;
-  // Sieger aus der Tipp-Tendenz; bei Remis-Tipp nach Wahrscheinlichkeit.
+  const aGoals = aHome ? ps.home : ps.away;
+  const bGoals = aHome ? ps.away : ps.home;
+  // K.-o.: Score = 90 Min (Remis möglich), Sieger/% = WEITERKOMMEN.
+  if (entry.advance) {
+    const homeAdvances = entry.advance.home >= entry.advance.away;
+    return {
+      aGoals,
+      bGoals,
+      winner: homeAdvances ? entry.homeTeamId : entry.awayTeamId,
+      winProb: homeAdvances ? entry.advance.home : entry.advance.away,
+      advance: true,
+    };
+  }
+  // Sonst (z. B. vor Auslosung): 90′-Tendenz; bei Remis nach Wahrscheinlichkeit.
   const winnerHome =
     ps.home !== ps.away ? ps.home > ps.away : pr.home >= pr.away;
   return {
-    aGoals: aHome ? ps.home : ps.away,
-    bGoals: aHome ? ps.away : ps.home,
+    aGoals,
+    bGoals,
     winner: winnerHome ? entry.homeTeamId : entry.awayTeamId,
     winProb: winnerHome ? pr.home : pr.away,
+    advance: false,
   };
 }
 
@@ -111,6 +133,7 @@ export function PhasePairings({
           const bGoals = tip ? tip.bGoals : m.score.b;
           const winner = tip ? tip.winner : m.winner;
           const winProb = tip ? tip.winProb : m.winProb;
+          const advance = tip?.advance ?? false;
           return (
             <li
               key={i}
@@ -131,7 +154,12 @@ export function PhasePairings({
                 win={winner === m.b}
                 source={sourceOf.get(m.b)}
               />
-              <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2/60 px-2 py-0.5">
+              <div className="flex items-center justify-end gap-1 border-t border-edge/70 bg-surface-2/60 px-2 py-0.5">
+                {advance && (
+                  <span className="font-mono text-[9px] uppercase tracking-wider text-acc/80">
+                    {t("groups.advances")}
+                  </span>
+                )}
                 <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
                   {formatPercent(winProb)}
                 </span>
