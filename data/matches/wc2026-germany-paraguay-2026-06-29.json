@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T10:03:49.853Z",
+    "generatedAt": "2026-06-29T11:03:53.464Z",
     "home": {
       "teamId": "GER",
       "elo": 1793,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-29T09:47:40.463Z",
+    "generatedAt": "2026-06-29T11:03:53.464Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.7071,
-      "draw": 0.194,
-      "away": 0.0989
+      "home": 0.6743,
+      "draw": 0.1967,
+      "away": 0.1289
     },
-    "confidence": 0.65,
+    "confidence": 0.6457,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,30 +73,58 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.67,
+          "draw": 0.2,
+          "away": 0.13
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Germany klar überlegen in Elo (1793 vs 1601) und Offensivkraft (goalsForAvg 2.89 vs 0.84)",
+          "Paraguay defensiv kompakt: hohe Clean-Sheet-Rate (0.46), zuletzt 0:0 gegen Australien und 1:0 gegen Türkei in der Gruppe",
+          "K.o.-Spiel: Paraguay (Alfaro/Gomez) tritt betont kampfbereit und tiefstehend an, was Favoriten oft das Leben schwer macht",
+          "Deutsche Defensivanfälligkeit: in jedem der letzten Spiele Gegentore (auch 1:2 gegen Ecuador), cleanSheetRate nur 0.37"
+        ],
+        "risks": [
+          "Markt (0.71) und Baseline (0.81) deutlich auseinander; ich liege näher am Markt – Baseline überschätzt Heimstärke",
+          "Paraguays tiefe Block-Defensive kann zu zähem, knappem Spiel führen, Remis/Verlängerung möglich",
+          "Aufstellungsunsicherheit bei Deutschland (Kimmich/Undav-Entscheidungen) könnte Offensivabstimmung beeinflussen",
+          "Ein frühes Gegentor gegen kompakte Paraguayer würde das Spiel öffnen und Unsicherheit erhöhen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.7000000000000001,
-          "draw": 0.20000000000000004,
-          "away": 0.10000000000000002
+          "home": 0.65,
+          "draw": 0.2,
+          "away": 0.15
         },
-        "confidence": 0.65,
+        "confidence": 0.7,
         "keyFactors": [
-          "Germany's recent form includes a strong attacking performance with a high goalscoring average.",
-          "Germany shows a clean sheet rate of 0.367, indicating a moderately good defense.",
-          "Paraguay's recent results include a win against Turkey and a defensive draw against Australia, suggesting they can be resilient defensively."
+          "Germany's overall strong form and performance in recent matches, scoring frequently and winning against teams like Ivory Coast and Curaçao.",
+          "Paraguay's ability to hold Australia to a draw and narrowly defeat Turkey indicates they can be compact defensively.",
+          "The neutral venue eliminates the typical 'home advantage' for Germany."
         ],
         "risks": [
-          "Germany's morale could be affected due to external criticism and pressure, which may lead to underperformance.",
-          "Paraguay's ability to secure a draw against a traditionally strong opponent like Australia indicates potential for defensive stability."
+          "Potential internal turmoil in the German camp due to uncertain team dynamics as indicated by recent coaching changes.",
+          "Paraguay's strong motivation and resilience having come through a tough group stage."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Germany's recent form includes a strong attacking performance with a high goalscoring average.; Germany shows a clean sheet rate of 0.367, indicating a moderately good defense.; Paraguay's recent results include a win against Turkey and a defensive draw against Australia, suggesting they can be resilient defensively.. Marktquoten zu 30 % eingemischt.",
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5037,
+      "chatgpt": 0.4963
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany klar überlegen in Elo (1793 vs 1601) und Offensivkraft (goalsForAvg 2.89 vs 0.84); Paraguay defensiv kompakt: hohe Clean-Sheet-Rate (0.46), zuletzt 0:0 gegen Australien und 1:0 gegen Türkei in der Gruppe; K.o.-Spiel: Paraguay (Alfaro/Gomez) tritt betont kampfbereit und tiefstehend an, was Favoriten oft das Leben schwer macht. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:3bcc712e0b8779fadca82660473bedfa5eb9a642f0ca2e43d4ad004771eb9668"
   },
   "predictionHistory": [
@@ -216,21 +244,34 @@
         "away": 0.1129
       },
       "confidence": 0.7
+    },
+    {
+      "generatedAt": "2026-06-29T09:47:40.463Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.7071,
+        "draw": 0.194,
+        "away": 0.0989
+      },
+      "confidence": 0.65
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T10:03:50.221Z",
+    "updatedAt": "2026-06-29T11:05:37.904Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.7238,
-      "draw": 0.1799,
-      "away": 0.0963
+      "home": 0.7093,
+      "draw": 0.1891,
+      "away": 0.1015
     },
     "decimal": {
-      "home": 1.33,
-      "draw": 5.35,
-      "away": 10
+      "home": 1.36,
+      "draw": 5.1,
+      "away": 9.5
     }
   }
 }
