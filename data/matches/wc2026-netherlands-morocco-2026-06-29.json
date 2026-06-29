@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-28T23:16:37.653Z",
+    "generatedAt": "2026-06-29T04:03:49.749Z",
     "home": {
       "teamId": "NED",
       "elo": 1805,
@@ -22,7 +22,7 @@
       "goalsAgainstAvg": 1.065,
       "cleanSheetRate": 0.355,
       "matchesCount": 31,
-      "daysSinceLastMatch": 3
+      "daysSinceLastMatch": 4
     },
     "away": {
       "teamId": "MAR",
@@ -33,7 +33,7 @@
       "goalsAgainstAvg": 0.514,
       "cleanSheetRate": 0.676,
       "matchesCount": 37,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "h2h": {
       "played": 0,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T13:04:01.177Z",
+    "generatedAt": "2026-06-29T04:03:49.749Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4271,
-      "draw": 0.2842,
-      "away": 0.2888
+      "home": 0.4085,
+      "draw": 0.3018,
+      "away": 0.2897
     },
-    "confidence": 0.511,
+    "confidence": 0.6,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,75 +74,59 @@
       }
     },
     "models": {
-      "claude": {
-        "predictedScore": {
-          "home": 1,
-          "away": 1
-        },
-        "probabilities": {
-          "home": 0.37,
-          "draw": 0.29,
-          "away": 0.34
-        },
-        "confidence": 0.4,
-        "keyFactors": [
-          "Marokko hat den minimal höheren Elo-Wert (1822 vs. 1805) und die deutlich bessere Defensive (Gegentorschnitt 0,51; Clean-Sheet-Rate 67,6 %) – das spricht gegen ein leichtes Durchspielen der Niederlande",
-          "Marokkos jüngste Resultate (1:1 gegen Brasilien, 1:0 gegen Schottland) zeigen Stabilität gegen hochwertige Gegner, während die Niederlande gegen Japan ein 2:2 kassierten und defensiv anfällig wirkten (Gegentorschnitt 1,07)",
-          "Niederlande mit starker Offensive (2,89 Tore/Spiel, 5:1 gegen Schweden, 3:1 gegen Tunesien), trifft aber auf eine der kompaktesten Defensiven des Turniers",
-          "Beide Teams in ähnlich guter Form (recentForm je 2,4), neutraler Spielort ohne Heimvorteil – Partie auf Augenhöhe"
-        ],
-        "risks": [
-          "Marokkos solide Defensive könnte die Niederlande zermürben und das Spiel kippen lassen – mehr Gewicht aufs away-Szenario möglich",
-          "Niederländische Offensivpower kann jederzeit explodieren (5:1, 3:1) und ein knappes Spiel klar entscheiden",
-          "H2H-Datenbasis fehlt komplett (0 Spiele), erhöht die Unsicherheit",
-          "Kaderrotation/Verwaltung möglich, falls Tabellensituation bereits gesichert ist (keine groupStandings verfügbar)"
-        ]
-      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
-          "draw": 0.27,
-          "away": 0.28
+          "home": 0.4,
+          "draw": 0.3,
+          "away": 0.3
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Beide Mannschaften sind in guter Form und haben kürzlich starke Leistungen gezeigt.",
-          "Die Niederlande haben mit 10 Toren in den letzten 3 WM-Spielen eine starke Offensive.",
-          "Marokko hat ebenfalls beeindruckende Leistungen gezeigt, darunter ein Unentschieden gegen Brasilien.",
-          "Neutraler Spielort; kein Heimvorteil für eines der Teams."
+          "Beide Teams in guter Form: Niederlande (3:1 gegen Tunesien, 5:1 gegen Schweden) und Marokko (4:2 gegen Haiti, 1:1 gegen Brasilien)",
+          "Niederlande mit leichtem Vorteil bei den Tore pro Spiel, aber auch mehr Gegentore"
         ],
         "risks": [
-          "Die Kritik an der niederländischen Leistung könnte das Team moralisch belasten.",
-          "Marokko hat eine historische Aufholjagd gegen Haiti gezeigt, das könnte das Team zusätzlich motivieren."
+          "Der relativ ausgeglichene Elo-Wert und die starke Defensivleistung Marokkos mit höherer Clean-Sheet-Rate von 0.676",
+          "Neutrales Spielfeld, das Heimvorteil eliminiert"
         ]
       }
     },
-    "agreement": 0.9467,
-    "ensembleWeights": {
-      "claude": 0.5038,
-      "chatgpt": 0.4962
-    },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko hat den minimal höheren Elo-Wert (1822 vs. 1805) und die deutlich bessere Defensive (Gegentorschnitt 0,51; Clean-Sheet-Rate 67,6 %) – das spricht gegen ein leichtes Durchspielen der Niederlande; Marokkos jüngste Resultate (1:1 gegen Brasilien, 1:0 gegen Schottland) zeigen Stabilität gegen hochwertige Gegner, während die Niederlande gegen Japan ein 2:2 kassierten und defensiv anfällig wirkten (Gegentorschnitt 1,07); Niederlande mit starker Offensive (2,89 Tore/Spiel, 5:1 gegen Schweden, 3:1 gegen Tunesien), trifft aber auf eine der kompaktesten Defensiven des Turniers. Marktquoten zu 30 % eingemischt.",
-    "inputHash": "sha256:1190427ec183219ba73d2af6b2d72318c859a93666abfe138b2e5adcede00328"
+    "agreement": 1,
+    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Beide Teams in guter Form: Niederlande (3:1 gegen Tunesien, 5:1 gegen Schweden) und Marokko (4:2 gegen Haiti, 1:1 gegen Brasilien); Niederlande mit leichtem Vorteil bei den Tore pro Spiel, aber auch mehr Gegentore. Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:19fdb49d0e37707600ae0da6d5fd0344f0659d04213aa0ad5babc1ad7133e726"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-06-28T13:04:01.177Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4271,
+        "draw": 0.2842,
+        "away": 0.2888
+      },
+      "confidence": 0.511
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-28T23:17:28.023Z",
-    "bookmakerCount": 23,
+    "updatedAt": "2026-06-29T04:04:43.191Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4389,
-      "draw": 0.299,
-      "away": 0.2621
+      "home": 0.4284,
+      "draw": 0.306,
+      "away": 0.2656
     },
     "decimal": {
-      "home": 2.18,
-      "draw": 3.2,
-      "away": 3.65
+      "home": 2.25,
+      "draw": 3.15,
+      "away": 3.63
     }
   }
 }
