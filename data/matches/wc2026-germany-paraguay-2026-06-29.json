@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T14:03:48.891Z",
+    "generatedAt": "2026-06-29T15:03:56.564Z",
     "home": {
       "teamId": "GER",
       "elo": 1793,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-29T11:03:53.464Z",
+    "generatedAt": "2026-06-29T15:03:56.564Z",
     "predictedScore": {
       "home": 2,
-      "away": 1
+      "away": 0
     },
     "probabilities": {
-      "home": 0.6743,
-      "draw": 0.1967,
-      "away": 0.1289
+      "home": 0.706,
+      "draw": 0.1908,
+      "away": 0.1033
     },
-    "confidence": 0.6457,
+    "confidence": 0.6647,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,55 +76,59 @@
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.67,
-          "draw": 0.2,
-          "away": 0.13
+          "home": 0.64,
+          "draw": 0.21,
+          "away": 0.15
         },
-        "confidence": 0.6,
+        "confidence": 0.58,
         "keyFactors": [
-          "Germany klar überlegen in Elo (1793 vs 1601) und Offensivkraft (goalsForAvg 2.89 vs 0.84)",
-          "Paraguay defensiv kompakt: hohe Clean-Sheet-Rate (0.46), zuletzt 0:0 gegen Australien und 1:0 gegen Türkei in der Gruppe",
-          "K.o.-Spiel: Paraguay (Alfaro/Gomez) tritt betont kampfbereit und tiefstehend an, was Favoriten oft das Leben schwer macht",
-          "Deutsche Defensivanfälligkeit: in jedem der letzten Spiele Gegentore (auch 1:2 gegen Ecuador), cleanSheetRate nur 0.37"
+          "Deutschland klar stärker (Elo 1793 vs 1601) mit hoher Offensivproduktion (2,89 Tore/Spiel) und besserer Form",
+          "Paraguay defensiv kompakt (Clean-Sheet-Rate 0,46, nur 1,17 Gegentore/Spiel) und steht im K.o.-Spiel tief – 0:0 gegen Australien zeigt Stabilität",
+          "Paraguays Coach Alfaro betont Selbstvertrauen, Team agiert organisiert und ohne Respektangst"
         ],
         "risks": [
-          "Markt (0.71) und Baseline (0.81) deutlich auseinander; ich liege näher am Markt – Baseline überschätzt Heimstärke",
-          "Paraguays tiefe Block-Defensive kann zu zähem, knappem Spiel führen, Remis/Verlängerung möglich",
-          "Aufstellungsunsicherheit bei Deutschland (Kimmich/Undav-Entscheidungen) könnte Offensivabstimmung beeinflussen",
-          "Ein frühes Gegentor gegen kompakte Paraguayer würde das Spiel öffnen und Unsicherheit erhöhen"
+          "Deutschlands Defensive ist anfällig (nur 0,37 Clean Sheets, 1,21 Gegentore/Spiel, 1:2 gegen Ecuador) – ein frühes Gegentor öffnet die Partie",
+          "Paraguay kann tief stehen und auf Konter/Standards lauern; knappe K.o.-Spiele enden oft eng oder remis",
+          "Mögliche Personalrotation/Aufstellungsfragen bei Deutschland (Kimmich-Debatte) sorgen für Unsicherheit"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "probabilities": {
-          "home": 0.65,
-          "draw": 0.2,
-          "away": 0.15
+          "home": 0.75,
+          "draw": 0.18,
+          "away": 0.07
         },
-        "confidence": 0.7,
+        "confidence": 0.8,
         "keyFactors": [
-          "Germany's overall strong form and performance in recent matches, scoring frequently and winning against teams like Ivory Coast and Curaçao.",
-          "Paraguay's ability to hold Australia to a draw and narrowly defeat Turkey indicates they can be compact defensively.",
-          "The neutral venue eliminates the typical 'home advantage' for Germany."
+          "Germany's strong Elo rating and recent form with comfortable victories and high goal output",
+          "Paraguay's varied recent form and lower goal-scoring rate",
+          "Neutral venue minimizes home advantage, but Germany's historical performance in key tournaments and stronger squad depth give them an edge",
+          "Possible tactical changes by Germany's coach could impact the lineup"
         ],
         "risks": [
-          "Potential internal turmoil in the German camp due to uncertain team dynamics as indicated by recent coaching changes.",
-          "Paraguay's strong motivation and resilience having come through a tough group stage."
+          "Germany's recent loss against Ecuador could highlight vulnerabilities",
+          "Paraguay has shown defensive resilience recently, as seen in their draw against Australia"
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9267,
     "ensembleWeights": {
       "claude": 0.5037,
       "chatgpt": 0.4963
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Germany klar überlegen in Elo (1793 vs 1601) und Offensivkraft (goalsForAvg 2.89 vs 0.84); Paraguay defensiv kompakt: hohe Clean-Sheet-Rate (0.46), zuletzt 0:0 gegen Australien und 1:0 gegen Türkei in der Gruppe; K.o.-Spiel: Paraguay (Alfaro/Gomez) tritt betont kampfbereit und tiefstehend an, was Favoriten oft das Leben schwer macht. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutschland klar stärker (Elo 1793 vs 1601) mit hoher Offensivproduktion (2,89 Tore/Spiel) und besserer Form; Paraguay defensiv kompakt (Clean-Sheet-Rate 0,46, nur 1,17 Gegentore/Spiel) und steht im K.o.-Spiel tief – 0:0 gegen Australien zeigt Stabilität; Paraguays Coach Alfaro betont Selbstvertrauen, Team agiert organisiert und ohne Respektangst. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.8229,
+      "away": 0.1771
+    },
+    "tiebreakWinProbHome": 0.575,
     "inputHash": "sha256:3bcc712e0b8779fadca82660473bedfa5eb9a642f0ca2e43d4ad004771eb9668"
   },
   "predictionHistory": [
@@ -257,21 +261,34 @@
         "away": 0.0989
       },
       "confidence": 0.65
+    },
+    {
+      "generatedAt": "2026-06-29T11:03:53.464Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6743,
+        "draw": 0.1967,
+        "away": 0.1289
+      },
+      "confidence": 0.6457
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T14:03:49.416Z",
+    "updatedAt": "2026-06-29T15:05:49.742Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.7091,
-      "draw": 0.1872,
-      "away": 0.1037
+      "home": 0.7119,
+      "draw": 0.1862,
+      "away": 0.1019
     },
     "decimal": {
       "home": 1.36,
-      "draw": 5.15,
-      "away": 9.3
+      "draw": 5.2,
+      "away": 9.5
     }
   }
 }
