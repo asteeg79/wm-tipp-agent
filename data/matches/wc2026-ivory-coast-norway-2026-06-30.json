@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T16:08:15.821Z",
+    "generatedAt": "2026-06-29T17:03:49.242Z",
     "home": {
       "teamId": "CIV",
       "elo": 1694,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-29T05:03:51.697Z",
+    "generatedAt": "2026-06-29T17:03:49.242Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.316,
-      "draw": 0.2493,
-      "away": 0.4347
+      "home": 0.3048,
+      "draw": 0.258,
+      "away": 0.4373
     },
-    "confidence": 0.65,
+    "confidence": 0.495,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,50 +73,96 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.31,
+          "draw": 0.27,
+          "away": 0.42
+        },
+        "confidence": 0.4,
+        "keyFactors": [
+          "Annähernd identische Elo (CIV 1694 vs NOR 1704) – sehr ausgeglichenes Duell auf neutralem Platz",
+          "Norwegens Offensive ist stark (2,72 Tore/Spiel, zuletzt 3:2 vs Senegal, 4:1 vs Irak), aber defensiv anfällig (1,52 Gegentore, 1:4 gegen Frankreich)",
+          "Elfenbeinküste defensiv sehr stabil (nur 0,60 Gegentore, 55,6% Zu-Null) und in K.o.-Spielen abgeklärt",
+          "Markt sieht Norwegen leicht vorne (0,46), die Baseline ebenfalls – beide nahe beieinander"
+        ],
+        "risks": [
+          "Norwegens Topstürmer können jede Defensive knacken – ein einzelner Moment entscheidet",
+          "K.o.-Charakter führt oft zu engem, vorsichtigem Spiel mit wenig Toren",
+          "Ivorische Defensivstabilität vs. norwegische Durchschlagskraft – Spielausgang stark formabhängig",
+          "Keine H2H-Daten zur Kalibrierung vorhanden"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 2
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.33,
           "draw": 0.24,
-          "away": 0.42
+          "away": 0.43
         },
-        "confidence": 0.65,
+        "confidence": 0.6,
         "keyFactors": [
-          "Norway's recent victory over Senegal and high-scoring match against Iraq",
-          "Ivory Coast's strong defensive record with a high clean sheet rate",
-          "Neutral venue reduces home advantage for Ivory Coast"
+          "Norway's recent attacking form with an average of 2.718 goals for per match.",
+          "Ivory Coast's strong defensive performance with a goals against average of 0.598.",
+          "Neutral venue reduces home advantage for both teams.",
+          "Evenly matched Elo ratings: Ivory Coast (1694) and Norway (1704).",
+          "Recent results against strong teams: Norway's win against Senegal and Ivory Coast's narrow loss to Germany."
         ],
         "risks": [
-          "Potential impact on Ivory Coast's morale due to recent media controversy",
-          "Norway's inconsistent defensive performance, conceding multiple goals against France"
+          "Ivory Coast's ability to maintain clean sheets, especially in knockout stages.",
+          "The impact of recent criticism of Ivory Coast's coach on team morale.",
+          "Unpredictability of knockout games and potential for defensive strategies leading to a draw."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Norway's recent victory over Senegal and high-scoring match against Iraq; Ivory Coast's strong defensive record with a high clean sheet rate; Neutral venue reduces home advantage for Ivory Coast. Marktquoten zu 30 % eingemischt.",
-    "advance": {
-      "home": 0.4385,
-      "away": 0.5615
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5037,
+      "chatgpt": 0.4963
     },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Annähernd identische Elo (CIV 1694 vs NOR 1704) – sehr ausgeglichenes Duell auf neutralem Platz; Norwegens Offensive ist stark (2,72 Tore/Spiel, zuletzt 3:2 vs Senegal, 4:1 vs Irak), aber defensiv anfällig (1,52 Gegentore, 1:4 gegen Frankreich); Elfenbeinküste defensiv sehr stabil (nur 0,60 Gegentore, 55,6% Zu-Null) und in K.o.-Spielen abgeklärt. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.434,
+      "away": 0.566
+    },
+    "tiebreakWinProbHome": 0.51,
     "inputHash": "sha256:6d6437babf5f0da0e1926f2a7fd652afd56c954f2897dd62b1f99b480502b13b"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-06-29T05:03:51.697Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.316,
+        "draw": 0.2493,
+        "away": 0.4347
+      },
+      "confidence": 0.65
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T16:10:33.693Z",
+    "updatedAt": "2026-06-29T17:03:49.950Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.2581,
-      "draw": 0.2689,
-      "away": 0.473
+      "home": 0.2649,
+      "draw": 0.2716,
+      "away": 0.4635
     },
     "decimal": {
-      "home": 3.72,
-      "draw": 3.57,
-      "away": 2.03
+      "home": 3.64,
+      "draw": 3.55,
+      "away": 2.08
     }
   }
 }
