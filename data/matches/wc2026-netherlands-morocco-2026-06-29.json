@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T12:03:51.520Z",
+    "generatedAt": "2026-06-29T13:03:54.559Z",
     "home": {
       "teamId": "NED",
       "elo": 1805,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-29T09:47:40.463Z",
+    "generatedAt": "2026-06-29T13:03:54.559Z",
     "predictedScore": {
-      "home": 1,
+      "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3945,
-      "draw": 0.3368,
-      "away": 0.2687
+      "home": 0.4053,
+      "draw": 0.3048,
+      "away": 0.2899
     },
-    "confidence": 0.65,
+    "confidence": 0.4851,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -74,32 +74,60 @@
       }
     },
     "models": {
-      "chatgpt": {
+      "claude": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
-          "draw": 0.35,
-          "away": 0.27
+          "home": 0.36,
+          "draw": 0.31,
+          "away": 0.33
+        },
+        "confidence": 0.34,
+        "keyFactors": [
+          "Sehr ausgeglichene Partie: Marokko liegt im Elo (1822 vs 1805) und in der gewichteten Form (2.51 vs 2.21) sogar leicht vorn, neutraler Spielort negiert Heimvorteil.",
+          "Marokko mit herausragender Defensive (0.51 Gegentore/Spiel, 67,6% Weiße Westen) – schwer zu durchbrechen, das relativiert Oranjes starke Offensive (2.89 Tore/Spiel).",
+          "Beide Teams in guter WM-Form: Niederlande 3:1 Tunesien, 5:1 Schweden; Marokko mit Comeback-Sieg 4:2 gegen Haiti und 1:1 gegen Brasilien (starke Gegnerqualität).",
+          "Externe Markteinschätzung sieht das Spiel offener (höhere Remis-Wahrscheinlichkeit 0.31) als die Baseline – das stützt einen knappen Ausgang.",
+          "Kein H2H vorhanden; defensive Stabilität Marokkos spricht für ein torarmes, enges Spiel."
+        ],
+        "risks": [
+          "Niederländische Offensivpower kann jede Defensive knacken – ein offenes Spiel mit mehreren Toren ist möglich.",
+          "Marokkos Defensive könnte Oranje früh ausbremsen und das Spiel kippen.",
+          "Turnierkontext (möglicherweise K.o.-Spiel) kann taktisch defensiveres Verhalten erzwingen – Verlängerung/Elfmeter denkbar.",
+          "Mögliche Rotation oder Verletzungen (Kadernachrichten) nicht vollständig einschätzbar."
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.42,
+          "draw": 0.3,
+          "away": 0.28
         },
         "confidence": 0.65,
         "keyFactors": [
-          "Morocco has a slightly higher Elo rating, indicating competitive strength.",
-          "Netherlands' recent performances have shown strong attacking prowess, scoring many goals.",
-          "Morocco's defensive record is impressive, with a good clean sheet rate.",
-          "Neutral venue reduces traditional home advantage."
+          "Beide Teams sind aus der Gruppenphase weiter; kein Druck, volle Leistung zu bringen.",
+          "Niederlande hat starke offensive Leistung gezeigt, besonders gegen Schweden.",
+          "Marokko mit guter Defensivbilanz, aber jüngste Verletzung kann Team schwächen.",
+          "Niederlande hat Kritik trotz Sieg, was Motivation für klare Leistung erhöhen kann."
         ],
         "risks": [
-          "Netherlands facing internal criticism despite winning matches, could affect morale.",
-          "Morocco's excited anticipation of strong tournament performance could be overly optimistic.",
-          "Close Elo ratings and recent form suggest an evenly matched game."
+          "Marokko könnte im Angriff gefährlich sein, wie der Sieg gegen Haiti zeigt.",
+          "Neutrale Spielstätte; keine geografische Präferenz für eines der Teams."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Morocco has a slightly higher Elo rating, indicating competitive strength.; Netherlands' recent performances have shown strong attacking prowess, scoring many goals.; Morocco's defensive record is impressive, with a good clean sheet rate.. Marktquoten zu 30 % eingemischt.",
+    "agreement": 0.96,
+    "ensembleWeights": {
+      "claude": 0.5037,
+      "chatgpt": 0.4963
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr ausgeglichene Partie: Marokko liegt im Elo (1822 vs 1805) und in der gewichteten Form (2.51 vs 2.21) sogar leicht vorn, neutraler Spielort negiert Heimvorteil.; Marokko mit herausragender Defensive (0.51 Gegentore/Spiel, 67,6% Weiße Westen) – schwer zu durchbrechen, das relativiert Oranjes starke Offensive (2.89 Tore/Spiel).; Beide Teams in guter WM-Form: Niederlande 3:1 Tunesien, 5:1 Schweden; Marokko mit Comeback-Sieg 4:2 gegen Haiti und 1:1 gegen Brasilien (starke Gegnerqualität).. Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:19fdb49d0e37707600ae0da6d5fd0344f0659d04213aa0ad5babc1ad7133e726"
   },
   "predictionHistory": [
@@ -128,21 +156,34 @@
         "away": 0.2897
       },
       "confidence": 0.6
+    },
+    {
+      "generatedAt": "2026-06-29T09:47:40.463Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3945,
+        "draw": 0.3368,
+        "away": 0.2687
+      },
+      "confidence": 0.65
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T12:03:52.043Z",
+    "updatedAt": "2026-06-29T13:06:33.359Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4176,
-      "draw": 0.3088,
-      "away": 0.2736
+      "home": 0.4196,
+      "draw": 0.3078,
+      "away": 0.2726
     },
     "decimal": {
       "home": 2.3,
-      "draw": 3.11,
-      "away": 3.51
+      "draw": 3.14,
+      "away": 3.54
     }
   }
 }

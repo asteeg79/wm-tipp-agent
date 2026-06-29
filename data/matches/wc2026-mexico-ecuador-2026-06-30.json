@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T12:03:51.520Z",
+    "generatedAt": "2026-06-29T13:03:54.559Z",
     "home": {
       "teamId": "MEX",
       "elo": 1724,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-06-29T13:03:54.559Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.5861,
-      "draw": 0.2769,
-      "away": 0.137
+      "home": 0.4614,
+      "draw": 0.3261,
+      "away": 0.2126
     },
-    "confidence": 0.3791,
+    "confidence": 0.5654,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,20 +73,74 @@
         "away": 0.51
       }
     },
-    "inputHash": "sha256:032ec427b60dbcb2de7ced1c5bab3e43cc42d53c17a0cac4a03f20439dc0b255"
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.5,
+          "draw": 0.3,
+          "away": 0.2
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Mexiko mit starker WM-Form: drei Spiele, drei Siege, drei zu null (u.a. 3:0 gegen Tschechien)",
+          "Sehr stabile Defensive Mexikos (Gegentorschnitt 0.53, Clean-Sheet-Rate 0.62)",
+          "Ecuador defensiv ordentlich, aber offensiv harmlos (0.80 Tore/Spiel, nur 0:0 und 0:1 zuletzt vor dem Germany-Spiel)",
+          "H2H ausgeglichen (2 Remis, 1:1 Tore) deutet auf enge Duelle hin",
+          "Höhenfaktor und faktischer Heimvorteil (Gastgeberland) für Mexiko"
+        ],
+        "risks": [
+          "Ecuador steht oft tief und kompakt – Mexiko könnte sich schwertun, das zu durchbrechen (Remis-Gefahr)",
+          "Markt sieht das Spiel deutlich enger als die Baseline (nur 43% Heimsieg, 33% Remis)",
+          "Ecuadors jüngster 2:1-Sieg gegen Deutschland zeigt Momentum und Konterpotenzial",
+          "Geringe H2H-Stichprobe limitiert Aussagekraft"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.45,
+          "draw": 0.35,
+          "away": 0.2
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Mexico's strong recent form with clean sheets in last 3 matches.",
+          "Mexico has slight altitude advantage due to host condition.",
+          "Recent head-to-head history was draws, but Mexico's current form is better."
+        ],
+        "risks": [
+          "Ecuador's recent victory against Germany indicates potential to perform against strong teams.",
+          "Both teams playing in a neutral venue may neutralize Mexico's host advantage."
+        ]
+      }
+    },
+    "agreement": 0.9667,
+    "ensembleWeights": {
+      "claude": 0.5037,
+      "chatgpt": 0.4963
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexiko mit starker WM-Form: drei Spiele, drei Siege, drei zu null (u.a. 3:0 gegen Tschechien); Sehr stabile Defensive Mexikos (Gegentorschnitt 0.53, Clean-Sheet-Rate 0.62); Ecuador defensiv ordentlich, aber offensiv harmlos (0.80 Tore/Spiel, nur 0:0 und 0:1 zuletzt vor dem Germany-Spiel). Marktquoten zu 30 % eingemischt.",
+    "inputHash": "sha256:d7558b464d1943319185f9edf2f89cd5a3087906381cd6ef15022c7736f89364"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T12:03:52.043Z",
+    "updatedAt": "2026-06-29T13:06:33.360Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.4339,
-      "draw": 0.3251,
-      "away": 0.241
+      "home": 0.4317,
+      "draw": 0.3264,
+      "away": 0.2419
     },
     "decimal": {
-      "home": 2.21,
+      "home": 2.23,
       "draw": 2.95,
       "away": 3.98
     }

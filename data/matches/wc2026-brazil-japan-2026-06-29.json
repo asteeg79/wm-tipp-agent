@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T12:03:51.520Z",
+    "generatedAt": "2026-06-29T13:03:54.559Z",
     "home": {
       "teamId": "BRA",
       "elo": 1827,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-29T09:47:40.463Z",
+    "generatedAt": "2026-06-29T13:03:54.559Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5547,
-      "draw": 0.2449,
-      "away": 0.2004
+      "home": 0.5268,
+      "draw": 0.253,
+      "away": 0.2201
     },
-    "confidence": 0.7,
+    "confidence": 0.6229,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,31 +73,61 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Brasilien mit höherer Elo (1827 vs 1730), starker gewichteter Form (2.05) und exzellenter Defensive (0.63 Gegentore/Spiel, 3:0 gegen Schottland zuletzt)",
+          "Ancelotti-Mannschaft mit klarer Offensivpräsenz (2.06 Tore/Spiel) und xG-Vorteil laut Baseline (1.66 vs 1.10)",
+          "Japan in bestechender Form: ungeschlagen durch die Gruppenphase, 4:0 gegen Tunesien, Remis gegen Niederlande und Schweden, hohe Clean-Sheet-Rate (0.556)",
+          "Markt sieht Brasilien etwas klarer vorn (0.55) als die Baseline (0.505); ich positioniere mich dazwischen mit leichtem Brasilien-Vorteil",
+          "K.o.-Charakter der Partie erhöht Bedeutung von Kompaktheit – Japan kann tief stehen und kontern, was knappe Ergebnisse begünstigt"
+        ],
+        "risks": [
+          "Japan hat in dieser Form bewiesen, Top-Teams (Niederlande, England) wehtun zu können – echte Außenseiterrolle nur bedingt gerechtfertigt",
+          "Keine H2H-Daten vorhanden, daher höhere Unsicherheit in der direkten Einschätzung",
+          "Brasiliens Defensive zeigte zuletzt auch Schwächen (1:1 Marokko, 1:2 Frankreich) – Japans Offensive kann das ausnutzen",
+          "Im K.o.-Spiel mögliche Verlängerung/Elfmeter; 90-Minuten-Remis durchaus realistisch"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
           "away": 1
         },
         "probabilities": {
-          "home": 0.55,
-          "draw": 0.24,
-          "away": 0.21
+          "home": 0.52,
+          "draw": 0.25,
+          "away": 0.23
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Brazil's recent form with a strong 3-0 victory against Scotland and Haiti",
-          "Japan's unbeaten run and attacking improvement",
-          "Neutral venue, reducing any home advantage for Brazil",
-          "High stakes of the knockout stage encouraging Brazil to play at full strength"
+          "Brazil's strong recent performance with consecutive 3-0 wins against Scotland and Haiti.",
+          "Japan's unbeaten streak in the group stage and potent attack with significant goals scored.",
+          "Neutral venue minimizing home advantage.",
+          "Japan's increased confidence and tactical evolution as noted in news articles."
         ],
         "risks": [
-          "Japan's confidence and new playing style could surprise",
-          "Both teams have solid defensive records, potential for a lower scoring game"
+          "Brazil's coach Ancelotti potentially undermining psychological effects.",
+          "Japan's high morale might lead to an upset.",
+          "Tournament knockout stage dynamics can lead to more unpredictable outcomes."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Brazil's recent form with a strong 3-0 victory against Scotland and Haiti; Japan's unbeaten run and attacking improvement; Neutral venue, reducing any home advantage for Brazil. Marktquoten zu 30 % eingemischt.",
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5037,
+      "chatgpt": 0.4963
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brasilien mit höherer Elo (1827 vs 1730), starker gewichteter Form (2.05) und exzellenter Defensive (0.63 Gegentore/Spiel, 3:0 gegen Schottland zuletzt); Ancelotti-Mannschaft mit klarer Offensivpräsenz (2.06 Tore/Spiel) und xG-Vorteil laut Baseline (1.66 vs 1.10); Japan in bestechender Form: ungeschlagen durch die Gruppenphase, 4:0 gegen Tunesien, Remis gegen Niederlande und Schweden, hohe Clean-Sheet-Rate (0.556). Marktquoten zu 30 % eingemischt.",
     "inputHash": "sha256:ca77d03437a09342726da57a73273bad6a8f357b5238df7020f6d44c62978942"
   },
   "predictionHistory": [
@@ -178,21 +208,34 @@
         "away": 0.1934
       },
       "confidence": 0.7
+    },
+    {
+      "generatedAt": "2026-06-29T09:47:40.463Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5547,
+        "draw": 0.2449,
+        "away": 0.2004
+      },
+      "confidence": 0.7
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T12:03:52.043Z",
+    "updatedAt": "2026-06-29T13:06:33.359Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.5617,
-      "draw": 0.2577,
-      "away": 0.1806
+      "home": 0.5531,
+      "draw": 0.2601,
+      "away": 0.1869
     },
     "decimal": {
-      "home": 1.72,
-      "draw": 3.75,
-      "away": 5.35
+      "home": 1.74,
+      "draw": 3.7,
+      "away": 5.15
     }
   }
 }
