@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-30T15:03:56.952Z",
+    "generatedAt": "2026-06-30T16:03:49.896Z",
     "home": {
       "teamId": "ENG",
       "elo": 1827,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-30T04:03:49.223Z",
+    "generatedAt": "2026-06-30T16:03:49.896Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.7011,
-      "draw": 0.1854,
-      "away": 0.1135
+      "home": 0.691,
+      "draw": 0.1926,
+      "away": 0.1164
     },
-    "confidence": 0.685,
+    "confidence": 0.6534,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,20 +80,19 @@
         },
         "probabilities": {
           "home": 0.68,
-          "draw": 0.19,
-          "away": 0.13
+          "draw": 0.2,
+          "away": 0.12
         },
         "confidence": 0.62,
         "keyFactors": [
-          "England deutlich höherer Elo (1827 vs 1651) und bessere gewichtete Form (2.16 vs 1.90)",
-          "Englands starke Defensive: nur 0.58 Gegentore/Spiel, Clean-Sheet-Rate 56%",
-          "DR Congo defensiv solide, aber gegen Topgegner (0:1 Kolumbien, 1:1 Portugal) offensiv limitiert",
-          "Englands Offensive zuletzt überzeugend (4:2 Kroatien, 2:0 Panama)"
+          "England mit deutlich höherem Elo (1827 vs 1651) und starker Defensive (GA 0.58, Clean-Sheet-Rate 56%)",
+          "England zeigte solide Turnierform (2:0 vs Panama, 4:2 vs Kroatien) und hohe gewichtete Form",
+          "DR Congo offensiv durchaus gefährlich (3:1 vs Usbekistan, 1:1 vs Portugal), aber defensiv anfälliger gegen Topgegner"
         ],
         "risks": [
-          "DR Congo zeigte gegen Portugal und Uzbekistan Torgefahr (3 Tore gegen Uzbekistan)",
-          "Außenseiter kann tief stehen und K.o.-Spiel eng halten",
-          "England zeigte gegen Ghana (0:0) Probleme, kompakte Defensive zu knacken"
+          "K.-o.-Spiel: Außenseiter steht oft tief und kompakt, England tut sich gegen Defensivblöcke teils schwer (0:0 vs Ghana)",
+          "DR Congo hat Offensivpotenzial und kann bei Kontern treffen",
+          "Bei knappem Spielverlauf droht Verlängerung/Elfmeterschießen"
         ]
       },
       "chatgpt": {
@@ -102,39 +101,54 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.68,
-          "draw": 0.19,
-          "away": 0.13
+          "home": 0.65,
+          "draw": 0.2,
+          "away": 0.15
         },
-        "confidence": 0.75,
+        "confidence": 0.7,
         "keyFactors": [
-          "England's recent form is strong, with a significant win against Croatia and a solid defense against Panama.",
-          "DR Congo's recent form shows resilience, with a draw against Portugal and a win against Uzbekistan.",
-          "England's higher Elo rating and form metrics suggest a stronger overall team."
+          "England hat eine solide Form gezeigt mit einem Sieg gegen Panama und einem Unentschieden gegen Ghana.",
+          "DR Congo zeigt ebenfalls Wettbewerbsfähigkeit mit einem Sieg gegen Uzbekistan.",
+          "Englands höhere Elo-Bewertung und Torbilanz sprechen für einen Vorteil.",
+          "Neutrale Spielstätte vermindert Heimvorteil für England, dennoch bleibt deren Kaderstärke entscheidend."
         ],
         "risks": [
-          "Potential for DR Congo to perform above expectations as shown against Portugal.",
-          "Knockout stage dynamics can lead to unexpected outcomes and cautious play."
+          "DR Congo zeigte gegen Portugal eine gute Defensivleistung, könnte England ebenfalls Probleme bereiten.",
+          "Eventuelle Anpassung im englischen Kader laut neuester Berichterstattung unklar."
         ]
       }
     },
-    "agreement": 1,
+    "agreement": 0.98,
     "ensembleWeights": {
       "claude": 0.5057,
       "chatgpt": 0.4943
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England deutlich höherer Elo (1827 vs 1651) und bessere gewichtete Form (2.16 vs 1.90); Englands starke Defensive: nur 0.58 Gegentore/Spiel, Clean-Sheet-Rate 56%; DR Congo defensiv solide, aber gegen Topgegner (0:1 Kolumbien, 1:1 Portugal) offensiv limitiert. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit deutlich höherem Elo (1827 vs 1651) und starker Defensive (GA 0.58, Clean-Sheet-Rate 56%); England zeigte solide Turnierform (2:0 vs Panama, 4:2 vs Kroatien) und hohe gewichtete Form; DR Congo offensiv durchaus gefährlich (3:1 vs Usbekistan, 1:1 vs Portugal), aber defensiv anfälliger gegen Topgegner. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.8161,
-      "away": 0.1839
+      "home": 0.8104,
+      "away": 0.1896
     },
     "tiebreakWinProbHome": 0.6,
     "inputHash": "sha256:e6936ba480a162ed1b014beb8d8a15f8ff680600de0cef300de2ea05e6e1b619"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-06-30T04:03:49.223Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.7011,
+        "draw": 0.1854,
+        "away": 0.1135
+      },
+      "confidence": 0.685
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-30T15:03:57.688Z",
+    "updatedAt": "2026-06-30T16:05:51.105Z",
     "bookmakerCount": 23,
     "probabilities": {
       "home": 0.7533,
