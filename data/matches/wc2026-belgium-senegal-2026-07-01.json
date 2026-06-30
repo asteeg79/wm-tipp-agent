@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-30T19:03:52.423Z",
+    "generatedAt": "2026-06-30T20:04:08.414Z",
     "home": {
       "teamId": "BEL",
       "elo": 1737,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-30T08:03:56.341Z",
+    "generatedAt": "2026-06-30T20:04:08.414Z",
     "predictedScore": {
-      "home": 3,
-      "away": 2
+      "home": 1,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.4045,
-      "draw": 0.2924,
-      "away": 0.3031
+      "home": 0.4036,
+      "draw": 0.2844,
+      "away": 0.312
     },
-    "confidence": 0.5032,
+    "confidence": 0.41,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -79,21 +79,21 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.38,
+          "home": 0.39,
           "draw": 0.28,
-          "away": 0.34
+          "away": 0.33
         },
         "confidence": 0.42,
         "keyFactors": [
-          "Beide Teams nahezu gleich stark (Elo 1737 vs 1755), neutraler Spielort ohne klaren Vorteil",
-          "Senegal mit besserer Defensivbilanz (cleanSheetRate 0.62 vs 0.38), aber zuletzt anfällig gegen Topgegner (0:3 Frankreich, 2:3 Norwegen)",
-          "Belgien offensivstark und in Form (5:1 Neuseeland, hohe goalsForAvg 2.52), aber auch defensiv schwankend",
-          "Markt sieht deutlich höhere Remis-Wahrscheinlichkeit (0.29) als die Baseline – im K.o.-Spiel realistisch"
+          "Sehr ausgeglichene Partie: Senegal minimal höheres Elo (1755 vs 1737) und deutlich bessere Defensivwerte (Clean-Sheet-Rate 0,62 vs 0,38), Belgien mit leicht stärkerem Offensivoutput (2,52 vs 2,44 Tore/Spiel)",
+          "Beide Teams in guter Form mit Torgefahr – Belgien 5:1 gegen Neuseeland, Senegal 5:0 gegen Irak in den jüngsten Gruppenspielen",
+          "K.-o.-Charakter und neutraler Spielort begünstigen ein enges Ergebnis; der Markt sieht ein erhöhtes Remis-Potenzial (0,29)",
+          "Senegals Defensive war zuletzt aber auch anfällig (3 Gegentore gegen Norwegen und Frankreich)"
         ],
         "risks": [
-          "Beide Teams können hoch gewinnen oder verlieren – große Ergebnisvarianz",
-          "Belgiens Defensivschwankungen könnten von Senegals Offensive bestraft werden",
-          "Enges Spiel kann in Verlängerung/Elfmeterschießen kippen"
+          "Belgiens Offensive kann jederzeit explodieren, ebenso Senegals Konter – das enge 1:1 kann schnell in beide Richtungen kippen",
+          "Tagesform und individuelle Klasse (z.B. Belgiens Kreativspieler, Senegals Tempo) schwer kalkulierbar",
+          "Keine H2H-Datenbasis vorhanden"
         ]
       },
       "chatgpt": {
@@ -102,39 +102,54 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.3,
-          "away": 0.3
+          "home": 0.39,
+          "draw": 0.28,
+          "away": 0.33
         },
-        "confidence": 0.6,
+        "confidence": 0.4,
         "keyFactors": [
-          "Beide Teams haben kürzlich hohe Siege in der Gruppenphase erzielt, Belgien gegen Neuseeland und Senegal gegen Irak.",
-          "Elo-Werte der Teams sind eng beieinander, mit einem leichten Vorteil für Senegal.",
-          "Beide Teams haben ähnliche offensive Statistiken und zeigen eine gute Form, was auf ein ausgeglichenes Spiel hindeutet."
+          "Senegal hat trotz höherem Elo eine starke Abwehrleistung gezeigt und ein beeindruckendes 5:0 gegen Irak.",
+          "Belgien hat in den letzten Spielen gegen stärkere Gegner wie Ägypten gut performt.",
+          "Beide Teams haben in ihren letzten Spielen viele Tore erzielt, aber auch Gegentore kassiert.",
+          "Neutraler Spielort ohne Gastgebervorteil sorgt für ausgeglichene Bedingungen."
         ],
         "risks": [
-          "Senegal verliert tendenziell gegen stärkere Gegner wie Frankreich und Norwegen in der Gruppenphase.",
-          "Belgien hatte zuletzt ein torloses Unentschieden gegen Iran, was auf mögliche Schwierigkeiten im Spielaufbau hinweist."
+          "Keine direkten Head-to-head Begegnungen als Vergleichsmaßstab.",
+          "Beide Mannschaften haben anfällig für Gegentore gezeigt."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 1,
     "ensembleWeights": {
-      "claude": 0.5057,
-      "chatgpt": 0.4943
+      "claude": 0.5036,
+      "chatgpt": 0.4964
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams nahezu gleich stark (Elo 1737 vs 1755), neutraler Spielort ohne klaren Vorteil; Senegal mit besserer Defensivbilanz (cleanSheetRate 0.62 vs 0.38), aber zuletzt anfällig gegen Topgegner (0:3 Frankreich, 2:3 Norwegen); Belgien offensivstark und in Form (5:1 Neuseeland, hohe goalsForAvg 2.52), aber auch defensiv schwankend. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr ausgeglichene Partie: Senegal minimal höheres Elo (1755 vs 1737) und deutlich bessere Defensivwerte (Clean-Sheet-Rate 0,62 vs 0,38), Belgien mit leicht stärkerem Offensivoutput (2,52 vs 2,44 Tore/Spiel); Beide Teams in guter Form mit Torgefahr – Belgien 5:1 gegen Neuseeland, Senegal 5:0 gegen Irak in den jüngsten Gruppenspielen; K.-o.-Charakter und neutraler Spielort begünstigen ein enges Ergebnis; der Markt sieht ein erhöhtes Remis-Potenzial (0,29). Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.5462,
-      "away": 0.4538
+      "home": 0.5415,
+      "away": 0.4585
     },
     "tiebreakWinProbHome": 0.485,
     "inputHash": "sha256:61200b75874849866d7db0ef24eb50d5dddd1b23b8c86a316cba230ab5ff48a8"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-06-30T08:03:56.341Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.4045,
+        "draw": 0.2924,
+        "away": 0.3031
+      },
+      "confidence": 0.5032
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-30T19:06:15.183Z",
+    "updatedAt": "2026-06-30T20:05:06.968Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4353,
