@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-29T23:14:58.006Z",
+    "generatedAt": "2026-06-30T04:03:49.223Z",
     "home": {
       "teamId": "ENG",
       "elo": 1827,
@@ -21,7 +21,7 @@
       "goalsAgainstAvg": 0.58,
       "cleanSheetRate": 0.563,
       "matchesCount": 32,
-      "daysSinceLastMatch": 2
+      "daysSinceLastMatch": 3
     },
     "away": {
       "teamId": "COD",
@@ -32,7 +32,7 @@
       "goalsAgainstAvg": 0.676,
       "cleanSheetRate": 0.5,
       "matchesCount": 36,
-      "daysSinceLastMatch": 2
+      "daysSinceLastMatch": 3
     },
     "h2h": {
       "played": 0,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-06-30T04:03:49.223Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6472,
-      "draw": 0.2151,
-      "away": 0.1376
+      "home": 0.7011,
+      "draw": 0.1854,
+      "away": 0.1135
     },
-    "confidence": 0.4708,
+    "confidence": 0.685,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,69 @@
         "away": 0.73
       }
     },
-    "advance": {
-      "home": 0.7849,
-      "away": 0.2151
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.19,
+          "away": 0.13
+        },
+        "confidence": 0.62,
+        "keyFactors": [
+          "England deutlich höherer Elo (1827 vs 1651) und bessere gewichtete Form (2.16 vs 1.90)",
+          "Englands starke Defensive: nur 0.58 Gegentore/Spiel, Clean-Sheet-Rate 56%",
+          "DR Congo defensiv solide, aber gegen Topgegner (0:1 Kolumbien, 1:1 Portugal) offensiv limitiert",
+          "Englands Offensive zuletzt überzeugend (4:2 Kroatien, 2:0 Panama)"
+        ],
+        "risks": [
+          "DR Congo zeigte gegen Portugal und Uzbekistan Torgefahr (3 Tore gegen Uzbekistan)",
+          "Außenseiter kann tief stehen und K.o.-Spiel eng halten",
+          "England zeigte gegen Ghana (0:0) Probleme, kompakte Defensive zu knacken"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.19,
+          "away": 0.13
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "England's recent form is strong, with a significant win against Croatia and a solid defense against Panama.",
+          "DR Congo's recent form shows resilience, with a draw against Portugal and a win against Uzbekistan.",
+          "England's higher Elo rating and form metrics suggest a stronger overall team."
+        ],
+        "risks": [
+          "Potential for DR Congo to perform above expectations as shown against Portugal.",
+          "Knockout stage dynamics can lead to unexpected outcomes and cautious play."
+        ]
+      }
     },
-    "inputHash": "sha256:f9137ca15b409e49033c72a2bfa85be6b2dff129501fc4e45a85f94b1a4942d3"
+    "agreement": 1,
+    "ensembleWeights": {
+      "claude": 0.5057,
+      "chatgpt": 0.4943
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England deutlich höherer Elo (1827 vs 1651) und bessere gewichtete Form (2.16 vs 1.90); Englands starke Defensive: nur 0.58 Gegentore/Spiel, Clean-Sheet-Rate 56%; DR Congo defensiv solide, aber gegen Topgegner (0:1 Kolumbien, 1:1 Portugal) offensiv limitiert. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.8161,
+      "away": 0.1839
+    },
+    "tiebreakWinProbHome": 0.6,
+    "inputHash": "sha256:e6936ba480a162ed1b014beb8d8a15f8ff680600de0cef300de2ea05e6e1b619"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-29T23:16:49.177Z",
+    "updatedAt": "2026-06-30T04:05:49.708Z",
     "bookmakerCount": 22,
     "probabilities": {
       "home": 0.7505,
