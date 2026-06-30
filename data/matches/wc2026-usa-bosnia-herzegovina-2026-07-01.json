@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-30T11:03:48.446Z",
+    "generatedAt": "2026-06-30T12:03:52.666Z",
     "home": {
       "teamId": "USA",
       "elo": 1670,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-06-30T12:03:52.666Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6723,
-      "draw": 0.17,
-      "away": 0.1577
+      "home": 0.6541,
+      "draw": 0.1951,
+      "away": 0.1508
     },
-    "confidence": 0.5085,
+    "confidence": 0.5821,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,71 @@
         "away": 1.21
       }
     },
-    "advance": {
-      "home": 0.7742,
-      "away": 0.2258
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.62,
+          "draw": 0.19,
+          "away": 0.19
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "USA mit höherem Elo (1670 vs. 1550), besserer gewichteter Form (1.68 vs. 1.40) und faktischem Heimvorteil als Gastgeber",
+          "Gute jüngste WM-Form der USA: 4:1 vs. Paraguay, 2:0 vs. Australien, nur knapp gegen Türkei verloren",
+          "BIH zeigt offensives Potenzial (3:1 vs. Qatar), aber defensiv anfällig (1:4 vs. Schweiz, hohe Gegentorquote)",
+          "Beide Teams mit schwacher Defensive (USA cleanSheetRate 0.24, BIH 0.17) → torreiches Spiel erwartbar"
+        ],
+        "risks": [
+          "USA-Abwehr extrem instabil (5 Gegentore vs. Belgien, 2 vs. Türkei) — BIH kann jederzeit treffen",
+          "K.-o.-Spiel oft enger als Einzelstärke vermuten lässt, Remis nach 90 Min. realistisch",
+          "Kein H2H-Wert vorhanden, Tagesform entscheidend",
+          "BIH-Offensive um zentrale Spieler kann USA-Defensive überfordern"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.65,
+          "draw": 0.2,
+          "away": 0.15
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "USA hat einen höheren Elo-Wert und bessere aktuelle Form als Bosnien & Herzegowina.",
+          "USA erzielt im Schnitt mehr Tore pro Spiel als Bosnien & Herzegowina.",
+          "Heimvorteil durch Host-Advantage während eines neutral gespielten Spiels für USA.",
+          "In den letzten Spielen eher stärkere Gegner für die USA mit gemischten Ergebnissen."
+        ],
+        "risks": [
+          "Keine direkte Head-to-Head-Historie zwischen den Teams.",
+          "Bosnien hat in den letzten Spielen gegen schwächere Gegner gepunktet und könnte daher unterschätzt werden."
+        ]
+      }
     },
-    "inputHash": "sha256:7af091fd1acc71ec96a51023d5268091b6ccd7575c87ae05428110f08587d8f4"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5057,
+      "chatgpt": 0.4943
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1670 vs. 1550), besserer gewichteter Form (1.68 vs. 1.40) und faktischem Heimvorteil als Gastgeber; Gute jüngste WM-Form der USA: 4:1 vs. Paraguay, 2:0 vs. Australien, nur knapp gegen Türkei verloren; BIH zeigt offensives Potenzial (3:1 vs. Qatar), aber defensiv anfällig (1:4 vs. Schweiz, hohe Gegentorquote). Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.7687,
+      "away": 0.2313
+    },
+    "tiebreakWinProbHome": 0.575,
+    "inputHash": "sha256:adbfc1476e325133ad2da7300907cd1916bc14e9f2e39035acd89ccf0d299823"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-30T11:05:46.779Z",
+    "updatedAt": "2026-06-30T12:05:11.016Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6984,
