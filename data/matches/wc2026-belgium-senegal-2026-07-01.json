@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-06-30T07:03:49.699Z",
+    "generatedAt": "2026-06-30T08:03:56.341Z",
     "home": {
       "teamId": "BEL",
       "elo": 1737,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-06-30T08:03:56.341Z",
     "predictedScore": {
-      "home": 2,
-      "away": 1
+      "home": 3,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.4469,
-      "draw": 0.2205,
-      "away": 0.3326
+      "home": 0.4045,
+      "draw": 0.2924,
+      "away": 0.3031
     },
-    "confidence": 0.1704,
+    "confidence": 0.5032,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,26 +72,79 @@
         "away": 1.61
       }
     },
-    "advance": {
-      "home": 0.5537,
-      "away": 0.4463
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.38,
+          "draw": 0.28,
+          "away": 0.34
+        },
+        "confidence": 0.42,
+        "keyFactors": [
+          "Beide Teams nahezu gleich stark (Elo 1737 vs 1755), neutraler Spielort ohne klaren Vorteil",
+          "Senegal mit besserer Defensivbilanz (cleanSheetRate 0.62 vs 0.38), aber zuletzt anfällig gegen Topgegner (0:3 Frankreich, 2:3 Norwegen)",
+          "Belgien offensivstark und in Form (5:1 Neuseeland, hohe goalsForAvg 2.52), aber auch defensiv schwankend",
+          "Markt sieht deutlich höhere Remis-Wahrscheinlichkeit (0.29) als die Baseline – im K.o.-Spiel realistisch"
+        ],
+        "risks": [
+          "Beide Teams können hoch gewinnen oder verlieren – große Ergebnisvarianz",
+          "Belgiens Defensivschwankungen könnten von Senegals Offensive bestraft werden",
+          "Enges Spiel kann in Verlängerung/Elfmeterschießen kippen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.4,
+          "draw": 0.3,
+          "away": 0.3
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Beide Teams haben kürzlich hohe Siege in der Gruppenphase erzielt, Belgien gegen Neuseeland und Senegal gegen Irak.",
+          "Elo-Werte der Teams sind eng beieinander, mit einem leichten Vorteil für Senegal.",
+          "Beide Teams haben ähnliche offensive Statistiken und zeigen eine gute Form, was auf ein ausgeglichenes Spiel hindeutet."
+        ],
+        "risks": [
+          "Senegal verliert tendenziell gegen stärkere Gegner wie Frankreich und Norwegen in der Gruppenphase.",
+          "Belgien hatte zuletzt ein torloses Unentschieden gegen Iran, was auf mögliche Schwierigkeiten im Spielaufbau hinweist."
+        ]
+      }
     },
-    "inputHash": "sha256:d02601eee2328544c13cc481e9cb0e314a78d1ba738891494bd63e7655c80c3a"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5057,
+      "chatgpt": 0.4943
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams nahezu gleich stark (Elo 1737 vs 1755), neutraler Spielort ohne klaren Vorteil; Senegal mit besserer Defensivbilanz (cleanSheetRate 0.62 vs 0.38), aber zuletzt anfällig gegen Topgegner (0:3 Frankreich, 2:3 Norwegen); Belgien offensivstark und in Form (5:1 Neuseeland, hohe goalsForAvg 2.52), aber auch defensiv schwankend. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.5462,
+      "away": 0.4538
+    },
+    "tiebreakWinProbHome": 0.485,
+    "inputHash": "sha256:61200b75874849866d7db0ef24eb50d5dddd1b23b8c86a316cba230ab5ff48a8"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-06-30T07:05:46.915Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-06-30T08:05:51.281Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.4341,
-      "draw": 0.2938,
-      "away": 0.2721
+      "home": 0.4344,
+      "draw": 0.2941,
+      "away": 0.2715
     },
     "decimal": {
       "home": 2.2,
       "draw": 3.25,
-      "away": 3.51
+      "away": 3.52
     }
   }
 }
