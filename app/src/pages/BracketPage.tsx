@@ -272,14 +272,21 @@ function OddsTable({ teams }: { teams: Map<string, TeamSummary> }) {
   const rows = useMemo(() => {
     if (!index || !predIndex) return [];
     const r = simulateTournament(index, predIndex, RUNS);
-    return [...r.title.entries()]
-      .map(([id, title]) => ({
+    // Alle Teams mit K.-o.-Perspektive listen (nicht nur Titelträger), damit
+    // ausgeschiedene Mannschaften sichtbar mit 0 % Titel dastehen.
+    return [...r.advance.entries()]
+      .map(([id, advance]) => ({
         id,
-        title,
-        advance: r.advance.get(id) ?? 0,
+        advance,
+        title: r.title.get(id) ?? 0,
         groupWinner: r.groupWinner.get(id) ?? 0,
       }))
-      .sort((a, b) => b.title - a.title);
+      .sort(
+        (a, b) =>
+          b.title - a.title ||
+          b.advance - a.advance ||
+          a.id.localeCompare(b.id),
+      );
   }, [index, predIndex]);
 
   return (

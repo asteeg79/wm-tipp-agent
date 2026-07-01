@@ -327,28 +327,6 @@ function realKoField(
   };
 }
 
-/** Stochastische K.-o.-Simulation über das echte Feld (offene Partien per Elo). */
-function simulateRealKoChampion(
-  field: RealKoField,
-  eloOf: (id: string) => number,
-  rng: () => number,
-): string {
-  let bracket = [...field.entryTeams];
-  while (bracket.length > 1) {
-    const next: string[] = [];
-    for (let i = 0; i < bracket.length; i += 2) {
-      const a = bracket[i]!;
-      const b = bracket[i + 1]!;
-      const real = field.realResult.get(pairKey(a, b));
-      next.push(
-        real ? real.winner : rng() < eloWinProb(eloOf(a), eloOf(b)) ? a : b,
-      );
-    }
-    bracket = next;
-  }
-  return bracket[0]!;
-}
-
 /* ── Monte-Carlo-Titelchancen ─────────────────────────────────────────────── */
 
 export function simulateTournament(
@@ -373,9 +351,9 @@ export function simulateTournament(
   };
 
   // Fall A: Echtes K.-o.-Feld vorhanden (Gruppen entschieden) → Gruppensieger
-  // und Qualifikanten stehen fest; Titel aus dem realen K.-o.-Feld simulieren
-  // (gespielte Partien fix, offene per Elo). So fließen echte K.-o.-Ergebnisse
-  // konsistent zum Baum ein (ausgeschiedene Teams → 0 % Titel).
+  // und Qualifikanten stehen fest; Titel über das ECHTE Gerüst simulieren
+  // (gespielte Partien fix inkl. Elfmeter-Sieger, offene per Tipp/Elo — exakt
+  // wie der Bracket-Baum). Ausgeschiedene Teams werden nie Champion → 0 % Titel.
   const field = realKoField(index, predIndex);
   if (field) {
     const { winners } = knockoutField(
@@ -386,9 +364,8 @@ export function simulateTournament(
     );
     for (const id of winners) groupWinner.set(id, 1);
     for (const id of field.teams) advance.set(id, 1);
-    for (let i = 0; i < runs; i++) {
-      inc(title, simulateRealKoChampion(field, eloOf, rng));
-    }
+    const ctx = bracketContext(index, predIndex);
+    for (let i = 0; i < runs; i++) inc(title, simulateChampion(ctx, rng));
     return { groupWinner, advance, title: toRate(title) };
   }
 
@@ -781,25 +758,32 @@ function assignThirds(
   return thirdOfSlot;
 }
 
+interface BracketCtx {
+  eloOf: (id: string) => number;
+  teamGroup: Map<string, string>;
+  /** R32-Slot (Sieger/Zweiter/Dritter) → Team. */
+  teamOfSlot: (num: number, s: SlotSource) => string | null;
+  /** Echte K.-o.-Partie je (ungeordnetem) Team-Paar. */
+  koByPair: Map<string, PredictionIndexEntry>;
+  /** Je Stufe: Teams, die in einer SPÄTEREN Stufe auftauchen (= weiter). */
+  advancedAfter: Array<Set<string>>;
+}
+
 /**
- * Projiziert das vollständige K.-o.-Bracket nach dem ECHTEN WM-2026-Schema aus
- * dem aktuellen Gruppenstand: Sieger/Zweite exakt; die 8 besten Dritten werden
- * plausibel verteilt, SOLANGE die Auslosung noch nicht vorliegt — sobald die
- * echten Sechzehntelfinal-Partien im Index stehen, übernehmen DIESE die Dritten-
- * Zuordnung (sonst zeigte der Tab z. B. GER–Bosnien statt der real ausgelosten
- * Paarung GER–Paraguay). Offene K.-o.-Partien per Elo-Favorit (wie der Baum).
+ * Gemeinsamer Auflösungs-Kontext für den K.-o.-Baum: Sechzehntelfinal-Slots
+ * (Sieger/Zweite exakt aus dem Stand; Dritte plausibel bzw. real gepinnt) plus
+ * die echten Fixtures je Paarung. Von projectBracket (Baum) UND simulateChampion
+ * (Titelchancen) genutzt → beide sehen dieselbe echte Struktur/Ergebnisse.
  */
-export function projectBracket(
+function bracketContext(
   index: IndexFile,
   predIndex: PredictionsIndex,
-): ProjectedBracket {
+): BracketCtx {
   const eloOf = eloMap(index);
   const standings = currentStandings(index, predIndex);
-  // teamId → Gruppe (für die Herkunft "3. X", auch bei real ausgelosten Dritten).
   const teamGroup = new Map(index.teams.map((tm) => [tm.id, tm.groupId]));
 
-  // Beste 8 Gruppendritte (FIFA-Kriterien, Elo als Tiebreak) — Basis für die
-  // PROJEKTION, solange die echte Auslosung fehlt.
+  // Beste 8 Gruppendritte (Basis für die Projektion, solange keine Auslosung).
   const thirds = [...standings.entries()]
     .map(([group, table]) => (table[2] ? { ...table[2], group } : null))
     .filter((x): x is Standing & { group: string } => !!x)
@@ -807,8 +791,7 @@ export function projectBracket(
     .slice(0, 8)
     .map((s) => ({ id: s.id, group: s.group }));
 
-  // Dritt-Slots aus dem Gerüst (inkl. Gruppensieger-Slot der jeweiligen Partie,
-  // über den die echte Auslosung gepinnt wird).
+  // Dritt-Slots aus dem Gerüst (inkl. Gruppensieger-Slot zum Pinnen der Auslosung).
   const thirdSlots = WC2026_BRACKET.filter((t) => t.stage === "round32")
     .map((t) => {
       const third = [t.a, t.b].find(
@@ -831,13 +814,12 @@ export function projectBracket(
       (x): x is { num: number; groups: string[]; winnerGroup: string } => !!x,
     );
 
-  // Plausible Basis-Zuordnung …
   const thirdByTie = assignThirds(
     thirds,
     thirdSlots.map((s) => ({ num: s.num, groups: s.groups })),
   );
-  // … und sobald die echten Sechzehntelfinal-Partien vorliegen, den Dritten je
-  // Partie aus dem realen Gegner des (feststehenden) Gruppensiegers ableiten.
+  // Sobald echte Sechzehntelfinal-Partien vorliegen, den Dritten je Partie aus
+  // dem realen Gegner des (feststehenden) Gruppensiegers ableiten.
   const teamSet = new Set(index.teams.map((tm) => tm.id));
   const realR32 = predIndex.entries.filter(
     (e) =>
@@ -865,19 +847,7 @@ export function projectBracket(
     if (s.kind === "runnerUp") return standings.get(s.group)?.[1]?.id ?? null;
     return thirdByTie.get(num) ?? null;
   };
-  const sideInfo = (num: number, f: Feed): ProjectedSide | null => {
-    if (!("slot" in f)) return null;
-    const teamId = teamOfSlot(num, f.slot);
-    const tg = teamId ? teamGroup.get(teamId) : undefined;
-    return {
-      teamId,
-      source: f.slot,
-      ...(f.slot.kind === "third" && tg ? { thirdGroup: tg } : {}),
-    };
-  };
 
-  // Echte K.-o.-Partien je Paarung + Teams je Stufe (für den Weiterkommenden
-  // bei 90′-Remis: der taucht in einer SPÄTEREN Runde auf = Elfmeter-Sieger).
   const koByPair = new Map<string, PredictionIndexEntry>();
   const teamsAtStage: Array<Set<string>> = KO_STAGES.map(() => new Set());
   for (const e of predIndex.entries) {
@@ -894,6 +864,85 @@ export function projectBracket(
       for (const id of teamsAtStage[j]!) s.add(id);
     return s;
   });
+
+  return { eloOf, teamGroup, teamOfSlot, koByPair, advancedAfter };
+}
+
+/**
+ * Stochastische K.-o.-Simulation über das echte Gerüst (ein Lauf → Champion):
+ * gespielte Partien fix (90′-Remis → Weitergekommener = wer in einer späteren
+ * Runde auftaucht = Elfmeter-Sieger), offene per Weiterkommen-Tipp bzw. Elo
+ * gesampelt. Ausgeschiedene Teams können so nie Champion werden → 0 % Titel.
+ */
+function simulateChampion(ctx: BracketCtx, rng: () => number): string {
+  const cache = new Map<number, string>();
+  const sample = (
+    a: string,
+    b: string,
+    real?: PredictionIndexEntry,
+  ): string => {
+    const pA = real?.advance
+      ? real.homeTeamId === a
+        ? real.advance.home
+        : real.advance.away
+      : eloWinProb(ctx.eloOf(a), ctx.eloOf(b));
+    return rng() < pA ? a : b;
+  };
+  const resolveSide = (num: number, f: Feed): string | null =>
+    "from" in f ? resolveTie(f.from) : ctx.teamOfSlot(num, f.slot);
+  const resolveTie = (num: number): string => {
+    const cached = cache.get(num);
+    if (cached !== undefined) return cached;
+    const t = TIE_BY_NUM.get(num)!;
+    const a = resolveSide(num, t.a);
+    const b = resolveSide(num, t.b);
+    let winner: string;
+    if (a && b) {
+      const real = ctx.koByPair.get(pairKey(a, b));
+      const ar = real?.actualResult;
+      if (ar) {
+        if (ar.home !== ar.away) {
+          winner = ar.home > ar.away ? real!.homeTeamId : real!.awayTeamId;
+        } else {
+          const later = ctx.advancedAfter[KO_STAGES.indexOf(t.stage)]!;
+          winner = later.has(a) ? a : later.has(b) ? b : sample(a, b, real);
+        }
+      } else {
+        winner = sample(a, b, real);
+      }
+    } else {
+      winner = a ?? b ?? "";
+    }
+    cache.set(num, winner);
+    return winner;
+  };
+  return resolveTie(104);
+}
+
+/**
+ * Projiziert das vollständige K.-o.-Bracket nach dem ECHTEN WM-2026-Schema aus
+ * dem aktuellen Gruppenstand: Sieger/Zweite exakt; die 8 besten Dritten werden
+ * plausibel verteilt, SOLANGE die Auslosung noch nicht vorliegt — sobald die
+ * echten Sechzehntelfinal-Partien im Index stehen, übernehmen DIESE die Dritten-
+ * Zuordnung (sonst zeigte der Tab z. B. GER–Bosnien statt der real ausgelosten
+ * Paarung GER–Paraguay). Offene K.-o.-Partien per Elo-Favorit (wie der Baum).
+ */
+export function projectBracket(
+  index: IndexFile,
+  predIndex: PredictionsIndex,
+): ProjectedBracket {
+  const { eloOf, teamGroup, teamOfSlot, koByPair, advancedAfter } =
+    bracketContext(index, predIndex);
+  const sideInfo = (num: number, f: Feed): ProjectedSide | null => {
+    if (!("slot" in f)) return null;
+    const teamId = teamOfSlot(num, f.slot);
+    const tg = teamId ? teamGroup.get(teamId) : undefined;
+    return {
+      teamId,
+      source: f.slot,
+      ...(f.slot.kind === "third" && tg ? { thirdGroup: tg } : {}),
+    };
+  };
   const eloScore = (a: string, b: string) => {
     const pA = eloWinProb(eloOf(a), eloOf(b));
     const aWins = pA >= 0.5;
