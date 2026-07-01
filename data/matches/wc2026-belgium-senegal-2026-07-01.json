@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-01T15:03:53.540Z",
+    "generatedAt": "2026-07-01T16:03:56.331Z",
     "home": {
       "teamId": "BEL",
       "elo": 1737,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-01T08:03:54.219Z",
+    "generatedAt": "2026-07-01T16:03:56.331Z",
     "predictedScore": {
-      "home": 3,
-      "away": 2
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.4145,
-      "draw": 0.2909,
-      "away": 0.2946
+      "home": 0.4374,
+      "draw": 0.2693,
+      "away": 0.2934
     },
-    "confidence": 0.4967,
+    "confidence": 0.4917,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -85,51 +85,50 @@
         },
         "confidence": 0.4,
         "keyFactors": [
-          "Beide Teams nahezu gleichwertig (Elo 1737 vs 1755), Senegal minimal höher bewertet",
-          "Senegal mit starker Defensivquote (Clean-Sheet-Rate 0.622), aber zuletzt anfällig gegen Top-Offensiven (0:3 France, 2:3 Norwegen)",
-          "Belgien mit hoher Offensivwucht (2.5 Tore/Spiel, 5:1 vs Neuseeland), aber ebenfalls schwankend (0:0 Iran)",
-          "K.o.-Spiel: enge, ausgeglichene Partie – Remis nach 90 Minuten realistisch",
-          "Beide gleich erholt (5 Tage Pause), neutraler Ort ohne Heimvorteil"
+          "Sehr ausgeglichenes Duell: Elo praktisch gleichauf (BEL 1737, SEN 1755), beide mit starker Offensive (~2.5 Tore/Spiel)",
+          "Senegal defensiv stabiler (Clean-Sheet-Rate 0.62 vs. 0.38), aber zuletzt gegen Norwegen und Frankreich je 3 Gegentore kassiert",
+          "Belgien mit klarem Momentum-Signal (5:1 gegen Neuseeland), Senegal ebenfalls hoch (5:0 gegen Irak)",
+          "K.o.-Spiel auf neutralem Platz – enge Partie mit realistischem Remis nach 90 Minuten",
+          "Externer Markt sieht höhere Remis-Wahrscheinlichkeit (0.286) als die Baseline"
         ],
         "risks": [
-          "Torreiche Turnierform beider Teams könnte offene Partie mit mehr Toren erzeugen",
-          "Defensive Instabilität beider Seiten macht Ergebnis schwer prognostizierbar",
-          "Mögliche Rotation/Belastungssteuerung nicht ausgeschlossen",
-          "Markt sieht Belgien knapp vorne, Elo eher Senegal – Signale widersprüchlich"
+          "Beide Teams offensivstark – ein torreiches Spiel statt Remis ist möglich",
+          "Senegals wechselhafte Defensive kann sowohl zu Clean Sheet als auch zu vielen Gegentoren führen",
+          "Tagesform und einzelne Schlüsselspieler können in engem K.o.-Spiel den Ausschlag geben",
+          "Keine H2H-Daten zur Kalibrierung vorhanden"
         ]
       },
       "chatgpt": {
         "predictedScore": {
           "home": 2,
-          "away": 2
+          "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.3,
+          "home": 0.45,
+          "draw": 0.25,
           "away": 0.3
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Senegal's recent high-scoring win against Iraq",
-          "Belgium's convincing win over New Zealand",
-          "Senegal's slightly higher Elo rating",
-          "Neutral venue removes home advantage"
+          "Belgium's recent 5:1 victory over New Zealand indicates strong offensive form.",
+          "Both teams have similar Elo ratings, but Belgium's recent performance against New Zealand and strong attack give them a slight edge.",
+          "Senegal's recent losses against France and Norway suggest vulnerabilities in defense."
         ],
         "risks": [
-          "Senegal's vulnerability against European teams shown in loss to Norway and France",
-          "Belgium's inconsistency evidenced by draw against Iran"
+          "Senegal's ability to score 5 goals against Iraq shows their attacking potential.",
+          "The match is held at a neutral venue, removing any home advantage."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9667,
     "ensembleWeights": {
       "claude": 0.5063,
       "chatgpt": 0.4937
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams nahezu gleichwertig (Elo 1737 vs 1755), Senegal minimal höher bewertet; Senegal mit starker Defensivquote (Clean-Sheet-Rate 0.622), aber zuletzt anfällig gegen Top-Offensiven (0:3 France, 2:3 Norwegen); Belgien mit hoher Offensivwucht (2.5 Tore/Spiel, 5:1 vs Neuseeland), aber ebenfalls schwankend (0:0 Iran). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Sehr ausgeglichenes Duell: Elo praktisch gleichauf (BEL 1737, SEN 1755), beide mit starker Offensive (~2.5 Tore/Spiel); Senegal defensiv stabiler (Clean-Sheet-Rate 0.62 vs. 0.38), aber zuletzt gegen Norwegen und Frankreich je 3 Gegentore kassiert; Belgien mit klarem Momentum-Signal (5:1 gegen Neuseeland), Senegal ebenfalls hoch (5:0 gegen Irak). Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.5562,
-      "away": 0.4438
+      "home": 0.5686,
+      "away": 0.4314
     },
     "tiebreakWinProbHome": 0.49,
     "inputHash": "sha256:0831e52203512fbfb240bfa0999d1f81653ef7bb33fa975917e7e05288b6cc9b"
@@ -173,21 +172,34 @@
         "away": 0.2978
       },
       "confidence": 0.4917
+    },
+    {
+      "generatedAt": "2026-07-01T08:03:54.219Z",
+      "predictedScore": {
+        "home": 3,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.4145,
+        "draw": 0.2909,
+        "away": 0.2946
+      },
+      "confidence": 0.4967
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-01T15:03:54.395Z",
+    "updatedAt": "2026-07-01T16:05:53.459Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.4451,
-      "draw": 0.292,
-      "away": 0.2629
+      "home": 0.4553,
+      "draw": 0.2857,
+      "away": 0.259
     },
     "decimal": {
-      "home": 2.17,
-      "draw": 3.3,
-      "away": 3.67
+      "home": 2.13,
+      "draw": 3.4,
+      "away": 3.75
     }
   }
 }
