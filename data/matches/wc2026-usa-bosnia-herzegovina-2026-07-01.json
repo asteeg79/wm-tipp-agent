@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-01T19:04:01.365Z",
+    "generatedAt": "2026-07-01T20:03:55.722Z",
     "home": {
       "teamId": "USA",
       "elo": 1670,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-01T12:03:57.555Z",
+    "generatedAt": "2026-07-01T20:03:55.722Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6556,
-      "draw": 0.1957,
-      "away": 0.1487
+      "home": 0.6594,
+      "draw": 0.1863,
+      "away": 0.1543
     },
-    "confidence": 0.6336,
+    "confidence": 0.6357,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -85,16 +85,14 @@
         },
         "confidence": 0.58,
         "keyFactors": [
-          "USA mit klar höherem Elo (1670 vs 1550) und besserer gewichteter Form, dazu Heimvorteil/Host-Advantage trotz neutralem Boden",
-          "USA offensiv stark (2,0 Tore/Spiel, jüngst 4:1 Paraguay, 2:0 Australien), hohe Torerwartung laut Baseline (2,61)",
-          "Bosnien defensiv anfällig (nur 16,7% Zu-Null, 1,6 Gegentore/Spiel, 1:4 gegen Schweiz) – erlaubt USA Räume",
-          "Markt und Baseline decken sich klar zugunsten USA (~0,67–0,69)"
+          "USA mit höherem Elo (1670 vs 1550) und starker Offensivform (2,0 Tore/Spiel), zuletzt 4:1 vs Paraguay und 2:0 vs Australien",
+          "Faktischer Heimvorteil trotz neutralem Spielort (Gastgeber USA)",
+          "Bosnien mit ansprechender Offensive (3:1 vs Qatar), aber sehr anfälliger Defensive (4 Gegentore vs Schweiz)"
         ],
         "risks": [
-          "USA-Defensive ebenfalls löchrig (nur 24% Zu-Null, zuletzt 2:3 Türkei, 2:5 Belgien) – Bosnien trifft regelmäßig",
-          "Bosnien mit Momentum nach 3:1 gegen Katar, kann bei offenem Spiel überraschen",
-          "K.-o.-Charakter: enge Partie und Remis nach 90 Minuten durchaus möglich",
-          "News nur Trainer-Randnotiz ohne echte kaderrelevante Info"
+          "Beide Teams defensiv instabil (USA cleanSheetRate 0,24, BIH 0,17) → Ergebnis kann kippen",
+          "USA kassierte zuletzt viele Gegentore (3 vs Türkei, 5 vs Belgien), Bosnien kann treffen",
+          "K.-o.-Enge: knappe Spiele oft, Remis nach 90 Min realistisch"
         ]
       },
       "chatgpt": {
@@ -104,30 +102,30 @@
         },
         "probabilities": {
           "home": 0.65,
-          "draw": 0.2,
-          "away": 0.15
+          "draw": 0.18,
+          "away": 0.17
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Die USA haben eine stärkere Elo-Bewertung und eine kürzlich gute Turnierperformance mit Siegen gegen Australien und Paraguay.",
-          "Bosnien & Herzegowina zeigte gegen Katar Stärke, verlor jedoch klar gegen die Schweiz.",
-          "Der Heimvorteil wird durch die neutralen Bedingungen relativiert, aber das Spiel findet in den USA statt, was einen leichten psychologischen Vorteil bedeuten könnte."
+          "USA hat Heimvorteil durch Host-Advantage.",
+          "USA hat bessere Form und höhere Elo-Wertung.",
+          "Bosnien gewann zuletzt gegen schwächeren Gegner (Katar), verlor aber deutlich gegen die Schweiz."
         ],
         "risks": [
-          "Unzufriedenheit des US-Trainers könnte die Teamchemie beeinträchtigen.",
-          "Bosnien hat nach dem klaren Sieg gegen Katar eine gewisse positive Dynamik."
+          "USA-Trainer hat kürzlich gestresst gewirkt, könnte sich auf Mannschaftsmoral auswirken.",
+          "USA hat kürzlich ein Spiel gegen Türkei verloren, Form könnte schwanken."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9867,
     "ensembleWeights": {
-      "claude": 0.5063,
-      "chatgpt": 0.4937
+      "claude": 0.5062,
+      "chatgpt": 0.4938
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit klar höherem Elo (1670 vs 1550) und besserer gewichteter Form, dazu Heimvorteil/Host-Advantage trotz neutralem Boden; USA offensiv stark (2,0 Tore/Spiel, jüngst 4:1 Paraguay, 2:0 Australien), hohe Torerwartung laut Baseline (2,61); Bosnien defensiv anfällig (nur 16,7% Zu-Null, 1,6 Gegentore/Spiel, 1:4 gegen Schweiz) – erlaubt USA Räume. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: USA mit höherem Elo (1670 vs 1550) und starker Offensivform (2,0 Tore/Spiel), zuletzt 4:1 vs Paraguay und 2:0 vs Australien; Faktischer Heimvorteil trotz neutralem Spielort (Gastgeber USA); Bosnien mit ansprechender Offensive (3:1 vs Qatar), aber sehr anfälliger Defensive (4 Gegentore vs Schweiz). Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.7681,
-      "away": 0.2319
+      "home": 0.7665,
+      "away": 0.2335
     },
     "tiebreakWinProbHome": 0.55,
     "inputHash": "sha256:2bd8185babf1b1d5c59188f78fb4bb817717d60a9ca87dc3f15f428a68d5e82e"
@@ -171,21 +169,34 @@
         "away": 0.1497
       },
       "confidence": 0.6977
+    },
+    {
+      "generatedAt": "2026-07-01T12:03:57.555Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.6556,
+        "draw": 0.1957,
+        "away": 0.1487
+      },
+      "confidence": 0.6336
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-01T19:05:54.050Z",
+    "updatedAt": "2026-07-01T20:03:56.525Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.6988,
-      "draw": 0.1929,
-      "away": 0.1084
+      "home": 0.7028,
+      "draw": 0.1903,
+      "away": 0.1069
     },
     "decimal": {
-      "home": 1.38,
-      "draw": 5,
-      "away": 8.9
+      "home": 1.37,
+      "draw": 5.04,
+      "away": 8.98
     }
   }
 }
