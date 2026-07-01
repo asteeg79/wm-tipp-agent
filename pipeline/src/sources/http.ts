@@ -13,13 +13,29 @@ export interface FetchJsonOptions {
 }
 
 /**
- * Holt eine Textressource. Gibt bei 404 `null` zurück (für optionale Dateien),
- * wiederholt bei 429/5xx mit Backoff.
+ * Signalisiert dem Retry-Loop einen erneuten Versuch mit EXPLIZITER Wartezeit
+ * (z. B. aus dem `Retry-After`-Header). Ohne dieses Signal geworfene Fehler
+ * werden mit dem Standard-Backoff wiederholt.
  */
-export async function fetchText(
+class RetrySignal {
+  constructor(
+    readonly waitMs: number,
+    readonly err: Error,
+  ) {}
+}
+
+/**
+ * Führt einen Request bis zu `maxRetries`+1-mal aus. `handle` liefert das
+ * Ergebnis, wirft `RetrySignal` für einen Retry mit fester Wartezeit oder einen
+ * beliebigen Fehler (→ Retry mit Backoff+Jitter; nach dem letzten Versuch neu
+ * geworfen). AbortController + Timeout gelten pro Versuch.
+ */
+async function fetchWithRetry<T>(
   url: string,
   opts: FetchJsonOptions,
-): Promise<string | null> {
+  label: string,
+  handle: (res: Response) => Promise<T>,
+): Promise<T> {
   const { headers, maxRetries, backoffBaseMs, timeoutMs = 25_000 } = opts;
   let lastErr: unknown;
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
@@ -30,22 +46,13 @@ export async function fetchText(
         headers: headers ?? {},
         signal: controller.signal,
       });
-      if (res.status === 404) return null;
-      if (res.status === 429 || res.status >= 500) {
-        const wait = backoffBaseMs * 2 ** attempt + Math.random() * 250;
-        lastErr = new Error(`HTTP ${res.status} für ${url}`);
-        if (attempt < maxRetries) {
-          await sleep(wait);
-          continue;
-        }
-        throw lastErr;
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
-      return await res.text();
+      return await handle(res);
     } catch (err) {
-      lastErr = err;
+      const backoff = backoffBaseMs * 2 ** attempt + Math.random() * 250;
+      const wait = err instanceof RetrySignal ? err.waitMs : backoff;
+      lastErr = err instanceof RetrySignal ? err.err : err;
       if (attempt < maxRetries) {
-        await sleep(backoffBaseMs * 2 ** attempt + Math.random() * 250);
+        await sleep(wait);
         continue;
       }
       throw lastErr;
@@ -53,60 +60,49 @@ export async function fetchText(
       clearTimeout(timer);
     }
   }
-  throw lastErr ?? new Error(`fetchText fehlgeschlagen: ${url}`);
+  throw lastErr ?? new Error(`${label} fehlgeschlagen: ${url}`);
+}
+
+/**
+ * Holt eine Textressource. Gibt bei 404 `null` zurück (für optionale Dateien),
+ * wiederholt bei 429/5xx mit Backoff.
+ */
+export function fetchText(
+  url: string,
+  opts: FetchJsonOptions,
+): Promise<string | null> {
+  return fetchWithRetry(url, opts, "fetchText", async (res) => {
+    if (res.status === 404) return null;
+    if (res.status === 429 || res.status >= 500) {
+      throw new Error(`HTTP ${res.status} für ${url}`);
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
+    return res.text();
+  });
 }
 
 /**
  * Holt JSON von `url`. Wiederholt bei 429 und 5xx mit exponentiellem Backoff
- * (+Jitter). Wirft bei endgültigem Fehlschlag.
+ * (+Jitter); respektiert dabei einen vorhandenen `Retry-After`-Header. Wirft
+ * bei endgültigem Fehlschlag.
  */
-export async function fetchJson<T = unknown>(
+export function fetchJson<T = unknown>(
   url: string,
   opts: FetchJsonOptions,
 ): Promise<T> {
-  const { headers, maxRetries, backoffBaseMs, timeoutMs = 25_000 } = opts;
-  let lastErr: unknown;
-
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
-    try {
-      const res = await fetch(url, {
-        headers: headers ?? {},
-        signal: controller.signal,
-      });
-
-      if (res.status === 429 || res.status >= 500) {
-        // Rate-Limit oder Serverfehler → Backoff und erneut versuchen.
-        const retryAfter = Number(res.headers.get("retry-after"));
-        const wait =
-          Number.isFinite(retryAfter) && retryAfter > 0
-            ? retryAfter * 1000
-            : backoffBaseMs * 2 ** attempt + Math.random() * 250;
-        lastErr = new Error(`HTTP ${res.status} für ${url}`);
-        if (attempt < maxRetries) {
-          await sleep(wait);
-          continue;
-        }
-        throw lastErr;
+  return fetchWithRetry<T>(url, opts, "fetchJson", async (res) => {
+    if (res.status === 429 || res.status >= 500) {
+      const err = new Error(`HTTP ${res.status} für ${url}`);
+      // Rate-Limit oder Serverfehler → Backoff; Retry-After bevorzugen.
+      const retryAfter = Number(res.headers.get("retry-after"));
+      if (Number.isFinite(retryAfter) && retryAfter > 0) {
+        throw new RetrySignal(retryAfter * 1000, err);
       }
-
-      if (!res.ok) {
-        throw new Error(`HTTP ${res.status} für ${url}: ${await res.text()}`);
-      }
-
-      return (await res.json()) as T;
-    } catch (err) {
-      lastErr = err;
-      // Netzwerk-/Abort-Fehler ebenfalls mit Backoff erneut versuchen.
-      if (attempt < maxRetries) {
-        await sleep(backoffBaseMs * 2 ** attempt + Math.random() * 250);
-        continue;
-      }
-      throw lastErr;
-    } finally {
-      clearTimeout(timer);
+      throw err;
     }
-  }
-  throw lastErr ?? new Error(`fetchJson fehlgeschlagen: ${url}`);
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} für ${url}: ${await res.text()}`);
+    }
+    return (await res.json()) as T;
+  });
 }

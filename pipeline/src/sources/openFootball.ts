@@ -113,34 +113,39 @@ export class OpenFootballProvider implements TournamentProvider {
     const out: NormalizedFixture[] = [];
     for (const m of file.matches) {
       if (isPlaceholder(m.team1) || isPlaceholder(m.team2)) continue;
-      const ft = m.score?.ft ?? null;
-      const fixture: NormalizedFixture = {
-        matchId: `wc2026-${teamSlug(m.team1)}-${teamSlug(m.team2)}-${m.date ?? "tbd"}`,
-        date: m.date ?? "",
-        competition: file.name,
-        homeTeamId: canonicalId(m.team1),
-        homeTeamName: m.team1,
-        awayTeamId: canonicalId(m.team2),
-        awayTeamName: m.team2,
-        goalsHome: ft ? ft[0] : null,
-        goalsAway: ft ? ft[1] : null,
-        neutral: true,
-        finished: ft !== null,
-      };
-      const stage = roundToStage(m.round, !!m.group);
-      if (stage) fixture.stage = stage;
-      if (m.group) fixture.groupId = normalizeGroupId(m.group);
-      if (m.ground) {
-        fixture.ground = m.ground;
-        const alt = cityAltitude(m.ground);
-        if (alt !== null) fixture.altitude = alt;
-      }
-      const dt = toIsoDateTime(m.date, m.time);
-      if (dt) fixture.dateTime = dt;
-      out.push(fixture);
+      out.push(matchToFixture(m, file.name));
     }
     return out;
   }
+}
+
+/** Ein openfootball-Match → NormalizedFixture (optionale Felder nur wenn da). */
+function matchToFixture(m: OfMatch, competition: string): NormalizedFixture {
+  const ft = m.score?.ft ?? null;
+  const fixture: NormalizedFixture = {
+    matchId: `wc2026-${teamSlug(m.team1)}-${teamSlug(m.team2)}-${m.date ?? "tbd"}`,
+    date: m.date ?? "",
+    competition,
+    homeTeamId: canonicalId(m.team1),
+    homeTeamName: m.team1,
+    awayTeamId: canonicalId(m.team2),
+    awayTeamName: m.team2,
+    goalsHome: ft ? ft[0] : null,
+    goalsAway: ft ? ft[1] : null,
+    neutral: true,
+    finished: ft !== null,
+  };
+  const stage = roundToStage(m.round, !!m.group);
+  if (stage) fixture.stage = stage;
+  if (m.group) fixture.groupId = normalizeGroupId(m.group);
+  if (m.ground) {
+    fixture.ground = m.ground;
+    const alt = cityAltitude(m.ground);
+    if (alt !== null) fixture.altitude = alt;
+  }
+  const dt = toIsoDateTime(m.date, m.time);
+  if (dt) fixture.dateTime = dt;
+  return fixture;
 }
 
 function buildTeamSummary(name: string, groupId: string): TeamSummary {

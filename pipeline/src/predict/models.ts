@@ -147,34 +147,8 @@ export class ClaudeClient implements ModelClient {
         status = await this.client.messages.batches.retrieve(batch.id);
       }
 
-      const out: (LlmPrediction | Error)[] = userMessages.map(
-        () => new Error("Antwort fehlt im Batch-Ergebnis"),
-      );
-      for await (const r of await this.client.messages.batches.results(
-        batch.id,
-      )) {
-        const i = Number(r.custom_id.slice(1));
-        if (!Number.isInteger(i) || i < 0 || i >= out.length) continue;
-        if (r.result.type === "succeeded") {
-          try {
-            out[i] = this.parseMessage(r.result.message);
-          } catch (e) {
-            out[i] = toError(e);
-          }
-        } else {
-          out[i] = new Error(`Batch-Ergebnis: ${r.result.type}`);
-        }
-      }
-
-      // Einzel-Fallback nur für fehlgeschlagene/fehlende Items.
-      for (let i = 0; i < out.length; i++) {
-        if (!(out[i] instanceof Error)) continue;
-        try {
-          out[i] = await this.predict(userMessages[i]!);
-        } catch (e) {
-          out[i] = toError(e);
-        }
-      }
+      const out = await this.collectBatchResults(batch.id, userMessages.length);
+      await this.fillFailedWithDirect(out, userMessages);
       return out;
     } catch (err) {
       console.warn(
@@ -182,6 +156,48 @@ export class ClaudeClient implements ModelClient {
         err,
       );
       return this.predictManyDirect(userMessages);
+    }
+  }
+
+  /** Batch-Ergebnisse einsammeln (custom_id → Index); Parse-Fehler als Error. */
+  private async collectBatchResults(
+    batchId: string,
+    count: number,
+  ): Promise<(LlmPrediction | Error)[]> {
+    const out: (LlmPrediction | Error)[] = Array.from(
+      { length: count },
+      () => new Error("Antwort fehlt im Batch-Ergebnis"),
+    );
+    for await (const r of await this.client!.messages.batches.results(
+      batchId,
+    )) {
+      const i = Number(r.custom_id.slice(1));
+      if (!Number.isInteger(i) || i < 0 || i >= out.length) continue;
+      if (r.result.type === "succeeded") {
+        try {
+          out[i] = this.parseMessage(r.result.message);
+        } catch (e) {
+          out[i] = toError(e);
+        }
+      } else {
+        out[i] = new Error(`Batch-Ergebnis: ${r.result.type}`);
+      }
+    }
+    return out;
+  }
+
+  /** Einzel-Fallback (Direkt-Call) nur für fehlgeschlagene/fehlende Items. */
+  private async fillFailedWithDirect(
+    out: (LlmPrediction | Error)[],
+    userMessages: string[],
+  ): Promise<void> {
+    for (let i = 0; i < out.length; i++) {
+      if (!(out[i] instanceof Error)) continue;
+      try {
+        out[i] = await this.predict(userMessages[i]!);
+      } catch (e) {
+        out[i] = toError(e);
+      }
     }
   }
 
