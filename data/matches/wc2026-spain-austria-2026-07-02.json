@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-01T06:03:49.883Z",
+    "generatedAt": "2026-07-01T07:03:47.145Z",
     "home": {
       "teamId": "ESP",
       "elo": 1931,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-07-01T07:03:47.145Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.7429,
-      "draw": 0.1529,
-      "away": 0.1042
+      "home": 0.7063,
+      "draw": 0.1769,
+      "away": 0.1168
     },
-    "confidence": 0.6143,
+    "confidence": 0.7055,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,71 @@
         "away": 0.89
       }
     },
-    "advance": {
-      "home": 0.8465,
-      "away": 0.1535
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.72,
+          "draw": 0.17,
+          "away": 0.11
+        },
+        "confidence": 0.68,
+        "keyFactors": [
+          "Spanien mit herausragender Defensive (0,39 Gegentore/Spiel, 53% Weiße Weste) und starker Form (weightedForm 2,34, Elo 1931)",
+          "Österreich kassierte zuletzt reihenweise Gegentore (3:3 gegen Algerien, 0:2 gegen Argentinien) - Abwehr anfällig",
+          "Deutlicher Elo-Unterschied (1931 vs 1694) und höhere Einzelqualität sprechen klar für Spanien",
+          "Spaniens Offensive zuletzt effizient (4:0 Saudi-Arabien, 1:0 Uruguay), Torschnitt 2,24"
+        ],
+        "risks": [
+          "K.-o.-Spiel: Österreich unter Rangnick steht oft kompakt und kann bei einem tiefen Block Spanien das Toreschießen erschweren",
+          "Spanien spielte gegen Kap Verde und Ägypten zuletzt 0:0 - fehlende Durchschlagskraft gegen tiefe Abwehrreihen möglich",
+          "Österreichs Offensive (2,31 Tore/Spiel) kann bei Kontern gefährlich werden",
+          "Enge K.-o.-Partien enden häufiger als erwartet remis"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.18,
+          "away": 0.14
+        },
+        "confidence": 0.75,
+        "keyFactors": [
+          "Spain's higher Elo rating and superior recent form.",
+          "Austria's defensive vulnerabilities with higher goals against average.",
+          "Spain's clean sheet against Uruguay and strong win against Saudi Arabia.",
+          "Spain's recent absence of a key player due to injury could slightly impact their performance."
+        ],
+        "risks": [
+          "Spain's potential missing player could disrupt team cohesion.",
+          "Austria's recent competitive matches against Algeria and Jordan showing scoring capability."
+        ]
+      }
     },
-    "inputHash": "sha256:584e3ede17d13d499988cad6830000b3976d4afeb523bfa37d5030638957832a"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5037,
+      "chatgpt": 0.4963
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive (0,39 Gegentore/Spiel, 53% Weiße Weste) und starker Form (weightedForm 2,34, Elo 1931); Österreich kassierte zuletzt reihenweise Gegentore (3:3 gegen Algerien, 0:2 gegen Argentinien) - Abwehr anfällig; Deutlicher Elo-Unterschied (1931 vs 1694) und höhere Einzelqualität sprechen klar für Spanien. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.818,
+      "away": 0.182
+    },
+    "tiebreakWinProbHome": 0.585,
+    "inputHash": "sha256:f67dd8fb41ae7fa3ccd867aba789e6afe2fffec1fdf44125f8fc84b664bd3732"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-01T06:05:41.961Z",
+    "updatedAt": "2026-07-01T07:03:47.677Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.7229,
