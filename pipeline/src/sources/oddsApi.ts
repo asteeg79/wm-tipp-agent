@@ -142,40 +142,58 @@ export async function loadOdds(
   const ttlMs = ttlH * 60 * 60 * 1000;
   const cacheKey = `odds:${sport}:${regions}:h2h`;
 
-  let events = await cacheGet<OddsEvent[]>(cacheKey, ttlMs);
-  if (events === null) {
-    const url =
-      `https://api.the-odds-api.com/v4/sports/${sport}/odds/` +
-      `?apiKey=${apiKey}&regions=${regions}&markets=h2h&oddsFormat=decimal`;
-    const text = await fetchText(url, { maxRetries: 2, backoffBaseMs: 1000 });
-    if (!text) {
-      console.warn("[odds] keine Antwort von The Odds API");
-      return new Map();
-    }
-    try {
-      const parsed = JSON.parse(text) as unknown;
-      if (!Array.isArray(parsed)) {
-        console.warn("[odds] unerwartete Antwort:", text.slice(0, 160));
-        return new Map();
-      }
-      events = parsed as OddsEvent[];
-    } catch {
-      return new Map();
-    }
-    await cacheSet(cacheKey, events);
-    console.log(
-      `[odds] ${events.length} Partien frisch von The Odds API ` +
-        `(1 Credit, TTL ${ttlH}h${ttlH < config.odds.ttlHours ? " — anpfiffnah" : ""})`,
-    );
-  } else {
-    console.log(`[odds] ${events.length} Partien aus Cache (kein Credit)`);
-  }
+  const events = await fetchOddsEvents(cacheKey, ttlMs, ttlH, apiKey);
+  if (!events) return new Map();
+  return eventsToMarketMap(events);
+}
 
+/** Holt die Odds-Events aus Cache oder frisch von der API; null bei Fehler. */
+async function fetchOddsEvents(
+  cacheKey: string,
+  ttlMs: number,
+  ttlH: number,
+  apiKey: string,
+): Promise<OddsEvent[] | null> {
+  const cached = await cacheGet<OddsEvent[]>(cacheKey, ttlMs);
+  if (cached !== null) {
+    console.log(`[odds] ${cached.length} Partien aus Cache (kein Credit)`);
+    return cached;
+  }
+  const { sport, regions } = config.odds;
+  const url =
+    `https://api.the-odds-api.com/v4/sports/${sport}/odds/` +
+    `?apiKey=${apiKey}&regions=${regions}&markets=h2h&oddsFormat=decimal`;
+  const text = await fetchText(url, { maxRetries: 2, backoffBaseMs: 1000 });
+  if (!text) {
+    console.warn("[odds] keine Antwort von The Odds API");
+    return null;
+  }
+  let events: OddsEvent[];
+  try {
+    const parsed = JSON.parse(text) as unknown;
+    if (!Array.isArray(parsed)) {
+      console.warn("[odds] unerwartete Antwort:", text.slice(0, 160));
+      return null;
+    }
+    events = parsed as OddsEvent[];
+  } catch {
+    return null;
+  }
+  await cacheSet(cacheKey, events);
+  console.log(
+    `[odds] ${events.length} Partien frisch von The Odds API ` +
+      `(1 Credit, TTL ${ttlH}h${ttlH < config.odds.ttlHours ? " — anpfiffnah" : ""})`,
+  );
+  return events;
+}
+
+/** Vor-Anpfiff-Quoten je Partie (In-Play-Linien überspringen). */
+function eventsToMarketMap(events: OddsEvent[]): Map<string, MarketOdds> {
   const map = new Map<string, MarketOdds>();
   const nowMs = Date.now();
   for (const ev of events) {
-    // Nur VOR-Anpfiff-Quoten: bereits angepfiffene/laufende Spiele liefern
-    // In-Play-Linien (z. B. spätes 0:0 → Remis ~1.09), die den Markt verfälschen.
+    // Bereits angepfiffene/laufende Spiele liefern In-Play-Linien (z. B. spätes
+    // 0:0 → Remis ~1.09), die den Markt verfälschen → überspringen.
     if (ev.commence_time && new Date(ev.commence_time).getTime() <= nowMs) {
       continue;
     }

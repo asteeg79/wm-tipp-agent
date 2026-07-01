@@ -43,6 +43,25 @@ interface PoolMatch extends ParsedMatch {
   idB: string;
 }
 
+/**
+ * Lädt + parst eine Wettbewerbsdatei (aus Cache oder Netz). `loaded` = ob eine
+ * Datei wirklich vorlag (für den geladenen-Dateien-Zähler).
+ */
+async function fetchParsedFile(
+  url: string,
+  year: number,
+  currentYear: number,
+): Promise<{ parsed: ParsedMatch[]; loaded: boolean }> {
+  const cacheKey = `of-hist:${url}`;
+  const ttl = year < currentYear ? Infinity : 6 * 60 * 60 * 1000;
+  const cached = await cacheGet<ParsedMatch[]>(cacheKey, ttl);
+  if (cached !== null) return { parsed: cached, loaded: true };
+  const text = await fetchText(url, { maxRetries: 3, backoffBaseMs: 1000 });
+  const parsed = text ? parseFootballTxt(text, year) : [];
+  await cacheSet(cacheKey, parsed);
+  return { parsed, loaded: !!text };
+}
+
 export class OpenFootballHistoryProvider implements HistoryProvider {
   readonly name = "openfootball-internationals";
   private pool: PoolMatch[] | null = null;
@@ -62,30 +81,20 @@ export class OpenFootballHistoryProvider implements HistoryProvider {
     for (const year of seasons) {
       for (const comp of COMPETITIONS) {
         const url = `${base}/${comp.dir}/${year}_${comp.dir}.txt`;
-        const cacheKey = `of-hist:${url}`;
-        const ttl = year < currentYear ? Infinity : 6 * 60 * 60 * 1000;
-
-        let parsed = await cacheGet<ParsedMatch[]>(cacheKey, ttl);
-        if (parsed === null) {
-          const text = await fetchText(url, {
-            maxRetries: 3,
-            backoffBaseMs: 1000,
-          });
-          parsed = text ? parseFootballTxt(text, year) : [];
-          await cacheSet(cacheKey, parsed);
-          if (text) this.filesLoaded++;
-        } else {
-          this.filesLoaded++;
-        }
-
-        for (const m of parsed) {
-          pool.push({
+        const { parsed, loaded } = await fetchParsedFile(
+          url,
+          year,
+          currentYear,
+        );
+        if (loaded) this.filesLoaded++;
+        pool.push(
+          ...parsed.map((m) => ({
             ...m,
             competition: comp.name,
             idA: canonicalId(m.teamA),
             idB: canonicalId(m.teamB),
-          });
-        }
+          })),
+        );
       }
     }
 

@@ -79,6 +79,26 @@ export function computeEloRatings(
   return ratings;
 }
 
+/** Team-normalisiertes History-Spiel → Heim/Auswärts-EloGame auflösen. */
+function toEloGame(teamId: string, m: HistoryMatch): EloGame {
+  const [homeId, awayId, homeGoals, awayGoals]: [
+    string,
+    string,
+    number,
+    number,
+  ] = m.home
+    ? [teamId, m.opponentId, m.goalsFor, m.goalsAgainst]
+    : [m.opponentId, teamId, m.goalsAgainst, m.goalsFor];
+  return {
+    date: m.date,
+    homeId,
+    awayId,
+    homeGoals,
+    awayGoals,
+    neutral: m.neutral,
+  };
+}
+
 /**
  * Baut die globale Spielmenge aus den per-Team gesammelten Historien.
  * Dedupe über matchId, damit jedes Spiel nur einmal in die Elo-Berechnung
@@ -90,20 +110,7 @@ export function gamesFromHistories(
   const byId = new Map<string, EloGame>();
   for (const [teamId, history] of historyByTeam) {
     for (const m of history) {
-      if (byId.has(m.matchId)) continue;
-      // m ist aus Sicht von teamId normalisiert → in Heim/Auswärts auflösen.
-      const homeId = m.home ? teamId : m.opponentId;
-      const awayId = m.home ? m.opponentId : teamId;
-      const homeGoals = m.home ? m.goalsFor : m.goalsAgainst;
-      const awayGoals = m.home ? m.goalsAgainst : m.goalsFor;
-      byId.set(m.matchId, {
-        date: m.date,
-        homeId,
-        awayId,
-        homeGoals,
-        awayGoals,
-        neutral: m.neutral,
-      });
+      if (!byId.has(m.matchId)) byId.set(m.matchId, toEloGame(teamId, m));
     }
   }
   return [...byId.values()];

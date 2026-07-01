@@ -80,6 +80,33 @@ function blendMarket(
 }
 
 /**
+ * Gewichtetes Mittel der Modell-Wahrscheinlichkeiten: optional konfidenz- und
+ * (falls `accWeights` gesetzt) accuracy-gewichtet.
+ */
+function ensembleProbabilities(
+  results: ModelResult[],
+  accWeights: EnsembleWeights | null,
+): Outcome1x2 {
+  const weighted = config.ensemble.confidenceWeighted;
+  let wSum = 0;
+  const acc = { home: 0, draw: 0, away: 0 };
+  for (const r of results) {
+    const p = normalizeProbs(r.prediction.probabilities);
+    let w = weighted ? Math.max(0.01, r.prediction.confidence) : 1;
+    if (accWeights) w *= accWeights.weights[r.id];
+    acc.home += w * p.home;
+    acc.draw += w * p.draw;
+    acc.away += w * p.away;
+    wSum += w;
+  }
+  return {
+    home: round(acc.home / wSum, 4),
+    draw: round(acc.draw / wSum, 4),
+    away: round(acc.away / wSum, 4),
+  };
+}
+
+/**
  * Führt die Modellergebnisse zusammen. Mit beiden Modellen: Ensemble.
  * Mit nur einem Modell: dessen Ergebnis. Mit keinem: Baseline-Fallback.
  * Liegen Buchmacher-Quoten vor, werden sie in die finale Verteilung gemischt.
@@ -116,26 +143,13 @@ export function reconcile(
     };
   }
 
-  const weighted = config.ensemble.confidenceWeighted;
   // Accuracy-Gewichtung nur anwenden, wenn wirklich BEIDE Modelle antworten —
   // bei nur einem Modell würde sie dessen Tipp grundlos skalieren.
   const useAcc = !!accWeights && results.length === 2;
-  let wSum = 0;
-  const acc = { home: 0, draw: 0, away: 0 };
-  for (const r of results) {
-    const p = normalizeProbs(r.prediction.probabilities);
-    let w = weighted ? Math.max(0.01, r.prediction.confidence) : 1;
-    if (useAcc) w *= accWeights!.weights[r.id];
-    acc.home += w * p.home;
-    acc.draw += w * p.draw;
-    acc.away += w * p.away;
-    wSum += w;
-  }
-  const ensembleProbs: Outcome1x2 = {
-    home: round(acc.home / wSum, 4),
-    draw: round(acc.draw / wSum, 4),
-    away: round(acc.away / wSum, 4),
-  };
+  const ensembleProbs = ensembleProbabilities(
+    results,
+    useAcc ? accWeights! : null,
+  );
   // Markt einmischen (bester Einzel-Schätzer), falls Quoten vorliegen.
   const probabilities = blendMarket(ensembleProbs, market);
 

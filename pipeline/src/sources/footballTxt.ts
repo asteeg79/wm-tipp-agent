@@ -50,53 +50,60 @@ function cleanTeam(name: string): string {
     .trim();
 }
 
+interface DateState {
+  year: number;
+  month: number;
+  day: number;
+}
+
+/** Match-Zeile → ParsedMatch, sofern ein gültiges Datum aktiv + Teams valide. */
+function parseMatchLine(line: string, s: DateState): ParsedMatch | null {
+  const mm = MATCH_RE.exec(line);
+  if (!mm || !s.month || !s.day) return null;
+  const teamA = cleanTeam(mm[1]!);
+  const teamB = cleanTeam(mm[4]!);
+  if (!teamA || !teamB || teamA === teamB) return null;
+  const date = `${s.year.toString().padStart(4, "0")}-${String(s.month).padStart(2, "0")}-${String(s.day).padStart(2, "0")}`;
+  return { date, teamA, teamB, scoreA: Number(mm[2]), scoreB: Number(mm[3]) };
+}
+
+/** Datumskopf → aktualisiert month/day/year in-place; true, wenn erkannt. */
+function applyDateHeader(line: string, s: DateState): boolean {
+  const dm = DATE_RE.exec(line.trim());
+  if (!dm) return false;
+  const mon = MONTHS[dm[1]!.toLowerCase()];
+  if (mon) {
+    s.month = mon;
+    s.day = Number(dm[2]);
+    if (dm[3]) s.year = Number(dm[3]);
+  }
+  return true;
+}
+
 export function parseFootballTxt(
   text: string,
   defaultYear: number,
 ): ParsedMatch[] {
   const out: ParsedMatch[] = [];
-  let year = defaultYear;
-  let month = 0;
-  let day = 0;
+  const s: DateState = { year: defaultYear, month: 0, day: 0 };
 
   for (const raw of text.split(/\r?\n/)) {
     const line = raw.replace(/\s+$/, "");
     if (!line.trim() || line.trim().startsWith("#")) continue;
 
-    // Match-Zeile zuerst prüfen (beginnt eingerückt mit Score).
-    const mm = MATCH_RE.exec(line);
-    if (mm && month && day) {
-      const teamA = cleanTeam(mm[1]!);
-      const scoreA = Number(mm[2]);
-      const scoreB = Number(mm[3]);
-      const teamB = cleanTeam(mm[4]!);
-      if (teamA && teamB && teamA !== teamB) {
-        out.push({
-          date: `${year.toString().padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
-          teamA,
-          teamB,
-          scoreA,
-          scoreB,
-        });
-      }
+    const match = parseMatchLine(line, s);
+    if (match) {
+      out.push(match);
       continue;
     }
-
-    // Datumskopf?
-    const dm = DATE_RE.exec(line.trim());
-    if (dm) {
-      const mon = MONTHS[dm[1]!.toLowerCase()];
-      if (mon) {
-        month = mon;
-        day = Number(dm[2]);
-        if (dm[3]) year = Number(dm[3]);
-      }
-      continue;
-    }
+    // War es eine Match-Zeile (nur ohne gültiges Datum/Teams)? → nicht als
+    // Datumskopf oder Standalone-Jahr fehldeuten.
+    if (MATCH_RE.test(line)) continue;
+    if (applyDateHeader(line, s)) continue;
 
     // Standalone-Jahr (z. B. Saisonwechsel) übernehmen.
     const ym = YEAR_RE.exec(line);
-    if (ym && !MATCH_RE.test(line)) year = Number(ym[1]);
+    if (ym) s.year = Number(ym[1]);
   }
 
   return out;

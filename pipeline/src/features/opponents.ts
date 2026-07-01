@@ -18,6 +18,60 @@ export interface OpponentRef {
 /** Maximaler Rang, ab dem ein Team als wahrscheinlicher KO-Gegner gilt. */
 const KO_RANK_THRESHOLD = 2;
 
+/** Je Gruppe die Teams mit Tabellenrang ≤ Schwelle (wahrscheinliche KO-Teilnehmer). */
+function buildKoLikelyByGroup(
+  teams: TeamSummary[],
+  groupOf: Map<string, string>,
+  rankByTeamId: Record<string, number>,
+): Map<string, string[]> {
+  const m = new Map<string, string[]>();
+  for (const t of teams) {
+    const rank = rankByTeamId[t.id];
+    const grp = groupOf.get(t.id);
+    if (grp && rank !== undefined && rank <= KO_RANK_THRESHOLD) {
+      if (!m.has(grp)) m.set(grp, []);
+      m.get(grp)!.push(t.id);
+    }
+  }
+  return m;
+}
+
+/** Gruppengegner (gleiche Gruppe); markiert Aufgenommene in `seen`. */
+function groupOpponents(
+  myGroup: string | undefined,
+  groups: Group[],
+  seen: Set<string>,
+): OpponentRef[] {
+  const g = myGroup ? groups.find((x) => x.id === myGroup) : undefined;
+  const refs: OpponentRef[] = [];
+  for (const id of g?.teamIds ?? []) {
+    if (!seen.has(id)) {
+      refs.push({ teamId: id, stage: "group" });
+      seen.add(id);
+    }
+  }
+  return refs;
+}
+
+/** Wahrscheinliche K.-o.-Gegner aus ANDEREN Gruppen (überspringt bereits Gesehene). */
+function koLikelyOpponents(
+  myGroup: string | undefined,
+  koLikelyByGroup: Map<string, string[]>,
+  seen: Set<string>,
+): OpponentRef[] {
+  const refs: OpponentRef[] = [];
+  for (const [grp, ids] of koLikelyByGroup) {
+    if (grp === myGroup) continue;
+    for (const id of ids) {
+      if (!seen.has(id)) {
+        refs.push({ teamId: id, stage: "ko-likely" });
+        seen.add(id);
+      }
+    }
+  }
+  return refs;
+}
+
 /** Liefert pro Team die Liste möglicher Gegner (Gruppe + KO-wahrscheinlich). */
 export function deriveOpponentSets(
   teams: TeamSummary[],
@@ -26,43 +80,17 @@ export function deriveOpponentSets(
 ): Map<string, OpponentRef[]> {
   const groupOf = new Map<string, string>();
   for (const g of groups) for (const id of g.teamIds) groupOf.set(id, g.id);
-
-  const koLikelyByGroup = new Map<string, string[]>();
-  for (const t of teams) {
-    const rank = rankByTeamId[t.id];
-    const grp = groupOf.get(t.id);
-    if (grp && rank !== undefined && rank <= KO_RANK_THRESHOLD) {
-      if (!koLikelyByGroup.has(grp)) koLikelyByGroup.set(grp, []);
-      koLikelyByGroup.get(grp)!.push(t.id);
-    }
-  }
+  const koLikelyByGroup = buildKoLikelyByGroup(teams, groupOf, rankByTeamId);
 
   const result = new Map<string, OpponentRef[]>();
   for (const team of teams) {
     const myGroup = groupOf.get(team.id);
-    const refs: OpponentRef[] = [];
     const seen = new Set<string>([team.id]);
-
-    if (myGroup) {
-      const g = groups.find((x) => x.id === myGroup);
-      for (const id of g?.teamIds ?? []) {
-        if (!seen.has(id)) {
-          refs.push({ teamId: id, stage: "group" });
-          seen.add(id);
-        }
-      }
-    }
-
-    for (const [grp, ids] of koLikelyByGroup) {
-      if (grp === myGroup) continue;
-      for (const id of ids) {
-        if (!seen.has(id)) {
-          refs.push({ teamId: id, stage: "ko-likely" });
-          seen.add(id);
-        }
-      }
-    }
-
+    // Gruppengegner ZUERST (füllen `seen`), dann KO-Gegner aus anderen Gruppen.
+    const refs = [
+      ...groupOpponents(myGroup, groups, seen),
+      ...koLikelyOpponents(myGroup, koLikelyByGroup, seen),
+    ];
     result.set(team.id, refs);
   }
   return result;

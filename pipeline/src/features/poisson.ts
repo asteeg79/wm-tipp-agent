@@ -100,16 +100,59 @@ function clamp(x: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, x));
 }
 
+type Outcome = "home" | "draw" | "away";
+
+/** 1X2-Kategorie eines Ergebnisses (h Heimtore, a Auswärtstore). */
+function outcomeOfGoals(h: number, a: number): Outcome {
+  if (h > a) return "home";
+  if (h < a) return "away";
+  return "draw";
+}
+
+/** Wahrscheinlichster 1X2-Ausgang. */
+function topOutcome(p: BaselineResult["probabilities"]): Outcome {
+  if (p.home >= p.draw && p.home >= p.away) return "home";
+  if (p.away >= p.draw) return "away";
+  return "draw";
+}
+
+interface MatrixAgg {
+  total: Record<Outcome, number>;
+  best: Record<Outcome, { score: { home: number; away: number }; p: number }>;
+}
+
+/**
+ * Summiert die (abgeschnittene) Score-Matrix zu 1X2-Massen und merkt je Ausgang
+ * das wahrscheinlichste Einzelergebnis.
+ */
+function accumulateMatrix(
+  homePmf: number[],
+  awayPmf: number[],
+  max: number,
+): MatrixAgg {
+  const total: Record<Outcome, number> = { home: 0, draw: 0, away: 0 };
+  const best: MatrixAgg["best"] = {
+    home: { score: { home: 1, away: 0 }, p: -1 },
+    draw: { score: { home: 0, away: 0 }, p: -1 },
+    away: { score: { home: 0, away: 1 }, p: -1 },
+  };
+  for (let h = 0; h <= max; h++) {
+    for (let a = 0; a <= max; a++) {
+      const p = homePmf[h]! * awayPmf[a]!;
+      const k = outcomeOfGoals(h, a);
+      total[k] += p;
+      if (p > best[k].p) best[k] = { score: { home: h, away: a }, p };
+    }
+  }
+  return { total, best };
+}
+
 /** Baut die Score-Matrix und leitet 1X2 + wahrscheinlichstes Ergebnis ab. */
 export function poissonBaseline(
   lambdaHome: number,
   lambdaAway: number,
 ): BaselineResult {
   const max = config.poisson.maxGoals;
-  let pHome = 0;
-  let pDraw = 0;
-  let pAway = 0;
-
   const homePmf: number[] = [];
   const awayPmf: number[] = [];
   for (let i = 0; i <= max; i++) {
@@ -117,40 +160,19 @@ export function poissonBaseline(
     awayPmf[i] = poissonPmf(i, lambdaAway);
   }
 
-  // Bestes Einzelergebnis je 1X2-Kategorie merken.
-  let bestHome = { score: { home: 1, away: 0 }, p: -1 };
-  let bestDraw = { score: { home: 0, away: 0 }, p: -1 };
-  let bestAway = { score: { home: 0, away: 1 }, p: -1 };
-
-  for (let h = 0; h <= max; h++) {
-    for (let a = 0; a <= max; a++) {
-      const p = homePmf[h]! * awayPmf[a]!;
-      if (h > a) {
-        pHome += p;
-        if (p > bestHome.p) bestHome = { score: { home: h, away: a }, p };
-      } else if (h === a) {
-        pDraw += p;
-        if (p > bestDraw.p) bestDraw = { score: { home: h, away: a }, p };
-      } else {
-        pAway += p;
-        if (p > bestAway.p) bestAway = { score: { home: h, away: a }, p };
-      }
-    }
-  }
+  const { total, best } = accumulateMatrix(homePmf, awayPmf, max);
 
   // Renormieren (abgeschnittene Matrix → Summe leicht < 1).
-  const sum = pHome + pDraw + pAway;
-  const probs = { home: pHome / sum, draw: pDraw / sum, away: pAway / sum };
+  const sum = total.home + total.draw + total.away;
+  const probs = {
+    home: total.home / sum,
+    draw: total.draw / sum,
+    away: total.away / sum,
+  };
 
   // predictedScore = bestes Ergebnis im wahrscheinlichsten Ausgang (konsistent
   // mit 1X2 statt global wahrscheinlichstem Einzelergebnis, das Remis überbewertet).
-  const maxOutcome = Math.max(probs.home, probs.draw, probs.away);
-  const mostLikelyScore =
-    maxOutcome === probs.home
-      ? bestHome.score
-      : maxOutcome === probs.away
-        ? bestAway.score
-        : bestDraw.score;
+  const mostLikelyScore = best[topOutcome(probs)].score;
 
   return {
     expectedGoals: { home: round(lambdaHome, 2), away: round(lambdaAway, 2) },
