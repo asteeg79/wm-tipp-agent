@@ -147,6 +147,198 @@ function toTeamResults(
   }));
 }
 
+/** Sammelt Historie + TeamResult[] aller Teams (Fehler → teamsFailed, skip). */
+async function collectHistories(
+  teams: TeamSummary[],
+  seasons: number[],
+  historyProvider: HistoryProvider,
+  opponentSets: ReturnType<typeof deriveOpponentSets>,
+  stats: BuildStats,
+): Promise<{
+  historyByTeam: Map<string, HistoryMatch[]>;
+  resultsByTeam: Map<string, TeamResult[]>;
+}> {
+  const historyByTeam = new Map<string, HistoryMatch[]>();
+  const resultsByTeam = new Map<string, TeamResult[]>();
+  for (const team of teams) {
+    try {
+      const history = await historyProvider.getTeamHistory(team, seasons);
+      stats.historyLoaded += history.length;
+      historyByTeam.set(team.id, history);
+      const potentialIds = new Set(
+        (opponentSets.get(team.id) ?? []).map((r) => r.teamId),
+      );
+      resultsByTeam.set(team.id, toTeamResults(history, potentialIds));
+    } catch (err) {
+      stats.teamsFailed++;
+      console.warn(`[pipeline] Historie ${team.id} übersprungen:`, err);
+    }
+  }
+  return { historyByTeam, resultsByTeam };
+}
+
+/**
+ * Ein beendetes WM-Spiel aus Sicht eines Teams in dessen Results anhängen
+ * (idempotent). `fx.goalsHome/Away` sind vom Aufrufer als non-null garantiert.
+ */
+function pushWcFormResult(
+  list: TeamResult[],
+  fx: NormalizedFixture,
+  home: boolean,
+  nameById: Map<string, string>,
+): void {
+  if (list.some((r) => r.matchId === fx.matchId)) return; // idempotent
+  const oppId = home ? fx.awayTeamId : fx.homeTeamId;
+  list.push({
+    matchId: fx.matchId,
+    date: fx.date,
+    competition: "FIFA World Cup 2026",
+    home,
+    opponentId: oppId,
+    opponentName: nameById.get(oppId) ?? oppId,
+    goalsFor: home ? fx.goalsHome! : fx.goalsAway!,
+    goalsAgainst: home ? fx.goalsAway! : fx.goalsHome!,
+    venue: fx.neutral ? "neutral" : home ? "home" : "away",
+    isVsPotentialWcOpponent: true, // echter WM-Gegner → voll gewichtet
+  });
+}
+
+/**
+ * Bereits gespielte WM-Partien (aktuellste Daten, dem History-Provider
+ * unbekannt) in Form/Results beider Teams einspeisen (idempotent) und als
+ * EloGame[] für die Elo-Berechnung zurückgeben.
+ */
+function injectFinishedWcMatches(
+  schedule: NormalizedFixture[],
+  resultsByTeam: Map<string, TeamResult[]>,
+  nameById: Map<string, string>,
+): EloGame[] {
+  const wcEloGames: EloGame[] = [];
+  for (const fx of schedule) {
+    if (!fx.finished || fx.goalsHome === null || fx.goalsAway === null)
+      continue;
+    wcEloGames.push({
+      date: fx.date,
+      homeId: fx.homeTeamId,
+      awayId: fx.awayTeamId,
+      homeGoals: fx.goalsHome,
+      awayGoals: fx.goalsAway,
+      neutral: fx.neutral,
+    });
+    for (const home of [true, false]) {
+      const list = resultsByTeam.get(home ? fx.homeTeamId : fx.awayTeamId);
+      if (list) pushWcFormResult(list, fx, home, nameById);
+    }
+  }
+  return wcEloGames;
+}
+
+interface WriteTeamsCtx {
+  teams: TeamSummary[];
+  resultsByTeam: Map<string, TeamResult[]>;
+  opponentSets: ReturnType<typeof deriveOpponentSets>;
+  historyByTeam: Map<string, HistoryMatch[]>;
+  newsByTeam: Map<string, NewsItem[]>;
+  eloOf: (id: string) => number;
+  nowIso: string;
+  progress: Progress;
+  stats: BuildStats;
+  newsAggregator: NewsAggregator | null;
+  newsFilter: ReturnType<typeof makeNewsRelevanceFilter> | null;
+}
+
+/** Schreibt die Team-Dokumente (Form + News + mögliche Gegner). */
+async function writeTeams(c: WriteTeamsCtx): Promise<void> {
+  for (const team of c.teams) {
+    const results = c.resultsByTeam.get(team.id);
+    if (!results) continue; // Historie fehlgeschlagen
+    try {
+      const refs = c.opponentSets.get(team.id) ?? [];
+      const potentialOpponents: PotentialOpponent[] = refs.map((r) => ({
+        teamId: r.teamId,
+        stage: r.stage,
+        h2hSummary: computeH2h(r.teamId, c.historyByTeam.get(team.id) ?? []),
+      }));
+
+      let news: NewsItem[] = [];
+      if (c.newsAggregator) {
+        try {
+          news = await c.newsAggregator.forTeam(
+            team,
+            c.newsFilter ?? undefined,
+          );
+          c.stats.newsLoaded += news.length;
+        } catch (err) {
+          console.warn(`[pipeline] News für ${team.id} fehlgeschlagen:`, err);
+        }
+      }
+      c.newsByTeam.set(team.id, news);
+
+      await writeJson(
+        teamPath(team.id),
+        Team,
+        buildTeam(
+          team,
+          c.nowIso,
+          results,
+          potentialOpponents,
+          news,
+          c.eloOf(team.id),
+        ),
+      );
+      c.progress.teamsBackfilled[team.id] = c.nowIso;
+      c.stats.teamsWritten++;
+    } catch (err) {
+      c.stats.teamsFailed++;
+      console.warn(`[pipeline] Team ${team.id} übersprungen:`, err);
+    }
+  }
+}
+
+/**
+ * SANITY-GUARD: Liefert die Quelle offensichtlich kaputte Daten (Teilausfall,
+ * leeres JSON, Format-Bruch), abbrechen statt den letzten guten /data-Stand zu
+ * überschreiben. (WM 2026: 48 Teams, 104 Spiele; Schwellen bewusst mit Luft.)
+ */
+function assertPlausibleSource(
+  teams: TeamSummary[],
+  schedule: NormalizedFixture[],
+): void {
+  if (teams.length < 40 || schedule.length < 70) {
+    throw new Error(
+      `[pipeline] Quelldaten unplausibel (teams=${teams.length}, ` +
+        `matches=${schedule.length}) — Lauf abgebrochen, /data bleibt unverändert`,
+    );
+  }
+}
+
+/** Stunden bis zum nächsten Anpfiff (null = kein anstehendes Spiel). */
+function minHoursToNextKickoff(
+  schedule: NormalizedFixture[],
+  now: Date,
+): number | null {
+  const upcoming = schedule
+    .filter((fx) => !fx.finished && fx.dateTime)
+    .map(
+      (fx) => (new Date(fx.dateTime!).getTime() - now.getTime()) / MS_PER_HOUR,
+    )
+    .filter((h) => h >= 0);
+  return upcoming.length > 0 ? Math.min(...upcoming) : null;
+}
+
+/** Loggt den KI-Ensemble-Status (aktiv oder auf Baseline degradiert). */
+function logEnsembleStatus(ensemble: Ensemble | null): void {
+  if (ensemble && !ensemble.active) {
+    console.warn(
+      "[pipeline] Kein KI-Key gesetzt → nur Baseline (graceful degradation).",
+    );
+  } else if (ensemble) {
+    console.log(
+      `[pipeline] KI-Ensemble aktiv: ${ensemble.modelIds.join(", ")}`,
+    );
+  }
+}
+
 export async function buildData(
   tournamentProvider: TournamentProvider,
   historyProvider: HistoryProvider,
@@ -155,20 +347,12 @@ export async function buildData(
   const now = new Date();
   const nowIso = now.toISOString();
 
-  // 1) Turnierstruktur + Spielplan laden und SANITY-GUARD: Liefert die Quelle
-  // offensichtlich kaputte Daten (Teilausfall, leeres JSON, Format-Bruch),
-  // brechen wir ab, statt den letzten guten /data-Stand zu überschreiben —
-  // der Fehlerlauf löst dann den Issue-Alarm aus. (WM 2026: 48 Teams,
-  // 104 Spiele; Schwellen bewusst mit Luft.)
+  // 1) Turnierstruktur + Spielplan laden + Sanity-Guard (bei kaputter Quelle
+  // abbrechen, statt den letzten guten /data-Stand zu überschreiben).
   const { tournament, groups, teams, rankByTeamId } =
     await tournamentProvider.getTournament();
   const schedule = await tournamentProvider.getSchedule();
-  if (teams.length < 40 || schedule.length < 70) {
-    throw new Error(
-      `[pipeline] Quelldaten unplausibel (teams=${teams.length}, ` +
-        `matches=${schedule.length}) — Lauf abgebrochen, /data bleibt unverändert`,
-    );
-  }
+  assertPlausibleSource(teams, schedule);
 
   await writeJson(indexPath, IndexFile, {
     tournament,
@@ -199,8 +383,6 @@ export async function buildData(
   };
 
   // 4) Historie aller Teams sammeln (für globale Elo-Berechnung).
-  const historyByTeam = new Map<string, HistoryMatch[]>();
-  const resultsByTeam = new Map<string, TeamResult[]>();
   const newsByTeam = new Map<string, NewsItem[]>();
   const nameById = new Map<string, string>();
   for (const t of teams) nameById.set(t.id, t.name);
@@ -208,57 +390,19 @@ export async function buildData(
     ? teams.slice(0, maxTeams)
     : teams;
 
-  for (const team of limitedTeams) {
-    try {
-      const history = await historyProvider.getTeamHistory(team, seasons);
-      stats.historyLoaded += history.length;
-      historyByTeam.set(team.id, history);
-      const potentialIds = new Set(
-        (opponentSets.get(team.id) ?? []).map((r) => r.teamId),
-      );
-      resultsByTeam.set(team.id, toTeamResults(history, potentialIds));
-    } catch (err) {
-      stats.teamsFailed++;
-      console.warn(`[pipeline] Historie ${team.id} übersprungen:`, err);
-    }
-  }
+  const { historyByTeam, resultsByTeam } = await collectHistories(
+    limitedTeams,
+    seasons,
+    historyProvider,
+    opponentSets,
+    stats,
+  );
 
   // 4b) Bereits gespielte WM-Partien sind die AKTUELLSTEN Daten — der
   // History-Provider (openfootball internationals) kennt sie nicht. Daher hier
   // in Elo UND Form/Results beider Teams einspeisen (recency-gewichtet wirken
   // sie automatisch am stärksten). Quelle: schedule (worldcup.json).
-  const wcEloGames: EloGame[] = [];
-  for (const fx of schedule) {
-    if (!fx.finished || fx.goalsHome === null || fx.goalsAway === null)
-      continue;
-    wcEloGames.push({
-      date: fx.date,
-      homeId: fx.homeTeamId,
-      awayId: fx.awayTeamId,
-      homeGoals: fx.goalsHome,
-      awayGoals: fx.goalsAway,
-      neutral: fx.neutral,
-    });
-    for (const home of [true, false]) {
-      const teamId = home ? fx.homeTeamId : fx.awayTeamId;
-      const oppId = home ? fx.awayTeamId : fx.homeTeamId;
-      const list = resultsByTeam.get(teamId);
-      if (!list) continue; // Team ohne geladene Historie → keine Form-Basis
-      if (list.some((r) => r.matchId === fx.matchId)) continue; // idempotent
-      list.push({
-        matchId: fx.matchId,
-        date: fx.date,
-        competition: "FIFA World Cup 2026",
-        home,
-        opponentId: oppId,
-        opponentName: nameById.get(oppId) ?? oppId,
-        goalsFor: home ? fx.goalsHome : fx.goalsAway,
-        goalsAgainst: home ? fx.goalsAway : fx.goalsHome,
-        venue: fx.neutral ? "neutral" : home ? "home" : "away",
-        isVsPotentialWcOpponent: true, // echter WM-Gegner → voll gewichtet
-      });
-    }
-  }
+  const wcEloGames = injectFinishedWcMatches(schedule, resultsByTeam, nameById);
 
   // 5) Globale Elo-Ratings aus Historie + bereits gespielten WM-Partien.
   const eloRatings = computeEloRatings([
@@ -287,59 +431,23 @@ export async function buildData(
       ? makeNewsRelevanceFilter(process.env.ANTHROPIC_API_KEY)
       : null;
   if (newsFilter) console.log("[pipeline] KI-News-Relevanzfilter aktiv");
-  for (const team of limitedTeams) {
-    const results = resultsByTeam.get(team.id);
-    if (!results) continue; // Historie fehlgeschlagen
-    try {
-      const refs = opponentSets.get(team.id) ?? [];
-      const potentialOpponents: PotentialOpponent[] = refs.map((r) => ({
-        teamId: r.teamId,
-        stage: r.stage,
-        h2hSummary: computeH2h(r.teamId, historyByTeam.get(team.id) ?? []),
-      }));
-
-      let news: NewsItem[] = [];
-      if (newsAggregator) {
-        try {
-          news = await newsAggregator.forTeam(team, newsFilter ?? undefined);
-          stats.newsLoaded += news.length;
-        } catch (err) {
-          console.warn(`[pipeline] News für ${team.id} fehlgeschlagen:`, err);
-        }
-      }
-      newsByTeam.set(team.id, news);
-
-      await writeJson(
-        teamPath(team.id),
-        Team,
-        buildTeam(
-          team,
-          nowIso,
-          results,
-          potentialOpponents,
-          news,
-          eloOf(team.id),
-        ),
-      );
-      progress.teamsBackfilled[team.id] = nowIso;
-      stats.teamsWritten++;
-    } catch (err) {
-      stats.teamsFailed++;
-      console.warn(`[pipeline] Team ${team.id} übersprungen:`, err);
-    }
-  }
+  await writeTeams({
+    teams: limitedTeams,
+    resultsByTeam,
+    opponentSets,
+    historyByTeam,
+    newsByTeam,
+    eloOf,
+    nowIso,
+    progress,
+    stats,
+    newsAggregator,
+    newsFilter,
+  });
 
   // 7) Matches mit Engine (Feature-Bundle + Baseline) + optional KI-Ensemble.
   const ensemble = options.withAi ? makeEnsemble() : null;
-  if (ensemble && !ensemble.active) {
-    console.warn(
-      "[pipeline] Kein KI-Key gesetzt → nur Baseline (graceful degradation).",
-    );
-  } else if (ensemble) {
-    console.log(
-      `[pipeline] KI-Ensemble aktiv: ${ensemble.modelIds.join(", ")}`,
-    );
-  }
+  logEnsembleStatus(ensemble);
 
   const externalPriors = loadExternalPriors();
   if (externalPriors) {
@@ -350,14 +458,7 @@ export async function buildData(
 
   // Buchmacher-Quoten (optional; nur mit ODDS_API_KEY, gecacht). Stunden bis
   // zum nächsten Anpfiff bestimmen die Cache-TTL: nahe am Anpfiff frischer.
-  const MS_H = 3_600_000;
-  const upcomingHours = schedule
-    .filter((fx) => !fx.finished && fx.dateTime)
-    .map((fx) => (new Date(fx.dateTime!).getTime() - now.getTime()) / MS_H)
-    .filter((h) => h >= 0);
-  const minHoursToKickoff =
-    upcomingHours.length > 0 ? Math.min(...upcomingHours) : null;
-  const odds = await loadOdds(minHoursToKickoff);
+  const odds = await loadOdds(minHoursToNextKickoff(schedule, now));
   if (odds.size > 0) {
     console.log(`[pipeline] Buchmacher-Quoten geladen: ${odds.size} Partien`);
   }
@@ -553,6 +654,275 @@ function applyAdvance(match: Match): void {
   };
 }
 
+/** Millisekunden pro Stunde (Anpfiff-Fenster). */
+const MS_PER_HOUR = 3_600_000;
+
+/** Aufgelöste Accuracy-Gewichte (oder null bei zu kleiner Stichprobe). */
+type ModelWeightsResult = Awaited<ReturnType<typeof collectModelWeights>>;
+
+/** Eine im Lauf fällige, noch nicht bewertete KI-Partie (gebündelt bewertet). */
+interface PendingAi {
+  match: Match;
+  matchId: string;
+  prev: Match | null;
+  baselinePrediction: Prediction;
+  input: EvaluateInput;
+}
+
+/**
+ * Markt-Snapshot der Partie: aktuelle Quoten (ggf. Heim/Auswärts getauscht),
+ * sonst der zuletzt bekannte plausible Snapshot. The Odds API liefert nach
+ * Anpfiff keine Quoten mehr — ohne diesen Fallback ginge der Markt für beendete
+ * Spiele (und damit die "wir vs. Markt"-Auswertung) verloren. Einen früher
+ * gespeicherten unplausiblen Snapshot (z. B. alte In-Play-Linie) verwerfen.
+ */
+function resolveMarket(
+  fx: NormalizedFixture,
+  prev: Match | null,
+  ctx: WriteMatchesCtx,
+): MarketOdds | undefined {
+  const homeName = ctx.nameById.get(fx.homeTeamId) ?? fx.homeTeamId;
+  const awayName = ctx.nameById.get(fx.awayTeamId) ?? fx.awayTeamId;
+  const market =
+    ctx.odds.get(oddsKey(homeName, awayName)) ??
+    (ctx.odds.has(oddsKey(awayName, homeName))
+      ? swapMarket(ctx.odds.get(oddsKey(awayName, homeName))!)
+      : undefined);
+  if (market) return market;
+  if (prev?.market && isPlausibleMarket(prev.market.probabilities)) {
+    return prev.market;
+  }
+  return undefined;
+}
+
+/** Beendete Partie: letzten Tipp + FeatureBundle bewahren (Anzeige/Accuracy). */
+function applyFinishedPrediction(match: Match, prev: Match | null): void {
+  if (!prev?.prediction) return;
+  match.prediction = prev.prediction;
+  if (prev.featureBundle) match.featureBundle = prev.featureBundle;
+}
+
+/** Aktueller Gruppenkontext (Tabelle + Spieltag) für die KI, falls Gruppenspiel. */
+function resolveGroupContext(
+  fx: NormalizedFixture,
+  groupTables: Map<string, GroupTable>,
+): GroupContext | undefined {
+  const gt = fx.groupId ? groupTables.get(fx.groupId) : undefined;
+  const matchday = gt ? (gt.played.get(fx.homeTeamId) ?? 0) + 1 : undefined;
+  if (!gt || !fx.groupId || !matchday) return undefined;
+  return {
+    groupId: fx.groupId,
+    matchday,
+    remainingAfter: Math.max(0, 3 - matchday),
+    table: gt.rows,
+  };
+}
+
+interface PlanArgs {
+  fx: NormalizedFixture;
+  match: Match;
+  prev: Match | null;
+  ctx: WriteMatchesCtx;
+  homeResults: TeamResult[] | undefined;
+  awayResults: TeamResult[] | undefined;
+  groupTables: Map<string, GroupTable>;
+  modelWeights: ModelWeightsResult | null;
+}
+
+/**
+ * Bestimmt für eine Partie den Tipp: setzt `match.prediction`/`featureBundle`
+ * direkt (beendet, außerhalb Fenster oder Baseline) und liefert `skippedInc`
+ * (0/1 für den aiSkipped-Zähler) — oder liefert stattdessen einen `pending`-
+ * Eintrag für die gebündelte KI-Bewertung nach der Schleife.
+ */
+function planMatchPrediction(
+  a: PlanArgs,
+): { pending: PendingAi } | { skippedInc: number } {
+  const { fx, match, prev, ctx, homeResults, awayResults, groupTables } = a;
+  const { nameById, eloOf, now, ensemble } = ctx;
+
+  // Beendet oder ohne Historie-Basis: letzten Tipp bewahren, kein KI-Call.
+  if (fx.finished || !homeResults || !awayResults) {
+    if (fx.finished) applyFinishedPrediction(match, prev);
+    return { skippedInc: 0 };
+  }
+
+  const { featureBundle, baseline, mostLikelyScore } = runEngine(
+    {
+      homeTeamId: fx.homeTeamId,
+      awayTeamId: fx.awayTeamId,
+      neutral: fx.neutral,
+      altitude: fx.altitude ?? null,
+    },
+    { teamId: fx.homeTeamId, elo: eloOf(fx.homeTeamId), results: homeResults },
+    { teamId: fx.awayTeamId, elo: eloOf(fx.awayTeamId), results: awayResults },
+    now,
+  );
+  match.featureBundle = featureBundle;
+  const inputHash = featureHash(featureBundle);
+
+  // Baseline-Prediction als Default.
+  const baselinePrediction = {
+    generatedAt: now.toISOString(),
+    predictedScore: mostLikelyScore,
+    probabilities: baseline.probabilities,
+    confidence: confidenceFromProbs(baseline.probabilities),
+    baseline,
+    inputHash,
+  };
+
+  const homeNews = ctx.newsByTeam.get(fx.homeTeamId) ?? [];
+  const awayNews = ctx.newsByTeam.get(fx.awayTeamId) ?? [];
+
+  // Kosten-Gate: KI nur für Partien im Anpfiff-Fenster (z. B. ≤72 h).
+  const hoursUntilKickoff =
+    (new Date(match.date).getTime() - now.getTime()) / MS_PER_HOUR;
+  const inAiWindow =
+    ctx.aiWindowHours === null ||
+    (hoursUntilKickoff >= 0 && hoursUntilKickoff <= ctx.aiWindowHours);
+
+  // Kein Ensemble, außerhalb Fenster oder kein Re-Trigger → Tipp/Baseline.
+  if (!ensemble || !inAiWindow) {
+    match.prediction = prev?.prediction ?? baselinePrediction;
+    return { skippedInc: ensemble && !inAiWindow ? 1 : 0 };
+  }
+  const decision = ctx.forceEval
+    ? { shouldEvaluate: true, reason: "Force (manuell)" }
+    : decideRetrigger(prev ?? match, inputHash, homeNews, awayNews, now);
+  if (!decision.shouldEvaluate) {
+    match.prediction = prev?.prediction ?? baselinePrediction;
+    return { skippedInc: 1 };
+  }
+
+  // Fällig → sammeln (gebündelt via Batches-API bewertet, 50 % günstiger).
+  // Markt-Anker: echte Buchmacher-Quoten bevorzugt, sonst externer Prior.
+  const prior =
+    match.market?.probabilities ?? ctx.externalPriors?.byMatch.get(fx.matchId);
+  const groupContext = resolveGroupContext(fx, groupTables);
+  return {
+    pending: {
+      match,
+      matchId: fx.matchId,
+      prev,
+      baselinePrediction,
+      input: {
+        homeName: nameById.get(fx.homeTeamId) ?? fx.homeTeamId,
+        awayName: nameById.get(fx.awayTeamId) ?? fx.awayTeamId,
+        featureBundle,
+        baseline,
+        homeNews,
+        awayNews,
+        inputHash,
+        now,
+        modelWeights: a.modelWeights,
+        ...(prior ? { marketProbabilities: prior } : {}),
+        ...(groupContext ? { groupContext } : {}),
+        homeRecent: recentResultsOf(homeResults, 5),
+        awayRecent: recentResultsOf(awayResults, 5),
+        ...(match.stage !== "group" ? { isKnockout: true } : {}),
+      },
+    },
+  };
+}
+
+/** Baut das Match-Dokument-Gerüst (ohne prediction) aus Fixture + Vorstand. */
+function baseMatchDoc(fx: NormalizedFixture, prev: Match | null): Match {
+  const stage: Stage = fx.stage ?? "group";
+  const actualResult: ScoreLine | null =
+    fx.finished && fx.goalsHome !== null && fx.goalsAway !== null
+      ? { home: fx.goalsHome, away: fx.goalsAway }
+      : null;
+  const match: Match = {
+    id: fx.matchId,
+    date: fx.dateTime ?? `${fx.date}T00:00:00Z`,
+    stage,
+    homeTeamId: fx.homeTeamId,
+    awayTeamId: fx.awayTeamId,
+    venue: {
+      city: fx.ground ?? "TBD",
+      neutral: fx.neutral,
+      ...(fx.altitude !== undefined ? { altitude: fx.altitude } : {}),
+    },
+    status: fx.finished ? "finished" : "scheduled",
+    actualResult,
+    predictionHistory: prev?.predictionHistory ?? [],
+  };
+  if (fx.groupId) match.groupId = fx.groupId;
+  return match;
+}
+
+/**
+ * Bewertet die gesammelten fälligen Partien gebündelt (Claude: Batches-API),
+ * schiebt den alten KI-Tipp in die Historie, schreibt die Dateien und liefert
+ * die Zähler + geschriebenen Matches.
+ */
+async function applyBundledAi(
+  pendingAi: PendingAi[],
+  ensemble: Ensemble,
+): Promise<{ aiEvaluated: number; aiSkipped: number; matches: Match[] }> {
+  console.log(
+    `[predict] ${pendingAi.length} Partien fällig — Bewertung startet`,
+  );
+  let predictions: Prediction[] | null = null;
+  try {
+    predictions = await ensemble.evaluateMany(pendingAi.map((p) => p.input));
+  } catch (err) {
+    console.warn("[predict] Bündel-Bewertung fehlgeschlagen:", err);
+  }
+  let aiEvaluated = 0;
+  let aiSkipped = 0;
+  const matches: Match[] = [];
+  for (let i = 0; i < pendingAi.length; i++) {
+    const p = pendingAi[i]!;
+    const aiPred = predictions?.[i];
+    if (aiPred) {
+      // Alten KI-Tipp in die Historie schieben.
+      if (p.prev?.prediction?.models) {
+        p.match.predictionHistory = [
+          ...p.match.predictionHistory,
+          {
+            generatedAt: p.prev.prediction.generatedAt,
+            predictedScore: p.prev.prediction.predictedScore,
+            probabilities: p.prev.prediction.probabilities,
+            confidence: p.prev.prediction.confidence,
+          },
+        ];
+      }
+      p.match.prediction = aiPred;
+      aiEvaluated++;
+    } else {
+      p.match.prediction = p.prev?.prediction ?? p.baselinePrediction;
+      aiSkipped++;
+    }
+    applyAdvance(p.match);
+    await writeJson(matchPath(p.matchId), Match, p.match);
+    matches.push(p.match);
+  }
+  return { aiEvaluated, aiSkipped, matches };
+}
+
+/**
+ * Accuracy-Gewichte (Verbesserung 6): aus den bereits beendeten Partien den
+ * mittleren RPS je Modell bestimmen — das treffsicherere Modell bekommt bei
+ * allen KI-Tipps dieses Laufs mehr Gewicht. Neutral (null), solange die
+ * Stichprobe zu klein ist oder die Gewichtung deaktiviert wurde.
+ */
+async function accuracyWeights(
+  schedule: NormalizedFixture[],
+  ensemble: Ensemble | null,
+): Promise<ModelWeightsResult | null> {
+  if (!ensemble || !config.ensemble.accuracyWeighted) return null;
+  const modelWeights = await collectModelWeights(schedule);
+  if (modelWeights) {
+    const { weights, rpsMean, samples } = modelWeights;
+    console.log(
+      `[predict] Accuracy-Gewichte: Claude ${weights.claude} (RPS ${rpsMean.claude}, n=${samples.claude}) · ` +
+        `ChatGPT ${weights.chatgpt} (RPS ${rpsMean.chatgpt}, n=${samples.chatgpt})`,
+    );
+  }
+  return modelWeights;
+}
+
 /**
  * Schreibt die Match-Dokumente. Für anstehende Partien mit bekannter Historie:
  * Feature-Bundle + Baseline (Phase 4); falls KI-Ensemble aktiv und Re-Trigger
@@ -564,204 +934,41 @@ async function writeMatches(
   schedule: NormalizedFixture[],
   ctx: WriteMatchesCtx,
 ): Promise<WriteMatchesResult> {
-  const { resultsByTeam, newsByTeam, nameById, eloOf, now, ensemble } = ctx;
+  const { nameById, ensemble } = ctx;
   // Gruppentabellen einmal aus den bereits gespielten Spielen ableiten
   // (Einsatz-Kontext + Spieltag für die KI).
   const groupTables = computeGroupTables(schedule, nameById);
   let written = 0;
-  let aiEvaluated = 0;
   let aiSkipped = 0;
   const matches: Match[] = [];
-  const MS_PER_HOUR = 3_600_000;
-
-  // Fällige KI-Bewertungen: in der Schleife nur SAMMELN, nach der Schleife
-  // gebündelt bewerten (Claude via Batches-API → 50 % günstiger) und erst
-  // dann die Match-Dateien schreiben.
-  interface PendingAi {
-    match: Match;
-    matchId: string;
-    prev: Match | null;
-    baselinePrediction: Prediction;
-    input: EvaluateInput;
-  }
   const pendingAi: PendingAi[] = [];
-
-  // Accuracy-Gewichte (Verbesserung 6): aus den bereits beendeten Partien
-  // den mittleren RPS je Modell bestimmen — das treffsicherere Modell bekommt
-  // bei allen KI-Tipps dieses Laufs mehr Gewicht. Neutral (null), solange die
-  // Stichprobe zu klein ist oder die Gewichtung deaktiviert wurde.
-  const modelWeights =
-    ensemble && config.ensemble.accuracyWeighted
-      ? await collectModelWeights(schedule)
-      : null;
-  if (modelWeights) {
-    const { weights, rpsMean, samples } = modelWeights;
-    console.log(
-      `[predict] Accuracy-Gewichte: Claude ${weights.claude} (RPS ${rpsMean.claude}, n=${samples.claude}) · ` +
-        `ChatGPT ${weights.chatgpt} (RPS ${rpsMean.chatgpt}, n=${samples.chatgpt})`,
-    );
-  }
+  const modelWeights = await accuracyWeights(schedule, ensemble);
 
   for (const fx of schedule) {
-    const stage: Stage = fx.stage ?? "group";
-    const actualResult: ScoreLine | null =
-      fx.finished && fx.goalsHome !== null && fx.goalsAway !== null
-        ? { home: fx.goalsHome, away: fx.goalsAway }
-        : null;
-
     // Bestehendes Match laden (für Re-Trigger + predictionHistory + Tipp).
     const prev = await readJsonOptional<Match>(matchPath(fx.matchId), Match);
+    const match = baseMatchDoc(fx, prev);
 
-    const match: Match = {
-      id: fx.matchId,
-      date: fx.dateTime ?? `${fx.date}T00:00:00Z`,
-      stage,
-      homeTeamId: fx.homeTeamId,
-      awayTeamId: fx.awayTeamId,
-      venue: {
-        city: fx.ground ?? "TBD",
-        neutral: fx.neutral,
-        ...(fx.altitude !== undefined ? { altitude: fx.altitude } : {}),
-      },
-      status: fx.finished ? "finished" : "scheduled",
-      actualResult,
-      predictionHistory: prev?.predictionHistory ?? [],
-    };
-    if (fx.groupId) match.groupId = fx.groupId;
-
-    // Buchmacher-Quoten zuordnen (über normalisierte Teamnamen; bei
-    // umgekehrter Paarung Heim/Auswärts tauschen).
-    const homeName = ctx.nameById.get(fx.homeTeamId) ?? fx.homeTeamId;
-    const awayName = ctx.nameById.get(fx.awayTeamId) ?? fx.awayTeamId;
-    const market =
-      ctx.odds.get(oddsKey(homeName, awayName)) ??
-      (ctx.odds.has(oddsKey(awayName, homeName))
-        ? swapMarket(ctx.odds.get(oddsKey(awayName, homeName))!)
-        : undefined);
-    // Markt persistieren: liegen aktuelle Quoten vor, diese nehmen; sonst den
-    // zuletzt bekannten Snapshot behalten. The Odds API liefert nach Anpfiff
-    // keine Quoten mehr — ohne diesen Fallback ginge der Markt für beendete
-    // Spiele verloren (und damit die "wir vs. Markt"-Auswertung). Einen früher
-    // gespeicherten unplausiblen Snapshot (z. B. alte In-Play-Linie) dabei
-    // verwerfen.
+    const market = resolveMarket(fx, prev, ctx);
     if (market) match.market = market;
-    else if (prev?.market && isPlausibleMarket(prev.market.probabilities)) {
-      match.market = prev.market;
+
+    const plan = planMatchPrediction({
+      fx,
+      match,
+      prev,
+      ctx,
+      homeResults: ctx.resultsByTeam.get(fx.homeTeamId),
+      awayResults: ctx.resultsByTeam.get(fx.awayTeamId),
+      groupTables,
+      modelWeights,
+    });
+    // Fällige KI-Partien werden gesammelt und erst nach der Schleife (gebündelt)
+    // bewertet + geschrieben — hier also überspringen.
+    if ("pending" in plan) {
+      pendingAi.push(plan.pending);
+      continue;
     }
-
-    const homeResults = resultsByTeam.get(fx.homeTeamId);
-    const awayResults = resultsByTeam.get(fx.awayTeamId);
-
-    if (!fx.finished && homeResults && awayResults) {
-      const { featureBundle, baseline, mostLikelyScore } = runEngine(
-        {
-          homeTeamId: fx.homeTeamId,
-          awayTeamId: fx.awayTeamId,
-          neutral: fx.neutral,
-          altitude: fx.altitude ?? null,
-        },
-        {
-          teamId: fx.homeTeamId,
-          elo: eloOf(fx.homeTeamId),
-          results: homeResults,
-        },
-        {
-          teamId: fx.awayTeamId,
-          elo: eloOf(fx.awayTeamId),
-          results: awayResults,
-        },
-        now,
-      );
-      match.featureBundle = featureBundle;
-      const inputHash = featureHash(featureBundle);
-
-      // Baseline-Prediction als Default.
-      const baselinePrediction = {
-        generatedAt: now.toISOString(),
-        predictedScore: mostLikelyScore,
-        probabilities: baseline.probabilities,
-        confidence: confidenceFromProbs(baseline.probabilities),
-        baseline,
-        inputHash,
-      };
-
-      const homeNews = newsByTeam.get(fx.homeTeamId) ?? [];
-      const awayNews = newsByTeam.get(fx.awayTeamId) ?? [];
-
-      // Kosten-Gate: KI nur für Partien im Anpfiff-Fenster (z. B. ≤72 h).
-      // Außerhalb → kein KI-Call, Tipp/Baseline bleibt unverändert.
-      const hoursUntilKickoff =
-        (new Date(match.date).getTime() - now.getTime()) / MS_PER_HOUR;
-      const inAiWindow =
-        ctx.aiWindowHours === null ||
-        (hoursUntilKickoff >= 0 && hoursUntilKickoff <= ctx.aiWindowHours);
-
-      if (ensemble && inAiWindow) {
-        const decision = ctx.forceEval
-          ? { shouldEvaluate: true, reason: "Force (manuell)" }
-          : decideRetrigger(prev ?? match, inputHash, homeNews, awayNews, now);
-        if (decision.shouldEvaluate) {
-          // Markt-Anker für die KI: echte Buchmacher-Quoten bevorzugt,
-          // sonst der optionale externe Prior.
-          const prior =
-            match.market?.probabilities ??
-            ctx.externalPriors?.byMatch.get(fx.matchId);
-          // Gruppenstand + Spieltag (Einsatz) und jüngste Ergebnisse (Momentum).
-          const gt = fx.groupId ? groupTables.get(fx.groupId) : undefined;
-          const matchday = gt
-            ? (gt.played.get(fx.homeTeamId) ?? 0) + 1
-            : undefined;
-          const groupContext: GroupContext | undefined =
-            gt && fx.groupId && matchday
-              ? {
-                  groupId: fx.groupId,
-                  matchday,
-                  remainingAfter: Math.max(0, 3 - matchday),
-                  table: gt.rows,
-                }
-              : undefined;
-          // NICHT sofort bewerten: fällige Partien werden gesammelt und nach
-          // der Schleife gebündelt bewertet (Claude via Batches-API → 50 %
-          // günstiger). Datei-Write + Zähler folgen ebenfalls erst dann.
-          pendingAi.push({
-            match,
-            matchId: fx.matchId,
-            prev,
-            baselinePrediction,
-            input: {
-              homeName: nameById.get(fx.homeTeamId) ?? fx.homeTeamId,
-              awayName: nameById.get(fx.awayTeamId) ?? fx.awayTeamId,
-              featureBundle,
-              baseline,
-              homeNews,
-              awayNews,
-              inputHash,
-              now,
-              modelWeights,
-              ...(prior ? { marketProbabilities: prior } : {}),
-              ...(groupContext ? { groupContext } : {}),
-              homeRecent: recentResultsOf(homeResults, 5),
-              awayRecent: recentResultsOf(awayResults, 5),
-              ...(stage !== "group" ? { isKnockout: true } : {}),
-            },
-          });
-          continue;
-        } else {
-          // Unverändert → vorhandenen Tipp behalten, sonst Baseline.
-          match.prediction = prev?.prediction ?? baselinePrediction;
-          aiSkipped++;
-        }
-      } else {
-        // Kein Ensemble, außerhalb Anpfiff-Fenster oder kein Key:
-        // vorhandenen (KI-)Tipp behalten, sonst Baseline. Kein KI-Call.
-        match.prediction = prev?.prediction ?? baselinePrediction;
-        if (ensemble && !inAiWindow) aiSkipped++;
-      }
-    } else if (fx.finished && prev?.prediction) {
-      // Beendete Partie: letzten Tipp bewahren (für Accuracy + Anzeige).
-      match.prediction = prev.prediction;
-      if (prev.featureBundle) match.featureBundle = prev.featureBundle;
-    }
+    aiSkipped += plan.skippedInc;
 
     applyAdvance(match);
     await writeJson(matchPath(fx.matchId), Match, match);
@@ -769,44 +976,14 @@ async function writeMatches(
     written++;
   }
 
+  let aiEvaluated = 0;
   // Gesammelte fällige Partien gebündelt bewerten (Claude: Batches-API).
   if (pendingAi.length > 0 && ensemble) {
-    console.log(
-      `[predict] ${pendingAi.length} Partien fällig — Bewertung startet`,
-    );
-    let predictions: Prediction[] | null = null;
-    try {
-      predictions = await ensemble.evaluateMany(pendingAi.map((p) => p.input));
-    } catch (err) {
-      console.warn("[predict] Bündel-Bewertung fehlgeschlagen:", err);
-    }
-    for (let i = 0; i < pendingAi.length; i++) {
-      const p = pendingAi[i]!;
-      const aiPred = predictions?.[i];
-      if (aiPred) {
-        // Alten KI-Tipp in die Historie schieben.
-        if (p.prev?.prediction?.models) {
-          p.match.predictionHistory = [
-            ...p.match.predictionHistory,
-            {
-              generatedAt: p.prev.prediction.generatedAt,
-              predictedScore: p.prev.prediction.predictedScore,
-              probabilities: p.prev.prediction.probabilities,
-              confidence: p.prev.prediction.confidence,
-            },
-          ];
-        }
-        p.match.prediction = aiPred;
-        aiEvaluated++;
-      } else {
-        p.match.prediction = p.prev?.prediction ?? p.baselinePrediction;
-        aiSkipped++;
-      }
-      applyAdvance(p.match);
-      await writeJson(matchPath(p.matchId), Match, p.match);
-      matches.push(p.match);
-      written++;
-    }
+    const bundled = await applyBundledAi(pendingAi, ensemble);
+    aiEvaluated = bundled.aiEvaluated;
+    aiSkipped += bundled.aiSkipped;
+    matches.push(...bundled.matches);
+    written += bundled.matches.length;
   }
 
   return { written, aiEvaluated, aiSkipped, matches };
