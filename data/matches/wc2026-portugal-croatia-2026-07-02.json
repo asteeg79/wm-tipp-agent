@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-01T10:10:23.550Z",
+    "generatedAt": "2026-07-01T11:03:54.563Z",
     "home": {
       "teamId": "POR",
       "elo": 1782,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-07-01T11:03:54.563Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.548,
-      "draw": 0.2214,
-      "away": 0.2305
+      "home": 0.4933,
+      "draw": 0.2777,
+      "away": 0.229
     },
-    "confidence": 0.322,
+    "confidence": 0.5654,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,72 @@
         "away": 1.18
       }
     },
-    "advance": {
-      "home": 0.6656,
-      "away": 0.3344
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.5,
+          "draw": 0.26,
+          "away": 0.24
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Portugals sehr stabile Defensive (0.63 Gegentore/Spiel, 35% Zu-Null) trifft auf Kroatiens anfällige Abwehr (1.35 Gegentore/Spiel)",
+          "Portugal mit höherem Elo (1782 vs 1746) und in beiden Prognosen (Baseline & Markt) als Favorit ausgewiesen",
+          "Kroatien in besserer Aggregat-Form (weightedForm 2.07), aber gegen starke Gegner defensiv wackelig (2:4 vs England, 1:3 vs Brasilien)",
+          "H2H komplett ausgeglichen (1-1-1, 4:4 Tore) - enge Duelle sind Tradition",
+          "K.-o.-Spiel auf neutralem Boden, beide Teams gut erholt (4 Tage Pause)"
+        ],
+        "risks": [
+          "Mögliche Sperre eines portugiesischen Spielers nach Roter Karte (Rudelbildung) könnte Portugals Aufstellung schwächen",
+          "Kroatiens Turnier- und Elfmeter-Erfahrung macht ein enges Spiel gefährlich für den Favoriten",
+          "Portugals Offensive zuletzt schwankend (0:0 gegen Kolumbien) - könnte an kompakter kroatischer Defensive scheitern",
+          "Knockout-Charakter begünstigt vorsichtiges Spiel und ein Remis nach 90 Minuten"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.45,
+          "draw": 0.3,
+          "away": 0.25
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Portugal's recent strong form with a dominant 5:0 win against Uzbekistan.",
+          "Croatia's equally strong recent form, defeating Ghana and Panama.",
+          "Both teams with similar Elo ratings: Portugal 1782, Croatia 1746.",
+          "Both teams' recent head-to-head record balanced: 1 win each, 1 draw."
+        ],
+        "risks": [
+          "Potential suspension for a key Portuguese player could impact their performance.",
+          "Portugal's inability to score against Colombia might indicate vulnerability."
+        ]
+      }
     },
-    "inputHash": "sha256:52d8f5ca39a131f01a3c2f3b0855901bb936585d790fa5094caba68272289b5e"
+    "agreement": 0.9667,
+    "ensembleWeights": {
+      "claude": 0.5063,
+      "chatgpt": 0.4937
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Portugals sehr stabile Defensive (0.63 Gegentore/Spiel, 35% Zu-Null) trifft auf Kroatiens anfällige Abwehr (1.35 Gegentore/Spiel); Portugal mit höherem Elo (1782 vs 1746) und in beiden Prognosen (Baseline & Markt) als Favorit ausgewiesen; Kroatien in besserer Aggregat-Form (weightedForm 2.07), aber gegen starke Gegner defensiv wackelig (2:4 vs England, 1:3 vs Brasilien). Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.6316,
+      "away": 0.3684
+    },
+    "tiebreakWinProbHome": 0.465,
+    "inputHash": "sha256:1e46cf97947554f36c7c7179b92ae45cbca7d0aae80540db6f864724525aa68b"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-01T10:13:00.506Z",
+    "updatedAt": "2026-07-01T11:03:55.195Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.5378,
