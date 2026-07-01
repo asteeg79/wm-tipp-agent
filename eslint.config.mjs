@@ -5,6 +5,7 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import reactHooks from "eslint-plugin-react-hooks";
+import sonarjs from "eslint-plugin-sonarjs";
 import prettier from "eslint-config-prettier";
 import globals from "globals";
 
@@ -24,6 +25,8 @@ export default tseslint.config(
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  // SonarJS: Code-Smell-/Komplexitäts-Regeln (Sonar-Qualität ohne Server/Token).
+  sonarjs.configs.recommended,
   {
     // Gemeinsame Regel-Anpassungen (pragmatisch, hält Bestand grün).
     rules: {
@@ -34,6 +37,19 @@ export default tseslint.config(
       ],
       // any ist unerwünscht, aber nur Warnung (Bestand pragmatisch).
       "@typescript-eslint/no-explicit-any": "warn",
+
+      // SonarJS-Feinschliff:
+      // Fehlalarme für diesen Code AUS —
+      "sonarjs/pseudo-random": "off", // RNG für Backoff-Jitter/Simulation, nicht Krypto
+      "sonarjs/void-use": "off", // `void promise` markiert bewusst Floating Promises
+      "sonarjs/no-unused-vars": "off", // deckt @typescript-eslint ab (inkl. ^_-Ausnahme)
+      // Echte, aber subjektive/refactor-lastige Signale nur als Warnung
+      // (sichtbar in `pnpm lint`, blockiert CI nicht — bewusst über Zeit angehen):
+      "sonarjs/cognitive-complexity": "warn",
+      "sonarjs/no-nested-conditional": "warn",
+      "sonarjs/super-linear-regex": "warn",
+      "sonarjs/regex-complexity": "warn",
+      "sonarjs/no-small-switch": "warn",
     },
   },
   {

@@ -15,7 +15,7 @@ Thu Mar 26
 
   it("parst Datum, Teams und Tore; bereinigt Venue-Suffix", () => {
     const games = parseFootballTxt(sample, 2026);
-    expect(games.length).toBe(3);
+    expect(games).toHaveLength(3);
     expect(games[0]).toEqual({
       date: "2026-01-18",
       teamA: "Bolivia",
