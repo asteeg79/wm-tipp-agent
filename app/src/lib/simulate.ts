@@ -139,6 +139,35 @@ function cmpStanding(a: Standing, b: Standing): number {
 }
 
 /** Eine Gruppen-Saison → sortierte Tabelle. */
+/** Tore einer (Sim-)Partie: gesampelt (rng) bzw. deterministisch (Ergebnis/xG/1X2). */
+function matchGoals(
+  m: SimMatch,
+  rng: (() => number) | null,
+): { h: number; a: number } {
+  if (rng) return playMatch(m, rng);
+  if (m.result) return { h: m.result.home, a: m.result.away };
+  if (m.eg) return { h: Math.round(m.eg.home), a: Math.round(m.eg.away) };
+  return { h: m.p.home >= m.p.away ? 1 : 0, a: m.p.away > m.p.home ? 1 : 0 };
+}
+
+/** Tore auf die Heim/Auswärts-Tabellenzeilen anwenden (Tore, Diff, Punkte). */
+function applyGoals(
+  home: Standing,
+  away: Standing,
+  g: { h: number; a: number },
+): void {
+  home.gf += g.h;
+  away.gf += g.a;
+  home.gd += g.h - g.a;
+  away.gd += g.a - g.h;
+  if (g.h > g.a) home.pts += 3;
+  else if (g.h < g.a) away.pts += 3;
+  else {
+    home.pts += 1;
+    away.pts += 1;
+  }
+}
+
 function simulateGroup(
   teamIds: string[],
   matches: SimMatch[],
@@ -151,25 +180,7 @@ function simulateGroup(
   for (const m of matches) {
     const home = tbl.get(m.home);
     const away = tbl.get(m.away);
-    if (!home || !away) continue;
-    // Deterministisch (rng=null): echtes Ergebnis oder gerundete xG.
-    const goals = rng
-      ? playMatch(m, rng)
-      : m.result
-        ? { h: m.result.home, a: m.result.away }
-        : m.eg
-          ? { h: Math.round(m.eg.home), a: Math.round(m.eg.away) }
-          : { h: m.p.home >= m.p.away ? 1 : 0, a: m.p.away > m.p.home ? 1 : 0 };
-    home.gf += goals.h;
-    away.gf += goals.a;
-    home.gd += goals.h - goals.a;
-    away.gd += goals.a - goals.h;
-    if (goals.h > goals.a) home.pts += 3;
-    else if (goals.h < goals.a) away.pts += 3;
-    else {
-      home.pts += 1;
-      away.pts += 1;
-    }
+    if (home && away) applyGoals(home, away, matchGoals(m, rng));
   }
 
   const arr = [...tbl.values()];
@@ -271,6 +282,40 @@ interface RealKoField {
 const pairKey = (a: string, b: string): string => [a, b].sort().join("|");
 
 /**
+ * Sieger einer GESPIELTEN K.-o.-Partie (Teams a,b): entscheidendes Ergebnis →
+ * Tor-Sieger; 90′-Remis (Elfmeter) → Weitergekommener (taucht in `later` = einer
+ * späteren Runde auf), sonst Weiterkommen-Tipp bzw. Elo-Favorit.
+ */
+function playedWinner(
+  a: string,
+  b: string,
+  real: PredictionIndexEntry,
+  ar: ScoreLine,
+  later: Set<string>,
+  eloOf: (id: string) => number,
+): string {
+  if (ar.home !== ar.away)
+    return ar.home > ar.away ? real.homeTeamId : real.awayTeamId;
+  if (later.has(a)) return a;
+  if (later.has(b)) return b;
+  if (real.advance)
+    return real.advance.home >= real.advance.away
+      ? real.homeTeamId
+      : real.awayTeamId;
+  return eloWinProb(eloOf(a), eloOf(b)) >= 0.5 ? a : b;
+}
+
+/** Orientiert ein reales Ergebnis auf die (a,b)-Bracket-Reihenfolge. */
+function orientScore(
+  real: PredictionIndexEntry,
+  a: string,
+  ar: ScoreLine,
+): { a: number; b: number } {
+  const aHome = real.homeTeamId === a;
+  return { a: aHome ? ar.home : ar.away, b: aHome ? ar.away : ar.home };
+}
+
+/**
  * Liest das ECHTE K.-o.-Feld aus den (aufgelösten) K.-o.-Partien des Index.
  * `null`, solange keine aufgelösten K.-o.-Partien vorliegen (Platzhalter).
  */
@@ -329,6 +374,25 @@ function realKoField(
 
 /* ── Monte-Carlo-Titelchancen ─────────────────────────────────────────────── */
 
+/** Champion eines Laufs im Elo-gesetzten Feld (Fall B: noch keine Auslosung). */
+function eloBracketChampion(
+  advancers: string[],
+  eloOf: (id: string) => number,
+  rng: () => number,
+): string {
+  let bracket = seedByElo(advancers, eloOf);
+  while (bracket.length > 1) {
+    const next: string[] = [];
+    for (let k = 0; k < bracket.length; k += 2) {
+      const a = bracket[k]!;
+      const b = bracket[k + 1]!;
+      next.push(rng() < eloWinProb(eloOf(a), eloOf(b)) ? a : b);
+    }
+    bracket = next;
+  }
+  return bracket[0]!;
+}
+
 export function simulateTournament(
   index: IndexFile,
   predIndex: PredictionsIndex,
@@ -380,18 +444,7 @@ export function simulateTournament(
     );
     for (const id of winners) inc(groupWinner, id);
     for (const id of advancers) inc(advance, id);
-
-    let bracket = seedByElo(advancers, eloOf);
-    while (bracket.length > 1) {
-      const next: string[] = [];
-      for (let k = 0; k < bracket.length; k += 2) {
-        const a = bracket[k]!;
-        const b = bracket[k + 1]!;
-        next.push(rng() < eloWinProb(eloOf(a), eloOf(b)) ? a : b);
-      }
-      bracket = next;
-    }
-    if (bracket[0]) inc(title, bracket[0]);
+    inc(title, eloBracketChampion(advancers, eloOf, rng));
   }
 
   return {
@@ -440,6 +493,38 @@ function koScore(pWin: number): { win: number; lose: number } {
  * volles WM-2026-Schema, z. B. Tests): Einstiegsrunde nach Datum, Sieger real
  * bzw. per Elo. `null`, solange keine aufgelösten K.-o.-Partien vorliegen.
  */
+/** Eine Partie im generischen Fallback-Feld: echtes Ergebnis, sonst Elo. */
+function fieldMatch(
+  a: string,
+  b: string,
+  realResult: RealKoField["realResult"],
+  eloOf: (id: string) => number,
+): BracketMatch {
+  const real = realResult.get(pairKey(a, b));
+  if (real) {
+    return {
+      a,
+      b,
+      winner: real.winner,
+      winProb: eloWinProb(eloOf(real.winner), eloOf(real.winner === a ? b : a)),
+      score: {
+        a: a === real.home ? real.hg : real.ag,
+        b: b === real.home ? real.hg : real.ag,
+      },
+    };
+  }
+  const pA = eloWinProb(eloOf(a), eloOf(b));
+  const aWins = pA >= 0.5;
+  const { win, lose } = koScore(aWins ? pA : 1 - pA);
+  return {
+    a,
+    b,
+    winner: aWins ? a : b,
+    winProb: aWins ? pA : 1 - pA,
+    score: { a: aWins ? win : lose, b: aWins ? lose : win },
+  };
+}
+
 function realBracketRounds(
   index: IndexFile,
   predIndex: PredictionsIndex,
@@ -456,38 +541,9 @@ function realBracketRounds(
     const matches: BracketMatch[] = [];
     const next: string[] = [];
     for (let i = 0; i < bracket.length; i += 2) {
-      const a = bracket[i]!;
-      const b = bracket[i + 1]!;
-      const real = realResult.get(pairKey(a, b));
-      if (real) {
-        matches.push({
-          a,
-          b,
-          winner: real.winner,
-          winProb: eloWinProb(
-            eloOf(real.winner),
-            eloOf(real.winner === a ? b : a),
-          ),
-          score: {
-            a: a === real.home ? real.hg : real.ag,
-            b: b === real.home ? real.hg : real.ag,
-          },
-        });
-        next.push(real.winner);
-      } else {
-        const pA = eloWinProb(eloOf(a), eloOf(b));
-        const aWins = pA >= 0.5;
-        const winProb = aWins ? pA : 1 - pA;
-        const { win, lose } = koScore(winProb);
-        matches.push({
-          a,
-          b,
-          winner: aWins ? a : b,
-          winProb,
-          score: { a: aWins ? win : lose, b: aWins ? lose : win },
-        });
-        next.push(aWins ? a : b);
-      }
+      const m = fieldMatch(bracket[i]!, bracket[i + 1]!, realResult, eloOf);
+      matches.push(m);
+      next.push(m.winner);
     }
     rounds.push({ stage: KO_STAGES[startIdx + ri] ?? "final", matches });
     bracket = next;
@@ -522,35 +578,45 @@ export function simulateBracket(
     null,
     eloOf,
   );
-  let bracket = seedByElo(advancers, eloOf);
+  return eloSeededBracket(advancers, eloOf);
+}
 
+/** Eine Partie im Elo-gesetzten Feld: höheres Elo gewinnt (deterministisch). */
+function eloSeededMatch(
+  a: string,
+  b: string,
+  eloOf: (id: string) => number,
+): BracketMatch {
+  const pA = eloWinProb(eloOf(a), eloOf(b));
+  const aWins = pA >= 0.5;
+  const winProb = aWins ? pA : 1 - pA;
+  const { win, lose } = koScore(winProb);
+  return {
+    a,
+    b,
+    winner: aWins ? a : b,
+    winProb,
+    score: { a: aWins ? win : lose, b: aWins ? lose : win },
+  };
+}
+
+/** Deterministischer Elo-Baum (Fallback ohne echte Auslosung/Tests). */
+function eloSeededBracket(
+  advancers: string[],
+  eloOf: (id: string) => number,
+): BracketResult {
+  let bracket = seedByElo(advancers, eloOf);
   const rounds: BracketRound[] = [];
   let si = KO_STAGES.length - Math.log2(Math.max(2, bracket.length));
   while (bracket.length > 1) {
     const matches: BracketMatch[] = [];
-    const next: string[] = [];
     for (let i = 0; i < bracket.length; i += 2) {
-      const a = bracket[i]!;
-      const b = bracket[i + 1]!;
-      const pA = eloWinProb(eloOf(a), eloOf(b));
-      const aWins = pA >= 0.5;
-      const winner = aWins ? a : b;
-      const winProb = aWins ? pA : 1 - pA;
-      const { win, lose } = koScore(winProb);
-      matches.push({
-        a,
-        b,
-        winner,
-        winProb,
-        score: { a: aWins ? win : lose, b: aWins ? lose : win },
-      });
-      next.push(winner);
+      matches.push(eloSeededMatch(bracket[i]!, bracket[i + 1]!, eloOf));
     }
     rounds.push({ stage: KO_STAGES[si] ?? "final", matches });
-    bracket = next;
+    bracket = matches.map((m) => m.winner);
     si++;
   }
-
   return { rounds, champion: bracket[0]! };
 }
 
@@ -897,21 +963,22 @@ function simulateChampion(ctx: BracketCtx, rng: () => number): string {
     const a = resolveSide(num, t.a);
     const b = resolveSide(num, t.b);
     let winner: string;
-    if (a && b) {
+    if (!a || !b) {
+      winner = a ?? b ?? "";
+    } else {
       const real = ctx.koByPair.get(pairKey(a, b));
       const ar = real?.actualResult;
-      if (ar) {
-        if (ar.home !== ar.away) {
-          winner = ar.home > ar.away ? real!.homeTeamId : real!.awayTeamId;
-        } else {
-          const later = ctx.advancedAfter[KO_STAGES.indexOf(t.stage)]!;
-          winner = later.has(a) ? a : later.has(b) ? b : sample(a, b, real);
-        }
-      } else {
-        winner = sample(a, b, real);
-      }
-    } else {
-      winner = a ?? b ?? "";
+      // Gespielt → realer (Elfmeter-)Sieger; offen → nach Wahrscheinlichkeit ziehen.
+      winner = ar
+        ? playedWinner(
+            a,
+            b,
+            real!,
+            ar,
+            ctx.advancedAfter[KO_STAGES.indexOf(t.stage)]!,
+            ctx.eloOf,
+          )
+        : sample(a, b, real);
     }
     cache.set(num, winner);
     return winner;
@@ -954,8 +1021,28 @@ export function projectBracket(
     };
   };
 
-  // Baum rekursiv auflösen (memoisiert): echte Ergebnisse/Weiterkommen zuerst,
-  // sonst der Weiterkommen-Tipp, sonst Elo.
+  // Ungespielte Partie: Weiterkommen-Tipp (advance) mit 90′-Score, sonst Elo.
+  const tippedMatch = (
+    a: string,
+    b: string,
+    real: PredictionIndexEntry | undefined,
+  ): BracketMatch => {
+    if (!real?.advance) return { a, b, ...eloScore(a, b) };
+    const homeAdv = real.advance.home >= real.advance.away;
+    const ps = real.predictedScore;
+    const aHome = real.homeTeamId === a;
+    return {
+      a,
+      b,
+      winner: homeAdv ? real.homeTeamId : real.awayTeamId,
+      winProb: homeAdv ? real.advance.home : real.advance.away,
+      score: ps
+        ? { a: aHome ? ps.home : ps.away, b: aHome ? ps.away : ps.home }
+        : eloScore(a, b).score,
+    };
+  };
+
+  // Baum rekursiv auflösen (memoisiert): echte Ergebnisse zuerst, sonst Tipp/Elo.
   const cache = new Map<number, BracketMatch | null>();
   const resolveSide = (num: number, f: Feed): string | null =>
     "from" in f
@@ -970,50 +1057,24 @@ export function projectBracket(
       cache.set(num, null);
       return null;
     }
-    const stageIdx = KO_STAGES.indexOf(t.stage);
     const real = koByPair.get(pairKey(a, b));
-    const aHome = real?.homeTeamId === a;
-    let m: BracketMatch;
-    if (real?.actualResult) {
-      // Gespielt: entscheidendes Ergebnis → Tor-Sieger; 90′-Remis (Elfmeter) →
-      // wer in einer späteren Runde auftaucht, sonst Tipp/Elo.
-      const ar = real.actualResult;
-      const score = {
-        a: aHome ? ar.home : ar.away,
-        b: aHome ? ar.away : ar.home,
-      };
-      let winner: string;
-      if (ar.home !== ar.away) {
-        winner = ar.home > ar.away ? real.homeTeamId : real.awayTeamId;
-      } else {
-        const later = advancedAfter[stageIdx]!;
-        winner = later.has(a)
-          ? a
-          : later.has(b)
-            ? b
-            : real.advance
-              ? real.advance.home >= real.advance.away
-                ? real.homeTeamId
-                : real.awayTeamId
-              : eloScore(a, b).winner;
-      }
-      m = { a, b, winner, winProb: 1, score };
-    } else if (real?.advance) {
-      // Ungespielt, aber Weiterkommen-Tipp da: 90′-Score + getippter Sieger.
-      const homeAdv = real.advance.home >= real.advance.away;
-      const ps = real.predictedScore;
-      m = {
-        a,
-        b,
-        winner: homeAdv ? real.homeTeamId : real.awayTeamId,
-        winProb: homeAdv ? real.advance.home : real.advance.away,
-        score: ps
-          ? { a: aHome ? ps.home : ps.away, b: aHome ? ps.away : ps.home }
-          : eloScore(a, b).score,
-      };
-    } else {
-      m = { a, b, ...eloScore(a, b) };
-    }
+    const ar = real?.actualResult;
+    const m: BracketMatch = ar
+      ? {
+          a,
+          b,
+          winner: playedWinner(
+            a,
+            b,
+            real!,
+            ar,
+            advancedAfter[KO_STAGES.indexOf(t.stage)]!,
+            eloOf,
+          ),
+          winProb: 1,
+          score: orientScore(real!, a, ar),
+        }
+      : tippedMatch(a, b, real);
     cache.set(num, m);
     return m;
   };
