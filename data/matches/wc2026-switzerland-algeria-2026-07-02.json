@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-01T14:03:52.901Z",
+    "generatedAt": "2026-07-01T15:03:53.540Z",
     "home": {
       "teamId": "SUI",
       "elo": 1722,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-07-01T15:03:53.540Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4428,
-      "draw": 0.2307,
-      "away": 0.3265
+      "home": 0.4537,
+      "draw": 0.2803,
+      "away": 0.2659
     },
-    "confidence": 0.1642,
+    "confidence": 0.5482,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,71 @@
         "away": 1.48
       }
     },
-    "advance": {
-      "home": 0.5635,
-      "away": 0.4365
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.44,
+          "draw": 0.28,
+          "away": 0.28
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "Switzerland mit leicht besserem Elo (1722 vs 1695) und stabilerer Defensive (1.05 Gegentore/Spiel, Clean-Sheet-Rate)",
+          "Beide Teams offensiv formstark und torgefährlich (SUI 2.16, ALG 2.11 Tore/Spiel) – enges Duell zu erwarten",
+          "Schweiz mit gutem Turnierlauf (2:1 Kanada, 4:1 Bosnien) und Selbstvertrauen laut Yakin",
+          "Algeria defensiv zuletzt anfällig (3:3 gegen Österreich, 0:3 gegen Argentinien)",
+          "Markt (0.47/0.29/0.23) sieht Schweiz als leichten Favoriten mit erhöhter Remis-Chance"
+        ],
+        "risks": [
+          "K.-o.-Spiel oft eng – Remis nach 90 Minuten realistisch",
+          "Algeria kann bei offenem Spiel jederzeit treffen und offensiv überraschen",
+          "Kein H2H-Verlauf als Referenz vorhanden",
+          "Algeria mit einem Tag mehr Regeneration nicht (4 vs 7 Tage) – Frische auf beiden Seiten"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.45,
+          "draw": 0.27,
+          "away": 0.28
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Schweiz zeigt starke Form mit überzeugenden Siegen gegen Kanada und Bosnien.",
+          "Schweizer Trainer Yakin betont gestärktes Selbstvertrauen durch letzte Siege.",
+          "Algerien nur ein Unentschieden gegen Österreich nach einer Niederlage gegen Argentinien."
+        ],
+        "risks": [
+          "Algerien besitzt solide Offensive, zeigte sie im Spiel gegen Österreich mit 3 erzielten Toren.",
+          "Beide Teams haben ähnliche Elo-Werte, Match könnte enger sein als erwartet."
+        ]
+      }
     },
-    "inputHash": "sha256:21b7a9e749a75067c9d28d1fdbfe09683887f9782a91de98ff9f9116a4776ba9"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5063,
+      "chatgpt": 0.4937
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit leicht besserem Elo (1722 vs 1695) und stabilerer Defensive (1.05 Gegentore/Spiel, Clean-Sheet-Rate); Beide Teams offensiv formstark und torgefährlich (SUI 2.16, ALG 2.11 Tore/Spiel) – enges Duell zu erwarten; Schweiz mit gutem Turnierlauf (2:1 Kanada, 4:1 Bosnien) und Selbstvertrauen laut Yakin. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.5985,
+      "away": 0.4015
+    },
+    "tiebreakWinProbHome": 0.51,
+    "inputHash": "sha256:3cb17939852a398311d0dd701a8ddbb87a1d9ade072c7d83e470ec1890cc833a"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-01T14:06:25.526Z",
+    "updatedAt": "2026-07-01T15:03:54.395Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4732,
