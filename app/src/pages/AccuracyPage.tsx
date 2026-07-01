@@ -177,30 +177,32 @@ function ModelCard({
   );
 }
 
+/**
+ * Führendes Modell: höheres Ensemble-Gewicht (Blend aus RPS + Tendenz-
+ * Trefferquote), konsistent zum Gewichts-Balken. Solange noch keine Gewichte
+ * vorliegen (kleine Stichprobe), ersatzweise der bessere (niedrigere) RPS.
+ */
+function pickLeader(
+  cmp: ModelComparison | undefined,
+  hasData: boolean,
+): "claude" | "chatgpt" | null {
+  if (!hasData || !cmp) return null;
+  if (cmp.weights) {
+    if (cmp.weights.claude === cmp.weights.chatgpt) return null;
+    return cmp.weights.claude > cmp.weights.chatgpt ? "claude" : "chatgpt";
+  }
+  const aR = cmp.claude.rpsMean;
+  const bR = cmp.chatgpt.rpsMean;
+  if (aR === null || bR === null || aR === bR) return null;
+  return aR < bR ? "claude" : "chatgpt";
+}
+
 /** Abschnitt „Modell-Vergleich" — mit eigenem Leer-Zustand vor WM-Start. */
 function ModelComparisonSection({ cmp }: { cmp: ModelComparison | undefined }) {
   const { t } = useTranslation();
   const hasData =
     !!cmp && (cmp.claude.finishedCount > 0 || cmp.chatgpt.finishedCount > 0);
-
-  // Führend = höheres Ensemble-Gewicht (Blend aus RPS + Tendenz-Trefferquote),
-  // konsistent zum Gewichts-Balken unten. Solange noch keine Gewichte vorliegen
-  // (kleine Stichprobe), ersatzweise der bessere (niedrigere) RPS.
-  const leader: "claude" | "chatgpt" | null = !hasData
-    ? null
-    : cmp.weights
-      ? cmp.weights.claude === cmp.weights.chatgpt
-        ? null
-        : cmp.weights.claude > cmp.weights.chatgpt
-          ? "claude"
-          : "chatgpt"
-      : cmp.claude.rpsMean !== null && cmp.chatgpt.rpsMean !== null
-        ? cmp.claude.rpsMean < cmp.chatgpt.rpsMean
-          ? "claude"
-          : cmp.chatgpt.rpsMean < cmp.claude.rpsMean
-            ? "chatgpt"
-            : null
-        : null;
+  const leader = pickLeader(cmp, hasData);
 
   return (
     <div>

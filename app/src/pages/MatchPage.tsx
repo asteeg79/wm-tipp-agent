@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import type { PredictionHistoryEntry, ScoreLine } from "@wm/shared";
+import type {
+  Match,
+  PredictionHistoryEntry,
+  ScoreLine,
+  TeamSummary,
+} from "@wm/shared";
 import { useMatch, useTeamsMap } from "../lib/data.js";
 import { TeamBadge } from "../components/TeamBadge.js";
 import { ProbabilityBar } from "../components/ProbabilityBar.js";
@@ -23,9 +28,6 @@ export function MatchPage() {
   const fb = match.featureBundle;
   const home = teams.get(match.homeTeamId);
   const away = teams.get(match.awayTeamId);
-  const models = pred?.models;
-  const hasAi = !!models && (!!models.claude || !!models.chatgpt);
-  const lowAgreement = pred?.agreement !== undefined && pred.agreement < 0.7;
 
   return (
     <div className="space-y-4">
@@ -67,149 +69,13 @@ export function MatchPage() {
 
       {/* Prognose */}
       {pred ? (
-        <div className="space-y-4 rounded-xl border border-edge bg-surface/40 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h3 className="font-semibold">
-              {hasAi ? t("match.aiTip") : t("match.baselineTip")}
-            </h3>
-            <div className="flex items-center gap-2">
-              {lowAgreement && (
-                <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-warn ring-1 ring-inset ring-amber-500/30">
-                  ⚠ {t("match.modelsDisagree")}
-                </span>
-              )}
-              <ConfidenceBadge value={pred.confidence} />
-            </div>
-          </div>
-
-          {/* KI-Einschätzung sofort sichtbar (prominent statt versteckt unten). */}
-          {pred.rationale && (
-            <p className="border-l-2 border-acc/60 pl-3 text-sm leading-relaxed text-fg-soft">
-              {pred.rationale}
-            </p>
-          )}
-
-          <div>
-            <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
-              {t("match.probabilities")}
-              {match.stage !== "group" && (
-                <span className="ml-1 normal-case tracking-normal text-fg-faint">
-                  · {t("match.after90")}
-                </span>
-              )}
-            </div>
-            <ProbabilityBar p={pred.probabilities} />
-          </div>
-
-          {/* K.-o.: Weiterkommen nach Verlängerung/Elfmeter */}
-          {match.stage !== "group" && pred.advance && (
-            <div>
-              <div className="mb-1 flex items-baseline justify-between gap-2 text-xs uppercase tracking-wide text-fg-faint">
-                <span>{t("match.advance")}</span>
-                <span className="normal-case tracking-normal">
-                  {t("match.advanceNote")}
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-3 text-sm font-medium">
-                <span
-                  className={
-                    pred.advance.home >= pred.advance.away
-                      ? "font-bold text-acc"
-                      : "text-fg-muted"
-                  }
-                >
-                  {home?.name ?? match.homeTeamId}{" "}
-                  {formatPercent(pred.advance.home)}
-                </span>
-                <span
-                  className={
-                    pred.advance.away > pred.advance.home
-                      ? "font-bold text-acc"
-                      : "text-fg-muted"
-                  }
-                >
-                  {formatPercent(pred.advance.away)}{" "}
-                  {away?.name ?? match.awayTeamId}
-                </span>
-              </div>
-            </div>
-          )}
-
-          {/* Warum dieser Tipp (keyFactors/risks) */}
-          {hasAi && <WhySection models={models!} />}
-
-          {/* Modell-Vergleich Claude vs. ChatGPT */}
-          {hasAi && (
-            <div className="border-t border-edge pt-3">
-              <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
-                {t("match.modelComparison")}
-                {pred.agreement !== undefined && (
-                  <span className="ml-2 normal-case text-fg-muted">
-                    {t("match.agreement")}: {formatPercent(pred.agreement)}
-                  </span>
-                )}
-              </div>
-              <div className="grid grid-cols-2 gap-3 text-sm">
-                <ModelCol label="Claude" m={models!.claude} />
-                <ModelCol label="ChatGPT" m={models!.chatgpt} />
-              </div>
-            </div>
-          )}
-
-          {/* Baseline vs. KI + erwartete Tore */}
-          {pred.baseline && (
-            <div className="border-t border-edge pt-3 text-sm text-fg-muted">
-              {hasAi && (
-                <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
-                  {t("match.baselineVsAi")}
-                </div>
-              )}
-              {hasAi && (
-                <div className="mb-2">
-                  <span className="text-fg-faint">Baseline:</span>{" "}
-                  <span className="font-mono text-fg-soft">
-                    {formatPercent(pred.baseline.probabilities.home)} /{" "}
-                    {formatPercent(pred.baseline.probabilities.draw)} /{" "}
-                    {formatPercent(pred.baseline.probabilities.away)}
-                  </span>
-                </div>
-              )}
-              {t("match.expectedGoals")}:{" "}
-              <span className="font-mono text-fg">
-                {pred.baseline.expectedGoals.home.toFixed(2)} :{" "}
-                {pred.baseline.expectedGoals.away.toFixed(2)}
-              </span>
-            </div>
-          )}
-
-          {/* Faktoren (Elo/Form) */}
-          {fb && (
-            <div className="grid grid-cols-2 gap-3 border-t border-edge pt-3 text-sm">
-              <FeatureCol label={home?.name ?? match.homeTeamId} f={fb.home} />
-              <FeatureCol label={away?.name ?? match.awayTeamId} f={fb.away} />
-            </div>
-          )}
-
-          {/* Tipp-Verlauf: aktueller Lauf (oben, "jetzt") + frühere Läufe,
-              seitenweise blätterbar (kann bei oft bewerteten Spielen lang
-              werden). */}
-          <PredictionTimeline
-            current={{
-              generatedAt: pred.generatedAt,
-              predictedScore: pred.predictedScore,
-              confidence: pred.confidence,
-            }}
-            history={match.predictionHistory}
-          />
-
-          {/* Fließtext-Einschätzung steht jetzt oben; hier nur noch der
-              Baseline-Hinweis, wenn (noch) kein KI-Tipp vorliegt. */}
-          {!pred.rationale && (
-            <p className="border-t border-edge pt-3 text-xs text-fg-faint">
-              {t("match.baselineNote")}
-            </p>
-          )}
-        </div>
+        <PredictionCard
+          match={match}
+          pred={pred}
+          fb={fb}
+          home={home}
+          away={away}
+        />
       ) : (
         <div className="rounded-xl border border-dashed border-edge-strong bg-surface/30 p-4 text-sm text-fg-muted">
           {t("match.predictionSoon")}
@@ -224,92 +90,268 @@ export function MatchPage() {
       />
 
       {/* Buchmacher-Quoten (nur wenn Odds-Quelle aktiv) */}
-      {match.market && (
-        <div className="space-y-3 rounded-xl border border-edge bg-surface/40 p-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h3 className="font-semibold">{t("market.title")}</h3>
-            <span className="text-[11px] text-fg-faint">
-              {match.market.source} · {match.market.bookmakerCount}{" "}
-              {t("market.bookmakers")}
+      {match.market && <MarketCard market={match.market} pred={pred} />}
+    </div>
+  );
+}
+
+/** Prognose-Karte (Tipp, Wahrscheinlichkeiten, Weiterkommen, Faktoren). */
+function PredictionCard({
+  match,
+  pred,
+  fb,
+  home,
+  away,
+}: {
+  match: Match;
+  pred: NonNullable<Match["prediction"]>;
+  fb: Match["featureBundle"];
+  home: TeamSummary | undefined;
+  away: TeamSummary | undefined;
+}) {
+  const { t } = useTranslation();
+  const models = pred.models;
+  const hasAi = !!models && (!!models.claude || !!models.chatgpt);
+  const lowAgreement = pred.agreement !== undefined && pred.agreement < 0.7;
+  return (
+    <div className="space-y-4 rounded-xl border border-edge bg-surface/40 p-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h3 className="font-semibold">
+          {hasAi ? t("match.aiTip") : t("match.baselineTip")}
+        </h3>
+        <div className="flex items-center gap-2">
+          {lowAgreement && (
+            <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-warn ring-1 ring-inset ring-amber-500/30">
+              ⚠ {t("match.modelsDisagree")}
+            </span>
+          )}
+          <ConfidenceBadge value={pred.confidence} />
+        </div>
+      </div>
+
+      {/* KI-Einschätzung sofort sichtbar (prominent statt versteckt unten). */}
+      {pred.rationale && (
+        <p className="border-l-2 border-acc/60 pl-3 text-sm leading-relaxed text-fg-soft">
+          {pred.rationale}
+        </p>
+      )}
+
+      <div>
+        <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
+          {t("match.probabilities")}
+          {match.stage !== "group" && (
+            <span className="ml-1 normal-case tracking-normal text-fg-faint">
+              · {t("match.after90")}
+            </span>
+          )}
+        </div>
+        <ProbabilityBar p={pred.probabilities} />
+      </div>
+
+      {/* K.-o.: Weiterkommen nach Verlängerung/Elfmeter */}
+      {match.stage !== "group" && pred.advance && (
+        <div>
+          <div className="mb-1 flex items-baseline justify-between gap-2 text-xs uppercase tracking-wide text-fg-faint">
+            <span>{t("match.advance")}</span>
+            <span className="normal-case tracking-normal">
+              {t("match.advanceNote")}
             </span>
           </div>
+          <div className="flex items-center justify-between gap-3 text-sm font-medium">
+            <span
+              className={
+                pred.advance.home >= pred.advance.away
+                  ? "font-bold text-acc"
+                  : "text-fg-muted"
+              }
+            >
+              {home?.name ?? match.homeTeamId}{" "}
+              {formatPercent(pred.advance.home)}
+            </span>
+            <span
+              className={
+                pred.advance.away > pred.advance.home
+                  ? "font-bold text-acc"
+                  : "text-fg-muted"
+              }
+            >
+              {formatPercent(pred.advance.away)}{" "}
+              {away?.name ?? match.awayTeamId}
+            </span>
+          </div>
+        </div>
+      )}
 
-          {/* Dezimalquoten 1 / X / 2 */}
-          <div className="grid grid-cols-3 gap-2">
+      {/* Warum dieser Tipp (keyFactors/risks) */}
+      {hasAi && <WhySection models={models!} />}
+
+      {/* Modell-Vergleich Claude vs. ChatGPT */}
+      {hasAi && (
+        <div className="border-t border-edge pt-3">
+          <div className="mb-2 text-xs uppercase tracking-wide text-fg-faint">
+            {t("match.modelComparison")}
+            {pred.agreement !== undefined && (
+              <span className="ml-2 normal-case text-fg-muted">
+                {t("match.agreement")}: {formatPercent(pred.agreement)}
+              </span>
+            )}
+          </div>
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            <ModelCol label="Claude" m={models!.claude} />
+            <ModelCol label="ChatGPT" m={models!.chatgpt} />
+          </div>
+        </div>
+      )}
+
+      {/* Baseline vs. KI + erwartete Tore */}
+      {pred.baseline && (
+        <div className="border-t border-edge pt-3 text-sm text-fg-muted">
+          {hasAi && (
+            <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
+              {t("match.baselineVsAi")}
+            </div>
+          )}
+          {hasAi && (
+            <div className="mb-2">
+              <span className="text-fg-faint">Baseline:</span>{" "}
+              <span className="font-mono text-fg-soft">
+                {formatPercent(pred.baseline.probabilities.home)} /{" "}
+                {formatPercent(pred.baseline.probabilities.draw)} /{" "}
+                {formatPercent(pred.baseline.probabilities.away)}
+              </span>
+            </div>
+          )}
+          {t("match.expectedGoals")}:{" "}
+          <span className="font-mono text-fg">
+            {pred.baseline.expectedGoals.home.toFixed(2)} :{" "}
+            {pred.baseline.expectedGoals.away.toFixed(2)}
+          </span>
+        </div>
+      )}
+
+      {/* Faktoren (Elo/Form) */}
+      {fb && (
+        <div className="grid grid-cols-2 gap-3 border-t border-edge pt-3 text-sm">
+          <FeatureCol label={home?.name ?? match.homeTeamId} f={fb.home} />
+          <FeatureCol label={away?.name ?? match.awayTeamId} f={fb.away} />
+        </div>
+      )}
+
+      {/* Tipp-Verlauf: aktueller Lauf (oben, "jetzt") + frühere Läufe,
+          seitenweise blätterbar (kann bei oft bewerteten Spielen lang
+          werden). */}
+      <PredictionTimeline
+        current={{
+          generatedAt: pred.generatedAt,
+          predictedScore: pred.predictedScore,
+          confidence: pred.confidence,
+        }}
+        history={match.predictionHistory}
+      />
+
+      {/* Fließtext-Einschätzung steht jetzt oben; hier nur noch der
+          Baseline-Hinweis, wenn (noch) kein KI-Tipp vorliegt. */}
+      {!pred.rationale && (
+        <p className="border-t border-edge pt-3 text-xs text-fg-faint">
+          {t("match.baselineNote")}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/** Buchmacher-Quoten-Karte (Dezimalquoten, implizite Wkt., wir vs. Markt). */
+function MarketCard({
+  market,
+  pred,
+}: {
+  market: NonNullable<Match["market"]>;
+  pred: Match["prediction"];
+}) {
+  const { t } = useTranslation();
+  return (
+    <div className="space-y-3 rounded-xl border border-edge bg-surface/40 p-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h3 className="font-semibold">{t("market.title")}</h3>
+        <span className="text-[11px] text-fg-faint">
+          {market.source} · {market.bookmakerCount} {t("market.bookmakers")}
+        </span>
+      </div>
+
+      {/* Dezimalquoten 1 / X / 2 */}
+      <div className="grid grid-cols-3 gap-2">
+        {(
+          [
+            ["1", market.decimal.home],
+            ["X", market.decimal.draw],
+            ["2", market.decimal.away],
+          ] as const
+        ).map(([lbl, od]) => (
+          <div
+            key={lbl}
+            className="rounded-lg border border-edge bg-surface-2 px-2 py-2 text-center"
+          >
+            <div className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
+              {lbl}
+            </div>
+            <div className="font-mono text-lg font-bold text-fg">
+              {od.toFixed(2)}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Implizite Wahrscheinlichkeit (Buchmacher-Marge entfernt) */}
+      <div>
+        <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
+          {t("market.implied")}
+        </div>
+        <ProbabilityBar p={market.probabilities} />
+      </div>
+
+      {/* Wir vs. Markt je Ausgang */}
+      {pred && (
+        <div className="border-t border-edge pt-2">
+          <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
+            {t("market.compare")}
+          </div>
+          <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
             {(
               [
-                ["1", match.market.decimal.home],
-                ["X", match.market.decimal.draw],
-                ["2", match.market.decimal.away],
+                [
+                  "match.home",
+                  pred.probabilities.home,
+                  market.probabilities.home,
+                ],
+                [
+                  "match.draw",
+                  pred.probabilities.draw,
+                  market.probabilities.draw,
+                ],
+                [
+                  "match.away",
+                  pred.probabilities.away,
+                  market.probabilities.away,
+                ],
               ] as const
-            ).map(([lbl, od]) => (
-              <div
-                key={lbl}
-                className="rounded-lg border border-edge bg-surface-2 px-2 py-2 text-center"
-              >
-                <div className="font-mono text-[11px] uppercase tracking-wider text-fg-faint">
-                  {lbl}
+            ).map(([k, ours, mkt]) => (
+              <div key={k}>
+                <div className="text-fg-faint">{t(k)}</div>
+                <div className="font-mono text-pos">
+                  {t("market.us")} {formatPercent(ours)}
                 </div>
-                <div className="font-mono text-lg font-bold text-fg">
-                  {od.toFixed(2)}
+                <div className="font-mono text-fg-muted">
+                  {t("market.market")} {formatPercent(mkt)}
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Implizite Wahrscheinlichkeit (Buchmacher-Marge entfernt) */}
-          <div>
-            <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
-              {t("market.implied")}
-            </div>
-            <ProbabilityBar p={match.market.probabilities} />
-          </div>
-
-          {/* Wir vs. Markt je Ausgang */}
-          {pred && (
-            <div className="border-t border-edge pt-2">
-              <div className="mb-1 text-xs uppercase tracking-wide text-fg-faint">
-                {t("market.compare")}
-              </div>
-              <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
-                {(
-                  [
-                    [
-                      "match.home",
-                      pred.probabilities.home,
-                      match.market.probabilities.home,
-                    ],
-                    [
-                      "match.draw",
-                      pred.probabilities.draw,
-                      match.market.probabilities.draw,
-                    ],
-                    [
-                      "match.away",
-                      pred.probabilities.away,
-                      match.market.probabilities.away,
-                    ],
-                  ] as const
-                ).map(([k, ours, mkt]) => (
-                  <div key={k}>
-                    <div className="text-fg-faint">{t(k)}</div>
-                    <div className="font-mono text-pos">
-                      {t("market.us")} {formatPercent(ours)}
-                    </div>
-                    <div className="font-mono text-fg-muted">
-                      {t("market.market")} {formatPercent(mkt)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <p className="text-[10px] leading-snug text-fg-faint">
-            {t("market.note")}
-          </p>
         </div>
       )}
+
+      <p className="text-[10px] leading-snug text-fg-faint">
+        {t("market.note")}
+      </p>
     </div>
   );
 }

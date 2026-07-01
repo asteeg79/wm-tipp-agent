@@ -105,6 +105,18 @@ function fmt(v: number | undefined, dec?: number, pct?: boolean): string {
   return dec ? v.toFixed(dec) : String(v);
 }
 
+/** Welche Seite ist besser? `higher` = größer ist besser (undefined = neutral). */
+function betterSide(
+  av: number | undefined,
+  bv: number | undefined,
+  higher: boolean | undefined,
+): "a" | "b" | null {
+  if (av === undefined || bv === undefined || higher === undefined) return null;
+  if (av === bv) return null;
+  const aWins = higher ? av > bv : av < bv;
+  return aWins ? "a" : "b";
+}
+
 function Row({
   label,
   av,
@@ -120,20 +132,7 @@ function Row({
   dec?: number;
   pct?: boolean;
 }): JSX.Element {
-  const better =
-    av !== undefined && bv !== undefined && higher !== undefined
-      ? higher
-        ? av > bv
-          ? "a"
-          : bv > av
-            ? "b"
-            : null
-        : av < bv
-          ? "a"
-          : bv < av
-            ? "b"
-            : null
-      : null;
+  const better = betterSide(av, bv, higher);
   const cls = (side: "a" | "b"): string =>
     better === side ? "font-semibold text-pos" : "text-fg-soft";
   return (
