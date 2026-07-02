@@ -88,7 +88,9 @@ export function parseFootballTxt(
   const s: DateState = { year: defaultYear, month: 0, day: 0 };
 
   for (const raw of text.split(/\r?\n/)) {
-    const line = raw.replace(/\s+$/, "");
+    // trimEnd() statt /\s+$/: Letzteres backtrackt bei internen Whitespace-
+    // Läufen ohne abschließenden Space quadratisch (O(n²)); trimEnd ist linear.
+    const line = raw.trimEnd();
     if (!line.trim() || line.trim().startsWith("#")) continue;
 
     const match = parseMatchLine(line, s);
