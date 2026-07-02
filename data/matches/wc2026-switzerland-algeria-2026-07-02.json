@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-01T23:40:56.992Z",
+    "generatedAt": "2026-07-02T04:03:58.516Z",
     "home": {
       "teamId": "SUI",
       "elo": 1722,
@@ -21,7 +21,7 @@
       "goalsAgainstAvg": 1.052,
       "cleanSheetRate": 0.333,
       "matchesCount": 30,
-      "daysSinceLastMatch": 7
+      "daysSinceLastMatch": 8
     },
     "away": {
       "teamId": "ALG",
@@ -32,7 +32,7 @@
       "goalsAgainstAvg": 1.183,
       "cleanSheetRate": 0.471,
       "matchesCount": 34,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "h2h": {
       "played": 0,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-01T15:03:53.540Z",
+    "generatedAt": "2026-07-02T04:03:58.516Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4537,
-      "draw": 0.2803,
-      "away": 0.2659
+      "home": 0.465,
+      "draw": 0.2833,
+      "away": 0.2517
     },
-    "confidence": 0.5482,
+    "confidence": 0.5673,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,22 +80,20 @@
         },
         "probabilities": {
           "home": 0.44,
-          "draw": 0.28,
-          "away": 0.28
+          "draw": 0.29,
+          "away": 0.27
         },
         "confidence": 0.5,
         "keyFactors": [
-          "Switzerland mit leicht besserem Elo (1722 vs 1695) und stabilerer Defensive (1.05 Gegentore/Spiel, Clean-Sheet-Rate)",
-          "Beide Teams offensiv formstark und torgefährlich (SUI 2.16, ALG 2.11 Tore/Spiel) – enges Duell zu erwarten",
-          "Schweiz mit gutem Turnierlauf (2:1 Kanada, 4:1 Bosnien) und Selbstvertrauen laut Yakin",
-          "Algeria defensiv zuletzt anfällig (3:3 gegen Österreich, 0:3 gegen Argentinien)",
-          "Markt (0.47/0.29/0.23) sieht Schweiz als leichten Favoriten mit erhöhter Remis-Chance"
+          "Beide Teams in guter Form (weightedForm SUI 1.95, ALG 2.01) und offensiv stark (Torschnitt jeweils über 2)",
+          "Sehr enge Elo-Werte (SUI 1722 vs ALG 1695), leichter Vorteil Schweiz durch Baseline und Markt",
+          "Algerien mit höherer Clean-Sheet-Rate (0.47) und kompakter Defensive, Schweiz zuletzt defensiv anfällig (4 gegen Bosnien-Gegner, Germany 4 kassiert)",
+          "K.-o.-Spiel auf neutralem Platz – enge Partie, Remis nach 90 Minuten realistisch"
         ],
         "risks": [
-          "K.-o.-Spiel oft eng – Remis nach 90 Minuten realistisch",
-          "Algeria kann bei offenem Spiel jederzeit treffen und offensiv überraschen",
-          "Kein H2H-Verlauf als Referenz vorhanden",
-          "Algeria mit einem Tag mehr Regeneration nicht (4 vs 7 Tage) – Frische auf beiden Seiten"
+          "Beide Teams zeigten zuletzt schwankende Defensive (ALG 3:3 gg. Österreich, SUI 3:4 gg. Deutschland) – auch höheres Ergebnis möglich",
+          "Kein H2H-Datenmaterial vorhanden",
+          "Algeriens Formstärke könnte den knappen Heimvorteil der Schweiz neutralisieren"
         ]
       },
       "chatgpt": {
@@ -104,39 +102,53 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.45,
+          "home": 0.48,
           "draw": 0.27,
-          "away": 0.28
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.65,
         "keyFactors": [
-          "Schweiz zeigt starke Form mit überzeugenden Siegen gegen Kanada und Bosnien.",
-          "Schweizer Trainer Yakin betont gestärktes Selbstvertrauen durch letzte Siege.",
-          "Algerien nur ein Unentschieden gegen Österreich nach einer Niederlage gegen Argentinien."
+          "Switzerland has a slightly higher Elo rating and a positive recent form with wins against Canada and Bosnia & Herzegovina.",
+          "Algeria, while also in good form, struggled against stronger opponents like Argentina, losing 0-3.",
+          "Switzerland's coach Yakin has recently spoken about the confidence gained from victories, indicating a positive team morale."
         ],
         "risks": [
-          "Algerien besitzt solide Offensive, zeigte sie im Spiel gegen Österreich mit 3 erzielten Toren.",
-          "Beide Teams haben ähnliche Elo-Werte, Match könnte enger sein als erwartet."
+          "Algeria's ability to score multiple goals, as seen in the draw with Austria (3-3).",
+          "The neutral venue eliminates any home advantage."
         ]
       }
     },
-    "agreement": 0.9933,
+    "agreement": 0.9733,
     "ensembleWeights": {
-      "claude": 0.5063,
-      "chatgpt": 0.4937
+      "claude": 0.5081,
+      "chatgpt": 0.4919
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Switzerland mit leicht besserem Elo (1722 vs 1695) und stabilerer Defensive (1.05 Gegentore/Spiel, Clean-Sheet-Rate); Beide Teams offensiv formstark und torgefährlich (SUI 2.16, ALG 2.11 Tore/Spiel) – enges Duell zu erwarten; Schweiz mit gutem Turnierlauf (2:1 Kanada, 4:1 Bosnien) und Selbstvertrauen laut Yakin. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams in guter Form (weightedForm SUI 1.95, ALG 2.01) und offensiv stark (Torschnitt jeweils über 2); Sehr enge Elo-Werte (SUI 1722 vs ALG 1695), leichter Vorteil Schweiz durch Baseline und Markt; Algerien mit höherer Clean-Sheet-Rate (0.47) und kompakter Defensive, Schweiz zuletzt defensiv anfällig (4 gegen Bosnien-Gegner, Germany 4 kassiert). Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.5985,
-      "away": 0.4015
+      "home": 0.6114,
+      "away": 0.3886
     },
     "tiebreakWinProbHome": 0.51,
-    "inputHash": "sha256:3cb17939852a398311d0dd701a8ddbb87a1d9ade072c7d83e470ec1890cc833a"
+    "inputHash": "sha256:aa5a73a4a5c70d25806d7919cbcfed2e14bc982d253ccedc7c005b69dc02d28f"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-07-01T15:03:53.540Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4537,
+        "draw": 0.2803,
+        "away": 0.2659
+      },
+      "confidence": 0.5482
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-01T23:42:47.925Z",
+    "updatedAt": "2026-07-02T04:05:56.316Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.4714,
