@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-02T05:03:47.646Z",
+    "generatedAt": "2026-07-02T06:03:53.030Z",
     "home": {
       "teamId": "AUS",
       "elo": 1642,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-07-02T06:03:53.030Z",
     "predictedScore": {
       "home": 0,
       "away": 1
     },
     "probabilities": {
-      "home": 0.1902,
-      "draw": 0.279,
-      "away": 0.5308
+      "home": 0.2678,
+      "draw": 0.3298,
+      "away": 0.4024
     },
-    "confidence": 0.2962,
+    "confidence": 0.5353,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,71 @@
         "away": 1.37
       }
     },
-    "advance": {
-      "home": 0.3154,
-      "away": 0.6846
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 0,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.24,
+          "draw": 0.31,
+          "away": 0.45
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Ägypten ist qualitativ überlegen (Elo 1702 vs 1642, gewichtete Form 1.96 vs 1.38) und torgefährlicher (1.58 Tore/Spiel vs 0.92)",
+          "Australien tut sich offensiv extrem schwer: nur 2 Tore in den letzten fünf Spielen, zuletzt 0:0 und 0:2 im Turnier",
+          "Ägypten präsentiert sich stabil und formstark (3:1 gg. Neuseeland, 1:1 gg. Belgien, 1:1 gg. Iran, 0:0 in Spanien)",
+          "Australiens defensive Kompaktheit (Clean-Sheet-Rate 0.556) kann in einem K.o.-Spiel für ein enges Ergebnis sorgen"
+        ],
+        "risks": [
+          "Kein H2H-Verlauf vorhanden, Vergleich rein datenbasiert",
+          "Australien steht tief und kompakt – Ägypten könnte am Massieren scheitern, Remis realistisch",
+          "Markt sieht das Spiel deutlich enger als die Elo-Baseline, hohe Unsicherheit im Ausgang",
+          "Turnierdruck und Rotation/Belastung nach engem Programm schwer kalkulierbar"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.28,
+          "draw": 0.35,
+          "away": 0.37
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Australia has shown a mixed recent form with a draw against Paraguay and a win against Turkey, but a loss against the USA indicates inconsistency.",
+          "Egypt's recent performance has been solid with a draw against Iran, a win against New Zealand, and an impressive draw against Belgium.",
+          "Egypt holds a higher Elo rating, signaling a stronger overall recent performance.",
+          "Both teams play on a neutral venue, minimizing any potential home advantage."
+        ],
+        "risks": [
+          "First knockout stage matchups can lead to unpredictable performances due to increased pressure.",
+          "Australia's ability to keep clean sheets might give them a defensive edge in a tight game."
+        ]
+      }
     },
-    "inputHash": "sha256:dea7ef789a37f996a61daabc12a17345298197b05337813f1f4afb1346ff01f9"
+    "agreement": 0.9467,
+    "ensembleWeights": {
+      "claude": 0.5081,
+      "chatgpt": 0.4919
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Ägypten ist qualitativ überlegen (Elo 1702 vs 1642, gewichtete Form 1.96 vs 1.38) und torgefährlicher (1.58 Tore/Spiel vs 0.92); Australien tut sich offensiv extrem schwer: nur 2 Tore in den letzten fünf Spielen, zuletzt 0:0 und 0:2 im Turnier; Ägypten präsentiert sich stabil und formstark (3:1 gg. Neuseeland, 1:1 gg. Belgien, 1:1 gg. Iran, 0:0 in Spanien). Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.4193,
+      "away": 0.5807
+    },
+    "tiebreakWinProbHome": 0.47,
+    "inputHash": "sha256:ad39a2b542b593f61d94142656ae7de7901921e68bdc944b478e1482f08cf6ca"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-02T05:03:48.184Z",
+    "updatedAt": "2026-07-02T06:05:25.141Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2867,
