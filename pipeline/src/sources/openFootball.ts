@@ -25,7 +25,7 @@ import type {
 // Lauf frisch zu holen kostet praktisch nichts.
 const TTL_MS = 10 * 60 * 1000; // 10 min
 
-interface OfMatch {
+export interface OfMatch {
   round: string;
   date?: string;
   time?: string;
@@ -120,8 +120,16 @@ export class OpenFootballProvider implements TournamentProvider {
 }
 
 /** Ein openfootball-Match → NormalizedFixture (optionale Felder nur wenn da). */
-function matchToFixture(m: OfMatch, competition: string): NormalizedFixture {
+export function matchToFixture(
+  m: OfMatch,
+  competition: string,
+): NormalizedFixture {
+  // Ist-Ergebnis = NACH VERLÄNGERUNG: `et` (kumulativ) falls gespielt, sonst
+  // `ft` (90′). Der Elfmeterstand `p` fließt bewusst NIE ein — ein per Elfmeter
+  // entschiedenes Spiel bleibt als Remis (V-Ergebnis) stehen; den Weiterkommer
+  // liefert später prediction.advance bzw. der Bracket-Baum.
   const ft = m.score?.ft ?? null;
+  const aet = m.score?.et ?? ft;
   const fixture: NormalizedFixture = {
     matchId: `wc2026-${teamSlug(m.team1)}-${teamSlug(m.team2)}-${m.date ?? "tbd"}`,
     date: m.date ?? "",
@@ -130,11 +138,12 @@ function matchToFixture(m: OfMatch, competition: string): NormalizedFixture {
     homeTeamName: m.team1,
     awayTeamId: canonicalId(m.team2),
     awayTeamName: m.team2,
-    goalsHome: ft ? ft[0] : null,
-    goalsAway: ft ? ft[1] : null,
+    goalsHome: aet ? aet[0] : null,
+    goalsAway: aet ? aet[1] : null,
     neutral: true,
     finished: ft !== null,
   };
+  if (m.score?.et) fixture.afterExtraTime = true;
   const stage = roundToStage(m.round, !!m.group);
   if (stage) fixture.stage = stage;
   if (m.group) fixture.groupId = normalizeGroupId(m.group);

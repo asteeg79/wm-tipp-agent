@@ -51,6 +51,11 @@ export type Models = z.infer<typeof Models>;
 /** Ein einzelner Tipp-Snapshot (aktuell oder historisch). */
 export const Prediction = z.object({
   generatedAt: IsoDateTime,
+  /**
+   * Getipptes Ergebnis NACH VERLÄNGERUNG (K.-o.) bzw. nach 90′ (Gruppe). Ein
+   * K.-o.-Remis-Tip = "ginge ins Elfmeterschießen"; der Sieger wird NICHT
+   * getippt (siehe advance/tiebreakWinProbHome als Nebeninfo).
+   */
   predictedScore: ScoreLine,
   probabilities: Outcome1x2,
   confidence: Probability,
@@ -67,13 +72,15 @@ export const Prediction = z.object({
     .optional(),
   rationale: z.string().optional(),
   /**
-   * NUR K.-o.-Spiele: Wahrscheinlichkeit, dass das Heim-Team WEITERKOMMT (nach
-   * Verlängerung/Elfmeter, falls nötig). advance = 90′-Sieg + Remis·Tiebreak.
+   * NUR K.-o.-Spiele: Wahrscheinlichkeit, dass das Heim-Team WEITERKOMMT
+   * (Nebeninfo für den Bracket-Baum/Anzeige — NICHT der getippte Score).
+   * advance = P(V-Sieg Heim) + P(V-Remis)·Tiebreak.
    */
   advance: z.object({ home: Probability, away: Probability }).optional(),
   /**
-   * NUR K.-o.: Ensemble-Tiebreak — P(Heim gewinnt Verlängerung/Elfmeter bei
-   * 90′-Remis). Mischung aus Elo-Basis und (falls vorhanden) KI-Einschätzung.
+   * NUR K.-o.: Ensemble-Tiebreak — P(Heim gewinnt das ELFMETERSCHIESSEN bei
+   * Remis nach Verlängerung). Mischung aus Elo-Basis und (falls vorhanden)
+   * KI-Einschätzung. Fließt NICHT in den getippten Score ein.
    */
   tiebreakWinProbHome: Probability.optional(),
   /** Hash des Feature-Bundles für Re-Trigger-Logik. */
@@ -169,8 +176,14 @@ export const Match = z.object({
   awayTeamId: z.string(),
   venue: Venue,
   status: MatchStatus,
-  /** Nach Spielende gesetzt. */
+  /**
+   * Nach Spielende gesetzt: Ergebnis NACH VERLÄNGERUNG (falls gespielt), sonst
+   * nach 90′. Elfmeter fließen NIE ein — ein per Elfmeter entschiedenes Spiel
+   * bleibt hier ein Remis (der Weiterkommer steht in prediction.advance).
+   */
   actualResult: ScoreLine.nullable().default(null),
+  /** true, wenn actualResult erst nach Verlängerung feststand (für "n.V."-Anzeige). */
+  afterExtraTime: z.boolean().optional(),
   featureBundle: FeatureBundle.optional(),
   prediction: Prediction.optional(),
   predictionHistory: z.array(PredictionHistoryEntry).default([]),

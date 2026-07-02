@@ -340,6 +340,11 @@ export function AccuracyPage() {
                     </span>
                     <span className="shrink-0 font-mono">
                       {e.actualResult!.home}:{e.actualResult!.away}
+                      {e.afterExtraTime && (
+                        <span className="ml-0.5 align-top text-[9px] text-fg-faint">
+                          {t("match.aet")}
+                        </span>
+                      )}
                     </span>
                     <span className="min-w-0 flex-1 truncate">
                       <TeamBadge

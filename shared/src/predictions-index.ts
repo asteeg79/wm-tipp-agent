@@ -35,9 +35,15 @@ export const PredictionIndexEntry = z.object({
   expectedGoals: ExpectedGoals.optional(),
   /** Buchmacher-1X2 (Snapshot) — für den "wir vs. Markt"-Vergleich. */
   marketProbabilities: Outcome1x2.optional(),
-  /** NUR K.-o.: Weiterkommen-Wahrscheinlichkeit (nach Verlängerung/Elfmeter). */
+  /** NUR K.-o.: Weiterkommen-Wahrscheinlichkeit (Nebeninfo für Bracket/Anzeige). */
   advance: z.object({ home: Probability, away: Probability }).optional(),
+  /**
+   * Ist-Ergebnis NACH VERLÄNGERUNG (falls gespielt), sonst nach 90′. Elfmeter
+   * fließen NIE ein — ein per Elfmeter entschiedenes Spiel bleibt ein Remis.
+   */
   actualResult: ScoreLine.nullable().default(null),
+  /** true, wenn actualResult erst nach Verlängerung feststand (für "n.V."-Anzeige). */
+  afterExtraTime: z.boolean().optional(),
   accuracy: AccuracyEntry.optional(),
 });
 export type PredictionIndexEntry = z.infer<typeof PredictionIndexEntry>;

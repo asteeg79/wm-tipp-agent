@@ -76,6 +76,11 @@ export function MatchCard({ entry, teams }: Props) {
           {r ? (
             <span className="text-lg font-bold">
               {r.home}:{r.away}
+              {entry.afterExtraTime && (
+                <span className="ml-1 align-top text-[9px] font-normal text-fg-faint">
+                  {t("match.aet")}
+                </span>
+              )}
             </span>
           ) : pred ? (
             <span className="text-fg-soft">

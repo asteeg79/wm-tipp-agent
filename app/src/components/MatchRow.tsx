@@ -23,6 +23,11 @@ export function MatchRow({ entry, teams }: Props) {
     scoreCell = (
       <span className="font-semibold text-pos">
         {r.home}:{r.away}
+        {entry.afterExtraTime && (
+          <span className="ml-0.5 align-top text-[9px] font-normal text-fg-faint">
+            {t("match.aet")}
+          </span>
+        )}
       </span>
     );
   } else if (tip) {

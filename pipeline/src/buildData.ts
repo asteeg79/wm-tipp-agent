@@ -631,9 +631,11 @@ function eloTiebreakHome(eloHome: number, eloAway: number): number {
 }
 
 /**
- * K.-o.-Weiterkommen ergänzen: P(Heim weiter) = P(Heimsieg 90′) +
- * P(Remis)·Tiebreak. Tiebreak = Elo-Basis, bei vorhandener KI-Einschätzung
- * (`tiebreakWinProbHome`) damit gemischt. Nur K.-o.-Spiele; mutiert prediction.
+ * K.-o.-Weiterkommen ergänzen (Nebeninfo, nicht der getippte Score):
+ * P(Heim weiter) = P(V-Sieg Heim) + P(V-Remis)·Tiebreak. probabilities beziehen
+ * sich aufs Ergebnis nach Verlängerung; der Tiebreak ist P(Heim gewinnt
+ * Elfmeter) = Elo-Basis, bei vorhandener KI-Einschätzung (`tiebreakWinProbHome`)
+ * damit gemischt. Nur K.-o.-Spiele; mutiert prediction.
  */
 function applyAdvance(match: Match): void {
   if (match.stage === "group") return;
@@ -848,6 +850,8 @@ function baseMatchDoc(fx: NormalizedFixture, prev: Match | null): Match {
     predictionHistory: prev?.predictionHistory ?? [],
   };
   if (fx.groupId) match.groupId = fx.groupId;
+  // V-Ergebnis: "n.V."-Marker nur bei tatsächlich beendetem Spiel setzen.
+  if (fx.finished && fx.afterExtraTime) match.afterExtraTime = true;
   return match;
 }
 
@@ -1009,6 +1013,8 @@ async function writePredictionsIndex(
         awayTeamId: m.awayTeamId,
         actualResult: m.actualResult,
       };
+      // "n.V."-Marker (Ist stand erst nach Verlängerung fest) durchreichen.
+      if (m.afterExtraTime) entry.afterExtraTime = true;
       if (pred) {
         entry.predictedScore = pred.predictedScore;
         entry.probabilities = pred.probabilities;
@@ -1017,7 +1023,7 @@ async function writePredictionsIndex(
         if (pred.baseline?.expectedGoals) {
           entry.expectedGoals = pred.baseline.expectedGoals;
         }
-        // K.-o.-Weiterkommen (nach Verlängerung/Elfmeter).
+        // K.-o.-Weiterkommen (Nebeninfo fürs Bracket; Elfmeter nur hier).
         if (pred.advance) entry.advance = pred.advance;
       }
       // Markt-Snapshot für den "wir vs. Markt"-Vergleich in der Bilanz.

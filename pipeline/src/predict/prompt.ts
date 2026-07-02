@@ -43,14 +43,18 @@ Turnier-Kontext (WM-Gruppenphase) bewusst berücksichtigen:
   "draw"-Wahrscheinlichkeit muss das widerspiegeln.
 
 K.-o.-Spiele (Feld "knockout": true) — WICHTIG:
-- predictedScore und probabilities beziehen sich auf das Ergebnis nach
-  REGULÄREN 90 Minuten — ein Unentschieden ist hier ausdrücklich erlaubt und oft
-  realistisch (K.-o.-Spiele sind häufig eng). Erfinde KEINEN 90-Minuten-Sieger.
+- predictedScore und probabilities beziehen sich auf das Ergebnis NACH
+  VERLÄNGERUNG (also inkl. der 30 Minuten Extra-Zeit, falls nötig) — NICHT nach
+  90 Minuten. Ein Unentschieden ist ausdrücklich erlaubt und bedeutet: das Spiel
+  ginge ins Elfmeterschießen. Tippe NIEMALS den Ausgang des Elfmeterschießens
+  im Score — ein Remis nach Verlängerung bleibt ein Remis.
 - Zusätzlich: Gib "tiebreakWinProbHome" an = Wahrscheinlichkeit (0..1), dass das
-  HEIM-Team die Verlängerung bzw. das Elfmeterschießen gewinnt, FALLS es nach
-  90 Minuten unentschieden steht. Berücksichtige Elfmeter-Stärke/-Erfahrung,
-  Nervenstärke, Kaderbreite für die Verlängerung; ohne klare Anhaltspunkte ~0.5.
-- Bei Gruppenspielen ("knockout": false) lässt du "tiebreakWinProbHome" weg.
+  HEIM-Team das ELFMETERSCHIESSEN gewinnt, FALLS es nach der Verlängerung
+  unentschieden steht. Berücksichtige Elfmeter-Stärke/-Erfahrung, Nervenstärke;
+  ohne klare Anhaltspunkte ~0.5. (Nur Nebeninfo für das Weiterkommen, fließt
+  NICHT in den Score ein.)
+- Bei Gruppenspielen ("knockout": false) gibt es keine Verlängerung — der Score
+  ist das 90-Minuten-Ergebnis; "tiebreakWinProbHome" lässt du weg.
 
 Ausgaberegeln:
 - "predictedScore" ist das plausibelste, typischerweise torarme Ergebnis, das zu
@@ -117,7 +121,7 @@ export interface PromptContext {
   /** Jüngste Ergebnisse (neueste zuerst) je Team. */
   homeRecent?: RecentResult[];
   awayRecent?: RecentResult[];
-  /** K.-o.-Spiel? → 90-Min-Tipp (Remis erlaubt) + tiebreakWinProbHome. */
+  /** K.-o.-Spiel? → Tipp nach Verlängerung (Remis erlaubt) + tiebreakWinProbHome. */
   isKnockout?: boolean;
 }
 
@@ -142,7 +146,7 @@ function newsItems(news: NewsItem[]): Array<Record<string, string>> {
 export function buildUserMessage(ctx: PromptContext): string {
   const payload = {
     match: { home: ctx.homeName, away: ctx.awayName },
-    // K.-o.-Spiel → predictedScore = 90 Min (Remis erlaubt) + tiebreakWinProbHome.
+    // K.-o. → predictedScore = nach Verlängerung (Remis erlaubt) + tiebreakWinProbHome.
     knockout: ctx.isKnockout ?? false,
     baseline: {
       probabilities: ctx.baseline.probabilities,

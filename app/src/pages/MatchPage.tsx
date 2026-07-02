@@ -49,6 +49,11 @@ export function MatchPage() {
               : pred
                 ? `${pred.predictedScore.home}:${pred.predictedScore.away}`
                 : "–"}
+            {r && match.afterExtraTime && (
+              <span className="ml-1 align-top text-xs font-normal text-fg-faint">
+                {t("match.aet")}
+              </span>
+            )}
           </div>
           <div className="flex-1 text-left">
             <TeamBadge team={away} fallbackId={match.awayTeamId} />

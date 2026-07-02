@@ -25,10 +25,14 @@ export interface NormalizedFixture {
   ground?: string;
   /** Höhe des Spielorts in Metern, falls bekannt (z. B. Mexico City). */
   altitude?: number;
+  /** Tore Heim NACH VERLÄNGERUNG (falls gespielt), sonst nach 90′. Nie Elfmeter. */
   goalsHome: number | null;
+  /** Tore Auswärts NACH VERLÄNGERUNG (falls gespielt), sonst nach 90′. Nie Elfmeter. */
   goalsAway: number | null;
   neutral: boolean;
   finished: boolean;
+  /** true, wenn das Ergebnis erst in der Verlängerung feststand (K.-o.). */
+  afterExtraTime?: boolean;
 }
 
 /** Turnier-Struktur für index.json. */
