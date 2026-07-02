@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-02T09:30:31.458Z",
+    "generatedAt": "2026-07-02T10:03:58.096Z",
     "home": {
       "teamId": "ARG",
       "elo": 1913,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-07-02T10:03:58.096Z",
     "predictedScore": {
-      "home": 2,
+      "home": 3,
       "away": 0
     },
     "probabilities": {
-      "home": 0.8583,
-      "draw": 0.1038,
-      "away": 0.0379
+      "home": 0.8403,
+      "draw": 0.1132,
+      "away": 0.0465
     },
-    "confidence": 0.7874,
+    "confidence": 0.8372,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,70 @@
         "away": 0.46
       }
     },
-    "advance": {
-      "home": 0.9337,
-      "away": 0.0663
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.84,
+          "draw": 0.11,
+          "away": 0.05
+        },
+        "confidence": 0.78,
+        "keyFactors": [
+          "Argentinien deutlich überlegen (Elo 1913 vs 1570), starke Form mit 3 Siegen in der Gruppenphase (Algeria, Austria, Jordan)",
+          "Hohe Offensivkraft ARG (2,59 Tore/Spiel) und starke Defensive (0,37 Gegentore, 63% Clean Sheets)",
+          "Kap Verde defensiv solide (zwei 0:0 gegen Spanien und Saudi-Arabien), steht tief und kompakt",
+          "K.o.-Spiel: Außenseiter Kap Verde verteidigt organisiert, kann Ergebnis eng halten"
+        ],
+        "risks": [
+          "Kap Verde zeigte defensive Stabilität (Clean Sheets gegen Spanien) - könnte 90 Min lang tief stehen und ARG frustrieren",
+          "Bei kompakter Verteidigung sind knappe Ergebnisse oder ein spätes Tor entscheidend",
+          "Rotations-/Formrisiken in K.o.-Phase; einzelnes Standardtor kann Spielverlauf ändern"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 3,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.85,
+          "draw": 0.11,
+          "away": 0.04
+        },
+        "confidence": 0.9,
+        "keyFactors": [
+          "Argentina's strong recent form with three consecutive World Cup wins and a high scoring capability.",
+          "Cape Verde's lower Elo rating and recent lack of scoring against strong opponents like Spain and Saudi Arabia.",
+          "Argentina's clean sheet rate and effective defensive performance in recent matches.",
+          "Neutral venue eliminates home advantage but doesn't significantly impact Argentina's stronger squad and form."
+        ],
+        "risks": [
+          "Cape Verde managed a draw against Uruguay showing they can perform against stronger opposition.",
+          "Cape Verde has shown defensive resilience against teams like Saudi Arabia, which could lead to fewer goals conceded."
+        ]
+      }
     },
-    "inputHash": "sha256:f3f020e254ad317d5235466d9cd41b932f425ad75b50f41a07675c16e11eb0b9"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5081,
+      "chatgpt": 0.4919
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien deutlich überlegen (Elo 1913 vs 1570), starke Form mit 3 Siegen in der Gruppenphase (Algeria, Austria, Jordan); Hohe Offensivkraft ARG (2,59 Tore/Spiel) und starke Defensive (0,37 Gegentore, 63% Clean Sheets); Kap Verde defensiv solide (zwei 0:0 gegen Spanien und Saudi-Arabien), steht tief und kompakt. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.9216,
+      "away": 0.0784
+    },
+    "tiebreakWinProbHome": 0.71,
+    "inputHash": "sha256:240fc134f73df7e249d5d1d1e0abc6b080aae75c6f51e0face0686fcabc72f02"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-02T09:30:32.799Z",
+    "updatedAt": "2026-07-02T10:06:24.038Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.8285,
