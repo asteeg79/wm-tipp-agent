@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-02T13:03:52.098Z",
+    "generatedAt": "2026-07-02T14:03:50.581Z",
     "home": {
       "teamId": "COL",
       "elo": 1760,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-06-28T08:29:55.285Z",
+    "generatedAt": "2026-07-02T14:03:50.581Z",
     "predictedScore": {
-      "home": 2,
+      "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.7022,
-      "draw": 0.1855,
-      "away": 0.1123
+      "home": 0.6412,
+      "draw": 0.2403,
+      "away": 0.1184
     },
-    "confidence": 0.5533,
+    "confidence": 0.6534,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,69 @@
         "away": 0.72
       }
     },
-    "advance": {
-      "home": 0.8251,
-      "away": 0.1749
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.64,
+          "draw": 0.23,
+          "away": 0.13
+        },
+        "confidence": 0.62,
+        "keyFactors": [
+          "Colombia deutlich stärker (Elo 1760 vs 1549) und in besserer Form (weightedForm 1.89 vs 1.25)",
+          "Solide kolumbianische Defensive: cleanSheetRate 0.42, u.a. 0:0 gegen Portugal, 1:0 gegen DR Kongo",
+          "Ghana defensiv anfällig (0:5 gegen Österreich, 1:2 gegen Deutschland/Kroatien), zeigte aber gegen England ein kompaktes 0:0"
+        ],
+        "risks": [
+          "K.-o.-Spiel ist oft eng; Ghana kann tief stehen und ein Remis erzwingen",
+          "Ghana erzielt selten Tore, kann aber über Konter/Standards stechen",
+          "Kolumbien tat sich zuletzt gegen tiefstehende Gegner schwer (nur 1:0 gegen DR Kongo, 0:0 gegen Portugal)"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.65,
+          "draw": 0.25,
+          "away": 0.1
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Colombia's recent strong defensive performances including a clean sheet against Portugal.",
+          "Ghana's recent form shows vulnerability against high-quality opponents like Croatia.",
+          "Colombia's higher Elo rating and stronger weighted form.",
+          "Carlos Queiroz's influence on Ghana is acknowledged, but visible form improvements need more time."
+        ],
+        "risks": [
+          "Ghana's potential strategic adjustments under a new coach, Queiroz.",
+          "The neutral venue offers no home advantage."
+        ]
+      }
     },
-    "inputHash": "sha256:3cccbf3c788310961b3586c85e7ea97e97718e4a6f79c91c93fad84d1745d4de"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5081,
+      "chatgpt": 0.4919
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia deutlich stärker (Elo 1760 vs 1549) und in besserer Form (weightedForm 1.89 vs 1.25); Solide kolumbianische Defensive: cleanSheetRate 0.42, u.a. 0:0 gegen Portugal, 1:0 gegen DR Kongo; Ghana defensiv anfällig (0:5 gegen Österreich, 1:2 gegen Deutschland/Kroatien), zeigte aber gegen England ein kompaktes 0:0. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.7857,
+      "away": 0.2143
+    },
+    "tiebreakWinProbHome": 0.54,
+    "inputHash": "sha256:499c4889a7c607857597b0a6f3467405498f884d0fbdcb379c4b275a4dfc2290"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-02T13:04:06.179Z",
+    "updatedAt": "2026-07-02T14:05:49.428Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.6318,
