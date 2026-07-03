@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-03T04:07:09.401Z",
+    "generatedAt": "2026-07-03T05:03:52.161Z",
     "home": {
       "teamId": "CAN",
       "elo": 1659,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-01T08:03:54.219Z",
+    "generatedAt": "2026-07-03T05:03:52.161Z",
     "predictedScore": {
-      "home": 0,
-      "away": 1
+      "home": 1,
+      "away": 2
     },
     "probabilities": {
-      "home": 0.2937,
-      "draw": 0.2685,
-      "away": 0.4378
+      "home": 0.2397,
+      "draw": 0.263,
+      "away": 0.4973
     },
-    "confidence": 0.1567,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,72 @@
         "away": 1.38
       }
     },
-    "advance": {
-      "home": 0.3927,
-      "away": 0.6073
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.24,
+          "draw": 0.28,
+          "away": 0.48
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Marokko klar stärker: Elo 1822 vs 1659, bessere gewichtete Form (2.35 vs 1.69) und höhere Clean-Sheet-Rate (0.66 vs 0.53)",
+          "Marokkos jüngste Resultate gegen Topgegner (1:1 vs Niederlande, 1:1 vs Brasilien, 1:0 vs Schottland) zeigen defensive Stabilität auf hohem Niveau",
+          "Kanada defensiv solide (0.68 Gegentore/Spiel), aber offensiv weniger durchschlagend gegen Spitzenteams (nur 1:2 vs Schweiz, 1:0 vs Südafrika)",
+          "Markt sieht Marokko deutlich vorn (0.54), Baseline etwas moderater (0.44) – beide favorisieren Marokko",
+          "K.o.-Spiel: enge, tendenziell torarme Partie mit realistischer Remis-Chance"
+        ],
+        "risks": [
+          "Gastgeber-Bonus für Kanada trotz neutralem Venue (Heimpublikum) könnte Spiel enger machen",
+          "Kanada steht möglicherweise tief und kompakt – Marokko könnte sich schwertun, das zu durchbrechen",
+          "Beide Teams mit wenig Erholung (4-5 Tage) – Rotation/Frische unsicher",
+          "Fehlende H2H-Historie erhöht Prognoseunsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.28,
+          "draw": 0.24,
+          "away": 0.48
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Morocco's higher Elo rating and stronger recent form",
+          "Canada's host advantage but neutral venue diminishes this",
+          "Morocco's consistent performance against strong teams like Brazil",
+          "Canada's less challenging recent opponents compared to Morocco's"
+        ],
+        "risks": [
+          "Tight nature of knockout games can lead to unexpected results",
+          "Canada's high goal-scoring potential as seen against Qatar"
+        ]
+      }
     },
-    "inputHash": "sha256:9e8917451b3adf583f42f57da28093124443955b8bc5f254dfd7233d432e1de5"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5084,
+      "chatgpt": 0.4916
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Marokko klar stärker: Elo 1822 vs 1659, bessere gewichtete Form (2.35 vs 1.69) und höhere Clean-Sheet-Rate (0.66 vs 0.53); Marokkos jüngste Resultate gegen Topgegner (1:1 vs Niederlande, 1:1 vs Brasilien, 1:0 vs Schottland) zeigen defensive Stabilität auf hohem Niveau; Kanada defensiv solide (0.68 Gegentore/Spiel), aber offensiv weniger durchschlagend gegen Spitzenteams (nur 1:2 vs Schweiz, 1:0 vs Südafrika). Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.3474,
+      "away": 0.6526
+    },
+    "tiebreakWinProbHome": 0.45,
+    "inputHash": "sha256:e89a8dba598343d078cab0ccf58a9866fdfe2d5c781f2a7a84d73d593c18355c"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-03T04:07:09.911Z",
+    "updatedAt": "2026-07-03T05:03:53.097Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.1874,
