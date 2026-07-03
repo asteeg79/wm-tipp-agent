@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-02T23:20:41.958Z",
+    "generatedAt": "2026-07-03T04:03:51.854Z",
     "home": {
       "teamId": "COL",
       "elo": 1760,
@@ -21,7 +21,7 @@
       "goalsAgainstAvg": 0.828,
       "cleanSheetRate": 0.419,
       "matchesCount": 31,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "away": {
       "teamId": "GHA",
@@ -32,7 +32,7 @@
       "goalsAgainstAvg": 1.116,
       "cleanSheetRate": 0.36,
       "matchesCount": 25,
-      "daysSinceLastMatch": 5
+      "daysSinceLastMatch": 6
     },
     "h2h": {
       "played": 0,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-02T14:03:50.581Z",
+    "generatedAt": "2026-07-03T04:03:51.854Z",
     "predictedScore": {
       "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.6412,
-      "draw": 0.2403,
-      "away": 0.1184
+      "home": 0.6553,
+      "draw": 0.2278,
+      "away": 0.1169
     },
-    "confidence": 0.6534,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,24 +75,25 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 0
         },
         "probabilities": {
-          "home": 0.64,
-          "draw": 0.23,
-          "away": 0.13
+          "home": 0.65,
+          "draw": 0.21,
+          "away": 0.14
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Colombia deutlich stärker (Elo 1760 vs 1549) und in besserer Form (weightedForm 1.89 vs 1.25)",
-          "Solide kolumbianische Defensive: cleanSheetRate 0.42, u.a. 0:0 gegen Portugal, 1:0 gegen DR Kongo",
-          "Ghana defensiv anfällig (0:5 gegen Österreich, 1:2 gegen Deutschland/Kroatien), zeigte aber gegen England ein kompaktes 0:0"
+          "Deutlicher Elo-Vorsprung Kolumbiens (1760 vs 1549) und bessere gewichtete Form (1.89 vs 1.25)",
+          "Kolumbien defensiv stabil: nur 0.83 Gegentore/Spiel, starke WM-Gruppenphase inkl. 0:0 gegen Portugal",
+          "Ghana wechselhaft und phasenweise anfällig (0:5 gegen Österreich, 1:2 gegen Croatia), Torschnitt nur 1.06",
+          "Kolumbien als Geheimfavorit mit intensivem Stil und guter Kaderqualität"
         ],
         "risks": [
-          "K.-o.-Spiel ist oft eng; Ghana kann tief stehen und ein Remis erzwingen",
-          "Ghana erzielt selten Tore, kann aber über Konter/Standards stechen",
-          "Kolumbien tat sich zuletzt gegen tiefstehende Gegner schwer (nur 1:0 gegen DR Kongo, 0:0 gegen Portugal)"
+          "K.-o.-Spiel: Ghana kann tief und kompakt stehen und auf Konter/Elfmeterschießen spielen",
+          "Kolumbien tat sich zuletzt torlos gegen Portugal schwer – Chancenverwertung ungewiss",
+          "Queiroz-Erfahrung könnte Ghana defensiv gut einstellen, enges Ergebnis möglich"
         ]
       },
       "chatgpt": {
@@ -107,34 +108,47 @@
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Colombia's recent strong defensive performances including a clean sheet against Portugal.",
-          "Ghana's recent form shows vulnerability against high-quality opponents like Croatia.",
-          "Colombia's higher Elo rating and stronger weighted form.",
-          "Carlos Queiroz's influence on Ghana is acknowledged, but visible form improvements need more time."
+          "Kolumbien mit starker Form und jüngstem Unentschieden gegen Portugal",
+          "Kolumbien hat bei der WM bisher gut performt, einschließlich eines Sieges gegen DR Kongo und Unentschieden gegen Portugal",
+          "Ghana mit uneinheitlicher Form bei der WM, darunter ein Remis gegen England und knappe Niederlage gegen Kroatien"
         ],
         "risks": [
-          "Ghana's potential strategic adjustments under a new coach, Queiroz.",
-          "The neutral venue offers no home advantage."
+          "Ghanas Fähigkeit, starke Teams wie England zu einem Unentschieden zu zwingen, könnte für Überraschungen sorgen",
+          "Neutraler Spielort, der den Heimvorteil von Kolumbien neutralisiert"
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9733,
     "ensembleWeights": {
-      "claude": 0.5081,
-      "chatgpt": 0.4919
+      "claude": 0.5084,
+      "chatgpt": 0.4916
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia deutlich stärker (Elo 1760 vs 1549) und in besserer Form (weightedForm 1.89 vs 1.25); Solide kolumbianische Defensive: cleanSheetRate 0.42, u.a. 0:0 gegen Portugal, 1:0 gegen DR Kongo; Ghana defensiv anfällig (0:5 gegen Österreich, 1:2 gegen Deutschland/Kroatien), zeigte aber gegen England ein kompaktes 0:0. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Deutlicher Elo-Vorsprung Kolumbiens (1760 vs 1549) und bessere gewichtete Form (1.89 vs 1.25); Kolumbien defensiv stabil: nur 0.83 Gegentore/Spiel, starke WM-Gruppenphase inkl. 0:0 gegen Portugal; Ghana wechselhaft und phasenweise anfällig (0:5 gegen Österreich, 1:2 gegen Croatia), Torschnitt nur 1.06. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.7857,
-      "away": 0.2143
+      "home": 0.7934,
+      "away": 0.2066
     },
-    "tiebreakWinProbHome": 0.54,
-    "inputHash": "sha256:499c4889a7c607857597b0a6f3467405498f884d0fbdcb379c4b275a4dfc2290"
+    "tiebreakWinProbHome": 0.55,
+    "inputHash": "sha256:e997e73285b6d34698cf2f8fc68942c11ee110961bac1161350f25a45de47034"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-07-02T14:03:50.581Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.6412,
+        "draw": 0.2403,
+        "away": 0.1184
+      },
+      "confidence": 0.6534
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-02T23:22:25.739Z",
+    "updatedAt": "2026-07-03T04:05:32.692Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6678,
