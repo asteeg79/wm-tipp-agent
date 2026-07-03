@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-03T08:29:44.254Z",
+    "generatedAt": "2026-07-03T10:03:51.137Z",
     "home": {
       "teamId": "PAR",
       "elo": 1606,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-01T08:03:54.219Z",
+    "generatedAt": "2026-07-03T10:03:51.137Z",
     "predictedScore": {
       "home": 0,
-      "away": 3
+      "away": 2
     },
     "probabilities": {
-      "home": 0.0245,
-      "draw": 0.0712,
-      "away": 0.9043
+      "home": 0.0589,
+      "draw": 0.1319,
+      "away": 0.8091
     },
-    "confidence": 0.8564,
+    "confidence": 0.8096,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,70 @@
         "away": 3.38
       }
     },
-    "advance": {
-      "home": 0.0452,
-      "away": 0.9548
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 0,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.06,
+          "draw": 0.14,
+          "away": 0.8
+        },
+        "confidence": 0.78,
+        "keyFactors": [
+          "Frankreich mit überragender Turnierform (3:0 Schweden, 4:1 Norwegen, 3:0 Irak, 3:1 Senegal) und massiver individueller Klasse (Elo 1905 vs. 1606)",
+          "Frankreichs Offensive brandgefährlich (goalsForAvg 2.81), während Paraguay offensiv harmlos ist (goalsForAvg 0.86)",
+          "Paraguay steht tief und kompakt (0:0 gg. Australien, 1:1 gg. Deutschland) – kann ein Spiel eng halten, aber selten selbst entscheiden",
+          "Beide Teams gut erholt (3-4 Tage Pause), neutraler Spielort ohne Heimvorteil"
+        ],
+        "risks": [
+          "Paraguay agiert im K.-o. defensiv-diszipliniert und könnte über 90 Minuten kompakt bleiben (Remis-Gefahr, wie zuletzt gegen Deutschland)",
+          "Frankreich könnte bei Führung verwalten und Chancen liegenlassen",
+          "Baseline (90% FRA) wirkt zu extrem – Außenseiter-Kompaktheit rechtfertigt eher die Markt-Einschätzung (~80%)",
+          "Einzelne Standardsituation oder Konter könnte Paraguay unerwartet ins Spiel bringen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 0,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.06,
+          "draw": 0.12,
+          "away": 0.82
+        },
+        "confidence": 0.85,
+        "keyFactors": [
+          "Frankreich hat eine hohe Elo-Wertung und starke Form.",
+          "Frankreich gewann alle jüngsten Spiele in der WM gegen starke Gegner.",
+          "Paraguay hatte gemischte Resultate und ein Unentschieden gegen Deutschland."
+        ],
+        "risks": [
+          "Emotionaler Aspekt bei Frankreich aufgrund des persönlichen Verlusts von Deschamps.",
+          "Paraguays Überraschungspotential nach dem Unentschieden gegen Deutschland."
+        ]
+      }
     },
-    "inputHash": "sha256:4410c2e013d728cf4ff0de51f3ae85c43400f13638d7e988efba8e4eebd6e7d5"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5083,
+      "chatgpt": 0.4917
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit überragender Turnierform (3:0 Schweden, 4:1 Norwegen, 3:0 Irak, 3:1 Senegal) und massiver individueller Klasse (Elo 1905 vs. 1606); Frankreichs Offensive brandgefährlich (goalsForAvg 2.81), während Paraguay offensiv harmlos ist (goalsForAvg 0.86); Paraguay steht tief und kompakt (0:0 gg. Australien, 1:1 gg. Deutschland) – kann ein Spiel eng halten, aber selten selbst entscheiden. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.0985,
+      "away": 0.9015
+    },
+    "tiebreakWinProbHome": 0.31,
+    "inputHash": "sha256:ad708ac7cf54e320a73acb9fd406a16406b6d58b14755b6698fe86dfa38faa63"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-03T08:29:45.653Z",
+    "updatedAt": "2026-07-03T10:05:32.195Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.0565,
