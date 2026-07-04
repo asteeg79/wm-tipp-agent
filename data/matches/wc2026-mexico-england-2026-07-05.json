@@ -12,7 +12,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-04T11:03:58.984Z",
+    "generatedAt": "2026-07-04T12:03:59.942Z",
     "home": {
       "teamId": "MEX",
       "elo": 1737,
@@ -50,17 +50,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-02T08:03:49.989Z",
+    "generatedAt": "2026-07-04T12:03:59.942Z",
     "predictedScore": {
-      "home": 0,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3347,
-      "draw": 0.2776,
-      "away": 0.3878
+      "home": 0.3216,
+      "draw": 0.3194,
+      "away": 0.3589
     },
-    "confidence": 0.0817,
+    "confidence": 0.4671,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,16 +73,71 @@
         "away": 1.24
       }
     },
-    "advance": {
-      "home": 0.4513,
-      "away": 0.5487
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.34,
+          "draw": 0.3,
+          "away": 0.36
+        },
+        "confidence": 0.4,
+        "keyFactors": [
+          "Mexico mit herausragender Defensive im Turnier: vier Zu-Null-Spiele in Folge (Südafrika, Südkorea, Tschechien, Ecuador), niedrige Gegentorquote (0.48) und 63% Clean-Sheet-Rate",
+          "Höhenlage 2240m und faktischer Heimvorteil (Gastgeber Mexiko) relativieren Englands Elo-Vorteil",
+          "England offensiv stärker (goalsFor 1.99, Elo 1832) und in der Breite besser, tut sich aber gegen tief stehende Gegner schwer (0:0 gegen Ghana)",
+          "K.-o.-Spiel: enge Partie zweier formstarker Teams, Remis nach 90 Minuten sehr realistisch"
+        ],
+        "risks": [
+          "Englands individuelle Klasse kann kompakte Abwehr knacken und Spiel früh öffnen",
+          "Mexikos Defensivserie kam teils gegen schwächere Gegner zustande",
+          "Höhen-/Heimvorteil könnte überschätzt sein, wenn England physisch dominiert",
+          "Standardsituationen und Einzelaktionen können enges Spiel kippen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.32,
+          "draw": 0.35,
+          "away": 0.33
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "Mexico hat in den letzten vier WM-Spielen eine beeindruckende defensive Leistung mit vier Zu-Null-Spielen gezeigt.",
+          "England hat eine höhere Elo-Zahl und durchschnittlich mehr Tore pro Spiel, was ihre offensive Potenz unterstreicht.",
+          "Das Spiel findet auf neutralem Boden in einer hohen Lage statt, was aufgrund der Höhenlage ein Vorteil für Mexiko sein könnte, das gewohnt ist, in solchen Bedingungen zu spielen.",
+          "Beide Teams haben eine ähnliche jüngste Formkurve mit deutlichen Siegen gegen mittelstarke Gegner."
+        ],
+        "risks": [
+          "England hat nicht gegen Mexiko in den letzten Jahren gespielt, was einige Unsicherheiten bezüglich der direkten Konkurrenzfähigkeit mit sich bringt.",
+          "Höhenlage könnte die Leistung beider Teams beeinträchtigen, besonders England, das solche Bedingungen weniger gewohnt ist."
+        ]
+      }
     },
-    "inputHash": "sha256:ac4bb3c254d46ef7ab71c96e725ba9eda4c50139ae4df9173333cd028df9560d"
+    "agreement": 0.9667,
+    "ensembleWeights": {
+      "claude": 0.5061,
+      "chatgpt": 0.4939
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Mexico mit herausragender Defensive im Turnier: vier Zu-Null-Spiele in Folge (Südafrika, Südkorea, Tschechien, Ecuador), niedrige Gegentorquote (0.48) und 63% Clean-Sheet-Rate; Höhenlage 2240m und faktischer Heimvorteil (Gastgeber Mexiko) relativieren Englands Elo-Vorteil; England offensiv stärker (goalsFor 1.99, Elo 1832) und in der Breite besser, tut sich aber gegen tief stehende Gegner schwer (0:0 gegen Ghana). Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.4701,
+      "away": 0.5299
+    },
+    "tiebreakWinProbHome": 0.51,
+    "inputHash": "sha256:83dc570737544a0ef8da4b2d28cccc75f4a400553612842b163503170db95a76"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-04T11:05:39.797Z",
+    "updatedAt": "2026-07-04T12:04:10.261Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3056,
