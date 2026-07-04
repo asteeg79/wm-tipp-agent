@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-07-04T21:12:34.079Z",
+  "lastUpdated": "2026-07-04T23:11:30.379Z",
   "aggregate": {
-    "finishedCount": 89,
-    "exactScoreRate": 0.1685,
-    "outcomeRate": 0.6742,
-    "brierMean": 0.4981,
-    "rpsMean": 0.1505
+    "finishedCount": 90,
+    "exactScoreRate": 0.1667,
+    "outcomeRate": 0.6778,
+    "brierMean": 0.4932,
+    "rpsMean": 0.1491
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 89,
-      "exactScoreRate": 0.1124,
-      "outcomeRate": 0.5843,
-      "brierMean": 0.5005,
-      "rpsMean": 0.1511
+      "finishedCount": 90,
+      "exactScoreRate": 0.1111,
+      "outcomeRate": 0.5889,
+      "brierMean": 0.4957,
+      "rpsMean": 0.1496
     },
     "chatgpt": {
-      "finishedCount": 89,
-      "exactScoreRate": 0.1685,
-      "outcomeRate": 0.573,
-      "brierMean": 0.5129,
-      "rpsMean": 0.1578
+      "finishedCount": 90,
+      "exactScoreRate": 0.1667,
+      "outcomeRate": 0.5778,
+      "brierMean": 0.5079,
+      "rpsMean": 0.1563
     },
     "weights": {
-      "claude": 0.5068,
-      "chatgpt": 0.4932
+      "claude": 0.5067,
+      "chatgpt": 0.4933
     }
   },
   "entries": [
@@ -3264,7 +3264,16 @@
         "home": 0.1026,
         "away": 0.8974
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 0,
+        "away": 1
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": true,
+        "brier": 0.0643,
+        "rps": 0.0216
+      }
     },
     {
       "matchId": "wc2026-brazil-norway-2026-07-05",
