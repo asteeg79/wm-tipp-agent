@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-04T07:12:23.146Z",
+    "generatedAt": "2026-07-04T08:03:55.023Z",
     "home": {
       "teamId": "BRA",
       "elo": 1834,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-01T08:03:54.219Z",
+    "generatedAt": "2026-07-04T08:03:55.023Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5543,
-      "draw": 0.2077,
-      "away": 0.238
+      "home": 0.5426,
+      "draw": 0.2347,
+      "away": 0.2228
     },
-    "confidence": 0.3315,
+    "confidence": 0.6379,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,26 +72,79 @@
         "away": 1.34
       }
     },
-    "advance": {
-      "home": 0.6789,
-      "away": 0.3211
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.55,
+          "draw": 0.22,
+          "away": 0.23
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Brasilien defensiv deutlich stabiler (0.68 Gegentore/Spiel, 41% Zu-Null) und in guter Turnierform mit Siegen gegen Japan, Scotland und Haiti",
+          "Norwegen offensiv gefährlich (Haaland, 2.62 Tore/Spiel), aber defensiv anfällig – 4 Gegentore gegen Frankreich, je 2 gegen Senegal und Elfenbeinküste",
+          "Elo-Vorteil Brasilien (1834 vs 1714) und höhere individuelle Klasse in einem K.-o.-Spiel",
+          "Beide Teams mit vergleichbar starker gewichteter Form (2.18 vs 2.14), was ein enges Spiel möglich macht"
+        ],
+        "risks": [
+          "Norwegens Offensive kann Brasiliens Abwehr bei Standards/Kontern jederzeit treffen – Haaland-Faktor",
+          "K.-o.-Spiele verlaufen oft eng; ein Remis nach 90 Minuten ist realistisch",
+          "Neutraler Ort ohne Heimvorteil, Norwegen mit starkem Momentum und positiver Stimmung"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.55,
+          "draw": 0.23,
+          "away": 0.22
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Brasilien hat in der jüngsten Vergangenheitsform konstant gut abgeschnitten, mit klaren Siegen gegen Japan, Schottland und Haiti.",
+          "Norwegen hat eine gute Moral, angeführt von Haaland, schlug die Elfenbeinküste, aber verlor deutlich gegen einen starken Gegner wie Frankreich.",
+          "Brasilien hat eine traditionell starke Defensive, während Norwegen anfällig ist, mehr als ein Tor zuzulassen."
+        ],
+        "risks": [
+          "Norwegens hohe moralische Unterstützung und die Unterstützung von Persönlichkeiten wie Haaland könnten Überraschungen begünstigen.",
+          "Der neutrale Spielort könnte die spielinterne Dynamik beeinflussen."
+        ]
+      }
     },
-    "inputHash": "sha256:d99d7091337a5b6089a828cc26d19bee87daccacc494dd64929e4f67f5ec4c4a"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5061,
+      "chatgpt": 0.4939
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Brasilien defensiv deutlich stabiler (0.68 Gegentore/Spiel, 41% Zu-Null) und in guter Turnierform mit Siegen gegen Japan, Scotland und Haiti; Norwegen offensiv gefährlich (Haaland, 2.62 Tore/Spiel), aber defensiv anfällig – 4 Gegentore gegen Frankreich, je 2 gegen Senegal und Elfenbeinküste; Elo-Vorteil Brasilien (1834 vs 1714) und höhere individuelle Klasse in einem K.-o.-Spiel. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.6804,
+      "away": 0.3196
+    },
+    "tiebreakWinProbHome": 0.575,
+    "inputHash": "sha256:c4a3932c5a59618bf294b7f6629f8cfb6da5d422c339c9050136baf586ff4e47"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-04T07:12:23.559Z",
-    "bookmakerCount": 24,
+    "updatedAt": "2026-07-04T08:03:55.722Z",
+    "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.523,
-      "draw": 0.2552,
-      "away": 0.2218
+      "home": 0.5252,
+      "draw": 0.2563,
+      "away": 0.2185
     },
     "decimal": {
       "home": 1.83,
       "draw": 3.75,
-      "away": 4.31
+      "away": 4.4
     }
   }
 }
