@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-05T11:46:39.323Z",
+    "generatedAt": "2026-07-05T12:03:30.228Z",
     "home": {
       "teamId": "USA",
       "elo": 1680,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-02T08:03:49.989Z",
+    "generatedAt": "2026-07-05T12:03:30.228Z",
     "predictedScore": {
       "home": 1,
-      "away": 2
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3507,
-      "draw": 0.2222,
-      "away": 0.4271
+      "home": 0.3368,
+      "draw": 0.2926,
+      "away": 0.3707
     },
-    "confidence": 0.1406,
+    "confidence": 0.5083,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,73 @@
         "away": 1.84
       }
     },
-    "advance": {
-      "home": 0.451,
-      "away": 0.549
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.33,
+          "draw": 0.29,
+          "away": 0.38
+        },
+        "confidence": 0.42,
+        "keyFactors": [
+          "Belgien höher eingestuft (Elo 1737 vs 1680) und mit besserer Torbilanz (goalsFor 2.45, cleanSheetRate 0.37)",
+          "USA mit Gastgeber-/Heimvorteil bei neutralem Turnier und starker Turnierform (2:0 vs Bosnien, 2:0 vs Australien)",
+          "Beide Teams zuletzt eng und wechselhaft: Belgien 2:2 vs Senegal, 0:0 vs Iran, 1:1 vs Ägypten – Remis-Neigung",
+          "H2H klar für Belgien (2:5), aber nur ein Spiel und wenig aussagekräftig",
+          "Markt sieht sehr ausgeglichenes Spiel mit hoher Remis-Wahrscheinlichkeit (~0.285)"
+        ],
+        "risks": [
+          "K.-o.-Enge: Ausgang nach 90 Minuten oft knapp, Remis realistisch",
+          "Belgiens Comeback-Qualität und individuelle Klasse kann Spiel kippen",
+          "USA-Heimpublikum könnte Favoritenrolle Belgiens neutralisieren",
+          "Beide Abwehrreihen anfällig – Ergebnis kann auch torreicher ausfallen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.33,
+          "draw": 0.3,
+          "away": 0.37
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Belgium's slight Elo advantage",
+          "USA's solid recent form, including a clean sheet win against Bosnia & Herzegovina",
+          "USA enjoys host advantage, potentially boosting their performance",
+          "Belgium's offensive strength with a high goals per match average"
+        ],
+        "risks": [
+          "Potential impact of any unreported injuries for Belgium following their latest match",
+          "Close recent results for both teams suggest an evenly matched game",
+          "Draws are common in knockout scenarios, increasing uncertainty"
+        ]
+      }
     },
-    "inputHash": "sha256:5f1deccc743f996d3f6c0460e7992919d2cf22cf7b016da20c5fa3b586458c63"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5067,
+      "chatgpt": 0.4933
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien höher eingestuft (Elo 1737 vs 1680) und mit besserer Torbilanz (goalsFor 2.45, cleanSheetRate 0.37); USA mit Gastgeber-/Heimvorteil bei neutralem Turnier und starker Turnierform (2:0 vs Bosnien, 2:0 vs Australien); Beide Teams zuletzt eng und wechselhaft: Belgien 2:2 vs Senegal, 0:0 vs Iran, 1:1 vs Ägypten – Remis-Neigung. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.4738,
+      "away": 0.5262
+    },
+    "tiebreakWinProbHome": 0.485,
+    "inputHash": "sha256:81edf7818189cccdb01156354c0f456a5ed4364a8ff987f84f19da2292d06d7a"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-05T11:48:30.915Z",
+    "updatedAt": "2026-07-05T12:03:30.728Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3525,

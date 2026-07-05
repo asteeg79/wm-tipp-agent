@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-05T11:46:39.323Z",
+    "generatedAt": "2026-07-05T12:03:30.228Z",
     "home": {
       "teamId": "POR",
       "elo": 1791,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-05T07:03:29.750Z",
+    "generatedAt": "2026-07-05T12:03:30.228Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2365,
-      "draw": 0.2615,
-      "away": 0.502
+      "home": 0.236,
+      "draw": 0.2458,
+      "away": 0.5182
     },
-    "confidence": 0.6251,
+    "confidence": 0.6315,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -79,23 +79,22 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.21,
-          "draw": 0.25,
-          "away": 0.54
+          "home": 0.22,
+          "draw": 0.26,
+          "away": 0.52
         },
         "confidence": 0.58,
         "keyFactors": [
-          "Spanien mit klarer Elo-Überlegenheit (1938 vs 1791) und der besseren gewichteten Form (2.42 vs 2.01)",
-          "Spanien defensiv extrem stabil: cleanSheetRate 0.55, nur 0.34 Gegentore/Spiel, dazu Momentum mit 3:0 gegen Österreich",
-          "Portugals Offensive ist stark (2.15 Tore/Spiel), aber gegen Spaniens kompakte Abwehr schwerer durchsetzbar",
-          "Neutraler Ort ohne Heimvorteil, beide gleich erholt (3 Tage)",
-          "Einziges H2H ein 2:2 - deutet auf enge Duelle zwischen diesen Topteams hin"
+          "Spanien deutlich stärker in Elo (1938 vs 1791) und Form (weightedForm 2.42 vs 2.01)",
+          "Spaniens Defensive überragend: nur 0.34 Gegentore/Spiel, Clean-Sheet-Rate 54,5% gegen Portugals 34,4%",
+          "Beide zeigen starke WM-Form; Spanien mit dominanten Siegen (3:0 Österreich, 4:0 Saudi-Arabien, 1:0 Uruguay)",
+          "Neutraler Spielort ohne Heimvorteil, beide mit gleicher Erholungszeit (3 Tage)"
         ],
         "risks": [
-          "Drohende Sperre bei Portugal (Rot nach Rudelbildung) könnte Kader schwächen - Ausmaß unklar",
-          "K.o.-Spiel zwischen zwei Topteams ist oft eng, Remis nach 90 Min realistisch",
-          "Portugals individuelle Klasse kann jederzeit ein Spiel drehen",
-          "Beide Teams mit torlosen Remis in der Vita (POR 0:0 Kolumbien, ESP 0:0 Kap Verde) - kann auch defensiv werden"
+          "K.-o.-Spiel: enge Partien häufig, Portugal kann tief stehen und kontern",
+          "Mögliche WM-Sperre bei Portugal (Rudelbildung/Rot) könnte Kader schwächen — Unsicherheit",
+          "Ronaldo-Faktor und portugiesische Offensivqualität (2.15 Tore/Spiel) können jederzeit treffen",
+          "H2H-Historie mit 2:2 zeigt Ausgeglichenheit bei direkten Duellen"
         ]
       },
       "chatgpt": {
@@ -104,41 +103,53 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.26,
-          "draw": 0.27,
-          "away": 0.47
+          "home": 0.25,
+          "draw": 0.22,
+          "away": 0.53
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Spain's higher Elo rating compared to Portugal",
-          "Spain's recent dominant 3-0 victory against Austria",
-          "Portugal's suspension issue affecting team options",
-          "Spain's solid defensive record with multiple clean sheets"
+          "Spain's higher Elo rating and recent strong form.",
+          "Portugal's potential suspension issues affecting team stability.",
+          "Cristiano Ronaldo's impact is acknowledged, but uncertainty around team discipline remains."
         ],
         "risks": [
-          "Portugal's ability to score high against weaker teams",
-          "Recent head-to-head draw indicating potential close matchup",
-          "Neutral venue reduces home advantage for Portugal"
+          "The game's neutral venue could balance some home advantage.",
+          "Potential impact of key player suspensions for Portugal."
         ]
       }
     },
-    "agreement": 0.9533,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5067,
       "chatgpt": 0.4933
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit klarer Elo-Überlegenheit (1938 vs 1791) und der besseren gewichteten Form (2.42 vs 2.01); Spanien defensiv extrem stabil: cleanSheetRate 0.55, nur 0.34 Gegentore/Spiel, dazu Momentum mit 3:0 gegen Österreich; Portugals Offensive ist stark (2.15 Tore/Spiel), aber gegen Spaniens kompakte Abwehr schwerer durchsetzbar. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien deutlich stärker in Elo (1938 vs 1791) und Form (weightedForm 2.42 vs 2.01); Spaniens Defensive überragend: nur 0.34 Gegentore/Spiel, Clean-Sheet-Rate 54,5% gegen Portugals 34,4%; Beide zeigen starke WM-Form; Spanien mit dominanten Siegen (3:0 Österreich, 4:0 Saudi-Arabien, 1:0 Uruguay). Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.3516,
-      "away": 0.6484
+      "home": 0.3411,
+      "away": 0.6589
     },
-    "tiebreakWinProbHome": 0.5,
+    "tiebreakWinProbHome": 0.475,
     "inputHash": "sha256:8c6000762a19d271f49b3f79fd5b49a4949b9419db4fc251a55dac35266b6455"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-07-05T07:03:29.750Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2365,
+        "draw": 0.2615,
+        "away": 0.502
+      },
+      "confidence": 0.6251
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-05T11:48:30.915Z",
+    "updatedAt": "2026-07-05T12:03:30.727Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2354,
