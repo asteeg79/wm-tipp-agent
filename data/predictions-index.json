@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-07-05T21:17:23.092Z",
+  "lastUpdated": "2026-07-06T04:03:29.856Z",
   "aggregate": {
-    "finishedCount": 90,
-    "exactScoreRate": 0.1667,
-    "outcomeRate": 0.6778,
-    "brierMean": 0.4932,
-    "rpsMean": 0.1491
+    "finishedCount": 92,
+    "exactScoreRate": 0.163,
+    "outcomeRate": 0.663,
+    "brierMean": 0.4997,
+    "rpsMean": 0.1536
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 90,
-      "exactScoreRate": 0.1111,
-      "outcomeRate": 0.5889,
-      "brierMean": 0.4957,
-      "rpsMean": 0.1496
+      "finishedCount": 92,
+      "exactScoreRate": 0.1087,
+      "outcomeRate": 0.5761,
+      "brierMean": 0.5021,
+      "rpsMean": 0.1542
     },
     "chatgpt": {
-      "finishedCount": 90,
-      "exactScoreRate": 0.1667,
-      "outcomeRate": 0.5778,
-      "brierMean": 0.5079,
-      "rpsMean": 0.1563
+      "finishedCount": 92,
+      "exactScoreRate": 0.163,
+      "outcomeRate": 0.5652,
+      "brierMean": 0.5142,
+      "rpsMean": 0.1607
     },
     "weights": {
-      "claude": 0.5067,
-      "chatgpt": 0.4933
+      "claude": 0.5065,
+      "chatgpt": 0.4935
     }
   },
   "entries": [
@@ -3304,7 +3304,16 @@
         "home": 0.6767,
         "away": 0.3233
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.9478,
+        "rps": 0.4481
+      }
     },
     {
       "matchId": "wc2026-mexico-england-2026-07-05",
@@ -3335,7 +3344,16 @@
         "home": 0.4802,
         "away": 0.5198
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 2,
+        "away": 3
+      },
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.6292,
+        "rps": 0.2642
+      }
     },
     {
       "matchId": "wc2026-portugal-spain-2026-07-06",
@@ -3348,11 +3366,11 @@
         "away": 2
       },
       "probabilities": {
-        "home": 0.2413,
-        "draw": 0.2704,
-        "away": 0.4882
+        "home": 0.244,
+        "draw": 0.2662,
+        "away": 0.4898
       },
-      "confidence": 0.6188,
+      "confidence": 0.6208,
       "expectedGoals": {
         "home": 0.95,
         "away": 1.84
@@ -3363,8 +3381,8 @@
         "away": 0.4996
       },
       "advance": {
-        "home": 0.3576,
-        "away": 0.6424
+        "home": 0.3585,
+        "away": 0.6415
       },
       "actualResult": null
     },
@@ -3379,11 +3397,11 @@
         "away": 1
       },
       "probabilities": {
-        "home": 0.3473,
-        "draw": 0.3072,
-        "away": 0.3456
+        "home": 0.3468,
+        "draw": 0.292,
+        "away": 0.3612
       },
-      "confidence": 0.4737,
+      "confidence": 0.5049,
       "expectedGoals": {
         "home": 1.65,
         "away": 1.84
@@ -3394,8 +3412,8 @@
         "away": 0.3641
       },
       "advance": {
-        "home": 0.4972,
-        "away": 0.5028
+        "home": 0.4871,
+        "away": 0.5129
       },
       "actualResult": null
     },
@@ -3406,15 +3424,15 @@
       "homeTeamId": "ARG",
       "awayTeamId": "EGY",
       "predictedScore": {
-        "home": 2,
+        "home": 1,
         "away": 0
       },
       "probabilities": {
-        "home": 0.6894,
-        "draw": 0.1933,
-        "away": 0.1173
+        "home": 0.6909,
+        "draw": 0.2011,
+        "away": 0.1079
       },
-      "confidence": 0.5341,
+      "confidence": 0.6755,
       "expectedGoals": {
         "home": 2.07,
         "away": 0.71
@@ -3425,8 +3443,8 @@
         "away": 0.1036
       },
       "advance": {
-        "home": 0.8168,
-        "away": 0.1832
+        "home": 0.8215,
+        "away": 0.1785
       },
       "actualResult": null
     },

@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-05T21:17:23.092Z",
+    "generatedAt": "2026-07-06T04:03:29.856Z",
     "home": {
       "teamId": "ARG",
       "elo": 1905,
@@ -21,7 +21,7 @@
       "goalsAgainstAvg": 0.459,
       "cleanSheetRate": 0.613,
       "matchesCount": 31,
-      "daysSinceLastMatch": 2
+      "daysSinceLastMatch": 3
     },
     "away": {
       "teamId": "EGY",
@@ -32,7 +32,7 @@
       "goalsAgainstAvg": 0.672,
       "cleanSheetRate": 0.5,
       "matchesCount": 32,
-      "daysSinceLastMatch": 2
+      "daysSinceLastMatch": 3
     },
     "h2h": {
       "played": 0,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-04T12:03:59.942Z",
+    "generatedAt": "2026-07-06T04:03:29.856Z",
     "predictedScore": {
-      "home": 2,
+      "home": 1,
       "away": 0
     },
     "probabilities": {
-      "home": 0.6894,
-      "draw": 0.1933,
-      "away": 0.1173
+      "home": 0.6909,
+      "draw": 0.2011,
+      "away": 0.1079
     },
-    "confidence": 0.5341,
+    "confidence": 0.6755,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,70 @@
         "away": 0.71
       }
     },
-    "advance": {
-      "home": 0.8168,
-      "away": 0.1832
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.68,
+          "draw": 0.2,
+          "away": 0.12
+        },
+        "confidence": 0.66,
+        "keyFactors": [
+          "Argentinien mit klar höherem Elo (1905 vs 1700) und überlegener Form (weightedForm 2.52 vs 1.85)",
+          "Sehr stabile Defensive Argentiniens (0.46 Gegentore/Spiel, 61% Zu-Null-Rate) gegen offensivere aber anfälligere Ägypter",
+          "Starke Offensivwerte Argentiniens (2.37 Tore/Spiel) versus solide, aber nicht elitäre ägyptische Defensive",
+          "Beide Teams gleich erholt (3 Tage Pause)"
+        ],
+        "risks": [
+          "Argentinien musste zuletzt gegen Kap Verde in die Verlängerung – mögliche Belastung/Restmüdigkeit",
+          "K.-o.-Spiel: Ägypten kann tief und kompakt stehen und auf Konter/Elfmeterschießen spielen",
+          "Ägypten in jüngsten Spielen defensiv oft anfällig aber torgefährlich (1:1-Serie), enges Ergebnis möglich",
+          "Kein H2H-Datenmaterial vorhanden"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.7000000000000001,
+          "draw": 0.20000000000000004,
+          "away": 0.10000000000000002
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Argentinien ist generell stärker als Ägypten, sowohl in Elo als auch in der jüngsten Form.",
+          "Argentinien hat viele Tore in der jüngsten WM-Vorbereitung erzielt.",
+          "Keine direkten Begegnungen; Qualitätsunterschied spürbar."
+        ],
+        "risks": [
+          "Argentinien benötigte Verlängerung gegen Kap Verde, möglicher Ermüdungsfaktor.",
+          "K.O.-Runde: Spielverlauf oft eng und defensiv geprägt."
+        ]
+      }
     },
-    "inputHash": "sha256:0927ed786e8f5fc4367792eb03575ffcb9b3063b6ed7d107e578faf49c737004"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5065,
+      "chatgpt": 0.4935
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit klar höherem Elo (1905 vs 1700) und überlegener Form (weightedForm 2.52 vs 1.85); Sehr stabile Defensive Argentiniens (0.46 Gegentore/Spiel, 61% Zu-Null-Rate) gegen offensivere aber anfälligere Ägypter; Starke Offensivwerte Argentiniens (2.37 Tore/Spiel) versus solide, aber nicht elitäre ägyptische Defensive. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.8215,
+      "away": 0.1785
+    },
+    "tiebreakWinProbHome": 0.64,
+    "inputHash": "sha256:5af04e3b185d43673f7f85c2c749c4216fdb8c34779f9b4ba3ae6c0a3b7efcc4"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-05T21:17:24.839Z",
+    "updatedAt": "2026-07-06T04:05:22.705Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6927,
