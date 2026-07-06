@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-06T07:03:37.614Z",
+    "generatedAt": "2026-07-06T08:13:00.981Z",
     "home": {
       "teamId": "SUI",
       "elo": 1736,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-04T12:03:59.942Z",
+    "generatedAt": "2026-07-06T08:13:00.981Z",
     "predictedScore": {
       "home": 1,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3976,
-      "draw": 0.2656,
-      "away": 0.3368
+      "home": 0.3137,
+      "draw": 0.2993,
+      "away": 0.387
     },
-    "confidence": 0.0964,
+    "confidence": 0.444,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,72 @@
         "away": 1.22
       }
     },
-    "advance": {
-      "home": 0.5238,
-      "away": 0.4762
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.31,
+          "draw": 0.3,
+          "away": 0.39
+        },
+        "confidence": 0.4,
+        "keyFactors": [
+          "Colombia mit leicht höherem Elo (1765 vs 1736) und stabilerer Defensive (0.72 Gegentore/Spiel, 43,8% Zu-Null)",
+          "Beide Teams in starker Turnierform, ungeschlagen in der Gruppenphase (Kolumbien inkl. 0:0 gegen Portugal)",
+          "Markt sieht Kolumbien vorne (0.42), Baseline die Schweiz - ausgeglichenes Bild spricht für hohe Remis-Wahrscheinlichkeit",
+          "Schweiz offensiv gefährlicher (2.14 Tore/Spiel), Kolumbien defensiv kompakter - typisches K.o.-Duell mit wenig Toren",
+          "Neutraler Spielort, kein Heimvorteil"
+        ],
+        "risks": [
+          "Córdoba-Verletzung könnte Kolumbiens Offensivoptionen schwächen - Ausmaß unsicher",
+          "Enges Spiel kann durch Einzelmoment oder Standard kippen",
+          "Bei Verlängerung/Elfmeterschießen hohe Zufallskomponente",
+          "Divergenz zwischen Baseline (Heim) und Markt (Auswärts) erhöht Prognoseunsicherheit"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.29000000000000004,
+          "away": 0.36000000000000004
+        },
+        "confidence": 0.5,
+        "keyFactors": [
+          "Colombia has a slight Elo advantage over Switzerland.",
+          "Switzerland has shown strong recent form with multiple wins and a high scoring average.",
+          "Colombia's John Córdoba is injured, potentially weakening their attacking options.",
+          "Both teams have solid defensive records, indicated by their clean sheet rates."
+        ],
+        "risks": [
+          "External market significantly favors Colombia compared to baseline, suggesting potential value in Switzerland's resilience.",
+          "First competitive meeting between these teams, adding uncertainty to tactical matchups."
+        ]
+      }
     },
-    "inputHash": "sha256:de9b71f2213172001433ad554a19bb062e9b3d734367f820a098ed070f81e82d"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5027,
+      "chatgpt": 0.4973
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia mit leicht höherem Elo (1765 vs 1736) und stabilerer Defensive (0.72 Gegentore/Spiel, 43,8% Zu-Null); Beide Teams in starker Turnierform, ungeschlagen in der Gruppenphase (Kolumbien inkl. 0:0 gegen Portugal); Markt sieht Kolumbien vorne (0.42), Baseline die Schweiz - ausgeglichenes Bild spricht für hohe Remis-Wahrscheinlichkeit. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.4581,
+      "away": 0.5419
+    },
+    "tiebreakWinProbHome": 0.49,
+    "inputHash": "sha256:a31a864e576e7a8b400ec136214c1f416ae50dbd1a85e87ef1daeb7b2fc34195"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-06T07:03:50.619Z",
+    "updatedAt": "2026-07-06T08:15:27.649Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2708,
