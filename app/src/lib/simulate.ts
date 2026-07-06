@@ -271,7 +271,7 @@ interface RealKoField {
   /** Reales Ergebnis je ungeordnetem Team-Paar (entscheidende Resultate). */
   realResult: Map<
     string,
-    { winner: string; home: string; hg: number; ag: number }
+    { winner: string; home: string; hg: number; ag: number; aet: boolean }
   >;
   /** KO_STAGES-Index der Einstiegsrunde (z. B. round32). */
   startIdx: number;
@@ -347,6 +347,7 @@ function realKoField(
         home: e.homeTeamId,
         hg: res.home,
         ag: res.away,
+        aet: !!e.afterExtraTime,
       });
     }
   }
@@ -465,6 +466,8 @@ export interface BracketMatch {
   score: { a: number; b: number };
   /** Siegwahrscheinlichkeit des Siegers (0..1) laut Elo. */
   winProb: number;
+  /** true, wenn das reale Ergebnis erst nach Verlängerung feststand ("n.V."). */
+  afterExtraTime?: boolean;
 }
 
 export interface BracketRound {
@@ -511,6 +514,7 @@ function fieldMatch(
         a: a === real.home ? real.hg : real.ag,
         b: b === real.home ? real.hg : real.ag,
       },
+      ...(real.aet ? { afterExtraTime: true } : {}),
     };
   }
   const pA = eloWinProb(eloOf(a), eloOf(b));
@@ -1073,6 +1077,7 @@ export function projectBracket(
           ),
           winProb: 1,
           score: orientScore(real!, a, ar),
+          ...(real!.afterExtraTime ? { afterExtraTime: true } : {}),
         }
       : tippedMatch(a, b, real);
     cache.set(num, m);

@@ -189,6 +189,7 @@ function BracketCell({
   teams: Map<string, TeamSummary>;
   final: boolean;
 }) {
+  const { t } = useTranslation();
   return (
     <div
       className={`overflow-hidden rounded-md border bg-surface ${
@@ -208,8 +209,11 @@ function BracketCell({
         win={m.winner === m.b}
         teams={teams}
       />
-      {/* Siegwahrscheinlichkeit des Favoriten/Siegers laut Stärkemodell */}
-      <div className="flex items-center justify-end border-t border-edge/70 bg-surface-2 px-2 py-0.5">
+      {/* n.V.-Marker (falls das Ergebnis erst nach Verlängerung fiel) + Sieg-Wkt. */}
+      <div className="flex items-center justify-between gap-1 border-t border-edge/70 bg-surface-2 px-2 py-0.5">
+        <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
+          {m.afterExtraTime ? t("match.aet") : ""}
+        </span>
         <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
           {formatPercent(m.winProb)}
         </span>
