@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-06T04:36:49.396Z",
+    "generatedAt": "2026-07-06T05:03:32.470Z",
     "home": {
       "teamId": "USA",
       "elo": 1680,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-06T04:03:29.856Z",
+    "generatedAt": "2026-07-06T05:03:32.470Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3468,
+      "home": 0.3491,
       "draw": 0.292,
-      "away": 0.3612
+      "away": 0.3589
     },
-    "confidence": 0.5049,
+    "confidence": 0.5032,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -79,16 +79,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.36,
+          "home": 0.34,
           "draw": 0.28,
-          "away": 0.36
+          "away": 0.38
         },
         "confidence": 0.42,
         "keyFactors": [
-          ""
+          "Belgien mit höherem Elo (1737 vs 1680), besserer Defensive (GA 1.03) und Torgefahr (GF 2.45) – leicht überlegene Einzelqualität",
+          "USA mit Heimvorteil (Gastgeber, Publikum) trotz neutralem Venue und guter WM-Form (2:0 gegen Bosnien, 2:0 gegen Australien)",
+          "Balogun wurde für das Achtelfinale freigespielt – USA-Offensive komplett verfügbar",
+          "K.-o.-Spiel, beide Teams zuletzt eng (Belgien 2:2 gegen Senegal, USA 2:3 gegen Türkei) – Remis nach 90 Minuten realistisch",
+          "Markt sieht ausgeglichenes Bild mit erhöhter Remis-Wahrscheinlichkeit (0.28)"
         ],
         "risks": [
-          "dummy"
+          "Belgiens Kabinenunruhe (Zoff-Meldungen) könnte Leistung mindern – schwer quantifizierbar",
+          "USA-Defensive anfällig (Clean-Sheet-Rate nur 0.26), Belgiens Offensive kann bestrafen",
+          "H2H-Wert (2:5) basiert nur auf einem Spiel – geringe Aussagekraft",
+          "Emotionale Aufladung durch Balogun-Sperren-Kontroverse kann Spielverlauf unvorhersehbar machen"
         ]
       },
       "chatgpt": {
@@ -97,36 +104,34 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.33,
+          "home": 0.35,
           "draw": 0.31,
-          "away": 0.36
+          "away": 0.34
         },
         "confidence": 0.6,
         "keyFactors": [
-          "Beide Teams haben einen vergleichbaren Elo-Wert, wobei Belgien leicht überlegen ist.",
-          "USA spielt mit einem Stimmungs- und Moralvorteil, da Balogun unerwartet spielen darf.",
-          "Belgien hat interne Spannungen in der Mannschaft, die die Leistung beeinflussen könnten.",
-          "Head-to-Head Vorteil bei Belgien, aber nur ein Spiel als Referenz vorhanden.",
-          "Beide Teams zeigten in den letzten Spielen Schwäche in der Defensive."
+          "USA hat Heimvorteil als Gastgeber, spielt auf neutralem Boden",
+          "USA kann wieder auf Folarin Balogun zurückgreifen, was die Offensive stärkt",
+          "Belgien hat interne Spannungen, die die Teamdynamik beeinträchtigen könnten",
+          "Beide Teams haben in den letzten Spielen eine ähnliche Form gezeigt"
         ],
         "risks": [
-          "USA hat Heimvorteil bei neutralem Spielort, was möglicherweise den psychologischen Aspekt beeinflusst.",
-          "Belgischer Formeinbruch durch Mannschaftskonflikte könnte unterschätzt werden.",
-          "Unvorhersehbare Faktoren durch kurzfristige Stimmungsänderungen bei beiden Teams."
+          "Einfluss der Aufhebung der Sperre von Folarin Balogun kann für Belgien psychologisch belastend sein",
+          "Starke individuelle Leistungen könnten das Spiel zugunsten eines Teams kippen"
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5065,
       "chatgpt": 0.4935
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: ; Beide Teams haben einen vergleichbaren Elo-Wert, wobei Belgien leicht überlegen ist.; USA spielt mit einem Stimmungs- und Moralvorteil, da Balogun unerwartet spielen darf.. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien mit höherem Elo (1737 vs 1680), besserer Defensive (GA 1.03) und Torgefahr (GF 2.45) – leicht überlegene Einzelqualität; USA mit Heimvorteil (Gastgeber, Publikum) trotz neutralem Venue und guter WM-Form (2:0 gegen Bosnien, 2:0 gegen Australien); Balogun wurde für das Achtelfinale freigespielt – USA-Offensive komplett verfügbar. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.4871,
-      "away": 0.5129
+      "home": 0.4858,
+      "away": 0.5142
     },
-    "tiebreakWinProbHome": 0.51,
+    "tiebreakWinProbHome": 0.485,
     "inputHash": "sha256:392aa16acd0050c145cb976fa4da5692dd2463d1b866cc86be54654924823ec9"
   },
   "predictionHistory": [
@@ -168,11 +173,24 @@
         "away": 0.3456
       },
       "confidence": 0.4737
+    },
+    {
+      "generatedAt": "2026-07-06T04:03:29.856Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3468,
+        "draw": 0.292,
+        "away": 0.3612
+      },
+      "confidence": 0.5049
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-06T04:36:50.752Z",
+    "updatedAt": "2026-07-06T05:03:53.782Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3567,
