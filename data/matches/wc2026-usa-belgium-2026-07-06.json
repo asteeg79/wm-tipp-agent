@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-06T11:03:32.207Z",
+    "generatedAt": "2026-07-06T12:03:35.149Z",
     "home": {
       "teamId": "USA",
       "elo": 1680,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-06T10:03:30.505Z",
+    "generatedAt": "2026-07-06T12:03:35.149Z",
     "predictedScore": {
       "home": 2,
       "away": 2
     },
     "probabilities": {
       "home": 0.3559,
-      "draw": 0.2882,
-      "away": 0.3559
+      "draw": 0.2963,
+      "away": 0.3479
     },
-    "confidence": 0.4967,
+    "confidence": 0.5032,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -83,20 +83,19 @@
           "draw": 0.28,
           "away": 0.37
         },
-        "confidence": 0.4,
+        "confidence": 0.42,
         "keyFactors": [
-          "Belgien hat höheren Elo (1747 vs 1680) und deutlich bessere Torbilanz (2.58 erzielt, 1.03 kassiert) sowie höhere Clean-Sheet-Rate",
-          "USA mit Heim-/Gastgebervorteil auf neutralem, aber landeseigenem Boden und starker Turnierform (zuletzt drei Siege in der Gruppenphase)",
-          "Balogun steht nach aufgehobener Sperre wieder zur Verfügung – wichtiger Offensivfaktor für die USA",
-          "Belgien mit interner Kabinenunruhe (Streitigkeiten laut Berichten) und juristischem Wirbel um den Balogun-Fall, was die Konzentration stören könnte",
-          "Externe Markteinschätzung deutlich ausgeglichener als Baseline (Remis mit 0.28 hoch bewertet)",
-          "K.o.-Spiel inkl. Verlängerung erhöht die Remis-Wahrscheinlichkeit"
+          "Belgien leicht stärker nach Elo (1747 vs 1680) und mit besseren Offensivwerten (goalsForAvg 2.58, cleanSheetRate 0.37)",
+          "USA mit Heim-/Gastgebervorteil und guter Turnierform (zuletzt 2:0 Bosnien, 2:0 Australien)",
+          "Balogun laut Berichten trotz Sperre spielberechtigt - stärkt US-Offensive",
+          "K.o.-Modus inkl. Verlängerung erhöht Remis-/Elfmeter-Wahrscheinlichkeit",
+          "Markt sieht Partie ausgeglichener (37/28/35) als reine Elo-Baseline"
         ],
         "risks": [
-          "Belgiens individuelle Klasse (De Bruyne, Lukaku-Generation) kann in engen Momenten den Unterschied machen",
-          "H2H sehr klein (nur 1 Spiel), aber deutlich zugunsten Belgiens (5:2)",
-          "USA-Defensive anfällig (nur 26% Clean Sheets, 1.36 Gegentore/Spiel)",
-          "Kabinen-News bei Belgien könnten überbewertet sein und keinen sportlichen Effekt haben"
+          "Belgiens Defensiv-Wackler (2 Gegentore gegen Senegal, 3 gegen Neuseeland kassiert nicht) - könnte kompakter oder anfälliger sein",
+          "US-Abwehr fehleranfällig (nur 26% Clean Sheets, 3 Gegentore gegen Türkei)",
+          "Rechtsstreit/Berufung um Balogun könnte Kaderplanung/Fokus beeinflussen",
+          "H2H-Sample minimal (nur 1 Spiel, 2:5 aus US-Sicht)"
         ]
       },
       "chatgpt": {
@@ -105,35 +104,35 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.35,
+          "draw": 0.32,
+          "away": 0.33
         },
         "confidence": 0.6,
         "keyFactors": [
-          "USA hat Heimvorteil im neutralem Venue durch Gastgeberrolle.",
-          "Comeback von US-Stürmer Folarin Balogun stärkt die Offensive der USA.",
-          "Belgien traf zuletzt auf eher schwächere Gegner wie New Zealand, was die jüngsten Ergebnisse positiv beeinflusst.",
-          "Belgien ist Elo-technisch im Vorteil, aber interne Spannungen könnten ihre Leistung beeinträchtigen."
+          "USA hat durch die Aufhebung der Sperre von Balogun einen wichtigen Spieler zur Verfügung, was die offensive Stärke erhöht.",
+          "USA profitiert vom Heimvorteil als Gastgeberland.",
+          "Belgien hat eine leicht höhere Elo-Wertung und starke jüngste Form.",
+          "Neutrales Spielfeld, balanciert Vorteile zwischen den beiden Mannschaften."
         ],
         "risks": [
-          "Psychologisches Momentum durch die Kontroversen um Balogun kann USA hemmen oder motivieren.",
-          "Interne Streitigkeiten in der belgischen Mannschaft könnten die Leistung belasten.",
-          "Beide Teams sind offensiv stark, was ein ausgeglichenes und torreiches Spiel vermuten lässt."
+          "Mögliche mentale Beeinflussung durch den Kontroversen um Baloguns Sperre.",
+          "Geringfügiger Heimvorteil für die USA könnte durch neutrale Spielstätte abgeschwächt werden.",
+          "Belgiens Einspruch gegen die Sperraufhebung könnte zu Unsicherheit führen."
         ]
       }
     },
-    "agreement": 0.9867,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5027,
       "chatgpt": 0.4973
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien hat höheren Elo (1747 vs 1680) und deutlich bessere Torbilanz (2.58 erzielt, 1.03 kassiert) sowie höhere Clean-Sheet-Rate; USA mit Heim-/Gastgebervorteil auf neutralem, aber landeseigenem Boden und starker Turnierform (zuletzt drei Siege in der Gruppenphase); Balogun steht nach aufgehobener Sperre wieder zur Verfügung – wichtiger Offensivfaktor für die USA. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Belgien leicht stärker nach Elo (1747 vs 1680) und mit besseren Offensivwerten (goalsForAvg 2.58, cleanSheetRate 0.37); USA mit Heim-/Gastgebervorteil und guter Turnierform (zuletzt 2:0 Bosnien, 2:0 Australien); Balogun laut Berichten trotz Sperre spielberechtigt - stärkt US-Offensive. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.4932,
-      "away": 0.5068
+      "home": 0.4934,
+      "away": 0.5066
     },
-    "tiebreakWinProbHome": 0.51,
+    "tiebreakWinProbHome": 0.485,
     "inputHash": "sha256:7d0ad8184b9fe82b796d96bcb284d02cc9f5b630bc523365ce56b3a678a6808d"
   },
   "predictionHistory": [
@@ -214,11 +213,24 @@
         "away": 0.3587
       },
       "confidence": 0.495
+    },
+    {
+      "generatedAt": "2026-07-06T10:03:30.505Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3559,
+        "draw": 0.2882,
+        "away": 0.3559
+      },
+      "confidence": 0.4967
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-06T11:03:58.434Z",
+    "updatedAt": "2026-07-06T12:05:36.998Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.3696,
