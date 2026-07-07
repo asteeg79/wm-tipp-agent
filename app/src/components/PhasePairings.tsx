@@ -125,10 +125,14 @@ export function PhasePairings({
       )}
       <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {round.matches.map((m, i) => {
-          // Liegt die echte Auslosung vor, den realen KI-Tipp zeigen (Score +
-          // Sieger + %), sonst die Elo-Projektion.
+          // Reihenfolge der Anzeige-Quellen:
+          // 1) GESPIELT → echtes Ist-Ergebnis (m.* aus projectBracket: Ist-Score
+          //    nach Verlängerung, Weiterkommer, ggf. n.V.).
+          // 2) ausgelost, aber noch offen → realer KI-Tipp (Score + Weiterkommen).
+          // 3) ganz offen → Elo-Projektion (ebenfalls m.*).
           const real = realByPair.get(pairKey(m.a, m.b));
-          const tip = real ? tipDisplay(real, m.a) : null;
+          const played = !!real?.actualResult;
+          const tip = !played && real ? tipDisplay(real, m.a) : null;
           const aGoals = tip ? tip.aGoals : m.score.a;
           const bGoals = tip ? tip.bGoals : m.score.b;
           const winner = tip ? tip.winner : m.winner;
@@ -155,6 +159,11 @@ export function PhasePairings({
                 source={sourceOf.get(m.b)}
               />
               <div className="flex items-center justify-end gap-1 border-t border-edge/70 bg-surface-2/60 px-2 py-0.5">
+                {played && m.afterExtraTime && (
+                  <span className="font-mono text-[9px] uppercase tracking-wider text-fg-faint">
+                    {t("match.aet")}
+                  </span>
+                )}
                 {advance && (
                   <span className="font-mono text-[9px] uppercase tracking-wider text-acc/80">
                     {t("groups.advances")}
