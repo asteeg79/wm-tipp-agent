@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-06T23:21:23.869Z",
+    "generatedAt": "2026-07-07T04:03:30.687Z",
     "home": {
       "teamId": "SUI",
       "elo": 1736,
@@ -21,7 +21,7 @@
       "goalsAgainstAvg": 0.911,
       "cleanSheetRate": 0.355,
       "matchesCount": 31,
-      "daysSinceLastMatch": 4
+      "daysSinceLastMatch": 5
     },
     "away": {
       "teamId": "COL",
@@ -32,7 +32,7 @@
       "goalsAgainstAvg": 0.718,
       "cleanSheetRate": 0.438,
       "matchesCount": 32,
-      "daysSinceLastMatch": 3
+      "daysSinceLastMatch": 4
     },
     "h2h": {
       "played": 0,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-06T20:03:36.080Z",
+    "generatedAt": "2026-07-07T04:03:30.687Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3225,
-      "draw": 0.3152,
-      "away": 0.3623
+      "home": 0.3213,
+      "draw": 0.3114,
+      "away": 0.3673
     },
-    "confidence": 0.518,
+    "confidence": 0.5243,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -79,23 +79,23 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.34,
+          "home": 0.32,
           "draw": 0.3,
-          "away": 0.36
+          "away": 0.38
         },
-        "confidence": 0.45,
+        "confidence": 0.42,
         "keyFactors": [
-          "Colombia leicht höhere Elo (1765 vs 1736) und starke Defensive (cleanSheetRate 0.438, nur 0.72 Gegentore)",
-          "Schweiz mit hoher Offensivproduktivität (2.14 Tore/Spiel) und starker Turnierform (u.a. 4:1, zwei 2:0/2:1-Siege)",
-          "Beide Teams in sehr guter Form (weightedForm ~2.0-2.1) und praktisch gleichauf",
-          "K.-o.-Spiel auf neutralem Platz ohne H2H-Historie",
-          "Markt tendiert leicht zu Kolumbien (0.42), Baseline leicht zur Schweiz (0.40) – insgesamt sehr ausgeglichen"
+          "Colombia mit leicht höherem Elo (1765 vs 1736) und stabilerer Defensive (0.72 Gegentore/Spiel, 43.8% Weiße Westen)",
+          "Schweiz offensivstärker (2.14 Tore/Spiel) und aktuell in guter Turnierform mit klaren Siegen (u.a. 4:1, 2:0)",
+          "Beide Teams defensiv stabil und zuletzt torarm in K.o.-nahen Duellen (Kolumbien 0:0 gegen Portugal) → enges Spiel wahrscheinlich",
+          "Markt sieht Kolumbien klar vorn (0.42), Baseline eher Schweiz (0.40) – Wahrheit dazwischen",
+          "K.o.-Charakter: Verlängerung möglich, Remis nach 90/120 Min. realistisch"
         ],
         "risks": [
-          "Verletzung von John Córdoba schwächt Kolumbiens Offensive und könnte die knappe Prognose zugunsten der Schweiz kippen",
-          "Kompakte, defensivstarke Teams begünstigen ein enges Ergebnis und Verlängerung/Elfmeterschießen",
-          "Momentum-Umschwung durch frühes Tor kann die enge Partie schnell entscheiden",
-          "Rotations-/Belastungseffekte nach nur 3-4 Tagen Pause"
+          "Córdoba-Verletzung schwächt Kolumbiens Offensive, Ausmaß unklar",
+          "Fehlender H2H erschwert Einschätzung",
+          "Bei früher Führung könnte ein Team tief stehen und das Spiel kippen",
+          "Divergenz zwischen Markt und Baseline erhöht Prognoseunsicherheit"
         ]
       },
       "chatgpt": {
@@ -104,35 +104,36 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.35,
-          "draw": 0.33,
+          "home": 0.36,
+          "draw": 0.32,
           "away": 0.32
         },
-        "confidence": 0.6,
+        "confidence": 0.65,
         "keyFactors": [
-          "Beide Teams haben ähnlich starke Elo-Ratings, was auf ein ausgeglichenes Match hindeutet.",
-          "Schweiz zeigte starke Offensivleistungen in letzter Zeit, insbesondere gegen starke Gegner wie Kanada.",
-          "Kolumbien hat eine stabile Defensive, was durch die gute Clean-Sheet-Rate unterstrichen wird.",
-          "Verletzung von John Córdoba könnte Kolumbiens Offensive schwächen."
+          "Higher Elo rating for Colombia but only slight advantage",
+          "Neutral venue negates any home advantage",
+          "Both teams are in good recent form",
+          "Colombian player John Córdoba out due to a recent injury",
+          "Switzerland has been more consistent in scoring"
         ],
         "risks": [
-          "Schweiz hat in den letzten Spielen oft gut abgeschnitten, könnte also mit Momentum kommen.",
-          "Kolumbien spielt meist sehr kompakt und könnte Vorteile im Elfmeterschießen haben."
+          "Colombia's solid defense with higher clean sheet rate",
+          "Injury impact on Colombia's strategy is uncertain"
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.96,
     "ensembleWeights": {
       "claude": 0.5027,
       "chatgpt": 0.4973
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia leicht höhere Elo (1765 vs 1736) und starke Defensive (cleanSheetRate 0.438, nur 0.72 Gegentore); Schweiz mit hoher Offensivproduktivität (2.14 Tore/Spiel) und starker Turnierform (u.a. 4:1, zwei 2:0/2:1-Siege); Beide Teams in sehr guter Form (weightedForm ~2.0-2.1) und praktisch gleichauf. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Colombia mit leicht höherem Elo (1765 vs 1736) und stabilerer Defensive (0.72 Gegentore/Spiel, 43.8% Weiße Westen); Schweiz offensivstärker (2.14 Tore/Spiel) und aktuell in guter Turnierform mit klaren Siegen (u.a. 4:1, 2:0); Beide Teams defensiv stabil und zuletzt torarm in K.o.-nahen Duellen (Kolumbien 0:0 gegen Portugal) → enges Spiel wahrscheinlich. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.4746,
-      "away": 0.5254
+      "home": 0.4731,
+      "away": 0.5269
     },
-    "tiebreakWinProbHome": 0.49,
-    "inputHash": "sha256:a31a864e576e7a8b400ec136214c1f416ae50dbd1a85e87ef1daeb7b2fc34195"
+    "tiebreakWinProbHome": 0.5,
+    "inputHash": "sha256:4dd655cb0d8dc329320e592edfa1b8b8093a44eba186104d5f6fe9bf787312f3"
   },
   "predictionHistory": [
     {
@@ -147,11 +148,24 @@
         "away": 0.387
       },
       "confidence": 0.444
+    },
+    {
+      "generatedAt": "2026-07-06T20:03:36.080Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3225,
+        "draw": 0.3152,
+        "away": 0.3623
+      },
+      "confidence": 0.518
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-06T23:22:54.952Z",
+    "updatedAt": "2026-07-07T04:05:22.388Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.2677,
