@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-08T07:42:07.170Z",
+    "generatedAt": "2026-07-08T08:04:24.412Z",
     "home": {
       "teamId": "FRA",
       "elo": 1908,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-05T19:03:36.852Z",
+    "generatedAt": "2026-07-08T08:04:24.412Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.5612,
-      "draw": 0.2242,
-      "away": 0.2146
+      "home": 0.5771,
+      "draw": 0.2337,
+      "away": 0.1892
     },
-    "confidence": 0.3418,
+    "confidence": 0.6336,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,72 @@
         "away": 1.08
       }
     },
-    "advance": {
-      "home": 0.6878,
-      "away": 0.3122
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.55,
+          "draw": 0.24,
+          "away": 0.21
+        },
+        "confidence": 0.58,
+        "keyFactors": [
+          "Frankreich mit überragender Turnierform (4 Siege, 14:2 Tore) und hoher individueller Klasse",
+          "Marokko defensiv extrem stabil (CleanSheet-Rate 0.667, nur 0.51 Gegentore/Spiel) und turniererprobt",
+          "Beide Teams frisch (4 Tage Pause), neutraler Ort ohne Heimvorteil",
+          "Marokko steht traditionell tief und kompakt gegen Favoriten – knapper Ausgang wahrscheinlich"
+        ],
+        "risks": [
+          "Marokko kann das Spiel mit kompakter Defensive ins Elfmeterschießen retten (Remis realistisch)",
+          "Unruhe im französischen Lager (Protest-/Skandal-News, Kritik an Deschamps) könnte Fokus stören",
+          "Verletzung/Ausfall (Saibari raus, Bayern-Neuzugang fraglich) verändert Marokkos Balance",
+          "K.o.-Charakter: einzelne Standardsituation oder Konter kann Spiel kippen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.58,
+          "draw": 0.22,
+          "away": 0.2
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "France's strong recent form, including a 4-1 victory over Norway and 3-0 win against Switzerland.",
+          "Morocco's recent impressive performance, including a 1-1 draw against Brazil.",
+          "France's superior Elo rating and goal-scoring ability.",
+          "Neutral venue, no host advantage."
+        ],
+        "risks": [
+          "Potential morale issues in the French camp due to recent off-field controversies.",
+          "Possible injury concerns in the Moroccan squad as indicated by recent news.",
+          "Both teams have demonstrated defensive resilience in the tournament."
+        ]
+      }
     },
-    "inputHash": "sha256:d932c581fe9c78a4adebdf0ac279c0a056581fcd7584e7f885e158c2bcfdc7e2"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5026,
+      "chatgpt": 0.4974
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Frankreich mit überragender Turnierform (4 Siege, 14:2 Tore) und hoher individueller Klasse; Marokko defensiv extrem stabil (CleanSheet-Rate 0.667, nur 0.51 Gegentore/Spiel) und turniererprobt; Beide Teams frisch (4 Tage Pause), neutraler Ort ohne Heimvorteil. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.6997,
+      "away": 0.3003
+    },
+    "tiebreakWinProbHome": 0.485,
+    "inputHash": "sha256:70b9304bfe78ae9057cd4d09afb695fa815cfa528334bceb48a619ae612181b9"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-08T07:43:18.681Z",
+    "updatedAt": "2026-07-08T08:04:24.960Z",
     "bookmakerCount": 24,
     "probabilities": {
       "home": 0.6024,
