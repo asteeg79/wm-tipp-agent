@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-09T05:04:21.041Z",
+    "generatedAt": "2026-07-09T07:04:18.292Z",
     "home": {
       "teamId": "ESP",
       "elo": 1944,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-07T11:03:32.024Z",
+    "generatedAt": "2026-07-09T07:04:18.292Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.6008,
-      "draw": 0.2043,
-      "away": 0.1948
+      "home": 0.5882,
+      "draw": 0.2266,
+      "away": 0.1852
     },
-    "confidence": 0.4012,
+    "confidence": 0.6556,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,26 +72,82 @@
         "away": 1.13
       }
     },
-    "advance": {
-      "home": 0.7325,
-      "away": 0.2675
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 0
+        },
+        "probabilities": {
+          "home": 0.6,
+          "draw": 0.22,
+          "away": 0.18
+        },
+        "confidence": 0.62,
+        "keyFactors": [
+          "Spanien mit herausragender Defensive (nur 0,3 Gegentore/Spiel, 55,9% Zu-Null) und starker gewichteter Form (2,49)",
+          "Vier Zu-Null-Siege in fünf WM-Spielen inkl. Erfolgen gegen Portugal und Uruguay zeigen Turnierreife und Konstanz",
+          "Belgien offensiv gefährlich (2,75 Tore/Spiel), aber defensiv anfällig (1,03 Gegentore, nur 35,5% Zu-Null) - Spaniens Ballbesitzspiel dürfte das ausnutzen",
+          "Elo-Vorsprung von 183 Punkten (1944 vs 1761) untermauert Spaniens Favoritenrolle",
+          "Ausfall von Onana schwächt Belgiens Mittelfeldstabilität gegen Spaniens Kombinationsspiel"
+        ],
+        "risks": [
+          "Belgiens hohe Offensivqualität kann bei einem offenen Spiel jederzeit treffen - Remis und Verlängerung möglich",
+          "K.o.-Spiel: Belgien könnte tief stehen und auf Konter/Elfmeterschießen spielen",
+          "Beide Teams nur 3 Tage Pause - mögliche Ermüdung/Rotation",
+          "Bei knappem Spielstand entscheidet oft eine Einzelaktion der belgischen Offensive"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.58,
+          "draw": 0.22,
+          "away": 0.2
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Spanien hat eine beeindruckende jüngste Form gezeigt, ohne Gegentore in den letzten vier Spielen.",
+          "Belgien hat ebenfalls stark gespielt, erlitt jedoch ein knappes Unentschieden gegen Iran.",
+          "Der Ausfall von Onana könnte Belgiens Mittelfeld schwächen.",
+          "Spanien hat einen leichten Elo-Vorteil und zeigt eine sehr solide Defensive."
+        ],
+        "risks": [
+          "Belgien hat eine hohe Torproduktion gezeigt, insbesondere im Spiel gegen die USA.",
+          "Da es sich um ein K.-o.-Spiel handelt, könnte die Nervosität auf beiden Seiten zu unerwarteten Fehlern führen."
+        ]
+      }
     },
-    "inputHash": "sha256:05536ebc8a7295d07ef0de2377c8b98c2be6b62f6e3d5cfc1726e8ec9195e954"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5026,
+      "chatgpt": 0.4974
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive (nur 0,3 Gegentore/Spiel, 55,9% Zu-Null) und starker gewichteter Form (2,49); Vier Zu-Null-Siege in fünf WM-Spielen inkl. Erfolgen gegen Portugal und Uruguay zeigen Turnierreife und Konstanz; Belgien offensiv gefährlich (2,75 Tore/Spiel), aber defensiv anfällig (1,03 Gegentore, nur 35,5% Zu-Null) - Spaniens Ballbesitzspiel dürfte das ausnutzen. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.723,
+      "away": 0.277
+    },
+    "tiebreakWinProbHome": 0.545,
+    "inputHash": "sha256:e966aa6316315c33c863d013175810decaf8025ef209d7016cf49cd6d9e72cf4"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-09T05:04:21.646Z",
+    "updatedAt": "2026-07-09T07:05:55.850Z",
     "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.5913,
-      "draw": 0.2392,
-      "away": 0.1695
+      "home": 0.5854,
+      "draw": 0.2421,
+      "away": 0.1725
     },
     "decimal": {
-      "home": 1.62,
-      "draw": 4.01,
-      "away": 5.65
+      "home": 1.65,
+      "draw": 3.99,
+      "away": 5.6
     }
   }
 }
