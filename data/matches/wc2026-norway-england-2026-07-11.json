@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-10T08:43:52.855Z",
+    "generatedAt": "2026-07-10T09:03:58.499Z",
     "home": {
       "teamId": "NOR",
       "elo": 1727,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-06T13:04:21.183Z",
+    "generatedAt": "2026-07-10T09:03:58.499Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2343,
-      "draw": 0.2073,
-      "away": 0.5584
+      "home": 0.2377,
+      "draw": 0.2378,
+      "away": 0.5245
     },
-    "confidence": 0.3376,
+    "confidence": 0.6258,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,73 @@
         "away": 2.13
       }
     },
-    "advance": {
-      "home": 0.3186,
-      "away": 0.6814
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.23,
+          "draw": 0.24,
+          "away": 0.53
+        },
+        "confidence": 0.56,
+        "keyFactors": [
+          "England mit klar höherem Elo (1839 vs 1727) und deutlich stabilerer Defensive (Gegentore 0.80 vs 1.40, Clean-Sheet-Rate 0.53 vs 0.37)",
+          "Norwegen offensiv stark (2.54 Tore/Spiel) und in starker Turnierform inkl. Sieg gegen Brasilien, aber defensiv anfällig",
+          "Norwegen von Krankheitswelle vor dem Viertelfinale betroffen – potenzielle Schwächung des Kaders",
+          "England-Sperre für Quansah schwächt die Abwehrrotation leicht, ist aber verkraftbar",
+          "Markt und Baseline sehen England klar favorisiert (0.51–0.56)"
+        ],
+        "risks": [
+          "Norwegens Offensive kann England-Abwehr treffen – Krone/Angriff sorgt regelmäßig für Tore",
+          "K.o.-Charakter: nach Verlängerung möglich, Remis führt ins Elfmeterschießen",
+          "Unklare Verletzungslage im englischen Mittelfeld laut News",
+          "Norwegens Momentum und Turnierselbstvertrauen könnten Außenseiterrolle relativieren"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 2
+        },
+        "probabilities": {
+          "home": 0.25,
+          "draw": 0.22,
+          "away": 0.53
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "England hat eine höhere Elo-Wertung und ist leicht favorisiert.",
+          "Norwegen hat gegen starke Gegner wie Brasilien gut abgeschnitten, aber es gibt eine Krankheitswelle im Team.",
+          "England hat eine wichtige Sperre und eine verletzungsbedingte Besorgnis, doch die Tiefe des Kaders bleibt stark.",
+          "Beide Teams haben in letzter Zeit regelmäßig getroffen, Norwegen jedoch auch viel kassiert."
+        ],
+        "risks": [
+          "Die Krankheitswelle bei Norwegen könnte ihre Leistungsfähigkeit drastisch beeinflussen.",
+          "Die genaue Auswirkung der verletzungsbedingten Sorgen bei England ist unklar.",
+          "Beide Trainer sind erfahren, was die Taktik entscheidend beeinflussen könnte."
+        ]
+      }
     },
-    "inputHash": "sha256:64a902800b2d8fcedc5ed2132026edd571871f47be33f7982a7998183eaa9ed2"
+    "agreement": 0.9867,
+    "ensembleWeights": {
+      "claude": 0.5026,
+      "chatgpt": 0.4974
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit klar höherem Elo (1839 vs 1727) und deutlich stabilerer Defensive (Gegentore 0.80 vs 1.40, Clean-Sheet-Rate 0.53 vs 0.37); Norwegen offensiv stark (2.54 Tore/Spiel) und in starker Turnierform inkl. Sieg gegen Brasilien, aber defensiv anfällig; Norwegen von Krankheitswelle vor dem Viertelfinale betroffen – potenzielle Schwächung des Kaders. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.3425,
+      "away": 0.6575
+    },
+    "tiebreakWinProbHome": 0.475,
+    "inputHash": "sha256:c054e9397900f29445ac5b926b05c172c9eab2014510e15c009267bc4d171858"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-10T08:44:54.014Z",
+    "updatedAt": "2026-07-10T09:04:47.785Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.2299,
