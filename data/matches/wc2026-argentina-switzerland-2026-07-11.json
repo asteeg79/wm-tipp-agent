@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-10T15:04:03.226Z",
+    "generatedAt": "2026-07-10T16:04:10.172Z",
     "home": {
       "teamId": "ARG",
       "elo": 1920,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-10T13:03:56.189Z",
+    "generatedAt": "2026-07-10T16:04:10.172Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
       "home": 0.5901,
-      "draw": 0.2376,
-      "away": 0.1722
+      "draw": 0.2331,
+      "away": 0.1768
     },
-    "confidence": 0.6478,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -80,19 +80,21 @@
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.22,
-          "away": 0.18
+          "draw": 0.24,
+          "away": 0.16
         },
-        "confidence": 0.6,
+        "confidence": 0.62,
         "keyFactors": [
-          "Argentinien mit klar höherem Elo (1920 vs 1736) und starker gewichteter Form (2.82 vs 1.96)",
-          "Argentinien in makelloser Turnierform mit fünf Siegen in Serie und hoher Offensivproduktion",
-          "Schweiz defensiv nur mäßig stabil (cleanSheetRate 0.375, zuletzt oft Gegentore), aber selbst treffsicher und mit Momentum nach Viertelfinal-Einzug"
+          "Argentinien klar überlegen (Elo 1920 vs. 1736), starke gewichtete Form (2.82) und Torgefahr (2.69 Tore/Spiel)",
+          "Schweiz mit solidem Turnierlauf und Selbstvertrauen nach VF-Einzug, aber deutlich weniger Einzelklasse",
+          "Verlängerungsregel: bei Remis nach 90+ potenziell mehr Chancen für die tiefere Argentinien-Bank",
+          "Neutraler Ort, keine H2H-Historie – rein leistungs- und formbasiert"
         ],
         "risks": [
-          "K.-o.-Spiel: kompakte Schweiz kann tief stehen und auf Konter/Standards lauern, knappes Ergebnis oder Verlängerung möglich",
-          "Argentinien kassierte zuletzt in mehreren Spielen 2 Gegentore – Defensive nicht fehlerfrei",
-          "Hohes Selbstvertrauen der Schweiz nach überraschendem Turnierverlauf könnte für eine enge Partie sorgen"
+          "Argentinien kassierte zuletzt in mehreren Spielen Gegentore (2:2-Muster gegen Ägypten/Cape Verde) – Defensive anfälliger als Clean-Sheet-Rate suggeriert",
+          "Schweiz steht in K.o.-Spielen oft kompakt und tief, kann Favorit lange ärgern und ins Elfmeterschießen zwingen",
+          "Torhüter-Form (Schweiz zuletzt 0:0 gegen Kolumbien) kann knappes Ergebnis kippen",
+          "Tagesform/Rotation nach nur 3 Tagen Pause"
         ]
       },
       "chatgpt": {
@@ -102,38 +104,53 @@
         },
         "probabilities": {
           "home": 0.6,
-          "draw": 0.23,
-          "away": 0.17
+          "draw": 0.2,
+          "away": 0.2
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Argentinien hat eine starke aktuelle Form, mit mehreren Siegen und hohen Torzahlen in den letzten fünf Spielen.",
-          "Die Schweiz zeigt ebenfalls eine solide Performance, jedoch gegen etwas schwächere Gegner im Vergleich zu Argentinien.",
-          "In Bezug auf die moralische Einschätzung durch externe Quellen gibt es Hinweise auf mögliche innere Spannungen bei Argentinien."
+          "Argentina's high Elo rating and strong recent form, including consistent scoring.",
+          "Switzerland's recent solid performance, with a clean sheet against Colombia.",
+          "Argentina's morale reportedly questioned, adding potential vulnerability.",
+          "Neutral venue with no altitude or host advantage."
         ],
         "risks": [
-          "Mögliche Auswirkungen von Unsicherheiten oder Spannungen innerhalb der argentinischen Mannschaft, wie von Blerim Dzemaili angesprochen.",
-          "Die Schweiz hat in der Vergangenheit gezeigt, dass sie in der Lage ist, gegen starke Gegner aufzutreten."
+          "Switzerland's morale boost after reaching the quarterfinals could lead to a strong performance.",
+          "Tactical adjustments by Switzerland could neutralize Argentina's attacking threat."
         ]
       }
     },
-    "agreement": 0.9933,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5026,
       "chatgpt": 0.4974
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit klar höherem Elo (1920 vs 1736) und starker gewichteter Form (2.82 vs 1.96); Argentinien in makelloser Turnierform mit fünf Siegen in Serie und hoher Offensivproduktion; Schweiz defensiv nur mäßig stabil (cleanSheetRate 0.375, zuletzt oft Gegentore), aber selbst treffsicher und mit Momentum nach Viertelfinal-Einzug. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien klar überlegen (Elo 1920 vs. 1736), starke gewichtete Form (2.82) und Torgefahr (2.69 Tore/Spiel); Schweiz mit solidem Turnierlauf und Selbstvertrauen nach VF-Einzug, aber deutlich weniger Einzelklasse; Verlängerungsregel: bei Remis nach 90+ potenziell mehr Chancen für die tiefere Argentinien-Bank. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.7351,
-      "away": 0.2649
+      "home": 0.7265,
+      "away": 0.2735
     },
-    "tiebreakWinProbHome": 0.575,
+    "tiebreakWinProbHome": 0.525,
     "inputHash": "sha256:665e6cef930b1091208ae00c9a99ab611d3390a62bd466f33db5514c3998653b"
   },
-  "predictionHistory": [],
+  "predictionHistory": [
+    {
+      "generatedAt": "2026-07-10T13:03:56.189Z",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.5901,
+        "draw": 0.2376,
+        "away": 0.1722
+      },
+      "confidence": 0.6478
+    }
+  ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-10T15:04:03.648Z",
+    "updatedAt": "2026-07-10T16:06:36.915Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.5671,
