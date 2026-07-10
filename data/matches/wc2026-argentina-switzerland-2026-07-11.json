@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-10T12:04:02.082Z",
+    "generatedAt": "2026-07-10T13:03:56.189Z",
     "home": {
       "teamId": "ARG",
       "elo": 1920,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-08T11:04:21.303Z",
+    "generatedAt": "2026-07-10T13:03:56.189Z",
     "predictedScore": {
       "home": 2,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.6417,
-      "draw": 0.1962,
-      "away": 0.1621
+      "home": 0.5901,
+      "draw": 0.2376,
+      "away": 0.1722
     },
-    "confidence": 0.4626,
+    "confidence": 0.6478,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,24 +72,76 @@
         "away": 0.99
       }
     },
-    "advance": {
-      "home": 0.7684,
-      "away": 0.2316
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.6,
+          "draw": 0.22,
+          "away": 0.18
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Argentinien mit klar höherem Elo (1920 vs 1736) und starker gewichteter Form (2.82 vs 1.96)",
+          "Argentinien in makelloser Turnierform mit fünf Siegen in Serie und hoher Offensivproduktion",
+          "Schweiz defensiv nur mäßig stabil (cleanSheetRate 0.375, zuletzt oft Gegentore), aber selbst treffsicher und mit Momentum nach Viertelfinal-Einzug"
+        ],
+        "risks": [
+          "K.-o.-Spiel: kompakte Schweiz kann tief stehen und auf Konter/Standards lauern, knappes Ergebnis oder Verlängerung möglich",
+          "Argentinien kassierte zuletzt in mehreren Spielen 2 Gegentore – Defensive nicht fehlerfrei",
+          "Hohes Selbstvertrauen der Schweiz nach überraschendem Turnierverlauf könnte für eine enge Partie sorgen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.6,
+          "draw": 0.23,
+          "away": 0.17
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "Argentinien hat eine starke aktuelle Form, mit mehreren Siegen und hohen Torzahlen in den letzten fünf Spielen.",
+          "Die Schweiz zeigt ebenfalls eine solide Performance, jedoch gegen etwas schwächere Gegner im Vergleich zu Argentinien.",
+          "In Bezug auf die moralische Einschätzung durch externe Quellen gibt es Hinweise auf mögliche innere Spannungen bei Argentinien."
+        ],
+        "risks": [
+          "Mögliche Auswirkungen von Unsicherheiten oder Spannungen innerhalb der argentinischen Mannschaft, wie von Blerim Dzemaili angesprochen.",
+          "Die Schweiz hat in der Vergangenheit gezeigt, dass sie in der Lage ist, gegen starke Gegner aufzutreten."
+        ]
+      }
     },
-    "inputHash": "sha256:06b080e4bbe8ba53255cd74cfa59516282118de93949b637eea93dca2a651fa8"
+    "agreement": 0.9933,
+    "ensembleWeights": {
+      "claude": 0.5026,
+      "chatgpt": 0.4974
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit klar höherem Elo (1920 vs 1736) und starker gewichteter Form (2.82 vs 1.96); Argentinien in makelloser Turnierform mit fünf Siegen in Serie und hoher Offensivproduktion; Schweiz defensiv nur mäßig stabil (cleanSheetRate 0.375, zuletzt oft Gegentore), aber selbst treffsicher und mit Momentum nach Viertelfinal-Einzug. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.7351,
+      "away": 0.2649
+    },
+    "tiebreakWinProbHome": 0.575,
+    "inputHash": "sha256:665e6cef930b1091208ae00c9a99ab611d3390a62bd466f33db5514c3998653b"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-10T12:04:02.506Z",
+    "updatedAt": "2026-07-10T13:06:02.804Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.5657,
-      "draw": 0.2671,
-      "away": 0.1672
+      "home": 0.5671,
+      "draw": 0.2662,
+      "away": 0.1667
     },
     "decimal": {
-      "home": 1.7,
+      "home": 1.69,
       "draw": 3.6,
       "away": 5.75
     }

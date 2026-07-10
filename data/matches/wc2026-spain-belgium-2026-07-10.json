@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-10T12:04:02.082Z",
+    "generatedAt": "2026-07-10T13:03:56.189Z",
     "home": {
       "teamId": "ESP",
       "elo": 1944,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-10T08:03:58.235Z",
+    "generatedAt": "2026-07-10T13:03:56.189Z",
     "predictedScore": {
-      "home": 1,
-      "away": 0
+      "home": 2,
+      "away": 1
     },
     "probabilities": {
-      "home": 0.5882,
-      "draw": 0.2371,
-      "away": 0.1747
+      "home": 0.5979,
+      "draw": 0.223,
+      "away": 0.1791
     },
-    "confidence": 0.6534,
+    "confidence": 0.6512,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,58 +76,60 @@
       "claude": {
         "predictedScore": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "probabilities": {
-          "home": 0.6,
-          "draw": 0.22,
-          "away": 0.18
+          "home": 0.62,
+          "draw": 0.21,
+          "away": 0.17
         },
         "confidence": 0.62,
         "keyFactors": [
-          "Spanien mit herausragender Defensive: nur 0,3 Gegentore/Spiel, Clean Sheets gegen Portugal, Uruguay und Austria bei diesem Turnier",
-          "Spanien deutlich höheres Elo (1944 vs 1761) und bessere gewichtete Form (2,49 vs 2,09)",
-          "Belgiens Offensive stark (2,75 Tore/Spiel), aber die vielen Treffer kamen gegen schwächere Gegner (Neuseeland, USA); Defensive anfällig (1,03 Gegentore, nur 35,5% Clean Sheets)",
-          "Ausfall von Verteidiger Debast schwächt Belgiens ohnehin wackelige Abwehr zusätzlich"
+          "Spanien mit herausragender Defensive (0,3 Gegentore/Spiel, 56% Zu-Null) und starker gewichteter Form (2,49) sowie klar höherem Elo (1944 vs 1761)",
+          "Spanien im Turnier defensiv extrem stabil: vier Zu-Null in fünf Spielen, nur gegen Cape Verde 0:0",
+          "Belgien offensiv brandgefährlich (2,75 Tore/Spiel), aber defensiv anfällig (1,03 Gegentore, nur 36% Zu-Null) – gefährlich, aber verwundbar",
+          "Interne Unruhe ('Belgien-Zoff') und eine Vereinssperre eines belgischen Nationalspielers könnten Belgien schwächen",
+          "Markt und Baseline stützen Spanien-Favoritenrolle (~0,60)"
         ],
         "risks": [
-          "K.o.-Spiel: Belgiens Offensivqualität kann jederzeit für Tore und ein Elfmeterschießen sorgen",
-          "Kein H2H-Datenmaterial vorhanden",
-          "Belgien könnte tief stehen und auf Konter setzen, was Spaniens Chancenverwertung erschwert",
-          "Verlängerungsrisiko bei einem engen, ausgeglichenen Spielverlauf"
+          "Belgiens Offensivpower kann jede Abwehr treffen – bei einem Gegentor wird es eng",
+          "K.-o.-Charakter: Belgien könnte tief stehen und auf Konter/Elfmeterschießen spekulieren",
+          "Verlängerung erhöht Zufallsanteil, Remis nach 120 Minuten realistisch",
+          "Belastung durch nur 4 Tage Pause für beide Teams"
         ]
       },
       "chatgpt": {
         "predictedScore": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "probabilities": {
           "home": 0.58,
-          "draw": 0.25,
-          "away": 0.17
+          "draw": 0.22,
+          "away": 0.2
         },
         "confidence": 0.7,
         "keyFactors": [
-          "Spanien hat eine starke defensive Bilanz und zuletzt alle Spiele ohne Gegentor gewonnen.",
-          "Belgiens Verteidiger Debast fällt verletzt aus, was ihre Defensivstabilität beeinträchtigen könnte.",
-          "Spaniens Form ist stabil mit Siegen gegen starke Teams wie Portugal."
+          "Spanien zeigt eine starke Defensive mit mehreren Spielen in Folge zu Null.",
+          "Belgien hat Probleme in der Mannschaftsstruktur und internen Konflikte, was die Teamperformance beeinträchtigen könnte.",
+          "Belgischer Schlüsselspieler gesperrt, was ihre Angriffsoptionen verringert.",
+          "Beide Teams treten auf neutralem Boden an, was den Heimvorteil neutralisiert."
         ],
         "risks": [
-          "Belgien hat potenzial im Angriff, wie das 4:1 gegen die USA zeigt.",
-          "Neutraler Spielort mindert Heimvorteil für Spanien."
+          "Belgien hat offensiv starke Leistungen gezeigt, kann Überraschungen liefern.",
+          "Neutraler Spielort könnte Vorteile für Teams ausgleichen."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5026,
       "chatgpt": 0.4974
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive: nur 0,3 Gegentore/Spiel, Clean Sheets gegen Portugal, Uruguay und Austria bei diesem Turnier; Spanien deutlich höheres Elo (1944 vs 1761) und bessere gewichtete Form (2,49 vs 2,09); Belgiens Offensive stark (2,75 Tore/Spiel), aber die vielen Treffer kamen gegen schwächere Gegner (Neuseeland, USA); Defensive anfällig (1,03 Gegentore, nur 35,5% Clean Sheets). Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive (0,3 Gegentore/Spiel, 56% Zu-Null) und starker gewichteter Form (2,49) sowie klar höherem Elo (1944 vs 1761); Spanien im Turnier defensiv extrem stabil: vier Zu-Null in fünf Spielen, nur gegen Cape Verde 0:0; Belgien offensiv brandgefährlich (2,75 Tore/Spiel), aber defensiv anfällig (1,03 Gegentore, nur 36% Zu-Null) – gefährlich, aber verwundbar. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.7299,
-      "away": 0.2701
+      "home": 0.7311,
+      "away": 0.2689
     },
     "tiebreakWinProbHome": 0.55,
     "inputHash": "sha256:6e1b0f59596b60d2cb2154b227beb954a78aac444242452bcd414febed198ac4"
@@ -197,21 +199,34 @@
         "away": 0.189
       },
       "confidence": 0.6083
+    },
+    {
+      "generatedAt": "2026-07-10T08:03:58.235Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 0
+      },
+      "probabilities": {
+        "home": 0.5882,
+        "draw": 0.2371,
+        "away": 0.1747
+      },
+      "confidence": 0.6534
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-10T12:04:02.506Z",
+    "updatedAt": "2026-07-10T13:06:02.804Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.5854,
-      "draw": 0.24,
-      "away": 0.1746
+      "home": 0.5954,
+      "draw": 0.2411,
+      "away": 0.1635
     },
     "decimal": {
-      "home": 1.64,
+      "home": 1.62,
       "draw": 4,
-      "away": 5.5
+      "away": 5.9
     }
   }
 }
