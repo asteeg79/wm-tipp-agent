@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-11T11:18:02.090Z",
+    "generatedAt": "2026-07-11T12:03:59.980Z",
     "home": {
       "teamId": "NOR",
       "elo": 1727,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-11T09:03:58.707Z",
+    "generatedAt": "2026-07-11T12:03:59.980Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.2346,
-      "draw": 0.2492,
-      "away": 0.5162
+      "home": 0.2566,
+      "draw": 0.2491,
+      "away": 0.4943
     },
-    "confidence": 0.6229,
+    "confidence": 0.5731,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -79,21 +79,23 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.24,
+          "home": 0.26,
           "draw": 0.24,
-          "away": 0.52
+          "away": 0.5
         },
         "confidence": 0.55,
         "keyFactors": [
-          "England mit klar höherem Elo (1839 vs 1727), besserer Defensive (0,80 Gegentore/Spiel, 53% Clean Sheets) und breitem Kader unter Tuchel",
-          "Norwegens Offensive ist stark (2,54 Tore/Spiel, Sieg gegen Brasilien), aber die Abwehr ist anfällig (1,40 Gegentore, nur 37% Clean Sheets) - gegen Englands Klasse ein Risiko",
-          "Krankheitswelle im norwegischen Lager vor dem Spiel schwächt die Vorbereitung",
-          "Markt und Baseline sehen England klar vorne; eigene Einschätzung deckt sich mit leicht erhöhter Remis-Chance wie beim Markt"
+          "England mit deutlich höherem Elo (1839 vs 1727) und klar stabilerer Defensive (0.80 Gegentore/Spiel, 53% Zu-Null vs 37%)",
+          "Norwegen offensiv gefährlich (Haaland, 2.54 Tore/Spiel) und in guter Turnierform inkl. 2:1 gegen Brasilien",
+          "Beide Teams zuletzt torreich und defensiv anfällig - Norwegen kassiert konstant Gegentore",
+          "Neutraler Spielort, kein Heimvorteil",
+          "Markt sieht England klar vorne, aber mit erhöhter Remis-Chance (25.8%)"
         ],
         "risks": [
-          "K.o.-Spiel: Norwegen kann tief stehen und auf Konter durch Haaland setzen - ein knapper Ausgang oder Verlängerung ist möglich",
-          "Norwegens Offensivpower kann jederzeit treffen, England kassierte zuletzt auch gegen Mexiko und Kroatien mehrfach",
-          "Verlängerung/Elfmeterschießen bei engem Spielverlauf realistisch"
+          "Haaland kann jedes Spiel im Alleingang entscheiden - Norwegens Offensive wird unterschätzbar",
+          "In K.o.-Spielen agieren Favoriten oft vorsichtiger, Remis nach 90/120 Min gut möglich",
+          "Norwegens Momentum (Sieg gegen Brasilien) könnte England unter Druck setzen",
+          "Enges Spiel mit möglicher Verlängerung/Elfmeterschießen"
         ]
       },
       "chatgpt": {
@@ -102,21 +104,19 @@
           "away": 2
         },
         "probabilities": {
-          "home": 0.23,
+          "home": 0.26,
           "draw": 0.25,
-          "away": 0.52
+          "away": 0.49
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "England's higher Elo rating and recent form with strong performances against teams like Mexico and Croatia.",
-          "Norway's recent form, showing resilience by beating Brazil but facing illness concerns ahead of the match.",
-          "England's positive influence from coach Thomas Tuchel, boosting team morale and tactical efficiency.",
+          "Norway's strong performance in recent matches, including a win against Brazil.",
+          "England's higher Elo rating and recent form slightly superior to Norway's.",
           "Neutral venue reduces any potential home advantage."
         ],
         "risks": [
-          "Norway's capability to upset stronger teams, as seen in their win over Brazil.",
-          "The impact of illness on Norway’s squad could be uncertain, affecting performance unpredictably.",
-          "The knockout stage context could lead to conservative tactics, increasing the probability of a draw."
+          "Norway's potential to upset strong teams, as indicated by their performance against Brazil.",
+          "Close recent results for both teams show competitive edge."
         ]
       }
     },
@@ -125,10 +125,10 @@
       "claude": 0.5027,
       "chatgpt": 0.4973
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit klar höherem Elo (1839 vs 1727), besserer Defensive (0,80 Gegentore/Spiel, 53% Clean Sheets) und breitem Kader unter Tuchel; Norwegens Offensive ist stark (2,54 Tore/Spiel, Sieg gegen Brasilien), aber die Abwehr ist anfällig (1,40 Gegentore, nur 37% Clean Sheets) - gegen Englands Klasse ein Risiko; Krankheitswelle im norwegischen Lager vor dem Spiel schwächt die Vorbereitung. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: England mit deutlich höherem Elo (1839 vs 1727) und klar stabilerer Defensive (0.80 Gegentore/Spiel, 53% Zu-Null vs 37%); Norwegen offensiv gefährlich (Haaland, 2.54 Tore/Spiel) und in guter Turnierform inkl. 2:1 gegen Brasilien; Beide Teams zuletzt torreich und defensiv anfällig - Norwegen kassiert konstant Gegentore. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.3457,
-      "away": 0.6543
+      "home": 0.3676,
+      "away": 0.6324
     },
     "tiebreakWinProbHome": 0.485,
     "inputHash": "sha256:9d888971b24c87d6dd5e397b4edbc2145d7b0ebb43a7a050beb4de1a14313ab0"
@@ -198,21 +198,34 @@
         "away": 0.52
       },
       "confidence": 0.6208
+    },
+    {
+      "generatedAt": "2026-07-11T09:03:58.707Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.2346,
+        "draw": 0.2492,
+        "away": 0.5162
+      },
+      "confidence": 0.6229
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-11T11:19:06.731Z",
-    "bookmakerCount": 25,
+    "updatedAt": "2026-07-11T12:04:00.616Z",
+    "bookmakerCount": 24,
     "probabilities": {
-      "home": 0.2351,
-      "draw": 0.2577,
-      "away": 0.5072
+      "home": 0.2485,
+      "draw": 0.2583,
+      "away": 0.4932
     },
     "decimal": {
-      "home": 4.1,
-      "draw": 3.74,
-      "away": 1.9
+      "home": 3.85,
+      "draw": 3.71,
+      "away": 1.94
     }
   }
 }
