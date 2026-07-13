@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-13T06:04:26.222Z",
+    "generatedAt": "2026-07-13T07:04:28.770Z",
     "home": {
       "teamId": "FRA",
       "elo": 1920,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-11T14:04:04.358Z",
+    "generatedAt": "2026-07-13T07:04:28.770Z",
     "predictedScore": {
       "home": 1,
-      "away": 0
+      "away": 1
     },
     "probabilities": {
-      "home": 0.3802,
-      "draw": 0.2568,
-      "away": 0.363
+      "home": 0.3776,
+      "draw": 0.292,
+      "away": 0.3304
     },
-    "confidence": 0.0703,
+    "confidence": 0.495,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,70 @@
         "away": 1.34
       }
     },
-    "advance": {
-      "home": 0.502,
-      "away": 0.498
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.38,
+          "draw": 0.28,
+          "away": 0.34
+        },
+        "confidence": 0.4,
+        "keyFactors": [
+          "Beide Topteams auf sehr hohem Niveau; Spanien mit leicht höherem Elo (1950 vs 1920), Frankreich mit der besseren jüngsten Form (viele Zu-Null-Siege, u.a. 3:0 Schweden, 2:0 Marokko).",
+          "Frankreich verteidigt extrem stabil (goalsAgainstAvg 0.56, Clean-Sheet 50%), Spanien noch stärker defensiv (0.375, 54%) – zwei kompakte Abwehrreihen sprechen für ein enges Spiel.",
+          "Markt sieht Frankreich als leichten Favoriten (0.414) mit erhöhter Remis-Quote (0.292); im K.-o. inkl. Verlängerung ist ein Unentschieden (Elfmeterschießen) realistisch.",
+          "H2H der letzten Duelle spricht für Spanien (2 Siege), relativiert Frankreichs Heim-/Formvorteil."
+        ],
+        "risks": [
+          "Verletzungslage Frankreich (Mbappé, Tchouaméni laut News unklar) könnte Offensivpotenzial mindern.",
+          "Lamine Yamal als individueller Unterschiedsspieler kann das enge Spiel jederzeit kippen.",
+          "Torlastige beidseitige Offensiven könnten statt knappem Ausgang ein offenes, höheres Ergebnis produzieren."
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.35000000000000003,
+          "draw": 0.30000000000000004,
+          "away": 0.35000000000000003
+        },
+        "confidence": 0.6,
+        "keyFactors": [
+          "Beide Teams in starker Form mit positiven Resultaten in der WM",
+          "Geringer Unterschied in Elo-Wertung; Spanien leicht favorisiert",
+          "Frankreichs Kader möglicherweise von Verletzungen beeinträchtigt, jedoch keine spezifischen Ausfälle bestätigt",
+          "Head-to-Head der letzten Begegnungen spricht für Spanien"
+        ],
+        "risks": [
+          "Potentielle Verletzungen bei Frankreich könnten deren Leistung beeinträchtigen",
+          "Neutraler Spielort minimiert Heimvorteil"
+        ]
+      }
     },
-    "inputHash": "sha256:5c5a5d3d82762114566c25310b5a10056af9902e06ff240ba0e071b2a4063569"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5024,
+      "chatgpt": 0.4976
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Topteams auf sehr hohem Niveau; Spanien mit leicht höherem Elo (1950 vs 1920), Frankreich mit der besseren jüngsten Form (viele Zu-Null-Siege, u.a. 3:0 Schweden, 2:0 Marokko).; Frankreich verteidigt extrem stabil (goalsAgainstAvg 0.56, Clean-Sheet 50%), Spanien noch stärker defensiv (0.375, 54%) – zwei kompakte Abwehrreihen sprechen für ein enges Spiel.; Markt sieht Frankreich als leichten Favoriten (0.414) mit erhöhter Remis-Quote (0.292); im K.-o. inkl. Verlängerung ist ein Unentschieden (Elfmeterschießen) realistisch.. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.5184,
+      "away": 0.4816
+    },
+    "tiebreakWinProbHome": 0.49,
+    "inputHash": "sha256:62e520508d6f10ce662bfebe0c69b91e2235a6d71254598898ced37d23444230"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-13T06:04:27.923Z",
+    "updatedAt": "2026-07-13T07:06:31.008Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.4138,
