@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-14T18:04:10.457Z",
+    "generatedAt": "2026-07-14T18:45:37.325Z",
     "home": {
       "teamId": "FRA",
       "elo": 1920,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-14T17:04:27.330Z",
+    "generatedAt": "2026-07-14T18:45:37.325Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.3624,
-      "draw": 0.3028,
-      "away": 0.3349
+      "home": 0.36,
+      "draw": 0.322,
+      "away": 0.3181
     },
-    "confidence": 0.5,
+    "confidence": 0.518,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -73,36 +73,65 @@
       }
     },
     "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.34,
+          "draw": 0.31,
+          "away": 0.35
+        },
+        "confidence": 0.4,
+        "keyFactors": [
+          "Beide Teams mit herausragender Turnierform und starken Abwehrreihen (Frankreich 0,56 Gegentore/Spiel, Spanien 0,375 – hohe Clean-Sheet-Raten)",
+          "Nahezu identische Elo-Werte (ESP 1950 vs FRA 1920) und ausgeglichene erwartete Tore – ein enges Spiel",
+          "Frankreichs Defensive in der WM makellos (mehrere Zu-Null-Siege), Spanien mit konstantem Momentum inkl. Sieg gegen Portugal und Belgien",
+          "K.-o.-Charakter begünstigt vorsichtiges Agieren zweier Topteams – erhöhte Remis-Wahrscheinlichkeit nach 120 Minuten"
+        ],
+        "risks": [
+          "H2H (2 Spanien-Siege, 7:5 Tore) basiert auf sehr kleiner Stichprobe und kann trügen",
+          "Individuelle Klasse (z.B. Frankreichs Offensive) kann Spiel jederzeit einseitig entscheiden",
+          "Bei zwei ausgeglichenen Spitzenteams sind kleine Details/Standards ergebnisentscheidend – schwer vorhersehbar",
+          "Mögliche taktische Überraschungen oder frühe Rote Karte könnten Spielverlauf kippen"
+        ]
+      },
       "chatgpt": {
         "predictedScore": {
           "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.35000000000000003,
-          "draw": 0.30000000000000004,
-          "away": 0.35000000000000003
+          "home": 0.36,
+          "draw": 0.33,
+          "away": 0.31
         },
-        "confidence": 0.5,
+        "confidence": 0.65,
         "keyFactors": [
-          "Beide Mannschaften zeigen eine starke Form bei der WM 2026 mit makellosen Ergebnissen in den letzten fünf Spielen.",
-          "Frankreich hat eine leicht schwächere Elo-Zahl als Spanien, aber die Differenz ist nicht signifikant in Betracht des aktuellen Turnierverlaufs.",
-          "Spanien hat die letzten beiden direkten Begegnungen mit Frankreich gewonnen.",
-          "Neutraler Spielort, was keine weiteren Vorteile bringt."
+          "Beide Teams haben starkes Momentum: Frankreich hat alle letzten Spiele gewonnen ohne Gegentor bis auf ein knappes 4:1.",
+          "Spanien hat ebenfalls alle Spiele gewonnen, aber gegen stärkere Gegner im Vergleich zu Frankreich.",
+          "Spanien hat die jüngste Head-to-Head-Bilanz mit 2 Siegen, was einen psychologischen Vorteil darstellen könnte.",
+          "Das Elo-Rating von Spanien ist leicht höher, was auf einen Vorteil hinweist, aber die Marktprognosen sehen ein ausgeglicheneres Spiel vor.",
+          "Die Begegnung findet auf neutralem Boden statt, was die Parität zwischen den Teams erhöht."
         ],
         "risks": [
-          "Verletzungsnachrichten auf beiden Seiten könnten taktische Anpassungen erfordern, obwohl keine spezifischen Spieler genannt wurden.",
-          "K.-o.-Spiel ohne klare Favoritenlage, was zu unvorhersehbaren Spielentwicklungen führen kann."
+          "Die hohe Form beider Teams könnte zu einer überraschend offensiven Partie führen, was die Wahrscheinlichkeit eines höheren Ergebnisses erhöht.",
+          "Eine defensive Ausrichtung beider Teams aufgrund der gleichen Siegesserie könnte das Spiel stark taktisch prägen."
         ]
       }
     },
-    "agreement": 1,
-    "rationale": "Einschätzung auf Basis eines Modells. Ausschlaggebend: Beide Mannschaften zeigen eine starke Form bei der WM 2026 mit makellosen Ergebnissen in den letzten fünf Spielen.; Frankreich hat eine leicht schwächere Elo-Zahl als Spanien, aber die Differenz ist nicht signifikant in Betracht des aktuellen Turnierverlaufs.; Spanien hat die letzten beiden direkten Begegnungen mit Frankreich gewonnen.. Marktquoten zu 30 % eingemischt.",
-    "advance": {
-      "home": 0.5099,
-      "away": 0.4901
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5024,
+      "chatgpt": 0.4976
     },
-    "tiebreakWinProbHome": 0.5,
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Beide Teams mit herausragender Turnierform und starken Abwehrreihen (Frankreich 0,56 Gegentore/Spiel, Spanien 0,375 – hohe Clean-Sheet-Raten); Nahezu identische Elo-Werte (ESP 1950 vs FRA 1920) und ausgeglichene erwartete Tore – ein enges Spiel; Frankreichs Defensive in der WM makellos (mehrere Zu-Null-Siege), Spanien mit konstantem Momentum inkl. Sieg gegen Portugal und Belgien. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.5152,
+      "away": 0.4848
+    },
+    "tiebreakWinProbHome": 0.49,
     "inputHash": "sha256:50dea7e7d81226a569fa771ad7cd23e249abf07f3a9852186d4d1d0c4ea42414"
   },
   "predictionHistory": [
@@ -209,20 +238,33 @@
         "away": 0.3327
       },
       "confidence": 0.6
+    },
+    {
+      "generatedAt": "2026-07-14T17:04:27.330Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.3624,
+        "draw": 0.3028,
+        "away": 0.3349
+      },
+      "confidence": 0.5
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-14T18:04:19.311Z",
+    "updatedAt": "2026-07-14T18:47:52.172Z",
     "bookmakerCount": 25,
     "probabilities": {
-      "home": 0.3912,
-      "draw": 0.3092,
-      "away": 0.2995
+      "home": 0.3778,
+      "draw": 0.3211,
+      "away": 0.3011
     },
     "decimal": {
-      "home": 2.45,
-      "draw": 3.1,
+      "home": 2.55,
+      "draw": 3,
       "away": 3.2
     }
   }
