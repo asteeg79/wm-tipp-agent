@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-15T03:29:16.948Z",
+    "generatedAt": "2026-07-15T04:04:02.826Z",
     "home": {
       "teamId": "ENG",
       "elo": 1846,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-14T19:04:10.614Z",
+    "generatedAt": "2026-07-15T04:04:02.826Z",
     "predictedScore": {
       "home": 1,
       "away": 2
     },
     "probabilities": {
-      "home": 0.3176,
-      "draw": 0.2856,
-      "away": 0.3968
+      "home": 0.3157,
+      "draw": 0.2908,
+      "away": 0.3935
     },
-    "confidence": 0.5427,
+    "confidence": 0.5581,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -76,26 +76,26 @@
       "claude": {
         "predictedScore": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "probabilities": {
           "home": 0.3,
-          "draw": 0.29,
-          "away": 0.41
+          "draw": 0.28,
+          "away": 0.42
         },
-        "confidence": 0.5,
+        "confidence": 0.42,
         "keyFactors": [
-          "Argentina höherer Elo (1928 vs 1846) und stärkere gewichtete Form (2.84 vs 2.43) sowie höhere Offensivproduktion (2.72 vs 2.10 Tore/Spiel)",
-          "Beide Teams defensiv stabil (ARG CS-Rate 0.58, ENG 0.51) – spricht für ein tendenziell knappes K.-o.-Duell",
-          "Markt sieht die Partie deutlich ausgeglichener als die Elo-Baseline und gibt England sogar leichten Vorzug – ich mittle zwischen beiden Signalen",
-          "Neutraler Spielort, kein Heimvorteil trotz Nominierung Englands als Heimteam",
-          "Beide mit nur 3 Tagen Pause – ähnliche Belastung"
+          "Argentinien mit höherem Elo (1928 vs. 1846), stärkerer gewichteter Form (2.84 vs. 2.43) und deutlich höherer Offensivproduktion (2.72 vs. 2.10 Tore/Spiel)",
+          "Beide Teams defensiv sehr stabil (Gegentore ~0.8, hohe Clean-Sheet-Rate), was ein tendenziell knappes Spiel erwarten lässt",
+          "England mit soliden, aber knappen Turniersiegen (2:1, 3:2, 2:1) – Defensive nicht immer sattelfest",
+          "Neutraler Spielort ohne Heimvorteil; K.-o.-Spiel mit Verlängerung erhöht Remis-Wahrscheinlichkeit",
+          "Markt sieht die Partie deutlich enger (0.35/0.33/0.32) als die Elo-Baseline – ich nähere mich diesem ausgeglicheneren Bild an"
         ],
         "risks": [
-          "Bei einem K.-o.-Spiel ist ein Remis nach Verlängerung samt Elfmeterschießen realistisch",
-          "Argentiniens hohe Einzelqualität kann das Spiel jederzeit kippen",
-          "England kassiert zuletzt regelmäßig Gegentore (nur 1 Zu-Null in 5 Turnierspielen) – anfällig gegen ARG-Offensive",
-          "Die starke Marktabweichung von der Baseline erhöht die Prognoseunsicherheit"
+          "Mögliche Verletzung/Ausfall von Declan Rice würde Englands Mittelfeldbalance schwächen",
+          "Beide Teams offensiv variabel – Ergebnis könnte torreicher ausfallen als getippt",
+          "In engen K.-o.-Duellen kann Einzelqualität (Messi/Bellingham) das Spiel in beide Richtungen kippen",
+          "Baseline überschätzt Argentinien evtl., während der Markt näher an einem Unentschieden liegt"
         ]
       },
       "chatgpt": {
@@ -105,33 +105,34 @@
         },
         "probabilities": {
           "home": 0.3,
-          "draw": 0.25,
-          "away": 0.45
+          "draw": 0.27,
+          "away": 0.43
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Argentina has a higher Elo rating and recent form advantage over England.",
-          "Both teams have been in good offensive form, but Argentina's average goals scored is higher.",
-          "Despite a recent media focus on England manager Thomas Tuchel, there are no critical disruptions reported."
+          "Argentinien hat eine bessere jüngste Form als England, mit höheren durchschnittlichen Toren pro Spiel und einer besseren jüngsten Siegesserie.",
+          "Elo-Zahl von Argentinien ist höher als die von England, was auf eine stärkere Gesamtleistung hinweist.",
+          "Neutrale Spielstätte begünstigt kein Team, eliminiert Heimvorteile.",
+          "Verletzungssorgen bei England mit Declan Rice, einer wichtigen Figur im Mittelfeld, können die Defensive schwächen."
         ],
         "risks": [
-          "Both teams have strong recent performances, making the outcome harder to predict.",
-          "The neutrality of the venue could offset some traditional home game advantages."
+          "Möglichkeit von Anpassungen in der Aufstellung und Taktik aufgrund der Verletzungssituation von Declan Rice.",
+          "Argentinien hat eine solide Offensivkraft, aber die Defensive ist anfällig für Gegentore, was England eine Chance geben könnte."
         ]
       }
     },
-    "agreement": 0.9733,
+    "agreement": 0.9933,
     "ensembleWeights": {
-      "claude": 0.5024,
-      "chatgpt": 0.4976
+      "claude": 0.5026,
+      "chatgpt": 0.4974
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentina höherer Elo (1928 vs 1846) und stärkere gewichtete Form (2.84 vs 2.43) sowie höhere Offensivproduktion (2.72 vs 2.10 Tore/Spiel); Beide Teams defensiv stabil (ARG CS-Rate 0.58, ENG 0.51) – spricht für ein tendenziell knappes K.-o.-Duell; Markt sieht die Partie deutlich ausgeglichener als die Elo-Baseline und gibt England sogar leichten Vorzug – ich mittle zwischen beiden Signalen. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Argentinien mit höherem Elo (1928 vs. 1846), stärkerer gewichteter Form (2.84 vs. 2.43) und deutlich höherer Offensivproduktion (2.72 vs. 2.10 Tore/Spiel); Beide Teams defensiv sehr stabil (Gegentore ~0.8, hohe Clean-Sheet-Rate), was ein tendenziell knappes Spiel erwarten lässt; England mit soliden, aber knappen Turniersiegen (2:1, 3:2, 2:1) – Defensive nicht immer sattelfest. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.4419,
-      "away": 0.5581
+      "home": 0.4452,
+      "away": 0.5548
     },
-    "tiebreakWinProbHome": 0.44,
-    "inputHash": "sha256:6d682848b48f69f21c5d37de8a1b23905dc8fd0f2b0ad78a5a9fdcbee46a94a1"
+    "tiebreakWinProbHome": 0.46,
+    "inputHash": "sha256:f75474c0727ab4b4ad8c076e7b36591652813fe102adaa9327b7f2482e761235"
   },
   "predictionHistory": [
     {
@@ -172,11 +173,24 @@
         "away": 0.3533
       },
       "confidence": 0.6
+    },
+    {
+      "generatedAt": "2026-07-14T19:04:10.614Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "probabilities": {
+        "home": 0.3176,
+        "draw": 0.2856,
+        "away": 0.3968
+      },
+      "confidence": 0.5427
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-15T03:31:04.967Z",
+    "updatedAt": "2026-07-15T04:04:03.241Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.3523,
