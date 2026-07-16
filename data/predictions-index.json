@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2026-07-15T21:13:03.008Z",
+  "lastUpdated": "2026-07-16T03:32:50.148Z",
   "aggregate": {
-    "finishedCount": 101,
-    "exactScoreRate": 0.1683,
-    "outcomeRate": 0.703,
-    "brierMean": 0.4735,
-    "rpsMean": 0.1504
+    "finishedCount": 102,
+    "exactScoreRate": 0.1765,
+    "outcomeRate": 0.7059,
+    "brierMean": 0.4743,
+    "rpsMean": 0.1512
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 101,
-      "exactScoreRate": 0.1188,
-      "outcomeRate": 0.5941,
-      "brierMean": 0.4764,
-      "rpsMean": 0.1512
+      "finishedCount": 102,
+      "exactScoreRate": 0.1275,
+      "outcomeRate": 0.598,
+      "brierMean": 0.4765,
+      "rpsMean": 0.1517
     },
     "chatgpt": {
-      "finishedCount": 101,
-      "exactScoreRate": 0.1683,
-      "outcomeRate": 0.604,
-      "brierMean": 0.4858,
-      "rpsMean": 0.1568
+      "finishedCount": 102,
+      "exactScoreRate": 0.1765,
+      "outcomeRate": 0.6078,
+      "brierMean": 0.486,
+      "rpsMean": 0.1573
     },
     "weights": {
       "claude": 0.5026,
@@ -3751,6 +3751,77 @@
       "advance": {
         "home": 0.4444,
         "away": 0.5556
+      },
+      "actualResult": {
+        "home": 1,
+        "away": 2
+      },
+      "accuracy": {
+        "exactScoreHit": true,
+        "outcomeHit": true,
+        "brier": 0.5539,
+        "rps": 0.2345
+      }
+    },
+    {
+      "matchId": "wc2026-france-england-2026-07-18",
+      "date": "2026-07-18T17:00:00-04:00",
+      "stage": "third-place",
+      "homeTeamId": "FRA",
+      "awayTeamId": "ENG",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.531,
+        "draw": 0.2295,
+        "away": 0.2395
+      },
+      "confidence": 0.2965,
+      "expectedGoals": {
+        "home": 1.82,
+        "away": 1.15
+      },
+      "marketProbabilities": {
+        "home": 0.478,
+        "draw": 0.2584,
+        "away": 0.2637
+      },
+      "advance": {
+        "home": 0.6591,
+        "away": 0.3409
+      },
+      "actualResult": null
+    },
+    {
+      "matchId": "wc2026-spain-argentina-2026-07-19",
+      "date": "2026-07-19T15:00:00-04:00",
+      "stage": "final",
+      "homeTeamId": "ESP",
+      "awayTeamId": "ARG",
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4475,
+        "draw": 0.2425,
+        "away": 0.31
+      },
+      "confidence": 0.1713,
+      "expectedGoals": {
+        "home": 1.63,
+        "away": 1.32
+      },
+      "marketProbabilities": {
+        "home": 0.4111,
+        "draw": 0.3168,
+        "away": 0.2721
+      },
+      "advance": {
+        "home": 0.5746,
+        "away": 0.4254
       },
       "actualResult": null
     }
