@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-17T08:03:53.492Z",
+    "generatedAt": "2026-07-17T09:03:58.906Z",
     "home": {
       "teamId": "FRA",
       "elo": 1906,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-16T03:32:50.148Z",
+    "generatedAt": "2026-07-17T09:03:58.906Z",
     "predictedScore": {
       "home": 2,
       "away": 1
     },
     "probabilities": {
-      "home": 0.531,
-      "draw": 0.2295,
-      "away": 0.2395
+      "home": 0.5245,
+      "draw": 0.2373,
+      "away": 0.2382
     },
-    "confidence": 0.2965,
+    "confidence": 0.6167,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,70 @@
         "away": 1.15
       }
     },
-    "advance": {
-      "home": 0.6591,
-      "away": 0.3409
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.51,
+          "draw": 0.25,
+          "away": 0.24
+        },
+        "confidence": 0.55,
+        "keyFactors": [
+          "France mit klar höherem Elo (1906 vs 1838) und besserer gewichteter Form (2.508 vs 2.189)",
+          "Defensiv stabiler: France 0.70 Gegentore/Spiel und höhere Torgefahr (xG 1.82 vs 1.15)",
+          "England kassiert konstant Gegentore in jüngsten Spielen (u.a. gegen Argentinien, Mexiko, Norwegen)",
+          "Neutraler Spielort, kein Heimvorteil - dennoch klarer statistischer Vorteil France"
+        ],
+        "risks": [
+          "K.o.-Spiel mit möglicher Verlängerung erhöht Remis-Wahrscheinlichkeit deutlich",
+          "Beide Teams zuletzt gegen Topgegner geschlagen (France 0:2 Spanien, England 1:2 Argentinien) - Formdelle",
+          "Widersprüchliche/unklare News rund um England (Trainerdebatte, angebliches WM-Aus) - Unsicherheit über Teamstabilität",
+          "England kann bei kompakter Abwehr das Spiel eng halten und ins Elfmeterschießen zwingen"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 2,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.55,
+          "draw": 0.22,
+          "away": 0.23
+        },
+        "confidence": 0.7,
+        "keyFactors": [
+          "France hat eine höhere Elo-Zahl und spielt in starker Form trotz der jüngsten Niederlage gegen Spanien.",
+          "Englands Team scheint aufgrund von Presseberichten über Trainerprobleme und negative Schlagzeilen mental angeschlagen zu sein.",
+          "England hatte einen etwas schwächeren letzten Gegnerdurchschnitt im Turnier als Frankreich."
+        ],
+        "risks": [
+          "Trotz negativer Presse kann England als erfahrene Mannschaft dennoch überraschen.",
+          "Die Defensive von England hat eine mit Frankreich vergleichbare Clean Sheet Rate."
+        ]
+      }
     },
-    "inputHash": "sha256:da8882df0868c2a78a917ec1f90fed4f2b915f74294655505cd21af393b9083e"
+    "agreement": 0.9733,
+    "ensembleWeights": {
+      "claude": 0.5026,
+      "chatgpt": 0.4974
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: France mit klar höherem Elo (1906 vs 1838) und besserer gewichteter Form (2.508 vs 2.189); Defensiv stabiler: France 0.70 Gegentore/Spiel und höhere Torgefahr (xG 1.82 vs 1.15); England kassiert konstant Gegentore in jüngsten Spielen (u.a. gegen Argentinien, Mexiko, Norwegen). Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.6536,
+      "away": 0.3464
+    },
+    "tiebreakWinProbHome": 0.53,
+    "inputHash": "sha256:ac715b412172ceb1d2a3e73ecd60b83aaa8bce83d2e7d6f02556ec44b5882203"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-17T08:03:53.899Z",
+    "updatedAt": "2026-07-17T09:05:58.365Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.5062,
