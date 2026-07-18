@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-18T06:15:52.260Z",
+    "generatedAt": "2026-07-18T07:03:55.422Z",
     "home": {
       "teamId": "ESP",
       "elo": 1963,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-16T03:32:50.148Z",
+    "generatedAt": "2026-07-18T07:03:55.422Z",
     "predictedScore": {
-      "home": 2,
+      "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4475,
-      "draw": 0.2425,
-      "away": 0.31
+      "home": 0.4103,
+      "draw": 0.3106,
+      "away": 0.2792
     },
-    "confidence": 0.1713,
+    "confidence": 0.5297,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -72,16 +72,73 @@
         "away": 1.32
       }
     },
-    "advance": {
-      "home": 0.5746,
-      "away": 0.4254
+    "models": {
+      "claude": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.42,
+          "draw": 0.29,
+          "away": 0.29
+        },
+        "confidence": 0.42,
+        "keyFactors": [
+          "Spanien mit überragender Defensive im Turnier: nur 0,34 Gegentore/Spiel, Clean Sheets gegen Frankreich, Portugal und Uruguay",
+          "Argentinien offensiv wuchtig (2,65 Tore/Spiel, Form 3.0), aber defensiv anfälliger (0,82 Gegentore, wackelige Ergebnisse gegen Egypt/Cape Verde)",
+          "Leichter Elo-Vorteil Spaniens (1963 vs 1935) bei ausgeglichener Gesamtqualität",
+          "K.-o.-Spiel inkl. Verlängerung erhöht die Remis-Wahrscheinlichkeit, Markt sieht Draw höher (0.32)",
+          "Beide Teams gut erholt (3-4 Tage Pause), neutraler Spielort ohne Heimvorteil"
+        ],
+        "risks": [
+          "Argentiniens Offensive kann Spaniens Defensivblock durchbrechen und ein torreicheres Spiel erzwingen",
+          "Kein H2H-Datenpunkt verfügbar – Unsicherheit im direkten Vergleich",
+          "Einzelne Ausnahmekönner (Standards, Umschaltmomente) können enges Spiel kippen",
+          "Baseline und Markt weichen bei der Draw-Gewichtung deutlich voneinander ab"
+        ]
+      },
+      "chatgpt": {
+        "predictedScore": {
+          "home": 1,
+          "away": 1
+        },
+        "probabilities": {
+          "home": 0.4,
+          "draw": 0.32,
+          "away": 0.28
+        },
+        "confidence": 0.65,
+        "keyFactors": [
+          "Spanien hat starke Ergebnisse gegen hochkarätige Gegner wie Frankreich und Belgien erzielt.",
+          "Argentiniens Form ist ebenfalls beeindruckend, mit einem Sieg über England.",
+          "Beide Teams weisen eine hohe Offensivkraft auf, Spanien mit 2.144 Toren/Spiel und Argentinien mit 2.65 Toren/Spiel im Schnitt.",
+          "Defensiv sind beide Teams solide, Spanien jedoch mit einer niedrigeren Gegentorquote."
+        ],
+        "risks": [
+          "Die Begegnung findet auf neutralem Boden statt, was den Heimvorteil von Spanien neutralisiert.",
+          "Keine H2H-Daten vorliegend, die spezifische Dynamiken zwischen den Teams offenbaren könnten.",
+          "Das knappe Spiel könnte durch einen individuellen Fehler oder Genieblitz entschieden werden."
+        ]
+      }
     },
-    "inputHash": "sha256:e8b27d20ae2c07ddbf5f1cc840919abafdbf29cfe82d08e4c5ea4a537f1e591f"
+    "agreement": 0.98,
+    "ensembleWeights": {
+      "claude": 0.5026,
+      "chatgpt": 0.4974
+    },
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit überragender Defensive im Turnier: nur 0,34 Gegentore/Spiel, Clean Sheets gegen Frankreich, Portugal und Uruguay; Argentinien offensiv wuchtig (2,65 Tore/Spiel, Form 3.0), aber defensiv anfälliger (0,82 Gegentore, wackelige Ergebnisse gegen Egypt/Cape Verde); Leichter Elo-Vorteil Spaniens (1963 vs 1935) bei ausgeglichener Gesamtqualität. Marktquoten zu 30 % eingemischt.",
+    "advance": {
+      "home": 0.5655,
+      "away": 0.4345
+    },
+    "tiebreakWinProbHome": 0.475,
+    "inputHash": "sha256:cce3cda8882d2e462e7c0a7d6d6111b198df4242a0322ffc282880b5b1003d8f"
   },
   "predictionHistory": [],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-18T06:15:52.676Z",
+    "updatedAt": "2026-07-18T07:04:21.026Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.4158,
