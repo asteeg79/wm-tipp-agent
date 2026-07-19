@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-19T17:12:53.118Z",
+    "generatedAt": "2026-07-19T18:24:49.989Z",
     "home": {
       "teamId": "ESP",
       "elo": 1963,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-19T07:36:29.669Z",
+    "generatedAt": "2026-07-19T18:24:49.989Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4156,
-      "draw": 0.3177,
-      "away": 0.2667
+      "home": 0.4086,
+      "draw": 0.3286,
+      "away": 0.2628
     },
-    "confidence": 0.5998,
+    "confidence": 0.4933,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,26 +75,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "probabilities": {
-          "home": 0.42,
-          "draw": 0.29,
-          "away": 0.29
+          "home": 0.41,
+          "draw": 0.31,
+          "away": 0.28
         },
-        "confidence": 0.52,
+        "confidence": 0.4,
         "keyFactors": [
-          "Spanien mit herausragender Defensive (0.34 Gegentore/Spiel, 55.6% Zu-Null) und starkem Turnierlauf inkl. 2:0 gegen Frankreich und Siegen gegen Portugal/Uruguay",
-          "Argentinien mit bestem Momentum (recentForm 3.0, 2:1 gegen England, 3:1 gegen Schweiz), aber deutlich anfälliger hinten (0.82 Gegentore/Spiel)",
-          "Spanien leicht höheres Elo (1963 vs 1935) und neutraler Spielort ohne Heimvorteil für beide",
-          "K.-o.-Spiel: Unentschieden nach Verlängerung realistisch, daher erhöhte Draw-Wahrscheinlichkeit gegenüber Elo-Baseline"
+          "Spanien mit herausragender Defensive (nur 0.34 Gegentore/Spiel, 55,6% Clean Sheets) und starken Siegen gegen Top-Gegner (2:0 Frankreich, 1:0 Portugal, 1:0 Uruguay)",
+          "Argentinien mit bestem Angriff (2.65 Tore/Spiel) und aktuell perfekter Form (recentForm 3.0), aber deutlich anfälligerer Defensive (0.82 Gegentore) und teils schwächeren Gegnern",
+          "Enges Finale zweier Top-Elos (1963 vs 1935) auf neutralem Boden – kein klarer Favorit, Remis nach Verlängerung ist realistisch",
+          "Spaniens Defensivstärke trifft auf Argentiniens Offensive – dürfte das Torniveau eher niedrig halten"
         ],
         "risks": [
-          "Argentiniens offensive Durchschlagskraft (2.65 Tore/Spiel) kann Spaniens Defensive knacken",
-          "Enges Duell zweier Topteams — Ausgang stark von Tagesform und Einzelmomenten abhängig",
-          "Kein H2H-Verlauf als Referenz vorhanden",
-          "Bei Remis entscheidet das Elfmeterschießen, in dem Argentinien Erfahrungsvorteile hat"
+          "Argentiniens Offensivqualität kann Spaniens Abwehr trotz allem knacken",
+          "Finale-Nervosität und taktisches Abwarten können ein torarmes Spiel erzwingen",
+          "Argentinien hat außergewöhnliche Elfmeter-Erfahrung/-Stärke (Martínez) – im Shootout im Vorteil",
+          "Aufstellungsüberraschungen bei Argentinien könnten das Kräfteverhältnis verschieben"
         ]
       },
       "chatgpt": {
@@ -103,34 +103,34 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.41,
-          "draw": 0.34,
+          "home": 0.4,
+          "draw": 0.35,
           "away": 0.25
         },
-        "confidence": 0.7,
+        "confidence": 0.6,
         "keyFactors": [
-          "Beide Teams haben eine starke Form gezeigt, Spanien mit Siegen gegen starke Gegner wie Frankreich und Belgien.",
-          "Argentinien hat ebenfalls beeindruckende Siege gegen Teams wie England, jedoch knappere Ergebnisse gegen schwächere Gegner.",
-          "Die Tordurchschnittswerte beider Teams belegen eine hohe Offensivstärke, jedoch auch eine gute Defensive.",
-          "Keine Verletzungen oder Sperren, die die Kaderstärke beeinflussen könnten."
+          "Beide Teams zeigen starke Form in diesem Turnier, Spanien mit beeindruckenden Siegen gegen Frankreich und Portugal.",
+          "Argentinien musste gegen schwächere Gegner wie Cape Verde und Ägypten mehr Gegentore hinnehmen.",
+          "Das Spiel findet an einem neutralen Ort statt, was für beide gleich ist.",
+          "Änderungen in der Aufstellung Argentinien könnten zu unerwarteten Schwächen oder Stärken führen."
         ],
         "risks": [
-          "Da beide Mannschaften ihre letzten Spiele gegen starke Gegner gewonnen haben, bleibt es unklar, wie sie sich taktisch gegen einander behaupten werden.",
-          "Neutraler Spielort eliminiert jeglichen Heimvorteil, was das Spiel noch ausgeglichener machen könnte."
+          "Änderungen in der argentinischen Aufstellung könnten die Dynamik und Strategie des Spiels beeinflussen.",
+          "Die Leistung beider Teams in früheren Turnierspielen war unterschiedlich stark abhängig vom Gegner."
         ]
       }
     },
-    "agreement": 0.9667,
+    "agreement": 0.9733,
     "ensembleWeights": {
       "claude": 0.5025,
       "chatgpt": 0.4975
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive (0.34 Gegentore/Spiel, 55.6% Zu-Null) und starkem Turnierlauf inkl. 2:0 gegen Frankreich und Siegen gegen Portugal/Uruguay; Argentinien mit bestem Momentum (recentForm 3.0, 2:1 gegen England, 3:1 gegen Schweiz), aber deutlich anfälliger hinten (0.82 Gegentore/Spiel); Spanien leicht höheres Elo (1963 vs 1935) und neutraler Spielort ohne Heimvorteil für beide. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive (nur 0.34 Gegentore/Spiel, 55,6% Clean Sheets) und starken Siegen gegen Top-Gegner (2:0 Frankreich, 1:0 Portugal, 1:0 Uruguay); Argentinien mit bestem Angriff (2.65 Tore/Spiel) und aktuell perfekter Form (recentForm 3.0), aber deutlich anfälligerer Defensive (0.82 Gegentore) und teils schwächeren Gegnern; Enges Finale zweier Top-Elos (1963 vs 1935) auf neutralem Boden – kein klarer Favorit, Remis nach Verlängerung ist realistisch. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.5743,
-      "away": 0.4257
+      "home": 0.5703,
+      "away": 0.4297
     },
-    "tiebreakWinProbHome": 0.475,
+    "tiebreakWinProbHome": 0.46,
     "inputHash": "sha256:d6fcdd731b09dcfa72bea62ad7e7ec6ae9a31a37cfdfe5f20283ecc2593ac460"
   },
   "predictionHistory": [
@@ -198,11 +198,24 @@
         "away": 0.2716
       },
       "confidence": 0.5049
+    },
+    {
+      "generatedAt": "2026-07-19T07:36:29.669Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4156,
+        "draw": 0.3177,
+        "away": 0.2667
+      },
+      "confidence": 0.5998
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-19T17:14:43.136Z",
+    "updatedAt": "2026-07-19T18:26:13.366Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.4194,
