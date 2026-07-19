@@ -11,7 +11,7 @@
   "status": "scheduled",
   "actualResult": null,
   "featureBundle": {
-    "generatedAt": "2026-07-19T06:41:19.980Z",
+    "generatedAt": "2026-07-19T07:36:29.669Z",
     "home": {
       "teamId": "ESP",
       "elo": 1963,
@@ -49,17 +49,17 @@
     }
   },
   "prediction": {
-    "generatedAt": "2026-07-19T04:03:55.175Z",
+    "generatedAt": "2026-07-19T07:36:29.669Z",
     "predictedScore": {
       "home": 1,
       "away": 1
     },
     "probabilities": {
-      "home": 0.4114,
-      "draw": 0.317,
-      "away": 0.2716
+      "home": 0.4156,
+      "draw": 0.3177,
+      "away": 0.2667
     },
-    "confidence": 0.5049,
+    "confidence": 0.5998,
     "baseline": {
       "source": "elo+poisson",
       "probabilities": {
@@ -75,26 +75,26 @@
     "models": {
       "claude": {
         "predictedScore": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "probabilities": {
           "home": 0.42,
-          "draw": 0.3,
-          "away": 0.28
+          "draw": 0.29,
+          "away": 0.29
         },
-        "confidence": 0.42,
+        "confidence": 0.52,
         "keyFactors": [
-          "Spaniens herausragende Defensive (0,34 Gegentore/Spiel, 55,6% Zu-Null) mit starken Turnierauftritten gegen Frankreich, Portugal, Uruguay und Belgien",
-          "Argentinien mit hoher Offensivkraft (2,65 Tore/Spiel), aber deutlich anfälliger hinten (0,82 Gegentore, in allen letzten fünf Spielen ein Gegentor)",
-          "Leicht höheres Elo und beste Defensivstabilität sprechen für Spanien, während Argentiniens Form-Wert etwas höher liegt",
-          "K.o.-Charakter erhöht die Remis-Wahrscheinlichkeit (Verlängerung/Elfmeterschießen), wie auch der Markt mit hohem Draw-Anteil signalisiert"
+          "Spanien mit herausragender Defensive (0.34 Gegentore/Spiel, 55.6% Zu-Null) und starkem Turnierlauf inkl. 2:0 gegen Frankreich und Siegen gegen Portugal/Uruguay",
+          "Argentinien mit bestem Momentum (recentForm 3.0, 2:1 gegen England, 3:1 gegen Schweiz), aber deutlich anfälliger hinten (0.82 Gegentore/Spiel)",
+          "Spanien leicht höheres Elo (1963 vs 1935) und neutraler Spielort ohne Heimvorteil für beide",
+          "K.-o.-Spiel: Unentschieden nach Verlängerung realistisch, daher erhöhte Draw-Wahrscheinlichkeit gegenüber Elo-Baseline"
         ],
         "risks": [
-          "Argentiniens Offensivqualität kann Spaniens Defensive knacken und das Spiel drehen",
-          "Enge, ausgeglichene Partie zweier Topteams ohne H2H-Datenbasis – hohe Ergebnisunsicherheit",
-          "Ein frühes Tor kann die taktische Ausrichtung stark verschieben",
-          "Individuelle Klasse (Einzelmomente) kann statistische Tendenzen überlagern"
+          "Argentiniens offensive Durchschlagskraft (2.65 Tore/Spiel) kann Spaniens Defensive knacken",
+          "Enges Duell zweier Topteams — Ausgang stark von Tagesform und Einzelmomenten abhängig",
+          "Kein H2H-Verlauf als Referenz vorhanden",
+          "Bei Remis entscheidet das Elfmeterschießen, in dem Argentinien Erfahrungsvorteile hat"
         ]
       },
       "chatgpt": {
@@ -103,34 +103,34 @@
           "away": 1
         },
         "probabilities": {
-          "home": 0.4,
-          "draw": 0.33,
-          "away": 0.27
+          "home": 0.41,
+          "draw": 0.34,
+          "away": 0.25
         },
-        "confidence": 0.6,
+        "confidence": 0.7,
         "keyFactors": [
-          "Spanien und Argentinien haben eine ähnliche Elo-Wertung, was auf ein enges Spiel hindeutet.",
-          "Beide Teams haben starke Form: Spanien mit wichtigen Siegen gegen Frankreich und Belgien; Argentinien gegen England.",
-          "Keine signifikanten Verletzungen oder Sperren, die das Spiel beeinflussen würden.",
-          "Spanien hat eine starke Defensive mit einer hohen Clean-Sheet-Rate, während Argentinien ebenfalls torgefährlich ist, aber mehr Gegentore kassiert im Turnier."
+          "Beide Teams haben eine starke Form gezeigt, Spanien mit Siegen gegen starke Gegner wie Frankreich und Belgien.",
+          "Argentinien hat ebenfalls beeindruckende Siege gegen Teams wie England, jedoch knappere Ergebnisse gegen schwächere Gegner.",
+          "Die Tordurchschnittswerte beider Teams belegen eine hohe Offensivstärke, jedoch auch eine gute Defensive.",
+          "Keine Verletzungen oder Sperren, die die Kaderstärke beeinflussen könnten."
         ],
         "risks": [
-          "Knapper Wettbewerb könnte zu einer Verlängerung führen, da beide Teams qualitativ auf einem ähnlichen Niveau sind.",
-          "Schwankungen in der Form aufgrund der kurzen Abstände zwischen den Spielen könnten das Ergebnis beeinflussen."
+          "Da beide Mannschaften ihre letzten Spiele gegen starke Gegner gewonnen haben, bleibt es unklar, wie sie sich taktisch gegen einander behaupten werden.",
+          "Neutraler Spielort eliminiert jeglichen Heimvorteil, was das Spiel noch ausgeglichener machen könnte."
         ]
       }
     },
-    "agreement": 0.98,
+    "agreement": 0.9667,
     "ensembleWeights": {
       "claude": 0.5025,
       "chatgpt": 0.4975
     },
-    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spaniens herausragende Defensive (0,34 Gegentore/Spiel, 55,6% Zu-Null) mit starken Turnierauftritten gegen Frankreich, Portugal, Uruguay und Belgien; Argentinien mit hoher Offensivkraft (2,65 Tore/Spiel), aber deutlich anfälliger hinten (0,82 Gegentore, in allen letzten fünf Spielen ein Gegentor); Leicht höheres Elo und beste Defensivstabilität sprechen für Spanien, während Argentiniens Form-Wert etwas höher liegt. Marktquoten zu 30 % eingemischt.",
+    "rationale": "Beide Modelle sind sich weitgehend einig. Ausschlaggebend: Spanien mit herausragender Defensive (0.34 Gegentore/Spiel, 55.6% Zu-Null) und starkem Turnierlauf inkl. 2:0 gegen Frankreich und Siegen gegen Portugal/Uruguay; Argentinien mit bestem Momentum (recentForm 3.0, 2:1 gegen England, 3:1 gegen Schweiz), aber deutlich anfälliger hinten (0.82 Gegentore/Spiel); Spanien leicht höheres Elo (1963 vs 1935) und neutraler Spielort ohne Heimvorteil für beide. Marktquoten zu 30 % eingemischt.",
     "advance": {
-      "home": 0.5713,
-      "away": 0.4287
+      "home": 0.5743,
+      "away": 0.4257
     },
-    "tiebreakWinProbHome": 0.485,
+    "tiebreakWinProbHome": 0.475,
     "inputHash": "sha256:d6fcdd731b09dcfa72bea62ad7e7ec6ae9a31a37cfdfe5f20283ecc2593ac460"
   },
   "predictionHistory": [
@@ -185,11 +185,24 @@
         "away": 0.2872
       },
       "confidence": 0.5083
+    },
+    {
+      "generatedAt": "2026-07-19T04:03:55.175Z",
+      "predictedScore": {
+        "home": 1,
+        "away": 1
+      },
+      "probabilities": {
+        "home": 0.4114,
+        "draw": 0.317,
+        "away": 0.2716
+      },
+      "confidence": 0.5049
     }
   ],
   "market": {
     "source": "The Odds API",
-    "updatedAt": "2026-07-19T06:42:58.139Z",
+    "updatedAt": "2026-07-19T07:36:30.082Z",
     "bookmakerCount": 25,
     "probabilities": {
       "home": 0.4185,
