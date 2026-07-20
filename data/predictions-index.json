@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-07-20T08:18:58.609Z",
+  "lastUpdated": "2026-07-20T11:11:10.063Z",
   "aggregate": {
-    "finishedCount": 103,
-    "exactScoreRate": 0.1748,
-    "outcomeRate": 0.699,
-    "brierMean": 0.4787,
-    "rpsMean": 0.154
+    "finishedCount": 104,
+    "exactScoreRate": 0.1731,
+    "outcomeRate": 0.6923,
+    "brierMean": 0.4792,
+    "rpsMean": 0.1546
   },
   "modelComparison": {
     "claude": {
-      "finishedCount": 103,
-      "exactScoreRate": 0.1262,
-      "outcomeRate": 0.5922,
-      "brierMean": 0.481,
-      "rpsMean": 0.1546
+      "finishedCount": 104,
+      "exactScoreRate": 0.125,
+      "outcomeRate": 0.5865,
+      "brierMean": 0.4814,
+      "rpsMean": 0.1552
     },
     "chatgpt": {
-      "finishedCount": 103,
-      "exactScoreRate": 0.1748,
-      "outcomeRate": 0.6019,
-      "brierMean": 0.4905,
-      "rpsMean": 0.1601
+      "finishedCount": 104,
+      "exactScoreRate": 0.1731,
+      "outcomeRate": 0.5962,
+      "brierMean": 0.491,
+      "rpsMean": 0.1606
     },
     "weights": {
-      "claude": 0.5025,
-      "chatgpt": 0.4975
+      "claude": 0.5024,
+      "chatgpt": 0.4976
     }
   },
   "entries": [
@@ -3832,7 +3832,17 @@
         "home": 0.5703,
         "away": 0.4297
       },
-      "actualResult": null
+      "actualResult": {
+        "home": 1,
+        "away": 0
+      },
+      "afterExtraTime": true,
+      "accuracy": {
+        "exactScoreHit": false,
+        "outcomeHit": false,
+        "brier": 0.5268,
+        "rps": 0.2094
+      }
     }
   ]
 }
