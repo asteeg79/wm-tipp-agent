@@ -4,8 +4,10 @@ Die WM 2026 endete am **19.07.2026** (Finale Spanien–Argentinien). Das Projekt
 liegt seit dem 27.07.2026 still und soll zur **nächsten Europameisterschaft
 (UEFA Euro 2028, Juni/Juli 2028 in UK & Irland)** wieder aufgesetzt werden.
 
-Die App bleibt als Archiv erreichbar: <https://wm-tipp-agent-app.vercel.app>.
-Alle Daten unter `data/` sind der Endstand des Turniers.
+Die App ist **nicht mehr online** — das Vercel-Projekt wurde gelöscht. Alle
+Daten unter `data/` sind der Endstand des Turniers und die vollständige
+Grundlage, um die App jederzeit lokal (`pnpm --filter @wm/app dev`) oder als
+neues Deployment wieder aufzubauen.
 
 ## Was abgeschaltet wurde
 
@@ -40,9 +42,16 @@ Cloudflare-Cron, selbst wenn dieser noch feuert.
 3. **API-Keys beim Anbieter rotieren/löschen** — das Entfernen aus GitHub und
    `.env` macht die Keys nicht ungültig: Anthropic Console, OpenAI Platform,
    The Odds API.
-4. **Vercel-Projekt pausieren** — sonst deployt es bei jedem künftigen Push neu.
-   Da keine Data-Commits mehr entstehen, passiert das aber nur bei echter
-   Code-Arbeit.
+4. **Cloudflare-Reste der Custom-Domain `wm-tipp-agent.a-tec.dev`** — das
+   Vercel-Projekt ist gelöscht, die Hülle davor lebt noch: DNS-Record (Proxy),
+   Access-Anwendung (Zero Trust) und die Transform Rule, die
+   `x-origin-secret` setzt. Die Adresse antwortet dadurch weiter mit einem
+   302 auf den Access-Login, dahinter liegt nichts mehr. Aufräumen im
+   Cloudflare-Dashboard.
+
+Das **Vercel-Projekt `wm-tipp-agent-app`** wurde bereits gelöscht (samt aller
+Deployments und der Env-Var `ORIGIN_SECRET`); die Team-Domain `a-tec.dev`
+bleibt bestehen, sie wird von anderen Projekten genutzt.
 
 ## Zum Reaktivieren für die EM 2028
 
@@ -57,6 +66,11 @@ Cloudflare-Cron, selbst wenn dieser noch feuert.
   prüfen, aber wahrscheinlich unverändert passend.
 - **Modellversionen:** `docs/ki-bewertung.md` nennt Claude Opus 4.8; bis 2028
   gibt es neuere Modelle. Model-IDs und Preise vor dem Start aktualisieren.
+- **Hosting neu aufsetzen:** Das Vercel-Projekt existiert nicht mehr. Neu
+  anlegen mit Root Directory `app` (Config liegt in `app/vercel.json`,
+  Build-Command ruft `scripts/stage-data.mjs` auf) und Git-Integration
+  verbinden. Der Force-Refresh-Button im Adminbereich braucht wieder die
+  Env-Var `GITHUB_DISPATCH_TOKEN`, der Origin-Guard `ORIGIN_SECRET`.
 - Danach Secrets neu setzen und die Workflows in der Tabelle oben wieder
   aktivieren.
 

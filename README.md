@@ -1,9 +1,11 @@
 # WM-Tipp-Assistent 2026 ⚽
 
 > **❄️ Projekt eingefroren (27.07.2026).** Die WM ist beendet, alle
-> Pipeline-Workflows sind deaktiviert und die API-Keys entfernt. Die App bleibt
-> als Archiv erreichbar. Reaktivierung ist zur EM 2028 geplant — Details und
-> Checkliste in [docs/eingefroren.md](docs/eingefroren.md).
+> Pipeline-Workflows sind deaktiviert, die API-Keys entfernt und das
+> Vercel-Deployment gelöscht — die App ist nicht mehr online. Der komplette
+> Turnier-Endstand liegt weiterhin in `data/`. Reaktivierung ist zur EM 2028
+> geplant — Details und Checkliste in
+> [docs/eingefroren.md](docs/eingefroren.md).
 
 Eine Progressive Web App, die für jede Partie der **FIFA WM 2026**
 (11.06.–19.07.2026, 48 Teams, 104 Spiele) einen **begründeten Ergebnistipp**
